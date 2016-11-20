@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AccessibleTextWidget","C++ type: <span style='color: green;'>```QAccessibleTextWidget```</span>"]]});

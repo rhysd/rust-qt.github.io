@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["OpenGLTimerQuery","C++ type: <span style='color: green;'>```QOpenGLTimerQuery```</span>"]]});

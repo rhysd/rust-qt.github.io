@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["StyleHintReturnNewArgs","This trait represents a set of arguments accepted by StyleHintReturn::new method."]]});

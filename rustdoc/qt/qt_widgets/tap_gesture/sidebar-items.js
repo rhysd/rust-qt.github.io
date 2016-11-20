@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["TapGesture","C++ type: <span style='color: green;'>```QTapGesture```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["JsonParseErrorErrorStringArgs","This trait represents a set of arguments accepted by JsonParseError::error_string method."]]});

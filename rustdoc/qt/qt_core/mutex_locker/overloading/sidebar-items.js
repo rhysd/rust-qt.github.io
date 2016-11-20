@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["MutexLockerNewArgs","This trait represents a set of arguments accepted by MutexLocker::new method."]]});

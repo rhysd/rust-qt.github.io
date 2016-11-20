@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["NoDebug","C++ type: <span style='color: green;'>```QNoDebug```</span>"]]});

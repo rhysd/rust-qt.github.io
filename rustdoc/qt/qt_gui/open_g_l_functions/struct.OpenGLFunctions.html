@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `OpenGLFunctions` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, OpenGLFunctions">
+
+    <title>qt_gui::open_g_l_functions::OpenGLFunctions - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>open_g_l_functions</a></p><script>window.sidebarCurrent = {name: 'OpenGLFunctions', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>open_g_l_functions</a>::<wbr><a class='struct' href=''>OpenGLFunctions</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-99252' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_functions.rs.html#114-116' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct OpenGLFunctions {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QOpenGLFunctions</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qopenglfunctions.html">QOpenGLFunctions</a> class provides cross-platform access to the OpenGL ES 2.0 API.</p>
+<p>OpenGL ES 2.0 defines a subset of the OpenGL specification that is common across many desktop and embedded OpenGL implementations. However, it can be difficult to use the functions from that subset because they need to be resolved manually on desktop systems.</p>
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html">QOpenGLFunctions</a> provides a guaranteed API that is available on all OpenGL systems and takes care of function resolution on systems that need it. The recommended way to use <a href="http://doc.qt.io/qt-5/qopenglfunctions.html">QOpenGLFunctions</a> is by direct inheritance:</p>
+<pre class="cpp"><span class="keyword">class</span> MyGLWindow : <span class="keyword">public</span> <span class="type"><a href="http://doc.qt.io/qt-5/qwindow.html">QWindow</a></span><span class="operator">,</span> <span class="keyword">protected</span> <span class="type"><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#QOpenGLFunctions">QOpenGLFunctions</a></span>
+{
+&#32;   Q_OBJECT
+<span class="keyword">public</span>:
+&#32;   MyGLWindow(<span class="type"><a href="http://doc.qt.io/qt-5/qscreen.html">QScreen</a></span> <span class="operator">*</span>screen <span class="operator">=</span> <span class="number">0</span>);</p>
+
+<p><span class="keyword">protected</span>:
+&#32;   <span class="type">void</span> initializeGL();
+&#32;   <span class="type">void</span> paintGL();</p>
+
+<p>&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a></span> <span class="operator">*</span>m_context;
+};</p>
+
+<p>MyGLWindow(<span class="type"><a href="http://doc.qt.io/qt-5/qscreen.html">QScreen</a></span> <span class="operator">*</span>screen)
+  : <span class="type"><a href="http://doc.qt.io/qt-5/qwindow.html">QWindow</a></span>(screen)<span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qopenglwidget.html">QOpenGLWidget</a></span>(parent)
+{
+&#32;   setSurfaceType(OpenGLSurface);
+&#32;   create();</p>
+
+<p>&#32;   <span class="comment">// Create an OpenGL context</span>
+&#32;   m_context <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a></span>;
+&#32;   m_context<span class="operator">-</span><span class="operator">&gt;</span>create();</p>
+
+<p>&#32;   <span class="comment">// Setup scene and render it</span>
+&#32;   initializeGL();
+&#32;   paintGL()
+}</p>
+
+<p><span class="type">void</span> MyGLWindow<span class="operator">::</span>initializeGL()
+{
+&#32;   m_context<span class="operator">-</span><span class="operator">&gt;</span>makeCurrent(<span class="keyword">this</span>);
+&#32;   initializeOpenGLFunctions();
+}</pre>
+<p>The <code>paintGL()</code> function can then use any of the OpenGL ES 2.0 functions without explicit resolution, such as <a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glActiveTexture">glActiveTexture</a>() in the following example:</p>
+<pre class="cpp"><span class="type">void</span> MyGLWindow<span class="operator">::</span>paintGL()
+{
+&#32;   m_context<span class="operator">-</span><span class="operator">&gt;</span>makeCurrent(<span class="keyword">this</span>);
+&#32;   glActiveTexture(GL_TEXTURE1);
+&#32;   glBindTexture(GL_TEXTURE_2D<span class="operator">,</span> textureId);
+&#32;   <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+&#32;   m_context<span class="operator">-</span><span class="operator">&gt;</span>swapBuffers(<span class="keyword">this</span>);
+&#32;   m_context<span class="operator">-</span><span class="operator">&gt;</span>doneCurrent();
+}</pre>
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html">QOpenGLFunctions</a> can also be used directly for ad-hoc invocation of OpenGL ES 2.0 functions on all platforms:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#QOpenGLFunctions">QOpenGLFunctions</a></span> glFuncs(<span class="type"><a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a></span><span class="operator">::</span>currentContext());
+glFuncs<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glActiveTexture">glActiveTexture</a>(GL_TEXTURE1);</pre>
+<p>An alternative approach is to query the context&#39;s associated <a href="http://doc.qt.io/qt-5/qopenglfunctions.html">QOpenGLFunctions</a> instance. This is somewhat faster than the previous approach due to avoiding the creation of a new instance, but the difference is fairly small since the internal data structures are shared, and function resolving happens only once for a given context, regardless of the number of <a href="http://doc.qt.io/qt-5/qopenglfunctions.html">QOpenGLFunctions</a> instances initialized for it.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#QOpenGLFunctions">QOpenGLFunctions</a></span> <span class="operator">*</span>glFuncs <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a></span><span class="operator">::</span>currentContext()<span class="operator">-</span><span class="operator">&gt;</span>functions();
+glFuncs<span class="operator">-</span><span class="operator">&gt;</span><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glActiveTexture">glActiveTexture</a>(GL_TEXTURE1);</pre>
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html">QOpenGLFunctions</a> provides wrappers for all OpenGL ES 2.0 functions, including the common subset of OpenGL 1.x and ES 2.0. While such functions, for example <a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glClear">glClear</a>() or <a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDrawArrays">glDrawArrays</a>(), can be called also directly, as long as the application links to the platform-specific OpenGL library, calling them via <a href="http://doc.qt.io/qt-5/qopenglfunctions.html">QOpenGLFunctions</a> enables the possibility of dynamically loading the OpenGL implementation.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qopenglfunctions.html#hasOpenGLFeature">hasOpenGLFeature</a>() and <a href="http://doc.qt.io/qt-5/qopenglfunctions.html#openGLFeatures">openGLFeatures</a>() functions can be used to determine if the OpenGL implementation has a major OpenGL ES 2.0 feature. For example, the following checks if non power of two textures are available:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#QOpenGLFunctions">QOpenGLFunctions</a></span> funcs(<span class="type"><a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a></span><span class="operator">::</span>currentContext());
+bool npot <span class="operator">=</span> funcs<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#hasOpenGLFeature">hasOpenGLFeature</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#QOpenGLFunctions">QOpenGLFunctions</a></span><span class="operator">::</span>NPOTTextures);</pre></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/open_g_l_functions/struct.OpenGLFunctions.html' title='qt_gui::open_g_l_functions::OpenGLFunctions'>OpenGLFunctions</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-99257' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_functions.rs.html#124-2219' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.gl_active_texture' class='method'><code>fn <a href='#method.gl_active_texture' class='fnname'>gl_active_texture</a>(&amp;mut self, texture: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glActiveTexture(unsigned int texture)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glActiveTexture">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glActiveTexture(<i>texture</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glActiveTexture.xml">glActiveTexture()</a>.</p></div></p>
+</div><h4 id='method.gl_attach_shader' class='method'><code>fn <a href='#method.gl_attach_shader' class='fnname'>gl_attach_shader</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, shader: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glAttachShader(unsigned int program, unsigned int shader)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glAttachShader">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glAttachShader(<i>program</i>, <i>shader</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glAttachShader.xml">glAttachShader()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_bind_attrib_location' class='method'><code>fn <a href='#method.gl_bind_attrib_location' class='fnname'>gl_bind_attrib_location</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, index: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBindAttribLocation(unsigned int program, unsigned int index, const char* name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBindAttribLocation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBindAttribLocation(<i>program</i>, <i>index</i>, <i>name</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBindAttribLocation.xml">glBindAttribLocation()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_bind_buffer' class='method'><code>fn <a href='#method.gl_bind_buffer' class='fnname'>gl_bind_buffer</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, buffer: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBindBuffer(unsigned int target, unsigned int buffer)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBindBuffer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBindBuffer(<i>target</i>, <i>buffer</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBindBuffer.xml">glBindBuffer()</a>.</p></div></p>
+</div><h4 id='method.gl_bind_framebuffer' class='method'><code>fn <a href='#method.gl_bind_framebuffer' class='fnname'>gl_bind_framebuffer</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, framebuffer: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBindFramebuffer(unsigned int target, unsigned int framebuffer)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBindFramebuffer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBindFramebuffer(<i>target</i>, <i>framebuffer</i>).</p>
+<p>Note that Qt will translate a <i>framebuffer</i> argument of 0 to the currently bound <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a>&#39;s defaultFramebufferObject().</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBindFramebuffer.xml">glBindFramebuffer()</a>.</p></div></p>
+</div><h4 id='method.gl_bind_renderbuffer' class='method'><code>fn <a href='#method.gl_bind_renderbuffer' class='fnname'>gl_bind_renderbuffer</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, renderbuffer: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBindRenderbuffer(unsigned int target, unsigned int renderbuffer)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBindRenderbuffer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBindRenderbuffer(<i>target</i>, <i>renderbuffer</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBindRenderbuffer.xml">glBindRenderbuffer()</a>.</p></div></p>
+</div><h4 id='method.gl_bind_texture' class='method'><code>fn <a href='#method.gl_bind_texture' class='fnname'>gl_bind_texture</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, texture: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBindTexture(unsigned int target, unsigned int texture)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBindTexture">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBindTexture(<i>target</i>, <i>texture</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBindTexture.xml">glBindTexture()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_blend_color' class='method'><code>fn <a href='#method.gl_blend_color' class='fnname'>gl_blend_color</a>(&amp;mut self, red: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, green: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, blue: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, alpha: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBlendColor(float red, float green, float blue, float alpha)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBlendColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBlendColor(<i>red</i>, <i>green</i>, <i>blue</i>, <i>alpha</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBlendColor.xml">glBlendColor()</a>.</p></div></p>
+</div><h4 id='method.gl_blend_equation' class='method'><code>fn <a href='#method.gl_blend_equation' class='fnname'>gl_blend_equation</a>(&amp;mut self, mode: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBlendEquation(unsigned int mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBlendEquation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBlendEquation(<i>mode</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBlendEquation.xml">glBlendEquation()</a>.</p></div></p>
+</div><h4 id='method.gl_blend_equation_separate' class='method'><code>fn <a href='#method.gl_blend_equation_separate' class='fnname'>gl_blend_equation_separate</a>(&amp;mut self, mode_rgb: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, mode_alpha: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBlendEquationSeparate(unsigned int modeRGB, unsigned int modeAlpha)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBlendEquationSeparate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBlendEquationSeparate(<i>modeRGB</i>, <i>modeAlpha</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBlendEquationSeparate.xml">glBlendEquationSeparate()</a>.</p></div></p>
+</div><h4 id='method.gl_blend_func' class='method'><code>fn <a href='#method.gl_blend_func' class='fnname'>gl_blend_func</a>(&amp;mut self, sfactor: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, dfactor: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBlendFunc(unsigned int sfactor, unsigned int dfactor)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBlendFunc">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBlendFunc(<i>sfactor</i>, <i>dfactor</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBlendFunc.xml">glBlendFunc()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_blend_func_separate' class='method'><code>fn <a href='#method.gl_blend_func_separate' class='fnname'>gl_blend_func_separate</a>(&amp;mut self, src_rgb: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, dst_rgb: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, src_alpha: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, dst_alpha: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBlendFuncSeparate(unsigned int srcRGB, unsigned int dstRGB, unsigned int srcAlpha, unsigned int dstAlpha)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBlendFuncSeparate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBlendFuncSeparate(<i>srcRGB</i>, <i>dstRGB</i>, <i>srcAlpha</i>, <i>dstAlpha</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBlendFuncSeparate.xml">glBlendFuncSeparate()</a>.</p></div></p>
+</div><h4 id='method.gl_buffer_data' class='method'><code>fn <a href='#method.gl_buffer_data' class='fnname'>gl_buffer_data</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, size: <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_long.html' title='libc::unix::notbsd::linux::other::b64::c_long'>c_long</a>, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, usage: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBufferData(unsigned int target, long size, const void* data, unsigned int usage)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBufferData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBufferData(<i>target</i>, <i>size</i>, <i>data</i>, <i>usage</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBufferData.xml">glBufferData()</a>.</p></div></p>
+</div><h4 id='method.gl_buffer_sub_data' class='method'><code>fn <a href='#method.gl_buffer_sub_data' class='fnname'>gl_buffer_sub_data</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, offset: <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_long.html' title='libc::unix::notbsd::linux::other::b64::c_long'>c_long</a>, size: <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_long.html' title='libc::unix::notbsd::linux::other::b64::c_long'>c_long</a>, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glBufferSubData(unsigned int target, long offset, long size, const void* data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glBufferSubData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glBufferSubData(<i>target</i>, <i>offset</i>, <i>size</i>, <i>data</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glBufferSubData.xml">glBufferSubData()</a>.</p></div></p>
+</div><h4 id='method.gl_check_framebuffer_status' class='method'><code>fn <a href='#method.gl_check_framebuffer_status' class='fnname'>gl_check_framebuffer_status</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QOpenGLFunctions::glCheckFramebufferStatus(unsigned int target)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glCheckFramebufferStatus">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glCheckFramebufferStatus(<i>target</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glCheckFramebufferStatus.xml">glCheckFramebufferStatus()</a>.</p></div></p>
+</div><h4 id='method.gl_clear' class='method'><code>fn <a href='#method.gl_clear' class='fnname'>gl_clear</a>(&amp;mut self, mask: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glClear(unsigned int mask)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glClear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glClear(<i>mask</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glClear.xml">glClear()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_clear_color' class='method'><code>fn <a href='#method.gl_clear_color' class='fnname'>gl_clear_color</a>(&amp;mut self, red: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, green: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, blue: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, alpha: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glClearColor(float red, float green, float blue, float alpha)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glClearColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glClearColor(<i>red</i>, <i>green</i>, <i>blue</i>, <i>alpha</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glClearColor.xml">glClearColor()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_clear_depthf' class='method'><code>fn <a href='#method.gl_clear_depthf' class='fnname'>gl_clear_depthf</a>(&amp;mut self, depth: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glClearDepthf(float depth)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glClearDepthf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glClearDepth(<i>depth</i>) on desktop OpenGL systems and glClearDepthf(<i>depth</i>) on embedded OpenGL ES systems.</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glClearDepthf.xml">glClearDepthf()</a>.</p></div></p>
+</div><h4 id='method.gl_clear_stencil' class='method'><code>fn <a href='#method.gl_clear_stencil' class='fnname'>gl_clear_stencil</a>(&amp;mut self, s: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glClearStencil(int s)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glClearStencil">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glClearStencil(<i>s</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glClearStencil.xml">glClearStencil()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_color_mask' class='method'><code>fn <a href='#method.gl_color_mask' class='fnname'>gl_color_mask</a>(&amp;mut self, red: <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>, green: <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>, blue: <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>, alpha: <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glColorMask(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glColorMask">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glColorMask(<i>red</i>, <i>green</i>, <i>blue</i>, <i>alpha</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glColorMask.xml">glColorMask()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_compile_shader' class='method'><code>fn <a href='#method.gl_compile_shader' class='fnname'>gl_compile_shader</a>(&amp;mut self, shader: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glCompileShader(unsigned int shader)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glCompileShader">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glCompileShader(<i>shader</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glCompileShader.xml">glCompileShader()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_compressed_tex_image2_d' class='method'><code>fn <a href='#method.gl_compressed_tex_image2_d' class='fnname'>gl_compressed_tex_image2_d</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, internalformat: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, height: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, border: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, image_size: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glCompressedTexImage2D(unsigned int target, int level, unsigned int internalformat, int width, int height, int border, int imageSize, const void* data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glCompressedTexImage2D">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glCompressedTexImage2D(<i>target</i>, <i>level</i>, <i>internalformat</i>, <i>width</i>, <i>height</i>, <i>border</i>, <i>imageSize</i>, <i>data</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glCompressedTexImage2D.xml">glCompressedTexImage2D()</a>.</p></div></p>
+</div><h4 id='method.gl_compressed_tex_sub_image2_d' class='method'><code>fn <a href='#method.gl_compressed_tex_sub_image2_d' class='fnname'>gl_compressed_tex_sub_image2_d</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, xoffset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, yoffset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, height: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, format: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, image_size: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glCompressedTexSubImage2D(unsigned int target, int level, int xoffset, int yoffset, int width, int height, unsigned int format, int imageSize, const void* data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glCompressedTexSubImage2D">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glCompressedTexSubImage2D(<i>target</i>, <i>level</i>, <i>xoffset</i>, <i>yoffset</i>, <i>width</i>, <i>height</i>, <i>format</i>, <i>imageSize</i>, <i>data</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glCompressedTexSubImage2D.xml">glCompressedTexSubImage2D()</a>.</p></div></p>
+</div><h4 id='method.gl_copy_tex_image2_d' class='method'><code>fn <a href='#method.gl_copy_tex_image2_d' class='fnname'>gl_copy_tex_image2_d</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, internalformat: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, x: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, y: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, height: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, border: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glCopyTexImage2D(unsigned int target, int level, unsigned int internalformat, int x, int y, int width, int height, int border)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glCopyTexImage2D">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glCopyTexImage2D(<i>target</i>, <i>level</i>, <i>internalformat</i>, <i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>, <i>border</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glCopyTexImage2D.xml">glCopyTexImage2D()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_copy_tex_sub_image2_d' class='method'><code>fn <a href='#method.gl_copy_tex_sub_image2_d' class='fnname'>gl_copy_tex_sub_image2_d</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, xoffset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, yoffset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, x: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, y: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, height: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glCopyTexSubImage2D(unsigned int target, int level, int xoffset, int yoffset, int x, int y, int width, int height)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glCopyTexSubImage2D">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glCopyTexSubImage2D(<i>target</i>, <i>level</i>, <i>xoffset</i>, <i>yoffset</i>, <i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glCopyTexSubImage2D.xml">glCopyTexSubImage2D()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_create_program' class='method'><code>fn <a href='#method.gl_create_program' class='fnname'>gl_create_program</a>(&amp;mut self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QOpenGLFunctions::glCreateProgram()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glCreateProgram">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glCreateProgram().</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glCreateProgram.xml">glCreateProgram()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_create_shader' class='method'><code>fn <a href='#method.gl_create_shader' class='fnname'>gl_create_shader</a>(&amp;mut self, type_: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QOpenGLFunctions::glCreateShader(unsigned int type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glCreateShader">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glCreateShader(<i>type</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glCreateShader.xml">glCreateShader()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_cull_face' class='method'><code>fn <a href='#method.gl_cull_face' class='fnname'>gl_cull_face</a>(&amp;mut self, mode: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glCullFace(unsigned int mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glCullFace">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glCullFace(<i>mode</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glCullFace.xml">glCullFace()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_delete_buffers' class='method'><code>fn <a href='#method.gl_delete_buffers' class='fnname'>gl_delete_buffers</a>(&amp;mut self, n: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, buffers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDeleteBuffers(int n, const unsigned int* buffers)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDeleteBuffers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDeleteBuffers(<i>n</i>, <i>buffers</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDeleteBuffers.xml">glDeleteBuffers()</a>.</p></div></p>
+</div><h4 id='method.gl_delete_framebuffers' class='method'><code>fn <a href='#method.gl_delete_framebuffers' class='fnname'>gl_delete_framebuffers</a>(&amp;mut self, n: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, framebuffers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDeleteFramebuffers(int n, const unsigned int* framebuffers)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDeleteFramebuffers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDeleteFramebuffers(<i>n</i>, <i>framebuffers</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDeleteFramebuffers.xml">glDeleteFramebuffers()</a>.</p></div></p>
+</div><h4 id='method.gl_delete_program' class='method'><code>fn <a href='#method.gl_delete_program' class='fnname'>gl_delete_program</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDeleteProgram(unsigned int program)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDeleteProgram">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDeleteProgram(<i>program</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDeleteProgram.xml">glDeleteProgram()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_delete_renderbuffers' class='method'><code>fn <a href='#method.gl_delete_renderbuffers' class='fnname'>gl_delete_renderbuffers</a>(&amp;mut self, n: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, renderbuffers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDeleteRenderbuffers(int n, const unsigned int* renderbuffers)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDeleteRenderbuffers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDeleteRenderbuffers(<i>n</i>, <i>renderbuffers</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDeleteRenderbuffers.xml">glDeleteRenderbuffers()</a>.</p></div></p>
+</div><h4 id='method.gl_delete_shader' class='method'><code>fn <a href='#method.gl_delete_shader' class='fnname'>gl_delete_shader</a>(&amp;mut self, shader: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDeleteShader(unsigned int shader)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDeleteShader">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDeleteShader(<i>shader</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDeleteShader.xml">glDeleteShader()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_delete_textures' class='method'><code>fn <a href='#method.gl_delete_textures' class='fnname'>gl_delete_textures</a>(&amp;mut self, n: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, textures: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDeleteTextures(int n, const unsigned int* textures)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDeleteTextures">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDeleteTextures(<i>n</i>, <i>textures</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDeleteTextures.xml">glDeleteTextures()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_depth_func' class='method'><code>fn <a href='#method.gl_depth_func' class='fnname'>gl_depth_func</a>(&amp;mut self, func: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDepthFunc(unsigned int func)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDepthFunc">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDepthFunc(<i>func</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDepthFunc.xml">glDepthFunc()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_depth_mask' class='method'><code>fn <a href='#method.gl_depth_mask' class='fnname'>gl_depth_mask</a>(&amp;mut self, flag: <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDepthMask(unsigned char flag)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDepthMask">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDepthMask(<i>flag</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDepthMask.xml">glDepthMask()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_depth_rangef' class='method'><code>fn <a href='#method.gl_depth_rangef' class='fnname'>gl_depth_rangef</a>(&amp;mut self, z_near: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, z_far: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDepthRangef(float zNear, float zFar)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDepthRangef">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDepthRange(<i>zNear</i>, <i>zFar</i>) on desktop OpenGL systems and glDepthRangef(<i>zNear</i>, <i>zFar</i>) on embedded OpenGL ES systems.</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDepthRangef.xml">glDepthRangef()</a>.</p></div></p>
+</div><h4 id='method.gl_detach_shader' class='method'><code>fn <a href='#method.gl_detach_shader' class='fnname'>gl_detach_shader</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, shader: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDetachShader(unsigned int program, unsigned int shader)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDetachShader">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDetachShader(<i>program</i>, <i>shader</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDetachShader.xml">glDetachShader()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_disable' class='method'><code>fn <a href='#method.gl_disable' class='fnname'>gl_disable</a>(&amp;mut self, cap: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDisable(unsigned int cap)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDisable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDisable(<i>cap</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDisable.xml">glDisable()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_disable_vertex_attrib_array' class='method'><code>fn <a href='#method.gl_disable_vertex_attrib_array' class='fnname'>gl_disable_vertex_attrib_array</a>(&amp;mut self, index: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDisableVertexAttribArray(unsigned int index)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDisableVertexAttribArray">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDisableVertexAttribArray(<i>index</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDisableVertexAttribArray.xml">glDisableVertexAttribArray()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_draw_arrays' class='method'><code>fn <a href='#method.gl_draw_arrays' class='fnname'>gl_draw_arrays</a>(&amp;mut self, mode: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, first: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDrawArrays(unsigned int mode, int first, int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDrawArrays">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDrawArrays(<i>mode</i>, <i>first</i>, <i>count</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDrawArrays.xml">glDrawArrays()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_draw_elements' class='method'><code>fn <a href='#method.gl_draw_elements' class='fnname'>gl_draw_elements</a>(&amp;mut self, mode: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, type_: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, indices: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glDrawElements(unsigned int mode, int count, unsigned int type, const void* indices)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glDrawElements">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glDrawElements(<i>mode</i>, <i>count</i>, <i>type</i>, <i>indices</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glDrawElements.xml">glDrawElements()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_enable' class='method'><code>fn <a href='#method.gl_enable' class='fnname'>gl_enable</a>(&amp;mut self, cap: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glEnable(unsigned int cap)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glEnable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glEnable(<i>cap</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glEnable.xml">glEnable()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_enable_vertex_attrib_array' class='method'><code>fn <a href='#method.gl_enable_vertex_attrib_array' class='fnname'>gl_enable_vertex_attrib_array</a>(&amp;mut self, index: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glEnableVertexAttribArray(unsigned int index)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glEnableVertexAttribArray">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glEnableVertexAttribArray(<i>index</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glEnableVertexAttribArray.xml">glEnableVertexAttribArray()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_finish' class='method'><code>fn <a href='#method.gl_finish' class='fnname'>gl_finish</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glFinish()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glFinish">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glFinish().</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glFinish.xml">glFinish()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_flush' class='method'><code>fn <a href='#method.gl_flush' class='fnname'>gl_flush</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glFlush()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glFlush">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glFlush().</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glFlush.xml">glFlush()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_framebuffer_renderbuffer' class='method'><code>fn <a href='#method.gl_framebuffer_renderbuffer' class='fnname'>gl_framebuffer_renderbuffer</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, attachment: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, renderbuffertarget: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, renderbuffer: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glFramebufferRenderbuffer(unsigned int target, unsigned int attachment, unsigned int renderbuffertarget, unsigned int renderbuffer)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glFramebufferRenderbuffer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glFramebufferRenderbuffer(<i>target</i>, <i>attachment</i>, <i>renderbuffertarget</i>, <i>renderbuffer</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glFramebufferRenderbuffer.xml">glFramebufferRenderbuffer()</a>.</p></div></p>
+</div><h4 id='method.gl_framebuffer_texture2_d' class='method'><code>fn <a href='#method.gl_framebuffer_texture2_d' class='fnname'>gl_framebuffer_texture2_d</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, attachment: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, textarget: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, texture: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glFramebufferTexture2D(unsigned int target, unsigned int attachment, unsigned int textarget, unsigned int texture, int level)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glFramebufferTexture2D">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glFramebufferTexture2D(<i>target</i>, <i>attachment</i>, <i>textarget</i>, <i>texture</i>, <i>level</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glFramebufferTexture2D.xml">glFramebufferTexture2D()</a>.</p></div></p>
+</div><h4 id='method.gl_front_face' class='method'><code>fn <a href='#method.gl_front_face' class='fnname'>gl_front_face</a>(&amp;mut self, mode: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glFrontFace(unsigned int mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glFrontFace">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glFrontFace(<i>mode</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glFrontFace.xml">glFrontFace()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_gen_buffers' class='method'><code>fn <a href='#method.gl_gen_buffers' class='fnname'>gl_gen_buffers</a>(&amp;mut self, n: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, buffers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGenBuffers(int n, unsigned int* buffers)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGenBuffers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGenBuffers(<i>n</i>, <i>buffers</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGenBuffers.xml">glGenBuffers()</a>.</p></div></p>
+</div><h4 id='method.gl_gen_framebuffers' class='method'><code>fn <a href='#method.gl_gen_framebuffers' class='fnname'>gl_gen_framebuffers</a>(&amp;mut self, n: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, framebuffers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGenFramebuffers(int n, unsigned int* framebuffers)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGenFramebuffers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGenFramebuffers(<i>n</i>, <i>framebuffers</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGenFramebuffers.xml">glGenFramebuffers()</a>.</p></div></p>
+</div><h4 id='method.gl_gen_renderbuffers' class='method'><code>fn <a href='#method.gl_gen_renderbuffers' class='fnname'>gl_gen_renderbuffers</a>(&amp;mut self, n: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, renderbuffers: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGenRenderbuffers(int n, unsigned int* renderbuffers)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGenRenderbuffers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGenRenderbuffers(<i>n</i>, <i>renderbuffers</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGenRenderbuffers.xml">glGenRenderbuffers()</a>.</p></div></p>
+</div><h4 id='method.gl_gen_textures' class='method'><code>fn <a href='#method.gl_gen_textures' class='fnname'>gl_gen_textures</a>(&amp;mut self, n: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, textures: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGenTextures(int n, unsigned int* textures)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGenTextures">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGenTextures(<i>n</i>, <i>textures</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGenTextures.xml">glGenTextures()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_generate_mipmap' class='method'><code>fn <a href='#method.gl_generate_mipmap' class='fnname'>gl_generate_mipmap</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGenerateMipmap(unsigned int target)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGenerateMipmap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGenerateMipmap(<i>target</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGenerateMipmap.xml">glGenerateMipmap()</a>.</p></div></p>
+</div><h4 id='method.gl_get_active_attrib' class='method'><code>fn <a href='#method.gl_get_active_attrib' class='fnname'>gl_get_active_attrib</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, index: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, bufsize: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, type_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetActiveAttrib(unsigned int program, unsigned int index, int bufsize, int* length, int* size, unsigned int* type, char* name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetActiveAttrib">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetActiveAttrib(<i>program</i>, <i>index</i>, <i>bufsize</i>, <i>length</i>, <i>size</i>, <i>type</i>, <i>name</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetActiveAttrib.xml">glGetActiveAttrib()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_active_uniform' class='method'><code>fn <a href='#method.gl_get_active_uniform' class='fnname'>gl_get_active_uniform</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, index: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, bufsize: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, type_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetActiveUniform(unsigned int program, unsigned int index, int bufsize, int* length, int* size, unsigned int* type, char* name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetActiveUniform">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetActiveUniform(<i>program</i>, <i>index</i>, <i>bufsize</i>, <i>length</i>, <i>size</i>, <i>type</i>, <i>name</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetActiveUniform.xml">glGetActiveUniform()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_attached_shaders' class='method'><code>fn <a href='#method.gl_get_attached_shaders' class='fnname'>gl_get_attached_shaders</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, maxcount: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, shaders: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetAttachedShaders(unsigned int program, int maxcount, int* count, unsigned int* shaders)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetAttachedShaders">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetAttachedShaders(<i>program</i>, <i>maxcount</i>, <i>count</i>, <i>shaders</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetAttachedShaders.xml">glGetAttachedShaders()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_attrib_location' class='method'><code>fn <a href='#method.gl_get_attrib_location' class='fnname'>gl_get_attrib_location</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLFunctions::glGetAttribLocation(unsigned int program, const char* name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetAttribLocation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetAttribLocation(<i>program</i>, <i>name</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetAttribLocation.xml">glGetAttribLocation()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_booleanv' class='method'><code>fn <a href='#method.gl_get_booleanv' class='fnname'>gl_get_booleanv</a>(&amp;mut self, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetBooleanv(unsigned int pname, unsigned char* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetBooleanv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetBooleanv(<i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetBooleanv.xml">glGetBooleanv()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_get_buffer_parameteriv' class='method'><code>fn <a href='#method.gl_get_buffer_parameteriv' class='fnname'>gl_get_buffer_parameteriv</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetBufferParameteriv(unsigned int target, unsigned int pname, int* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetBufferParameteriv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetBufferParameteriv(<i>target</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetBufferParameteriv.xml">glGetBufferParameteriv()</a>.</p></div></p>
+</div><h4 id='method.gl_get_error' class='method'><code>fn <a href='#method.gl_get_error' class='fnname'>gl_get_error</a>(&amp;mut self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QOpenGLFunctions::glGetError()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetError">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetError().</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetError.xml">glGetError()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_get_floatv' class='method'><code>fn <a href='#method.gl_get_floatv' class='fnname'>gl_get_floatv</a>(&amp;mut self, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetFloatv(unsigned int pname, float* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetFloatv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetFloatv(<i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetFloatv.xml">glGetFloatv()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_get_framebuffer_attachment_parameteriv' class='method'><code>fn <a href='#method.gl_get_framebuffer_attachment_parameteriv' class='fnname'>gl_get_framebuffer_attachment_parameteriv</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, attachment: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetFramebufferAttachmentParameteriv(unsigned int target, unsigned int attachment, unsigned int pname, int* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetFramebufferAttachmentParameteriv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetFramebufferAttachmentParameteriv(<i>target</i>, <i>attachment</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetFramebufferAttachmentParameteriv.xml">glGetFramebufferAttachmentParameteriv()</a>.</p></div></p>
+</div><h4 id='method.gl_get_integerv' class='method'><code>fn <a href='#method.gl_get_integerv' class='fnname'>gl_get_integerv</a>(&amp;mut self, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetIntegerv(unsigned int pname, int* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetIntegerv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetIntegerv(<i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetIntegerv.xml">glGetIntegerv()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_get_program_info_log' class='method'><code>fn <a href='#method.gl_get_program_info_log' class='fnname'>gl_get_program_info_log</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, bufsize: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, infolog: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetProgramInfoLog(unsigned int program, int bufsize, int* length, char* infolog)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetProgramInfoLog">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetProgramInfoLog(<i>program</i>, <i>bufsize</i>, <i>length</i>, <i>infolog</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetProgramInfoLog.xml">glGetProgramInfoLog()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_programiv' class='method'><code>fn <a href='#method.gl_get_programiv' class='fnname'>gl_get_programiv</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetProgramiv(unsigned int program, unsigned int pname, int* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetProgramiv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetProgramiv(<i>program</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetProgramiv.xml">glGetProgramiv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_renderbuffer_parameteriv' class='method'><code>fn <a href='#method.gl_get_renderbuffer_parameteriv' class='fnname'>gl_get_renderbuffer_parameteriv</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetRenderbufferParameteriv(unsigned int target, unsigned int pname, int* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetRenderbufferParameteriv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetRenderbufferParameteriv(<i>target</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetRenderbufferParameteriv.xml">glGetRenderbufferParameteriv()</a>.</p></div></p>
+</div><h4 id='method.gl_get_shader_info_log' class='method'><code>fn <a href='#method.gl_get_shader_info_log' class='fnname'>gl_get_shader_info_log</a>(&amp;mut self, shader: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, bufsize: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, infolog: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetShaderInfoLog(unsigned int shader, int bufsize, int* length, char* infolog)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetShaderInfoLog">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetShaderInfoLog(<i>shader</i>, <i>bufsize</i>, <i>length</i>, <i>infolog</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetShaderInfoLog.xml">glGetShaderInfoLog()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_shader_precision_format' class='method'><code>fn <a href='#method.gl_get_shader_precision_format' class='fnname'>gl_get_shader_precision_format</a>(&amp;mut self, shadertype: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, precisiontype: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, range: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, precision: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetShaderPrecisionFormat(unsigned int shadertype, unsigned int precisiontype, int* range, int* precision)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetShaderPrecisionFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetShaderPrecisionFormat(<i>shadertype</i>, <i>precisiontype</i>, <i>range</i>, <i>precision</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetShaderPrecisionFormat.xml">glGetShaderPrecisionFormat()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_shader_source' class='method'><code>fn <a href='#method.gl_get_shader_source' class='fnname'>gl_get_shader_source</a>(&amp;mut self, shader: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, bufsize: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, source: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetShaderSource(unsigned int shader, int bufsize, int* length, char* source)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetShaderSource">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetShaderSource(<i>shader</i>, <i>bufsize</i>, <i>length</i>, <i>source</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetShaderSource.xml">glGetShaderSource()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_shaderiv' class='method'><code>fn <a href='#method.gl_get_shaderiv' class='fnname'>gl_get_shaderiv</a>(&amp;mut self, shader: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetShaderiv(unsigned int shader, unsigned int pname, int* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetShaderiv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetShaderiv(<i>shader</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetShaderiv.xml">glGetShaderiv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_string' class='method'><code>fn <a href='#method.gl_get_string' class='fnname'>gl_get_string</a>(&amp;mut self, name: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const unsigned char* QOpenGLFunctions::glGetString(unsigned int name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetString(<i>name</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetString.xml">glGetString()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_get_tex_parameterfv' class='method'><code>fn <a href='#method.gl_get_tex_parameterfv' class='fnname'>gl_get_tex_parameterfv</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetTexParameterfv(unsigned int target, unsigned int pname, float* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetTexParameterfv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetTexParameterfv(<i>target</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetTexParameterfv.xml">glGetTexParameterfv()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_get_tex_parameteriv' class='method'><code>fn <a href='#method.gl_get_tex_parameteriv' class='fnname'>gl_get_tex_parameteriv</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetTexParameteriv(unsigned int target, unsigned int pname, int* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetTexParameteriv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetTexParameteriv(<i>target</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetTexParameteriv.xml">glGetTexParameteriv()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_get_uniform_location' class='method'><code>fn <a href='#method.gl_get_uniform_location' class='fnname'>gl_get_uniform_location</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLFunctions::glGetUniformLocation(unsigned int program, const char* name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetUniformLocation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetUniformLocation(<i>program</i>, <i>name</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetUniformLocation.xml">glGetUniformLocation()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_uniformfv' class='method'><code>fn <a href='#method.gl_get_uniformfv' class='fnname'>gl_get_uniformfv</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetUniformfv(unsigned int program, int location, float* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetUniformfv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetUniformfv(<i>program</i>, <i>location</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetUniformfv.xml">glGetUniformfv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_uniformiv' class='method'><code>fn <a href='#method.gl_get_uniformiv' class='fnname'>gl_get_uniformiv</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetUniformiv(unsigned int program, int location, int* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetUniformiv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetUniformiv(<i>program</i>, <i>location</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetUniformiv.xml">glGetUniformiv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_vertex_attrib_pointerv' class='method'><code>fn <a href='#method.gl_get_vertex_attrib_pointerv' class='fnname'>gl_get_vertex_attrib_pointerv</a>(&amp;mut self, index: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pointer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetVertexAttribPointerv(unsigned int index, unsigned int pname, void** pointer)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetVertexAttribPointerv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetVertexAttribPointerv(<i>index</i>, <i>pname</i>, <i>pointer</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetVertexAttribPointerv.xml">glGetVertexAttribPointerv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_vertex_attribfv' class='method'><code>fn <a href='#method.gl_get_vertex_attribfv' class='fnname'>gl_get_vertex_attribfv</a>(&amp;mut self, index: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetVertexAttribfv(unsigned int index, unsigned int pname, float* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetVertexAttribfv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetVertexAttribfv(<i>index</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetVertexAttribfv.xml">glGetVertexAttribfv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_get_vertex_attribiv' class='method'><code>fn <a href='#method.gl_get_vertex_attribiv' class='fnname'>gl_get_vertex_attribiv</a>(&amp;mut self, index: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glGetVertexAttribiv(unsigned int index, unsigned int pname, int* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glGetVertexAttribiv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glGetVertexAttribiv(<i>index</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glGetVertexAttribiv.xml">glGetVertexAttribiv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_hint' class='method'><code>fn <a href='#method.gl_hint' class='fnname'>gl_hint</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, mode: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glHint(unsigned int target, unsigned int mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glHint(<i>target</i>, <i>mode</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glHint.xml">glHint()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_is_buffer' class='method'><code>fn <a href='#method.gl_is_buffer' class='fnname'>gl_is_buffer</a>(&amp;mut self, buffer: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QOpenGLFunctions::glIsBuffer(unsigned int buffer)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glIsBuffer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glIsBuffer(<i>buffer</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glIsBuffer.xml">glIsBuffer()</a>.</p></div></p>
+</div><h4 id='method.gl_is_enabled' class='method'><code>fn <a href='#method.gl_is_enabled' class='fnname'>gl_is_enabled</a>(&amp;mut self, cap: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QOpenGLFunctions::glIsEnabled(unsigned int cap)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glIsEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glIsEnabled(<i>cap</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glIsEnabled.xml">glIsEnabled()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_is_framebuffer' class='method'><code>fn <a href='#method.gl_is_framebuffer' class='fnname'>gl_is_framebuffer</a>(&amp;mut self, framebuffer: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QOpenGLFunctions::glIsFramebuffer(unsigned int framebuffer)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glIsFramebuffer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glIsFramebuffer(<i>framebuffer</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glIsFramebuffer.xml">glIsFramebuffer()</a>.</p></div></p>
+</div><h4 id='method.gl_is_program' class='method'><code>fn <a href='#method.gl_is_program' class='fnname'>gl_is_program</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QOpenGLFunctions::glIsProgram(unsigned int program)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glIsProgram">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glIsProgram(<i>program</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glIsProgram.xml">glIsProgram()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_is_renderbuffer' class='method'><code>fn <a href='#method.gl_is_renderbuffer' class='fnname'>gl_is_renderbuffer</a>(&amp;mut self, renderbuffer: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QOpenGLFunctions::glIsRenderbuffer(unsigned int renderbuffer)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glIsRenderbuffer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glIsRenderbuffer(<i>renderbuffer</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glIsRenderbuffer.xml">glIsRenderbuffer()</a>.</p></div></p>
+</div><h4 id='method.gl_is_shader' class='method'><code>fn <a href='#method.gl_is_shader' class='fnname'>gl_is_shader</a>(&amp;mut self, shader: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QOpenGLFunctions::glIsShader(unsigned int shader)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glIsShader">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glIsShader(<i>shader</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glIsShader.xml">glIsShader()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_is_texture' class='method'><code>fn <a href='#method.gl_is_texture' class='fnname'>gl_is_texture</a>(&amp;mut self, texture: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QOpenGLFunctions::glIsTexture(unsigned int texture)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glIsTexture">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glIsTexture(<i>texture</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glIsTexture.xml">glIsTexture()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_line_width' class='method'><code>fn <a href='#method.gl_line_width' class='fnname'>gl_line_width</a>(&amp;mut self, width: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glLineWidth(float width)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glLineWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glLineWidth(<i>width</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glLineWidth.xml">glLineWidth()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_link_program' class='method'><code>fn <a href='#method.gl_link_program' class='fnname'>gl_link_program</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glLinkProgram(unsigned int program)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glLinkProgram">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glLinkProgram(<i>program</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glLinkProgram.xml">glLinkProgram()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_pixel_storei' class='method'><code>fn <a href='#method.gl_pixel_storei' class='fnname'>gl_pixel_storei</a>(&amp;mut self, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, param: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glPixelStorei(unsigned int pname, int param)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glPixelStorei">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glPixelStorei(<i>pname</i>, <i>param</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glPixelStorei.xml">glPixelStorei()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_polygon_offset' class='method'><code>fn <a href='#method.gl_polygon_offset' class='fnname'>gl_polygon_offset</a>(&amp;mut self, factor: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, units: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glPolygonOffset(float factor, float units)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glPolygonOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glPolygonOffset(<i>factor</i>, <i>units</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glPolygonOffset.xml">glPolygonOffset()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_read_pixels' class='method'><code>fn <a href='#method.gl_read_pixels' class='fnname'>gl_read_pixels</a>(&amp;mut self, x: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, y: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, height: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, format: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, type_: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pixels: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glReadPixels(int x, int y, int width, int height, unsigned int format, unsigned int type, void* pixels)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glReadPixels">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glReadPixels(<i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>, <i>format</i>, <i>type</i>, <i>pixels</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glReadPixels.xml">glReadPixels()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_release_shader_compiler' class='method'><code>fn <a href='#method.gl_release_shader_compiler' class='fnname'>gl_release_shader_compiler</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glReleaseShaderCompiler()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glReleaseShaderCompiler">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glReleaseShaderCompiler().</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glReleaseShaderCompiler.xml">glReleaseShaderCompiler()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_renderbuffer_storage' class='method'><code>fn <a href='#method.gl_renderbuffer_storage' class='fnname'>gl_renderbuffer_storage</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, internalformat: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, height: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glRenderbufferStorage(unsigned int target, unsigned int internalformat, int width, int height)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glRenderbufferStorage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glRenderbufferStorage(<i>target</i>, <i>internalformat</i>, <i>width</i>, <i>height</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glRenderbufferStorage.xml">glRenderbufferStorage()</a>.</p></div></p>
+</div><h4 id='method.gl_sample_coverage' class='method'><code>fn <a href='#method.gl_sample_coverage' class='fnname'>gl_sample_coverage</a>(&amp;mut self, value: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, invert: <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glSampleCoverage(float value, unsigned char invert)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glSampleCoverage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glSampleCoverage(<i>value</i>, <i>invert</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glSampleCoverage.xml">glSampleCoverage()</a>.</p></div></p>
+</div><h4 id='method.gl_scissor' class='method'><code>fn <a href='#method.gl_scissor' class='fnname'>gl_scissor</a>(&amp;mut self, x: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, y: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, height: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glScissor(int x, int y, int width, int height)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glScissor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glScissor(<i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glScissor.xml">glScissor()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_shader_binary' class='method'><code>fn <a href='#method.gl_shader_binary' class='fnname'>gl_shader_binary</a>(&amp;mut self, n: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, shaders: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, binaryformat: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, binary: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, length: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glShaderBinary(int n, const unsigned int* shaders, unsigned int binaryformat, const void* binary, int length)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glShaderBinary">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glShaderBinary(<i>n</i>, <i>shaders</i>, <i>binaryformat</i>, <i>binary</i>, <i>length</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glShaderBinary.xml">glShaderBinary()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_shader_source' class='method'><code>fn <a href='#method.gl_shader_source' class='fnname'>gl_shader_source</a>(&amp;mut self, shader: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, string: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>, length: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glShaderSource(unsigned int shader, int count, const char** string, const int* length)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glShaderSource">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glShaderSource(<i>shader</i>, <i>count</i>, <i>string</i>, <i>length</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glShaderSource.xml">glShaderSource()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_stencil_func' class='method'><code>fn <a href='#method.gl_stencil_func' class='fnname'>gl_stencil_func</a>(&amp;mut self, func: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, ref_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, mask: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glStencilFunc(unsigned int func, int ref, unsigned int mask)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glStencilFunc">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glStencilFunc(<i>func</i>, <i>ref</i>, <i>mask</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glStencilFunc.xml">glStencilFunc()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_stencil_func_separate' class='method'><code>fn <a href='#method.gl_stencil_func_separate' class='fnname'>gl_stencil_func_separate</a>(&amp;mut self, face: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, func: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, ref_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, mask: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glStencilFuncSeparate(unsigned int face, unsigned int func, int ref, unsigned int mask)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glStencilFuncSeparate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glStencilFuncSeparate(<i>face</i>, <i>func</i>, <i>ref</i>, <i>mask</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glStencilFuncSeparate.xml">glStencilFuncSeparate()</a>.</p></div></p>
+</div><h4 id='method.gl_stencil_mask' class='method'><code>fn <a href='#method.gl_stencil_mask' class='fnname'>gl_stencil_mask</a>(&amp;mut self, mask: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glStencilMask(unsigned int mask)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glStencilMask">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glStencilMask(<i>mask</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glStencilMask.xml">glStencilMask()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_stencil_mask_separate' class='method'><code>fn <a href='#method.gl_stencil_mask_separate' class='fnname'>gl_stencil_mask_separate</a>(&amp;mut self, face: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, mask: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glStencilMaskSeparate(unsigned int face, unsigned int mask)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glStencilMaskSeparate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glStencilMaskSeparate(<i>face</i>, <i>mask</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glStencilMaskSeparate.xml">glStencilMaskSeparate()</a>.</p></div></p>
+</div><h4 id='method.gl_stencil_op' class='method'><code>fn <a href='#method.gl_stencil_op' class='fnname'>gl_stencil_op</a>(&amp;mut self, fail: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, zfail: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, zpass: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glStencilOp(unsigned int fail, unsigned int zfail, unsigned int zpass)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glStencilOp">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glStencilOp(<i>fail</i>, <i>zfail</i>, <i>zpass</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glStencilOp.xml">glStencilOp()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_stencil_op_separate' class='method'><code>fn <a href='#method.gl_stencil_op_separate' class='fnname'>gl_stencil_op_separate</a>(&amp;mut self, face: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, fail: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, zfail: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, zpass: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glStencilOpSeparate(unsigned int face, unsigned int fail, unsigned int zfail, unsigned int zpass)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glStencilOpSeparate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glStencilOpSeparate(<i>face</i>, <i>fail</i>, <i>zfail</i>, <i>zpass</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glStencilOpSeparate.xml">glStencilOpSeparate()</a>.</p></div></p>
+</div><h4 id='method.gl_tex_image2_d' class='method'><code>fn <a href='#method.gl_tex_image2_d' class='fnname'>gl_tex_image2_d</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, internalformat: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, height: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, border: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, format: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, type_: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pixels: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glTexImage2D(unsigned int target, int level, int internalformat, int width, int height, int border, unsigned int format, unsigned int type, const void* pixels)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glTexImage2D">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glTexImage2D(<i>target</i>, <i>level</i>, <i>internalformat</i>, <i>width</i>, <i>height</i>, <i>border</i>, <i>format</i>, <i>type</i>, <i>pixels</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glTexImage2D.xml">glTexImage2D()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_tex_parameterf' class='method'><code>fn <a href='#method.gl_tex_parameterf' class='fnname'>gl_tex_parameterf</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, param: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glTexParameterf(unsigned int target, unsigned int pname, float param)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glTexParameterf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glTexParameterf(<i>target</i>, <i>pname</i>, <i>param</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glTexParameterf.xml">glTexParameterf()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_tex_parameterfv' class='method'><code>fn <a href='#method.gl_tex_parameterfv' class='fnname'>gl_tex_parameterfv</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glTexParameterfv(unsigned int target, unsigned int pname, const float* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glTexParameterfv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glTexParameterfv(<i>target</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glTexParameterfv.xml">glTexParameterfv()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_tex_parameteri' class='method'><code>fn <a href='#method.gl_tex_parameteri' class='fnname'>gl_tex_parameteri</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, param: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glTexParameteri(unsigned int target, unsigned int pname, int param)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glTexParameteri">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glTexParameteri(<i>target</i>, <i>pname</i>, <i>param</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glTexParameteri.xml">glTexParameteri()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_tex_parameteriv' class='method'><code>fn <a href='#method.gl_tex_parameteriv' class='fnname'>gl_tex_parameteriv</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pname: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, params: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glTexParameteriv(unsigned int target, unsigned int pname, const int* params)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glTexParameteriv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glTexParameteriv(<i>target</i>, <i>pname</i>, <i>params</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glTexParameteriv.xml">glTexParameteriv()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_tex_sub_image2_d' class='method'><code>fn <a href='#method.gl_tex_sub_image2_d' class='fnname'>gl_tex_sub_image2_d</a>(&amp;mut self, target: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, xoffset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, yoffset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, height: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, format: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, type_: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, pixels: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glTexSubImage2D(unsigned int target, int level, int xoffset, int yoffset, int width, int height, unsigned int format, unsigned int type, const void* pixels)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glTexSubImage2D">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glTexSubImage2D(<i>target</i>, <i>level</i>, <i>xoffset</i>, <i>yoffset</i>, <i>width</i>, <i>height</i>, <i>format</i>, <i>type</i>, <i>pixels</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glTexSubImage2D.xml">glTexSubImage2D()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.gl_uniform1f' class='method'><code>fn <a href='#method.gl_uniform1f' class='fnname'>gl_uniform1f</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, x: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform1f(int location, float x)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform1f">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform1f(<i>location</i>, <i>x</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform1f.xml">glUniform1f()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform1fv' class='method'><code>fn <a href='#method.gl_uniform1fv' class='fnname'>gl_uniform1fv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, v: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform1fv(int location, int count, const float* v)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform1fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform1fv(<i>location</i>, <i>count</i>, <i>v</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform1fv.xml">glUniform1fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform1i' class='method'><code>fn <a href='#method.gl_uniform1i' class='fnname'>gl_uniform1i</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, x: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform1i(int location, int x)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform1i">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform1i(<i>location</i>, <i>x</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform1i.xml">glUniform1i()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform1iv' class='method'><code>fn <a href='#method.gl_uniform1iv' class='fnname'>gl_uniform1iv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, v: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform1iv(int location, int count, const int* v)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform1iv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform1iv(<i>location</i>, <i>count</i>, <i>v</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform1iv.xml">glUniform1iv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform2f' class='method'><code>fn <a href='#method.gl_uniform2f' class='fnname'>gl_uniform2f</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, x: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, y: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform2f(int location, float x, float y)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform2f">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform2f(<i>location</i>, <i>x</i>, <i>y</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform2f.xml">glUniform2f()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform2fv' class='method'><code>fn <a href='#method.gl_uniform2fv' class='fnname'>gl_uniform2fv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, v: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform2fv(int location, int count, const float* v)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform2fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform2fv(<i>location</i>, <i>count</i>, <i>v</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform2fv.xml">glUniform2fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform2i' class='method'><code>fn <a href='#method.gl_uniform2i' class='fnname'>gl_uniform2i</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, x: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, y: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform2i(int location, int x, int y)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform2i">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform2i(<i>location</i>, <i>x</i>, <i>y</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform2i.xml">glUniform2i()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform2iv' class='method'><code>fn <a href='#method.gl_uniform2iv' class='fnname'>gl_uniform2iv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, v: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform2iv(int location, int count, const int* v)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform2iv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform2iv(<i>location</i>, <i>count</i>, <i>v</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform2iv.xml">glUniform2iv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform3f' class='method'><code>fn <a href='#method.gl_uniform3f' class='fnname'>gl_uniform3f</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, x: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, y: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, z: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform3f(int location, float x, float y, float z)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform3f">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform3f(<i>location</i>, <i>x</i>, <i>y</i>, <i>z</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform3f.xml">glUniform3f()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform3fv' class='method'><code>fn <a href='#method.gl_uniform3fv' class='fnname'>gl_uniform3fv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, v: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform3fv(int location, int count, const float* v)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform3fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform3fv(<i>location</i>, <i>count</i>, <i>v</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform3fv.xml">glUniform3fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform3i' class='method'><code>fn <a href='#method.gl_uniform3i' class='fnname'>gl_uniform3i</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, x: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, y: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, z: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform3i(int location, int x, int y, int z)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform3i">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform3i(<i>location</i>, <i>x</i>, <i>y</i>, <i>z</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform3i.xml">glUniform3i()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform3iv' class='method'><code>fn <a href='#method.gl_uniform3iv' class='fnname'>gl_uniform3iv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, v: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform3iv(int location, int count, const int* v)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform3iv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform3iv(<i>location</i>, <i>count</i>, <i>v</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform3iv.xml">glUniform3iv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform4f' class='method'><code>fn <a href='#method.gl_uniform4f' class='fnname'>gl_uniform4f</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, x: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, y: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, z: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, w: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform4f(int location, float x, float y, float z, float w)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform4f">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform4f(<i>location</i>, <i>x</i>, <i>y</i>, <i>z</i>, <i>w</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform4f.xml">glUniform4f()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform4fv' class='method'><code>fn <a href='#method.gl_uniform4fv' class='fnname'>gl_uniform4fv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, v: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform4fv(int location, int count, const float* v)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform4fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform4fv(<i>location</i>, <i>count</i>, <i>v</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform4fv.xml">glUniform4fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform4i' class='method'><code>fn <a href='#method.gl_uniform4i' class='fnname'>gl_uniform4i</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, x: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, y: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, z: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, w: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform4i(int location, int x, int y, int z, int w)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform4i">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform4i(<i>location</i>, <i>x</i>, <i>y</i>, <i>z</i>, <i>w</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform4i.xml">glUniform4i()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform4iv' class='method'><code>fn <a href='#method.gl_uniform4iv' class='fnname'>gl_uniform4iv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, v: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniform4iv(int location, int count, const int* v)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniform4iv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniform4iv(<i>location</i>, <i>count</i>, <i>v</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniform4iv.xml">glUniform4iv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform_matrix2fv' class='method'><code>fn <a href='#method.gl_uniform_matrix2fv' class='fnname'>gl_uniform_matrix2fv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, transpose: <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniformMatrix2fv(int location, int count, unsigned char transpose, const float* value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniformMatrix2fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniformMatrix2fv(<i>location</i>, <i>count</i>, <i>transpose</i>, <i>value</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniformMatrix2fv.xml">glUniformMatrix2fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform_matrix3fv' class='method'><code>fn <a href='#method.gl_uniform_matrix3fv' class='fnname'>gl_uniform_matrix3fv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, transpose: <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniformMatrix3fv(int location, int count, unsigned char transpose, const float* value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniformMatrix3fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniformMatrix3fv(<i>location</i>, <i>count</i>, <i>transpose</i>, <i>value</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniformMatrix3fv.xml">glUniformMatrix3fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_uniform_matrix4fv' class='method'><code>fn <a href='#method.gl_uniform_matrix4fv' class='fnname'>gl_uniform_matrix4fv</a>(&amp;mut self, location: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, transpose: <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUniformMatrix4fv(int location, int count, unsigned char transpose, const float* value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUniformMatrix4fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUniformMatrix4fv(<i>location</i>, <i>count</i>, <i>transpose</i>, <i>value</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUniformMatrix4fv.xml">glUniformMatrix4fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_use_program' class='method'><code>fn <a href='#method.gl_use_program' class='fnname'>gl_use_program</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glUseProgram(unsigned int program)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glUseProgram">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glUseProgram(<i>program</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glUseProgram.xml">glUseProgram()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_validate_program' class='method'><code>fn <a href='#method.gl_validate_program' class='fnname'>gl_validate_program</a>(&amp;mut self, program: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glValidateProgram(unsigned int program)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glValidateProgram">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glValidateProgram(<i>program</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glValidateProgram.xml">glValidateProgram()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_vertex_attrib1f' class='method'><code>fn <a href='#method.gl_vertex_attrib1f' class='fnname'>gl_vertex_attrib1f</a>(&amp;mut self, indx: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, x: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glVertexAttrib1f(unsigned int indx, float x)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glVertexAttrib1f">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glVertexAttrib1f(<i>indx</i>, <i>x</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glVertexAttrib1f.xml">glVertexAttrib1f()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_vertex_attrib1fv' class='method'><code>fn <a href='#method.gl_vertex_attrib1fv' class='fnname'>gl_vertex_attrib1fv</a>(&amp;mut self, indx: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, values: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glVertexAttrib1fv(unsigned int indx, const float* values)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glVertexAttrib1fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glVertexAttrib1fv(<i>indx</i>, <i>values</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glVertexAttrib1fv.xml">glVertexAttrib1fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_vertex_attrib2f' class='method'><code>fn <a href='#method.gl_vertex_attrib2f' class='fnname'>gl_vertex_attrib2f</a>(&amp;mut self, indx: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, x: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, y: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glVertexAttrib2f(unsigned int indx, float x, float y)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glVertexAttrib2f">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glVertexAttrib2f(<i>indx</i>, <i>x</i>, <i>y</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glVertexAttrib2f.xml">glVertexAttrib2f()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_vertex_attrib2fv' class='method'><code>fn <a href='#method.gl_vertex_attrib2fv' class='fnname'>gl_vertex_attrib2fv</a>(&amp;mut self, indx: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, values: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glVertexAttrib2fv(unsigned int indx, const float* values)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glVertexAttrib2fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glVertexAttrib2fv(<i>indx</i>, <i>values</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glVertexAttrib2fv.xml">glVertexAttrib2fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_vertex_attrib3f' class='method'><code>fn <a href='#method.gl_vertex_attrib3f' class='fnname'>gl_vertex_attrib3f</a>(&amp;mut self, indx: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, x: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, y: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, z: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glVertexAttrib3f(unsigned int indx, float x, float y, float z)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glVertexAttrib3f">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glVertexAttrib3f(<i>indx</i>, <i>x</i>, <i>y</i>, <i>z</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glVertexAttrib3f.xml">glVertexAttrib3f()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_vertex_attrib3fv' class='method'><code>fn <a href='#method.gl_vertex_attrib3fv' class='fnname'>gl_vertex_attrib3fv</a>(&amp;mut self, indx: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, values: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glVertexAttrib3fv(unsigned int indx, const float* values)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glVertexAttrib3fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glVertexAttrib3fv(<i>indx</i>, <i>values</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glVertexAttrib3fv.xml">glVertexAttrib3fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_vertex_attrib4f' class='method'><code>fn <a href='#method.gl_vertex_attrib4f' class='fnname'>gl_vertex_attrib4f</a>(&amp;mut self, indx: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, x: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, y: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, z: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, w: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glVertexAttrib4f(unsigned int indx, float x, float y, float z, float w)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glVertexAttrib4f">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glVertexAttrib4f(<i>indx</i>, <i>x</i>, <i>y</i>, <i>z</i>, <i>w</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glVertexAttrib4f.xml">glVertexAttrib4f()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_vertex_attrib4fv' class='method'><code>fn <a href='#method.gl_vertex_attrib4fv' class='fnname'>gl_vertex_attrib4fv</a>(&amp;mut self, indx: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, values: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glVertexAttrib4fv(unsigned int indx, const float* values)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glVertexAttrib4fv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glVertexAttrib4fv(<i>indx</i>, <i>values</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glVertexAttrib4fv.xml">glVertexAttrib4fv()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_vertex_attrib_pointer' class='method'><code>fn <a href='#method.gl_vertex_attrib_pointer' class='fnname'>gl_vertex_attrib_pointer</a>(&amp;mut self, indx: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, size: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, type_: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, normalized: <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a>, stride: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, ptr: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glVertexAttribPointer(unsigned int indx, int size, unsigned int type, unsigned char normalized, int stride, const void* ptr)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glVertexAttribPointer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glVertexAttribPointer(<i>indx</i>, <i>size</i>, <i>type</i>, <i>normalized</i>, <i>stride</i>, <i>ptr</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glVertexAttribPointer.xml">glVertexAttribPointer()</a>.</p>
+<p>This convenience function will do nothing on OpenGL ES 1.x systems.</p></div></p>
+</div><h4 id='method.gl_viewport' class='method'><code>fn <a href='#method.gl_viewport' class='fnname'>gl_viewport</a>(&amp;mut self, x: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, y: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, height: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::glViewport(int x, int y, int width, int height)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#glViewport">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function that calls glViewport(<i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>).</p>
+<p>For more information, see the OpenGL ES 2.0 documentation for <a href="http://www.khronos.org/opengles/sdk/docs/man/glViewport.xml">glViewport()</a>.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+</div><h4 id='method.has_opengl_feature' class='method'><code>fn <a href='#method.has_opengl_feature' class='fnname'>has_opengl_feature</a>(&amp;self, feature: <a class='enum' href='../../qt_gui/open_g_l_functions/enum.OpenGLFeature.html' title='qt_gui::open_g_l_functions::OpenGLFeature'>OpenGLFeature</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLFunctions::hasOpenGLFeature(QOpenGLFunctions::OpenGLFeature feature) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#hasOpenGLFeature">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <i>feature</i> is present on this system&#39;s OpenGL implementation; false otherwise.</p>
+<p>It is assumed that the <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a> associated with this function resolver is current.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#openGLFeatures">openGLFeatures</a>().</p></div></p>
+</div><h4 id='method.initialize_opengl_functions' class='method'><code>fn <a href='#method.initialize_opengl_functions' class='fnname'>initialize_opengl_functions</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFunctions::initializeOpenGLFunctions()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#initializeOpenGLFunctions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Initializes OpenGL function resolution for the current context.</p>
+<p>After calling this function, the <a href="http://doc.qt.io/qt-5/qopenglfunctions.html">QOpenGLFunctions</a> object can only be used with the current context and other contexts that share with it. Call initializeOpenGLFunctions() again to change the object&#39;s context association.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_functions/overloading/trait.OpenGLFunctionsNewArgs.html' title='qt_gui::open_g_l_functions::overloading::OpenGLFunctionsNewArgs'>OpenGLFunctionsNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLFunctions::QOpenGLFunctions</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::open_g_l_functions::OpenGLFunctions</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::open_g_l_functions::OpenGLFunctions&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLFunctions::QOpenGLFunctions()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::open_g_l_context::OpenGLContext, cpp_utils::AsStruct)) -&gt; ::open_g_l_functions::OpenGLFunctions</code><br>2) <code>fn new((*mut ::open_g_l_context::OpenGLContext, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_functions::OpenGLFunctions&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLFunctions::QOpenGLFunctions(QOpenGLContext* context)</code></span></p>
+</div><h4 id='method.open_glf_eatures' class='method'><code>fn <a href='#method.open_glf_eatures' class='fnname'>open_glf_eatures</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/open_g_l_functions/enum.OpenGLFeature.html' title='qt_gui::open_g_l_functions::OpenGLFeature'>OpenGLFeature</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QOpenGLFunctions::OpenGLFeature&gt; QOpenGLFunctions::openGLFeatures() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#openGLFeatures">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the set of features that are present on this system&#39;s OpenGL implementation.</p>
+<p>It is assumed that the <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a> associated with this function resolver is current.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#hasOpenGLFeature">hasOpenGLFeature</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/open_g_l_functions/struct.OpenGLFunctions.html' title='qt_gui::open_g_l_functions::OpenGLFunctions'>OpenGLFunctions</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-99255' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_functions.rs.html#118-122' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/open_g_l_functions/struct.OpenGLFunctions.html' title='qt_gui::open_g_l_functions::OpenGLFunctions'>OpenGLFunctions</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/open_g_l_functions/struct.OpenGLFunctions.html' title='qt_gui::open_g_l_functions::OpenGLFunctions'>OpenGLFunctions</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-99950' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_functions.rs.html#2221-2228' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QOpenGLFunctions::~QOpenGLFunctions()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglfunctions.html#dtor.QOpenGLFunctions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys this function resolver.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/open_g_l_functions/struct.OpenGLFunctions.html' title='qt_gui::open_g_l_functions::OpenGLFunctions'>OpenGLFunctions</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-99953' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_functions.rs.html#2230-2234' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["BorderStyle","C++ type: <span style='color: green;'>```QTextFrameFormat::BorderStyle```</span>"],["Position","C++ type: <span style='color: green;'>```QTextFrameFormat::Position```</span>"]],"mod":[["overloading",""]],"struct":[["TextFrameFormat","C++ type: <span style='color: green;'>```QTextFrameFormat```</span>"]]});

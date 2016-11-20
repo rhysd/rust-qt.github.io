@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TextTableFormat` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TextTableFormat">
+
+    <title>qt_gui::text_table_format::TextTableFormat - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>text_table_format</a></p><script>window.sidebarCurrent = {name: 'TextTableFormat', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>text_table_format</a>::<wbr><a class='struct' href=''>TextTableFormat</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-167670' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_table_format.rs.html#13-15' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TextTableFormat {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTextTableFormat</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtexttableformat.html">QTextTableFormat</a> class provides formatting information for tables in a <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a>.</p>
+<p>A table is a group of cells ordered into rows and columns. Each table contains at least one row and one column. Each cell contains a block. Tables in rich text documents are formatted using the properties defined in this class.</p>
+<p>Tables are horizontally justified within their parent frame according to the table&#39;s alignment. This can be read with the <a href="http://doc.qt.io/qt-5/qtexttableformat.html#alignment">alignment</a>() function and set with <a href="http://doc.qt.io/qt-5/qtexttableformat.html#setAlignment">setAlignment</a>().</p>
+<p>Cells within the table are separated by cell spacing. The number of pixels between cells is set with <a href="http://doc.qt.io/qt-5/qtexttableformat.html#setCellSpacing">setCellSpacing</a>() and read with <a href="http://doc.qt.io/qt-5/qtexttableformat.html#cellSpacing">cellSpacing</a>(). The contents of each cell is surrounded by cell padding. The number of pixels between each cell edge and its contents is set with <a href="http://doc.qt.io/qt-5/qtexttableformat.html#setCellPadding">setCellPadding</a>() and read with <a href="http://doc.qt.io/qt-5/qtexttableformat.html#cellPadding">cellPadding</a>().</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qtexttableformat-cell.png" alt=""></img></p><p>The table&#39;s background color can be read with the <a href="http://doc.qt.io/qt-5/qtextformat.html#background">background</a>() function, and can be specified with <a href="http://doc.qt.io/qt-5/qtextformat.html#setBackground">setBackground</a>(). The background color of each cell can be set independently, and will control the color of the cell within the padded area.</p>
+<p>The table format also provides a way to constrain the widths of the columns in the table. Columns can be assigned a fixed width, a variable width, or a percentage of the available width (see <a href="http://doc.qt.io/qt-5/qtextlength.html">QTextLength</a>). The <a href="http://doc.qt.io/qt-5/qtexttableformat.html#columns">columns</a>() function returns the number of columns with constraints, and the <a href="http://doc.qt.io/qt-5/qtexttableformat.html#columnWidthConstraints">columnWidthConstraints</a>() function returns the constraints defined for the table. These quantities can also be set by calling <a href="http://doc.qt.io/qt-5/qtexttableformat.html#setColumnWidthConstraints">setColumnWidthConstraints</a>() with a vector containing new constraints. If no constraints are required, <a href="http://doc.qt.io/qt-5/qtexttableformat.html#clearColumnWidthConstraints">clearColumnWidthConstraints</a>() can be used to remove them.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/text_table_format/struct.TextTableFormat.html' title='qt_gui::text_table_format::TextTableFormat'>TextTableFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167675' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_table_format.rs.html#23-989' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.alignment' class='method'><code>fn <a href='#method.alignment' class='fnname'>alignment</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.AlignmentFlag.html' title='qt_core::qt::AlignmentFlag'>AlignmentFlag</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::AlignmentFlag&gt; QTextTableFormat::alignment() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#alignment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the table&#39;s alignment.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#setAlignment">setAlignment</a>().</p></div></p>
+</div><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatAsQVariantArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatAsQVariantArgs'>TextTableFormatAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QTextTableFormat::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text format as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></p></div></p>
+</div><h4 id='method.background' class='method'><code>fn <a href='#method.background' class='fnname'>background</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatBackgroundArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatBackgroundArgs'>TextTableFormatBackgroundArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::background</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn background(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>2) <code>fn background(&amp;self, cpp_utils::AsStruct) -&gt; ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QTextTableFormat::background() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#background">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush used to paint the document&#39;s background.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setBackground">setBackground</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#clearBackground">clearBackground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#foreground">foreground</a>().</p></div></p>
+</div><h4 id='method.bool_property' class='method'><code>fn <a href='#method.bool_property' class='fnname'>bool_property</a>(&amp;self, property_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::boolProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property specified by <i>propertyId</i>. If the property isn&#39;t of QTextFormat::Bool type, false is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.border' class='method'><code>fn <a href='#method.border' class='fnname'>border</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextTableFormat::border() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#border">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the border in pixels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setBorder">setBorder</a>().</p></div></p>
+</div><h4 id='method.border_brush' class='method'><code>fn <a href='#method.border_brush' class='fnname'>border_brush</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatBorderBrushArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatBorderBrushArgs'>TextTableFormatBorderBrushArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::borderBrush</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn border_brush(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>2) <code>fn border_brush(&amp;self, cpp_utils::AsStruct) -&gt; ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QTextTableFormat::borderBrush() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#borderBrush">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush used for the frame&#39;s border.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setBorderBrush">setBorderBrush</a>().</p></div></p>
+</div><h4 id='method.border_style' class='method'><code>fn <a href='#method.border_style' class='fnname'>border_style</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/text_frame_format/enum.BorderStyle.html' title='qt_gui::text_frame_format::BorderStyle'>BorderStyle</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFrameFormat::BorderStyle QTextTableFormat::borderStyle() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#borderStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the style of the frame&#39;s border.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setBorderStyle">setBorderStyle</a>().</p></div></p>
+</div><h4 id='method.bottom_margin' class='method'><code>fn <a href='#method.bottom_margin' class='fnname'>bottom_margin</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextTableFormat::bottomMargin() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#bottomMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the frame&#39;s bottom margin in pixels.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setBottomMargin">setBottomMargin</a>().</p></div></p>
+</div><h4 id='method.brush_property' class='method'><code>fn <a href='#method.brush_property' class='fnname'>brush_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatBrushPropertyArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatBrushPropertyArgs'>TextTableFormatBrushPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::brushProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn brush_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>2) <code>fn brush_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QTextTableFormat::brushProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#brushProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>; if the property isn&#39;t of QVariant::Brush type, <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::NoBrush</a> is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.cell_padding' class='method'><code>fn <a href='#method.cell_padding' class='fnname'>cell_padding</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextTableFormat::cellPadding() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#cellPadding">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the table&#39;s cell padding. This describes the distance between the border of a cell and its contents.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#setCellPadding">setCellPadding</a>().</p></div></p>
+</div><h4 id='method.cell_spacing' class='method'><code>fn <a href='#method.cell_spacing' class='fnname'>cell_spacing</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextTableFormat::cellSpacing() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#cellSpacing">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the table&#39;s cell spacing. This describes the distance between adjacent cells.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#setCellSpacing">setCellSpacing</a>().</p></div></p>
+</div><h4 id='method.clear_background' class='method'><code>fn <a href='#method.clear_background' class='fnname'>clear_background</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::clearBackground()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#clearBackground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the brush used to paint the document&#39;s background. The default brush will be used.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#background">background</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#setBackground">setBackground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#clearForeground">clearForeground</a>().</p></div></p>
+</div><h4 id='method.clear_column_width_constraints' class='method'><code>fn <a href='#method.clear_column_width_constraints' class='fnname'>clear_column_width_constraints</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::clearColumnWidthConstraints()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#clearColumnWidthConstraints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the column width constraints for the table.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#columnWidthConstraints">columnWidthConstraints</a>() and <a href="http://doc.qt.io/qt-5/qtexttableformat.html#setColumnWidthConstraints">setColumnWidthConstraints</a>().</p></div></p>
+</div><h4 id='method.clear_foreground' class='method'><code>fn <a href='#method.clear_foreground' class='fnname'>clear_foreground</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::clearForeground()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#clearForeground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the brush used to paint the document&#39;s foreground. The default brush will be used.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#foreground">foreground</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#setForeground">setForeground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#clearBackground">clearBackground</a>().</p></div></p>
+</div><h4 id='method.clear_property' class='method'><code>fn <a href='#method.clear_property' class='fnname'>clear_property</a>(&amp;mut self, property_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::clearProperty(int propertyId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#clearProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the value of the property given by <i>propertyId</i></p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.color_property' class='method'><code>fn <a href='#method.color_property' class='fnname'>color_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatColorPropertyArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatColorPropertyArgs'>TextTableFormatColorPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::colorProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn color_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn color_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QTextTableFormat::colorProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>; if the property isn&#39;t of QVariant::Color type, an invalid color is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.column_width_constraints' class='method'><code>fn <a href='#method.column_width_constraints' class='fnname'>column_width_constraints</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatColumnWidthConstraintsArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatColumnWidthConstraintsArgs'>TextTableFormatColumnWidthConstraintsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::columnWidthConstraints</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn column_width_constraints(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::vector::VectorTextLengthRef&gt;</code><br>2) <code>fn column_width_constraints(&amp;self, cpp_utils::AsStruct) -&gt; ::vector::VectorTextLengthRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QTextLength&gt; QTextTableFormat::columnWidthConstraints() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#columnWidthConstraints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of constraints used by this table format to control the appearance of columns in a table.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#setColumnWidthConstraints">setColumnWidthConstraints</a>().</p></div></p>
+</div><h4 id='method.columns' class='method'><code>fn <a href='#method.columns' class='fnname'>columns</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextTableFormat::columns() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#columns">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of columns specified by the table format.</p></div></p>
+</div><h4 id='method.double_property' class='method'><code>fn <a href='#method.double_property' class='fnname'>double_property</a>(&amp;self, property_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextTableFormat::doubleProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property specified by <i>propertyId</i>. If the property isn&#39;t of QVariant::Double or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Float</a> type, 0 is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.foreground' class='method'><code>fn <a href='#method.foreground' class='fnname'>foreground</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatForegroundArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatForegroundArgs'>TextTableFormatForegroundArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::foreground</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn foreground(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>2) <code>fn foreground(&amp;self, cpp_utils::AsStruct) -&gt; ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QTextTableFormat::foreground() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#foreground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush used to render foreground details, such as text, frame outlines, and table borders.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setForeground">setForeground</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#clearForeground">clearForeground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#background">background</a>().</p></div></p>
+</div><h4 id='method.has_property' class='method'><code>fn <a href='#method.has_property' class='fnname'>has_property</a>(&amp;self, property_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::hasProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#hasProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the text format has a property with the given <i>propertyId</i>; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#properties">properties</a>() and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.header_row_count' class='method'><code>fn <a href='#method.header_row_count' class='fnname'>header_row_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextTableFormat::headerRowCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#headerRowCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of rows in the table that define the header.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#setHeaderRowCount">setHeaderRowCount</a>().</p></div></p>
+</div><h4 id='method.height' class='method'><code>fn <a href='#method.height' class='fnname'>height</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatHeightArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatHeightArgs'>TextTableFormatHeightArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::height</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn height(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_length::TextLength&gt;</code><br>2) <code>fn height(&amp;self, cpp_utils::AsStruct) -&gt; ::text_length::TextLength</code><br>
+C++ method: <span style='color: green;'><code>QTextLength QTextTableFormat::height() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#height">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the height of the frame&#39;s border rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setHeight">setHeight</a>().</p></div></p>
+</div><h4 id='method.int_property' class='method'><code>fn <a href='#method.int_property' class='fnname'>int_property</a>(&amp;self, property_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextTableFormat::intProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property specified by <i>propertyId</i>. If the property is not of QTextFormat::Integer type, 0 is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.is_block_format' class='method'><code>fn <a href='#method.is_block_format' class='fnname'>is_block_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::isBlockFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isBlockFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>BlockFormat</code>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_char_format' class='method'><code>fn <a href='#method.is_char_format' class='fnname'>is_char_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::isCharFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isCharFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>CharFormat</code>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_empty' class='method'><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::isEmpty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isEmpty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns true if the format does not store any properties; false otherwise.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#propertyCount">propertyCount</a>() and <a href="http://doc.qt.io/qt-5/qtextformat.html#properties">properties</a>().</p></div></p>
+</div><h4 id='method.is_frame_format' class='method'><code>fn <a href='#method.is_frame_format' class='fnname'>is_frame_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::isFrameFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isFrameFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>FrameFormat</code>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_image_format' class='method'><code>fn <a href='#method.is_image_format' class='fnname'>is_image_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::isImageFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isImageFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is an image format; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_list_format' class='method'><code>fn <a href='#method.is_list_format' class='fnname'>is_list_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::isListFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isListFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>ListFormat</code>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_table_cell_format' class='method'><code>fn <a href='#method.is_table_cell_format' class='fnname'>is_table_cell_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::isTableCellFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isTableCellFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>TableCellFormat</code>; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.is_table_format' class='method'><code>fn <a href='#method.is_table_format' class='fnname'>is_table_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::isTableFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isTableFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>TableFormat</code>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this table format is valid; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.layout_direction' class='method'><code>fn <a href='#method.layout_direction' class='fnname'>layout_direction</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.LayoutDirection.html' title='qt_core::qt::LayoutDirection'>LayoutDirection</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::LayoutDirection QTextTableFormat::layoutDirection() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#layoutDirection">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the document&#39;s layout direction.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setLayoutDirection">setLayoutDirection</a>().</p></div></p>
+</div><h4 id='method.left_margin' class='method'><code>fn <a href='#method.left_margin' class='fnname'>left_margin</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextTableFormat::leftMargin() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#leftMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the frame&#39;s left margin in pixels.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setLeftMargin">setLeftMargin</a>().</p></div></p>
+</div><h4 id='method.length_property' class='method'><code>fn <a href='#method.length_property' class='fnname'>length_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatLengthPropertyArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatLengthPropertyArgs'>TextTableFormatLengthPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::lengthProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn length_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_length::TextLength&gt;</code><br>2) <code>fn length_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::text_length::TextLength</code><br>
+C++ method: <span style='color: green;'><code>QTextLength QTextTableFormat::lengthProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.length_vector_property' class='method'><code>fn <a href='#method.length_vector_property' class='fnname'>length_vector_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatLengthVectorPropertyArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatLengthVectorPropertyArgs'>TextTableFormatLengthVectorPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::lengthVectorProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn length_vector_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::vector::VectorTextLengthRef&gt;</code><br>2) <code>fn length_vector_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::vector::VectorTextLengthRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QTextLength&gt; QTextTableFormat::lengthVectorProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>. If the property isn&#39;t of QTextFormat::LengthVector type, an empty length vector is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.margin' class='method'><code>fn <a href='#method.margin' class='fnname'>margin</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextTableFormat::margin() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#margin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the frame&#39;s external margin in pixels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setMargin">setMargin</a>().</p></div></p>
+</div><h4 id='method.merge' class='method'><code>fn <a href='#method.merge' class='fnname'>merge</a>(&amp;mut self, other: &amp;<a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::merge(const QTextFormat&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#merge">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Merges the <i>other</i> format with this format; where there are conflicts the <i>other</i> format takes precedence.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatNewArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatNewArgs'>TextTableFormatNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::QTextTableFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::text_table_format::TextTableFormat</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_table_format::TextTableFormat&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextTableFormat::QTextTableFormat()</code></span></p>
+</div><h4 id='method.object_index' class='method'><code>fn <a href='#method.object_index' class='fnname'>object_index</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextTableFormat::objectIndex() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#objectIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index of the format object, or -1 if the format object is invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setObjectIndex">setObjectIndex</a>().</p></div></p>
+</div><h4 id='method.object_type' class='method'><code>fn <a href='#method.object_type' class='fnname'>object_type</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextTableFormat::objectType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#objectType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text format&#39;s object type.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#ObjectTypes-enum">ObjectTypes</a> and <a href="http://doc.qt.io/qt-5/qtextformat.html#setObjectType">setObjectType</a>().</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, rhs: &amp;<a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::operator==(const QTextFormat&amp; rhs) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is the same as the <i>other</i> text format.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, rhs: &amp;<a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextTableFormat::operator!=(const QTextFormat&amp; rhs) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is different from the <i>other</i> text format.</p></div></p>
+</div><h4 id='method.padding' class='method'><code>fn <a href='#method.padding' class='fnname'>padding</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextTableFormat::padding() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#padding">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the frame&#39;s internal padding in pixels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setPadding">setPadding</a>().</p></div></p>
+</div><h4 id='method.page_break_policy' class='method'><code>fn <a href='#method.page_break_policy' class='fnname'>page_break_policy</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/text_format/enum.PageBreakFlag.html' title='qt_gui::text_format::PageBreakFlag'>PageBreakFlag</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QTextFormat::PageBreakFlag&gt; QTextTableFormat::pageBreakPolicy() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#pageBreakPolicy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the currently set page break policy for the frame/table. The default is <a href="http://doc.qt.io/qt-5/qtextformat.html#PageBreakFlag-enum">QTextFormat::PageBreak_Auto</a>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setPageBreakPolicy">setPageBreakPolicy</a>().</p></div></p>
+</div><h4 id='method.pen_property' class='method'><code>fn <a href='#method.pen_property' class='fnname'>pen_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatPenPropertyArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatPenPropertyArgs'>TextTableFormatPenPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::penProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn pen_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pen::Pen&gt;</code><br>2) <code>fn pen_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::pen::Pen</code><br>
+C++ method: <span style='color: green;'><code>QPen QTextTableFormat::penProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#penProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>; if the property isn&#39;t of QVariant::Pen type, <a href="http://doc.qt.io/qt-5/qt.html#PenStyle-enum">Qt::NoPen</a> is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.position' class='method'><code>fn <a href='#method.position' class='fnname'>position</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/text_frame_format/enum.Position.html' title='qt_gui::text_frame_format::Position'>Position</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFrameFormat::Position QTextTableFormat::position() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#position">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the positioning policy for frames with this frame format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setPosition">setPosition</a>().</p></div></p>
+</div><h4 id='method.properties' class='method'><code>fn <a href='#method.properties' class='fnname'>properties</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatPropertiesArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatPropertiesArgs'>TextTableFormatPropertiesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::properties</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn properties(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::map::MapCIntVariantRef&gt;</code><br>2) <code>fn properties(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::map::MapCIntVariantRef</code><br>
+C++ method: <span style='color: green;'><code>QMap&lt;int, QVariant&gt; QTextTableFormat::properties() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#properties">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a map with all properties of this text format.</p></div></p>
+</div><h4 id='method.property' class='method'><code>fn <a href='#method.property' class='fnname'>property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatPropertyArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatPropertyArgs'>TextTableFormatPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::property</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QTextTableFormat::property(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#property">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the property specified by the given <i>propertyId</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>() and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.property_count' class='method'><code>fn <a href='#method.property_count' class='fnname'>property_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextTableFormat::propertyCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#propertyCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of properties stored in the format.</p>
+<p>This function was introduced in  Qt 4.3.</p></div></p>
+</div><h4 id='method.right_margin' class='method'><code>fn <a href='#method.right_margin' class='fnname'>right_margin</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextTableFormat::rightMargin() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#rightMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the frame&#39;s right margin in pixels.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setRightMargin">setRightMargin</a>().</p></div></p>
+</div><h4 id='method.set_alignment' class='method'><code>fn <a href='#method.set_alignment' class='fnname'>set_alignment</a>(&amp;mut self, alignment: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.AlignmentFlag.html' title='qt_core::qt::AlignmentFlag'>AlignmentFlag</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setAlignment(QFlags&lt;Qt::AlignmentFlag&gt; alignment)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#setAlignment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the table&#39;s <i>alignment</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#alignment">alignment</a>().</p></div></p>
+</div><h4 id='method.set_background' class='method'><code>fn <a href='#method.set_background' class='fnname'>set_background</a>(&amp;mut self, brush: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setBackground(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setBackground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the brush use to paint the document&#39;s background to the <i>brush</i> specified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#background">background</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#clearBackground">clearBackground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#setForeground">setForeground</a>().</p></div></p>
+</div><h4 id='method.set_border' class='method'><code>fn <a href='#method.set_border' class='fnname'>set_border</a>(&amp;mut self, border: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setBorder(double border)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setBorder">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>width</i> (in pixels) of the frame&#39;s border.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#border">border</a>().</p></div></p>
+</div><h4 id='method.set_border_brush' class='method'><code>fn <a href='#method.set_border_brush' class='fnname'>set_border_brush</a>(&amp;mut self, brush: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setBorderBrush(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setBorderBrush">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>brush</i> used for the frame&#39;s border.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#borderBrush">borderBrush</a>().</p></div></p>
+</div><h4 id='method.set_border_style' class='method'><code>fn <a href='#method.set_border_style' class='fnname'>set_border_style</a>(&amp;mut self, style: <a class='enum' href='../../qt_gui/text_frame_format/enum.BorderStyle.html' title='qt_gui::text_frame_format::BorderStyle'>BorderStyle</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setBorderStyle(QTextFrameFormat::BorderStyle style)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setBorderStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>style</i> of the frame&#39;s border.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#borderStyle">borderStyle</a>().</p></div></p>
+</div><h4 id='method.set_bottom_margin' class='method'><code>fn <a href='#method.set_bottom_margin' class='fnname'>set_bottom_margin</a>(&amp;mut self, margin: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setBottomMargin(double margin)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setBottomMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the frame&#39;s bottom <i>margin</i> in pixels.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#bottomMargin">bottomMargin</a>().</p></div></p>
+</div><h4 id='method.set_cell_padding' class='method'><code>fn <a href='#method.set_cell_padding' class='fnname'>set_cell_padding</a>(&amp;mut self, padding: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setCellPadding(double padding)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#setCellPadding">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the cell <i>padding</i> for the table. This determines the distance between the border of a cell and its contents.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#cellPadding">cellPadding</a>().</p></div></p>
+</div><h4 id='method.set_cell_spacing' class='method'><code>fn <a href='#method.set_cell_spacing' class='fnname'>set_cell_spacing</a>(&amp;mut self, spacing: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setCellSpacing(double spacing)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#setCellSpacing">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the cell <i>spacing</i> for the table. This determines the distance between adjacent cells.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#cellSpacing">cellSpacing</a>().</p></div></p>
+</div><h4 id='method.set_column_width_constraints' class='method'><code>fn <a href='#method.set_column_width_constraints' class='fnname'>set_column_width_constraints</a>(&amp;mut self, constraints: &amp;<a class='struct' href='../../qt_gui/vector/struct.VectorTextLengthRef.html' title='qt_gui::vector::VectorTextLengthRef'>VectorTextLengthRef</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setColumnWidthConstraints(const QVector&lt;QTextLength&gt;&amp; constraints)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#setColumnWidthConstraints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the column width <i>constraints</i> for the table.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#columnWidthConstraints">columnWidthConstraints</a>() and <a href="http://doc.qt.io/qt-5/qtexttableformat.html#clearColumnWidthConstraints">clearColumnWidthConstraints</a>().</p></div></p>
+</div><h4 id='method.set_columns' class='method'><code>fn <a href='#method.set_columns' class='fnname'>set_columns</a>(&amp;mut self, columns: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setColumns(int columns)</code></span></p>
+</div><h4 id='method.set_foreground' class='method'><code>fn <a href='#method.set_foreground' class='fnname'>set_foreground</a>(&amp;mut self, brush: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setForeground(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setForeground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the foreground brush to the specified <i>brush</i>. The foreground brush is mostly used to render text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#foreground">foreground</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#clearForeground">clearForeground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#setBackground">setBackground</a>().</p></div></p>
+</div><h4 id='method.set_header_row_count' class='method'><code>fn <a href='#method.set_header_row_count' class='fnname'>set_header_row_count</a>(&amp;mut self, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setHeaderRowCount(int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtexttableformat.html#setHeaderRowCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Declares the first <i>count</i> rows of the table as table header. The table header rows get repeated when a table is broken across a page boundary.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtexttableformat.html#headerRowCount">headerRowCount</a>().</p></div></p>
+</div><h4 id='method.set_height' class='method'><code>fn <a href='#method.set_height' class='fnname'>set_height</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatSetHeightArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatSetHeightArgs'>TextTableFormatSetHeightArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::setHeight</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_height(&amp;mut self, &amp;::text_length::TextLength) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextTableFormat::setHeight(const QTextLength&amp; height)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the frame&#39;s <i>height</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#height">height</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_height(&amp;mut self, libc::c_double) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextTableFormat::setHeight(double height)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setHeight-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the frame&#39;s <i>height</i>.</p></div></p>
+</div><h4 id='method.set_layout_direction' class='method'><code>fn <a href='#method.set_layout_direction' class='fnname'>set_layout_direction</a>(&amp;mut self, direction: <a class='enum' href='../../qt_core/qt/enum.LayoutDirection.html' title='qt_core::qt::LayoutDirection'>LayoutDirection</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setLayoutDirection(Qt::LayoutDirection direction)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setLayoutDirection">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the document&#39;s layout direction to the specified <i>direction</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#layoutDirection">layoutDirection</a>().</p></div></p>
+</div><h4 id='method.set_left_margin' class='method'><code>fn <a href='#method.set_left_margin' class='fnname'>set_left_margin</a>(&amp;mut self, margin: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setLeftMargin(double margin)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setLeftMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the frame&#39;s left <i>margin</i> in pixels.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#leftMargin">leftMargin</a>().</p></div></p>
+</div><h4 id='method.set_margin' class='method'><code>fn <a href='#method.set_margin' class='fnname'>set_margin</a>(&amp;mut self, margin: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setMargin(double margin)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the frame&#39;s <i>margin</i> in pixels. This method also sets the left, right, top and bottom margins of the frame to the same value. The individual margins override the general margin.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#margin">margin</a>().</p></div></p>
+</div><h4 id='method.set_object_index' class='method'><code>fn <a href='#method.set_object_index' class='fnname'>set_object_index</a>(&amp;mut self, object: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setObjectIndex(int object)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setObjectIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the format object&#39;s object <i>index</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#objectIndex">objectIndex</a>().</p></div></p>
+</div><h4 id='method.set_object_type' class='method'><code>fn <a href='#method.set_object_type' class='fnname'>set_object_type</a>(&amp;mut self, type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setObjectType(int type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setObjectType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the text format&#39;s object type to <i>type</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#ObjectTypes-enum">ObjectTypes</a> and <a href="http://doc.qt.io/qt-5/qtextformat.html#objectType">objectType</a>().</p></div></p>
+</div><h4 id='method.set_padding' class='method'><code>fn <a href='#method.set_padding' class='fnname'>set_padding</a>(&amp;mut self, padding: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setPadding(double padding)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setPadding">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>width</i> of the frame&#39;s internal padding in pixels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#padding">padding</a>().</p></div></p>
+</div><h4 id='method.set_page_break_policy' class='method'><code>fn <a href='#method.set_page_break_policy' class='fnname'>set_page_break_policy</a>(&amp;mut self, flags: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/text_format/enum.PageBreakFlag.html' title='qt_gui::text_format::PageBreakFlag'>PageBreakFlag</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setPageBreakPolicy(QFlags&lt;QTextFormat::PageBreakFlag&gt; flags)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setPageBreakPolicy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the page break policy for the frame/table to <i>policy</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#pageBreakPolicy">pageBreakPolicy</a>().</p></div></p>
+</div><h4 id='method.set_position' class='method'><code>fn <a href='#method.set_position' class='fnname'>set_position</a>(&amp;mut self, f: <a class='enum' href='../../qt_gui/text_frame_format/enum.Position.html' title='qt_gui::text_frame_format::Position'>Position</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setPosition(QTextFrameFormat::Position f)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>policy</i> for positioning frames with this frame format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#position">position</a>().</p></div></p>
+</div><h4 id='method.set_property' class='method'><code>fn <a href='#method.set_property' class='fnname'>set_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatSetPropertyArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatSetPropertyArgs'>TextTableFormatSetPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::setProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_property(&amp;mut self, (libc::c_int, &amp;qt_core::variant::Variant)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextTableFormat::setProperty(int propertyId, const QVariant&amp; value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the property specified by the <i>propertyId</i> to the given <i>value</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#property">property</a>() and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_property(&amp;mut self, (libc::c_int, &amp;::vector::VectorTextLengthRef)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextTableFormat::setProperty(int propertyId, const QVector&lt;QTextLength&gt;&amp; lengths)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the value of the property given by <i>propertyId</i> to <i>value</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>() and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.set_right_margin' class='method'><code>fn <a href='#method.set_right_margin' class='fnname'>set_right_margin</a>(&amp;mut self, margin: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setRightMargin(double margin)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setRightMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the frame&#39;s right <i>margin</i> in pixels.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#rightMargin">rightMargin</a>().</p></div></p>
+</div><h4 id='method.set_top_margin' class='method'><code>fn <a href='#method.set_top_margin' class='fnname'>set_top_margin</a>(&amp;mut self, margin: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::setTopMargin(double margin)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setTopMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the frame&#39;s top <i>margin</i> in pixels.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#topMargin">topMargin</a>().</p></div></p>
+</div><h4 id='method.set_width' class='method'><code>fn <a href='#method.set_width' class='fnname'>set_width</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatSetWidthArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatSetWidthArgs'>TextTableFormatSetWidthArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::setWidth</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_width(&amp;mut self, &amp;::text_length::TextLength) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextTableFormat::setWidth(const QTextLength&amp; length)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the frame&#39;s border rectangle&#39;s <i>width</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#width">width</a>() and <a href="http://doc.qt.io/qt-5/qtextlength.html">QTextLength</a>.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_width(&amp;mut self, libc::c_double) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextTableFormat::setWidth(double width)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setWidth-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Convenience method that sets the width of the frame&#39;s border rectangle&#39;s width to the specified fixed <i>width</i>.</p></div></p>
+</div><h4 id='method.string_property' class='method'><code>fn <a href='#method.string_property' class='fnname'>string_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatStringPropertyArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatStringPropertyArgs'>TextTableFormatStringPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::stringProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn string_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn string_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextTableFormat::stringProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>; if the property isn&#39;t of QVariant::String type, an empty string is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextTableFormat::swap(QTextFormat&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this text format with <i>other</i>. This function is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.to_block_format' class='method'><code>fn <a href='#method.to_block_format' class='fnname'>to_block_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatToBlockFormatArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatToBlockFormatArgs'>TextTableFormatToBlockFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::toBlockFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_block_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_block_format::TextBlockFormat&gt;</code><br>2) <code>fn to_block_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_block_format::TextBlockFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextBlockFormat QTextTableFormat::toBlockFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toBlockFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a block format.</p></div></p>
+</div><h4 id='method.to_char_format' class='method'><code>fn <a href='#method.to_char_format' class='fnname'>to_char_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatToCharFormatArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatToCharFormatArgs'>TextTableFormatToCharFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::toCharFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_char_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_char_format::TextCharFormat&gt;</code><br>2) <code>fn to_char_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_char_format::TextCharFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextCharFormat QTextTableFormat::toCharFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toCharFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a character format.</p></div></p>
+</div><h4 id='method.to_frame_format' class='method'><code>fn <a href='#method.to_frame_format' class='fnname'>to_frame_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatToFrameFormatArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatToFrameFormatArgs'>TextTableFormatToFrameFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::toFrameFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_frame_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_frame_format::TextFrameFormat&gt;</code><br>2) <code>fn to_frame_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_frame_format::TextFrameFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextFrameFormat QTextTableFormat::toFrameFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toFrameFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a frame format.</p></div></p>
+</div><h4 id='method.to_image_format' class='method'><code>fn <a href='#method.to_image_format' class='fnname'>to_image_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatToImageFormatArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatToImageFormatArgs'>TextTableFormatToImageFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::toImageFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_image_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_image_format::TextImageFormat&gt;</code><br>2) <code>fn to_image_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_image_format::TextImageFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextImageFormat QTextTableFormat::toImageFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toImageFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as an image format.</p></div></p>
+</div><h4 id='method.to_list_format' class='method'><code>fn <a href='#method.to_list_format' class='fnname'>to_list_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatToListFormatArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatToListFormatArgs'>TextTableFormatToListFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::toListFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_list_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_list_format::TextListFormat&gt;</code><br>2) <code>fn to_list_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_list_format::TextListFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextListFormat QTextTableFormat::toListFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toListFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a list format.</p></div></p>
+</div><h4 id='method.to_table_cell_format' class='method'><code>fn <a href='#method.to_table_cell_format' class='fnname'>to_table_cell_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatToTableCellFormatArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatToTableCellFormatArgs'>TextTableFormatToTableCellFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::toTableCellFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_table_cell_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_table_cell_format::TextTableCellFormat&gt;</code><br>2) <code>fn to_table_cell_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_table_cell_format::TextTableCellFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextTableCellFormat QTextTableFormat::toTableCellFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toTableCellFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a table cell format.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.to_table_format' class='method'><code>fn <a href='#method.to_table_format' class='fnname'>to_table_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatToTableFormatArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatToTableFormatArgs'>TextTableFormatToTableFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::toTableFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_table_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_table_format::TextTableFormat&gt;</code><br>2) <code>fn to_table_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_table_format::TextTableFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextTableFormat QTextTableFormat::toTableFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toTableFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a table format.</p></div></p>
+</div><h4 id='method.top_margin' class='method'><code>fn <a href='#method.top_margin' class='fnname'>top_margin</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextTableFormat::topMargin() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#topMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the frame&#39;s top margin in pixels.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setTopMargin">setTopMargin</a>().</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextTableFormat::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type of this format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#FormatType-enum">FormatType</a>.</p></div></p>
+</div><h4 id='method.width' class='method'><code>fn <a href='#method.width' class='fnname'>width</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_table_format/overloading/trait.TextTableFormatWidthArgs.html' title='qt_gui::text_table_format::overloading::TextTableFormatWidthArgs'>TextTableFormatWidthArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextTableFormat::width</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn width(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_length::TextLength&gt;</code><br>2) <code>fn width(&amp;self, cpp_utils::AsStruct) -&gt; ::text_length::TextLength</code><br>
+C++ method: <span style='color: green;'><code>QTextLength QTextTableFormat::width() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextframeformat.html#width">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the frame&#39;s border rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextframeformat.html#setWidth">setWidth</a>() and <a href="http://doc.qt.io/qt-5/qtextlength.html">QTextLength</a>.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/text_table_format/struct.TextTableFormat.html' title='qt_gui::text_table_format::TextTableFormat'>TextTableFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167673' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_table_format.rs.html#17-21' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/text_table_format/struct.TextTableFormat.html' title='qt_gui::text_table_format::TextTableFormat'>TextTableFormat</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/text_table_format/struct.TextTableFormat.html' title='qt_gui::text_table_format::TextTableFormat'>TextTableFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167963' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_table_format.rs.html#991-998' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QTextTableFormat::~QTextTableFormat()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/text_table_format/struct.TextTableFormat.html' title='qt_gui::text_table_format::TextTableFormat'>TextTableFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167966' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_table_format.rs.html#1000-1004' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

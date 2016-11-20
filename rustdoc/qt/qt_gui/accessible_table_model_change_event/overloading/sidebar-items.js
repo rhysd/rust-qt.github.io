@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["AccessibleTableModelChangeEventNewArgs","This trait represents a set of arguments accepted by AccessibleTableModelChangeEvent::new method."]]});

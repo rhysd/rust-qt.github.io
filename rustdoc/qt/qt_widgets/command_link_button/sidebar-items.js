@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["CommandLinkButton","C++ type: <span style='color: green;'>```QCommandLinkButton```</span>"]]});

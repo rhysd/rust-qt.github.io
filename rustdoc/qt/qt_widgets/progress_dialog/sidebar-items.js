@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ProgressDialog","C++ type: <span style='color: green;'>```QProgressDialog```</span>"]]});

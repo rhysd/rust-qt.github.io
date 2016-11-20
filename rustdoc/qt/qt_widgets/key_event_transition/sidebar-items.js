@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["KeyEventTransition","C++ type: <span style='color: green;'>```QKeyEventTransition```</span>"]]});

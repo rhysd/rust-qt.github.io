@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MetaType` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MetaType">
+
+    <title>qt_core::meta_type::MetaType - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>meta_type</a></p><script>window.sidebarCurrent = {name: 'MetaType', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>meta_type</a>::<wbr><a class='struct' href=''>MetaType</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-109188' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/meta_type.rs.html#19-21' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct MetaType {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QMetaType</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qmetatype.html">QMetaType</a> class manages named types in the meta-object system.</p>
+<p>The class is used as a helper to marshall types in <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QVariant</a> and in queued signals and slots connections. It associates a type name to a type so that it can be created and destructed dynamically at run-time. Declare new types with <a href="http://doc.qt.io/qt-5/qmetatype.html#Q_DECLARE_METATYPE">Q_DECLARE_METATYPE</a>() to make them available to <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QVariant</a> and other template-based functions. Call <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>() to make types available to non-template based functions, such as the queued signal and slot connections.</p>
+<p>Any class or struct that has a public default constructor, a public copy constructor, and a public destructor can be registered.</p>
+<p>The following code allocates and destructs an instance of <code>MyClass</code>:</p>
+<pre class="cpp"><span class="type">int</span> id <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qmetatype.html#QMetaType">QMetaType</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qmetatype.html#type">type</a>(<span class="string">&quot;MyClass&quot;</span>);
+<span class="keyword">if</span> (id <span class="operator">!</span><span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qmetatype.html#QMetaType">QMetaType</a></span><span class="operator">::</span>UnknownType) {
+&#32;   <span class="type">void</span> <span class="operator">*</span>myClassPtr <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qmetatype.html#QMetaType">QMetaType</a></span><span class="operator">::</span>create(id);
+&#32;   <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qmetatype.html#QMetaType">QMetaType</a></span><span class="operator">::</span>destroy(id<span class="operator">,</span> myClassPtr);
+&#32;   myClassPtr <span class="operator">=</span> <span class="number">0</span>;
+}</pre>
+<p>If we want the stream operators <code>operator&lt;&lt;()</code> and <code>operator&gt;&gt;()</code> to work on <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QVariant</a> objects that store custom types, the custom type must provide <code>operator&lt;&lt;()</code> and <code>operator&gt;&gt;()</code> operators.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/meta_type/struct.MetaType.html' title='qt_core::meta_type::MetaType'>MetaType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-109193' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/meta_type.rs.html#29-423' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.compare' class='method'><code>fn <a href='#method.compare' class='fnname'>compare</a>(lhs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, rhs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, result: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::compare(const void* lhs, const void* rhs, int typeId, int* result)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#compare">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares the objects at <i>lhs</i> and <i>rhs</i>. Both objects need to be of type <i>typeId</i>. <i>result</i> is set to less than, equal to or greater than zero, if <i>lhs</i> is less than, equal to or greater than <i>rhs</i>. Returns <code>true</code>, if the comparison succeeded, otherwise <code>false</code>.</p>
+<p>This function was introduced in  Qt 5.2.</p></div></p>
+</div><h4 id='method.construct' class='method'><code>fn <a href='#method.construct' class='fnname'>construct</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_type/overloading/trait.MetaTypeConstructArgs.html' title='qt_core::meta_type::overloading::MetaTypeConstructArgs'>MetaTypeConstructArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaType::construct</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn construct(&amp;self, *mut libc::c_void) -&gt; *mut libc::c_void</code><br>2) <code>fn construct(&amp;self, (*mut libc::c_void, *const libc::c_void)) -&gt; *mut libc::c_void</code><br>
+C++ method: <span style='color: green;'><code>void* QMetaType::construct(void* where, const void* copy = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#construct-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Constructs a value of the type that this <a href="http://doc.qt.io/qt-5/qmetatype.html">QMetaType</a> instance was constructed for in the existing memory addressed by <i>where</i>, that is a copy of <i>copy</i>, and returns <i>where</i>. If <i>copy</i> is zero, the value is default constructed.</p>
+<p>This is a low-level function for explicitly managing the memory used to store the type. Consider calling <a href="http://doc.qt.io/qt-5/qmetatype.html#create">create</a>() if you don&#39;t need this level of control (that is, use &quot;new&quot; rather than &quot;placement new&quot;).</p>
+<p>You must ensure that <i>where</i> points to a location where the new value can be stored and that <i>where</i> is suitably aligned. The type&#39;s size can be queried by calling <a href="http://doc.qt.io/qt-5/qmetatype.html#sizeOf">sizeOf</a>().</p>
+<p>The rule of thumb for alignment is that a type is aligned to its natural boundary, which is the smallest power of 2 that is bigger than the type, unless that alignment is larger than the maximum useful alignment for the platform. For practical purposes, alignment larger than 2 * sizeof(void*) is only necessary for special hardware instructions (e.g., aligned SSE loads and stores on x86).</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.construct_static' class='method'><code>fn <a href='#method.construct_static' class='fnname'>construct_static</a>(type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, where_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, copy: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void* QMetaType::construct(int type, void* where, const void* copy)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#construct">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Constructs a value of the given <i>type</i> in the existing memory addressed by <i>where</i>, that is a copy of <i>copy</i>, and returns <i>where</i>. If <i>copy</i> is zero, the value is default constructed.</p>
+<p>This is a low-level function for explicitly managing the memory used to store the type. Consider calling <a href="http://doc.qt.io/qt-5/qmetatype.html#create">create</a>() if you don&#39;t need this level of control (that is, use &quot;new&quot; rather than &quot;placement new&quot;).</p>
+<p>You must ensure that <i>where</i> points to a location that can store a value of type <i>type</i>, and that <i>where</i> is suitably aligned. The type&#39;s size can be queried by calling <a href="http://doc.qt.io/qt-5/qmetatype.html#sizeOf">sizeOf</a>().</p>
+<p>The rule of thumb for alignment is that a type is aligned to its natural boundary, which is the smallest power of 2 that is bigger than the type, unless that alignment is larger than the maximum useful alignment for the platform. For practical purposes, alignment larger than 2 * sizeof(void*) is only necessary for special hardware instructions (e.g., aligned SSE loads and stores on x86).</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#destruct">destruct</a>() and <a href="http://doc.qt.io/qt-5/qmetatype.html#sizeOf">sizeOf</a>().</p></div></p>
+</div><h4 id='method.convert' class='method'><code>fn <a href='#method.convert' class='fnname'>convert</a>(from: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, from_type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, to: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, to_type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::convert(const void* from, int fromTypeId, void* to, int toTypeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#convert">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the object at <i>from</i> from <i>fromTypeId</i> to the preallocated space at <i>to</i> typed <i>toTypeId</i>. Returns <code>true</code>, if the conversion succeeded, otherwise false.</p>
+<p>This function was introduced in  Qt 5.2.</p></div></p>
+</div><h4 id='method.create' class='method'><code>fn <a href='#method.create' class='fnname'>create</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_type/overloading/trait.MetaTypeCreateArgs.html' title='qt_core::meta_type::overloading::MetaTypeCreateArgs'>MetaTypeCreateArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaType::create</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn create(&amp;self, *const libc::c_void) -&gt; *mut libc::c_void</code><br>2) <code>fn create(&amp;self, ()) -&gt; *mut libc::c_void</code><br>
+C++ method: <span style='color: green;'><code>void* QMetaType::create(const void* copy = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#create-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of <i>copy</i>, assuming it is of the type that this <a href="http://doc.qt.io/qt-5/qmetatype.html">QMetaType</a> instance was created for. If <i>copy</i> is null, creates a default constructed instance.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#destroy">QMetaType::destroy</a>().</p></div></p>
+</div><h4 id='method.create_static' class='method'><code>fn <a href='#method.create_static' class='fnname'>create_static</a>&lt;Args&gt;(args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_type/overloading/trait.MetaTypeCreateStaticArgs.html' title='qt_core::meta_type::overloading::MetaTypeCreateStaticArgs'>MetaTypeCreateStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaType::create</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn create_static(libc::c_int) -&gt; *mut libc::c_void</code><br>2) <code>fn create_static((libc::c_int, *const libc::c_void)) -&gt; *mut libc::c_void</code><br>
+C++ method: <span style='color: green;'><code>static void* QMetaType::create(int type, const void* copy = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#create">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of <i>copy</i>, assuming it is of type <i>type</i>. If <i>copy</i> is zero, creates a default constructed instance.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#destroy">destroy</a>(), <a href="http://doc.qt.io/qt-5/qmetatype.html#isRegistered">isRegistered</a>(), and <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">Type</a>.</p></div></p>
+</div><h4 id='method.debug_stream' class='method'><code>fn <a href='#method.debug_stream' class='fnname'>debug_stream</a>(dbg: &amp;mut <a class='struct' href='../../qt_core/debug/struct.Debug.html' title='qt_core::debug::Debug'>Debug</a>, rhs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::debugStream(QDebug&amp; dbg, const void* rhs, int typeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#debugStream">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Streams the object at <i>rhs</i> of type <i>typeId</i> to the debug stream <i>dbg</i>. Returns <code>true</code> on success, otherwise false.</p>
+<p>This function was introduced in  Qt 5.2.</p></div></p>
+</div><h4 id='method.destroy' class='method'><code>fn <a href='#method.destroy' class='fnname'>destroy</a>(&amp;self, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QMetaType::destroy(void* data) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#destroy-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <i>data</i>, assuming it is of the type that this <a href="http://doc.qt.io/qt-5/qmetatype.html">QMetaType</a> instance was created for.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#create">QMetaType::create</a>().</p></div></p>
+</div><h4 id='method.destroy_static' class='method'><code>fn <a href='#method.destroy_static' class='fnname'>destroy_static</a>(type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QMetaType::destroy(int type, void* data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#destroy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <i>data</i>, assuming it is of the <i>type</i> given.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#create">create</a>(), <a href="http://doc.qt.io/qt-5/qmetatype.html#isRegistered">isRegistered</a>(), and <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">Type</a>.</p></div></p>
+</div><h4 id='method.destruct' class='method'><code>fn <a href='#method.destruct' class='fnname'>destruct</a>(&amp;self, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QMetaType::destruct(void* data) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#destruct-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructs the value, located at <i>data</i>, assuming that it is of the type for which this <a href="http://doc.qt.io/qt-5/qmetatype.html">QMetaType</a> instance was constructed for.</p>
+<p>Unlike <a href="http://doc.qt.io/qt-5/qmetatype.html#destroy">destroy</a>(), this function only invokes the type&#39;s destructor, it doesn&#39;t invoke the delete operator.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#construct">QMetaType::construct</a>().</p></div></p>
+</div><h4 id='method.destruct_static' class='method'><code>fn <a href='#method.destruct_static' class='fnname'>destruct_static</a>(type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, where_: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QMetaType::destruct(int type, void* where)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#destruct">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructs the value of the given <i>type</i>, located at <i>where</i>.</p>
+<p>Unlike <a href="http://doc.qt.io/qt-5/qmetatype.html#destroy">destroy</a>(), this function only invokes the type&#39;s destructor, it doesn&#39;t invoke the delete operator.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#construct">construct</a>().</p></div></p>
+</div><h4 id='method.equals' class='method'><code>fn <a href='#method.equals' class='fnname'>equals</a>(lhs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, rhs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, result: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::equals(const void* lhs, const void* rhs, int typeId, int* result)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#equals">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares the objects at <i>lhs</i> and <i>rhs</i>. Both objects need to be of type <i>typeId</i>. <i>result</i> is set to zero, if <i>lhs</i> equals to rhs. Returns <code>true</code>, if the comparison succeeded, otherwise <code>false</code>.</p>
+<p>This function was introduced in  Qt 5.5.</p></div></p>
+</div><h4 id='method.flags' class='method'><code>fn <a href='#method.flags' class='fnname'>flags</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/meta_type/enum.TypeFlag.html' title='qt_core::meta_type::TypeFlag'>TypeFlag</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QMetaType::TypeFlag&gt; QMetaType::flags() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#flags">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns flags of the type for which this <a href="http://doc.qt.io/qt-5/qmetatype.html">QMetaType</a> instance was constructed.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#TypeFlag-enum">QMetaType::TypeFlags</a> and <a href="http://doc.qt.io/qt-5/qmetatype.html#typeFlags">QMetaType::typeFlags</a>().</p></div></p>
+</div><h4 id='method.has_registered_comparators' class='method'><code>fn <a href='#method.has_registered_comparators' class='fnname'>has_registered_comparators</a>(type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::hasRegisteredComparators(int typeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#hasRegisteredComparators-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code>, if the meta type system has registered comparators for type id <i>typeId</i>.</p>
+<p>This function was introduced in  Qt 5.2.</p></div></p>
+</div><h4 id='method.has_registered_converter_function' class='method'><code>fn <a href='#method.has_registered_converter_function' class='fnname'>has_registered_converter_function</a>(from_type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, to_type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::hasRegisteredConverterFunction(int fromTypeId, int toTypeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#hasRegisteredConverterFunction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code>, if the meta type system has a registered conversion from meta type id <i>fromTypeId</i> to <i>toTypeId</i></p>
+<p>This function was introduced in  Qt 5.2.</p></div></p>
+</div><h4 id='method.has_registered_debug_stream_operator' class='method'><code>fn <a href='#method.has_registered_debug_stream_operator' class='fnname'>has_registered_debug_stream_operator</a>(type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::hasRegisteredDebugStreamOperator(int typeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#hasRegisteredDebugStreamOperator-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code>, if the meta type system has a registered debug stream operator for type id <i>typeId</i>.</p>
+<p>This function was introduced in  Qt 5.2.</p></div></p>
+</div><h4 id='method.is_registered' class='method'><code>fn <a href='#method.is_registered' class='fnname'>is_registered</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QMetaType::isRegistered() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#isRegistered-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this <a href="http://doc.qt.io/qt-5/qmetatype.html">QMetaType</a> object contains valid information about a type, false otherwise.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.is_registered_static' class='method'><code>fn <a href='#method.is_registered_static' class='fnname'>is_registered_static</a>(type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::isRegistered(int type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#isRegistered">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the datatype with ID <i>type</i> is registered; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#type">type</a>(), <a href="http://doc.qt.io/qt-5/qmetatype.html#typeName">typeName</a>(), and <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">Type</a>.</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QMetaType::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this <a href="http://doc.qt.io/qt-5/qmetatype.html">QMetaType</a> object contains valid information about a type, false otherwise.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.load' class='method'><code>fn <a href='#method.load' class='fnname'>load</a>(stream: &amp;mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a>, type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::load(QDataStream&amp; stream, int type, void* data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#load">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads the object of the specified <i>type</i> from the given <i>stream</i> into <i>data</i>. Returns <code>true</code> if the object is loaded successfully; otherwise returns <code>false</code>.</p>
+<p>The type must have been registered with <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>() and <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaTypeStreamOperators">qRegisterMetaTypeStreamOperators</a>() beforehand.</p>
+<p>Normally, you should not need to call this function directly. Instead, use <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QVariant</a>&#39;s <code>operator&gt;&gt;()</code>, which relies on load() to stream custom types.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#save">save</a>() and <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaTypeStreamOperators">qRegisterMetaTypeStreamOperators</a>().</p></div></p>
+</div><h4 id='method.meta_object' class='method'><code>fn <a href='#method.meta_object' class='fnname'>meta_object</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/meta_object/struct.MetaObject.html' title='qt_core::meta_object::MetaObject'>MetaObject</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QMetaObject* QMetaType::metaObject() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#metaObject">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>return a <a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a> relative to this type.</p>
+<p>If the type is a pointer type to a subclass of <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#flags">flags</a>() contains <a href="http://doc.qt.io/qt-5/qmetatype.html#TypeFlag-enum">QMetaType::PointerToQObject</a> and this function returns the corresponding <a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a>. This can be used to in combinaison with QMetaObject::construct to create <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> of this type.</p>
+<p>If the type is a <a href="http://doc.qt.io/qt-5/qobject.html#Q_GADGET">Q_GADGET</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#flags">flags</a>() contains <a href="http://doc.qt.io/qt-5/qmetatype.html#TypeFlag-enum">QMetaType::IsGadget</a>, and this function returns its <a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a>. This can be used to retrieve <a href="http://doc.qt.io/qt-5/qmetamethod.html">QMetaMethod</a> and <a href="http://doc.qt.io/qt-5/qmetaproperty.html">QMetaProperty</a> and use them on a pointer of this type. (given by QVariant::data for example)</p>
+<p>If the type is an enumeration, <a href="http://doc.qt.io/qt-5/qmetatype.html#flags">flags</a>() contains <a href="http://doc.qt.io/qt-5/qmetatype.html#TypeFlag-enum">QMetaType::IsEnumeration</a>, and this function returns the <a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a> of the enclosing object if the enum was registered as a <a href="http://doc.qt.io/qt-5/qobject.html#Q_ENUM">Q_ENUM</a> or 0 otherwise</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#metaObjectForType">QMetaType::metaObjectForType</a>() and <a href="http://doc.qt.io/qt-5/qmetatype.html#flags">QMetaType::flags</a>().</p></div></p>
+</div><h4 id='method.meta_object_for_type' class='method'><code>fn <a href='#method.meta_object_for_type' class='fnname'>meta_object_for_type</a>(type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/meta_object/struct.MetaObject.html' title='qt_core::meta_object::MetaObject'>MetaObject</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static const QMetaObject* QMetaType::metaObjectForType(int type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#metaObjectForType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>returns <a href="http://doc.qt.io/qt-5/qmetatype.html#metaObject">QMetaType::metaObject</a> for <i>type</i></p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#metaObject">metaObject</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_type/overloading/trait.MetaTypeNewArgs.html' title='qt_core::meta_type::overloading::MetaTypeNewArgs'>MetaTypeNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaType::QMetaType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, cpp_utils::AsStruct)) -&gt; ::meta_type::MetaType</code><br>2) <code>fn new((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::meta_type::MetaType&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QMetaType::QMetaType(const int type)</code></span></p>
+</div><h4 id='method.register_normalized_type' class='method'><code>fn <a href='#method.register_normalized_type' class='fnname'>register_normalized_type</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_type/overloading/trait.MetaTypeRegisterNormalizedTypeArgs.html' title='qt_core::meta_type::overloading::MetaTypeRegisterNormalizedTypeArgs'>MetaTypeRegisterNormalizedTypeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaType::registerNormalizedType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn register_normalized_type((&amp;::byte_array::ByteArray, extern &quot;C&quot; fn(*mut libc::c_void), extern &quot;C&quot; fn(*const libc::c_void) -&gt; *mut libc::c_void, extern &quot;C&quot; fn(*mut libc::c_void), extern &quot;C&quot; fn(*mut libc::c_void, *const libc::c_void) -&gt; *mut libc::c_void, libc::c_int, ::flags::Flags&lt;::meta_type::TypeFlag&gt;, *const ::meta_object::MetaObject)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QMetaType::registerNormalizedType(const QByteArray&amp; normalizedTypeName, void (*FN_PTR)(void*) deleter, void* (*FN_PTR)(const void*) creator, void (*FN_PTR)(void*) destructor, void* (*FN_PTR)(void*, const void*) constructor, int size, QFlags&lt;QMetaType::TypeFlag&gt; flags, const QMetaObject* metaObject)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn register_normalized_type((&amp;::byte_array::ByteArray, extern &quot;C&quot; fn(*mut libc::c_void), extern &quot;C&quot; fn(*mut libc::c_void, *const libc::c_void) -&gt; *mut libc::c_void, libc::c_int, ::flags::Flags&lt;::meta_type::TypeFlag&gt;, *const ::meta_object::MetaObject)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QMetaType::registerNormalizedType(const QByteArray&amp; normalizedTypeName, void (*FN_PTR)(void*) destructor, void* (*FN_PTR)(void*, const void*) constructor, int size, QFlags&lt;QMetaType::TypeFlag&gt; flags, const QMetaObject* metaObject)</code></span></p>
+</div><h4 id='method.register_normalized_typedef' class='method'><code>fn <a href='#method.register_normalized_typedef' class='fnname'>register_normalized_typedef</a>(normalized_type_name: &amp;<a class='struct' href='../../qt_core/byte_array/struct.ByteArray.html' title='qt_core::byte_array::ByteArray'>ByteArray</a>, alias_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static int QMetaType::registerNormalizedTypedef(const QByteArray&amp; normalizedTypeName, int aliasId)</code></span></p>
+</div><h4 id='method.register_type' class='method'><code>fn <a href='#method.register_type' class='fnname'>register_type</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_type/overloading/trait.MetaTypeRegisterTypeArgs.html' title='qt_core::meta_type::overloading::MetaTypeRegisterTypeArgs'>MetaTypeRegisterTypeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaType::registerType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn register_type((*const libc::c_char, extern &quot;C&quot; fn(*mut libc::c_void), extern &quot;C&quot; fn(*const libc::c_void) -&gt; *mut libc::c_void)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QMetaType::registerType(const char* typeName, void (*FN_PTR)(void*) deleter, void* (*FN_PTR)(const void*) creator)</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn register_type((*const libc::c_char, extern &quot;C&quot; fn(*mut libc::c_void), extern &quot;C&quot; fn(*const libc::c_void) -&gt; *mut libc::c_void, extern &quot;C&quot; fn(*mut libc::c_void), extern &quot;C&quot; fn(*mut libc::c_void, *const libc::c_void) -&gt; *mut libc::c_void, libc::c_int, ::flags::Flags&lt;::meta_type::TypeFlag&gt;, *const ::meta_object::MetaObject)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QMetaType::registerType(const char* typeName, void (*FN_PTR)(void*) deleter, void* (*FN_PTR)(const void*) creator, void (*FN_PTR)(void*) destructor, void* (*FN_PTR)(void*, const void*) constructor, int size, QFlags&lt;QMetaType::TypeFlag&gt; flags, const QMetaObject* metaObject)</code></span></p>
+</div><h4 id='method.register_typedef' class='method'><code>fn <a href='#method.register_typedef' class='fnname'>register_typedef</a>(type_name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>, alias_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static int QMetaType::registerTypedef(const char* typeName, int aliasId)</code></span></p>
+</div><h4 id='method.save' class='method'><code>fn <a href='#method.save' class='fnname'>save</a>(stream: &amp;mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a>, type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::save(QDataStream&amp; stream, int type, const void* data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#save">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the object pointed to by <i>data</i> with the ID <i>type</i> to the given <i>stream</i>. Returns <code>true</code> if the object is saved successfully; otherwise returns <code>false</code>.</p>
+<p>The type must have been registered with <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>() and <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaTypeStreamOperators">qRegisterMetaTypeStreamOperators</a>() beforehand.</p>
+<p>Normally, you should not need to call this function directly. Instead, use <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QVariant</a>&#39;s <code>operator&lt;&lt;()</code>, which relies on save() to stream custom types.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#load">load</a>() and <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaTypeStreamOperators">qRegisterMetaTypeStreamOperators</a>().</p></div></p>
+</div><h4 id='method.size_of' class='method'><code>fn <a href='#method.size_of' class='fnname'>size_of</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaType::sizeOf() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#sizeOf-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the type in bytes (i.e. sizeof(T), where T is the actual type for which this <a href="http://doc.qt.io/qt-5/qmetatype.html">QMetaType</a> instance was constructed for).</p>
+<p>This function is typically used together with <a href="http://doc.qt.io/qt-5/qmetatype.html#construct">construct</a>() to perform low-level management of the memory used by a type.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#construct">QMetaType::construct</a>() and <a href="http://doc.qt.io/qt-5/qmetatype.html#sizeOf">QMetaType::sizeOf</a>().</p></div></p>
+</div><h4 id='method.size_of_static' class='method'><code>fn <a href='#method.size_of_static' class='fnname'>size_of_static</a>(type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static int QMetaType::sizeOf(int type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#sizeOf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the given <i>type</i> in bytes (i.e. sizeof(T), where T is the actual type identified by the <i>type</i> argument).</p>
+<p>This function is typically used together with <a href="http://doc.qt.io/qt-5/qmetatype.html#construct">construct</a>() to perform low-level management of the memory used by a type.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#construct">construct</a>().</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_type/overloading/trait.MetaTypeTypeArgs.html' title='qt_core::meta_type::overloading::MetaTypeTypeArgs'>MetaTypeTypeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaType::type</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn type_(&amp;::byte_array::ByteArray) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QMetaType::type(const QByteArray&amp; typeName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#type-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns a handle to the type called <i>typeName</i>, or 0 if there is no such type.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#isRegistered">isRegistered</a>() and <a href="http://doc.qt.io/qt-5/qmetatype.html#typeName">typeName</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn type_(*const libc::c_char) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QMetaType::type(const char* typeName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a handle to the type called <i>typeName</i>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UnknownType</a> if there is no such type.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#isRegistered">isRegistered</a>(), <a href="http://doc.qt.io/qt-5/qmetatype.html#typeName">typeName</a>(), and <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">Type</a>.</p></div></p>
+</div><h4 id='method.type_flags' class='method'><code>fn <a href='#method.type_flags' class='fnname'>type_flags</a>(type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/meta_type/enum.TypeFlag.html' title='qt_core::meta_type::TypeFlag'>TypeFlag</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static QFlags&lt;QMetaType::TypeFlag&gt; QMetaType::typeFlags(int type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#typeFlags">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns flags of the given <i>type</i>.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#TypeFlag-enum">QMetaType::TypeFlags</a>.</p></div></p>
+</div><h4 id='method.type_name' class='method'><code>fn <a href='#method.type_name' class='fnname'>type_name</a>(type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static const char* QMetaType::typeName(int type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#typeName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type name associated with the given <i>typeId</i>, or 0 if no matching type was found. The returned pointer must not be deleted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetatype.html#type">type</a>(), <a href="http://doc.qt.io/qt-5/qmetatype.html#isRegistered">isRegistered</a>(), and <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">Type</a>.</p></div></p>
+</div><h4 id='method.unregister_type' class='method'><code>fn <a href='#method.unregister_type' class='fnname'>unregister_type</a>(type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaType::unregisterType(int type)</code></span></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/meta_type/struct.MetaType.html' title='qt_core::meta_type::MetaType'>MetaType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-109191' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/meta_type.rs.html#23-27' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/meta_type/struct.MetaType.html' title='qt_core::meta_type::MetaType'>MetaType</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/meta_type/struct.MetaType.html' title='qt_core::meta_type::MetaType'>MetaType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-109299' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/meta_type.rs.html#425-432' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QMetaType::~QMetaType()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetatype.html#dtor.QMetaType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructs this object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/meta_type/struct.MetaType.html' title='qt_core::meta_type::MetaType'>MetaType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-109302' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/meta_type.rs.html#434-438' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

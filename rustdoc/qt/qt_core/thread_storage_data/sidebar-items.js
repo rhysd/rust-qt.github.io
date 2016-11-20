@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ThreadStorageData","C++ type: <span style='color: green;'>```QThreadStorageData```</span>"]]});

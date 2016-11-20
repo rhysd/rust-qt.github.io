@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["MessageAuthenticationCode","C++ type: <span style='color: green;'>```QMessageAuthenticationCode```</span>"]]});

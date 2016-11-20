@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""],["touch_point",""]],"struct":[["TouchEvent","C++ type: <span style='color: green;'>```QTouchEvent```</span>"],["TouchPoint","C++ type: <span style='color: green;'>```QTouchEvent::TouchPoint```</span>"]]});

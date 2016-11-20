@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Shape","C++ type: <span style='color: green;'>```QRubberBand::Shape```</span>"]],"mod":[["overloading",""]],"struct":[["RubberBand","C++ type: <span style='color: green;'>```QRubberBand```</span>"]]});

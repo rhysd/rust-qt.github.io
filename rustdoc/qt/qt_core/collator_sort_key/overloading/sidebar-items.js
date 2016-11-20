@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["CollatorSortKeyNewArgs","This trait represents a set of arguments accepted by CollatorSortKey::new method."]]});

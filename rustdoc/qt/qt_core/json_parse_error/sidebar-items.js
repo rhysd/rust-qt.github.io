@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ParseError","C++ type: <span style='color: green;'>```QJsonParseError::ParseError```</span>"]],"mod":[["overloading",""]],"struct":[["JsonParseError","C++ type: <span style='color: green;'>```QJsonParseError```</span>"]]});

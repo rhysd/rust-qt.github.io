@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["TextEncoderFromUnicodeArgs","This trait represents a set of arguments accepted by TextEncoder::from_unicode method."],["TextEncoderNewArgs","This trait represents a set of arguments accepted by TextEncoder::new method."]]});

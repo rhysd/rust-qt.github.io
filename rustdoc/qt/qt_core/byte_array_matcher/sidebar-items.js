@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ByteArrayMatcher","C++ type: <span style='color: green;'>```QByteArrayMatcher```</span>"]]});

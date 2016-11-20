@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AccessibleMenuBar","C++ type: <span style='color: green;'>```QAccessibleMenuBar```</span>"]]});

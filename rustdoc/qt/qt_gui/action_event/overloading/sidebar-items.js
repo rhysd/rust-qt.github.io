@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ActionEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by ActionEvent::register_event_type method."]]});

@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Locale` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Locale">
+
+    <title>qt_core::locale::Locale - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>locale</a></p><script>window.sidebarCurrent = {name: 'Locale', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>locale</a>::<wbr><a class='struct' href=''>Locale</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-101119' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#1394-1396' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Locale {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QLocale</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> class converts between numbers and their string representations in various languages.</p>
+<p><a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> is initialized with a language/country pair in its constructor and offers number-to-string and string-to-number conversion functions similar to those in <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span> egyptian(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>Arabic<span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>Egypt);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> s1 <span class="operator">=</span> egyptian<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>(<span class="number">1.571429E</span><span class="operator">+</span><span class="number">07</span><span class="operator">,</span> <span class="char">&#39;e&#39;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> s2 <span class="operator">=</span> egyptian<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>(<span class="number">10</span>);</p>
+
+<p><span class="type">double</span> d <span class="operator">=</span> egyptian<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(s1);
+<span class="type">int</span> i <span class="operator">=</span> egyptian<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>(s2);</pre>
+<p><a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> supports the concept of a default locale, which is determined from the system&#39;s locale settings at application startup. The default locale can be changed by calling the static member <a href="http://doc.qt.io/qt-5/qlocale.html#setDefault">setDefault</a>(). Setting the default locale has the following effects:</p>
+<ul>
+<li>If a <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object is constructed with the default constructor, it will use the default locale&#39;s settings.</li>
+<li><a href="http://doc.qt.io/qt-5/qstring.html#toInt">QString::toInt</a>(), <a href="http://doc.qt.io/qt-5/qstring.html#toDouble">QString::toDouble</a>(), etc., interpret the string according to the default locale. If this fails, it falls back on the &quot;C&quot; locale.</li>
+<li><a href="http://doc.qt.io/qt-5/qstring.html#arg">QString::arg</a>() uses the default locale to format a number when its position specifier in the format string contains an &#39;L&#39;, e.g. &quot;%L1&quot;.</li>
+</ul>
+<p>The following example illustrates how to use <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> directly:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qlocale.html#setDefault">setDefault</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span>(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>Hebrew<span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>Israel));
+<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span> hebrew; <span class="comment">// Constructs a default QLocale</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> s1 <span class="operator">=</span> hebrew<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>(<span class="number">15714.3</span><span class="operator">,</span> <span class="char">&#39;e&#39;</span>);</p>
+
+<p>bool ok;
+<span class="type">double</span> d;</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qlocale.html#setDefault">setDefault</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>C);
+d <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;1234,56&quot;</span>)<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(<span class="operator">&amp;</span>ok);   <span class="comment">// ok == false</span>
+d <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;1234.56&quot;</span>)<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(<span class="operator">&amp;</span>ok);   <span class="comment">// ok == true, d == 1234.56</span></p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qlocale.html#setDefault">setDefault</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>German);
+d <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;1234,56&quot;</span>)<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(<span class="operator">&amp;</span>ok);   <span class="comment">// ok == true, d == 1234.56</span>
+d <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;1234.56&quot;</span>)<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(<span class="operator">&amp;</span>ok);   <span class="comment">// ok == true, d == 1234.56</span></p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qlocale.html#setDefault">setDefault</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span>(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>English<span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>UnitedStates));
+str <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;%1 %L2 %L3&quot;</span>)
+&#32;     <span class="operator">.</span>arg(<span class="number">12345</span>)<span class="operator">.</span>arg(<span class="number">12345</span>)<span class="operator">.</span>arg(<span class="number">12345</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="number">16</span>);
+<span class="comment">// str == &quot;12345 12,345 3039&quot;</span></pre>
+<p>When a language/country pair is specified in the constructor, one of three things can happen:</p>
+<ul>
+<li>If the language/country pair is found in the database, it is used.</li>
+<li>If the language is found but the country is not, or if the country is <code>AnyCountry</code>, the language is used with the most appropriate available country (for example, Germany for German),</li>
+<li>If neither the language nor the country are found, <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> defaults to the default locale (see <a href="http://doc.qt.io/qt-5/qlocale.html#setDefault">setDefault</a>()).</li>
+</ul>
+<p>Use <a href="http://doc.qt.io/qt-5/qlocale.html#language">language</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#country">country</a>() to determine the actual language and country values used.</p>
+<p>An alternative method for constructing a <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object is by specifying the locale name.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span> korean(<span class="string">&quot;ko&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span> swiss(<span class="string">&quot;de_CH&quot;</span>);</pre>
+<p>This constructor converts the locale name to a language/country pair; it does not use the system locale database.</p>
+<p><b>Note: </b>For the current keyboard input locale take a look at <a href="http://doc.qt.io/qt-5/qinputmethod.html#locale-prop">QInputMethod::locale</a>().</p><p><a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a>&#39;s data is based on Common Locale Data Repository v27.</p>
+<p>The double-to-string and string-to-double conversion functions are covered by the following licenses:</p>
+<div class="LegaleseLeft"><p>Copyright (c) 1991 by AT&amp;T.</p>
+<p>Permission to use, copy, modify, and distribute this software for any purpose without fee is hereby granted, provided that this entire notice is included in all copies of any software which is or includes a copy or modification of this software and in all copies of the supporting documentation for such software.</p>
+<p>THIS SOFTWARE IS BEING PROVIDED &quot;AS IS&quot;, WITHOUT ANY EXPRESS OR IMPLIED WARRANTY. IN PARTICULAR, NEITHER THE AUTHOR NOR AT&amp;T MAKES ANY REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.</p>
+<p>This product includes software developed by the University of California, Berkeley and its contributors.</p>
+</div></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-101124' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#1404-2662' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.am_text' class='method'><code>fn <a href='#method.am_text' class='fnname'>am_text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleAmTextArgs.html' title='qt_core::locale::overloading::LocaleAmTextArgs'>LocaleAmTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::amText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn am_text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn am_text(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::amText() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#amText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the localized name of the &quot;AM&quot; suffix for times specified using the conventions of the 12-hour clock.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#pmText">pmText</a>().</p></div></p>
+</div><h4 id='method.bcp47_name' class='method'><code>fn <a href='#method.bcp47_name' class='fnname'>bcp47_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleBcp47NameArgs.html' title='qt_core::locale::overloading::LocaleBcp47NameArgs'>LocaleBcp47NameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::bcp47Name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn bcp47_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn bcp47_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::bcp47Name() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#bcp47Name">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the dash-separated language, script and country (and possibly other BCP47 fields) of this locale as a string.</p>
+<p>Unlike the <a href="http://doc.qt.io/qt-5/qlocale.html#uiLanguages">uiLanguages</a>() the returned value of the bcp47Name() represents the locale name of the <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> data but not the language the user-interface should be in.</p>
+<p>This function tries to conform the locale name to BCP47.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#language">language</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#country">country</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#script">script</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#uiLanguages">uiLanguages</a>().</p></div></p>
+</div><h4 id='method.c' class='method'><code>fn <a href='#method.c' class='fnname'>c</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleCArgs.html' title='qt_core::locale::overloading::LocaleCArgs'>LocaleCArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::c</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn c(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>2) <code>fn c(cpp_utils::AsStruct) -&gt; ::locale::Locale</code><br>
+C++ method: <span style='color: green;'><code>static QLocale QLocale::c()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#c">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object initialized to the &quot;C&quot; locale.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#system">system</a>().</p></div></p>
+</div><h4 id='method.countries_for_language' class='method'><code>fn <a href='#method.countries_for_language' class='fnname'>countries_for_language</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleCountriesForLanguageArgs.html' title='qt_core::locale::overloading::LocaleCountriesForLanguageArgs'>LocaleCountriesForLanguageArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::countriesForLanguage</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn countries_for_language((::locale::Language, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListCountry&gt;</code><br>2) <code>fn countries_for_language((::locale::Language, cpp_utils::AsStruct)) -&gt; ::list::ListCountry</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QLocale::Country&gt; QLocale::countriesForLanguage(QLocale::Language lang)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale-obsolete.html#countriesForLanguage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the list of countries that have entries for <i>language</i> in Qt&#39;s locale database. If the result is an empty list, then <i>language</i> is not represented in Qt&#39;s locale database.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#matchingLocales">matchingLocales</a>().</p></div></p>
+</div><h4 id='method.country' class='method'><code>fn <a href='#method.country' class='fnname'>country</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/locale/enum.Country.html' title='qt_core::locale::Country'>Country</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::Country QLocale::country() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#country">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the country of this locale.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#language">language</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#script">script</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#countryToString">countryToString</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#bcp47Name">bcp47Name</a>().</p></div></p>
+</div><h4 id='method.country_to_string' class='method'><code>fn <a href='#method.country_to_string' class='fnname'>country_to_string</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleCountryToStringArgs.html' title='qt_core::locale::overloading::LocaleCountryToStringArgs'>LocaleCountryToStringArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::countryToString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn country_to_string((::locale::Country, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn country_to_string((::locale::Country, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QLocale::countryToString(QLocale::Country country)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#countryToString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> containing the name of <i>country</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#languageToString">languageToString</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#scriptToString">scriptToString</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#country">country</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#bcp47Name">bcp47Name</a>().</p></div></p>
+</div><h4 id='method.create_separated_list' class='method'><code>fn <a href='#method.create_separated_list' class='fnname'>create_separated_list</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleCreateSeparatedListArgs.html' title='qt_core::locale::overloading::LocaleCreateSeparatedListArgs'>LocaleCreateSeparatedListArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::createSeparatedList</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn create_separated_list(&amp;self, (&amp;::string_list::StringList, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn create_separated_list(&amp;self, (&amp;::string_list::StringList, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::createSeparatedList(const QStringList&amp; strl) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#createSeparatedList">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a string that represents a join of a given <i>list</i> of strings with a separator defined by the locale.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.currency_symbol' class='method'><code>fn <a href='#method.currency_symbol' class='fnname'>currency_symbol</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleCurrencySymbolArgs.html' title='qt_core::locale::overloading::LocaleCurrencySymbolArgs'>LocaleCurrencySymbolArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::currencySymbol</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn currency_symbol(&amp;self, (::locale::CurrencySymbolFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn currency_symbol(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn currency_symbol(&amp;self, (::locale::CurrencySymbolFormat, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn currency_symbol(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::currencySymbol(QLocale::CurrencySymbolFormat arg1 = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#currencySymbol">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a currency symbol according to the <i>format</i>.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.date_format' class='method'><code>fn <a href='#method.date_format' class='fnname'>date_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleDateFormatArgs.html' title='qt_core::locale::overloading::LocaleDateFormatArgs'>LocaleDateFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::dateFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn date_format(&amp;self, (::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn date_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn date_format(&amp;self, (::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn date_format(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::dateFormat(QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#dateFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the date format used for the current locale.</p>
+<p>If <i>format</i> is <a href="http://doc.qt.io/qt-5/qlocale.html#FormatType-enum">LongFormat</a> the format will be a long version. Otherwise it uses a shorter version.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#toString">QDate::toString</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#fromString">QDate::fromString</a>().</p></div></p>
+</div><h4 id='method.date_time_format' class='method'><code>fn <a href='#method.date_time_format' class='fnname'>date_time_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleDateTimeFormatArgs.html' title='qt_core::locale::overloading::LocaleDateTimeFormatArgs'>LocaleDateTimeFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::dateTimeFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn date_time_format(&amp;self, (::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn date_time_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn date_time_format(&amp;self, (::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn date_time_format(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::dateTimeFormat(QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#dateTimeFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the date time format used for the current locale.</p>
+<p>If <i>format</i> is <a href="http://doc.qt.io/qt-5/qlocale.html#FormatType-enum">ShortFormat</a> the format will be a short version. Otherwise it uses a longer version.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatetime.html#toString">QDateTime::toString</a>() and <a href="http://doc.qt.io/qt-5/qdatetime.html#fromString">QDateTime::fromString</a>().</p></div></p>
+</div><h4 id='method.day_name' class='method'><code>fn <a href='#method.day_name' class='fnname'>day_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleDayNameArgs.html' title='qt_core::locale::overloading::LocaleDayNameArgs'>LocaleDayNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::dayName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn day_name(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn day_name(&amp;self, (libc::c_int, ::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn day_name(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn day_name(&amp;self, (libc::c_int, ::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::dayName(int arg1, QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#dayName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the localized name of the <i>day</i> (where 1 represents Monday, 2 represents Tuesday and so on), in the format specified by <i>type</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#monthName">monthName</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#standaloneDayName">standaloneDayName</a>().</p></div></p>
+</div><h4 id='method.decimal_point' class='method'><code>fn <a href='#method.decimal_point' class='fnname'>decimal_point</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleDecimalPointArgs.html' title='qt_core::locale::overloading::LocaleDecimalPointArgs'>LocaleDecimalPointArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::decimalPoint</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn decimal_point(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::char::Char&gt;</code><br>2) <code>fn decimal_point(&amp;self, cpp_utils::AsStruct) -&gt; ::char::Char</code><br>
+C++ method: <span style='color: green;'><code>QChar QLocale::decimalPoint() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#decimalPoint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the decimal point character of this locale.</p>
+<p>This function was introduced in  Qt 4.1.</p></div></p>
+</div><h4 id='method.exponential' class='method'><code>fn <a href='#method.exponential' class='fnname'>exponential</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleExponentialArgs.html' title='qt_core::locale::overloading::LocaleExponentialArgs'>LocaleExponentialArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::exponential</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn exponential(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::char::Char&gt;</code><br>2) <code>fn exponential(&amp;self, cpp_utils::AsStruct) -&gt; ::char::Char</code><br>
+C++ method: <span style='color: green;'><code>QChar QLocale::exponential() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#exponential">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the exponential character of this locale.</p>
+<p>This function was introduced in  Qt 4.1.</p></div></p>
+</div><h4 id='method.first_day_of_week' class='method'><code>fn <a href='#method.first_day_of_week' class='fnname'>first_day_of_week</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.DayOfWeek.html' title='qt_core::qt::DayOfWeek'>DayOfWeek</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::DayOfWeek QLocale::firstDayOfWeek() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#firstDayOfWeek">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the first day of the week according to the current locale.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.group_separator' class='method'><code>fn <a href='#method.group_separator' class='fnname'>group_separator</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleGroupSeparatorArgs.html' title='qt_core::locale::overloading::LocaleGroupSeparatorArgs'>LocaleGroupSeparatorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::groupSeparator</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn group_separator(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::char::Char&gt;</code><br>2) <code>fn group_separator(&amp;self, cpp_utils::AsStruct) -&gt; ::char::Char</code><br>
+C++ method: <span style='color: green;'><code>QChar QLocale::groupSeparator() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#groupSeparator">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the group separator character of this locale.</p>
+<p>This function was introduced in  Qt 4.1.</p></div></p>
+</div><h4 id='method.language' class='method'><code>fn <a href='#method.language' class='fnname'>language</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/locale/enum.Language.html' title='qt_core::locale::Language'>Language</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::Language QLocale::language() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#language">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the language of this locale.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#script">script</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#country">country</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#languageToString">languageToString</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#bcp47Name">bcp47Name</a>().</p></div></p>
+</div><h4 id='method.language_to_string' class='method'><code>fn <a href='#method.language_to_string' class='fnname'>language_to_string</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleLanguageToStringArgs.html' title='qt_core::locale::overloading::LocaleLanguageToStringArgs'>LocaleLanguageToStringArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::languageToString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn language_to_string((::locale::Language, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn language_to_string((::locale::Language, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QLocale::languageToString(QLocale::Language language)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#languageToString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> containing the name of <i>language</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#countryToString">countryToString</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#scriptToString">scriptToString</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#bcp47Name">bcp47Name</a>().</p></div></p>
+</div><h4 id='method.matching_locales' class='method'><code>fn <a href='#method.matching_locales' class='fnname'>matching_locales</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleMatchingLocalesArgs.html' title='qt_core::locale::overloading::LocaleMatchingLocalesArgs'>LocaleMatchingLocalesArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::matchingLocales</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn matching_locales((::locale::Language, ::locale::Script, ::locale::Country, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListLocaleRef&gt;</code><br>2) <code>fn matching_locales((::locale::Language, ::locale::Script, ::locale::Country, cpp_utils::AsStruct)) -&gt; ::list::ListLocaleRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QLocale&gt; QLocale::matchingLocales(QLocale::Language language, QLocale::Script script, QLocale::Country country)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#matchingLocales">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of valid locale objects that match the given <i>language</i>, <i>script</i> and <i>country</i>.</p>
+<p>Getting a list of all locales: <a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&lt;<a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a>&gt; allLocales = QLocale::matchingLocales(<a href="http://doc.qt.io/qt-5/qlocale.html#Language-enum">QLocale::AnyLanguage</a>, <a href="http://doc.qt.io/qt-5/qlocale.html#Script-enum">QLocale::AnyScript</a>, <a href="http://doc.qt.io/qt-5/qlocale.html#Country-enum">QLocale::AnyCountry</a>);</p>
+<p>Getting a list of locales suitable for Russia: <a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&lt;<a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a>&gt; locales = QLocale::matchingLocales(<a href="http://doc.qt.io/qt-5/qlocale.html#Language-enum">QLocale::AnyLanguage</a>, <a href="http://doc.qt.io/qt-5/qlocale.html#Script-enum">QLocale::AnyScript</a>, <a href="http://doc.qt.io/qt-5/qlocale.html#Country-enum">QLocale::Russia</a>);</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.measurement_system' class='method'><code>fn <a href='#method.measurement_system' class='fnname'>measurement_system</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/locale/enum.MeasurementSystem.html' title='qt_core::locale::MeasurementSystem'>MeasurementSystem</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::MeasurementSystem QLocale::measurementSystem() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#measurementSystem">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the measurement system for the locale.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.month_name' class='method'><code>fn <a href='#method.month_name' class='fnname'>month_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleMonthNameArgs.html' title='qt_core::locale::overloading::LocaleMonthNameArgs'>LocaleMonthNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::monthName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn month_name(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn month_name(&amp;self, (libc::c_int, ::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn month_name(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn month_name(&amp;self, (libc::c_int, ::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::monthName(int arg1, QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#monthName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the localized name of <i>month</i>, in the format specified by <i>type</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#dayName">dayName</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#standaloneMonthName">standaloneMonthName</a>().</p></div></p>
+</div><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleNameArgs.html' title='qt_core::locale::overloading::LocaleNameArgs'>LocaleNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::name() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#name">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the language and country of this locale as a string of the form &quot;language_country&quot;, where language is a lowercase, two-letter ISO 639 language code, and country is an uppercase, two- or three-letter ISO 3166 country code.</p>
+<p>Note that even if <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object was constructed with an explicit script, name() will not contain it for compatibility reasons. Use <a href="http://doc.qt.io/qt-5/qlocale.html#bcp47Name">bcp47Name</a>() instead if you need a full locale name.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#language">language</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#script">script</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#country">country</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#bcp47Name">bcp47Name</a>().</p></div></p>
+</div><h4 id='method.native_country_name' class='method'><code>fn <a href='#method.native_country_name' class='fnname'>native_country_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleNativeCountryNameArgs.html' title='qt_core::locale::overloading::LocaleNativeCountryNameArgs'>LocaleNativeCountryNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::nativeCountryName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn native_country_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn native_country_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::nativeCountryName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#nativeCountryName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a native name of the country for the locale. For example &quot;España&quot; for Spanish/Spain locale.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#nativeLanguageName">nativeLanguageName</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#countryToString">countryToString</a>().</p></div></p>
+</div><h4 id='method.native_language_name' class='method'><code>fn <a href='#method.native_language_name' class='fnname'>native_language_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleNativeLanguageNameArgs.html' title='qt_core::locale::overloading::LocaleNativeLanguageNameArgs'>LocaleNativeLanguageNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::nativeLanguageName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn native_language_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn native_language_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::nativeLanguageName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#nativeLanguageName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a native name of the language for the locale. For example &quot;Schwiizertüütsch&quot; for Swiss-German locale.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#nativeCountryName">nativeCountryName</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#languageToString">languageToString</a>().</p></div></p>
+</div><h4 id='method.negative_sign' class='method'><code>fn <a href='#method.negative_sign' class='fnname'>negative_sign</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleNegativeSignArgs.html' title='qt_core::locale::overloading::LocaleNegativeSignArgs'>LocaleNegativeSignArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::negativeSign</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn negative_sign(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::char::Char&gt;</code><br>2) <code>fn negative_sign(&amp;self, cpp_utils::AsStruct) -&gt; ::char::Char</code><br>
+C++ method: <span style='color: green;'><code>QChar QLocale::negativeSign() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#negativeSign">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the negative sign character of this locale.</p>
+<p>This function was introduced in  Qt 4.1.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleNewArgs.html' title='qt_core::locale::overloading::LocaleNewArgs'>LocaleNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::QLocale</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::locale::Locale</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QLocale::QLocale()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((::locale::Language, cpp_utils::AsStruct)) -&gt; ::locale::Locale</code><br>2) <code>fn new((::locale::Language, ::locale::Country, cpp_utils::AsStruct)) -&gt; ::locale::Locale</code><br>3) <code>fn new((::locale::Language, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>4) <code>fn new((::locale::Language, ::locale::Country, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QLocale::QLocale(QLocale::Language language, QLocale::Country country = ?)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((::locale::Language, ::locale::Script, ::locale::Country, cpp_utils::AsStruct)) -&gt; ::locale::Locale</code><br>2) <code>fn new((::locale::Language, ::locale::Script, ::locale::Country, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QLocale::QLocale(QLocale::Language language, QLocale::Script script, QLocale::Country country)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::locale::Locale, cpp_utils::AsStruct)) -&gt; ::locale::Locale</code><br>2) <code>fn new((&amp;::locale::Locale, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QLocale::QLocale(const QLocale&amp; other)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::locale::Locale</code><br>2) <code>fn new((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QLocale::QLocale(const QString&amp; name)</code></span></p>
+</div><h4 id='method.number_options' class='method'><code>fn <a href='#method.number_options' class='fnname'>number_options</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/locale/enum.NumberOption.html' title='qt_core::locale::NumberOption'>NumberOption</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QLocale::NumberOption&gt; QLocale::numberOptions() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#numberOptions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the options related to number conversions for this <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> instance.</p>
+<p>By default, no options are set for the standard locales.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#setNumberOptions">setNumberOptions</a>().</p></div></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale&amp; QLocale::operator=(const QLocale&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns <i>other</i> to this <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object and returns a reference to this <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QLocale::operator==(const QLocale&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object is the same as the <i>other</i> locale specified; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QLocale::operator!=(const QLocale&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object is not the same as the <i>other</i> locale specified; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.percent' class='method'><code>fn <a href='#method.percent' class='fnname'>percent</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocalePercentArgs.html' title='qt_core::locale::overloading::LocalePercentArgs'>LocalePercentArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::percent</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn percent(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::char::Char&gt;</code><br>2) <code>fn percent(&amp;self, cpp_utils::AsStruct) -&gt; ::char::Char</code><br>
+C++ method: <span style='color: green;'><code>QChar QLocale::percent() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#percent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the percent character of this locale.</p>
+<p>This function was introduced in  Qt 4.1.</p></div></p>
+</div><h4 id='method.pm_text' class='method'><code>fn <a href='#method.pm_text' class='fnname'>pm_text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocalePmTextArgs.html' title='qt_core::locale::overloading::LocalePmTextArgs'>LocalePmTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::pmText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn pm_text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn pm_text(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::pmText() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#pmText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the localized name of the &quot;PM&quot; suffix for times specified using the conventions of the 12-hour clock.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#amText">amText</a>().</p></div></p>
+</div><h4 id='method.positive_sign' class='method'><code>fn <a href='#method.positive_sign' class='fnname'>positive_sign</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocalePositiveSignArgs.html' title='qt_core::locale::overloading::LocalePositiveSignArgs'>LocalePositiveSignArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::positiveSign</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn positive_sign(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::char::Char&gt;</code><br>2) <code>fn positive_sign(&amp;self, cpp_utils::AsStruct) -&gt; ::char::Char</code><br>
+C++ method: <span style='color: green;'><code>QChar QLocale::positiveSign() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#positiveSign">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the positive sign character of this locale.</p>
+<p>This function was introduced in  Qt 4.5.</p></div></p>
+</div><h4 id='method.quote_string' class='method'><code>fn <a href='#method.quote_string' class='fnname'>quote_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleQuoteStringArgs.html' title='qt_core::locale::overloading::LocaleQuoteStringArgs'>LocaleQuoteStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::quoteString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn quote_string(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn quote_string(&amp;self, (&amp;::string::String, ::locale::QuotationStyle, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn quote_string(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn quote_string(&amp;self, (&amp;::string::String, ::locale::QuotationStyle, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::quoteString(const QString&amp; str, QLocale::QuotationStyle style = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#quoteString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <i>str</i> quoted according to the current locale using the given quotation <i>style</i>.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn quote_string(&amp;self, (&amp;::string_ref::StringRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn quote_string(&amp;self, (&amp;::string_ref::StringRef, ::locale::QuotationStyle, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn quote_string(&amp;self, (&amp;::string_ref::StringRef, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn quote_string(&amp;self, (&amp;::string_ref::StringRef, ::locale::QuotationStyle, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::quoteString(const QStringRef&amp; str, QLocale::QuotationStyle style = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#quoteString-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.script' class='method'><code>fn <a href='#method.script' class='fnname'>script</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/locale/enum.Script.html' title='qt_core::locale::Script'>Script</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::Script QLocale::script() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#script">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the script of this locale.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#language">language</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#country">country</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#languageToString">languageToString</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#scriptToString">scriptToString</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#bcp47Name">bcp47Name</a>().</p></div></p>
+</div><h4 id='method.script_to_string' class='method'><code>fn <a href='#method.script_to_string' class='fnname'>script_to_string</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleScriptToStringArgs.html' title='qt_core::locale::overloading::LocaleScriptToStringArgs'>LocaleScriptToStringArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::scriptToString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn script_to_string((::locale::Script, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn script_to_string((::locale::Script, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QLocale::scriptToString(QLocale::Script script)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#scriptToString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> containing the name of <i>script</i>.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#languageToString">languageToString</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#countryToString">countryToString</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#script">script</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#bcp47Name">bcp47Name</a>().</p></div></p>
+</div><h4 id='method.set_default' class='method'><code>fn <a href='#method.set_default' class='fnname'>set_default</a>(locale: &amp;<a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QLocale::setDefault(const QLocale&amp; locale)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#setDefault">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the global default locale to <i>locale</i>. These values are used when a <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object is constructed with no arguments. If this function is not called, the system&#39;s locale is used.</p>
+<p><b>Warning:</b> In a multithreaded application, the default locale should be set at application startup, before any non-GUI threads are created.</p>
+<p><b>Warning:</b> This function is not <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#reentrant">reentrant</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#system">system</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#c">c</a>().</p></div></p>
+</div><h4 id='method.set_number_options' class='method'><code>fn <a href='#method.set_number_options' class='fnname'>set_number_options</a>(&amp;mut self, options: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/locale/enum.NumberOption.html' title='qt_core::locale::NumberOption'>NumberOption</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QLocale::setNumberOptions(QFlags&lt;QLocale::NumberOption&gt; options)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#setNumberOptions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>options</i> related to number conversions for this <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> instance.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#numberOptions">numberOptions</a>().</p></div></p>
+</div><h4 id='method.standalone_day_name' class='method'><code>fn <a href='#method.standalone_day_name' class='fnname'>standalone_day_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleStandaloneDayNameArgs.html' title='qt_core::locale::overloading::LocaleStandaloneDayNameArgs'>LocaleStandaloneDayNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::standaloneDayName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn standalone_day_name(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn standalone_day_name(&amp;self, (libc::c_int, ::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn standalone_day_name(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn standalone_day_name(&amp;self, (libc::c_int, ::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::standaloneDayName(int arg1, QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#standaloneDayName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the localized name of the <i>day</i> (where 1 represents Monday, 2 represents Tuesday and so on) that is used as a standalone text, in the format specified by <i>type</i>.</p>
+<p>If the locale information does not specify the standalone day name then return value is the same as in <a href="http://doc.qt.io/qt-5/qlocale.html#dayName">dayName</a>().</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#dayName">dayName</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#standaloneMonthName">standaloneMonthName</a>().</p></div></p>
+</div><h4 id='method.standalone_month_name' class='method'><code>fn <a href='#method.standalone_month_name' class='fnname'>standalone_month_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleStandaloneMonthNameArgs.html' title='qt_core::locale::overloading::LocaleStandaloneMonthNameArgs'>LocaleStandaloneMonthNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::standaloneMonthName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn standalone_month_name(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn standalone_month_name(&amp;self, (libc::c_int, ::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn standalone_month_name(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn standalone_month_name(&amp;self, (libc::c_int, ::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::standaloneMonthName(int arg1, QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#standaloneMonthName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the localized name of <i>month</i> that is used as a standalone text, in the format specified by <i>type</i>.</p>
+<p>If the locale information doesn&#39;t specify the standalone month name then return value is the same as in <a href="http://doc.qt.io/qt-5/qlocale.html#monthName">monthName</a>().</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#monthName">monthName</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#standaloneDayName">standaloneDayName</a>().</p></div></p>
+</div><h4 id='method.system' class='method'><code>fn <a href='#method.system' class='fnname'>system</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleSystemArgs.html' title='qt_core::locale::overloading::LocaleSystemArgs'>LocaleSystemArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::system</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn system(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>2) <code>fn system(cpp_utils::AsStruct) -&gt; ::locale::Locale</code><br>
+C++ method: <span style='color: green;'><code>static QLocale QLocale::system()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#system">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object initialized to the system locale.</p>
+<p>On Windows and Mac, this locale will use the decimal/grouping characters and date/time formats specified in the system configuration panel.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#c">c</a>().</p></div></p>
+</div><h4 id='method.text_direction' class='method'><code>fn <a href='#method.text_direction' class='fnname'>text_direction</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.LayoutDirection.html' title='qt_core::qt::LayoutDirection'>LayoutDirection</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::LayoutDirection QLocale::textDirection() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#textDirection">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text direction of the language.</p>
+<p>This function was introduced in  Qt 4.7.</p></div></p>
+</div><h4 id='method.time_format' class='method'><code>fn <a href='#method.time_format' class='fnname'>time_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleTimeFormatArgs.html' title='qt_core::locale::overloading::LocaleTimeFormatArgs'>LocaleTimeFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::timeFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn time_format(&amp;self, (::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn time_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn time_format(&amp;self, (::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn time_format(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::timeFormat(QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#timeFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the time format used for the current locale.</p>
+<p>If <i>format</i> is <a href="http://doc.qt.io/qt-5/qlocale.html#FormatType-enum">LongFormat</a> the format will be a long version. Otherwise it uses a shorter version.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtime.html#toString">QTime::toString</a>() and <a href="http://doc.qt.io/qt-5/qtime.html#fromString">QTime::fromString</a>().</p></div></p>
+</div><h4 id='method.to_currency_string' class='method'><code>fn <a href='#method.to_currency_string' class='fnname'>to_currency_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToCurrencyStringArgs.html' title='qt_core::locale::overloading::LocaleToCurrencyStringArgs'>LocaleToCurrencyStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toCurrencyString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_currency_string(&amp;self, (libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_currency_string(&amp;self, (libc::c_double, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_currency_string(&amp;self, (libc::c_double, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_currency_string(&amp;self, (libc::c_double, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toCurrencyString(double arg1, const QString&amp; symbol = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toCurrencyString-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_currency_string(&amp;self, (libc::c_float, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_currency_string(&amp;self, (libc::c_float, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_currency_string(&amp;self, (libc::c_float, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_currency_string(&amp;self, (libc::c_float, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toCurrencyString(float arg1, const QString&amp; symbol = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toCurrencyString-8">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_currency_string(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_currency_string(&amp;self, (libc::c_int, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_currency_string(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_currency_string(&amp;self, (libc::c_int, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toCurrencyString(int arg1, const QString&amp; symbol = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toCurrencyString-6">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-4-1' class='section-header'><a href='#variant-4-1'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_currency_string(&amp;self, (i64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_currency_string(&amp;self, (i64, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_currency_string(&amp;self, (i64, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_currency_string(&amp;self, (i64, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toCurrencyString(qlonglong arg1, const QString&amp; symbol = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toCurrencyString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized string representation of <i>value</i> as a currency. If the <i>symbol</i> is provided it is used instead of the default currency symbol.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#currencySymbol">currencySymbol</a>().</p></div></p>
+
+<h2 id='variant-5-1' class='section-header'><a href='#variant-5-1'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_currency_string(&amp;self, (u64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_currency_string(&amp;self, (u64, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_currency_string(&amp;self, (u64, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_currency_string(&amp;self, (u64, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toCurrencyString(qulonglong arg1, const QString&amp; symbol = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toCurrencyString-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_currency_string(&amp;self, (libc::c_short, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_currency_string(&amp;self, (libc::c_short, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_currency_string(&amp;self, (libc::c_short, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_currency_string(&amp;self, (libc::c_short, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toCurrencyString(short arg1, const QString&amp; symbol = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toCurrencyString-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-7' class='section-header'><a href='#variant-7'>Variant 7</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_currency_string(&amp;self, (libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_currency_string(&amp;self, (libc::c_uint, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_currency_string(&amp;self, (libc::c_uint, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_currency_string(&amp;self, (libc::c_uint, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toCurrencyString(unsigned int arg1, const QString&amp; symbol = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toCurrencyString-7">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-8' class='section-header'><a href='#variant-8'>Variant 8</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_currency_string(&amp;self, (libc::c_ushort, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_currency_string(&amp;self, (libc::c_ushort, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_currency_string(&amp;self, (libc::c_ushort, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_currency_string(&amp;self, (libc::c_ushort, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toCurrencyString(unsigned short arg1, const QString&amp; symbol = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toCurrencyString-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.to_date' class='method'><code>fn <a href='#method.to_date' class='fnname'>to_date</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToDateArgs.html' title='qt_core::locale::overloading::LocaleToDateArgs'>LocaleToDateArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toDate</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_date(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>2) <code>fn to_date(&amp;self, (&amp;::string::String, ::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>3) <code>fn to_date(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>4) <code>fn to_date(&amp;self, (&amp;::string::String, ::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>
+C++ method: <span style='color: green;'><code>QDate QLocale::toDate(const QString&amp; string, QLocale::FormatType arg2 = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toDate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Parses the date string given in <i>string</i> and returns the date. The format of the date string is chosen according to the <i>format</i> parameter (see <a href="http://doc.qt.io/qt-5/qlocale.html#dateFormat">dateFormat</a>()).</p>
+<p>If the date could not be parsed, returns an invalid date.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#dateFormat">dateFormat</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toTime">toTime</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDateTime">toDateTime</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#fromString">QDate::fromString</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_date(&amp;self, (&amp;::string::String, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>2) <code>fn to_date(&amp;self, (&amp;::string::String, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>
+C++ method: <span style='color: green;'><code>QDate QLocale::toDate(const QString&amp; string, const QString&amp; format) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toDate-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Parses the date string given in <i>string</i> and returns the date. See <a href="http://doc.qt.io/qt-5/qdate.html#fromString">QDate::fromString</a>() for information on the expressions that can be used with this function.</p>
+<p>This function searches month names and the names of the days of the week in the current locale.</p>
+<p>If the date could not be parsed, returns an invalid date.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#dateFormat">dateFormat</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toTime">toTime</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDateTime">toDateTime</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#fromString">QDate::fromString</a>().</p></div></p>
+</div><h4 id='method.to_date_time' class='method'><code>fn <a href='#method.to_date_time' class='fnname'>to_date_time</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToDateTimeArgs.html' title='qt_core::locale::overloading::LocaleToDateTimeArgs'>LocaleToDateTimeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toDateTime</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_date_time(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date_time::DateTime&gt;</code><br>2) <code>fn to_date_time(&amp;self, (&amp;::string::String, ::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date_time::DateTime&gt;</code><br>3) <code>fn to_date_time(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::date_time::DateTime</code><br>4) <code>fn to_date_time(&amp;self, (&amp;::string::String, ::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::date_time::DateTime</code><br>
+C++ method: <span style='color: green;'><code>QDateTime QLocale::toDateTime(const QString&amp; string, QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toDateTime">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Parses the date/time string given in <i>string</i> and returns the time. The format of the date/time string is chosen according to the <i>format</i> parameter (see <a href="http://doc.qt.io/qt-5/qlocale.html#dateTimeFormat">dateTimeFormat</a>()).</p>
+<p>If the string could not be parsed, returns an invalid <a href="http://doc.qt.io/qt-5/qdatetime.html">QDateTime</a>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#dateTimeFormat">dateTimeFormat</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toTime">toTime</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDate">toDate</a>(), and <a href="http://doc.qt.io/qt-5/qdatetime.html#fromString">QDateTime::fromString</a>().</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_date_time(&amp;self, (&amp;::string::String, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date_time::DateTime&gt;</code><br>2) <code>fn to_date_time(&amp;self, (&amp;::string::String, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::date_time::DateTime</code><br>
+C++ method: <span style='color: green;'><code>QDateTime QLocale::toDateTime(const QString&amp; string, const QString&amp; format) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toDateTime-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Parses the date/time string given in <i>string</i> and returns the time. See <a href="http://doc.qt.io/qt-5/qdatetime.html#fromString">QDateTime::fromString</a>() for information on the expressions that can be used with this function.</p>
+<p><b>Note: </b>The month and day names used must be given in the user&#39;s local language.</p><p>If the string could not be parsed, returns an invalid <a href="http://doc.qt.io/qt-5/qdatetime.html">QDateTime</a>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#dateTimeFormat">dateTimeFormat</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toTime">toTime</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDate">toDate</a>(), and <a href="http://doc.qt.io/qt-5/qdatetime.html#fromString">QDateTime::fromString</a>().</p></div></p>
+</div><h4 id='method.to_double' class='method'><code>fn <a href='#method.to_double' class='fnname'>to_double</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToDoubleArgs.html' title='qt_core::locale::overloading::LocaleToDoubleArgs'>LocaleToDoubleArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toDouble</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_double(&amp;self, &amp;::string::String) -&gt; libc::c_double</code><br>2) <code>fn to_double(&amp;self, (&amp;::string::String, *mut bool)) -&gt; libc::c_double</code><br>
+C++ method: <span style='color: green;'><code>double QLocale::toDouble(const QString&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the double represented by the localized string <i>s</i>, or 0.0 if the conversion failed.</p>
+<p>If <i>ok</i> is not 0, reports failure by setting *ok to false and success by setting *ok to true.</p>
+<p>Unlike <a href="http://doc.qt.io/qt-5/qstring.html#toDouble">QString::toDouble</a>(), this function does not fall back to the &quot;C&quot; locale if the string cannot be interpreted in this locale.</p>
+<pre class="cpp">bool ok;
+<span class="type">double</span> d;</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span> <a href="http://doc.qt.io/qt-5/qlocale.html#c">c</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>C);
+d <span class="operator">=</span> c<span class="operator">.</span>toDouble( <span class="string">&quot;1234.56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok );  <span class="comment">// ok == true, d == 1234.56</span>
+d <span class="operator">=</span> c<span class="operator">.</span>toDouble( <span class="string">&quot;1,234.56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok ); <span class="comment">// ok == true, d == 1234.56</span>
+d <span class="operator">=</span> c<span class="operator">.</span>toDouble( <span class="string">&quot;1234,56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok );  <span class="comment">// ok == false</span></p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span> german(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>German);
+d <span class="operator">=</span> german<span class="operator">.</span>toDouble( <span class="string">&quot;1234,56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok );  <span class="comment">// ok == true, d == 1234.56</span>
+d <span class="operator">=</span> german<span class="operator">.</span>toDouble( <span class="string">&quot;1.234,56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok ); <span class="comment">// ok == true, d == 1234.56</span>
+d <span class="operator">=</span> german<span class="operator">.</span>toDouble( <span class="string">&quot;1234.56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok );  <span class="comment">// ok == false</span></p>
+
+<p>d <span class="operator">=</span> german<span class="operator">.</span>toDouble( <span class="string">&quot;1.234&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok );    <span class="comment">// ok == true, d == 1234.0</span></pre>
+<p>Notice that the last conversion returns 1234.0, because &#39;.&#39; is the thousands group separator in the German locale.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toFloat">toFloat</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_double(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_double</code><br>2) <code>fn to_double(&amp;self, (&amp;::string_ref::StringRef, *mut bool)) -&gt; libc::c_double</code><br>
+C++ method: <span style='color: green;'><code>double QLocale::toDouble(const QStringRef&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the double represented by the localized string <i>s</i>, or 0.0 if the conversion failed.</p>
+<p>If <i>ok</i> is not null, reports failure by setting *ok to false and success by setting *ok to true.</p>
+<p>Unlike <a href="http://doc.qt.io/qt-5/qstring.html#toDouble">QString::toDouble</a>(), this function does not fall back to the &quot;C&quot; locale if the string cannot be interpreted in this locale.</p>
+<pre class="cpp">bool ok;
+<span class="type">double</span> d;</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span> <a href="http://doc.qt.io/qt-5/qlocale.html#c">c</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>C);
+d <span class="operator">=</span> c<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>( <span class="string">&quot;1234.56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok );  <span class="comment">// ok == true, d == 1234.56</span>
+d <span class="operator">=</span> c<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>( <span class="string">&quot;1,234.56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok ); <span class="comment">// ok == true, d == 1234.56</span>
+d <span class="operator">=</span> c<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>( <span class="string">&quot;1234,56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok );  <span class="comment">// ok == false</span></p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span> german(<span class="type"><a href="http://doc.qt.io/qt-5/qlocale.html#QLocale">QLocale</a></span><span class="operator">::</span>German);
+d <span class="operator">=</span> german<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>( <span class="string">&quot;1234,56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok );  <span class="comment">// ok == true, d == 1234.56</span>
+d <span class="operator">=</span> german<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>( <span class="string">&quot;1.234,56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok ); <span class="comment">// ok == true, d == 1234.56</span>
+d <span class="operator">=</span> german<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>( <span class="string">&quot;1234.56&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok );  <span class="comment">// ok == false</span></p>
+
+<p>d <span class="operator">=</span> german<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>( <span class="string">&quot;1.234&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>ok );    <span class="comment">// ok == true, d == 1234.0</span></pre>
+<p>Notice that the last conversion returns 1234.0, because &#39;.&#39; is the thousands group separator in the German locale.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toFloat">toFloat</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.to_float' class='method'><code>fn <a href='#method.to_float' class='fnname'>to_float</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToFloatArgs.html' title='qt_core::locale::overloading::LocaleToFloatArgs'>LocaleToFloatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toFloat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-6' class='section-header'><a href='#variant-1-6'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_float(&amp;self, &amp;::string::String) -&gt; libc::c_float</code><br>2) <code>fn to_float(&amp;self, (&amp;::string::String, *mut bool)) -&gt; libc::c_float</code><br>
+C++ method: <span style='color: green;'><code>float QLocale::toFloat(const QString&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toFloat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the float represented by the localized string <i>s</i>, or 0.0 if the conversion failed.</p>
+<p>If <i>ok</i> is not 0, reports failure by setting *ok to false and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+
+<h2 id='variant-2-6' class='section-header'><a href='#variant-2-6'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_float(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_float</code><br>2) <code>fn to_float(&amp;self, (&amp;::string_ref::StringRef, *mut bool)) -&gt; libc::c_float</code><br>
+C++ method: <span style='color: green;'><code>float QLocale::toFloat(const QStringRef&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toFloat-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the float represented by the localized string <i>s</i>, or 0.0 if the conversion failed.</p>
+<p>If <i>ok</i> is not null, reports failure by setting *ok to false and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.to_int' class='method'><code>fn <a href='#method.to_int' class='fnname'>to_int</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToIntArgs.html' title='qt_core::locale::overloading::LocaleToIntArgs'>LocaleToIntArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toInt</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-7' class='section-header'><a href='#variant-1-7'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_int(&amp;self, &amp;::string::String) -&gt; libc::c_int</code><br>2) <code>fn to_int(&amp;self, (&amp;::string::String, *mut bool)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QLocale::toInt(const QString&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toInt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not 0, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toUInt">toUInt</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+
+<h2 id='variant-2-7' class='section-header'><a href='#variant-2-7'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_int(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_int</code><br>2) <code>fn to_int(&amp;self, (&amp;::string_ref::StringRef, *mut bool)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QLocale::toInt(const QStringRef&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toInt-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not null, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toUInt">toUInt</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.to_long_long' class='method'><code>fn <a href='#method.to_long_long' class='fnname'>to_long_long</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToLongLongArgs.html' title='qt_core::locale::overloading::LocaleToLongLongArgs'>LocaleToLongLongArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toLongLong</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-8' class='section-header'><a href='#variant-1-8'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_long_long(&amp;self, &amp;::string::String) -&gt; i64</code><br>2) <code>fn to_long_long(&amp;self, (&amp;::string::String, *mut bool)) -&gt; i64</code><br>
+C++ method: <span style='color: green;'><code>qlonglong QLocale::toLongLong(const QString&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toLongLong">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the long long int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not 0, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toULongLong">toULongLong</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+
+<h2 id='variant-2-8' class='section-header'><a href='#variant-2-8'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_long_long(&amp;self, &amp;::string_ref::StringRef) -&gt; i64</code><br>2) <code>fn to_long_long(&amp;self, (&amp;::string_ref::StringRef, *mut bool)) -&gt; i64</code><br>
+C++ method: <span style='color: green;'><code>qlonglong QLocale::toLongLong(const QStringRef&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toLongLong-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the long long int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not null, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toULongLong">toULongLong</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.to_lower' class='method'><code>fn <a href='#method.to_lower' class='fnname'>to_lower</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToLowerArgs.html' title='qt_core::locale::overloading::LocaleToLowerArgs'>LocaleToLowerArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toLower</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_lower(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_lower(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toLower(const QString&amp; str) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toLower">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a lowercase copy of <i>str</i>.</p>
+<p>If Qt Core is using the ICU libraries, they will be used to perform the transformation according to the rules of the current locale. Otherwise the conversion may be done in a platform-dependent manner, with <a href="http://doc.qt.io/qt-5/qstring.html#toLower">QString::toLower</a>() as a generic fallback.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toLower">QString::toLower</a>().</p></div></p>
+</div><h4 id='method.to_short' class='method'><code>fn <a href='#method.to_short' class='fnname'>to_short</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_short.html' title='libc::c_short'>c_short</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToShortArgs.html' title='qt_core::locale::overloading::LocaleToShortArgs'>LocaleToShortArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toShort</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-9' class='section-header'><a href='#variant-1-9'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_short(&amp;self, &amp;::string::String) -&gt; libc::c_short</code><br>2) <code>fn to_short(&amp;self, (&amp;::string::String, *mut bool)) -&gt; libc::c_short</code><br>
+C++ method: <span style='color: green;'><code>short QLocale::toShort(const QString&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toShort">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the short int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not 0, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toUShort">toUShort</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+
+<h2 id='variant-2-9' class='section-header'><a href='#variant-2-9'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_short(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_short</code><br>2) <code>fn to_short(&amp;self, (&amp;::string_ref::StringRef, *mut bool)) -&gt; libc::c_short</code><br>
+C++ method: <span style='color: green;'><code>short QLocale::toShort(const QStringRef&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toShort-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the short int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not null, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toUShort">toUShort</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.to_string' class='method'><code>fn <a href='#method.to_string' class='fnname'>to_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToStringArgs.html' title='qt_core::locale::overloading::LocaleToStringArgs'>LocaleToStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-10' class='section-header'><a href='#variant-1-10'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (&amp;::date::Date, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (&amp;::date::Date, ::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_string(&amp;self, (&amp;::date::Date, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_string(&amp;self, (&amp;::date::Date, ::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(const QDate&amp; date, QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized string representation of the given <i>date</i> according to the specified <i>format</i>.</p></div></p>
+
+<h2 id='variant-2-10' class='section-header'><a href='#variant-2-10'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (&amp;::date::Date, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (&amp;::date::Date, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(const QDate&amp; date, const QString&amp; formatStr) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized string representation of the given <i>date</i> in the specified <i>format</i>. If <i>format</i> is an empty string, an empty string is returned.</p></div></p>
+
+<h2 id='variant-3-2' class='section-header'><a href='#variant-3-2'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (&amp;::date_time::DateTime, ::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_string(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_string(&amp;self, (&amp;::date_time::DateTime, ::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(const QDateTime&amp; dateTime, QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-6">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized string representation of the given <i>dateTime</i> according to the specified <i>format</i>.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+
+<h2 id='variant-4-2' class='section-header'><a href='#variant-4-2'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (&amp;::date_time::DateTime, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (&amp;::date_time::DateTime, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(const QDateTime&amp; dateTime, const QString&amp; format) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-7">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized string representation of the given <i>dateTime</i> according to the specified <i>format</i>. If <i>format</i> is an empty string, an empty string is returned.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+
+<h2 id='variant-5-2' class='section-header'><a href='#variant-5-2'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (&amp;::time::Time, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (&amp;::time::Time, ::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_string(&amp;self, (&amp;::time::Time, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_string(&amp;self, (&amp;::time::Time, ::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(const QTime&amp; time, QLocale::FormatType format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized string representation of the given <i>time</i> in the specified <i>format</i>.</p></div></p>
+
+<h2 id='variant-6-1' class='section-header'><a href='#variant-6-1'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (&amp;::time::Time, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (&amp;::time::Time, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(const QTime&amp; time, const QString&amp; formatStr) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized string representation of the given <i>time</i> according to the specified <i>format</i>. If <i>format</i> is an empty string, an empty string is returned.</p></div></p>
+
+<h2 id='variant-7-1' class='section-header'><a href='#variant-7-1'>Variant 7</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (libc::c_double, libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_string(&amp;self, (libc::c_double, libc::c_char, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>4) <code>fn to_string(&amp;self, (libc::c_double, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>5) <code>fn to_string(&amp;self, (libc::c_double, libc::c_char, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>6) <code>fn to_string(&amp;self, (libc::c_double, libc::c_char, libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(double i, char f = ?, int prec = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-9">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><i>f</i> and <i>prec</i> have the same meaning as in <a href="http://doc.qt.io/qt-5/qstring.html#number">QString::number</a>(double, char, int).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>().</p></div></p>
+
+<h2 id='variant-8-1' class='section-header'><a href='#variant-8-1'>Variant 8</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (libc::c_float, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (libc::c_float, libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_string(&amp;self, (libc::c_float, libc::c_char, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>4) <code>fn to_string(&amp;self, (libc::c_float, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>5) <code>fn to_string(&amp;self, (libc::c_float, libc::c_char, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>6) <code>fn to_string(&amp;self, (libc::c_float, libc::c_char, libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(float i, char f = ?, int prec = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-14">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><i>f</i> and <i>prec</i> have the same meaning as in <a href="http://doc.qt.io/qt-5/qstring.html#number">QString::number</a>(double, char, int).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>().</p></div></p>
+
+<h2 id='variant-9' class='section-header'><a href='#variant-9'>Variant 9</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-12">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>().</p></div></p>
+
+<h2 id='variant-10' class='section-header'><a href='#variant-10'>Variant 10</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (i64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (i64, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(qlonglong i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized string representation of <i>i</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toLongLong">toLongLong</a>().</p></div></p>
+
+<h2 id='variant-11' class='section-header'><a href='#variant-11'>Variant 11</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (u64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (u64, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(qulonglong i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-8">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toULongLong">toULongLong</a>().</p></div></p>
+
+<h2 id='variant-12' class='section-header'><a href='#variant-12'>Variant 12</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (libc::c_short, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (libc::c_short, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(short i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-10">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toShort">toShort</a>().</p></div></p>
+
+<h2 id='variant-13' class='section-header'><a href='#variant-13'>Variant 13</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (libc::c_uint, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(unsigned int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-13">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toUInt">toUInt</a>().</p></div></p>
+
+<h2 id='variant-14' class='section-header'><a href='#variant-14'>Variant 14</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (libc::c_ushort, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (libc::c_ushort, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toString(unsigned short i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toString-11">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toUShort">toUShort</a>().</p></div></p>
+</div><h4 id='method.to_time' class='method'><code>fn <a href='#method.to_time' class='fnname'>to_time</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToTimeArgs.html' title='qt_core::locale::overloading::LocaleToTimeArgs'>LocaleToTimeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toTime</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-11' class='section-header'><a href='#variant-1-11'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_time(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time::Time&gt;</code><br>2) <code>fn to_time(&amp;self, (&amp;::string::String, ::locale::FormatType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time::Time&gt;</code><br>3) <code>fn to_time(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::time::Time</code><br>4) <code>fn to_time(&amp;self, (&amp;::string::String, ::locale::FormatType, cpp_utils::AsStruct)) -&gt; ::time::Time</code><br>
+C++ method: <span style='color: green;'><code>QTime QLocale::toTime(const QString&amp; string, QLocale::FormatType arg2 = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toTime">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Parses the time string given in <i>string</i> and returns the time. The format of the time string is chosen according to the <i>format</i> parameter (see <a href="http://doc.qt.io/qt-5/qlocale.html#timeFormat">timeFormat</a>()).</p>
+<p>If the time could not be parsed, returns an invalid time.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#timeFormat">timeFormat</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDate">toDate</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDateTime">toDateTime</a>(), and <a href="http://doc.qt.io/qt-5/qtime.html#fromString">QTime::fromString</a>().</p></div></p>
+
+<h2 id='variant-2-11' class='section-header'><a href='#variant-2-11'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_time(&amp;self, (&amp;::string::String, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time::Time&gt;</code><br>2) <code>fn to_time(&amp;self, (&amp;::string::String, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::time::Time</code><br>
+C++ method: <span style='color: green;'><code>QTime QLocale::toTime(const QString&amp; string, const QString&amp; format) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toTime-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Parses the time string given in <i>string</i> and returns the time. See <a href="http://doc.qt.io/qt-5/qtime.html#fromString">QTime::fromString</a>() for information on what is a valid format string.</p>
+<p>If the time could not be parsed, returns an invalid time.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#timeFormat">timeFormat</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDate">toDate</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDateTime">toDateTime</a>(), and <a href="http://doc.qt.io/qt-5/qtime.html#fromString">QTime::fromString</a>().</p></div></p>
+</div><h4 id='method.to_u_int' class='method'><code>fn <a href='#method.to_u_int' class='fnname'>to_u_int</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToUIntArgs.html' title='qt_core::locale::overloading::LocaleToUIntArgs'>LocaleToUIntArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toUInt</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-12' class='section-header'><a href='#variant-1-12'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_u_int(&amp;self, &amp;::string::String) -&gt; libc::c_uint</code><br>2) <code>fn to_u_int(&amp;self, (&amp;::string::String, *mut bool)) -&gt; libc::c_uint</code><br>
+C++ method: <span style='color: green;'><code>unsigned int QLocale::toUInt(const QString&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toUInt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the unsigned int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not 0, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+
+<h2 id='variant-2-12' class='section-header'><a href='#variant-2-12'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_u_int(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_uint</code><br>2) <code>fn to_u_int(&amp;self, (&amp;::string_ref::StringRef, *mut bool)) -&gt; libc::c_uint</code><br>
+C++ method: <span style='color: green;'><code>unsigned int QLocale::toUInt(const QStringRef&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toUInt-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the unsigned int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not null, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.to_u_long_long' class='method'><code>fn <a href='#method.to_u_long_long' class='fnname'>to_u_long_long</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToULongLongArgs.html' title='qt_core::locale::overloading::LocaleToULongLongArgs'>LocaleToULongLongArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toULongLong</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-13' class='section-header'><a href='#variant-1-13'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_u_long_long(&amp;self, &amp;::string::String) -&gt; u64</code><br>2) <code>fn to_u_long_long(&amp;self, (&amp;::string::String, *mut bool)) -&gt; u64</code><br>
+C++ method: <span style='color: green;'><code>qulonglong QLocale::toULongLong(const QString&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toULongLong">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the unsigned long long int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not 0, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toLongLong">toLongLong</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+
+<h2 id='variant-2-13' class='section-header'><a href='#variant-2-13'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_u_long_long(&amp;self, &amp;::string_ref::StringRef) -&gt; u64</code><br>2) <code>fn to_u_long_long(&amp;self, (&amp;::string_ref::StringRef, *mut bool)) -&gt; u64</code><br>
+C++ method: <span style='color: green;'><code>qulonglong QLocale::toULongLong(const QStringRef&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toULongLong-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the unsigned long long int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not null, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toLongLong">toLongLong</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toInt">toInt</a>(), <a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">toDouble</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.to_u_short' class='method'><code>fn <a href='#method.to_u_short' class='fnname'>to_u_short</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_ushort.html' title='libc::c_ushort'>c_ushort</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToUShortArgs.html' title='qt_core::locale::overloading::LocaleToUShortArgs'>LocaleToUShortArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toUShort</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-14' class='section-header'><a href='#variant-1-14'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_u_short(&amp;self, &amp;::string::String) -&gt; libc::c_ushort</code><br>2) <code>fn to_u_short(&amp;self, (&amp;::string::String, *mut bool)) -&gt; libc::c_ushort</code><br>
+C++ method: <span style='color: green;'><code>unsigned short QLocale::toUShort(const QString&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toUShort">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the unsigned short int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not 0, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toShort">toShort</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+
+<h2 id='variant-2-14' class='section-header'><a href='#variant-2-14'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_u_short(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_ushort</code><br>2) <code>fn to_u_short(&amp;self, (&amp;::string_ref::StringRef, *mut bool)) -&gt; libc::c_ushort</code><br>
+C++ method: <span style='color: green;'><code>unsigned short QLocale::toUShort(const QStringRef&amp; s, bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toUShort-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the unsigned short int represented by the localized string <i>s</i>.</p>
+<p>If the conversion fails the function returns 0.</p>
+<p>If <i>ok</i> is not null, failure is reported by setting *ok to false, and success by setting *ok to true.</p>
+<p>This function ignores leading and trailing whitespace.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlocale.html#toShort">toShort</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.to_upper' class='method'><code>fn <a href='#method.to_upper' class='fnname'>to_upper</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToUpperArgs.html' title='qt_core::locale::overloading::LocaleToUpperArgs'>LocaleToUpperArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::toUpper</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_upper(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_upper(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QLocale::toUpper(const QString&amp; str) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#toUpper">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an uppercase copy of <i>str</i>.</p>
+<p>If Qt Core is using the ICU libraries, they will be used to perform the transformation according to the rules of the current locale. Otherwise the conversion may be done in a platform-dependent manner, with <a href="http://doc.qt.io/qt-5/qstring.html#toUpper">QString::toUpper</a>() as a generic fallback.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toUpper">QString::toUpper</a>().</p></div></p>
+</div><h4 id='method.ui_languages' class='method'><code>fn <a href='#method.ui_languages' class='fnname'>ui_languages</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleUiLanguagesArgs.html' title='qt_core::locale::overloading::LocaleUiLanguagesArgs'>LocaleUiLanguagesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::uiLanguages</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn ui_languages(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_list::StringList&gt;</code><br>2) <code>fn ui_languages(&amp;self, cpp_utils::AsStruct) -&gt; ::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>QStringList QLocale::uiLanguages() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#uiLanguages">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an ordered list of locale names for translation purposes in preference order (like &quot;en&quot;, &quot;en-US&quot;, &quot;en-Latn-US&quot;).</p>
+<p>The return value represents locale names that the user expects to see the UI translation in.</p>
+<p>Most like you do not need to use this function directly, but just pass the <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> object to the <a href="http://doc.qt.io/qt-5/qtranslator.html#load">QTranslator::load</a>() function.</p>
+<p>The first item in the list is the most preferred one.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtranslator.html">QTranslator</a> and <a href="http://doc.qt.io/qt-5/qlocale.html#bcp47Name">bcp47Name</a>().</p></div></p>
+</div><h4 id='method.weekdays' class='method'><code>fn <a href='#method.weekdays' class='fnname'>weekdays</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleWeekdaysArgs.html' title='qt_core::locale::overloading::LocaleWeekdaysArgs'>LocaleWeekdaysArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::weekdays</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn weekdays(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListDayOfWeek&gt;</code><br>2) <code>fn weekdays(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListDayOfWeek</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;Qt::DayOfWeek&gt; QLocale::weekdays() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#weekdays">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of days that are considered weekdays according to the current locale.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.zero_digit' class='method'><code>fn <a href='#method.zero_digit' class='fnname'>zero_digit</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleZeroDigitArgs.html' title='qt_core::locale::overloading::LocaleZeroDigitArgs'>LocaleZeroDigitArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::zeroDigit</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn zero_digit(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::char::Char&gt;</code><br>2) <code>fn zero_digit(&amp;self, cpp_utils::AsStruct) -&gt; ::char::Char</code><br>
+C++ method: <span style='color: green;'><code>QChar QLocale::zeroDigit() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#zeroDigit">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the zero digit character of this locale.</p>
+<p>This function was introduced in  Qt 4.1.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListLocaleRefAppendArgs.html' title='qt_core::list::overloading::ListLocaleRefAppendArgs'>ListLocaleRefAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95754' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#20317-20325' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListLocaleRefAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListLocaleRef.html' title='qt_core::list::ListLocaleRef'>ListLocaleRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListLocaleRefCountArgs.html' title='qt_core::list::overloading::ListLocaleRefCountArgs'>ListLocaleRefCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95770' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#20336-20344' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListLocaleRefCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListLocaleRef.html' title='qt_core::list::ListLocaleRef'>ListLocaleRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListLocaleRefIndexOfArgs.html' title='qt_core::list::overloading::ListLocaleRefIndexOfArgs'>ListLocaleRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95781' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#20349-20357' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListLocaleRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListLocaleRef.html' title='qt_core::list::ListLocaleRef'>ListLocaleRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListLocaleRefLastIndexOfArgs.html' title='qt_core::list::overloading::ListLocaleRefLastIndexOfArgs'>ListLocaleRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95799' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#20373-20381' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListLocaleRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListLocaleRef.html' title='qt_core::list::ListLocaleRef'>ListLocaleRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListLocaleRefOpAddAssignArgs.html' title='qt_core::list::overloading::ListLocaleRefOpAddAssignArgs'>ListLocaleRefOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95914' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#20548-20558' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListLocaleRefOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListLocaleRef.html' title='qt_core::list::ListLocaleRef'>ListLocaleRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListLocaleRef.html' title='qt_core::list::ListLocaleRef'>ListLocaleRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListLocaleRefOpShlArgs.html' title='qt_core::list::overloading::ListLocaleRefOpShlArgs'>ListLocaleRefOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95933' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#20573-20582' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListLocaleRefOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListLocaleRef.html' title='qt_core::list::ListLocaleRef'>ListLocaleRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListLocaleRef.html' title='qt_core::list::ListLocaleRef'>ListLocaleRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-101122' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#1398-1402' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-101381' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#2664-2671' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QLocale::~QLocale()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlocale.html#dtor.QLocale">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructor</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-101384' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#2673-2677' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["VariantComparisonHelperNewArgs","This trait represents a set of arguments accepted by VariantComparisonHelper::new method."]]});

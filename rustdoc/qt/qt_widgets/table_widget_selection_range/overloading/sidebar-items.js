@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["TableWidgetSelectionRangeNewArgs","This trait represents a set of arguments accepted by TableWidgetSelectionRange::new method."]]});

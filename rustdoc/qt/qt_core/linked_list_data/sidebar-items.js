@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["LinkedListData","C++ type: <span style='color: green;'>```QLinkedListData```</span>"]]});

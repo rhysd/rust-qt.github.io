@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["GradientNewArgs","This trait represents a set of arguments accepted by Gradient::new method."],["GradientStopsArgs","This trait represents a set of arguments accepted by Gradient::stops method."]]});

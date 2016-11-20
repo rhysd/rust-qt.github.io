@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MessageLogger` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MessageLogger">
+
+    <title>qt_core::message_logger::MessageLogger - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>message_logger</a></p><script>window.sidebarCurrent = {name: 'MessageLogger', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>message_logger</a>::<wbr><a class='struct' href=''>MessageLogger</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-106155' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/message_logger.rs.html#18-20' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct MessageLogger {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QMessageLogger</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmessagelogger.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qmessagelogger.html">QMessageLogger</a> class generates log messages.</p>
+<p><a href="http://doc.qt.io/qt-5/qmessagelogger.html">QMessageLogger</a> is used to generate messages for the Qt logging framework. Usually one uses it through <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>(), <a href="http://doc.qt.io/qt-5/qtglobal.html#qInfo">qInfo</a>(), <a href="http://doc.qt.io/qt-5/qtglobal.html#qWarning">qWarning</a>(), <a href="http://doc.qt.io/qt-5/qtglobal.html#qCritical">qCritical</a>, or <a href="http://doc.qt.io/qt-5/qtglobal.html#qFatal">qFatal</a>() functions, which are actually macros: For example <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() expands to <a href="http://doc.qt.io/qt-5/qmessagelogger.html">QMessageLogger</a>(<strong>FILE</strong>, <strong>LINE</strong>, <a href="http://doc.qt.io/qt-5/qtglobal.html#Q_FUNC_INFO">Q_FUNC_INFO</a>).<a href="http://doc.qt.io/qt-5/qmessagelogger.html#debug">debug</a>() for debug builds, and <a href="http://doc.qt.io/qt-5/qmessagelogger.html">QMessageLogger</a>(0, 0, 0).<a href="http://doc.qt.io/qt-5/qmessagelogger.html#debug">debug</a>() for release builds.</p>
+<p>One example of direct use is to forward errors that stem from a scripting language, e.g. QML:</p>
+<pre class="cpp">    <span class="type">void</span> statusChanged(<span class="type">QDeclarativeComponent</span><span class="operator">::</span>Status status) {
+&#32;       <span class="keyword">if</span> (status <span class="operator">=</span><span class="operator">=</span> <span class="type">QDeclarativeComponent</span><span class="operator">::</span>Error) {
+&#32;           foreach (<span class="keyword">const</span> <span class="type">QDeclarativeError</span> <span class="operator">&amp;</span>error<span class="operator">,</span> component<span class="operator">-</span><span class="operator">&gt;</span>errors()) {
+&#32;               <span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> file <span class="operator">=</span> error<span class="operator">.</span>url()<span class="operator">.</span>toEncoded();
+&#32;               <span class="type"><a href="http://doc.qt.io/qt-5/qmessagelogger.html#QMessageLogger">QMessageLogger</a></span>(file<span class="operator">.</span>constData()<span class="operator">,</span> error<span class="operator">.</span>line()<span class="operator">,</span> <span class="number">0</span>)<span class="operator">.</span>debug() <span class="operator">&lt;</span><span class="operator">&lt;</span> error<span class="operator">.</span>description();
+&#32;           }
+&#32;       }
+&#32;   }</pre></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/message_logger/struct.MessageLogger.html' title='qt_core::message_logger::MessageLogger'>MessageLogger</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-106160' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/message_logger.rs.html#28-181' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.critical' class='method'><code>fn <a href='#method.critical' class='fnname'>critical</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/message_logger/overloading/trait.MessageLoggerCriticalArgs.html' title='qt_core::message_logger::overloading::MessageLoggerCriticalArgs'>MessageLoggerCriticalArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMessageLogger::critical</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn critical(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::debug::Debug&gt;</code><br>2) <code>fn critical(&amp;self, cpp_utils::AsStruct) -&gt; ::debug::Debug</code><br>
+C++ method: <span style='color: green;'><code>QDebug QMessageLogger::critical() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmessagelogger.html#critical-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Logs a critical message using a <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a> stream</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtglobal.html#qCritical">qCritical</a>() and <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a>.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn critical(&amp;self, (&amp;::logging_category::LoggingCategory, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::debug::Debug&gt;</code><br>2) <code>fn critical(&amp;self, (&amp;::logging_category::LoggingCategory, cpp_utils::AsStruct)) -&gt; ::debug::Debug</code><br>
+C++ method: <span style='color: green;'><code>QDebug QMessageLogger::critical(const QLoggingCategory&amp; cat) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmessagelogger.html#critical-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Logs a critical message into category <i>cat</i> using a <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a> stream.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qloggingcategory.html#qCCritical">qCCritical</a>() and <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a>.</p></div></p>
+</div><h4 id='method.debug' class='method'><code>fn <a href='#method.debug' class='fnname'>debug</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/message_logger/overloading/trait.MessageLoggerDebugArgs.html' title='qt_core::message_logger::overloading::MessageLoggerDebugArgs'>MessageLoggerDebugArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMessageLogger::debug</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn debug(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::debug::Debug&gt;</code><br>2) <code>fn debug(&amp;self, cpp_utils::AsStruct) -&gt; ::debug::Debug</code><br>
+C++ method: <span style='color: green;'><code>QDebug QMessageLogger::debug() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmessagelogger.html#debug-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Logs a debug message using a <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a> stream</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() and <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a>.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn debug(&amp;self, (&amp;::logging_category::LoggingCategory, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::debug::Debug&gt;</code><br>2) <code>fn debug(&amp;self, (&amp;::logging_category::LoggingCategory, cpp_utils::AsStruct)) -&gt; ::debug::Debug</code><br>
+C++ method: <span style='color: green;'><code>QDebug QMessageLogger::debug(const QLoggingCategory&amp; cat) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmessagelogger.html#debug-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Logs a debug message into category <i>cat</i> using a <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a> stream.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qloggingcategory.html#qCDebug">qCDebug</a>() and <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a>.</p></div></p>
+</div><h4 id='method.info' class='method'><code>fn <a href='#method.info' class='fnname'>info</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/message_logger/overloading/trait.MessageLoggerInfoArgs.html' title='qt_core::message_logger::overloading::MessageLoggerInfoArgs'>MessageLoggerInfoArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMessageLogger::info</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn info(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::debug::Debug&gt;</code><br>2) <code>fn info(&amp;self, cpp_utils::AsStruct) -&gt; ::debug::Debug</code><br>
+C++ method: <span style='color: green;'><code>QDebug QMessageLogger::info() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmessagelogger.html#info-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Logs an informational message using a <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a> stream.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtglobal.html#qInfo">qInfo</a>() and <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a>.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn info(&amp;self, (&amp;::logging_category::LoggingCategory, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::debug::Debug&gt;</code><br>2) <code>fn info(&amp;self, (&amp;::logging_category::LoggingCategory, cpp_utils::AsStruct)) -&gt; ::debug::Debug</code><br>
+C++ method: <span style='color: green;'><code>QDebug QMessageLogger::info(const QLoggingCategory&amp; cat) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmessagelogger.html#info-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Logs an informational message into the category <i>cat</i> using a <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a> stream.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qloggingcategory.html#qCInfo">qCInfo</a>() and <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a>.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/message_logger/overloading/trait.MessageLoggerNewArgs.html' title='qt_core::message_logger::overloading::MessageLoggerNewArgs'>MessageLoggerNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMessageLogger::QMessageLogger</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::message_logger::MessageLogger</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::message_logger::MessageLogger&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QMessageLogger::QMessageLogger()</code></span></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const libc::c_char, libc::c_int, *const libc::c_char, cpp_utils::AsStruct)) -&gt; ::message_logger::MessageLogger</code><br>2) <code>fn new((*const libc::c_char, libc::c_int, *const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::message_logger::MessageLogger&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QMessageLogger::QMessageLogger(const char* file, int line, const char* function)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const libc::c_char, libc::c_int, *const libc::c_char, *const libc::c_char, cpp_utils::AsStruct)) -&gt; ::message_logger::MessageLogger</code><br>2) <code>fn new((*const libc::c_char, libc::c_int, *const libc::c_char, *const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::message_logger::MessageLogger&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QMessageLogger::QMessageLogger(const char* file, int line, const char* function, const char* category)</code></span></p>
+</div><h4 id='method.no_debug' class='method'><code>fn <a href='#method.no_debug' class='fnname'>no_debug</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/message_logger/overloading/trait.MessageLoggerNoDebugArgs.html' title='qt_core::message_logger::overloading::MessageLoggerNoDebugArgs'>MessageLoggerNoDebugArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMessageLogger::noDebug</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn no_debug(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::no_debug::NoDebug&gt;</code><br>2) <code>fn no_debug(&amp;self, cpp_utils::AsStruct) -&gt; ::no_debug::NoDebug</code><br>
+C++ method: <span style='color: green;'><code>QNoDebug QMessageLogger::noDebug() const</code></span></p>
+</div><h4 id='method.warning' class='method'><code>fn <a href='#method.warning' class='fnname'>warning</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/message_logger/overloading/trait.MessageLoggerWarningArgs.html' title='qt_core::message_logger::overloading::MessageLoggerWarningArgs'>MessageLoggerWarningArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMessageLogger::warning</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn warning(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::debug::Debug&gt;</code><br>2) <code>fn warning(&amp;self, cpp_utils::AsStruct) -&gt; ::debug::Debug</code><br>
+C++ method: <span style='color: green;'><code>QDebug QMessageLogger::warning() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmessagelogger.html#warning-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Logs a warning message using a <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a> stream</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtglobal.html#qWarning">qWarning</a>() and <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a>.</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn warning(&amp;self, (&amp;::logging_category::LoggingCategory, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::debug::Debug&gt;</code><br>2) <code>fn warning(&amp;self, (&amp;::logging_category::LoggingCategory, cpp_utils::AsStruct)) -&gt; ::debug::Debug</code><br>
+C++ method: <span style='color: green;'><code>QDebug QMessageLogger::warning(const QLoggingCategory&amp; cat) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmessagelogger.html#warning-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Logs a warning message into category <i>cat</i> using a <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a> stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qloggingcategory.html#qCWarning">qCWarning</a>() and <a href="http://doc.qt.io/qt-5/qdebug.html">QDebug</a>.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/message_logger/struct.MessageLogger.html' title='qt_core::message_logger::MessageLogger'>MessageLogger</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-106158' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/message_logger.rs.html#22-26' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/message_logger/struct.MessageLogger.html' title='qt_core::message_logger::MessageLogger'>MessageLogger</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/message_logger/struct.MessageLogger.html' title='qt_core::message_logger::MessageLogger'>MessageLogger</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-106189' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/message_logger.rs.html#183-190' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QMessageLogger::~QMessageLogger()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/message_logger/struct.MessageLogger.html' title='qt_core::message_logger::MessageLogger'>MessageLogger</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-106192' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/message_logger.rs.html#192-196' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

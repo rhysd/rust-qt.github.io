@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["UndoView","C++ type: <span style='color: green;'>```QUndoView```</span>"]]});

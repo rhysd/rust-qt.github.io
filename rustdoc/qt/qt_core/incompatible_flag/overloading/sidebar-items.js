@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["IncompatibleFlagNewArgs","This trait represents a set of arguments accepted by IncompatibleFlag::new method."]]});

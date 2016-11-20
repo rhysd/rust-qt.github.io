@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ConvertFromPlainTextArgs","This trait represents a set of arguments accepted by convert_from_plain_text method."]]});

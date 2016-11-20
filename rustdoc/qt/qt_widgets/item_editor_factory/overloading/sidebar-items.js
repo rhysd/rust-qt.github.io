@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ItemEditorFactoryNewArgs","This trait represents a set of arguments accepted by ItemEditorFactory::new method."],["ItemEditorFactoryValuePropertyNameArgs","This trait represents a set of arguments accepted by ItemEditorFactory::value_property_name method."]]});

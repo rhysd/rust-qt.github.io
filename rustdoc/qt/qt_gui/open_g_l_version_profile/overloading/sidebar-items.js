@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["OpenGLVersionProfileNewArgs","This trait represents a set of arguments accepted by OpenGLVersionProfile::new method."],["OpenGLVersionProfileVersionArgs","This trait represents a set of arguments accepted by OpenGLVersionProfile::version method."]]});

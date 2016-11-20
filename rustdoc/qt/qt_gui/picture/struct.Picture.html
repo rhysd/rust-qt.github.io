@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Picture` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Picture">
+
+    <title>qt_gui::picture::Picture - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>picture</a></p><script>window.sidebarCurrent = {name: 'Picture', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>picture</a>::<wbr><a class='struct' href=''>Picture</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-132288' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/picture.rs.html#27-29' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Picture {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPicture</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qpicture.html">QPicture</a> class is a paint device that records and replays <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> commands.</p>
+<p>A picture serializes painter commands to an IO device in a platform-independent format. They are sometimes referred to as meta-files.</p>
+<p>Qt pictures use a proprietary binary format. Unlike native picture (meta-file) formats on many window systems, Qt pictures have no limitations regarding their contents. Everything that can be painted on a widget or pixmap (e.g., fonts, pixmaps, regions, transformed graphics, etc.) can also be stored in a picture.</p>
+<p><a href="http://doc.qt.io/qt-5/qpicture.html">QPicture</a> is resolution independent, i.e. a <a href="http://doc.qt.io/qt-5/qpicture.html">QPicture</a> can be displayed on different devices (for example svg, pdf, ps, printer and screen) looking the same. This is, for instance, needed for WYSIWYG print preview. <a href="http://doc.qt.io/qt-5/qpicture.html">QPicture</a> runs in the default system dpi, and scales the painter to match differences in resolution depending on the window system.</p>
+<p>Example of how to record a picture:</p>
+<pre class="cpp">        <span class="type"><a href="http://doc.qt.io/qt-5/qpicture.html#QPicture">QPicture</a></span> picture;
+&#32;       <span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter;
+&#32;       painter<span class="operator">.</span>begin(<span class="operator">&amp;</span>picture);           <span class="comment">// paint in picture</span>
+&#32;       painter<span class="operator">.</span>drawEllipse(<span class="number">10</span><span class="operator">,</span><span class="number">20</span><span class="operator">,</span> <span class="number">80</span><span class="operator">,</span><span class="number">70</span>); <span class="comment">// draw an ellipse</span>
+&#32;       painter<span class="operator">.</span>end();                     <span class="comment">// painting done</span>
+&#32;       picture<span class="operator">.</span>save(<span class="string">&quot;drawing.pic&quot;</span>);       <span class="comment">// save picture</span></pre>
+<p>Note that the list of painter commands is reset on each call to the <a href="http://doc.qt.io/qt-5/qpainter.html#begin">QPainter::begin</a>() function.</p>
+<p>Example of how to replay a picture:</p>
+<pre class="cpp">        <span class="type"><a href="http://doc.qt.io/qt-5/qpicture.html#QPicture">QPicture</a></span> picture;
+&#32;       picture<span class="operator">.</span>load(<span class="string">&quot;drawing.pic&quot;</span>);           <span class="comment">// load picture</span>
+&#32;       <span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter;
+&#32;       painter<span class="operator">.</span>begin(<span class="operator">&amp;</span>myImage);               <span class="comment">// paint in myImage</span>
+&#32;       painter<span class="operator">.</span>drawPicture(<span class="number">0</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> picture);    <span class="comment">// draw the picture at (0,0)</span>
+&#32;       painter<span class="operator">.</span>end();                         <span class="comment">// painting done</span></pre>
+<p>Pictures can also be drawn using <a href="http://doc.qt.io/qt-5/qpicture.html#play">play</a>(). Some basic data about a picture is available, for example, <a href="http://doc.qt.io/qt-5/qpicture.html#size">size</a>(), <a href="http://doc.qt.io/qt-5/qpicture.html#isNull">isNull</a>() and <a href="http://doc.qt.io/qt-5/qpicture.html#boundingRect">boundingRect</a>().</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/picture/struct.Picture.html' title='qt_gui::picture::Picture'>Picture</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-132293' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/picture.rs.html#37-399' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.bounding_rect' class='method'><code>fn <a href='#method.bounding_rect' class='fnname'>bounding_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/picture/overloading/trait.PictureBoundingRectArgs.html' title='qt_gui::picture::overloading::PictureBoundingRectArgs'>PictureBoundingRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPicture::boundingRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn bounding_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn bounding_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QPicture::boundingRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#boundingRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the picture&#39;s bounding rectangle or an invalid rectangle if the picture contains no data.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture.html#setBoundingRect">setBoundingRect</a>().</p></div></p>
+</div><h4 id='method.color_count' class='method'><code>fn <a href='#method.color_count' class='fnname'>color_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::colorCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#colorCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of different colors available for the paint device. If the number of colors available is too great to be represented by the int data type, then INT_MAX will be returned instead.</p></div></p>
+</div><h4 id='method.data' class='method'><code>fn <a href='#method.data' class='fnname'>data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const char* QPicture::data() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#data">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to the picture data. The pointer is only valid until the next non-const function is called on this picture. The returned pointer is 0 if the picture contains no data.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture.html#setData">setData</a>(), <a href="http://doc.qt.io/qt-5/qpicture.html#size">size</a>(), and <a href="http://doc.qt.io/qt-5/qpicture.html#isNull">isNull</a>().</p></div></p>
+</div><h4 id='method.depth' class='method'><code>fn <a href='#method.depth' class='fnname'>depth</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::depth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#depth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the bit depth (number of bit planes) of the paint device.</p></div></p>
+</div><h4 id='method.detach' class='method'><code>fn <a href='#method.detach' class='fnname'>detach</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPicture::detach()</code></span></p>
+</div><h4 id='method.dev_type' class='method'><code>fn <a href='#method.dev_type' class='fnname'>dev_type</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual int QPicture::devType() const</code></span></p>
+</div><h4 id='method.device_pixel_ratio' class='method'><code>fn <a href='#method.device_pixel_ratio' class='fnname'>device_pixel_ratio</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::devicePixelRatio() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#devicePixelRatio">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the device pixel ratio for device.</p>
+<p>Common values are 1 for normal-dpi displays and 2 for high-dpi &quot;retina&quot; displays.</p></div></p>
+</div><h4 id='method.height' class='method'><code>fn <a href='#method.height' class='fnname'>height</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::height() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#height">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the height of the paint device in default coordinate system units (e.g. pixels for <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> and <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a>).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#heightMM">heightMM</a>().</p></div></p>
+</div><h4 id='method.height_m_m' class='method'><code>fn <a href='#method.height_m_m' class='fnname'>height_m_m</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::heightMM() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#heightMM">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the height of the paint device in millimeters. Due to platform limitations it may not be possible to use this function to determine the actual physical size of a widget on the screen.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#height">height</a>().</p></div></p>
+</div><h4 id='method.input_format_list' class='method'><code>fn <a href='#method.input_format_list' class='fnname'>input_format_list</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/picture/overloading/trait.PictureInputFormatListArgs.html' title='qt_gui::picture::overloading::PictureInputFormatListArgs'>PictureInputFormatListArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPicture::inputFormatList</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn input_format_list(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn input_format_list(cpp_utils::AsStruct) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>static QStringList QPicture::inputFormatList()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#inputFormatList">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of picture formats that are supported for picture input.</p>
+<p>Note that if you want to iterate over the list, you should iterate over a copy, e.g.</p>
+<pre class="cpp">        <span class="type"><a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a></span> list <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qpicture.html#QPicture">QPicture</a></span><span class="operator">::</span>inputFormatList();
+&#32;       foreach (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> <span class="operator">&amp;</span>string<span class="operator">,</span> list)
+&#32;           myProcessing(string);</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#outputFormatList">outputFormatList</a>(), <a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#inputFormats">inputFormats</a>(), and <a href="http://doc.qt.io/qt-5/qpictureio.html">QPictureIO</a>.</p></div></p>
+</div><h4 id='method.input_formats' class='method'><code>fn <a href='#method.input_formats' class='fnname'>input_formats</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/picture/overloading/trait.PictureInputFormatsArgs.html' title='qt_gui::picture::overloading::PictureInputFormatsArgs'>PictureInputFormatsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPicture::inputFormats</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn input_formats(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::list::ListByteArrayRef&gt;</code><br>2) <code>fn input_formats(cpp_utils::AsStruct) -&gt; qt_core::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QByteArray&gt; QPicture::inputFormats()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#inputFormats">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of picture formats that are supported for picture input.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#outputFormats">outputFormats</a>(), <a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#inputFormatList">inputFormatList</a>(), and <a href="http://doc.qt.io/qt-5/qpictureio.html">QPictureIO</a>.</p></div></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPicture::isDetached() const</code></span></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPicture::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the picture contains no data; otherwise returns false.</p></div></p>
+</div><h4 id='method.load' class='method'><code>fn <a href='#method.load' class='fnname'>load</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/picture/overloading/trait.PictureLoadArgs.html' title='qt_gui::picture::overloading::PictureLoadArgs'>PictureLoadArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPicture::load</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn load(&amp;mut self, *mut qt_core::qiod_evice::QiodEvice) -&gt; bool</code><br>2) <code>fn load(&amp;mut self, (*mut qt_core::qiod_evice::QiodEvice, *const libc::c_char)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QPicture::load(QIODevice* dev, const char* format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#load-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><i>dev</i> is the device to use for loading.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn load(&amp;mut self, &amp;qt_core::string::String) -&gt; bool</code><br>2) <code>fn load(&amp;mut self, (&amp;qt_core::string::String, *const libc::c_char)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QPicture::load(const QString&amp; fileName, const char* format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#load">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Loads a picture from the file specified by <i>fileName</i> and returns true if successful; otherwise invalidates the picture and returns <code>false</code>.</p>
+<p>Please note that the <i>format</i> parameter has been deprecated and will have no effect.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture.html#save">save</a>().</p></div></p>
+</div><h4 id='method.logical_dpi_x' class='method'><code>fn <a href='#method.logical_dpi_x' class='fnname'>logical_dpi_x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::logicalDpiX() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal resolution of the device in dots per inch, which is used when computing font sizes. For X11, this is usually the same as could be computed from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#widthMM">widthMM</a>().</p>
+<p>Note that if the logicalDpiX() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">physicalDpiX</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">logicalDpiY</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">physicalDpiX</a>().</p></div></p>
+</div><h4 id='method.logical_dpi_y' class='method'><code>fn <a href='#method.logical_dpi_y' class='fnname'>logical_dpi_y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::logicalDpiY() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the vertical resolution of the device in dots per inch, which is used when computing font sizes. For X11, this is usually the same as could be computed from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#heightMM">heightMM</a>().</p>
+<p>Note that if the logicalDpiY() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">physicalDpiY</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">logicalDpiX</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">physicalDpiY</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/picture/overloading/trait.PictureNewArgs.html' title='qt_gui::picture::overloading::PictureNewArgs'>PictureNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPicture::QPicture</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::picture::Picture, cpp_utils::AsStruct)) -&gt; ::picture::Picture</code><br>2) <code>fn new((&amp;::picture::Picture, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::picture::Picture&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPicture::QPicture(const QPicture&amp; arg1)</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, cpp_utils::AsStruct)) -&gt; ::picture::Picture</code><br>2) <code>fn new(cpp_utils::AsStruct) -&gt; ::picture::Picture</code><br>3) <code>fn new((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::picture::Picture&gt;</code><br>4) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::picture::Picture&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPicture::QPicture(int formatVersion = ?)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, p: &amp;'l1 <a class='struct' href='../../qt_gui/picture/struct.Picture.html' title='qt_gui::picture::Picture'>Picture</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/picture/struct.Picture.html' title='qt_gui::picture::Picture'>Picture</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPicture&amp; QPicture::operator=(const QPicture&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns picture <i>p</i> to this picture and returns a reference to this picture.</p></div></p>
+</div><h4 id='method.output_format_list' class='method'><code>fn <a href='#method.output_format_list' class='fnname'>output_format_list</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/picture/overloading/trait.PictureOutputFormatListArgs.html' title='qt_gui::picture::overloading::PictureOutputFormatListArgs'>PictureOutputFormatListArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPicture::outputFormatList</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn output_format_list(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn output_format_list(cpp_utils::AsStruct) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>static QStringList QPicture::outputFormatList()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#outputFormatList">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of picture formats that are supported for picture output.</p>
+<p>Note that if you want to iterate over the list, you should iterate over a copy, e.g.</p>
+<pre class="cpp">        <span class="type"><a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a></span> list <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qpicture.html#QPicture">QPicture</a></span><span class="operator">::</span>outputFormatList();
+&#32;       foreach (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> <span class="operator">&amp;</span>string<span class="operator">,</span> list)
+&#32;           myProcessing(string);</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#inputFormatList">inputFormatList</a>(), <a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#outputFormats">outputFormats</a>(), and <a href="http://doc.qt.io/qt-5/qpictureio.html">QPictureIO</a>.</p></div></p>
+</div><h4 id='method.output_formats' class='method'><code>fn <a href='#method.output_formats' class='fnname'>output_formats</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/picture/overloading/trait.PictureOutputFormatsArgs.html' title='qt_gui::picture::overloading::PictureOutputFormatsArgs'>PictureOutputFormatsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPicture::outputFormats</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn output_formats(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::list::ListByteArrayRef&gt;</code><br>2) <code>fn output_formats(cpp_utils::AsStruct) -&gt; qt_core::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QByteArray&gt; QPicture::outputFormats()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#outputFormats">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of picture formats that are supported for picture output.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#inputFormats">inputFormats</a>(), <a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#outputFormatList">outputFormatList</a>(), and <a href="http://doc.qt.io/qt-5/qpictureio.html">QPictureIO</a>.</p></div></p>
+</div><h4 id='method.paint_engine' class='method'><code>fn <a href='#method.paint_engine' class='fnname'>paint_engine</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/paint_engine/struct.PaintEngine.html' title='qt_gui::paint_engine::PaintEngine'>PaintEngine</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual QPaintEngine* QPicture::paintEngine() const</code></span></p>
+</div><h4 id='method.painting_active' class='method'><code>fn <a href='#method.painting_active' class='fnname'>painting_active</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPicture::paintingActive() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#paintingActive">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the device is currently being painted on, i.e. someone has called <a href="http://doc.qt.io/qt-5/qpainter.html#begin">QPainter::begin</a>() but not yet called <a href="http://doc.qt.io/qt-5/qpainter.html#end">QPainter::end</a>() for this device; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainter.html#isActive">QPainter::isActive</a>().</p></div></p>
+</div><h4 id='method.physical_dpi_x' class='method'><code>fn <a href='#method.physical_dpi_x' class='fnname'>physical_dpi_x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::physicalDpiX() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal resolution of the device in dots per inch. For example, when printing, this resolution refers to the physical printer&#39;s resolution. The logical DPI on the other hand, refers to the resolution used by the actual paint engine.</p>
+<p>Note that if the physicalDpiX() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">logicalDpiX</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">physicalDpiY</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">logicalDpiX</a>().</p></div></p>
+</div><h4 id='method.physical_dpi_y' class='method'><code>fn <a href='#method.physical_dpi_y' class='fnname'>physical_dpi_y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::physicalDpiY() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal resolution of the device in dots per inch. For example, when printing, this resolution refers to the physical printer&#39;s resolution. The logical DPI on the other hand, refers to the resolution used by the actual paint engine.</p>
+<p>Note that if the physicalDpiY() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">logicalDpiY</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">physicalDpiX</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">logicalDpiY</a>().</p></div></p>
+</div><h4 id='method.picture_format' class='method'><code>fn <a href='#method.picture_format' class='fnname'>picture_format</a>(file_name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static const char* QPicture::pictureFormat(const QString&amp; fileName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture-obsolete.html#pictureFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a string that specifies the picture format of the file <i>fileName</i>, or 0 if the file cannot be read or if the format is not recognized.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture.html#load">load</a>() and <a href="http://doc.qt.io/qt-5/qpicture.html#save">save</a>().</p></div></p>
+</div><h4 id='method.play' class='method'><code>fn <a href='#method.play' class='fnname'>play</a>(&amp;mut self, p: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/painter/struct.Painter.html' title='qt_gui::painter::Painter'>Painter</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPicture::play(QPainter* p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#play">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Replays the picture using <i>painter</i>, and returns <code>true</code> if successful; otherwise returns <code>false</code>.</p>
+<p>This function does exactly the same as <a href="http://doc.qt.io/qt-5/qpainter.html#drawPicture">QPainter::drawPicture</a>() with (x, y) = (0, 0).</p></div></p>
+</div><h4 id='method.save' class='method'><code>fn <a href='#method.save' class='fnname'>save</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/picture/overloading/trait.PictureSaveArgs.html' title='qt_gui::picture::overloading::PictureSaveArgs'>PictureSaveArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPicture::save</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn save(&amp;mut self, *mut qt_core::qiod_evice::QiodEvice) -&gt; bool</code><br>2) <code>fn save(&amp;mut self, (*mut qt_core::qiod_evice::QiodEvice, *const libc::c_char)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QPicture::save(QIODevice* dev, const char* format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#save-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><i>dev</i> is the device to use for saving.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn save(&amp;mut self, &amp;qt_core::string::String) -&gt; bool</code><br>2) <code>fn save(&amp;mut self, (&amp;qt_core::string::String, *const libc::c_char)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QPicture::save(const QString&amp; fileName, const char* format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#save">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Saves a picture to the file specified by <i>fileName</i> and returns true if successful; otherwise returns <code>false</code>.</p>
+<p>Please note that the <i>format</i> parameter has been deprecated and will have no effect.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture.html#load">load</a>().</p></div></p>
+</div><h4 id='method.set_bounding_rect' class='method'><code>fn <a href='#method.set_bounding_rect' class='fnname'>set_bounding_rect</a>(&amp;mut self, r: &amp;<a class='struct' href='../../qt_core/rect/struct.Rect.html' title='qt_core::rect::Rect'>Rect</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPicture::setBoundingRect(const QRect&amp; r)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#setBoundingRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the picture&#39;s bounding rectangle to <i>r</i>. The automatically calculated value is overridden.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture.html#boundingRect">boundingRect</a>().</p></div></p>
+</div><h4 id='method.set_data' class='method'><code>fn <a href='#method.set_data' class='fnname'>set_data</a>(&amp;mut self, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>, size: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QPicture::setData(const char* data, unsigned int size)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#setData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the picture data directly from <i>data</i> and <i>size</i>. This function copies the input data.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture.html#data">data</a>() and <a href="http://doc.qt.io/qt-5/qpicture.html#size">size</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QPicture::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the picture data.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpicture.html#data">data</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/picture/struct.Picture.html' title='qt_gui::picture::Picture'>Picture</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPicture::swap(QPicture&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps picture <i>other</i> with this picture. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.width' class='method'><code>fn <a href='#method.width' class='fnname'>width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::width() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#width">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the paint device in default coordinate system units (e.g. pixels for <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> and <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a>).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#widthMM">widthMM</a>().</p></div></p>
+</div><h4 id='method.width_m_m' class='method'><code>fn <a href='#method.width_m_m' class='fnname'>width_m_m</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPicture::widthMM() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#widthMM">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the paint device in millimeters. Due to platform limitations it may not be possible to use this function to determine the actual physical size of a widget on the screen.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#width">width</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/picture/struct.Picture.html' title='qt_gui::picture::Picture'>Picture</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-132291' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/picture.rs.html#31-35' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/picture/struct.Picture.html' title='qt_gui::picture::Picture'>Picture</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/picture/struct.Picture.html' title='qt_gui::picture::Picture'>Picture</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-132383' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/picture.rs.html#401-408' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QPicture::~QPicture()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpicture.html#dtor.QPicture">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the picture.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/picture/struct.Picture.html' title='qt_gui::picture::Picture'>Picture</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-132386' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/picture.rs.html#410-414' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

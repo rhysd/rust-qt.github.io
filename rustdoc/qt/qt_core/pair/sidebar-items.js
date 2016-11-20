@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["PairCDoubleVariantRef","C++ type: <span style='color: green;'>```QPair<double, QVariant>```</span>"],["PairStringRefStringRef","C++ type: <span style='color: green;'>```QPair<QString, QString>```</span>"]]});

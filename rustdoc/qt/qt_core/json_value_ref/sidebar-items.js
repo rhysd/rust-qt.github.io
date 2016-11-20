@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["JsonValueRef","C++ type: <span style='color: green;'>```QJsonValueRef```</span>"]]});

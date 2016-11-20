@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Date` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Date">
+
+    <title>qt_core::date::Date - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>date</a></p><script>window.sidebarCurrent = {name: 'Date', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>date</a>::<wbr><a class='struct' href=''>Date</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-65772' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/date.rs.html#22-24' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Date {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QDate</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> class provides date functions.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> object contains a calendar date, i.e. year, month, and day numbers, in the Gregorian calendar. It can read the current date from the system clock. It provides functions for comparing dates, and for manipulating dates. For example, it is possible to add and subtract days, months, and years to dates.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> object is typically created by giving the year, month, and day numbers explicitly. Note that <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> interprets two digit years as is, i.e., years 0 - 99. A <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> can also be constructed with the static function <a href="http://doc.qt.io/qt-5/qdate.html#currentDate">currentDate</a>(), which creates a <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> object containing the system clock&#39;s date. An explicit date can also be set using <a href="http://doc.qt.io/qt-5/qdate.html#setDate">setDate</a>(). The <a href="http://doc.qt.io/qt-5/qdate.html#fromString">fromString</a>() function returns a <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> given a string and a date format which is used to interpret the date within the string.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qdate.html#year">year</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#month">month</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#day">day</a>() functions provide access to the year, month, and day numbers. Also, <a href="http://doc.qt.io/qt-5/qdate.html#dayOfWeek">dayOfWeek</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#dayOfYear">dayOfYear</a>() functions are provided. The same information is provided in textual format by the <a href="http://doc.qt.io/qt-5/qdate.html#toString">toString</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#shortDayName">shortDayName</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#longDayName">longDayName</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#shortMonthName">shortMonthName</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#longMonthName">longMonthName</a>() functions.</p>
+<p><a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> provides a full set of operators to compare two <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> objects where smaller means earlier, and larger means later.</p>
+<p>You can increment (or decrement) a date by a given number of days using <a href="http://doc.qt.io/qt-5/qdate.html#addDays">addDays</a>(). Similarly you can use <a href="http://doc.qt.io/qt-5/qdate.html#addMonths">addMonths</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#addYears">addYears</a>(). The <a href="http://doc.qt.io/qt-5/qdate.html#daysTo">daysTo</a>() function returns the number of days between two dates.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qdate.html#daysInMonth">daysInMonth</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#daysInYear">daysInYear</a>() functions return how many days there are in this date&#39;s month and year, respectively. The <a href="http://doc.qt.io/qt-5/qdate.html#isLeapYear">isLeapYear</a>() function indicates whether a date is in a leap year.</p>
+<a name="no-year-0"></a>
+<a name="no-year-0"></a>
+<h4>No Year 0</h4>
+<p>There is no year 0. Dates in that year are considered invalid. The year -1 is the year &quot;1 before Christ&quot; or &quot;1 before current era.&quot; The day before 1 January 1 CE is 31 December 1 BCE.</p>
+<a name="range-of-valid-dates"></a>
+<h4>Range of Valid Dates</h4>
+<p>Dates are stored internally as a Julian Day number, an integer count of every day in a contiguous range, with 24 November 4714 BCE in the Gregorian calendar being Julian Day 0 (1 January 4713 BCE in the Julian calendar). As well as being an efficient and accurate way of storing an absolute date, it is suitable for converting a Date into other calendar systems such as Hebrew, Islamic or Chinese. The Julian Day number can be obtained using <a href="http://doc.qt.io/qt-5/qdate.html#toJulianDay">QDate::toJulianDay</a>() and can be set using <a href="http://doc.qt.io/qt-5/qdate.html#fromJulianDay">QDate::fromJulianDay</a>().</p>
+<p>The range of dates able to be stored by <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> as a Julian Day number is for technical reasons limited to between -784350574879 and 784354017364, which means from before 2 billion BCE to after 2 billion CE.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65777' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/date.rs.html#32-576' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.add_days' class='method'><code>fn <a href='#method.add_days' class='fnname'>add_days</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateAddDaysArgs.html' title='qt_core::date::overloading::DateAddDaysArgs'>DateAddDaysArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::addDays</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn add_days(&amp;self, (i64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>2) <code>fn add_days(&amp;self, (i64, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>
+C++ method: <span style='color: green;'><code>QDate QDate::addDays(qint64 days) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#addDays">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> object containing a date <i>ndays</i> later than the date of this object (or earlier if <i>ndays</i> is negative).</p>
+<p>Returns a null date if the current date is invalid or the new date is out of range.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#addMonths">addMonths</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#addYears">addYears</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#daysTo">daysTo</a>().</p></div></p>
+</div><h4 id='method.add_months' class='method'><code>fn <a href='#method.add_months' class='fnname'>add_months</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateAddMonthsArgs.html' title='qt_core::date::overloading::DateAddMonthsArgs'>DateAddMonthsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::addMonths</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn add_months(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>2) <code>fn add_months(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>
+C++ method: <span style='color: green;'><code>QDate QDate::addMonths(int months) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#addMonths">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> object containing a date <i>nmonths</i> later than the date of this object (or earlier if <i>nmonths</i> is negative).</p>
+<p><b>Note: </b>If the ending day/month combination does not exist in the resulting month/year, this function will return a date that is the latest valid date.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#addDays">addDays</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#addYears">addYears</a>().</p></div></p>
+</div><h4 id='method.add_years' class='method'><code>fn <a href='#method.add_years' class='fnname'>add_years</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateAddYearsArgs.html' title='qt_core::date::overloading::DateAddYearsArgs'>DateAddYearsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::addYears</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn add_years(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>2) <code>fn add_years(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>
+C++ method: <span style='color: green;'><code>QDate QDate::addYears(int years) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#addYears">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> object containing a date <i>nyears</i> later than the date of this object (or earlier if <i>nyears</i> is negative).</p>
+<p><b>Note: </b>If the ending day/month combination does not exist in the resulting year (i.e., if the date was Feb 29 and the final year is not a leap year), this function will return a date that is the latest valid date (that is, Feb 28).</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#addDays">addDays</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#addMonths">addMonths</a>().</p></div></p>
+</div><h4 id='method.current_date' class='method'><code>fn <a href='#method.current_date' class='fnname'>current_date</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateCurrentDateArgs.html' title='qt_core::date::overloading::DateCurrentDateArgs'>DateCurrentDateArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::currentDate</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn current_date(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>2) <code>fn current_date(cpp_utils::AsStruct) -&gt; ::date::Date</code><br>
+C++ method: <span style='color: green;'><code>static QDate QDate::currentDate()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#currentDate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current date, as reported by the system clock.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtime.html#currentTime">QTime::currentTime</a>() and <a href="http://doc.qt.io/qt-5/qdatetime.html#currentDateTime">QDateTime::currentDateTime</a>().</p></div></p>
+</div><h4 id='method.day' class='method'><code>fn <a href='#method.day' class='fnname'>day</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDate::day() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#day">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the day of the month (1 to 31) of this date.</p>
+<p>Returns 0 if the date is invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#year">year</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#month">month</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#dayOfWeek">dayOfWeek</a>().</p></div></p>
+</div><h4 id='method.day_of_week' class='method'><code>fn <a href='#method.day_of_week' class='fnname'>day_of_week</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDate::dayOfWeek() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#dayOfWeek">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the weekday (1 = Monday to 7 = Sunday) for this date.</p>
+<p>Returns 0 if the date is invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#day">day</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#dayOfYear">dayOfYear</a>(), and <a href="http://doc.qt.io/qt-5/qt.html#DayOfWeek-enum">Qt::DayOfWeek</a>.</p></div></p>
+</div><h4 id='method.day_of_year' class='method'><code>fn <a href='#method.day_of_year' class='fnname'>day_of_year</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDate::dayOfYear() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#dayOfYear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the day of the year (1 to 365 or 366 on leap years) for this date.</p>
+<p>Returns 0 if the date is invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#day">day</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#dayOfWeek">dayOfWeek</a>().</p></div></p>
+</div><h4 id='method.days_in_month' class='method'><code>fn <a href='#method.days_in_month' class='fnname'>days_in_month</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDate::daysInMonth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#daysInMonth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of days in the month (28 to 31) for this date.</p>
+<p>Returns 0 if the date is invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#day">day</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#daysInYear">daysInYear</a>().</p></div></p>
+</div><h4 id='method.days_in_year' class='method'><code>fn <a href='#method.days_in_year' class='fnname'>days_in_year</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDate::daysInYear() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#daysInYear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of days in the year (365 or 366) for this date.</p>
+<p>Returns 0 if the date is invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#day">day</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#daysInMonth">daysInMonth</a>().</p></div></p>
+</div><h4 id='method.days_to' class='method'><code>fn <a href='#method.days_to' class='fnname'>days_to</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QDate::daysTo(const QDate&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#daysTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of days from this date to <i>d</i> (which is negative if <i>d</i> is earlier than this date).</p>
+<p>Returns 0 if either date is invalid.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span> d1(<span class="number">1995</span><span class="operator">,</span> <span class="number">5</span><span class="operator">,</span> <span class="number">17</span>);  <span class="comment">// May 17, 1995</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span> d2(<span class="number">1995</span><span class="operator">,</span> <span class="number">5</span><span class="operator">,</span> <span class="number">20</span>);  <span class="comment">// May 20, 1995</span>
+d1<span class="operator">.</span>daysTo(d2);          <span class="comment">// returns 3</span>
+d2<span class="operator">.</span>daysTo(d1);          <span class="comment">// returns -3</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#addDays">addDays</a>().</p></div></p>
+</div><h4 id='method.from_julian_day' class='method'><code>fn <a href='#method.from_julian_day' class='fnname'>from_julian_day</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateFromJulianDayArgs.html' title='qt_core::date::overloading::DateFromJulianDayArgs'>DateFromJulianDayArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::fromJulianDay</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_julian_day((i64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>2) <code>fn from_julian_day((i64, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>
+C++ method: <span style='color: green;'><code>static QDate QDate::fromJulianDay(qint64 jd)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#fromJulianDay">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the Julian day <i>jd</i> to a <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#toJulianDay">toJulianDay</a>().</p></div></p>
+</div><h4 id='method.from_string' class='method'><code>fn <a href='#method.from_string' class='fnname'>from_string</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateFromStringArgs.html' title='qt_core::date::overloading::DateFromStringArgs'>DateFromStringArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::fromString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn from_string((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>2) <code>fn from_string((&amp;::string::String, ::qt::DateFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>3) <code>fn from_string((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>4) <code>fn from_string((&amp;::string::String, ::qt::DateFormat, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>
+C++ method: <span style='color: green;'><code>static QDate QDate::fromString(const QString&amp; s, Qt::DateFormat f = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#fromString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> represented by the <i>string</i>, using the <i>format</i> given, or an invalid date if the string cannot be parsed.</p>
+<p>Note for <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::TextDate</a>: It is recommended that you use the English short month names (e.g. &quot;Jan&quot;). Although localized month names can also be used, they depend on the user&#39;s locale settings.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn from_string((&amp;::string::String, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>2) <code>fn from_string((&amp;::string::String, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>
+C++ method: <span style='color: green;'><code>static QDate QDate::fromString(const QString&amp; s, const QString&amp; format)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#fromString-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> represented by the <i>string</i>, using the <i>format</i> given, or an invalid date if the string cannot be parsed.</p>
+<p>These expressions may be used for the format:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Expression</th><th>Output</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td>d</td><td>The day as a number without a leading zero (1 to 31)</td></tr>
+<tr valign="top" class="even"><td>dd</td><td>The day as a number with a leading zero (01 to 31)</td></tr>
+<tr valign="top" class="odd"><td>ddd</td><td>The abbreviated localized day name (e.g. &#39;Mon&#39; to &#39;Sun&#39;). Uses the system locale to localize the name, i.e. <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</td></tr>
+<tr valign="top" class="even"><td>dddd</td><td>The long localized day name (e.g. &#39;Monday&#39; to &#39;Sunday&#39;). Uses the system locale to localize the name, i.e. <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</td></tr>
+<tr valign="top" class="odd"><td>M</td><td>The month as a number without a leading zero (1 to 12)</td></tr>
+<tr valign="top" class="even"><td>MM</td><td>The month as a number with a leading zero (01 to 12)</td></tr>
+<tr valign="top" class="odd"><td>MMM</td><td>The abbreviated localized month name (e.g. &#39;Jan&#39; to &#39;Dec&#39;). Uses the system locale to localize the name, i.e. <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</td></tr>
+<tr valign="top" class="even"><td>MMMM</td><td>The long localized month name (e.g. &#39;January&#39; to &#39;December&#39;). Uses the system locale to localize the name, i.e. <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</td></tr>
+<tr valign="top" class="odd"><td>yy</td><td>The year as two digit number (00 to 99)</td></tr>
+<tr valign="top" class="even"><td>yyyy</td><td>The year as four digit number. If the year is negative, a minus sign is prepended in addition.</td></tr>
+</tbody></table></div>
+<p>All other input characters will be treated as text. Any sequence of characters that are enclosed in single quotes will also be treated as text and will not be used as an expression. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span> date <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#fromString">fromString</a>(<span class="string">&quot;1MM12car2003&quot;</span><span class="operator">,</span> <span class="string">&quot;d&#39;MM&#39;MMcaryyyy&quot;</span>);
+<span class="comment">// date is 1 December 2003</span></pre>
+<p>If the format is not satisfied, an invalid <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> is returned. The expressions that don&#39;t expect leading zeroes (d, M) will be greedy. This means that they will use two digits even if this will put them outside the accepted range of values and leaves too few digits for other sections. For example, the following format string could have meant January 30 but the M will grab two digits, resulting in an invalid date:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span> date <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#fromString">fromString</a>(<span class="string">&quot;130&quot;</span><span class="operator">,</span> <span class="string">&quot;Md&quot;</span>); <span class="comment">// invalid</span></pre>
+<p>For any field that is not represented in the format the following defaults are used:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Field</th><th>Default value</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td>Year</td><td>1900</td></tr>
+<tr valign="top" class="even"><td>Month</td><td>1</td></tr>
+<tr valign="top" class="odd"><td>Day</td><td>1</td></tr>
+</tbody></table></div>
+<p>The following examples demonstrate the default values:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#fromString">fromString</a>(<span class="string">&quot;1.30&quot;</span><span class="operator">,</span> <span class="string">&quot;M.d&quot;</span>);           <span class="comment">// January 30 1900</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#fromString">fromString</a>(<span class="string">&quot;20000110&quot;</span><span class="operator">,</span> <span class="string">&quot;yyyyMMdd&quot;</span>);  <span class="comment">// January 10, 2000</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#fromString">fromString</a>(<span class="string">&quot;20000110&quot;</span><span class="operator">,</span> <span class="string">&quot;yyyyMd&quot;</span>);    <span class="comment">// January 10, 2000</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatetime.html#fromString">QDateTime::fromString</a>(), <a href="http://doc.qt.io/qt-5/qtime.html#fromString">QTime::fromString</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#toString">QDate::toString</a>(), <a href="http://doc.qt.io/qt-5/qdatetime.html#toString">QDateTime::toString</a>(), and <a href="http://doc.qt.io/qt-5/qtime.html#toString">QTime::toString</a>().</p></div></p>
+</div><h4 id='method.get_date' class='method'><code>fn <a href='#method.get_date' class='fnname'>get_date</a>(&amp;mut self, year: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, month: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, day: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDate::getDate(int* year, int* month, int* day)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#getDate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Extracts the date&#39;s year, month, and day, and assigns them to *<i>year</i>, *<i>month</i>, and *<i>day</i>. The pointers may be null.</p>
+<p>Returns 0 if the date is invalid.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#year">year</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#month">month</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#day">day</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.is_leap_year' class='method'><code>fn <a href='#method.is_leap_year' class='fnname'>is_leap_year</a>(year: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QDate::isLeapYear(int year)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#isLeapYear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the specified <i>year</i> is a leap year; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDate::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the date is null; otherwise returns <code>false</code>. A null date is invalid.</p>
+<p><b>Note: </b>The behavior of this function is equivalent to <a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>().</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDate::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this date is valid; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#isNull">isNull</a>().</p></div></p>
+</div><h4 id='method.is_valid_static' class='method'><code>fn <a href='#method.is_valid_static' class='fnname'>is_valid_static</a>(y: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, m: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, d: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QDate::isValid(int y, int m, int d)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#isValid-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns <code>true</code> if the specified date (<i>year</i>, <i>month</i>, and <i>day</i>) is valid; otherwise returns <code>false</code>.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>(<span class="number">2002</span><span class="operator">,</span> <span class="number">5</span><span class="operator">,</span> <span class="number">17</span>);  <span class="comment">// true</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>(<span class="number">2002</span><span class="operator">,</span> <span class="number">2</span><span class="operator">,</span> <span class="number">30</span>);  <span class="comment">// false (Feb 30 does not exist)</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>(<span class="number">2004</span><span class="operator">,</span> <span class="number">2</span><span class="operator">,</span> <span class="number">29</span>);  <span class="comment">// true (2004 is a leap year)</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>(<span class="number">2000</span><span class="operator">,</span> <span class="number">2</span><span class="operator">,</span> <span class="number">29</span>);  <span class="comment">// true (2000 is a leap year)</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>(<span class="number">2006</span><span class="operator">,</span> <span class="number">2</span><span class="operator">,</span> <span class="number">29</span>);  <span class="comment">// false (2006 is not a leap year)</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>(<span class="number">2100</span><span class="operator">,</span> <span class="number">2</span><span class="operator">,</span> <span class="number">29</span>);  <span class="comment">// false (2100 is not a leap year)</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qdate.html#QDate">QDate</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>(<span class="number">1202</span><span class="operator">,</span> <span class="number">6</span><span class="operator">,</span> <span class="number">6</span>);   <span class="comment">// true (even though 1202 is pre-Gregorian)</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#isNull">isNull</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#setDate">setDate</a>().</p></div></p>
+</div><h4 id='method.long_day_name' class='method'><code>fn <a href='#method.long_day_name' class='fnname'>long_day_name</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateLongDayNameArgs.html' title='qt_core::date::overloading::DateLongDayNameArgs'>DateLongDayNameArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::longDayName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn long_day_name((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn long_day_name((libc::c_int, ::date::MonthNameType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn long_day_name((libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn long_day_name((libc::c_int, ::date::MonthNameType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QDate::longDayName(int weekday, QDate::MonthNameType type = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#longDayName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the long name of the <i>weekday</i> for the representation specified by <i>type</i>.</p>
+<p>The days are enumerated using the following convention:</p>
+<ul>
+<li>1 = &quot;Monday&quot;</li>
+<li>2 = &quot;Tuesday&quot;</li>
+<li>3 = &quot;Wednesday&quot;</li>
+<li>4 = &quot;Thursday&quot;</li>
+<li>5 = &quot;Friday&quot;</li>
+<li>6 = &quot;Saturday&quot;</li>
+<li>7 = &quot;Sunday&quot;</li>
+</ul>
+<p>The day names will be localized according to the system&#39;s locale settings, i.e. using <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</p>
+<p>Returns an empty string if the date is invalid.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#toString">toString</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#shortDayName">shortDayName</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#shortMonthName">shortMonthName</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#longMonthName">longMonthName</a>().</p></div></p>
+</div><h4 id='method.long_month_name' class='method'><code>fn <a href='#method.long_month_name' class='fnname'>long_month_name</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateLongMonthNameArgs.html' title='qt_core::date::overloading::DateLongMonthNameArgs'>DateLongMonthNameArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::longMonthName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn long_month_name((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn long_month_name((libc::c_int, ::date::MonthNameType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn long_month_name((libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn long_month_name((libc::c_int, ::date::MonthNameType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QDate::longMonthName(int month, QDate::MonthNameType type = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#longMonthName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the long name of the <i>month</i> for the representation specified by <i>type</i>.</p>
+<p>The months are enumerated using the following convention:</p>
+<ul>
+<li>1 = &quot;January&quot;</li>
+<li>2 = &quot;February&quot;</li>
+<li>3 = &quot;March&quot;</li>
+<li>4 = &quot;April&quot;</li>
+<li>5 = &quot;May&quot;</li>
+<li>6 = &quot;June&quot;</li>
+<li>7 = &quot;July&quot;</li>
+<li>8 = &quot;August&quot;</li>
+<li>9 = &quot;September&quot;</li>
+<li>10 = &quot;October&quot;</li>
+<li>11 = &quot;November&quot;</li>
+<li>12 = &quot;December&quot;</li>
+</ul>
+<p>The month names will be localized according to the system&#39;s locale settings, i.e. using <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</p>
+<p>Returns an empty string if the date is invalid.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#toString">toString</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#shortMonthName">shortMonthName</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#shortDayName">shortDayName</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#longDayName">longDayName</a>().</p></div></p>
+</div><h4 id='method.month' class='method'><code>fn <a href='#method.month' class='fnname'>month</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDate::month() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#month">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number corresponding to the month of this date, using the following convention:</p>
+<ul>
+<li>1 = &quot;January&quot;</li>
+<li>2 = &quot;February&quot;</li>
+<li>3 = &quot;March&quot;</li>
+<li>4 = &quot;April&quot;</li>
+<li>5 = &quot;May&quot;</li>
+<li>6 = &quot;June&quot;</li>
+<li>7 = &quot;July&quot;</li>
+<li>8 = &quot;August&quot;</li>
+<li>9 = &quot;September&quot;</li>
+<li>10 = &quot;October&quot;</li>
+<li>11 = &quot;November&quot;</li>
+<li>12 = &quot;December&quot;</li>
+</ul>
+<p>Returns 0 if the date is invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#year">year</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#day">day</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateNewArgs.html' title='qt_core::date::overloading::DateNewArgs'>DateNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::QDate</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::date::Date</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDate::QDate()</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::date::Date</code><br>2) <code>fn new((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDate::QDate(int y, int m, int d)</code></span></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDate::operator==(const QDate&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this date is equal to <i>d</i>; otherwise returns false.</p></div></p>
+</div><h4 id='method.op_ge' class='method'><code>fn <a href='#method.op_ge' class='fnname'>op_ge</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDate::operator&gt;=(const QDate&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#operator-gt-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this date is later than or equal to <i>d</i>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_gt' class='method'><code>fn <a href='#method.op_gt' class='fnname'>op_gt</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDate::operator&gt;(const QDate&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#operator-gt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this date is later than <i>d</i>; otherwise returns false.</p></div></p>
+</div><h4 id='method.op_le' class='method'><code>fn <a href='#method.op_le' class='fnname'>op_le</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDate::operator&lt;=(const QDate&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#operator-lt-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this date is earlier than or equal to <i>d</i>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDate::operator&lt;(const QDate&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#operator-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this date is earlier than <i>d</i>; otherwise returns false.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDate::operator!=(const QDate&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this date is different from <i>d</i>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.set_date' class='method'><code>fn <a href='#method.set_date' class='fnname'>set_date</a>(&amp;mut self, year: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, month: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, day: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDate::setDate(int year, int month, int day)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#setDate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the date&#39;s <i>year</i>, <i>month</i>, and <i>day</i>. Returns <code>true</code> if the date is valid; otherwise returns <code>false</code>.</p>
+<p>If the specified date is invalid, the <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> object is set to be invalid.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.short_day_name' class='method'><code>fn <a href='#method.short_day_name' class='fnname'>short_day_name</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateShortDayNameArgs.html' title='qt_core::date::overloading::DateShortDayNameArgs'>DateShortDayNameArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::shortDayName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn short_day_name((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn short_day_name((libc::c_int, ::date::MonthNameType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn short_day_name((libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn short_day_name((libc::c_int, ::date::MonthNameType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QDate::shortDayName(int weekday, QDate::MonthNameType type = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#shortDayName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the short name of the <i>weekday</i> for the representation specified by <i>type</i>.</p>
+<p>The days are enumerated using the following convention:</p>
+<ul>
+<li>1 = &quot;Mon&quot;</li>
+<li>2 = &quot;Tue&quot;</li>
+<li>3 = &quot;Wed&quot;</li>
+<li>4 = &quot;Thu&quot;</li>
+<li>5 = &quot;Fri&quot;</li>
+<li>6 = &quot;Sat&quot;</li>
+<li>7 = &quot;Sun&quot;</li>
+</ul>
+<p>The day names will be localized according to the system&#39;s locale settings, i.e. using <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</p>
+<p>Returns an empty string if the date is invalid.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#toString">toString</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#shortMonthName">shortMonthName</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#longMonthName">longMonthName</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#longDayName">longDayName</a>().</p></div></p>
+</div><h4 id='method.short_month_name' class='method'><code>fn <a href='#method.short_month_name' class='fnname'>short_month_name</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateShortMonthNameArgs.html' title='qt_core::date::overloading::DateShortMonthNameArgs'>DateShortMonthNameArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::shortMonthName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn short_month_name((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn short_month_name((libc::c_int, ::date::MonthNameType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn short_month_name((libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn short_month_name((libc::c_int, ::date::MonthNameType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QDate::shortMonthName(int month, QDate::MonthNameType type = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#shortMonthName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the short name of the <i>month</i> for the representation specified by <i>type</i>.</p>
+<p>The months are enumerated using the following convention:</p>
+<ul>
+<li>1 = &quot;Jan&quot;</li>
+<li>2 = &quot;Feb&quot;</li>
+<li>3 = &quot;Mar&quot;</li>
+<li>4 = &quot;Apr&quot;</li>
+<li>5 = &quot;May&quot;</li>
+<li>6 = &quot;Jun&quot;</li>
+<li>7 = &quot;Jul&quot;</li>
+<li>8 = &quot;Aug&quot;</li>
+<li>9 = &quot;Sep&quot;</li>
+<li>10 = &quot;Oct&quot;</li>
+<li>11 = &quot;Nov&quot;</li>
+<li>12 = &quot;Dec&quot;</li>
+</ul>
+<p>The month names will be localized according to the system&#39;s locale settings, i.e. using <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</p>
+<p>Returns an empty string if the date is invalid.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#toString">toString</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#longMonthName">longMonthName</a>(), <a href="http://doc.qt.io/qt-5/qdate.html#shortDayName">shortDayName</a>(), and <a href="http://doc.qt.io/qt-5/qdate.html#longDayName">longDayName</a>().</p></div></p>
+</div><h4 id='method.to_julian_day' class='method'><code>fn <a href='#method.to_julian_day' class='fnname'>to_julian_day</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QDate::toJulianDay() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#toJulianDay">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the date to a Julian day.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#fromJulianDay">fromJulianDay</a>().</p></div></p>
+</div><h4 id='method.to_string' class='method'><code>fn <a href='#method.to_string' class='fnname'>to_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateToStringArgs.html' title='qt_core::date::overloading::DateToStringArgs'>DateToStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::toString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (::qt::DateFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_string(&amp;self, (::qt::DateFormat, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_string(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QDate::toString(Qt::DateFormat f = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#toString-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns the date as a string. The <i>format</i> parameter determines the format of the string.</p>
+<p>If the <i>format</i> is <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::TextDate</a>, the string is formatted in the default way. <a href="http://doc.qt.io/qt-5/qdate.html#shortDayName">QDate::shortDayName</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#shortMonthName">QDate::shortMonthName</a>() are used to generate the string, so the day and month names will be localized names using the system locale, i.e. <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>(). An example of this formatting is &quot;Sat May 20 1995&quot;.</p>
+<p>If the <i>format</i> is <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::ISODate</a>, the string format corresponds to the ISO 8601 extended specification for representations of dates and times, taking the form YYYY-MM-DD, where YYYY is the year, MM is the month of the year (between 01 and 12), and DD is the day of the month between 01 and 31.</p>
+<p>If the <i>format</i> is <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::SystemLocaleShortDate</a> or <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::SystemLocaleLongDate</a>, the string format depends on the locale settings of the system. Identical to calling <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().<a href="http://doc.qt.io/qt-5/qdate.html#toString">toString</a>(date, <a href="http://doc.qt.io/qt-5/qlocale.html#FormatType-enum">QLocale::ShortFormat</a>) or <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().<a href="http://doc.qt.io/qt-5/qdate.html#toString">toString</a>(date, <a href="http://doc.qt.io/qt-5/qlocale.html#FormatType-enum">QLocale::LongFormat</a>).</p>
+<p>If the <i>format</i> is <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::DefaultLocaleShortDate</a> or <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::DefaultLocaleLongDate</a>, the string format depends on the default application locale. This is the locale set with <a href="http://doc.qt.io/qt-5/qlocale.html#setDefault">QLocale::setDefault</a>(), or the system locale if no default locale has been set. Identical to calling <a href="http://doc.qt.io/qt-5/qlocale.html#toString">QLocale().toString(date, QLocale::ShortFormat) </a> or <a href="http://doc.qt.io/qt-5/qlocale.html#toString">QLocale().toString(date, QLocale::LongFormat)</a>.</p>
+<p>If the <i>format</i> is <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::RFC2822Date</a>, the string is formatted in an <a href="http://www.rfc-editor.org/rfc/rfc2822.txt">RFC 2822</a> compatible way. An example of this formatting is &quot;20 May 1995&quot;.</p>
+<p>If the date is invalid, an empty string will be returned.</p>
+<p><b>Warning:</b> The <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::ISODate</a> format is only valid for years in the range 0 to 9999. This restriction may apply to locale-aware formats as well, depending on the locale settings.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#shortDayName">shortDayName</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#shortMonthName">shortMonthName</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QDate::toString(const QString&amp; format) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#toString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the date as a string. The <i>format</i> parameter determines the format of the result string.</p>
+<p>These expressions may be used:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Expression</th><th>Output</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td>d</td><td>the day as number without a leading zero (1 to 31)</td></tr>
+<tr valign="top" class="even"><td>dd</td><td>the day as number with a leading zero (01 to 31)</td></tr>
+<tr valign="top" class="odd"><td>ddd</td><td>the abbreviated localized day name (e.g. &#39;Mon&#39; to &#39;Sun&#39;). Uses the system locale to localize the name, i.e. <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</td></tr>
+<tr valign="top" class="even"><td>dddd</td><td>the long localized day name (e.g. &#39;Monday&#39; to &#39;Sunday&#39;). Uses the system locale to localize the name, i.e. <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</td></tr>
+<tr valign="top" class="odd"><td>M</td><td>the month as number without a leading zero (1 to 12)</td></tr>
+<tr valign="top" class="even"><td>MM</td><td>the month as number with a leading zero (01 to 12)</td></tr>
+<tr valign="top" class="odd"><td>MMM</td><td>the abbreviated localized month name (e.g. &#39;Jan&#39; to &#39;Dec&#39;). Uses the system locale to localize the name, i.e. <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</td></tr>
+<tr valign="top" class="even"><td>MMMM</td><td>the long localized month name (e.g. &#39;January&#39; to &#39;December&#39;). Uses the system locale to localize the name, i.e. <a href="http://doc.qt.io/qt-5/qlocale.html#system">QLocale::system</a>().</td></tr>
+<tr valign="top" class="odd"><td>yy</td><td>the year as two digit number (00 to 99)</td></tr>
+<tr valign="top" class="even"><td>yyyy</td><td>the year as four digit number. If the year is negative, a minus sign is prepended in addition.</td></tr>
+</tbody></table></div>
+<p>All other input characters will be ignored. Any sequence of characters that are enclosed in single quotes will be treated as text and not be used as an expression. Two consecutive single quotes (&quot;&#39;&#39;&quot;) are replaced by a singlequote in the output. Formats without separators (e.g. &quot;ddMM&quot;) are currently not supported.</p>
+<p>Example format strings (assuming that the <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> is the 20 July 1969):</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Format</th><th>Result</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td>dd.MM.yyyy</td><td>20.07.1969</td></tr>
+<tr valign="top" class="even"><td>ddd MMMM d yy</td><td>Sun July 20 69</td></tr>
+<tr valign="top" class="odd"><td>&#39;The day is&#39; dddd</td><td>The day is Sunday</td></tr>
+</tbody></table></div>
+<p>If the datetime is invalid, an empty string will be returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatetime.html#toString">QDateTime::toString</a>(), <a href="http://doc.qt.io/qt-5/qtime.html#toString">QTime::toString</a>(), and <a href="http://doc.qt.io/qt-5/qlocale.html#toString">QLocale::toString</a>().</p></div></p>
+</div><h4 id='method.week_number' class='method'><code>fn <a href='#method.week_number' class='fnname'>week_number</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/date/overloading/trait.DateWeekNumberArgs.html' title='qt_core::date::overloading::DateWeekNumberArgs'>DateWeekNumberArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDate::weekNumber</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn week_number(&amp;self, ()) -&gt; libc::c_int</code><br>2) <code>fn week_number(&amp;self, *mut libc::c_int) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QDate::weekNumber(int* yearNum = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#weekNumber">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the week number (1 to 53), and stores the year in <em><i>yearNumber</i> unless <i>yearNumber</i> is null (the default).</p>
+<p>Returns 0 if the date is invalid.</p>
+<p>In accordance with ISO 8601, weeks start on Monday and the first Thursday of a year is always in week 1 of that year. Most years have 52 weeks, but some have 53.</p>
+<p></em><i>yearNumber</i> is not always the same as <a href="http://doc.qt.io/qt-5/qdate.html#year">year</a>(). For example, 1 January 2000 has week number 52 in the year 1999, and 31 December 2002 has week number 1 in the year 2003.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.year' class='method'><code>fn <a href='#method.year' class='fnname'>year</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDate::year() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdate.html#year">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the year of this date. Negative numbers indicate years before 1 CE, such that year -44 is 44 BCE.</p>
+<p>Returns 0 if the date is invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdate.html#month">month</a>() and <a href="http://doc.qt.io/qt-5/qdate.html#day">day</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65775' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/date.rs.html#26-30' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65884' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/date.rs.html#578-585' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QDate::~QDate()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65887' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/date.rs.html#587-591' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='../../qt_core/date_time/overloading/trait.HashArgs.html' title='qt_core::date_time::overloading::HashArgs'>HashArgs</a> for &amp;'a <a class='struct' href='../../qt_core/date/struct.Date.html' title='qt_core::date::Date'>Date</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-67139' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/date_time.rs.html#2032-2037' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/date_time/overloading/trait.HashArgs.html#tymethod.exec' class='fnname'>exec</a>(self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

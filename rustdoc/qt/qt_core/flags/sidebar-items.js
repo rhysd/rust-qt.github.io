@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Flags",""]],"trait":[["EnumOrFlags",""],["FlaggableEnum",""]]});

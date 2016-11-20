@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["IntersectType","C++ type: <span style='color: green;'>```QLineF::IntersectType```</span>"]],"mod":[["overloading",""]],"struct":[["LineF","C++ type: <span style='color: green;'>```QLineF```</span>"]]});

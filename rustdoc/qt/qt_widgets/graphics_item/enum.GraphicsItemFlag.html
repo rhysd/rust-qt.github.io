@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GraphicsItemFlag` enum in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GraphicsItemFlag">
+
+    <title>qt_widgets::graphics_item::GraphicsItemFlag - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>graphics_item</a></p><script>window.sidebarCurrent = {name: 'GraphicsItemFlag', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>graphics_item</a>::<wbr><a class='enum' href=''>GraphicsItemFlag</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-272760' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2380-2421' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum GraphicsItemFlag {
+    IsMovable,
+    IsSelectable,
+    IsFocusable,
+    ClipsToShape,
+    ClipsChildrenToShape,
+    IgnoresTransformations,
+    IgnoresParentOpacity,
+    DoesntPropagateOpacityToChildren,
+    StacksBehindParent,
+    UsesExtendedStyleOption,
+    HasNoContents,
+    SendsGeometryChanges,
+    AcceptsInputMethod,
+    NegativeZStacksBehindParent,
+    IsPanel,
+    IsFocusScope,
+    SendsScenePositionChanges,
+    StopsClickFocusPropagation,
+    StopsFocusHandling,
+    ContainsChildrenInShape,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QGraphicsItem::GraphicsItemFlag</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum describes different flags that you can set on an item to toggle different features in the item&#39;s behavior.</p>
+<p>All flags are disabled by default.</p></p>
+
+<p><b>Note: </b>This flag is similar to ItemContainsChildrenInShape but in addition enforces the containment by clipping the children.</p>
+
+<p><b>Note: </b>With this flag set you can still scale the item itself, and that scale transformation will influence the item's children.</p>
+
+<p><p><b>Note: </b>If both this flag and ItemClipsChildrenToShape are set, the clip will be enforced. This is equivalent to just setting ItemClipsChildrenToShape. . This flag was introduced in Qt 5.4.</p><p>The GraphicsItemFlags type is a typedef for <a href="http://doc.qt.io/qt-5/qflags.html">QFlags</a>&lt;GraphicsItemFlag&gt;. It stores an OR combination of GraphicsItemFlag values.</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.IsMovable' class='variant'><code>IsMovable</code></span><div class='docblock'><p>The item supports interactive movement using the mouse. By clicking on the item and then dragging, the item will move together with the mouse cursor. If the item has children, all children are also moved. If the item is part of a selection, all selected items are also moved. This feature is provided as a convenience through the base implementation of <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a>&#39;s mouse event handlers. (C++ enum variant: <span style='color: green;'><code>ItemIsMovable = 1</code></span>)</p>
+</div><span id='variant.IsSelectable' class='variant'><code>IsSelectable</code></span><div class='docblock'><p>The item supports selection. Enabling this feature will enable <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setSelected">setSelected</a>() to toggle selection for the item. It will also let the item be selected automatically as a result of calling <a href="http://doc.qt.io/qt-5/qgraphicsscene.html#setSelectionArea">QGraphicsScene::setSelectionArea</a>(), by clicking on an item, or by using rubber band selection in <a href="http://doc.qt.io/qt-5/qgraphicsview.html">QGraphicsView</a>. (C++ enum variant: <span style='color: green;'><code>ItemIsSelectable = 2</code></span>)</p>
+</div><span id='variant.IsFocusable' class='variant'><code>IsFocusable</code></span><div class='docblock'><p>The item supports keyboard input focus (i.e., it is an input item). Enabling this flag will allow the item to accept focus, which again allows the delivery of key events to <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#keyPressEvent">QGraphicsItem::keyPressEvent</a>() and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#keyReleaseEvent">QGraphicsItem::keyReleaseEvent</a>(). (C++ enum variant: <span style='color: green;'><code>ItemIsFocusable = 4</code></span>)</p>
+</div><span id='variant.ClipsToShape' class='variant'><code>ClipsToShape</code></span><div class='docblock'><p>The item clips to its own shape. The item cannot draw or receive mouse, tablet, drag and drop or hover events outside its shape. It is disabled by default. This behavior is enforced by QGraphicsView::drawItems() or QGraphicsScene::drawItems(). This flag was introduced in Qt 4.3. (C++ enum variant: <span style='color: green;'><code>ItemClipsToShape = 8</code></span>)</p>
+</div><span id='variant.ClipsChildrenToShape' class='variant'><code>ClipsChildrenToShape</code></span><div class='docblock'><p>The item clips the painting of all its descendants to its own shape. Items that are either direct or indirect children of this item cannot draw outside this item&#39;s shape. By default, this flag is disabled; children can draw anywhere. This behavior is enforced by QGraphicsView::drawItems() or QGraphicsScene::drawItems(). This flag was introduced in Qt 4.3. (C++ enum variant: <span style='color: green;'><code>ItemClipsChildrenToShape = 16</code></span>)</p>
+</div><span id='variant.IgnoresTransformations' class='variant'><code>IgnoresTransformations</code></span><div class='docblock'><p>The item ignores inherited transformations (i.e., its position is still anchored to its parent, but the parent or view rotation, zoom or shear transformations are ignored). This flag is useful for keeping text label items horizontal and unscaled, so they will still be readable if the view is transformed. When set, the item&#39;s view geometry and scene geometry will be maintained separately. You must call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#deviceTransform">deviceTransform</a>() to map coordinates and detect collisions in the view. By default, this flag is disabled. This flag was introduced in Qt 4.3. (C++ enum variant: <span style='color: green;'><code>ItemIgnoresTransformations = 32</code></span>)</p>
+</div><span id='variant.IgnoresParentOpacity' class='variant'><code>IgnoresParentOpacity</code></span><div class='docblock'><p>The item ignores its parent&#39;s opacity. The item&#39;s effective opacity is the same as its own; it does not combine with the parent&#39;s opacity. This flags allows your item to keep its absolute opacity even if the parent is semitransparent. This flag was introduced in Qt 4.5. (C++ enum variant: <span style='color: green;'><code>ItemIgnoresParentOpacity = 64</code></span>)</p>
+</div><span id='variant.DoesntPropagateOpacityToChildren' class='variant'><code>DoesntPropagateOpacityToChildren</code></span><div class='docblock'><p>The item doesn&#39;t propagate its opacity to its children. This flag allows you to create a semitransparent item that does not affect the opacity of its children. This flag was introduced in Qt 4.5. (C++ enum variant: <span style='color: green;'><code>ItemDoesntPropagateOpacityToChildren = 128</code></span>)</p>
+</div><span id='variant.StacksBehindParent' class='variant'><code>StacksBehindParent</code></span><div class='docblock'><p>The item is stacked behind its parent. By default, child items are stacked on top of the parent item. But setting this flag, the child will be stacked behind it. This flag is useful for drop shadow effects and for decoration objects that follow the parent item&#39;s geometry without drawing on top of it. This flag was introduced in Qt 4.5. (C++ enum variant: <span style='color: green;'><code>ItemStacksBehindParent = 256</code></span>)</p>
+</div><span id='variant.UsesExtendedStyleOption' class='variant'><code>UsesExtendedStyleOption</code></span><div class='docblock'><p>The item makes use of either <a href="http://doc.qt.io/qt-5/qstyleoptiongraphicsitem.html#exposedRect-var">exposedRect</a> or <a href="http://doc.qt.io/qt-5/qstyleoptiongraphicsitem-obsolete.html#matrix-var">matrix</a> in <a href="http://doc.qt.io/qt-5/qstyleoptiongraphicsitem.html">QStyleOptionGraphicsItem</a>. By default, the <a href="http://doc.qt.io/qt-5/qstyleoptiongraphicsitem.html#exposedRect-var">exposedRect</a> is initialized to the item&#39;s <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#boundingRect">boundingRect</a>() and the <a href="http://doc.qt.io/qt-5/qstyleoptiongraphicsitem-obsolete.html#matrix-var">matrix</a> is untransformed. You can enable this flag for the style options to be set up with more fine-grained values. Note that QStyleOptionGraphicsItem::levelOfDetail is unaffected by this flag and always initialized to 1. Use <a href="http://doc.qt.io/qt-5/qstyleoptiongraphicsitem.html#levelOfDetailFromTransform">QStyleOptionGraphicsItem::levelOfDetailFromTransform</a>() if you need a higher value. This flag was introduced in Qt 4.6. (C++ enum variant: <span style='color: green;'><code>ItemUsesExtendedStyleOption = 512</code></span>)</p>
+</div><span id='variant.HasNoContents' class='variant'><code>HasNoContents</code></span><div class='docblock'><p>The item does not paint anything (i.e., calling <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#paint">paint</a>() on the item has no effect). You should set this flag on items that do not need to be painted to ensure that Graphics View avoids unnecessary painting preparations. This flag was introduced in Qt 4.6. (C++ enum variant: <span style='color: green;'><code>ItemHasNoContents = 1024</code></span>)</p>
+</div><span id='variant.SendsGeometryChanges' class='variant'><code>SendsGeometryChanges</code></span><div class='docblock'><p>The item enables <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() notifications for <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemPositionChange</a>, <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemPositionHasChanged</a>, <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemMatrixChange</a>, <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemTransformChange</a>, <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemTransformHasChanged</a>, <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemRotationChange</a>, <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemRotationHasChanged</a>, <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemScaleChange</a>, <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemScaleHasChanged</a>, <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemTransformOriginPointChange</a>, and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemTransformOriginPointHasChanged</a>. For performance reasons, these notifications are disabled by default. You must enable this flag to receive notifications for position and transform changes. This flag was introduced in Qt 4.6. (C++ enum variant: <span style='color: green;'><code>ItemSendsGeometryChanges = 2048</code></span>)</p>
+</div><span id='variant.AcceptsInputMethod' class='variant'><code>AcceptsInputMethod</code></span><div class='docblock'><p>The item supports input methods typically used for Asian languages. This flag was introduced in Qt 4.6. (C++ enum variant: <span style='color: green;'><code>ItemAcceptsInputMethod = 4096</code></span>)</p>
+</div><span id='variant.NegativeZStacksBehindParent' class='variant'><code>NegativeZStacksBehindParent</code></span><div class='docblock'><p>The item automatically stacks behind it&#39;s parent if it&#39;s z-value is negative. This flag enables <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setZValue">setZValue</a>() to toggle ItemStacksBehindParent. This flag was introduced in Qt 4.6. (C++ enum variant: <span style='color: green;'><code>ItemNegativeZStacksBehindParent = 8192</code></span>)</p>
+</div><span id='variant.IsPanel' class='variant'><code>IsPanel</code></span><div class='docblock'><p>The item is a panel. A panel provides activation and contained focus handling. Only one panel can be active at a time (see <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#isActive">QGraphicsItem::isActive</a>()). When no panel is active, <a href="http://doc.qt.io/qt-5/qgraphicsscene.html">QGraphicsScene</a> activates all non-panel items. Window items (i.e., <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#isWindow">QGraphicsItem::isWindow</a>() returns <code>true</code>) are panels. This flag was introduced in Qt 4.6. (C++ enum variant: <span style='color: green;'><code>ItemIsPanel = 16384</code></span>)</p>
+</div><span id='variant.IsFocusScope' class='variant'><code>IsFocusScope</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>ItemIsFocusScope = 32768</code></span></p>
+</div><span id='variant.SendsScenePositionChanges' class='variant'><code>SendsScenePositionChanges</code></span><div class='docblock'><p>The item enables <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() notifications for <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">ItemScenePositionHasChanged</a>. For performance reasons, these notifications are disabled by default. You must enable this flag to receive notifications for scene position changes. This flag was introduced in Qt 4.6. (C++ enum variant: <span style='color: green;'><code>ItemSendsScenePositionChanges = 65536</code></span>)</p>
+</div><span id='variant.StopsClickFocusPropagation' class='variant'><code>StopsClickFocusPropagation</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>ItemStopsClickFocusPropagation = 131072</code></span></p>
+</div><span id='variant.StopsFocusHandling' class='variant'><code>StopsFocusHandling</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>ItemStopsFocusHandling = 262144</code></span></p>
+</div><span id='variant.ContainsChildrenInShape' class='variant'><code>ContainsChildrenInShape</code></span><div class='docblock'><p>This flag indicates that all of the item&#39;s direct or indirect children only draw within the item&#39;s shape. Unlike ItemClipsChildrenToShape, this restriction is not enforced. Set ItemContainsChildrenInShape when you manually assure that drawing is bound to the item&#39;s shape and want to avoid the cost associated with enforcing the clip. Setting this flag enables more efficient drawing and collision detection. The flag is disabled by default. (C++ enum variant: <span style='color: green;'><code>ItemContainsChildrenInShape = 524288</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/abstract_graphics_shape_item/overloading/trait.AbstractGraphicsShapeItemSetFlagArgs.html' title='qt_widgets::abstract_graphics_shape_item::overloading::AbstractGraphicsShapeItemSetFlagArgs'>AbstractGraphicsShapeItemSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-154429' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/abstract_graphics_shape_item.rs.html#4561-4566' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_widgets/abstract_graphics_shape_item/overloading/trait.AbstractGraphicsShapeItemSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/abstract_graphics_shape_item/struct.AbstractGraphicsShapeItem.html' title='qt_widgets::abstract_graphics_shape_item::AbstractGraphicsShapeItem'>AbstractGraphicsShapeItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_ellipse_item/overloading/trait.GraphicsEllipseItemSetFlagArgs.html' title='qt_widgets::graphics_ellipse_item::overloading::GraphicsEllipseItemSetFlagArgs'>GraphicsEllipseItemSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-271171' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_ellipse_item.rs.html#4763-4768' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_widgets/graphics_ellipse_item/overloading/trait.GraphicsEllipseItemSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_ellipse_item/struct.GraphicsEllipseItem.html' title='qt_widgets::graphics_ellipse_item::GraphicsEllipseItem'>GraphicsEllipseItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_item/overloading/trait.GraphicsItemSetFlagArgs.html' title='qt_widgets::graphics_item::overloading::GraphicsItemSetFlagArgs'>GraphicsItemSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-274378' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#4597-4604' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_widgets/graphics_item/overloading/trait.GraphicsItemSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_item/struct.GraphicsItem.html' title='qt_widgets::graphics_item::GraphicsItem'>GraphicsItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272724' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2378' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272727' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2378' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272730' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2378' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272736' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2378' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/flags/trait.FlaggableEnum.html' title='qt_core::flags::FlaggableEnum'>FlaggableEnum</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272801' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2423-2430' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_flag_value' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.to_flag_value' class='fnname'>to_flag_value</a>(self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<h4 id='method.enum_name' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.enum_name' class='fnname'>enum_name</a>() -&gt; &amp;'static <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_item_group/overloading/trait.GraphicsItemGroupSetFlagArgs.html' title='qt_widgets::graphics_item_group::overloading::GraphicsItemGroupSetFlagArgs'>GraphicsItemGroupSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-277522' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item_group.rs.html#4414-4419' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_widgets/graphics_item_group/overloading/trait.GraphicsItemGroupSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_item_group/struct.GraphicsItemGroup.html' title='qt_widgets::graphics_item_group::GraphicsItemGroup'>GraphicsItemGroup</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_line_item/overloading/trait.GraphicsLineItemSetFlagArgs.html' title='qt_widgets::graphics_line_item::overloading::GraphicsLineItemSetFlagArgs'>GraphicsLineItemSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-280681' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_line_item.rs.html#4589-4596' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_widgets/graphics_line_item/overloading/trait.GraphicsLineItemSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_line_item/struct.GraphicsLineItem.html' title='qt_widgets::graphics_line_item::GraphicsLineItem'>GraphicsLineItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_object/overloading/trait.GraphicsObjectSetFlagArgs.html' title='qt_widgets::graphics_object::overloading::GraphicsObjectSetFlagArgs'>GraphicsObjectSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-283994' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_object.rs.html#5605-5613' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_widgets/graphics_object/overloading/trait.GraphicsObjectSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_object/struct.GraphicsObject.html' title='qt_widgets::graphics_object::GraphicsObject'>GraphicsObject</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_path_item/overloading/trait.GraphicsPathItemSetFlagArgs.html' title='qt_widgets::graphics_path_item::overloading::GraphicsPathItemSetFlagArgs'>GraphicsPathItemSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-287049' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_path_item.rs.html#4556-4563' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-6' class='method'><code>fn <a href='../../qt_widgets/graphics_path_item/overloading/trait.GraphicsPathItemSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_path_item/struct.GraphicsPathItem.html' title='qt_widgets::graphics_path_item::GraphicsPathItem'>GraphicsPathItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_pixmap_item/overloading/trait.GraphicsPixmapItemSetFlagArgs.html' title='qt_widgets::graphics_pixmap_item::overloading::GraphicsPixmapItemSetFlagArgs'>GraphicsPixmapItemSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-289436' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_pixmap_item.rs.html#4618-4623' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-7' class='method'><code>fn <a href='../../qt_widgets/graphics_pixmap_item/overloading/trait.GraphicsPixmapItemSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_pixmap_item/struct.GraphicsPixmapItem.html' title='qt_widgets::graphics_pixmap_item::GraphicsPixmapItem'>GraphicsPixmapItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_polygon_item/overloading/trait.GraphicsPolygonItemSetFlagArgs.html' title='qt_widgets::graphics_polygon_item::overloading::GraphicsPolygonItemSetFlagArgs'>GraphicsPolygonItemSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-291856' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_polygon_item.rs.html#4648-4653' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-8' class='method'><code>fn <a href='../../qt_widgets/graphics_polygon_item/overloading/trait.GraphicsPolygonItemSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_polygon_item/struct.GraphicsPolygonItem.html' title='qt_widgets::graphics_polygon_item::GraphicsPolygonItem'>GraphicsPolygonItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_proxy_widget/overloading/trait.GraphicsProxyWidgetSetFlagArgs.html' title='qt_widgets::graphics_proxy_widget::overloading::GraphicsProxyWidgetSetFlagArgs'>GraphicsProxyWidgetSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-295153' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_proxy_widget.rs.html#7301-7306' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-9' class='method'><code>fn <a href='../../qt_widgets/graphics_proxy_widget/overloading/trait.GraphicsProxyWidgetSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_proxy_widget/struct.GraphicsProxyWidget.html' title='qt_widgets::graphics_proxy_widget::GraphicsProxyWidget'>GraphicsProxyWidget</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_rect_item/overloading/trait.GraphicsRectItemSetFlagArgs.html' title='qt_widgets::graphics_rect_item::overloading::GraphicsRectItemSetFlagArgs'>GraphicsRectItemSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-297886' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_rect_item.rs.html#4643-4650' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-10' class='method'><code>fn <a href='../../qt_widgets/graphics_rect_item/overloading/trait.GraphicsRectItemSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_rect_item/struct.GraphicsRectItem.html' title='qt_widgets::graphics_rect_item::GraphicsRectItem'>GraphicsRectItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_simple_text_item/overloading/trait.GraphicsSimpleTextItemSetFlagArgs.html' title='qt_widgets::graphics_simple_text_item::overloading::GraphicsSimpleTextItemSetFlagArgs'>GraphicsSimpleTextItemSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-305076' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_simple_text_item.rs.html#4614-4619' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-11' class='method'><code>fn <a href='../../qt_widgets/graphics_simple_text_item/overloading/trait.GraphicsSimpleTextItemSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_simple_text_item/struct.GraphicsSimpleTextItem.html' title='qt_widgets::graphics_simple_text_item::GraphicsSimpleTextItem'>GraphicsSimpleTextItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_text_item/overloading/trait.GraphicsTextItemSetFlagArgs.html' title='qt_widgets::graphics_text_item::overloading::GraphicsTextItemSetFlagArgs'>GraphicsTextItemSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-307947' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_text_item.rs.html#6014-6021' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-12' class='method'><code>fn <a href='../../qt_widgets/graphics_text_item/overloading/trait.GraphicsTextItemSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_text_item/struct.GraphicsTextItem.html' title='qt_widgets::graphics_text_item::GraphicsTextItem'>GraphicsTextItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_widget/overloading/trait.GraphicsWidgetSetFlagArgs.html' title='qt_widgets::graphics_widget::overloading::GraphicsWidgetSetFlagArgs'>GraphicsWidgetSetFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemFlag.html' title='qt_widgets::graphics_item::GraphicsItemFlag'>GraphicsItemFlag</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-315921' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_widget.rs.html#7272-7280' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-13' class='method'><code>fn <a href='../../qt_widgets/graphics_widget/overloading/trait.GraphicsWidgetSetFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_widget/struct.GraphicsWidget.html' title='qt_widgets::graphics_widget::GraphicsWidget'>GraphicsWidget</a>)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

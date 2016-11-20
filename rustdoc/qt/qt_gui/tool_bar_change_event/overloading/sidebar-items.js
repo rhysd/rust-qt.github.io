@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ToolBarChangeEventNewArgs","This trait represents a set of arguments accepted by ToolBarChangeEvent::new method."],["ToolBarChangeEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by ToolBarChangeEvent::register_event_type method."]]});

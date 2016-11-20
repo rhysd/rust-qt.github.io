@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ParallelAnimationGroup","C++ type: <span style='color: green;'>```QParallelAnimationGroup```</span>"]]});

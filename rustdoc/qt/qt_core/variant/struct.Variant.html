@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Variant` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Variant">
+
+    <title>qt_core::variant::Variant - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>variant</a></p><script>window.sidebarCurrent = {name: 'Variant', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>variant</a>::<wbr><a class='struct' href=''>Variant</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-160091' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/variant.rs.html#483-485' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Variant {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QVariant</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> class acts like a union for the most common Qt data types.</p>
+<p>Because C++ forbids unions from including types that have non-default constructors or destructors, most interesting Qt classes cannot be used in unions. Without <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>, this would be a problem for <a href="http://doc.qt.io/qt-5/qobject.html#property">QObject::property</a>() and for database work, etc.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> object holds a single value of a single <a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>() at a time. (Some <a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>()s are multi-valued, for example a string list.) You can find out what type, T, the variant holds, convert it to a different type using <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>(), get its value using one of the toT() functions (e.g., <a href="http://doc.qt.io/qt-5/qvariant.html#toSize">toSize</a>()) and check whether the type can be converted to a particular type using <a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>().</p>
+<p>The methods named toT() (e.g., <a href="http://doc.qt.io/qt-5/qvariant.html#toInt">toInt</a>(), <a href="http://doc.qt.io/qt-5/qvariant.html#toString">toString</a>()) are const. If you ask for the stored type, they return a copy of the stored object. If you ask for a type that can be generated from the stored type, toT() copies and converts and leaves the object itself unchanged. If you ask for a type that cannot be generated from the stored type, the result depends on the type; see the function documentation for details.</p>
+<p>Here is some example code to demonstrate the use of <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qdatastream.html">QDataStream</a></span> out(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span> v(<span class="number">123</span>);                <span class="comment">// The variant now contains an int</span>
+<span class="type">int</span> x <span class="operator">=</span> v<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qvariant.html#toInt">toInt</a>();              <span class="comment">// x = 123</span>
+out <span class="operator">&lt;</span><span class="operator">&lt;</span> v;                       <span class="comment">// Writes a type tag and an int to out</span>
+v <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span>(<span class="string">&quot;hello&quot;</span>);          <span class="comment">// The variant now contains a QByteArray</span>
+v <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span>(tr(<span class="string">&quot;hello&quot;</span>));      <span class="comment">// The variant now contains a QString</span>
+<span class="type">int</span> y <span class="operator">=</span> v<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qvariant.html#toInt">toInt</a>();              <span class="comment">// y = 0 since v cannot be converted to an int</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> s <span class="operator">=</span> v<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qvariant.html#toString">toString</a>();       <span class="comment">// s = tr(&quot;hello&quot;)  (see QObject::tr())</span>
+out <span class="operator">&lt;</span><span class="operator">&lt;</span> v;                       <span class="comment">// Writes a type tag and a QString to out</span>
+<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qdatastream.html">QDataStream</a></span> in(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>);            <span class="comment">// (opening the previously written stream)</span>
+in <span class="operator">&gt;</span><span class="operator">&gt;</span> v;                        <span class="comment">// Reads an Int variant</span>
+<span class="type">int</span> z <span class="operator">=</span> v<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qvariant.html#toInt">toInt</a>();              <span class="comment">// z = 123</span>
+<a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>(<span class="string">&quot;Type is %s&quot;</span><span class="operator">,</span>            <span class="comment">// prints &quot;Type is int&quot;</span>
+&#32;       v<span class="operator">.</span>typeName());
+v <span class="operator">=</span> v<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qvariant.html#toInt">toInt</a>() <span class="operator">+</span> <span class="number">100</span>;            <span class="comment">// The variant now hold the value 223</span>
+v <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span>(<span class="type"><a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a></span>());</pre>
+<p>You can even store <a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&lt;<a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>&gt; and <a href="http://doc.qt.io/qt-5/qmap.html">QMap</a>&lt;<a href="http://doc.qt.io/qt-5/qstring.html">QString</a>, <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>&gt; values in a variant, so you can easily construct arbitrarily complex data structures of arbitrary types. This is very powerful and versatile, but may prove less memory and speed efficient than storing specific types in standard data structures.</p>
+<p><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> also supports the notion of null values, where you can have a defined type with no value set. However, note that <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> types can only be cast when they have had a value set.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span> x<span class="operator">,</span> y(<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>())<span class="operator">,</span> z(<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;&quot;</span>));
+x<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span><span class="operator">::</span>Int);
+<span class="comment">// x.isNull() == true</span>
+<span class="comment">// y.isNull() == true, z.isNull() == false</span></pre>
+<p><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> can be extended to support other types than those mentioned in the <a href="http://doc.qt.io/qt-5/qvariant-obsolete.html#Type-enum">Type</a> enum. See the <a href="http://doc.qt.io/qt-5/qmetatype.html">QMetaType</a> documentation for details.</p>
+<a name="a-note-on-gui-types"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-160096' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/variant.rs.html#493-1707' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.can_convert' class='method'><code>fn <a href='#method.can_convert' class='fnname'>can_convert</a>(&amp;self, target_type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::canConvert(int targetTypeId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the variant&#39;s type can be cast to the requested type, <i>targetTypeId</i>. Such casting is done automatically when calling the <a href="http://doc.qt.io/qt-5/qvariant.html#toInt">toInt</a>(), <a href="http://doc.qt.io/qt-5/qvariant.html#toBool">toBool</a>(), ... methods.</p>
+<p>The following casts are done automatically:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Type</th><th>Automatically Cast To</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a></td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a></td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a></td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QColor</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a></td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDate</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDateTime</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a></td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDateTime</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDate</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QTime</a></td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a></td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QFont</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a></td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a></td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QKeySequence</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a></td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QVariantList</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QStringList</a> (if the list&#39;s items can be converted to QStrings)</td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a></td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QPoint</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QPointF</a></td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QRect</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QRectF</a></td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QColor</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDate</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDateTime</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QFont</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QKeySequence</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QStringList</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QTime</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a></td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QStringList</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QVariantList</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a> (if the list contains exactly one item)</td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QTime</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a></td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a></td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a></td><td><a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a></td></tr>
+</tbody></table></div>
+<p>A <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> containing a pointer to a type derived from <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> will also return true for this function if a <a href="http://doc.qt.io/qt-5/qobject.html#qobject_cast">qobject_cast</a> to the type described by <i>targetTypeId</i> would succeed. Note that this only works for <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> subclasses which use the <a href="http://doc.qt.io/qt-5/qobject.html#Q_OBJECT">Q_OBJECT</a> macro.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> containing a sequential container will also return true for this function if the <i>targetTypeId</i> is <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantList-typedef">QVariantList</a>. It is possible to iterate over the contents of the container without extracting it as a (copied) <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantList-typedef">QVariantList</a>:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html">QList</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> intList;
+intList<span class="operator">.</span>push_back(<span class="number">7</span>);
+intList<span class="operator">.</span>push_back(<span class="number">11</span>);
+intList<span class="operator">.</span>push_back(<span class="number">42</span>);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span> variant <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qvariant.html#fromValue">fromValue</a>(intList);
+<span class="keyword">if</span> (variant<span class="operator">.</span>canConvert<span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariantList-typedef">QVariantList</a></span><span class="operator">&gt;</span>()) {
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qsequentialiterable.html">QSequentialIterable</a></span> iterable <span class="operator">=</span> variant<span class="operator">.</span>value<span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qsequentialiterable.html">QSequentialIterable</a></span><span class="operator">&gt;</span>();
+&#32;   <span class="comment">// Can use foreach:</span>
+&#32;   foreach (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span> <span class="operator">&amp;</span>v<span class="operator">,</span> iterable) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+&#32;   }
+&#32;   <span class="comment">// Can use C++11 range-for:</span>
+&#32;   <span class="keyword">for</span> (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span> <span class="operator">&amp;</span>v : iterable) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+&#32;   }
+&#32;   <span class="comment">// Can use iterators:</span>
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qsequentialiterable.html">QSequentialIterable</a></span><span class="operator">::</span>const_iterator it <span class="operator">=</span> iterable<span class="operator">.</span>begin();
+&#32;   <span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qsequentialiterable.html">QSequentialIterable</a></span><span class="operator">::</span>const_iterator end <span class="operator">=</span> iterable<span class="operator">.</span>end();
+&#32;   <span class="keyword">for</span> ( ; it <span class="operator">!</span><span class="operator">=</span> end; <span class="operator">+</span><span class="operator">+</span>it) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="operator">*</span>it;
+&#32;   }
+}</pre>
+<p>This requires that the value_type of the container is itself a metatype.</p>
+<p>Similarly, a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> containing a sequential container will also return true for this function the <i>targetTypeId</i> is <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantHash-typedef">QVariantHash</a> or <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantMap-typedef">QVariantMap</a>. It is possible to iterate over the contents of the container without extracting it as a (copied) <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantHash-typedef">QVariantHash</a> or <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantMap-typedef">QVariantMap</a>:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> mapping;
+mapping<span class="operator">.</span>insert(<span class="number">7</span><span class="operator">,</span> <span class="string">&quot;Seven&quot;</span>);
+mapping<span class="operator">.</span>insert(<span class="number">11</span><span class="operator">,</span> <span class="string">&quot;Eleven&quot;</span>);
+mapping<span class="operator">.</span>insert(<span class="number">42</span><span class="operator">,</span> <span class="string">&quot;Forty-two&quot;</span>);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span> variant <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qvariant.html#fromValue">fromValue</a>(mapping);
+<span class="keyword">if</span> (variant<span class="operator">.</span>canConvert<span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariantHash-typedef">QVariantHash</a></span><span class="operator">&gt;</span>()) {
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qassociativeiterable.html">QAssociativeIterable</a></span> iterable <span class="operator">=</span> variant<span class="operator">.</span>value<span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qassociativeiterable.html">QAssociativeIterable</a></span><span class="operator">&gt;</span>();
+&#32;   <span class="comment">// Can use foreach over the values:</span>
+&#32;   foreach (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span> <span class="operator">&amp;</span>v<span class="operator">,</span> iterable) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+&#32;   }
+&#32;   <span class="comment">// Can use C++11 range-for over the values:</span>
+&#32;   <span class="keyword">for</span> (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariant">QVariant</a></span> <span class="operator">&amp;</span>v : iterable) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+&#32;   }
+&#32;   <span class="comment">// Can use iterators:</span>
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qassociativeiterable.html">QAssociativeIterable</a></span><span class="operator">::</span>const_iterator it <span class="operator">=</span> iterable<span class="operator">.</span>begin();
+&#32;   <span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qassociativeiterable.html">QAssociativeIterable</a></span><span class="operator">::</span>const_iterator end <span class="operator">=</span> iterable<span class="operator">.</span>end();
+&#32;   <span class="keyword">for</span> ( ; it <span class="operator">!</span><span class="operator">=</span> end; <span class="operator">+</span><span class="operator">+</span>it) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="operator">*</span>it; <span class="comment">// The current value</span>
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> it<span class="operator">.</span>key();
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> it<span class="operator">.</span>value();
+&#32;   }
+}</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>(), <a href="http://doc.qt.io/qt-5/qsequentialiterable.html">QSequentialIterable</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Q_DECLARE_SEQUENTIAL_CONTAINER_METATYPE">Q_DECLARE_SEQUENTIAL_CONTAINER_METATYPE</a>(), <a href="http://doc.qt.io/qt-5/qassociativeiterable.html">QAssociativeIterable</a>, and <a href="http://doc.qt.io/qt-5/qmetatype.html#Q_DECLARE_ASSOCIATIVE_CONTAINER_METATYPE">Q_DECLARE_ASSOCIATIVE_CONTAINER_METATYPE</a>().</p></div></p>
+</div><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QVariant::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convert this variant to type <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UnknownType</a> and free up any resources used.</p></div></p>
+</div><h4 id='method.const_data' class='method'><code>fn <a href='#method.const_data' class='fnname'>const_data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const void* QVariant::constData() const</code></span></p>
+</div><h4 id='method.convert' class='method'><code>fn <a href='#method.convert' class='fnname'>convert</a>(&amp;mut self, target_type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::convert(int targetTypeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#convert">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Casts the variant to the requested type, <i>targetTypeId</i>. If the cast cannot be done, the variant is cleared. Returns <code>true</code> if the current type of the variant was successfully cast; otherwise returns <code>false</code>.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> containing a pointer to a type derived from <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> will also convert and return true for this function if a <a href="http://doc.qt.io/qt-5/qobject.html#qobject_cast">qobject_cast</a> to the type described by <i>targetTypeId</i> would succeed. Note that this only works for <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> subclasses which use the <a href="http://doc.qt.io/qt-5/qobject.html#Q_OBJECT">Q_OBJECT</a> macro.</p>
+<p><b>Warning:</b> For historical reasons, converting a null <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> results in a null value of the desired type (e.g., an empty string for <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>) and a result of false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#clear">clear</a>().</p></div></p>
+</div><h4 id='method.data' class='method'><code>fn <a href='#method.data' class='fnname'>data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const void* QVariant::data() const</code></span></p>
+</div><h4 id='method.data_mut' class='method'><code>fn <a href='#method.data_mut' class='fnname'>data_mut</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void* QVariant::data()</code></span></p>
+</div><h4 id='method.data_ptr' class='method'><code>fn <a href='#method.data_ptr' class='fnname'>data_ptr</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/variant/struct.Private.html' title='qt_core::variant::Private'>Private</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QVariant::Private&amp; QVariant::data_ptr() const</code></span></p>
+</div><h4 id='method.data_ptr_mut' class='method'><code>fn <a href='#method.data_ptr_mut' class='fnname'>data_ptr_mut</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/variant/struct.Private.html' title='qt_core::variant::Private'>Private</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::Private&amp; QVariant::data_ptr()</code></span></p>
+</div><h4 id='method.detach' class='method'><code>fn <a href='#method.detach' class='fnname'>detach</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QVariant::detach()</code></span></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::isDetached() const</code></span></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this is a null variant, false otherwise. A variant is considered null if it contains a default constructed value or a built-in type instance that has an isNull method, in which case the result would be the same as calling isNull on the wrapped object.</p>
+<p><b>Warning:</b> The result of the function doesn&#39;t affect == operator, which means that two values can be equal even if one of them is null and another is not.</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the storage type of this variant is not <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UnknownType</a>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.load' class='method'><code>fn <a href='#method.load' class='fnname'>load</a>(&amp;mut self, ds: &amp;mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QVariant::load(QDataStream&amp; ds)</code></span></p>
+</div><h4 id='method.name_to_type' class='method'><code>fn <a href='#method.name_to_type' class='fnname'>name_to_type</a>(name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='enum' href='../../qt_core/variant/enum.Type.html' title='qt_core::variant::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static QVariant::Type QVariant::nameToType(const char* name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#nameToType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the string representation of the storage type given in <i>name</i>, to its enum representation.</p>
+<p>If the string representation cannot be converted to any enum representation, the variant is set to <code>Invalid</code>.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantNewArgs.html' title='qt_core::variant::overloading::VariantNewArgs'>VariantNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::variant::Variant</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::char::Char, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::char::Char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(QChar qchar)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;mut ::data_stream::DataStream, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;mut ::data_stream::DataStream, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(QDataStream&amp; s)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::latin1_string::Latin1String, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::latin1_string::Latin1String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(QLatin1String string)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((::variant::Type, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((::variant::Type, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(QVariant::Type type)</code></span></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((bool, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((bool, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(bool b)</code></span></p>
+
+<h2 id='variant-7' class='section-header'><a href='#variant-7'>Variant 7</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::bit_array::BitArray, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::bit_array::BitArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QBitArray&amp; bitarray)</code></span></p>
+
+<h2 id='variant-8' class='section-header'><a href='#variant-8'>Variant 8</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QByteArray&amp; bytearray)</code></span></p>
+
+<h2 id='variant-9' class='section-header'><a href='#variant-9'>Variant 9</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::date::Date, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::date::Date, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QDate&amp; date)</code></span></p>
+
+<h2 id='variant-10' class='section-header'><a href='#variant-10'>Variant 10</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::date_time::DateTime, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::date_time::DateTime, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QDateTime&amp; datetime)</code></span></p>
+
+<h2 id='variant-11' class='section-header'><a href='#variant-11'>Variant 11</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::easing_curve::EasingCurve, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::easing_curve::EasingCurve, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QEasingCurve&amp; easing)</code></span></p>
+
+<h2 id='variant-12' class='section-header'><a href='#variant-12'>Variant 12</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::hash::HashStringRefVariantRef, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::hash::HashStringRefVariantRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QHash&lt;QString, QVariant&gt;&amp; hash)</code></span></p>
+
+<h2 id='variant-13' class='section-header'><a href='#variant-13'>Variant 13</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::json_array::JsonArray, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::json_array::JsonArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QJsonArray&amp; jsonArray)</code></span></p>
+
+<h2 id='variant-14' class='section-header'><a href='#variant-14'>Variant 14</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::json_document::JsonDocument, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::json_document::JsonDocument, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QJsonDocument&amp; jsonDocument)</code></span></p>
+
+<h2 id='variant-15' class='section-header'><a href='#variant-15'>Variant 15</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::json_object::JsonObject, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::json_object::JsonObject, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QJsonObject&amp; jsonObject)</code></span></p>
+
+<h2 id='variant-16' class='section-header'><a href='#variant-16'>Variant 16</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::json_value::JsonValue, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::json_value::JsonValue, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QJsonValue&amp; jsonValue)</code></span></p>
+
+<h2 id='variant-17' class='section-header'><a href='#variant-17'>Variant 17</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::line::Line, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::line::Line, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QLine&amp; line)</code></span></p>
+
+<h2 id='variant-18' class='section-header'><a href='#variant-18'>Variant 18</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::line_f::LineF, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::line_f::LineF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QLineF&amp; line)</code></span></p>
+
+<h2 id='variant-19' class='section-header'><a href='#variant-19'>Variant 19</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::list::ListVariantRef, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::list::ListVariantRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QList&lt;QVariant&gt;&amp; list)</code></span></p>
+
+<h2 id='variant-20' class='section-header'><a href='#variant-20'>Variant 20</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::locale::Locale, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::locale::Locale, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QLocale&amp; locale)</code></span></p>
+
+<h2 id='variant-21' class='section-header'><a href='#variant-21'>Variant 21</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::map::MapStringRefVariantRef, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::map::MapStringRefVariantRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QMap&lt;QString, QVariant&gt;&amp; map)</code></span></p>
+
+<h2 id='variant-22' class='section-header'><a href='#variant-22'>Variant 22</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::model_index::ModelIndex, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::model_index::ModelIndex, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QModelIndex&amp; modelIndex)</code></span></p>
+
+<h2 id='variant-23' class='section-header'><a href='#variant-23'>Variant 23</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::persistent_model_index::PersistentModelIndex, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::persistent_model_index::PersistentModelIndex, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QPersistentModelIndex&amp; modelIndex)</code></span></p>
+
+<h2 id='variant-24' class='section-header'><a href='#variant-24'>Variant 24</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::point::Point, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::point::Point, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QPoint&amp; pt)</code></span></p>
+
+<h2 id='variant-25' class='section-header'><a href='#variant-25'>Variant 25</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::point_f::PointF, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::point_f::PointF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QPointF&amp; pt)</code></span></p>
+
+<h2 id='variant-26' class='section-header'><a href='#variant-26'>Variant 26</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::rect::Rect, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::rect::Rect, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QRect&amp; rect)</code></span></p>
+
+<h2 id='variant-27' class='section-header'><a href='#variant-27'>Variant 27</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::rect_f::RectF, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::rect_f::RectF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QRectF&amp; rect)</code></span></p>
+
+<h2 id='variant-28' class='section-header'><a href='#variant-28'>Variant 28</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::reg_exp::RegExp, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::reg_exp::RegExp, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QRegExp&amp; regExp)</code></span></p>
+
+<h2 id='variant-29' class='section-header'><a href='#variant-29'>Variant 29</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::regular_expression::RegularExpression, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::regular_expression::RegularExpression, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QRegularExpression&amp; re)</code></span></p>
+
+<h2 id='variant-30' class='section-header'><a href='#variant-30'>Variant 30</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::size::Size, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::size::Size, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QSize&amp; size)</code></span></p>
+
+<h2 id='variant-31' class='section-header'><a href='#variant-31'>Variant 31</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::size_f::SizeF, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::size_f::SizeF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QSizeF&amp; size)</code></span></p>
+
+<h2 id='variant-32' class='section-header'><a href='#variant-32'>Variant 32</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QString&amp; string)</code></span></p>
+
+<h2 id='variant-33' class='section-header'><a href='#variant-33'>Variant 33</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string_list::StringList, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::string_list::StringList, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QStringList&amp; stringlist)</code></span></p>
+
+<h2 id='variant-34' class='section-header'><a href='#variant-34'>Variant 34</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::time::Time, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::time::Time, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QTime&amp; time)</code></span></p>
+
+<h2 id='variant-35' class='section-header'><a href='#variant-35'>Variant 35</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::url::Url, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::url::Url, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QUrl&amp; url)</code></span></p>
+
+<h2 id='variant-36' class='section-header'><a href='#variant-36'>Variant 36</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::uuid::Uuid, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::uuid::Uuid, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QUuid&amp; uuid)</code></span></p>
+
+<h2 id='variant-37' class='section-header'><a href='#variant-37'>Variant 37</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::variant::Variant, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((&amp;::variant::Variant, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const QVariant&amp; other)</code></span></p>
+
+<h2 id='variant-38' class='section-header'><a href='#variant-38'>Variant 38</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const libc::c_char, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((*const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(const char* str)</code></span></p>
+
+<h2 id='variant-39' class='section-header'><a href='#variant-39'>Variant 39</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_double, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(double d)</code></span></p>
+
+<h2 id='variant-40' class='section-header'><a href='#variant-40'>Variant 40</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_float, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((libc::c_float, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(float f)</code></span></p>
+
+<h2 id='variant-41' class='section-header'><a href='#variant-41'>Variant 41</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(int i)</code></span></p>
+
+<h2 id='variant-42' class='section-header'><a href='#variant-42'>Variant 42</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, *const libc::c_void, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((libc::c_int, *const libc::c_void, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(int typeId, const void* copy)</code></span></p>
+
+<h2 id='variant-43' class='section-header'><a href='#variant-43'>Variant 43</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, *const libc::c_void, libc::c_uint, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((libc::c_int, *const libc::c_void, libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(int typeId, const void* copy, unsigned int flags)</code></span></p>
+
+<h2 id='variant-44' class='section-header'><a href='#variant-44'>Variant 44</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((i64, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((i64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(qlonglong ll)</code></span></p>
+
+<h2 id='variant-45' class='section-header'><a href='#variant-45'>Variant 45</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((u64, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((u64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(qulonglong ull)</code></span></p>
+
+<h2 id='variant-46' class='section-header'><a href='#variant-46'>Variant 46</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_uint, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>2) <code>fn new((libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QVariant::QVariant(unsigned int ui)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant&amp; QVariant::operator=(const QVariant&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the value of the variant <i>variant</i> to this variant.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, v: &amp;<a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::operator==(const QVariant&amp; v) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares this <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> with <i>v</i> and returns <code>true</code> if they are equal; otherwise returns <code>false</code>.</p>
+<p><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> uses the equality operator of the <a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>() it contains to check for equality. <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> will try to <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>() <i>v</i> if its type is not the same as this variant&#39;s type. See <a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() for a list of possible conversions.</p>
+<p><b>Warning:</b> To make this function work with a custom type registered with <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>(), its comparison operator must be registered using <a href="http://doc.qt.io/qt-5/qmetatype.html#registerComparators">QMetaType::registerComparators</a>().</p></div></p>
+</div><h4 id='method.op_ge' class='method'><code>fn <a href='#method.op_ge' class='fnname'>op_ge</a>(&amp;self, v: &amp;<a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::operator&gt;=(const QVariant&amp; v) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#operator-gt-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares this <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> with <i>v</i> and returns <code>true</code> if this is larger or equal than <i>v</i>.</p>
+<p><b>Note: </b>Comparability might not be available for the type stored in this <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> or in <i>v</i>.</p><p><b>Warning:</b> To make this function work with a custom type registered with <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>(), its comparison operator must be registered using <a href="http://doc.qt.io/qt-5/qmetatype.html#registerComparators">QMetaType::registerComparators</a>().</p></div></p>
+</div><h4 id='method.op_gt' class='method'><code>fn <a href='#method.op_gt' class='fnname'>op_gt</a>(&amp;self, v: &amp;<a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::operator&gt;(const QVariant&amp; v) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#operator-gt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares this <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> with <i>v</i> and returns <code>true</code> if this is larger than <i>v</i>.</p>
+<p><b>Note: </b>Comparability might not be available for the type stored in this <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> or in <i>v</i>.</p><p><b>Warning:</b> To make this function work with a custom type registered with <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>(), its comparison operator must be registered using <a href="http://doc.qt.io/qt-5/qmetatype.html#registerComparators">QMetaType::registerComparators</a>().</p></div></p>
+</div><h4 id='method.op_le' class='method'><code>fn <a href='#method.op_le' class='fnname'>op_le</a>(&amp;self, v: &amp;<a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::operator&lt;=(const QVariant&amp; v) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#operator-lt-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares this <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> with <i>v</i> and returns <code>true</code> if this is less or equal than <i>v</i>.</p>
+<p><b>Note: </b>Comparability might not be available for the type stored in this <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> or in <i>v</i>.</p><p><b>Warning:</b> To make this function work with a custom type registered with <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>(), its comparison operator must be registered using <a href="http://doc.qt.io/qt-5/qmetatype.html#registerComparators">QMetaType::registerComparators</a>().</p></div></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>(&amp;self, v: &amp;<a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::operator&lt;(const QVariant&amp; v) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#operator-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares this <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> with <i>v</i> and returns <code>true</code> if this is less than <i>v</i>.</p>
+<p><b>Note: </b>Comparability might not be availabe for the type stored in this <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> or in <i>v</i>.</p><p><b>Warning:</b> To make this function work with a custom type registered with <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>(), its comparison operator must be registered using <a href="http://doc.qt.io/qt-5/qmetatype.html#registerComparators">QMetaType::registerComparators</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, v: &amp;<a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::operator!=(const QVariant&amp; v) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares this <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> with <i>v</i> and returns <code>true</code> if they are not equal; otherwise returns <code>false</code>.</p>
+<p><b>Warning:</b> To make this function work with a custom type registered with <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>(), its comparison operator must be registered using <a href="http://doc.qt.io/qt-5/qmetatype.html#registerComparators">QMetaType::registerComparators</a>().</p></div></p>
+</div><h4 id='method.save' class='method'><code>fn <a href='#method.save' class='fnname'>save</a>(&amp;self, ds: &amp;mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QVariant::save(QDataStream&amp; ds) const</code></span></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QVariant::swap(QVariant&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps variant <i>other</i> with this variant. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.to_bit_array' class='method'><code>fn <a href='#method.to_bit_array' class='fnname'>to_bit_array</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToBitArrayArgs.html' title='qt_core::variant::overloading::VariantToBitArrayArgs'>VariantToBitArrayArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toBitArray</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_bit_array(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::bit_array::BitArray&gt;</code><br>2) <code>fn to_bit_array(&amp;self, cpp_utils::AsStruct) -&gt; ::bit_array::BitArray</code><br>
+C++ method: <span style='color: green;'><code>QBitArray QVariant::toBitArray() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toBitArray">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qbitarray.html">QBitArray</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QBitArray</a>; otherwise returns an empty bit array.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_bool' class='method'><code>fn <a href='#method.to_bool' class='fnname'>to_bool</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QVariant::toBool() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toBool">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a bool if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() Bool.</p>
+<p>Returns <code>true</code> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a> and the value is non-zero, or if the variant has type <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a> or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a> and its lower-case content is not one of the following: empty, &quot;0&quot; or &quot;false&quot;; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_byte_array' class='method'><code>fn <a href='#method.to_byte_array' class='fnname'>to_byte_array</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToByteArrayArgs.html' title='qt_core::variant::overloading::VariantToByteArrayArgs'>VariantToByteArrayArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toByteArray</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_byte_array(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn to_byte_array(&amp;self, cpp_utils::AsStruct) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QVariant::toByteArray() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toByteArray">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a> or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a> (converted using <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>()); otherwise returns an empty byte array.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_char' class='method'><code>fn <a href='#method.to_char' class='fnname'>to_char</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToCharArgs.html' title='qt_core::variant::overloading::VariantToCharArgs'>VariantToCharArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toChar</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_char(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::char::Char&gt;</code><br>2) <code>fn to_char(&amp;self, cpp_utils::AsStruct) -&gt; ::char::Char</code><br>
+C++ method: <span style='color: green;'><code>QChar QVariant::toChar() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toChar">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qchar.html">QChar</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>; otherwise returns an invalid <a href="http://doc.qt.io/qt-5/qchar.html">QChar</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_date' class='method'><code>fn <a href='#method.to_date' class='fnname'>to_date</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToDateArgs.html' title='qt_core::variant::overloading::VariantToDateArgs'>VariantToDateArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toDate</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_date(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::date::Date&gt;</code><br>2) <code>fn to_date(&amp;self, cpp_utils::AsStruct) -&gt; ::date::Date</code><br>
+C++ method: <span style='color: green;'><code>QDate QVariant::toDate() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toDate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDate</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDateTime</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>; otherwise returns an invalid date.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>() is <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, an invalid date will be returned if the string cannot be parsed as a <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::ISODate</a> format date.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_date_time' class='method'><code>fn <a href='#method.to_date_time' class='fnname'>to_date_time</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToDateTimeArgs.html' title='qt_core::variant::overloading::VariantToDateTimeArgs'>VariantToDateTimeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toDateTime</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_date_time(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::date_time::DateTime&gt;</code><br>2) <code>fn to_date_time(&amp;self, cpp_utils::AsStruct) -&gt; ::date_time::DateTime</code><br>
+C++ method: <span style='color: green;'><code>QDateTime QVariant::toDateTime() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toDateTime">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qdatetime.html">QDateTime</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDateTime</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDate</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>; otherwise returns an invalid date/time.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>() is <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, an invalid date/time will be returned if the string cannot be parsed as a <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::ISODate</a> format date/time.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_double' class='method'><code>fn <a href='#method.to_double' class='fnname'>to_double</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToDoubleArgs.html' title='qt_core::variant::overloading::VariantToDoubleArgs'>VariantToDoubleArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toDouble</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_double(&amp;self, ()) -&gt; libc::c_double</code><br>2) <code>fn to_double(&amp;self, *mut bool) -&gt; libc::c_double</code><br>
+C++ method: <span style='color: green;'><code>double QVariant::toDouble(bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toDouble">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a double if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Float</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a>; otherwise returns 0.0.</p>
+<p>If <i>ok</i> is non-null: <code><em></code><i>ok</i> is set to true if the value could be converted to a double; otherwise <code></em></code><i>ok</i> is set to false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_easing_curve' class='method'><code>fn <a href='#method.to_easing_curve' class='fnname'>to_easing_curve</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToEasingCurveArgs.html' title='qt_core::variant::overloading::VariantToEasingCurveArgs'>VariantToEasingCurveArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toEasingCurve</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_easing_curve(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::easing_curve::EasingCurve&gt;</code><br>2) <code>fn to_easing_curve(&amp;self, cpp_utils::AsStruct) -&gt; ::easing_curve::EasingCurve</code><br>
+C++ method: <span style='color: green;'><code>QEasingCurve QVariant::toEasingCurve() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toEasingCurve">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qeasingcurve.html">QEasingCurve</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QEasingCurve</a>; otherwise returns a default easing curve.</p>
+<p>This function was introduced in  Qt 4.7.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_float' class='method'><code>fn <a href='#method.to_float' class='fnname'>to_float</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToFloatArgs.html' title='qt_core::variant::overloading::VariantToFloatArgs'>VariantToFloatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toFloat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_float(&amp;self, ()) -&gt; libc::c_float</code><br>2) <code>fn to_float(&amp;self, *mut bool) -&gt; libc::c_float</code><br>
+C++ method: <span style='color: green;'><code>float QVariant::toFloat(bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toFloat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a float if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Float</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a>; otherwise returns 0.0.</p>
+<p>If <i>ok</i> is non-null: <code><em></code><i>ok</i> is set to true if the value could be converted to a double; otherwise <code></em></code><i>ok</i> is set to false.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_hash' class='method'><code>fn <a href='#method.to_hash' class='fnname'>to_hash</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToHashArgs.html' title='qt_core::variant::overloading::VariantToHashArgs'>VariantToHashArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toHash</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_hash(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::hash::HashStringRefVariantRef&gt;</code><br>2) <code>fn to_hash(&amp;self, cpp_utils::AsStruct) -&gt; ::hash::HashStringRefVariantRef</code><br>
+C++ method: <span style='color: green;'><code>QHash&lt;QString, QVariant&gt; QVariant::toHash() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toHash">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qhash.html#qhash">QHash</a>&lt;<a href="http://doc.qt.io/qt-5/qstring.html">QString</a>, <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>&gt; if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QVariantHash</a>; otherwise returns an empty map.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_int' class='method'><code>fn <a href='#method.to_int' class='fnname'>to_int</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToIntArgs.html' title='qt_core::variant::overloading::VariantToIntArgs'>VariantToIntArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toInt</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_int(&amp;self, ()) -&gt; libc::c_int</code><br>2) <code>fn to_int(&amp;self, *mut bool) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QVariant::toInt(bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toInt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as an int if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a>; otherwise returns 0.</p>
+<p>If <i>ok</i> is non-null: <code><em></code><i>ok</i> is set to true if the value could be converted to an int; otherwise <code></em></code><i>ok</i> is set to false.</p>
+<p><b>Warning:</b> If the value is convertible to a <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a> but is too large to be represented in an int, the resulting arithmetic overflow will not be reflected in <i>ok</i>. A simple workaround is to use <a href="http://doc.qt.io/qt-5/qstring.html#toInt">QString::toInt</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_json_array' class='method'><code>fn <a href='#method.to_json_array' class='fnname'>to_json_array</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToJsonArrayArgs.html' title='qt_core::variant::overloading::VariantToJsonArrayArgs'>VariantToJsonArrayArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toJsonArray</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_json_array(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::json_array::JsonArray&gt;</code><br>2) <code>fn to_json_array(&amp;self, cpp_utils::AsStruct) -&gt; ::json_array::JsonArray</code><br>
+C++ method: <span style='color: green;'><code>QJsonArray QVariant::toJsonArray() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toJsonArray">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qjsonarray.html">QJsonArray</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qjsonarray.html">QJsonArray</a>; otherwise returns a default constructed <a href="http://doc.qt.io/qt-5/qjsonarray.html">QJsonArray</a>.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_json_document' class='method'><code>fn <a href='#method.to_json_document' class='fnname'>to_json_document</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToJsonDocumentArgs.html' title='qt_core::variant::overloading::VariantToJsonDocumentArgs'>VariantToJsonDocumentArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toJsonDocument</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_json_document(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::json_document::JsonDocument&gt;</code><br>2) <code>fn to_json_document(&amp;self, cpp_utils::AsStruct) -&gt; ::json_document::JsonDocument</code><br>
+C++ method: <span style='color: green;'><code>QJsonDocument QVariant::toJsonDocument() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toJsonDocument">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a>; otherwise returns a default constructed <a href="http://doc.qt.io/qt-5/qjsondocument.html">QJsonDocument</a>.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_json_object' class='method'><code>fn <a href='#method.to_json_object' class='fnname'>to_json_object</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToJsonObjectArgs.html' title='qt_core::variant::overloading::VariantToJsonObjectArgs'>VariantToJsonObjectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toJsonObject</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_json_object(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::json_object::JsonObject&gt;</code><br>2) <code>fn to_json_object(&amp;self, cpp_utils::AsStruct) -&gt; ::json_object::JsonObject</code><br>
+C++ method: <span style='color: green;'><code>QJsonObject QVariant::toJsonObject() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toJsonObject">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qjsonobject.html">QJsonObject</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qjsonobject.html">QJsonObject</a>; otherwise returns a default constructed <a href="http://doc.qt.io/qt-5/qjsonobject.html">QJsonObject</a>.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_json_value' class='method'><code>fn <a href='#method.to_json_value' class='fnname'>to_json_value</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToJsonValueArgs.html' title='qt_core::variant::overloading::VariantToJsonValueArgs'>VariantToJsonValueArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toJsonValue</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_json_value(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::json_value::JsonValue&gt;</code><br>2) <code>fn to_json_value(&amp;self, cpp_utils::AsStruct) -&gt; ::json_value::JsonValue</code><br>
+C++ method: <span style='color: green;'><code>QJsonValue QVariant::toJsonValue() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toJsonValue">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a>; otherwise returns a default constructed <a href="http://doc.qt.io/qt-5/qjsonvalue.html">QJsonValue</a>.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_line' class='method'><code>fn <a href='#method.to_line' class='fnname'>to_line</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToLineArgs.html' title='qt_core::variant::overloading::VariantToLineArgs'>VariantToLineArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toLine</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_line(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::line::Line&gt;</code><br>2) <code>fn to_line(&amp;self, cpp_utils::AsStruct) -&gt; ::line::Line</code><br>
+C++ method: <span style='color: green;'><code>QLine QVariant::toLine() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toLine">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qline.html">QLine</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QLine</a>; otherwise returns an invalid <a href="http://doc.qt.io/qt-5/qline.html">QLine</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_line_f' class='method'><code>fn <a href='#method.to_line_f' class='fnname'>to_line_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToLineFArgs.html' title='qt_core::variant::overloading::VariantToLineFArgs'>VariantToLineFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toLineF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_line_f(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::line_f::LineF&gt;</code><br>2) <code>fn to_line_f(&amp;self, cpp_utils::AsStruct) -&gt; ::line_f::LineF</code><br>
+C++ method: <span style='color: green;'><code>QLineF QVariant::toLineF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toLineF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qlinef.html">QLineF</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QLineF</a>; otherwise returns an invalid <a href="http://doc.qt.io/qt-5/qlinef.html">QLineF</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_list' class='method'><code>fn <a href='#method.to_list' class='fnname'>to_list</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToListArgs.html' title='qt_core::variant::overloading::VariantToListArgs'>VariantToListArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toList</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_list(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListVariantRef&gt;</code><br>2) <code>fn to_list(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListVariantRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QVariant&gt; QVariant::toList() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toList">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantList-typedef">QVariantList</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QVariantList</a> or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QStringList</a>; otherwise returns an empty list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_locale' class='method'><code>fn <a href='#method.to_locale' class='fnname'>to_locale</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToLocaleArgs.html' title='qt_core::variant::overloading::VariantToLocaleArgs'>VariantToLocaleArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toLocale</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_locale(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>2) <code>fn to_locale(&amp;self, cpp_utils::AsStruct) -&gt; ::locale::Locale</code><br>
+C++ method: <span style='color: green;'><code>QLocale QVariant::toLocale() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toLocale">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QLocale</a>; otherwise returns an invalid <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_long_long' class='method'><code>fn <a href='#method.to_long_long' class='fnname'>to_long_long</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToLongLongArgs.html' title='qt_core::variant::overloading::VariantToLongLongArgs'>VariantToLongLongArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toLongLong</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_long_long(&amp;self, ()) -&gt; i64</code><br>2) <code>fn to_long_long(&amp;self, *mut bool) -&gt; i64</code><br>
+C++ method: <span style='color: green;'><code>qlonglong QVariant::toLongLong(bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toLongLong">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a long long int if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a>; otherwise returns 0.</p>
+<p>If <i>ok</i> is non-null: <code><em></code><code>ok</code> is set to true if the value could be converted to an int; otherwise <code></em></code><code>ok</code> is set to false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_map' class='method'><code>fn <a href='#method.to_map' class='fnname'>to_map</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToMapArgs.html' title='qt_core::variant::overloading::VariantToMapArgs'>VariantToMapArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toMap</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_map(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::map::MapStringRefVariantRef&gt;</code><br>2) <code>fn to_map(&amp;self, cpp_utils::AsStruct) -&gt; ::map::MapStringRefVariantRef</code><br>
+C++ method: <span style='color: green;'><code>QMap&lt;QString, QVariant&gt; QVariant::toMap() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toMap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qmap.html">QMap</a>&lt;<a href="http://doc.qt.io/qt-5/qstring.html">QString</a>, <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>&gt; if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QVariantMap</a>; otherwise returns an empty map.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_model_index' class='method'><code>fn <a href='#method.to_model_index' class='fnname'>to_model_index</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToModelIndexArgs.html' title='qt_core::variant::overloading::VariantToModelIndexArgs'>VariantToModelIndexArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toModelIndex</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_model_index(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::model_index::ModelIndex&gt;</code><br>2) <code>fn to_model_index(&amp;self, cpp_utils::AsStruct) -&gt; ::model_index::ModelIndex</code><br>
+C++ method: <span style='color: green;'><code>QModelIndex QVariant::toModelIndex() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toModelIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qmodelindex.html">QModelIndex</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmodelindex.html">QModelIndex</a>; otherwise returns a default constructed <a href="http://doc.qt.io/qt-5/qmodelindex.html">QModelIndex</a>.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>(), <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>(), and <a href="http://doc.qt.io/qt-5/qvariant.html#toPersistentModelIndex">toPersistentModelIndex</a>().</p></div></p>
+</div><h4 id='method.to_persistent_model_index' class='method'><code>fn <a href='#method.to_persistent_model_index' class='fnname'>to_persistent_model_index</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToPersistentModelIndexArgs.html' title='qt_core::variant::overloading::VariantToPersistentModelIndexArgs'>VariantToPersistentModelIndexArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toPersistentModelIndex</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_persistent_model_index(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::persistent_model_index::PersistentModelIndex&gt;</code><br>2) <code>fn to_persistent_model_index(&amp;self, cpp_utils::AsStruct) -&gt; ::persistent_model_index::PersistentModelIndex</code><br>
+C++ method: <span style='color: green;'><code>QPersistentModelIndex QVariant::toPersistentModelIndex() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toPersistentModelIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qpersistentmodelindex.html">QPersistentModelIndex</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qpersistentmodelindex.html">QPersistentModelIndex</a>; otherwise returns a default constructed <a href="http://doc.qt.io/qt-5/qpersistentmodelindex.html">QPersistentModelIndex</a>.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>(), <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>(), and <a href="http://doc.qt.io/qt-5/qvariant.html#toModelIndex">toModelIndex</a>().</p></div></p>
+</div><h4 id='method.to_point' class='method'><code>fn <a href='#method.to_point' class='fnname'>to_point</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToPointArgs.html' title='qt_core::variant::overloading::VariantToPointArgs'>VariantToPointArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toPoint</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_point(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::point::Point&gt;</code><br>2) <code>fn to_point(&amp;self, cpp_utils::AsStruct) -&gt; ::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint QVariant::toPoint() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toPoint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QPointF</a> or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QPointF</a>; otherwise returns a null <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_point_f' class='method'><code>fn <a href='#method.to_point_f' class='fnname'>to_point_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToPointFArgs.html' title='qt_core::variant::overloading::VariantToPointFArgs'>VariantToPointFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toPointF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_point_f(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::point_f::PointF&gt;</code><br>2) <code>fn to_point_f(&amp;self, cpp_utils::AsStruct) -&gt; ::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QVariant::toPointF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toPointF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QPoint</a> or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QPointF</a>; otherwise returns a null <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_real' class='method'><code>fn <a href='#method.to_real' class='fnname'>to_real</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToRealArgs.html' title='qt_core::variant::overloading::VariantToRealArgs'>VariantToRealArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toReal</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_real(&amp;self, ()) -&gt; libc::c_double</code><br>2) <code>fn to_real(&amp;self, *mut bool) -&gt; libc::c_double</code><br>
+C++ method: <span style='color: green;'><code>double QVariant::toReal(bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toReal">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a qreal if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Float</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a>; otherwise returns 0.0.</p>
+<p>If <i>ok</i> is non-null: <code><em></code><i>ok</i> is set to true if the value could be converted to a double; otherwise <code></em></code><i>ok</i> is set to false.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_rect' class='method'><code>fn <a href='#method.to_rect' class='fnname'>to_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToRectArgs.html' title='qt_core::variant::overloading::VariantToRectArgs'>VariantToRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::rect::Rect&gt;</code><br>2) <code>fn to_rect(&amp;self, cpp_utils::AsStruct) -&gt; ::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QVariant::toRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QRect</a>; otherwise returns an invalid <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_rect_f' class='method'><code>fn <a href='#method.to_rect_f' class='fnname'>to_rect_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToRectFArgs.html' title='qt_core::variant::overloading::VariantToRectFArgs'>VariantToRectFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toRectF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_rect_f(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn to_rect_f(&amp;self, cpp_utils::AsStruct) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QVariant::toRectF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toRectF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QRect</a> or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QRectF</a>; otherwise returns an invalid <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_reg_exp' class='method'><code>fn <a href='#method.to_reg_exp' class='fnname'>to_reg_exp</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToRegExpArgs.html' title='qt_core::variant::overloading::VariantToRegExpArgs'>VariantToRegExpArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toRegExp</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_reg_exp(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::reg_exp::RegExp&gt;</code><br>2) <code>fn to_reg_exp(&amp;self, cpp_utils::AsStruct) -&gt; ::reg_exp::RegExp</code><br>
+C++ method: <span style='color: green;'><code>QRegExp QVariant::toRegExp() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toRegExp">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qregexp.html">QRegExp</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QRegExp</a>; otherwise returns an empty <a href="http://doc.qt.io/qt-5/qregexp.html">QRegExp</a>.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_regular_expression' class='method'><code>fn <a href='#method.to_regular_expression' class='fnname'>to_regular_expression</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToRegularExpressionArgs.html' title='qt_core::variant::overloading::VariantToRegularExpressionArgs'>VariantToRegularExpressionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toRegularExpression</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_regular_expression(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::regular_expression::RegularExpression&gt;</code><br>2) <code>fn to_regular_expression(&amp;self, cpp_utils::AsStruct) -&gt; ::regular_expression::RegularExpression</code><br>
+C++ method: <span style='color: green;'><code>QRegularExpression QVariant::toRegularExpression() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toRegularExpression">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a>; otherwise returns an empty <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a>.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_size' class='method'><code>fn <a href='#method.to_size' class='fnname'>to_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToSizeArgs.html' title='qt_core::variant::overloading::VariantToSizeArgs'>VariantToSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::size::Size&gt;</code><br>2) <code>fn to_size(&amp;self, cpp_utils::AsStruct) -&gt; ::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QVariant::toSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QSize</a>; otherwise returns an invalid <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_size_f' class='method'><code>fn <a href='#method.to_size_f' class='fnname'>to_size_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToSizeFArgs.html' title='qt_core::variant::overloading::VariantToSizeFArgs'>VariantToSizeFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toSizeF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_size_f(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::size_f::SizeF&gt;</code><br>2) <code>fn to_size_f(&amp;self, cpp_utils::AsStruct) -&gt; ::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>QSizeF QVariant::toSizeF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toSizeF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qsizef.html">QSizeF</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QSizeF</a>; otherwise returns an invalid <a href="http://doc.qt.io/qt-5/qsizef.html">QSizeF</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_string' class='method'><code>fn <a href='#method.to_string' class='fnname'>to_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToStringArgs.html' title='qt_core::variant::overloading::VariantToStringArgs'>VariantToStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QVariant::toString() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDate</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDateTime</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QStringList</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QTime</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a>; otherwise returns an empty string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_string_list' class='method'><code>fn <a href='#method.to_string_list' class='fnname'>to_string_list</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToStringListArgs.html' title='qt_core::variant::overloading::VariantToStringListArgs'>VariantToStringListArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toStringList</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_string_list(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_list::StringList&gt;</code><br>2) <code>fn to_string_list(&amp;self, cpp_utils::AsStruct) -&gt; ::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>QStringList QVariant::toStringList() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toStringList">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QStringList</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QVariantList</a> of a type that can be converted to <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>; otherwise returns an empty list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_time' class='method'><code>fn <a href='#method.to_time' class='fnname'>to_time</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToTimeArgs.html' title='qt_core::variant::overloading::VariantToTimeArgs'>VariantToTimeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toTime</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_time(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::time::Time&gt;</code><br>2) <code>fn to_time(&amp;self, cpp_utils::AsStruct) -&gt; ::time::Time</code><br>
+C++ method: <span style='color: green;'><code>QTime QVariant::toTime() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toTime">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qtime.html">QTime</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QTime</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QDateTime</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>; otherwise returns an invalid time.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>() is <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, an invalid time will be returned if the string cannot be parsed as a <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::ISODate</a> format time.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_u_int' class='method'><code>fn <a href='#method.to_u_int' class='fnname'>to_u_int</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToUIntArgs.html' title='qt_core::variant::overloading::VariantToUIntArgs'>VariantToUIntArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toUInt</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_u_int(&amp;self, ()) -&gt; libc::c_uint</code><br>2) <code>fn to_u_int(&amp;self, *mut bool) -&gt; libc::c_uint</code><br>
+C++ method: <span style='color: green;'><code>unsigned int QVariant::toUInt(bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toUInt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as an unsigned int if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a>; otherwise returns 0.</p>
+<p>If <i>ok</i> is non-null: <code><em></code><i>ok</i> is set to true if the value could be converted to an unsigned int; otherwise <code></em></code><i>ok</i> is set to false.</p>
+<p><b>Warning:</b> If the value is convertible to a <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a> but is too large to be represented in an unsigned int, the resulting arithmetic overflow will not be reflected in <i>ok</i>. A simple workaround is to use <a href="http://doc.qt.io/qt-5/qstring.html#toUInt">QString::toUInt</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_u_long_long' class='method'><code>fn <a href='#method.to_u_long_long' class='fnname'>to_u_long_long</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToULongLongArgs.html' title='qt_core::variant::overloading::VariantToULongLongArgs'>VariantToULongLongArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toULongLong</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_u_long_long(&amp;self, ()) -&gt; u64</code><br>2) <code>fn to_u_long_long(&amp;self, *mut bool) -&gt; u64</code><br>
+C++ method: <span style='color: green;'><code>qulonglong QVariant::toULongLong(bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toULongLong">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as as an unsigned long long int if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::ULongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Bool</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QByteArray</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Double</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Int</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::LongLong</a>, <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QString</a>, or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UInt</a>; otherwise returns 0.</p>
+<p>If <i>ok</i> is non-null: <code><em></code><i>ok</i> is set to true if the value could be converted to an int; otherwise <code></em></code><i>ok</i> is set to false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_url' class='method'><code>fn <a href='#method.to_url' class='fnname'>to_url</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToUrlArgs.html' title='qt_core::variant::overloading::VariantToUrlArgs'>VariantToUrlArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toUrl</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_url(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>2) <code>fn to_url(&amp;self, cpp_utils::AsStruct) -&gt; ::url::Url</code><br>
+C++ method: <span style='color: green;'><code>QUrl QVariant::toUrl() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toUrl">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QUrl</a>; otherwise returns an invalid <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.to_uuid' class='method'><code>fn <a href='#method.to_uuid' class='fnname'>to_uuid</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/variant/overloading/trait.VariantToUuidArgs.html' title='qt_core::variant::overloading::VariantToUuidArgs'>VariantToUuidArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::toUuid</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_uuid(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::uuid::Uuid&gt;</code><br>2) <code>fn to_uuid(&amp;self, cpp_utils::AsStruct) -&gt; ::uuid::Uuid</code><br>
+C++ method: <span style='color: green;'><code>QUuid QVariant::toUuid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#toUuid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the variant as a <a href="http://doc.qt.io/qt-5/quuid.html">QUuid</a> if the variant has <a href="http://doc.qt.io/qt-5/qvariant.html#userType">userType</a>() <a href="http://doc.qt.io/qt-5/quuid.html">QUuid</a>; otherwise returns a default constructed <a href="http://doc.qt.io/qt-5/quuid.html">QUuid</a>.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>() and <a href="http://doc.qt.io/qt-5/qvariant.html#convert">convert</a>().</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/variant/enum.Type.html' title='qt_core::variant::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QVariant::Type QVariant::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the storage type of the value stored in the variant. Although this function is declared as returning QVariant::Type, the return value should be interpreted as <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Type</a>. In particular, QVariant::UserType is returned here only if the value is equal or greater than <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::User</a>.</p>
+<p>Note that return values in the ranges QVariant::Char through QVariant::RegExp and QVariant::Font through QVariant::Transform correspond to the values in the ranges <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a> through <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QRegExp</a> and <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QFont</a> through <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QQuaternion</a>.</p>
+<p>Pay particular attention when working with char and <a href="http://doc.qt.io/qt-5/qchar.html">QChar</a> variants. Note that there is no <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> constructor specifically for type char, but there is one for <a href="http://doc.qt.io/qt-5/qchar.html">QChar</a>. For a variant of type <a href="http://doc.qt.io/qt-5/qchar.html">QChar</a>, this function returns QVariant::Char, which is the same as <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::QChar</a>, but for a variant of type <code>char</code>, this function returns <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Char</a>, which is <i>not</i> the same as QVariant::Char.</p>
+<p>Also note that the types <code>void*</code>, <code>long</code>, <code>short</code>, <code>unsigned</code> <code>long</code>, <code>unsigned</code> <code>short</code>, <code>unsigned</code> <code>char</code>, <code>float</code>, <code>QObject*</code>, and <code>QWidget*</code> are represented in <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Type</a> but not in QVariant::Type, and they can be returned by this function. However, they are considered to be user defined types when tested against QVariant::Type.</p>
+<p>To test whether an instance of <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> contains a data type that is compatible with the data type you are interested in, use <a href="http://doc.qt.io/qt-5/qvariant.html#canConvert">canConvert</a>().</p></div></p>
+</div><h4 id='method.type_name' class='method'><code>fn <a href='#method.type_name' class='fnname'>type_name</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const char* QVariant::typeName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#typeName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the type stored in the variant. The returned strings describe the C++ datatype used to store the data: for example, &quot;<a href="http://doc.qt.io/qt-5/qfont.html">QFont</a>&quot;, &quot;<a href="http://doc.qt.io/qt-5/qstring.html">QString</a>&quot;, or &quot;<a href="http://doc.qt.io/qt-5/qvariant.html#QVariantList-typedef">QVariantList</a>&quot;. An Invalid variant returns 0.</p></div></p>
+</div><h4 id='method.type_to_name' class='method'><code>fn <a href='#method.type_to_name' class='fnname'>type_to_name</a>(type_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static const char* QVariant::typeToName(int typeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#typeToName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the int representation of the storage type, <i>typeId</i>, to its string representation.</p>
+<p>Returns a null pointer if the type is <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::UnknownType</a> or doesn&#39;t exist.</p></div></p>
+</div><h4 id='method.user_type' class='method'><code>fn <a href='#method.user_type' class='fnname'>user_type</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QVariant::userType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#userType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the storage type of the value stored in the variant. For non-user types, this is the same as <a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qvariant.html#type">type</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListVariantRefAppendArgs.html' title='qt_core::list::overloading::ListVariantRefAppendArgs'>ListVariantRefAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98748' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#24376-24384' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListVariantRefAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListVariantRef.html' title='qt_core::list::ListVariantRef'>ListVariantRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListVariantRefCountArgs.html' title='qt_core::list::overloading::ListVariantRefCountArgs'>ListVariantRefCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98764' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#24395-24403' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListVariantRefCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListVariantRef.html' title='qt_core::list::ListVariantRef'>ListVariantRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListVariantRefIndexOfArgs.html' title='qt_core::list::overloading::ListVariantRefIndexOfArgs'>ListVariantRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98775' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#24408-24416' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListVariantRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListVariantRef.html' title='qt_core::list::ListVariantRef'>ListVariantRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListVariantRefLastIndexOfArgs.html' title='qt_core::list::overloading::ListVariantRefLastIndexOfArgs'>ListVariantRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98793' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#24432-24440' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListVariantRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListVariantRef.html' title='qt_core::list::ListVariantRef'>ListVariantRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListVariantRefOpAddAssignArgs.html' title='qt_core::list::overloading::ListVariantRefOpAddAssignArgs'>ListVariantRefOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98908' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#24607-24617' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListVariantRefOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListVariantRef.html' title='qt_core::list::ListVariantRef'>ListVariantRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListVariantRef.html' title='qt_core::list::ListVariantRef'>ListVariantRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListVariantRefOpShlArgs.html' title='qt_core::list::overloading::ListVariantRefOpShlArgs'>ListVariantRefOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98927' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#24632-24641' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListVariantRefOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListVariantRef.html' title='qt_core::list::ListVariantRef'>ListVariantRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListVariantRef.html' title='qt_core::list::ListVariantRef'>ListVariantRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/map/overloading/trait.MapCIntVariantRefKeyArgs.html' title='qt_core::map::overloading::MapCIntVariantRefKeyArgs'>MapCIntVariantRefKeyArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104412' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/map.rs.html#905-913' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-6' class='method'><code>fn <a href='../../qt_core/map/overloading/trait.MapCIntVariantRefKeyArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/map/struct.MapCIntVariantRef.html' title='qt_core::map::MapCIntVariantRef'>MapCIntVariantRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-160094' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/variant.rs.html#487-491' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-160365' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/variant.rs.html#1709-1717' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QVariant::~QVariant()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qvariant.html#dtor.QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> and the contained object.</p>
+<p>Note that subclasses that reimplement <a href="http://doc.qt.io/qt-5/qvariant.html#clear">clear</a>() should reimplement the destructor to call <a href="http://doc.qt.io/qt-5/qvariant.html#clear">clear</a>(). This destructor calls <a href="http://doc.qt.io/qt-5/qvariant.html#clear">clear</a>(), but because it is the destructor, <a href="http://doc.qt.io/qt-5/qvariant.html#clear">QVariant::clear</a>() is called rather than a subclass&#39;s <a href="http://doc.qt.io/qt-5/qvariant.html#clear">clear</a>().</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-160368' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/variant.rs.html#1719-1723' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["PictureIO","C++ type: <span style='color: green;'>```QPictureIO```</span>"]]});

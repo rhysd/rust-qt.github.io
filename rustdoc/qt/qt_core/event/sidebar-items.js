@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Type","C++ type: <span style='color: green;'>```QEvent::Type```</span>"]],"mod":[["overloading",""]],"struct":[["Event","C++ type: <span style='color: green;'>```QEvent```</span>"]]});

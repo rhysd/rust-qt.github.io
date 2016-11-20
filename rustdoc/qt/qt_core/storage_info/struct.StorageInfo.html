@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `StorageInfo` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, StorageInfo">
+
+    <title>qt_core::storage_info::StorageInfo - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>storage_info</a></p><script>window.sidebarCurrent = {name: 'StorageInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>storage_info</a>::<wbr><a class='struct' href=''>StorageInfo</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-139078' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/storage_info.rs.html#22-24' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct StorageInfo {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QStorageInfo</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Provides information about currently mounted storage and drives.</p>
+<p>Allows retrieving information about the volume&#39;s space, its mount point, label, and filesystem name.</p>
+<p>You can create an instance of <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> by passing the path to the volume&#39;s mount point as a constructor parameter, or you can set it using the <a href="http://doc.qt.io/qt-5/qstorageinfo.html#setPath">setPath</a>() method. The static <a href="http://doc.qt.io/qt-5/qstorageinfo.html#mountedVolumes">mountedVolumes</a>() method can be used to get the list of all mounted filesystems.</p>
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> always caches the retrieved information, but you can call <a href="http://doc.qt.io/qt-5/qstorageinfo.html#refresh">refresh</a>() to invalidate the cache.</p>
+<p>The following example retrieves the most common information about the root volume of the system, and prints information about it.</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qstorageinfo.html#QStorageInfo">QStorageInfo</a></span> storage <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstorageinfo.html#QStorageInfo">QStorageInfo</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qstorageinfo.html#root">root</a>();</p>
+
+<p>&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> storage<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qstorageinfo.html#rootPath">rootPath</a>();
+&#32;   <span class="keyword">if</span> (storage<span class="operator">.</span>isReadOnly())
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;isReadOnly:&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> storage<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qstorageinfo.html#isReadOnly">isReadOnly</a>();</p>
+
+<p>&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;name:&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> storage<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qstorageinfo.html#name">name</a>();
+&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;fileSystemType:&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> storage<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qstorageinfo.html#fileSystemType">fileSystemType</a>();
+&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;size:&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> storage<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesTotal">bytesTotal</a>()<span class="operator">/</span><span class="number">1000</span><span class="operator">/</span><span class="number">1000</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;MB&quot;</span>;
+&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;availableSize:&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> storage<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesAvailable">bytesAvailable</a>()<span class="operator">/</span><span class="number">1000</span><span class="operator">/</span><span class="number">1000</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;MB&quot;</span>;</pre></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-139083' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/storage_info.rs.html#32-288' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.bytes_available' class='method'><code>fn <a href='#method.bytes_available' class='fnname'>bytes_available</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QStorageInfo::bytesAvailable() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesAvailable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size (in bytes) available for the current user. It returns the total size available if the user is the root user or a system administrator.</p>
+<p>This size can be less than or equal to the free size returned by <a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesFree">bytesFree</a>() function.</p>
+<p>Returns -1 if <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> object is not valid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesTotal">bytesTotal</a>() and <a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesFree">bytesFree</a>().</p></div></p>
+</div><h4 id='method.bytes_free' class='method'><code>fn <a href='#method.bytes_free' class='fnname'>bytes_free</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QStorageInfo::bytesFree() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesFree">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of free bytes in a volume. Note that if there are quotas on the filesystem, this value can be larger than the value returned by <a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesAvailable">bytesAvailable</a>().</p>
+<p>Returns -1 if <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> object is not valid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesTotal">bytesTotal</a>() and <a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesAvailable">bytesAvailable</a>().</p></div></p>
+</div><h4 id='method.bytes_total' class='method'><code>fn <a href='#method.bytes_total' class='fnname'>bytes_total</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QStorageInfo::bytesTotal() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesTotal">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the total volume size in bytes.</p>
+<p>Returns -1 if <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> object is not valid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesFree">bytesFree</a>() and <a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesAvailable">bytesAvailable</a>().</p></div></p>
+</div><h4 id='method.device' class='method'><code>fn <a href='#method.device' class='fnname'>device</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/storage_info/overloading/trait.StorageInfoDeviceArgs.html' title='qt_core::storage_info::overloading::StorageInfoDeviceArgs'>StorageInfoDeviceArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStorageInfo::device</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn device(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn device(&amp;self, cpp_utils::AsStruct) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QStorageInfo::device() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#device">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the device for this volume.</p>
+<p>For example, on Unix filesystems (including OS X), this returns the devpath like <code>/dev/sda0</code> for local storages. On Windows, it returns the UNC path starting with <code>\\?\</code> for local storages (in other words, the volume GUID).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#rootPath">rootPath</a>().</p></div></p>
+</div><h4 id='method.display_name' class='method'><code>fn <a href='#method.display_name' class='fnname'>display_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/storage_info/overloading/trait.StorageInfoDisplayNameArgs.html' title='qt_core::storage_info::overloading::StorageInfoDisplayNameArgs'>StorageInfoDisplayNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStorageInfo::displayName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn display_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn display_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStorageInfo::displayName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#displayName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the volume&#39;s name, if available, or the root path if not.</p></div></p>
+</div><h4 id='method.file_system_type' class='method'><code>fn <a href='#method.file_system_type' class='fnname'>file_system_type</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/storage_info/overloading/trait.StorageInfoFileSystemTypeArgs.html' title='qt_core::storage_info::overloading::StorageInfoFileSystemTypeArgs'>StorageInfoFileSystemTypeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStorageInfo::fileSystemType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn file_system_type(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn file_system_type(&amp;self, cpp_utils::AsStruct) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QStorageInfo::fileSystemType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#fileSystemType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type name of the filesystem.</p>
+<p>This is a platform-dependent function, and filesystem names can vary between different operating systems. For example, on Windows filesystems they can be named <code>NTFS</code>, and on Linux they can be named <code>ntfs-3g</code> or <code>fuseblk</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#name">name</a>().</p></div></p>
+</div><h4 id='method.is_read_only' class='method'><code>fn <a href='#method.is_read_only' class='fnname'>is_read_only</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStorageInfo::isReadOnly() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#isReadOnly">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns true if the current filesystem is protected from writing; false otherwise.</p></div></p>
+</div><h4 id='method.is_ready' class='method'><code>fn <a href='#method.is_ready' class='fnname'>is_ready</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStorageInfo::isReady() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#isReady">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns true if the current filesystem is ready to work; false otherwise. For example, false is returned if the CD volume is not inserted.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qstorageinfo.html#fileSystemType">fileSystemType</a>(), <a href="http://doc.qt.io/qt-5/qstorageinfo.html#name">name</a>(), <a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesTotal">bytesTotal</a>(), <a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesFree">bytesFree</a>(), and <a href="http://doc.qt.io/qt-5/qstorageinfo.html#bytesAvailable">bytesAvailable</a>() will return invalid data until the volume is ready.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.is_root' class='method'><code>fn <a href='#method.is_root' class='fnname'>is_root</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStorageInfo::isRoot() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#isRoot">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns true if this <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> represents the system root volume; false otherwise.</p>
+<p>On Unix filesystems, the root volume is a volume mounted on <code>/</code>. On Windows, the root volume is the volume where the OS is installed.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#root">root</a>().</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStorageInfo::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns true if the <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> specified by <a href="http://doc.qt.io/qt-5/qstorageinfo.html#rootPath">rootPath</a> exists and is mounted correctly.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#isReady">isReady</a>().</p></div></p>
+</div><h4 id='method.mounted_volumes' class='method'><code>fn <a href='#method.mounted_volumes' class='fnname'>mounted_volumes</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/storage_info/overloading/trait.StorageInfoMountedVolumesArgs.html' title='qt_core::storage_info::overloading::StorageInfoMountedVolumesArgs'>StorageInfoMountedVolumesArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStorageInfo::mountedVolumes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn mounted_volumes(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListStorageInfoRef&gt;</code><br>2) <code>fn mounted_volumes(cpp_utils::AsStruct) -&gt; ::list::ListStorageInfoRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QStorageInfo&gt; QStorageInfo::mountedVolumes()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#mountedVolumes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the list of <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> objects that corresponds to the list of currently mounted filesystems.</p>
+<p>On Windows, this returns the drives visible in the <b>My Computer</b> folder. On Unix operating systems, it returns the list of all mounted filesystems (except for pseudo filesystems).</p>
+<p>Returns all currently mounted filesystems by default.</p>
+<p>The example shows how to retrieve all available filesystems, skipping read-only ones.</p>
+<pre class="cpp">    <a href="http://doc.qt.io/qt-5/qtglobal.html#foreach">foreach</a> (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstorageinfo.html#QStorageInfo">QStorageInfo</a></span> <span class="operator">&amp;</span>storage<span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstorageinfo.html#QStorageInfo">QStorageInfo</a></span><span class="operator">::</span>mountedVolumes()) {
+&#32;       <span class="keyword">if</span> (storage<span class="operator">.</span>isValid() <span class="operator">&amp;</span><span class="operator">&amp;</span> storage<span class="operator">.</span>isReady()) {
+&#32;           <span class="keyword">if</span> (<span class="operator">!</span>storage<span class="operator">.</span>isReadOnly()) {
+&#32;               <span class="comment">// ...</span>
+&#32;           }
+&#32;       }
+&#32;   }</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#root">root</a>().</p></div></p>
+</div><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/storage_info/overloading/trait.StorageInfoNameArgs.html' title='qt_core::storage_info::overloading::StorageInfoNameArgs'>StorageInfoNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStorageInfo::name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStorageInfo::name() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#name">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the human-readable name of a filesystem, usually called <code>label</code>.</p>
+<p>Not all filesystems support this feature. In this case, the value returned by this method could be empty. An empty string is returned if the file system does not support labels, or if no label is set.</p>
+<p>On Linux, retrieving the volume&#39;s label requires <code>udev</code> to be present in the system.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#fileSystemType">fileSystemType</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/storage_info/overloading/trait.StorageInfoNewArgs.html' title='qt_core::storage_info::overloading::StorageInfoNewArgs'>StorageInfoNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStorageInfo::QStorageInfo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::storage_info::StorageInfo</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::storage_info::StorageInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStorageInfo::QStorageInfo()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::dir::Dir, cpp_utils::AsStruct)) -&gt; ::storage_info::StorageInfo</code><br>2) <code>fn new((&amp;::dir::Dir, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::storage_info::StorageInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStorageInfo::QStorageInfo(const QDir&amp; dir)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::storage_info::StorageInfo, cpp_utils::AsStruct)) -&gt; ::storage_info::StorageInfo</code><br>2) <code>fn new((&amp;::storage_info::StorageInfo, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::storage_info::StorageInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStorageInfo::QStorageInfo(const QStorageInfo&amp; other)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::storage_info::StorageInfo</code><br>2) <code>fn new((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::storage_info::StorageInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStorageInfo::QStorageInfo(const QString&amp; path)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStorageInfo&amp; QStorageInfo::operator=(const QStorageInfo&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Makes a copy of the <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> object <i>other</i> and assigns it to this <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> object.</p></div></p>
+</div><h4 id='method.refresh' class='method'><code>fn <a href='#method.refresh' class='fnname'>refresh</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStorageInfo::refresh()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#refresh">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Resets <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a>&#39;s internal cache.</p>
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> caches information about storage to speed up performance. <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> retrieves information during object construction and/or when calling the <a href="http://doc.qt.io/qt-5/qstorageinfo.html#setPath">setPath</a>() method. You have to manually reset the cache by calling this function to update storage information.</p></div></p>
+</div><h4 id='method.root' class='method'><code>fn <a href='#method.root' class='fnname'>root</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/storage_info/overloading/trait.StorageInfoRootArgs.html' title='qt_core::storage_info::overloading::StorageInfoRootArgs'>StorageInfoRootArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStorageInfo::root</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn root(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::storage_info::StorageInfo&gt;</code><br>2) <code>fn root(cpp_utils::AsStruct) -&gt; ::storage_info::StorageInfo</code><br>
+C++ method: <span style='color: green;'><code>static QStorageInfo QStorageInfo::root()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#root">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> object that represents the system root volume.</p>
+<p>On Unix systems this call returns the root (&#39;/&#39;) volume; in Windows the volume where the operating system is installed.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#isRoot">isRoot</a>().</p></div></p>
+</div><h4 id='method.root_path' class='method'><code>fn <a href='#method.root_path' class='fnname'>root_path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/storage_info/overloading/trait.StorageInfoRootPathArgs.html' title='qt_core::storage_info::overloading::StorageInfoRootPathArgs'>StorageInfoRootPathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStorageInfo::rootPath</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn root_path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn root_path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStorageInfo::rootPath() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#rootPath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the mount point of the filesystem this <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> object represents.</p>
+<p>On Windows, it returns the volume letter in case the volume is not mounted to a directory.</p>
+<p>Note that the value returned by rootPath() is the real mount point of a volume, and may not be equal to the value passed to the constructor or <a href="http://doc.qt.io/qt-5/qstorageinfo.html#setPath">setPath</a>() method. For example, if you have only the root volume in the system, and pass &#39;/directory&#39; to <a href="http://doc.qt.io/qt-5/qstorageinfo.html#setPath">setPath</a>(), then this method will return &#39;/&#39;.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#setPath">setPath</a>() and <a href="http://doc.qt.io/qt-5/qstorageinfo.html#device">device</a>().</p></div></p>
+</div><h4 id='method.set_path' class='method'><code>fn <a href='#method.set_path' class='fnname'>set_path</a>(&amp;mut self, path: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStorageInfo::setPath(const QString&amp; path)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#setPath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets this <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> object to the filesystem mounted where <i>path</i> is located.</p>
+<p><i>path</i> can either be a root path of the filesystem, a directory, or a file within that filesystem.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstorageinfo.html#rootPath">rootPath</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStorageInfo::swap(QStorageInfo&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this volume info with <i>other</i>. This function is very fast and never fails.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListStorageInfoRefAppendArgs.html' title='qt_core::list::overloading::ListStorageInfoRefAppendArgs'>ListStorageInfoRefAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-97572' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#22780-22788' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListStorageInfoRefAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListStorageInfoRef.html' title='qt_core::list::ListStorageInfoRef'>ListStorageInfoRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListStorageInfoRefCountArgs.html' title='qt_core::list::overloading::ListStorageInfoRefCountArgs'>ListStorageInfoRefCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-97588' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#22799-22807' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListStorageInfoRefCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListStorageInfoRef.html' title='qt_core::list::ListStorageInfoRef'>ListStorageInfoRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListStorageInfoRefIndexOfArgs.html' title='qt_core::list::overloading::ListStorageInfoRefIndexOfArgs'>ListStorageInfoRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-97599' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#22812-22820' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListStorageInfoRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListStorageInfoRef.html' title='qt_core::list::ListStorageInfoRef'>ListStorageInfoRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListStorageInfoRefLastIndexOfArgs.html' title='qt_core::list::overloading::ListStorageInfoRefLastIndexOfArgs'>ListStorageInfoRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-97617' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#22836-22844' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListStorageInfoRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListStorageInfoRef.html' title='qt_core::list::ListStorageInfoRef'>ListStorageInfoRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListStorageInfoRefOpAddAssignArgs.html' title='qt_core::list::overloading::ListStorageInfoRefOpAddAssignArgs'>ListStorageInfoRefOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-97732' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#23006-23016' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListStorageInfoRefOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListStorageInfoRef.html' title='qt_core::list::ListStorageInfoRef'>ListStorageInfoRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListStorageInfoRef.html' title='qt_core::list::ListStorageInfoRef'>ListStorageInfoRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListStorageInfoRefOpShlArgs.html' title='qt_core::list::overloading::ListStorageInfoRefOpShlArgs'>ListStorageInfoRefOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-97751' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#23032-23042' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListStorageInfoRefOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListStorageInfoRef.html' title='qt_core::list::ListStorageInfoRef'>ListStorageInfoRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListStorageInfoRef.html' title='qt_core::list::ListStorageInfoRef'>ListStorageInfoRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-139081' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/storage_info.rs.html#26-30' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-139146' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/storage_info.rs.html#290-297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QStorageInfo::~QStorageInfo()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstorageinfo.html#dtor.QStorageInfo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qstorageinfo.html">QStorageInfo</a> object and frees its resources.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/storage_info/struct.StorageInfo.html' title='qt_core::storage_info::StorageInfo'>StorageInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-139149' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/storage_info.rs.html#299-303' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

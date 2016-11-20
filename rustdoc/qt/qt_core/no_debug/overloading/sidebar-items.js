@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["NoDebugMaybeQuoteArgs","This trait represents a set of arguments accepted by NoDebug::maybe_quote method."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["GraphicsColorizeEffect","C++ type: <span style='color: green;'>```QGraphicsColorizeEffect```</span>"]]});

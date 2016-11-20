@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["GraphicsPolygonItem","C++ type: <span style='color: green;'>```QGraphicsPolygonItem```</span>"]]});

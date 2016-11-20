@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["DialogCode","C++ type: <span style='color: green;'>```QDialog::DialogCode```</span>"]],"mod":[["overloading",""]],"struct":[["Dialog","C++ type: <span style='color: green;'>```QDialog```</span>"]]});

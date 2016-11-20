@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TextStreamManipulator","C++ type: <span style='color: green;'>```QTextStreamManipulator```</span>"]]});

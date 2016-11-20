@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["IntValidator","C++ type: <span style='color: green;'>```QIntValidator```</span>"]]});

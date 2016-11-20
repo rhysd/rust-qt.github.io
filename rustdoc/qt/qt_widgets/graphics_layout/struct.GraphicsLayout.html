@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GraphicsLayout` struct in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GraphicsLayout">
+
+    <title>qt_widgets::graphics_layout::GraphicsLayout - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>graphics_layout</a></p><script>window.sidebarCurrent = {name: 'GraphicsLayout', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>graphics_layout</a>::<wbr><a class='struct' href=''>GraphicsLayout</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-277750' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_layout.rs.html#10-12' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct GraphicsLayout {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QGraphicsLayout</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> class provides the base class for all layouts in Graphics View.</p>
+<p><a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> is an abstract class that defines a virtual API for arranging <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicswidget">QGraphicsWidget</a> children and other <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a> objects for a <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicswidget">QGraphicsWidget</a>. <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicswidget">QGraphicsWidget</a> assigns responsibility to a <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> through <a href="http://doc.qt.io/qt-5/qgraphicswidget.html#layout-prop">QGraphicsWidget::setLayout</a>(). As the widget is resized, the layout will automatically arrange the widget&#39;s children. <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> inherits <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a>, so, it can be managed by any layout, including its own subclasses.</p>
+<a name="writing-a-custom-layout"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_widgets/graphics_layout/struct.GraphicsLayout.html' title='qt_widgets::graphics_layout::GraphicsLayout'>GraphicsLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-277755' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_layout.rs.html#20-519' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.activate' class='method'><code>fn <a href='#method.activate' class='fnname'>activate</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QGraphicsLayout::activate()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#activate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Activates the layout, causing all items in the layout to be immediately rearranged. This function is based on calling <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#count">count</a>() and <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#itemAt">itemAt</a>(), and then calling <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setGeometry">setGeometry</a>() on all items sequentially. When activated, the layout will adjust its geometry to its parent&#39;s <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#contentsRect">contentsRect</a>(). The parent will then invalidate any layout of its own.</p>
+<p>If called in sequence or recursively, e.g., by one of the arranged items in response to being resized, this function will do nothing.</p>
+<p>Note that the layout is free to use geometry caching to optimize this process. To forcefully invalidate any such cache, you can call <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#invalidate">invalidate</a>() before calling activate().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#invalidate">invalidate</a>().</p></div></p>
+</div><h4 id='method.contents_rect' class='method'><code>fn <a href='#method.contents_rect' class='fnname'>contents_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutContentsRectArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutContentsRectArgs'>GraphicsLayoutContentsRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::contentsRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn contents_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn contents_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QGraphicsLayout::contentsRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#contentsRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the contents rect in local coordinates.</p>
+<p>The contents rect defines the subrectangle used by an associated layout when arranging subitems. This function is a convenience function that adjusts the item&#39;s <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#geometry">geometry</a>() by its contents margins. Note that <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#getContentsMargins">getContentsMargins</a>() is a virtual function that you can reimplement to return the item&#39;s contents margins.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#getContentsMargins">getContentsMargins</a>() and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#geometry">geometry</a>().</p></div></p>
+</div><h4 id='method.count' class='method'><code>fn <a href='#method.count' class='fnname'>count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual int QGraphicsLayout::count() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#count">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This pure virtual function must be reimplemented in a subclass of <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> to return the number of items in the layout.</p>
+<p>The subclass is free to decide how to store the items.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#itemAt">itemAt</a>() and <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#removeAt">removeAt</a>().</p></div></p>
+</div><h4 id='method.effective_size_hint' class='method'><code>fn <a href='#method.effective_size_hint' class='fnname'>effective_size_hint</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutEffectiveSizeHintArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutEffectiveSizeHintArgs'>GraphicsLayoutEffectiveSizeHintArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::effectiveSizeHint</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn effective_size_hint(&amp;self, (qt_core::qt::SizeHint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size_f::SizeF&gt;</code><br>2) <code>fn effective_size_hint(&amp;self, (qt_core::qt::SizeHint, &amp;qt_core::size_f::SizeF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size_f::SizeF&gt;</code><br>3) <code>fn effective_size_hint(&amp;self, (qt_core::qt::SizeHint, cpp_utils::AsStruct)) -&gt; qt_core::size_f::SizeF</code><br>4) <code>fn effective_size_hint(&amp;self, (qt_core::qt::SizeHint, &amp;qt_core::size_f::SizeF, cpp_utils::AsStruct)) -&gt; qt_core::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>QSizeF QGraphicsLayout::effectiveSizeHint(Qt::SizeHint which, const QSizeF&amp; constraint = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#effectiveSizeHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the effective size hint for this <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a>.</p>
+<p><i>which</i> is the size hint in question. <i>constraint</i> is an optional argument that defines a special constrain when calculating the effective size hint. By default, <i>constraint</i> is <a href="http://doc.qt.io/qt-5/qsizef.html">QSizeF</a>(-1, -1), which means there is no constraint to the size hint.</p>
+<p>If you want to specify the widget&#39;s size hint for a given width or height, you can provide the fixed dimension in <i>constraint</i>. This is useful for widgets that can grow only either vertically or horizontally, and need to set either their width or their height to a special value.</p>
+<p>For example, a text paragraph item fit into a column width of 200 may grow vertically. You can pass <a href="http://doc.qt.io/qt-5/qsizef.html">QSizeF</a>(200, -1) as a constraint to get a suitable minimum, preferred and maximum height).</p>
+<p>You can adjust the effective size hint by reimplementing <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>() in a <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a> subclass, or by calling one of the following functions: <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize">setMinimumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize">setPreferredSize</a>, or <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize">setMaximumSize</a>() (or a combination of both).</p>
+<p>This function caches each of the size hints and guarantees that <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>() will be called only once for each value of <i>which</i> - unless <i>constraint</i> is not specified and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#updateGeometry">updateGeometry</a>() has been called.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>().</p></div></p>
+</div><h4 id='method.geometry' class='method'><code>fn <a href='#method.geometry' class='fnname'>geometry</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutGeometryArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutGeometryArgs'>GraphicsLayoutGeometryArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::geometry</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn geometry(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn geometry(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QGraphicsLayout::geometry() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#geometry">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s geometry (e.g., position and size) as a <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a>. This function is equivalent to <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a>(pos(), size()).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setGeometry">setGeometry</a>().</p></div></p>
+</div><h4 id='method.get_contents_margins' class='method'><code>fn <a href='#method.get_contents_margins' class='fnname'>get_contents_margins</a>(&amp;self, left: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, top: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, right: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, bottom: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QGraphicsLayout::getContentsMargins(double* left, double* top, double* right, double* bottom) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#getContentsMargins">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplemented from <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#getContentsMargins">QGraphicsLayoutItem::getContentsMargins</a>().</p></div></p>
+</div><h4 id='method.graphics_item' class='method'><code>fn <a href='#method.graphics_item' class='fnname'>graphics_item</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/graphics_item/struct.GraphicsItem.html' title='qt_widgets::graphics_item::GraphicsItem'>GraphicsItem</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsItem* QGraphicsLayout::graphicsItem() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#graphicsItem">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> that this layout item represents. For <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicswidget">QGraphicsWidget</a> it will return itself. For custom items it can return an aggregated value.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setGraphicsItem">setGraphicsItem</a>().</p></div></p>
+</div><h4 id='method.instant_invalidate_propagation' class='method'><code>fn <a href='#method.instant_invalidate_propagation' class='fnname'>instant_invalidate_propagation</a>() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QGraphicsLayout::instantInvalidatePropagation()</code></span></p>
+</div><h4 id='method.invalidate' class='method'><code>fn <a href='#method.invalidate' class='fnname'>invalidate</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QGraphicsLayout::invalidate()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#invalidate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears any cached geometry and size hint information in the layout, and posts a <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">LayoutRequest</a> event to the managed parent <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#activate">activate</a>() and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setGeometry">setGeometry</a>().</p></div></p>
+</div><h4 id='method.is_activated' class='method'><code>fn <a href='#method.is_activated' class='fnname'>is_activated</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QGraphicsLayout::isActivated() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#isActivated">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the layout is currently being activated; otherwise, returns <code>false</code>. If the layout is being activated, this means that it is currently in the process of rearranging its items (i.e., the <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#activate">activate</a>() function has been called, and has not yet returned).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#activate">activate</a>() and <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#invalidate">invalidate</a>().</p></div></p>
+</div><h4 id='method.is_layout' class='method'><code>fn <a href='#method.is_layout' class='fnname'>is_layout</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QGraphicsLayout::isLayout() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#isLayout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a> is a layout (e.g., is inherited by an object that arranges other <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a> objects); otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a>.</p></div></p>
+</div><h4 id='method.item_at' class='method'><code>fn <a href='#method.item_at' class='fnname'>item_at</a>(&amp;self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/graphics_layout_item/struct.GraphicsLayoutItem.html' title='qt_widgets::graphics_layout_item::GraphicsLayoutItem'>GraphicsLayoutItem</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual QGraphicsLayoutItem* QGraphicsLayout::itemAt(int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#itemAt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This pure virtual function must be reimplemented in a subclass of <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> to return a pointer to the item at index <i>i</i>. The reimplementation can assume that <i>i</i> is valid (i.e., it respects the value of <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#count">count</a>()). Together with <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#count">count</a>(), it is provided as a means of iterating over all items in a layout.</p>
+<p>The subclass is free to decide how to store the items, and the visual arrangement does not have to be reflected through this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#count">count</a>() and <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#removeAt">removeAt</a>().</p></div></p>
+</div><h4 id='method.maximum_height' class='method'><code>fn <a href='#method.maximum_height' class='fnname'>maximum_height</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QGraphicsLayout::maximumHeight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the maximum height.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumHeight">setMaximumHeight</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize">setMaximumSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>().</p></div></p>
+</div><h4 id='method.maximum_size' class='method'><code>fn <a href='#method.maximum_size' class='fnname'>maximum_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutMaximumSizeArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutMaximumSizeArgs'>GraphicsLayoutMaximumSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::maximumSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn maximum_size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size_f::SizeF&gt;</code><br>2) <code>fn maximum_size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>QSizeF QGraphicsLayout::maximumSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the maximum size.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize">setMaximumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">preferredSize</a>(), <a href="http://doc.qt.io/qt-5/qt.html#SizeHint-enum">Qt::MaximumSize</a>, and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>().</p></div></p>
+</div><h4 id='method.maximum_width' class='method'><code>fn <a href='#method.maximum_width' class='fnname'>maximum_width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QGraphicsLayout::maximumWidth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the maximum width.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumWidth">setMaximumWidth</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize">setMaximumSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>().</p></div></p>
+</div><h4 id='method.minimum_height' class='method'><code>fn <a href='#method.minimum_height' class='fnname'>minimum_height</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QGraphicsLayout::minimumHeight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the minimum height.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumHeight">setMinimumHeight</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize">setMinimumSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a>().</p></div></p>
+</div><h4 id='method.minimum_size' class='method'><code>fn <a href='#method.minimum_size' class='fnname'>minimum_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutMinimumSizeArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutMinimumSizeArgs'>GraphicsLayoutMinimumSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::minimumSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn minimum_size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size_f::SizeF&gt;</code><br>2) <code>fn minimum_size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>QSizeF QGraphicsLayout::minimumSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the minimum size.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize">setMinimumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">preferredSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>(), <a href="http://doc.qt.io/qt-5/qt.html#SizeHint-enum">Qt::MinimumSize</a>, and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>().</p></div></p>
+</div><h4 id='method.minimum_width' class='method'><code>fn <a href='#method.minimum_width' class='fnname'>minimum_width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QGraphicsLayout::minimumWidth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the minimum width.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumWidth">setMinimumWidth</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize">setMinimumSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a>().</p></div></p>
+</div><h4 id='method.owned_by_layout' class='method'><code>fn <a href='#method.owned_by_layout' class='fnname'>owned_by_layout</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QGraphicsLayout::ownedByLayout() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#ownedByLayout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether a layout should delete this item in its destructor. If its true, then the layout will delete it. If its false, then it is assumed that another object has the ownership of it, and the layout won&#39;t delete this item.</p>
+<p>If the item inherits both <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a> (such as <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicswidget">QGraphicsWidget</a> does) the item is really part of two ownership hierarchies. This property informs what the layout should do with its child items when it is destructed. In the case of <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicswidget">QGraphicsWidget</a>, it is preferred that when the layout is deleted it won&#39;t delete its children (since they are also part of the graphics item hierarchy).</p>
+<p>By default this value is initialized to false in <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a>, but it is overridden by <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> to return true. This is because <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> is not normally part of the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> hierarchy, so the parent layout should delete it. Subclasses might override this default behaviour by calling <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setOwnedByLayout">setOwnedByLayout</a>(true).</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setOwnedByLayout">setOwnedByLayout</a>().</p></div></p>
+</div><h4 id='method.parent_layout_item' class='method'><code>fn <a href='#method.parent_layout_item' class='fnname'>parent_layout_item</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/graphics_layout_item/struct.GraphicsLayoutItem.html' title='qt_widgets::graphics_layout_item::GraphicsLayoutItem'>GraphicsLayoutItem</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayoutItem* QGraphicsLayout::parentLayoutItem() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#parentLayoutItem">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the parent of this <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a>, or 0 if there is no parent, or if the parent does not inherit from <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a> (<a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a> is often used through multiple inheritance with <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a>-derived classes).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setParentLayoutItem">setParentLayoutItem</a>().</p></div></p>
+</div><h4 id='method.preferred_height' class='method'><code>fn <a href='#method.preferred_height' class='fnname'>preferred_height</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QGraphicsLayout::preferredHeight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the preferred height.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredHeight">setPreferredHeight</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize">setPreferredSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">preferredSize</a>().</p></div></p>
+</div><h4 id='method.preferred_size' class='method'><code>fn <a href='#method.preferred_size' class='fnname'>preferred_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutPreferredSizeArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutPreferredSizeArgs'>GraphicsLayoutPreferredSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::preferredSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn preferred_size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size_f::SizeF&gt;</code><br>2) <code>fn preferred_size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>QSizeF QGraphicsLayout::preferredSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the preferred size.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize">setPreferredSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>(), <a href="http://doc.qt.io/qt-5/qt.html#SizeHint-enum">Qt::PreferredSize</a>, and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>().</p></div></p>
+</div><h4 id='method.preferred_width' class='method'><code>fn <a href='#method.preferred_width' class='fnname'>preferred_width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QGraphicsLayout::preferredWidth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the preferred width.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredWidth">setPreferredWidth</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize">setPreferredSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">preferredSize</a>().</p></div></p>
+</div><h4 id='method.remove_at' class='method'><code>fn <a href='#method.remove_at' class='fnname'>remove_at</a>(&amp;mut self, index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QGraphicsLayout::removeAt(int index)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#removeAt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This pure virtual function must be reimplemented in a subclass of <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> to remove the item at <i>index</i>. The reimplementation can assume that <i>index</i> is valid (i.e., it respects the value of <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#count">count</a>()).</p>
+<p>The implementation must ensure that the <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#parentLayoutItem">parentLayoutItem</a>() of the removed item does not point to this layout, since the item is considered to be removed from the layout hierarchy.</p>
+<p>If the layout is to be reused between applications, we recommend that the layout deletes the item, but the graphics view framework does not depend on this.</p>
+<p>The subclass is free to decide how to store the items.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#itemAt">itemAt</a>() and <a href="http://doc.qt.io/qt-5/qgraphicslayout.html#count">count</a>().</p></div></p>
+</div><h4 id='method.set_contents_margins' class='method'><code>fn <a href='#method.set_contents_margins' class='fnname'>set_contents_margins</a>(&amp;mut self, left: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, top: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, right: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, bottom: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QGraphicsLayout::setContentsMargins(double left, double top, double right, double bottom)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#setContentsMargins">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the contents margins to <i>left</i>, <i>top</i>, <i>right</i> and <i>bottom</i>. The default contents margins for toplevel layouts are style dependent (by querying the pixelMetric for <a href="http://doc.qt.io/qt-5/qstyle.html#PixelMetric-enum">QStyle::PM_LayoutLeftMargin</a>, <a href="http://doc.qt.io/qt-5/qstyle.html#PixelMetric-enum">QStyle::PM_LayoutTopMargin</a>, <a href="http://doc.qt.io/qt-5/qstyle.html#PixelMetric-enum">QStyle::PM_LayoutRightMargin</a> and <a href="http://doc.qt.io/qt-5/qstyle.html#PixelMetric-enum">QStyle::PM_LayoutBottomMargin</a>).</p>
+<p>For sublayouts the default margins are 0.</p>
+<p>Changing the contents margins automatically invalidates the layout.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#invalidate">invalidate</a>().</p></div></p>
+</div><h4 id='method.set_geometry' class='method'><code>fn <a href='#method.set_geometry' class='fnname'>set_geometry</a>(&amp;mut self, rect: &amp;<a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QGraphicsLayout::setGeometry(const QRectF&amp; rect)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setGeometry">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This virtual function sets the geometry of the <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a> to <i>rect</i>, which is in parent coordinates (e.g., the top-left corner of <i>rect</i> is equivalent to the item&#39;s position in parent coordinates).</p>
+<p>You must reimplement this function in a subclass of <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a> to receive geometry updates. The layout will call this function when it does a rearrangement.</p>
+<p>If <i>rect</i> is outside of the bounds of <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a> and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>, it will be adjusted to its closest size so that it is within the legal bounds.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#geometry">geometry</a>().</p></div></p>
+</div><h4 id='method.set_instant_invalidate_propagation' class='method'><code>fn <a href='#method.set_instant_invalidate_propagation' class='fnname'>set_instant_invalidate_propagation</a>(enable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QGraphicsLayout::setInstantInvalidatePropagation(bool enable)</code></span></p>
+</div><h4 id='method.set_maximum_height' class='method'><code>fn <a href='#method.set_maximum_height' class='fnname'>set_maximum_height</a>(&amp;mut self, height: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QGraphicsLayout::setMaximumHeight(double height)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the maximum height to <i>height</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumHeight">maximumHeight</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize">setMaximumSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>().</p></div></p>
+</div><h4 id='method.set_maximum_size' class='method'><code>fn <a href='#method.set_maximum_size' class='fnname'>set_maximum_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutSetMaximumSizeArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutSetMaximumSizeArgs'>GraphicsLayoutSetMaximumSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::setMaximumSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_maximum_size(&amp;mut self, &amp;qt_core::size_f::SizeF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGraphicsLayout::setMaximumSize(const QSizeF&amp; size)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the maximum size to <i>size</i>. This property overrides <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>() for <a href="http://doc.qt.io/qt-5/qt.html#SizeHint-enum">Qt::MaximumSize</a> and ensures that <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#effectiveSizeHint">effectiveSizeHint</a>() will never return a size larger than <i>size</i>. In order to unset the maximum size, use an invalid size.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">preferredSize</a>(), <a href="http://doc.qt.io/qt-5/qt.html#SizeHint-enum">Qt::MaximumSize</a>, and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_maximum_size(&amp;mut self, (libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGraphicsLayout::setMaximumSize(double w, double h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This convenience function is equivalent to calling <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize">setMaximumSize</a>(<a href="http://doc.qt.io/qt-5/qsizef.html">QSizeF</a>(<i>w</i>, <i>h</i>)).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize">setMinimumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize">setPreferredSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>().</p></div></p>
+</div><h4 id='method.set_maximum_width' class='method'><code>fn <a href='#method.set_maximum_width' class='fnname'>set_maximum_width</a>(&amp;mut self, width: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QGraphicsLayout::setMaximumWidth(double width)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the maximum width to <i>width</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumWidth">maximumWidth</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize">setMaximumSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>().</p></div></p>
+</div><h4 id='method.set_minimum_height' class='method'><code>fn <a href='#method.set_minimum_height' class='fnname'>set_minimum_height</a>(&amp;mut self, height: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QGraphicsLayout::setMinimumHeight(double height)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the minimum height to <i>height</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumHeight">minimumHeight</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize">setMinimumSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a>().</p></div></p>
+</div><h4 id='method.set_minimum_size' class='method'><code>fn <a href='#method.set_minimum_size' class='fnname'>set_minimum_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutSetMinimumSizeArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutSetMinimumSizeArgs'>GraphicsLayoutSetMinimumSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::setMinimumSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_minimum_size(&amp;mut self, &amp;qt_core::size_f::SizeF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGraphicsLayout::setMinimumSize(const QSizeF&amp; size)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the minimum size to <i>size</i>. This property overrides <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>() for <a href="http://doc.qt.io/qt-5/qt.html#SizeHint-enum">Qt::MinimumSize</a> and ensures that <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#effectiveSizeHint">effectiveSizeHint</a>() will never return a size smaller than <i>size</i>. In order to unset the minimum size, use an invalid size.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">preferredSize</a>(), <a href="http://doc.qt.io/qt-5/qt.html#SizeHint-enum">Qt::MinimumSize</a>, <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumWidth">setMinimumWidth</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumHeight">setMinimumHeight</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_minimum_size(&amp;mut self, (libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGraphicsLayout::setMinimumSize(double w, double h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This convenience function is equivalent to calling <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize">setMinimumSize</a>(<a href="http://doc.qt.io/qt-5/qsizef.html">QSizeF</a>(<i>w</i>, <i>h</i>)).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize">setMaximumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize">setPreferredSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>().</p></div></p>
+</div><h4 id='method.set_minimum_width' class='method'><code>fn <a href='#method.set_minimum_width' class='fnname'>set_minimum_width</a>(&amp;mut self, width: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QGraphicsLayout::setMinimumWidth(double width)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the minimum width to <i>width</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumWidth">minimumWidth</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize">setMinimumSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a>().</p></div></p>
+</div><h4 id='method.set_parent_layout_item' class='method'><code>fn <a href='#method.set_parent_layout_item' class='fnname'>set_parent_layout_item</a>(&amp;mut self, parent: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/graphics_layout_item/struct.GraphicsLayoutItem.html' title='qt_widgets::graphics_layout_item::GraphicsLayoutItem'>GraphicsLayoutItem</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QGraphicsLayout::setParentLayoutItem(QGraphicsLayoutItem* parent)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setParentLayoutItem">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the parent of this <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a> to <i>parent</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#parentLayoutItem">parentLayoutItem</a>().</p></div></p>
+</div><h4 id='method.set_preferred_height' class='method'><code>fn <a href='#method.set_preferred_height' class='fnname'>set_preferred_height</a>(&amp;mut self, height: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QGraphicsLayout::setPreferredHeight(double height)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the preferred height to <i>height</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredHeight">preferredHeight</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredWidth">preferredWidth</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize">setPreferredSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">preferredSize</a>().</p></div></p>
+</div><h4 id='method.set_preferred_size' class='method'><code>fn <a href='#method.set_preferred_size' class='fnname'>set_preferred_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutSetPreferredSizeArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutSetPreferredSizeArgs'>GraphicsLayoutSetPreferredSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::setPreferredSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_preferred_size(&amp;mut self, &amp;qt_core::size_f::SizeF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGraphicsLayout::setPreferredSize(const QSizeF&amp; size)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the preferred size to <i>size</i>. This property overrides <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>() for <a href="http://doc.qt.io/qt-5/qt.html#SizeHint-enum">Qt::PreferredSize</a> and provides the default value for <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#effectiveSizeHint">effectiveSizeHint</a>(). In order to unset the preferred size, use an invalid size.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">preferredSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#minimumSize">minimumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#maximumSize">maximumSize</a>(), <a href="http://doc.qt.io/qt-5/qt.html#SizeHint-enum">Qt::PreferredSize</a>, and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_preferred_size(&amp;mut self, (libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGraphicsLayout::setPreferredSize(double w, double h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This convenience function is equivalent to calling <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize">setPreferredSize</a>(<a href="http://doc.qt.io/qt-5/qsizef.html">QSizeF</a>(<i>w</i>, <i>h</i>)).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">preferredSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMaximumSize">setMaximumSize</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setMinimumSize">setMinimumSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizeHint">sizeHint</a>().</p></div></p>
+</div><h4 id='method.set_preferred_width' class='method'><code>fn <a href='#method.set_preferred_width' class='fnname'>set_preferred_width</a>(&amp;mut self, width: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QGraphicsLayout::setPreferredWidth(double width)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the preferred width to <i>width</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredWidth">preferredWidth</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredHeight">preferredHeight</a>(), <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setPreferredSize">setPreferredSize</a>(), and <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#preferredSize">preferredSize</a>().</p></div></p>
+</div><h4 id='method.set_size_policy' class='method'><code>fn <a href='#method.set_size_policy' class='fnname'>set_size_policy</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutSetSizePolicyArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutSetSizePolicyArgs'>GraphicsLayoutSetSizePolicyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::setSizePolicy</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_size_policy(&amp;mut self, (::size_policy::Policy, ::size_policy::Policy)) -&gt; ()</code><br>2) <code>fn set_size_policy(&amp;mut self, (::size_policy::Policy, ::size_policy::Policy, ::size_policy::ControlType)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGraphicsLayout::setSizePolicy(QSizePolicy::Policy hPolicy, QSizePolicy::Policy vPolicy, QSizePolicy::ControlType controlType = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setSizePolicy-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function is equivalent to calling <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setSizePolicy">setSizePolicy</a>(<a href="http://doc.qt.io/qt-5/qsizepolicy.html">QSizePolicy</a>(<i>hPolicy</i>, <i>vPolicy</i>, <i>controlType</i>)).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizePolicy">sizePolicy</a>() and <a href="http://doc.qt.io/qt-5/qwidget.html#sizePolicy-prop">QWidget::sizePolicy</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_size_policy(&amp;mut self, &amp;::size_policy::SizePolicy) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGraphicsLayout::setSizePolicy(const QSizePolicy&amp; policy)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setSizePolicy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the size policy to <i>policy</i>. The size policy describes how the item should grow horizontally and vertically when arranged in a layout.</p>
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html">QGraphicsLayoutItem</a>&#39;s default size policy is (<a href="http://doc.qt.io/qt-5/qsizepolicy.html#Policy-enum">QSizePolicy::Fixed</a>, <a href="http://doc.qt.io/qt-5/qsizepolicy.html#Policy-enum">QSizePolicy::Fixed</a>, <a href="http://doc.qt.io/qt-5/qsizepolicy.html#ControlType-enum">QSizePolicy::DefaultType</a>), but it is common for subclasses to change the default. For example, <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicswidget">QGraphicsWidget</a> defaults to (<a href="http://doc.qt.io/qt-5/qsizepolicy.html#Policy-enum">QSizePolicy::Preferred</a>, <a href="http://doc.qt.io/qt-5/qsizepolicy.html#Policy-enum">QSizePolicy::Preferred</a>, <a href="http://doc.qt.io/qt-5/qsizepolicy.html#ControlType-enum">QSizePolicy::DefaultType</a>).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizePolicy">sizePolicy</a>() and <a href="http://doc.qt.io/qt-5/qwidget.html#sizePolicy-prop">QWidget::sizePolicy</a>().</p></div></p>
+</div><h4 id='method.size_policy' class='method'><code>fn <a href='#method.size_policy' class='fnname'>size_policy</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/graphics_layout/overloading/trait.GraphicsLayoutSizePolicyArgs.html' title='qt_widgets::graphics_layout::overloading::GraphicsLayoutSizePolicyArgs'>GraphicsLayoutSizePolicyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGraphicsLayout::sizePolicy</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size_policy(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::size_policy::SizePolicy&gt;</code><br>2) <code>fn size_policy(&amp;self, cpp_utils::AsStruct) -&gt; ::size_policy::SizePolicy</code><br>
+C++ method: <span style='color: green;'><code>QSizePolicy QGraphicsLayout::sizePolicy() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#sizePolicy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current size policy.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#setSizePolicy">setSizePolicy</a>() and <a href="http://doc.qt.io/qt-5/qwidget.html#sizePolicy-prop">QWidget::sizePolicy</a>().</p></div></p>
+</div><h4 id='method.update_geometry' class='method'><code>fn <a href='#method.update_geometry' class='fnname'>update_geometry</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QGraphicsLayout::updateGeometry()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#updateGeometry">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplemented from <a href="http://doc.qt.io/qt-5/qgraphicslayoutitem.html#updateGeometry">QGraphicsLayoutItem::updateGeometry</a>().</p></div></p>
+</div><h4 id='method.widget_event' class='method'><code>fn <a href='#method.widget_event' class='fnname'>widget_event</a>(&amp;mut self, e: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/event/struct.Event.html' title='qt_core::event::Event'>Event</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QGraphicsLayout::widgetEvent(QEvent* e)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#widgetEvent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This virtual event handler receives all events for the managed widget. <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> uses this event handler to listen for layout related events such as geometry changes, layout changes or layout direction changes.</p>
+<p><i>e</i> is a pointer to the event.</p>
+<p>You can reimplement this event handler to track similar events for your own custom layout.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicswidget.html#event">QGraphicsWidget::event</a>() and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#sceneEvent">QGraphicsItem::sceneEvent</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_widgets/graphics_layout/struct.GraphicsLayout.html' title='qt_widgets::graphics_layout::GraphicsLayout'>GraphicsLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-277753' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_layout.rs.html#14-18' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_widgets/graphics_layout/struct.GraphicsLayout.html' title='qt_widgets::graphics_layout::GraphicsLayout'>GraphicsLayout</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_widgets/graphics_layout/struct.GraphicsLayout.html' title='qt_widgets::graphics_layout::GraphicsLayout'>GraphicsLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-277889' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_layout.rs.html#521-528' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QGraphicsLayout::~QGraphicsLayout()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicslayout.html#dtor.QGraphicsLayout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/graphicsview.html#qgraphicslayout">QGraphicsLayout</a> object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_widgets/graphics_layout/struct.GraphicsLayout.html' title='qt_widgets::graphics_layout::GraphicsLayout'>GraphicsLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-277892' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_layout.rs.html#530-534' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

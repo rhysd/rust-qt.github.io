@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ModelIndex","C++ type: <span style='color: green;'>```QModelIndex```</span>"]]});

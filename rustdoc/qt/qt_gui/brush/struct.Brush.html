@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Brush` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Brush">
+
+    <title>qt_gui::brush::Brush - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>brush</a></p><script>window.sidebarCurrent = {name: 'Brush', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>brush</a>::<wbr><a class='struct' href=''>Brush</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-64516' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/brush.rs.html#39-41' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Brush {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QBrush</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qbrush.html">QBrush</a> class defines the fill pattern of shapes drawn by <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a>.</p>
+<p>A brush has a style, a color, a gradient and a texture.</p>
+<p>The brush <a href="http://doc.qt.io/qt-5/qbrush.html#style">style</a>() defines the fill pattern using the <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::BrushStyle</a> enum. The default brush style is <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::NoBrush</a> (depending on how you construct a brush). This style tells the painter to not fill shapes. The standard style for filling is <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::SolidPattern</a>. The style can be set when the brush is created using the appropriate constructor, and in addition the <a href="http://doc.qt.io/qt-5/qbrush.html#setStyle">setStyle</a>() function provides means for altering the style once the brush is constructed.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/brush-styles.png" alt="Brush Styles"></img></p><p>The brush <a href="http://doc.qt.io/qt-5/qbrush.html#color">color</a>() defines the color of the fill pattern. The color can either be one of Qt&#39;s predefined colors, <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::GlobalColor</a>, or any other custom <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a>. The currently set color can be retrieved and altered using the <a href="http://doc.qt.io/qt-5/qbrush.html#color">color</a>() and <a href="http://doc.qt.io/qt-5/qbrush.html#setColor">setColor</a>() functions, respectively.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qbrush.html#gradient">gradient</a>() defines the gradient fill used when the current style is either <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::LinearGradientPattern</a>, <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::RadialGradientPattern</a> or <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::ConicalGradientPattern</a>. Gradient brushes are created by giving a <a href="http://doc.qt.io/qt-5/qgradient.html">QGradient</a> as a constructor argument when creating the <a href="http://doc.qt.io/qt-5/qbrush.html">QBrush</a>. Qt provides three different gradients: <a href="http://doc.qt.io/qt-5/qlineargradient.html">QLinearGradient</a>, <a href="http://doc.qt.io/qt-5/qconicalgradient.html">QConicalGradient</a>, and <a href="http://doc.qt.io/qt-5/qradialgradient.html">QRadialGradient</a> - all of which inherit <a href="http://doc.qt.io/qt-5/qgradient.html">QGradient</a>.</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qradialgradient.html">QRadialGradient</a></span> gradient(<span class="number">50</span><span class="operator">,</span> <span class="number">50</span><span class="operator">,</span> <span class="number">50</span><span class="operator">,</span> <span class="number">50</span><span class="operator">,</span> <span class="number">50</span>);
+&#32;   gradient<span class="operator">.</span>setColorAt(<span class="number">0</span><span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a></span><span class="operator">::</span>fromRgbF(<span class="number">0</span><span class="operator">,</span> <span class="number">1</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="number">1</span>));
+&#32;   gradient<span class="operator">.</span>setColorAt(<span class="number">1</span><span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a></span><span class="operator">::</span>fromRgbF(<span class="number">0</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="number">0</span>));</p>
+
+<p>&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qbrush.html#QBrush">QBrush</a></span> brush(gradient);</pre>
+<p>The <a href="http://doc.qt.io/qt-5/qbrush.html#texture">texture</a>() defines the pixmap used when the current style is <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::TexturePattern</a>. You can create a brush with a texture by providing the pixmap when the brush is created or by using <a href="http://doc.qt.io/qt-5/qbrush.html#setTexture">setTexture</a>().</p>
+<p>Note that applying <a href="http://doc.qt.io/qt-5/qbrush.html#setTexture">setTexture</a>() makes <a href="http://doc.qt.io/qt-5/qbrush.html#style">style</a>() == <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::TexturePattern</a>, regardless of previous style settings. Also, calling <a href="http://doc.qt.io/qt-5/qbrush.html#setColor">setColor</a>() will not make a difference if the style is a gradient. The same is the case if the style is <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::TexturePattern</a> style unless the current texture is a <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a>.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qbrush.html#isOpaque">isOpaque</a>() function returns <code>true</code> if the brush is fully opaque otherwise false. A brush is considered opaque if:</p>
+<ul>
+<li>The alpha component of the <a href="http://doc.qt.io/qt-5/qbrush.html#color">color</a>() is 255.</li>
+<li>Its <a href="http://doc.qt.io/qt-5/qbrush.html#texture">texture</a>() does not have an alpha channel and is not a <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a>.</li>
+<li>The colors in the <a href="http://doc.qt.io/qt-5/qbrush.html#gradient">gradient</a>() all have an alpha component that is 255.</li>
+</ul>
+<div class="table"><table class="generic" width="100%">
+ <tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/brush-outline.png" alt="Outlines"></img></td><td>To specify the style and color of lines and outlines, use the <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a>&#39;s <a href="http://doc.qt.io/qt-5/qpen.html">pen</a> combined with <a href="http://doc.qt.io/qt-5/qt.html#PenStyle-enum">Qt::PenStyle</a> and <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::GlobalColor</a>:<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);</p>
+
+<p>painter<span class="operator">.</span>setBrush(<span class="type">Qt</span><span class="operator">::</span>cyan);
+painter<span class="operator">.</span>setPen(<span class="type">Qt</span><span class="operator">::</span>darkCyan);
+painter<span class="operator">.</span>drawRect(<span class="number">0</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="number">100</span><span class="operator">,</span><span class="number">100</span>);</p>
+
+<p>painter<span class="operator">.</span>setBrush(<span class="type">Qt</span><span class="operator">::</span>NoBrush);
+painter<span class="operator">.</span>setPen(<span class="type">Qt</span><span class="operator">::</span>darkGreen);
+painter<span class="operator">.</span>drawRect(<span class="number">40</span><span class="operator">,</span> <span class="number">40</span><span class="operator">,</span> <span class="number">100</span><span class="operator">,</span> <span class="number">100</span>);</pre>
+<p>Note that, by default, <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> renders the outline (using the currently set pen) when drawing shapes. Use <a href="http://doc.qt.io/qt-5/qt.html#PenStyle-enum"><code>painter.setPen(Qt::NoPen)</code></a> to disable this behavior.</p>
+</td></tr>
+</tbody></table></div>
+<p>For more information about painting in general, see the <a href="http://doc.qt.io/qt-5/paintsystem.html">Paint System</a>.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-64521' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/brush.rs.html#49-355' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/brush/overloading/trait.BrushAsQVariantArgs.html' title='qt_gui::brush::overloading::BrushAsQVariantArgs'>BrushAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBrush::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QBrush::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></p></div></p>
+</div><h4 id='method.color' class='method'><code>fn <a href='#method.color' class='fnname'>color</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QColor&amp; QBrush::color() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#color">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#setColor">setColor</a>().</p></div></p>
+</div><h4 id='method.gradient' class='method'><code>fn <a href='#method.gradient' class='fnname'>gradient</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_gui/gradient/struct.Gradient.html' title='qt_gui::gradient::Gradient'>Gradient</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QGradient* QBrush::gradient() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#gradient">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the gradient describing this brush.</p></div></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBrush::isDetached() const</code></span></p>
+</div><h4 id='method.is_opaque' class='method'><code>fn <a href='#method.is_opaque' class='fnname'>is_opaque</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBrush::isOpaque() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#isOpaque">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the brush is fully opaque otherwise false. A brush is considered opaque if:</p>
+<ul>
+<li>The alpha component of the <a href="http://doc.qt.io/qt-5/qbrush.html#color">color</a>() is 255.</li>
+<li>Its <a href="http://doc.qt.io/qt-5/qbrush.html#texture">texture</a>() does not have an alpha channel and is not a <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a>.</li>
+<li>The colors in the <a href="http://doc.qt.io/qt-5/qbrush.html#gradient">gradient</a>() all have an alpha component that is 255.</li>
+<li>It is an extended radial gradient.</li>
+</ul></div></p>
+</div><h4 id='method.matrix' class='method'><code>fn <a href='#method.matrix' class='fnname'>matrix</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QMatrix&amp; QBrush::matrix() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#matrix">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current transformation matrix for the brush.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#setMatrix">setMatrix</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/brush/overloading/trait.BrushNewArgs.html' title='qt_gui::brush::overloading::BrushNewArgs'>BrushNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBrush::QBrush</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::brush::Brush</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBrush::QBrush()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::qt::BrushStyle, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>2) <code>fn new((qt_core::qt::BrushStyle, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBrush::QBrush(Qt::BrushStyle bs)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::qt::GlobalColor, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>2) <code>fn new((qt_core::qt::GlobalColor, qt_core::qt::BrushStyle, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>3) <code>fn new((qt_core::qt::GlobalColor, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>4) <code>fn new((qt_core::qt::GlobalColor, qt_core::qt::BrushStyle, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBrush::QBrush(Qt::GlobalColor color, Qt::BrushStyle bs = ?)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::qt::GlobalColor, &amp;::pixmap::Pixmap, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>2) <code>fn new((qt_core::qt::GlobalColor, &amp;::pixmap::Pixmap, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBrush::QBrush(Qt::GlobalColor color, const QPixmap&amp; pixmap)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::brush::Brush, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>2) <code>fn new((&amp;::brush::Brush, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBrush::QBrush(const QBrush&amp; brush)</code></span></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::color::Color, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>2) <code>fn new((&amp;::color::Color, qt_core::qt::BrushStyle, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>3) <code>fn new((&amp;::color::Color, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>4) <code>fn new((&amp;::color::Color, qt_core::qt::BrushStyle, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBrush::QBrush(const QColor&amp; color, Qt::BrushStyle bs = ?)</code></span></p>
+
+<h2 id='variant-7' class='section-header'><a href='#variant-7'>Variant 7</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::color::Color, &amp;::pixmap::Pixmap, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>2) <code>fn new((&amp;::color::Color, &amp;::pixmap::Pixmap, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBrush::QBrush(const QColor&amp; color, const QPixmap&amp; pixmap)</code></span></p>
+
+<h2 id='variant-8' class='section-header'><a href='#variant-8'>Variant 8</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::gradient::Gradient, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>2) <code>fn new((&amp;::gradient::Gradient, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBrush::QBrush(const QGradient&amp; gradient)</code></span></p>
+
+<h2 id='variant-9' class='section-header'><a href='#variant-9'>Variant 9</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::image::Image, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>2) <code>fn new((&amp;::image::Image, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBrush::QBrush(const QImage&amp; image)</code></span></p>
+
+<h2 id='variant-10' class='section-header'><a href='#variant-10'>Variant 10</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::pixmap::Pixmap, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>2) <code>fn new((&amp;::pixmap::Pixmap, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBrush::QBrush(const QPixmap&amp; pixmap)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, brush: &amp;'l1 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBrush&amp; QBrush::operator=(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the given <i>brush</i> to <i>this</i> brush and returns a reference to <i>this</i> brush.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, b: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBrush::operator==(const QBrush&amp; b) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the brush is equal to the given <i>brush</i>; otherwise returns <code>false</code>.</p>
+<p>Two brushes are equal if they have equal styles, colors and transforms and equal pixmaps or gradients depending on the style.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#operator-not-eq">operator!=</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, b: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBrush::operator!=(const QBrush&amp; b) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the brush is different from the given <i>brush</i>; otherwise returns <code>false</code>.</p>
+<p>Two brushes are different if they have different styles, colors or transforms or different pixmaps or gradients depending on the style.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.set_color' class='method'><code>fn <a href='#method.set_color' class='fnname'>set_color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/brush/overloading/trait.BrushSetColorArgs.html' title='qt_gui::brush::overloading::BrushSetColorArgs'>BrushSetColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBrush::setColor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_color(&amp;mut self, qt_core::qt::GlobalColor) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QBrush::setColor(Qt::GlobalColor color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#setColor-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the brush color to the given <i>color</i>.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_color(&amp;mut self, &amp;::color::Color) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QBrush::setColor(const QColor&amp; color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#setColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the brush color to the given <i>color</i>.</p>
+<p>Note that calling setColor() will not make a difference if the style is a gradient. The same is the case if the style is <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::TexturePattern</a> style unless the current texture is a <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#color">color</a>().</p></div></p>
+</div><h4 id='method.set_matrix' class='method'><code>fn <a href='#method.set_matrix' class='fnname'>set_matrix</a>(&amp;mut self, mat: &amp;<a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBrush::setMatrix(const QMatrix&amp; mat)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#setMatrix">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets <i>matrix</i> as an explicit transformation matrix on the current brush. The brush transformation matrix is merged with <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> transformation matrix to produce the final result.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#matrix">matrix</a>().</p></div></p>
+</div><h4 id='method.set_style' class='method'><code>fn <a href='#method.set_style' class='fnname'>set_style</a>(&amp;mut self, arg1: <a class='enum' href='../../qt_core/qt/enum.BrushStyle.html' title='qt_core::qt::BrushStyle'>BrushStyle</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBrush::setStyle(Qt::BrushStyle arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#setStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the brush style to <i>style</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#style">style</a>().</p></div></p>
+</div><h4 id='method.set_texture' class='method'><code>fn <a href='#method.set_texture' class='fnname'>set_texture</a>(&amp;mut self, pixmap: &amp;<a class='struct' href='../../qt_gui/pixmap/struct.Pixmap.html' title='qt_gui::pixmap::Pixmap'>Pixmap</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBrush::setTexture(const QPixmap&amp; pixmap)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#setTexture">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the brush pixmap to <i>pixmap</i>. The style is set to <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::TexturePattern</a>.</p>
+<p>The current brush color will only have an effect for monochrome pixmaps, i.e. for <a href="http://doc.qt.io/qt-5/qpixmap.html#depth">QPixmap::depth</a>() == 1 (<a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmaps</a>).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#texture">texture</a>().</p></div></p>
+</div><h4 id='method.set_texture_image' class='method'><code>fn <a href='#method.set_texture_image' class='fnname'>set_texture_image</a>(&amp;mut self, image: &amp;<a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBrush::setTextureImage(const QImage&amp; image)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#setTextureImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the brush image to <i>image</i>. The style is set to <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::TexturePattern</a>.</p>
+<p>Note the current brush color will <i>not</i> have any affect on monochrome images, as opposed to calling <a href="http://doc.qt.io/qt-5/qbrush.html#setTexture">setTexture</a>() with a <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a>. If you want to change the color of monochrome image brushes, either convert the image to <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> with <code>QBitmap::fromImage()</code> and set the resulting <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> as a texture, or change the entries in the color table for the image.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#textureImage">textureImage</a>() and <a href="http://doc.qt.io/qt-5/qbrush.html#setTexture">setTexture</a>().</p></div></p>
+</div><h4 id='method.set_transform' class='method'><code>fn <a href='#method.set_transform' class='fnname'>set_transform</a>(&amp;mut self, arg1: &amp;<a class='struct' href='../../qt_gui/transform/struct.Transform.html' title='qt_gui::transform::Transform'>Transform</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBrush::setTransform(const QTransform&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#setTransform">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets <i>matrix</i> as an explicit transformation matrix on the current brush. The brush transformation matrix is merged with <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> transformation matrix to produce the final result.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#transform">transform</a>().</p></div></p>
+</div><h4 id='method.style' class='method'><code>fn <a href='#method.style' class='fnname'>style</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.BrushStyle.html' title='qt_core::qt::BrushStyle'>BrushStyle</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::BrushStyle QBrush::style() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#style">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush style.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#setStyle">setStyle</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBrush::swap(QBrush&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps brush <i>other</i> with this brush. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.texture' class='method'><code>fn <a href='#method.texture' class='fnname'>texture</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/brush/overloading/trait.BrushTextureArgs.html' title='qt_gui::brush::overloading::BrushTextureArgs'>BrushTextureArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBrush::texture</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn texture(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn texture(&amp;self, cpp_utils::AsStruct) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QBrush::texture() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#texture">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the custom brush pattern, or a null pixmap if no custom brush pattern has been set.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#setTexture">setTexture</a>().</p></div></p>
+</div><h4 id='method.texture_image' class='method'><code>fn <a href='#method.texture_image' class='fnname'>texture_image</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/brush/overloading/trait.BrushTextureImageArgs.html' title='qt_gui::brush::overloading::BrushTextureImageArgs'>BrushTextureImageArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBrush::textureImage</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn texture_image(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn texture_image(&amp;self, cpp_utils::AsStruct) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QBrush::textureImage() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#textureImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the custom brush pattern, or a null image if no custom brush pattern has been set.</p>
+<p>If the texture was set as a <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> it will be converted to a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#setTextureImage">setTextureImage</a>().</p></div></p>
+</div><h4 id='method.transform' class='method'><code>fn <a href='#method.transform' class='fnname'>transform</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/brush/overloading/trait.BrushTransformArgs.html' title='qt_gui::brush::overloading::BrushTransformArgs'>BrushTransformArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBrush::transform</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn transform(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::transform::Transform&gt;</code><br>2) <code>fn transform(&amp;self, cpp_utils::AsStruct) -&gt; ::transform::Transform</code><br>
+C++ method: <span style='color: green;'><code>QTransform QBrush::transform() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#transform">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current transformation matrix for the brush.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html#setTransform">setTransform</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-64519' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/brush.rs.html#43-47' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-64596' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/brush.rs.html#357-364' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QBrush::~QBrush()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbrush.html#dtor.QBrush">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the brush.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-64599' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/brush.rs.html#366-370' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/painter/overloading/trait.PainterSetBrushArgs.html' title='qt_gui::painter::overloading::PainterSetBrushArgs'>PainterSetBrushArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128406' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#5381-5389' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/painter/overloading/trait.PainterSetBrushArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/painter/struct.Painter.html' title='qt_gui::painter::Painter'>Painter</a>)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["QhbOxLayout","C++ type: <span style='color: green;'>```QHBoxLayout```</span>"]]});

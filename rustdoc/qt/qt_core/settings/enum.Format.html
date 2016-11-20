@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Format` enum in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Format">
+
+    <title>qt_core::settings::Format - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>settings</a></p><script>window.sidebarCurrent = {name: 'Format', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>settings</a>::<wbr><a class='enum' href=''>Format</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-131027' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/settings.rs.html#23-62' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Format {
+    NativeFormat,
+    IniFormat,
+    InvalidFormat,
+    CustomFormat1,
+    CustomFormat2,
+    CustomFormat3,
+    CustomFormat4,
+    CustomFormat5,
+    CustomFormat6,
+    CustomFormat7,
+    CustomFormat8,
+    CustomFormat9,
+    CustomFormat10,
+    CustomFormat11,
+    CustomFormat12,
+    CustomFormat13,
+    CustomFormat14,
+    CustomFormat15,
+    CustomFormat16,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QSettings::Format</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qsettings.html#Format-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum type specifies the storage format used by <a href="http://doc.qt.io/qt-5/qsettings.html">QSettings</a>.</p></p>
+
+<p>On Unix, NativeFormat and IniFormat mean the same thing, except that the file extension is different (<code>.conf</code> for NativeFormat, <code>.ini</code> for IniFormat).</p>
+
+<p>The INI file format is a Windows file format that Qt supports on all platforms. In the absence of an INI standard, we try to follow what Microsoft does, with the following exceptions:</p>
+
+<ul>
+<li>If you store types that <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> can't convert to <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> (e.g., <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a>, <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a>, and <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a>), Qt uses an <code>@</code>-based syntax to encode the type. For example:<pre class="cpp">pos <span class="operator">=</span> @Point(<span class="number">100</span> <span class="number">100</span>)</pre>
+<p>To minimize compatibility issues, any <code>@</code> that doesn't appear at the first position in the value or that isn't followed by a Qt type (<code>Point</code>, <code>Rect</code>, <code>Size</code>, etc.) is treated as a normal character.</p>
+</li>
+<li>Although backslash is a special character in INI files, most Windows applications don't escape backslashes (<code>\</code>) in file paths:<pre class="cpp">windir <span class="operator">=</span> C:\Windows</pre>
+<p><a href="http://doc.qt.io/qt-5/qsettings.html">QSettings</a> always treats backslash as a special character and provides no API for reading or writing such entries.</p>
+</li>
+<li>The INI file format has severe restrictions on the syntax of a key. Qt works around this by using <code>%</code> as an escape character in keys. In addition, if you save a top-level setting (a key with no slashes in it, e.g., "someKey"), it will appear in the INI file's "General" section. To avoid overwriting other keys, if you save something using a key such as "General/someKey", the key will be located in the "%General" section, <i>not</i> in the "General" section.</li>
+<li>Following the philosophy that we should be liberal in what we accept and conservative in what we generate, <a href="http://doc.qt.io/qt-5/qsettings.html">QSettings</a> will accept Latin-1 encoded INI files, but generate pure ASCII files, where non-ASCII values are encoded using standard INI escape sequences. To make the INI files more readable (but potentially less compatible), call <a href="http://doc.qt.io/qt-5/qsettings.html#setIniCodec">setIniCodec</a>().</li>
+</ul>
+
+<p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qsettings.html#registerFormat">registerFormat</a>() and <a href="http://doc.qt.io/qt-5/qsettings.html#setPath">setPath</a>().</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.NativeFormat' class='variant'><code>NativeFormat</code></span><div class='docblock'><p>Store the settings using the most appropriate storage format for the platform. On Windows, this means the system registry; on OS X and iOS, this means the CFPreferences API; on Unix, this means textual configuration files in INI format. (C++ enum variant: <span style='color: green;'><code>NativeFormat = 0</code></span>)</p>
+</div><span id='variant.IniFormat' class='variant'><code>IniFormat</code></span><div class='docblock'><p>Store the settings in INI files. (C++ enum variant: <span style='color: green;'><code>IniFormat = 1</code></span>)</p>
+</div><span id='variant.InvalidFormat' class='variant'><code>InvalidFormat</code></span><div class='docblock'><p>Special value returned by <a href="http://doc.qt.io/qt-5/qsettings.html#registerFormat">registerFormat</a>(). (C++ enum variant: <span style='color: green;'><code>InvalidFormat = 16</code></span>)</p>
+</div><span id='variant.CustomFormat1' class='variant'><code>CustomFormat1</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat1 = 17</code></span></p>
+</div><span id='variant.CustomFormat2' class='variant'><code>CustomFormat2</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat2 = 18</code></span></p>
+</div><span id='variant.CustomFormat3' class='variant'><code>CustomFormat3</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat3 = 19</code></span></p>
+</div><span id='variant.CustomFormat4' class='variant'><code>CustomFormat4</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat4 = 20</code></span></p>
+</div><span id='variant.CustomFormat5' class='variant'><code>CustomFormat5</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat5 = 21</code></span></p>
+</div><span id='variant.CustomFormat6' class='variant'><code>CustomFormat6</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat6 = 22</code></span></p>
+</div><span id='variant.CustomFormat7' class='variant'><code>CustomFormat7</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat7 = 23</code></span></p>
+</div><span id='variant.CustomFormat8' class='variant'><code>CustomFormat8</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat8 = 24</code></span></p>
+</div><span id='variant.CustomFormat9' class='variant'><code>CustomFormat9</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat9 = 25</code></span></p>
+</div><span id='variant.CustomFormat10' class='variant'><code>CustomFormat10</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat10 = 26</code></span></p>
+</div><span id='variant.CustomFormat11' class='variant'><code>CustomFormat11</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat11 = 27</code></span></p>
+</div><span id='variant.CustomFormat12' class='variant'><code>CustomFormat12</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat12 = 28</code></span></p>
+</div><span id='variant.CustomFormat13' class='variant'><code>CustomFormat13</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat13 = 29</code></span></p>
+</div><span id='variant.CustomFormat14' class='variant'><code>CustomFormat14</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat14 = 30</code></span></p>
+</div><span id='variant.CustomFormat15' class='variant'><code>CustomFormat15</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat15 = 31</code></span></p>
+</div><span id='variant.CustomFormat16' class='variant'><code>CustomFormat16</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>CustomFormat16 = 32</code></span></p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_core/settings/enum.Format.html' title='qt_core::settings::Format'>Format</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130992' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/settings.rs.html#21' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/settings/enum.Format.html' title='qt_core::settings::Format'>Format</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_core/settings/enum.Format.html' title='qt_core::settings::Format'>Format</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130995' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/settings.rs.html#21' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_core/settings/enum.Format.html' title='qt_core::settings::Format'>Format</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130998' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/settings.rs.html#21' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_core/settings/enum.Format.html' title='qt_core::settings::Format'>Format</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_core/settings/enum.Format.html' title='qt_core::settings::Format'>Format</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-131004' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/settings.rs.html#21' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

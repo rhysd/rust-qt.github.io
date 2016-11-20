@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `StringRef` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, StringRef">
+
+    <title>qt_core::string_ref::StringRef - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>string_ref</a></p><script>window.sidebarCurrent = {name: 'StringRef', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>string_ref</a>::<wbr><a class='struct' href=''>StringRef</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-147178' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#14-16' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct StringRef {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QStringRef</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> class provides a thin wrapper around <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> substrings.</p>
+<p><a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> provides a read-only subset of the <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> API.</p>
+<p>A string reference explicitly references a portion of a <a href="http://doc.qt.io/qt-5/qstringref.html#string">string</a>() with a given <a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>(), starting at a specific <a href="http://doc.qt.io/qt-5/qstringref.html#position">position</a>(). Calling <a href="http://doc.qt.io/qt-5/qstringref.html#toString">toString</a>() returns a copy of the data as a real <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> instance.</p>
+<p>This class is designed to improve the performance of substring handling when manipulating substrings obtained from existing <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> instances. <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> avoids the memory allocation and reference counting overhead of a standard <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> by simply referencing a part of the original string. This can prove to be advantageous in low level code, such as that used in a parser, at the expense of potentially more complex code.</p>
+<p>For most users, there are no semantic benefits to using <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> instead of <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> since <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> requires attention to be paid to memory management issues, potentially making code more complex to write and maintain.</p>
+<p><b>Warning:</b> A <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> is only valid as long as the referenced string exists. If the original string is deleted, the string reference points to an invalid memory location.</p>
+<p>We suggest that you only use this class in stable code where profiling has clearly identified that performance improvements can be made by replacing standard string operations with the optimized substring handling provided by this class.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147183' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#24-1090' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.append_to' class='method'><code>fn <a href='#method.append_to' class='fnname'>append_to</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefAppendToArgs.html' title='qt_core::string_ref::overloading::StringRefAppendToArgs'>StringRefAppendToArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::appendTo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn append_to(&amp;self, (*mut ::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn append_to(&amp;self, (*mut ::string::String, cpp_utils::AsStruct)) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QStringRef::appendTo(QString* string) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#appendTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Appends the string reference to <i>string</i>, and returns a new reference to the combined string data.</p></div></p>
+</div><h4 id='method.at' class='method'><code>fn <a href='#method.at' class='fnname'>at</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefAtArgs.html' title='qt_core::string_ref::overloading::StringRefAtArgs'>StringRefAtArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::at</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn at(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::char::Char&gt;</code><br>2) <code>fn at(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::char::Char</code><br>
+C++ method: <span style='color: green;'><code>const QChar QStringRef::at(int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#at">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the character at the given index <i>position</i> in the string reference.</p>
+<p>The <i>position</i> must be a valid index position in the string (i.e., 0 &lt;= <i>position</i> &lt; <a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>()).</p></div></p>
+</div><h4 id='method.begin' class='method'><code>fn <a href='#method.begin' class='fnname'>begin</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/char/struct.Char.html' title='qt_core::char::Char'>Char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QChar* QStringRef::begin() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#begin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Same as <a href="http://doc.qt.io/qt-5/qstringref.html#unicode">unicode</a>().</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.cbegin' class='method'><code>fn <a href='#method.cbegin' class='fnname'>cbegin</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/char/struct.Char.html' title='qt_core::char::Char'>Char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QChar* QStringRef::cbegin() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#cbegin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Same as <a href="http://doc.qt.io/qt-5/qstringref.html#unicode">unicode</a>().</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.cend' class='method'><code>fn <a href='#method.cend' class='fnname'>cend</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/char/struct.Char.html' title='qt_core::char::Char'>Char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QChar* QStringRef::cend() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#cend">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to one character past the last one in this string. (It is the same as <code>unicode() + size()</code>.)</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStringRef::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the contents of the string reference by making it null and empty.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#isEmpty">isEmpty</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#isNull">isNull</a>().</p></div></p>
+</div><h4 id='method.compare' class='method'><code>fn <a href='#method.compare' class='fnname'>compare</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefCompareArgs.html' title='qt_core::string_ref::overloading::StringRefCompareArgs'>StringRefCompareArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::compare</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn compare(&amp;self, &amp;::latin1_string::Latin1String) -&gt; libc::c_int</code><br>2) <code>fn compare(&amp;self, (&amp;::latin1_string::Latin1String, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::compare(QLatin1String s, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#compare-6">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Compares this string with the <i>other</i> string and returns an integer less than, equal to, or greater than zero if this string is less than, equal to, or greater than the <i>other</i> string.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>, the comparison is case sensitive; otherwise the comparison is case insensitive.</p>
+<p>Equivalent to <code>compare(*this, other, cs)</code>.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#compare">QString::compare</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn compare(&amp;self, &amp;::string::String) -&gt; libc::c_int</code><br>2) <code>fn compare(&amp;self, (&amp;::string::String, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::compare(const QString&amp; s, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#compare-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Compares this string with the <i>other</i> string and returns an integer less than, equal to, or greater than zero if this string is less than, equal to, or greater than the <i>other</i> string.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>, the comparison is case sensitive; otherwise the comparison is case insensitive.</p>
+<p>Equivalent to <code>compare(*this, other, cs)</code>.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#compare">QString::compare</a>().</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn compare(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_int</code><br>2) <code>fn compare(&amp;self, (&amp;::string_ref::StringRef, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::compare(const QStringRef&amp; s, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#compare-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Compares this string with the <i>other</i> string and returns an integer less than, equal to, or greater than zero if this string is less than, equal to, or greater than the <i>other</i> string.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>, the comparison is case sensitive; otherwise the comparison is case insensitive.</p>
+<p>Equivalent to <code>compare(*this, other, cs)</code>.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#compare">QString::compare</a>().</p></div></p>
+</div><h4 id='method.compare_static' class='method'><code>fn <a href='#method.compare_static' class='fnname'>compare_static</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefCompareStaticArgs.html' title='qt_core::string_ref::overloading::StringRefCompareStaticArgs'>StringRefCompareStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::compare</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn compare_static((&amp;::string_ref::StringRef, &amp;::latin1_string::Latin1String)) -&gt; libc::c_int</code><br>2) <code>fn compare_static((&amp;::string_ref::StringRef, &amp;::latin1_string::Latin1String, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QStringRef::compare(const QStringRef&amp; s1, QLatin1String s2, Qt::CaseSensitivity cs = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#compare-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Compares the string <i>s1</i> with the string <i>s2</i> and returns an integer less than, equal to, or greater than zero if <i>s1</i> is less than, equal to, or greater than <i>s2</i>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>, the comparison is case sensitive; otherwise the comparison is case insensitive.</p>
+<p>This function was introduced in  Qt 4.5.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn compare_static((&amp;::string_ref::StringRef, &amp;::string::String)) -&gt; libc::c_int</code><br>2) <code>fn compare_static((&amp;::string_ref::StringRef, &amp;::string::String, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QStringRef::compare(const QStringRef&amp; s1, const QString&amp; s2, Qt::CaseSensitivity arg3 = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#compare">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares the string <i>s1</i> with the string <i>s2</i> and returns an integer less than, equal to, or greater than zero if <i>s1</i> is less than, equal to, or greater than <i>s2</i>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>, the comparison is case sensitive; otherwise the comparison is case insensitive.</p>
+<p>This function was introduced in  Qt 4.5.</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn compare_static((&amp;::string_ref::StringRef, &amp;::string_ref::StringRef)) -&gt; libc::c_int</code><br>2) <code>fn compare_static((&amp;::string_ref::StringRef, &amp;::string_ref::StringRef, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QStringRef::compare(const QStringRef&amp; s1, const QStringRef&amp; s2, Qt::CaseSensitivity arg3 = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#compare-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Compares the string <i>s1</i> with the string <i>s2</i> and returns an integer less than, equal to, or greater than zero if <i>s1</i> is less than, equal to, or greater than <i>s2</i>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>, the comparison is case sensitive; otherwise the comparison is case insensitive.</p>
+<p>This function was introduced in  Qt 4.5.</p></div></p>
+</div><h4 id='method.const_data' class='method'><code>fn <a href='#method.const_data' class='fnname'>const_data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/char/struct.Char.html' title='qt_core::char::Char'>Char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QChar* QStringRef::constData() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#constData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Same as <a href="http://doc.qt.io/qt-5/qstringref.html#unicode">unicode</a>().</p></div></p>
+</div><h4 id='method.contains' class='method'><code>fn <a href='#method.contains' class='fnname'>contains</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefContainsArgs.html' title='qt_core::string_ref::overloading::StringRefContainsArgs'>StringRefContainsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::contains</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn contains(&amp;self, &amp;::char::Char) -&gt; bool</code><br>2) <code>fn contains(&amp;self, (&amp;::char::Char, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::contains(QChar ch, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#contains-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>().</p>
+<p>Returns <code>true</code> if this string contains an occurrence of the character <i>ch</i>; otherwise returns <code>false</code>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn contains(&amp;self, &amp;::latin1_string::Latin1String) -&gt; bool</code><br>2) <code>fn contains(&amp;self, (&amp;::latin1_string::Latin1String, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::contains(QLatin1String str, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#contains-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>().</p>
+<p>Returns <code>true</code> if this string reference contains an occurrence of the string <i>str</i>; otherwise returns <code>false</code>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4,8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+
+<h2 id='variant-3-2' class='section-header'><a href='#variant-3-2'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn contains(&amp;self, &amp;::string::String) -&gt; bool</code><br>2) <code>fn contains(&amp;self, (&amp;::string::String, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::contains(const QString&amp; str, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#contains">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this string reference contains an occurrence of the string <i>str</i>; otherwise returns <code>false</code>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn contains(&amp;self, &amp;::string_ref::StringRef) -&gt; bool</code><br>2) <code>fn contains(&amp;self, (&amp;::string_ref::StringRef, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::contains(const QStringRef&amp; str, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#contains-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>().</p>
+<p>Returns <code>true</code> if this string reference contains an occurrence of the string reference <i>str</i>; otherwise returns <code>false</code>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+</div><h4 id='method.count' class='method'><code>fn <a href='#method.count' class='fnname'>count</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefCountArgs.html' title='qt_core::string_ref::overloading::StringRefCountArgs'>StringRefCountArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::count</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn count(&amp;self, ()) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::count() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#count">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of characters referred to by the string reference. Equivalent to <a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#length">length</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#position">position</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#string">string</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn count(&amp;self, &amp;::char::Char) -&gt; libc::c_int</code><br>2) <code>fn count(&amp;self, (&amp;::char::Char, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::count(QChar c, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#count-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p>
+<p>Returns the number of occurrences of the character <i>ch</i> in the string reference.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#count">QString::count</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>().</p></div></p>
+
+<h2 id='variant-3-3' class='section-header'><a href='#variant-3-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn count(&amp;self, &amp;::string::String) -&gt; libc::c_int</code><br>2) <code>fn count(&amp;self, (&amp;::string::String, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::count(const QString&amp; s, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#count-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of (potentially overlapping) occurrences of the string <i>str</i> in this string reference.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#count">QString::count</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>().</p></div></p>
+
+<h2 id='variant-4-1' class='section-header'><a href='#variant-4-1'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn count(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_int</code><br>2) <code>fn count(&amp;self, (&amp;::string_ref::StringRef, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::count(const QStringRef&amp; s, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#count-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p>
+<p>Returns the number of (potentially overlapping) occurrences of the string reference <i>str</i> in this string reference.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#count">QString::count</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>().</p></div></p>
+</div><h4 id='method.data' class='method'><code>fn <a href='#method.data' class='fnname'>data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/char/struct.Char.html' title='qt_core::char::Char'>Char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QChar* QStringRef::data() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#data">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Same as <a href="http://doc.qt.io/qt-5/qstringref.html#unicode">unicode</a>().</p></div></p>
+</div><h4 id='method.end' class='method'><code>fn <a href='#method.end' class='fnname'>end</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/char/struct.Char.html' title='qt_core::char::Char'>Char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QChar* QStringRef::end() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#end">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to one character past the last one in this string. (It is the same as <code>unicode() + size()</code>.)</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.ends_with' class='method'><code>fn <a href='#method.ends_with' class='fnname'>ends_with</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefEndsWithArgs.html' title='qt_core::string_ref::overloading::StringRefEndsWithArgs'>StringRefEndsWithArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::endsWith</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn ends_with(&amp;self, &amp;::char::Char) -&gt; bool</code><br>2) <code>fn ends_with(&amp;self, (&amp;::char::Char, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::endsWith(QChar c, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#endsWith-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p>
+<p>Returns <code>true</code> if the string reference ends with <i>ch</i>; otherwise returns <code>false</code>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#endsWith">QString::endsWith</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn ends_with(&amp;self, &amp;::latin1_string::Latin1String) -&gt; bool</code><br>2) <code>fn ends_with(&amp;self, (&amp;::latin1_string::Latin1String, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::endsWith(QLatin1String s, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#endsWith-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#endsWith">QString::endsWith</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p></div></p>
+
+<h2 id='variant-3-4' class='section-header'><a href='#variant-3-4'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn ends_with(&amp;self, &amp;::string::String) -&gt; bool</code><br>2) <code>fn ends_with(&amp;self, (&amp;::string::String, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::endsWith(const QString&amp; s, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the string reference ends with <i>str</i>; otherwise returns <code>false</code>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#endsWith">QString::endsWith</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#startsWith">startsWith</a>().</p></div></p>
+
+<h2 id='variant-4-2' class='section-header'><a href='#variant-4-2'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn ends_with(&amp;self, &amp;::string_ref::StringRef) -&gt; bool</code><br>2) <code>fn ends_with(&amp;self, (&amp;::string_ref::StringRef, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::endsWith(const QStringRef&amp; c, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#endsWith-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#endsWith">QString::endsWith</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p></div></p>
+</div><h4 id='method.index_of' class='method'><code>fn <a href='#method.index_of' class='fnname'>index_of</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefIndexOfArgs.html' title='qt_core::string_ref::overloading::StringRefIndexOfArgs'>StringRefIndexOfArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::indexOf</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn index_of(&amp;self, &amp;::char::Char) -&gt; libc::c_int</code><br>2) <code>fn index_of(&amp;self, (&amp;::char::Char, libc::c_int)) -&gt; libc::c_int</code><br>3) <code>fn index_of(&amp;self, (&amp;::char::Char, libc::c_int, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::indexOf(QChar ch, int from = ?, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#indexOf-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>().</p>
+<p>Returns the index position of the first occurrence of the character <i>ch</i> in the string reference, searching forward from index position <i>from</i>. Returns -1 if <i>ch</i> could not be found.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#indexOf">QString::indexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf">lastIndexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn index_of(&amp;self, &amp;::latin1_string::Latin1String) -&gt; libc::c_int</code><br>2) <code>fn index_of(&amp;self, (&amp;::latin1_string::Latin1String, libc::c_int)) -&gt; libc::c_int</code><br>3) <code>fn index_of(&amp;self, (&amp;::latin1_string::Latin1String, libc::c_int, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::indexOf(QLatin1String str, int from = ?, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#indexOf-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index position of the first occurrence of the string <i>str</i> in this string reference, searching forward from index position <i>from</i>. Returns -1 if <i>str</i> is not found.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>If <i>from</i> is -1, the search starts at the last character; if it is -2, at the next to last character and so on.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#indexOf">QString::indexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf">lastIndexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+
+<h2 id='variant-3-5' class='section-header'><a href='#variant-3-5'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn index_of(&amp;self, &amp;::string::String) -&gt; libc::c_int</code><br>2) <code>fn index_of(&amp;self, (&amp;::string::String, libc::c_int)) -&gt; libc::c_int</code><br>3) <code>fn index_of(&amp;self, (&amp;::string::String, libc::c_int, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::indexOf(const QString&amp; str, int from = ?, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index position of the first occurrence of the string <i>str</i> in this string reference, searching forward from index position <i>from</i>. Returns -1 if <i>str</i> is not found.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>If <i>from</i> is -1, the search starts at the last character; if it is -2, at the next to last character and so on.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#indexOf">QString::indexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf">lastIndexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+
+<h2 id='variant-4-3' class='section-header'><a href='#variant-4-3'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn index_of(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_int</code><br>2) <code>fn index_of(&amp;self, (&amp;::string_ref::StringRef, libc::c_int)) -&gt; libc::c_int</code><br>3) <code>fn index_of(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::indexOf(const QStringRef&amp; str, int from = ?, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#indexOf-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>().</p>
+<p>Returns the index position of the first occurrence of the string reference <i>str</i> in this string reference, searching forward from index position <i>from</i>. Returns -1 if <i>str</i> is not found.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#indexOf">QString::indexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf">lastIndexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+</div><h4 id='method.is_empty' class='method'><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStringRef::isEmpty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#isEmpty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the string reference has no characters; otherwise returns <code>false</code>.</p>
+<p>A string reference is empty if its size is zero.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>().</p></div></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStringRef::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qstringref.html#string">string</a>() returns a null pointer or a pointer to a null string; otherwise returns <code>true</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>().</p></div></p>
+</div><h4 id='method.last_index_of' class='method'><code>fn <a href='#method.last_index_of' class='fnname'>last_index_of</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefLastIndexOfArgs.html' title='qt_core::string_ref::overloading::StringRefLastIndexOfArgs'>StringRefLastIndexOfArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::lastIndexOf</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-6' class='section-header'><a href='#variant-1-6'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn last_index_of(&amp;self, &amp;::char::Char) -&gt; libc::c_int</code><br>2) <code>fn last_index_of(&amp;self, (&amp;::char::Char, libc::c_int)) -&gt; libc::c_int</code><br>3) <code>fn last_index_of(&amp;self, (&amp;::char::Char, libc::c_int, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::lastIndexOf(QChar ch, int from = ?, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf">lastIndexOf</a>().</p>
+<p>Returns the index position of the last occurrence of the character <i>ch</i>, searching backward from position <i>from</i>.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#lastIndexOf">QString::lastIndexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+
+<h2 id='variant-2-6' class='section-header'><a href='#variant-2-6'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn last_index_of(&amp;self, &amp;::latin1_string::Latin1String) -&gt; libc::c_int</code><br>2) <code>fn last_index_of(&amp;self, (&amp;::latin1_string::Latin1String, libc::c_int)) -&gt; libc::c_int</code><br>3) <code>fn last_index_of(&amp;self, (&amp;::latin1_string::Latin1String, libc::c_int, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::lastIndexOf(QLatin1String str, int from = ?, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf">lastIndexOf</a>().</p>
+<p>Returns the index position of the last occurrence of the string <i>str</i> in this string reference, searching backward from index position <i>from</i>. If <i>from</i> is -1 (default), the search starts at the last character; if <i>from</i> is -2, at the next to last character and so on. Returns -1 if <i>str</i> is not found.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#lastIndexOf">QString::lastIndexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+
+<h2 id='variant-3-6' class='section-header'><a href='#variant-3-6'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn last_index_of(&amp;self, &amp;::string::String) -&gt; libc::c_int</code><br>2) <code>fn last_index_of(&amp;self, (&amp;::string::String, libc::c_int)) -&gt; libc::c_int</code><br>3) <code>fn last_index_of(&amp;self, (&amp;::string::String, libc::c_int, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::lastIndexOf(const QString&amp; str, int from = ?, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index position of the last occurrence of the string <i>str</i> in this string reference, searching backward from index position <i>from</i>. If <i>from</i> is -1 (default), the search starts at the last character; if <i>from</i> is -2, at the next to last character and so on. Returns -1 if <i>str</i> is not found.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#lastIndexOf">QString::lastIndexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+
+<h2 id='variant-4-4' class='section-header'><a href='#variant-4-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn last_index_of(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_int</code><br>2) <code>fn last_index_of(&amp;self, (&amp;::string_ref::StringRef, libc::c_int)) -&gt; libc::c_int</code><br>3) <code>fn last_index_of(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, ::qt::CaseSensitivity)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::lastIndexOf(const QStringRef&amp; str, int from = ?, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#lastIndexOf">lastIndexOf</a>().</p>
+<p>Returns the index position of the last occurrence of the string reference <i>str</i> in this string reference, searching backward from index position <i>from</i>. If <i>from</i> is -1 (default), the search starts at the last character; if <i>from</i> is -2, at the next to last character and so on. Returns -1 if <i>str</i> is not found.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#lastIndexOf">QString::lastIndexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#indexOf">indexOf</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#contains">contains</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p></div></p>
+</div><h4 id='method.left' class='method'><code>fn <a href='#method.left' class='fnname'>left</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefLeftArgs.html' title='qt_core::string_ref::overloading::StringRefLeftArgs'>StringRefLeftArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::left</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn left(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn left(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QStringRef::left(int n) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#left">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a substring reference to the <i>n</i> leftmost characters of the string.</p>
+<p>If <i>n</i> is greater than <a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>() or less than zero, a reference to the entire string is returned.</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#right">right</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#mid">mid</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#startsWith">startsWith</a>().</p></div></p>
+</div><h4 id='method.length' class='method'><code>fn <a href='#method.length' class='fnname'>length</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QStringRef::length() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#length">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of characters referred to by the string reference. Equivalent to <a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#position">position</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#string">string</a>().</p></div></p>
+</div><h4 id='method.locale_aware_compare' class='method'><code>fn <a href='#method.locale_aware_compare' class='fnname'>locale_aware_compare</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefLocaleAwareCompareArgs.html' title='qt_core::string_ref::overloading::StringRefLocaleAwareCompareArgs'>StringRefLocaleAwareCompareArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::localeAwareCompare</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-7' class='section-header'><a href='#variant-1-7'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn locale_aware_compare(&amp;self, &amp;::string::String) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::localeAwareCompare(const QString&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#localeAwareCompare-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Compares this string with the <i>other</i> string and returns an integer less than, equal to, or greater than zero if this string is less than, equal to, or greater than the <i>other</i> string.</p>
+<p>The comparison is performed in a locale- and also platform-dependent manner. Use this function to present sorted lists of strings to the user.</p>
+<p>This function was introduced in  Qt 4.5.</p></div></p>
+
+<h2 id='variant-2-7' class='section-header'><a href='#variant-2-7'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn locale_aware_compare(&amp;self, &amp;::string_ref::StringRef) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::localeAwareCompare(const QStringRef&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#localeAwareCompare-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Compares this string with the <i>other</i> string and returns an integer less than, equal to, or greater than zero if this string is less than, equal to, or greater than the <i>other</i> string.</p>
+<p>The comparison is performed in a locale- and also platform-dependent manner. Use this function to present sorted lists of strings to the user.</p>
+<p>This function was introduced in  Qt 4.5.</p></div></p>
+</div><h4 id='method.locale_aware_compare_static' class='method'><code>fn <a href='#method.locale_aware_compare_static' class='fnname'>locale_aware_compare_static</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefLocaleAwareCompareStaticArgs.html' title='qt_core::string_ref::overloading::StringRefLocaleAwareCompareStaticArgs'>StringRefLocaleAwareCompareStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::localeAwareCompare</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-8' class='section-header'><a href='#variant-1-8'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn locale_aware_compare_static((&amp;::string_ref::StringRef, &amp;::string::String)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QStringRef::localeAwareCompare(const QStringRef&amp; s1, const QString&amp; s2)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#localeAwareCompare">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares <i>s1</i> with <i>s2</i> and returns an integer less than, equal to, or greater than zero if <i>s1</i> is less than, equal to, or greater than <i>s2</i>.</p>
+<p>The comparison is performed in a locale- and also platform-dependent manner. Use this function to present sorted lists of strings to the user.</p>
+<p>On OS X and iOS, this function compares according the &quot;Order for sorted lists&quot; setting in the International prefereces panel.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#compare">compare</a>() and <a href="http://doc.qt.io/qt-5/qlocale.html">QLocale</a>.</p></div></p>
+
+<h2 id='variant-2-8' class='section-header'><a href='#variant-2-8'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn locale_aware_compare_static((&amp;::string_ref::StringRef, &amp;::string_ref::StringRef)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QStringRef::localeAwareCompare(const QStringRef&amp; s1, const QStringRef&amp; s2)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#localeAwareCompare-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Compares <i>s1</i> with <i>s2</i> and returns an integer less than, equal to, or greater than zero if <i>s1</i> is less than, equal to, or greater than <i>s2</i>.</p>
+<p>The comparison is performed in a locale- and also platform-dependent manner. Use this function to present sorted lists of strings to the user.</p>
+<p>This function was introduced in  Qt 4.5.</p></div></p>
+</div><h4 id='method.mid' class='method'><code>fn <a href='#method.mid' class='fnname'>mid</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefMidArgs.html' title='qt_core::string_ref::overloading::StringRefMidArgs'>StringRefMidArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::mid</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn mid(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn mid(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>3) <code>fn mid(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string_ref::StringRef</code><br>4) <code>fn mid(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QStringRef::mid(int pos, int n = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#mid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a substring reference to <i>n</i> characters of this string, starting at the specified <i>position</i>.</p>
+<p>If the <i>position</i> exceeds the length of the string, a null reference is returned.</p>
+<p>If there are less than <i>n</i> characters available in the string, starting at the given <i>position</i>, or if <i>n</i> is -1 (default), the function returns all characters from the specified <i>position</i> onwards.</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#left">left</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#right">right</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefNewArgs.html' title='qt_core::string_ref::overloading::StringRefNewArgs'>StringRefNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::QStringRef</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-9' class='section-header'><a href='#variant-1-9'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStringRef::QStringRef()</code></span></p>
+
+<h2 id='variant-2-9' class='section-header'><a href='#variant-2-9'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const ::string::String, cpp_utils::AsStruct)) -&gt; ::string_ref::StringRef</code><br>2) <code>fn new((*const ::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStringRef::QStringRef(const QString* string)</code></span></p>
+
+<h2 id='variant-3-7' class='section-header'><a href='#variant-3-7'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const ::string::String, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::string_ref::StringRef</code><br>2) <code>fn new((*const ::string::String, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStringRef::QStringRef(const QString* string, int position, int size)</code></span></p>
+
+<h2 id='variant-4-5' class='section-header'><a href='#variant-4-5'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string_ref::StringRef, cpp_utils::AsStruct)) -&gt; ::string_ref::StringRef</code><br>2) <code>fn new((&amp;::string_ref::StringRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStringRef::QStringRef(const QStringRef&amp; other)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefOpAssignArgs.html' title='qt_core::string_ref::overloading::StringRefOpAssignArgs'>StringRefOpAssignArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::operator=</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-10' class='section-header'><a href='#variant-1-10'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_assign(&amp;mut self, *const ::string::String) -&gt; &amp;&#39;l0 mut ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef&amp; QStringRef::operator=(const QString* string)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#operator-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Constructs a string reference to the given <i>string</i> and assigns it to this string reference, returning the result.</p></div></p>
+
+<h2 id='variant-2-10' class='section-header'><a href='#variant-2-10'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_assign(&amp;mut self, &amp;&#39;l1 ::string_ref::StringRef) -&gt; &amp;&#39;l0 mut ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef&amp; QStringRef::operator=(const QStringRef&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the <i>other</i> string reference to this string reference, and returns the result.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, s: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStringRef::operator==(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads operator==().</p>
+<p>The <i>s</i> byte array is converted to a <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> using the fromUtf8() function. This function stops conversion at the first NUL character found, or the end of the byte array.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>Returns <code>true</code> if this string is lexically equal to the parameter string <i>s</i>. Otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_ge' class='method'><code>fn <a href='#method.op_ge' class='fnname'>op_ge</a>(&amp;self, s: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStringRef::operator&gt;=(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#operator-gt-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads operator&gt;=().</p>
+<p>The <i>s</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> using the fromUtf8() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>Returns <code>true</code> if this string is lexically greater than or equal to the parameter string <i>s</i>. Otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_gt' class='method'><code>fn <a href='#method.op_gt' class='fnname'>op_gt</a>(&amp;self, s: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStringRef::operator&gt;(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#operator-gt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads operator&gt;().</p>
+<p>The <i>s</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> using the fromUtf8() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>Returns <code>true</code> if this string is lexically greater than the parameter string <i>s</i>. Otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_le' class='method'><code>fn <a href='#method.op_le' class='fnname'>op_le</a>(&amp;self, s: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStringRef::operator&lt;=(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#operator-lt-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads operator&lt;=().</p>
+<p>The <i>s</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> using the fromUtf8() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>Returns <code>true</code> if this string is lexically smaller than or equal to the parameter string <i>s</i>. Otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>(&amp;self, s: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStringRef::operator&lt;(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#operator-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads operator&lt;().</p>
+<p>The <i>s</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> using the fromUtf8() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>Returns <code>true</code> if this string is lexically smaller than the parameter string <i>s</i>. Otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, s: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStringRef::operator!=(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads operator!=().</p>
+<p>The <i>s</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a> using the fromUtf8() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>Returns <code>true</code> if this string is not lexically equal to the parameter string <i>s</i>. Otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.position' class='method'><code>fn <a href='#method.position' class='fnname'>position</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QStringRef::position() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#position">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the starting position in the referenced string that is referred to by the string reference.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#string">string</a>().</p></div></p>
+</div><h4 id='method.right' class='method'><code>fn <a href='#method.right' class='fnname'>right</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefRightArgs.html' title='qt_core::string_ref::overloading::StringRefRightArgs'>StringRefRightArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::right</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn right(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn right(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QStringRef::right(int n) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#right">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a substring reference to the <i>n</i> rightmost characters of the string.</p>
+<p>If <i>n</i> is greater than <a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>() or less than zero, a reference to the entire string is returned.</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#left">left</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#mid">mid</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QStringRef::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of characters referred to by the string reference. Equivalent to <a href="http://doc.qt.io/qt-5/qstringref.html#length">length</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#count">count</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#position">position</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#string">string</a>().</p></div></p>
+</div><h4 id='method.split' class='method'><code>fn <a href='#method.split' class='fnname'>split</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefSplitArgs.html' title='qt_core::string_ref::overloading::StringRefSplitArgs'>StringRefSplitArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::split</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-11' class='section-header'><a href='#variant-1-11'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn split(&amp;self, (&amp;::char::Char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::vector::VectorStringRefRef&gt;</code><br>2) <code>fn split(&amp;self, (&amp;::char::Char, ::string::SplitBehavior, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::vector::VectorStringRefRef&gt;</code><br>3) <code>fn split(&amp;self, (&amp;::char::Char, ::string::SplitBehavior, ::qt::CaseSensitivity, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::vector::VectorStringRefRef&gt;</code><br>4) <code>fn split(&amp;self, (&amp;::char::Char, cpp_utils::AsStruct)) -&gt; ::vector::VectorStringRefRef</code><br>5) <code>fn split(&amp;self, (&amp;::char::Char, ::string::SplitBehavior, cpp_utils::AsStruct)) -&gt; ::vector::VectorStringRefRef</code><br>6) <code>fn split(&amp;self, (&amp;::char::Char, ::string::SplitBehavior, ::qt::CaseSensitivity, cpp_utils::AsStruct)) -&gt; ::vector::VectorStringRefRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QStringRef&gt; QStringRef::split(QChar sep, QString::SplitBehavior behavior = ?, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#split-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+
+<h2 id='variant-2-11' class='section-header'><a href='#variant-2-11'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn split(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::vector::VectorStringRefRef&gt;</code><br>2) <code>fn split(&amp;self, (&amp;::string::String, ::string::SplitBehavior, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::vector::VectorStringRefRef&gt;</code><br>3) <code>fn split(&amp;self, (&amp;::string::String, ::string::SplitBehavior, ::qt::CaseSensitivity, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::vector::VectorStringRefRef&gt;</code><br>4) <code>fn split(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::vector::VectorStringRefRef</code><br>5) <code>fn split(&amp;self, (&amp;::string::String, ::string::SplitBehavior, cpp_utils::AsStruct)) -&gt; ::vector::VectorStringRefRef</code><br>6) <code>fn split(&amp;self, (&amp;::string::String, ::string::SplitBehavior, ::qt::CaseSensitivity, cpp_utils::AsStruct)) -&gt; ::vector::VectorStringRefRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QStringRef&gt; QStringRef::split(const QString&amp; sep, QString::SplitBehavior behavior = ?, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#split">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Splits the string into substrings references wherever <i>sep</i> occurs, and returns the list of those strings. If <i>sep</i> does not match anywhere in the string, split() returns a single-element vector containing this string reference.</p>
+<p><i>cs</i> specifies whether <i>sep</i> should be matched case sensitively or case insensitively.</p>
+<p>If <i>behavior</i> is <a href="http://doc.qt.io/qt-5/qstring.html#SplitBehavior-enum">QString::SkipEmptyParts</a>, empty entries don&#39;t appear in the result. By default, empty entries are kept.</p>
+<p><b>Note: </b>All references are valid as long this string is alive. Destroying this string will cause all references be dangling pointers.</p><p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.starts_with' class='method'><code>fn <a href='#method.starts_with' class='fnname'>starts_with</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefStartsWithArgs.html' title='qt_core::string_ref::overloading::StringRefStartsWithArgs'>StringRefStartsWithArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::startsWith</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-12' class='section-header'><a href='#variant-1-12'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn starts_with(&amp;self, &amp;::char::Char) -&gt; bool</code><br>2) <code>fn starts_with(&amp;self, (&amp;::char::Char, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::startsWith(QChar c, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#startsWith-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#startsWith">startsWith</a>().</p>
+<p>Returns <code>true</code> if the string reference starts with <i>ch</i>; otherwise returns <code>false</code>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#startsWith">QString::startsWith</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p></div></p>
+
+<h2 id='variant-2-12' class='section-header'><a href='#variant-2-12'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn starts_with(&amp;self, &amp;::latin1_string::Latin1String) -&gt; bool</code><br>2) <code>fn starts_with(&amp;self, (&amp;::latin1_string::Latin1String, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::startsWith(QLatin1String s, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#startsWith-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#startsWith">startsWith</a>().</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#startsWith">QString::startsWith</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p></div></p>
+
+<h2 id='variant-3-8' class='section-header'><a href='#variant-3-8'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn starts_with(&amp;self, &amp;::string::String) -&gt; bool</code><br>2) <code>fn starts_with(&amp;self, (&amp;::string::String, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::startsWith(const QString&amp; s, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#startsWith">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the string reference starts with <i>str</i>; otherwise returns <code>false</code>.</p>
+<p>If <i>cs</i> is <a href="http://doc.qt.io/qt-5/qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> (default), the search is case sensitive; otherwise the search is case insensitive.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#startsWith">QString::startsWith</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p></div></p>
+
+<h2 id='variant-4-6' class='section-header'><a href='#variant-4-6'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn starts_with(&amp;self, &amp;::string_ref::StringRef) -&gt; bool</code><br>2) <code>fn starts_with(&amp;self, (&amp;::string_ref::StringRef, ::qt::CaseSensitivity)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QStringRef::startsWith(const QStringRef&amp; c, Qt::CaseSensitivity cs = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#startsWith-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qstringref.html#startsWith">startsWith</a>().</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#startsWith">QString::startsWith</a>() and <a href="http://doc.qt.io/qt-5/qstringref.html#endsWith">endsWith</a>().</p></div></p>
+</div><h4 id='method.string' class='method'><code>fn <a href='#method.string' class='fnname'>string</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QString* QStringRef::string() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#string">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to the string referred to by the string reference, or 0 if it does not reference a string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#unicode">unicode</a>().</p></div></p>
+</div><h4 id='method.to_double' class='method'><code>fn <a href='#method.to_double' class='fnname'>to_double</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToDoubleArgs.html' title='qt_core::string_ref::overloading::StringRefToDoubleArgs'>StringRefToDoubleArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toDouble</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_double(&amp;self, ()) -&gt; libc::c_double</code><br>2) <code>fn to_double(&amp;self, *mut bool) -&gt; libc::c_double</code><br>
+C++ method: <span style='color: green;'><code>double QStringRef::toDouble(bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toDouble">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the string converted to a <code>double</code> value.</p>
+<p>Returns 0.0 if the conversion fails.</p>
+<p>If a conversion error occurs, <code><em></code><i>ok</i> is set to <code>false</code>; otherwise <code></em></code><i>ok</i> is set to <code>true</code>.</p>
+<p>The string conversion will always happen in the &#39;C&#39; locale. For locale dependent conversion use <a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">QLocale::toDouble</a>()</p>
+<p>For historic reasons, this function does not handle thousands group separators. If you need to convert such numbers, use <a href="http://doc.qt.io/qt-5/qlocale.html#toDouble">QLocale::toDouble</a>().</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toDouble">QString::toDouble</a>().</p></div></p>
+</div><h4 id='method.to_float' class='method'><code>fn <a href='#method.to_float' class='fnname'>to_float</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToFloatArgs.html' title='qt_core::string_ref::overloading::StringRefToFloatArgs'>StringRefToFloatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toFloat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_float(&amp;self, ()) -&gt; libc::c_float</code><br>2) <code>fn to_float(&amp;self, *mut bool) -&gt; libc::c_float</code><br>
+C++ method: <span style='color: green;'><code>float QStringRef::toFloat(bool* ok = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toFloat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the string converted to a <code>float</code> value.</p>
+<p>If a conversion error occurs, *<i>ok</i> is set to <code>false</code>; otherwise *<i>ok</i> is set to <code>true</code>. Returns 0.0 if the conversion fails.</p>
+<p>The string conversion will always happen in the &#39;C&#39; locale. For locale dependent conversion use <a href="http://doc.qt.io/qt-5/qlocale.html#toFloat">QLocale::toFloat</a>()</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toFloat">QString::toFloat</a>().</p></div></p>
+</div><h4 id='method.to_int' class='method'><code>fn <a href='#method.to_int' class='fnname'>to_int</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToIntArgs.html' title='qt_core::string_ref::overloading::StringRefToIntArgs'>StringRefToIntArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toInt</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_int(&amp;self, ()) -&gt; libc::c_int</code><br>2) <code>fn to_int(&amp;self, *mut bool) -&gt; libc::c_int</code><br>3) <code>fn to_int(&amp;self, (*mut bool, libc::c_int)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QStringRef::toInt(bool* ok = ?, int base = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toInt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the string converted to an <code>int</code> using base <i>base</i>, which is 10 by default and must be between 2 and 36, or 0. Returns 0 if the conversion fails.</p>
+<p>If a conversion error occurs, *<i>ok</i> is set to <code>false</code>; otherwise *<i>ok</i> is set to <code>true</code>.</p>
+<p>If <i>base</i> is 0, the C language convention is used: If the string begins with &quot;0x&quot;, base 16 is used; if the string begins with &quot;0&quot;, base 8 is used; otherwise, base 10 is used.</p>
+<p>The string conversion will always happen in the &#39;C&#39; locale. For locale dependent conversion use <a href="http://doc.qt.io/qt-5/qlocale.html#toInt">QLocale::toInt</a>()</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toInt">QString::toInt</a>().</p></div></p>
+</div><h4 id='method.to_latin1' class='method'><code>fn <a href='#method.to_latin1' class='fnname'>to_latin1</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToLatin1Args.html' title='qt_core::string_ref::overloading::StringRefToLatin1Args'>StringRefToLatin1Args</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toLatin1</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_latin1(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn to_latin1(&amp;self, cpp_utils::AsStruct) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QStringRef::toLatin1() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toLatin1">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a Latin-1 representation of the string as a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>.</p>
+<p>The returned byte array is undefined if the string contains non-Latin1 characters. Those characters may be suppressed or replaced with a question mark.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#toUtf8">toUtf8</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#toLocal8Bit">toLocal8Bit</a>(), and <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a>.</p></div></p>
+</div><h4 id='method.to_local8_bit' class='method'><code>fn <a href='#method.to_local8_bit' class='fnname'>to_local8_bit</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToLocal8BitArgs.html' title='qt_core::string_ref::overloading::StringRefToLocal8BitArgs'>StringRefToLocal8BitArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toLocal8Bit</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_local8_bit(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn to_local8_bit(&amp;self, cpp_utils::AsStruct) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QStringRef::toLocal8Bit() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toLocal8Bit">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the local 8-bit representation of the string as a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>. The returned byte array is undefined if the string contains characters not supported by the local 8-bit encoding.</p>
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForLocale">QTextCodec::codecForLocale</a>() is used to perform the conversion from Unicode. If the locale encoding could not be determined, this function does the same as <a href="http://doc.qt.io/qt-5/qstringref.html#toLatin1">toLatin1</a>().</p>
+<p>If this string contains any characters that cannot be encoded in the locale, the returned byte array is undefined. Those characters may be suppressed or replaced by another.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#toLatin1">toLatin1</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#toUtf8">toUtf8</a>(), and <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a>.</p></div></p>
+</div><h4 id='method.to_long' class='method'><code>fn <a href='#method.to_long' class='fnname'>to_long</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_long.html' title='libc::unix::notbsd::linux::other::b64::c_long'>c_long</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToLongArgs.html' title='qt_core::string_ref::overloading::StringRefToLongArgs'>StringRefToLongArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toLong</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_long(&amp;self, ()) -&gt; libc::c_long</code><br>2) <code>fn to_long(&amp;self, *mut bool) -&gt; libc::c_long</code><br>3) <code>fn to_long(&amp;self, (*mut bool, libc::c_int)) -&gt; libc::c_long</code><br>
+C++ method: <span style='color: green;'><code>long QStringRef::toLong(bool* ok = ?, int base = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toLong">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the string converted to a <code>long</code> using base <i>base</i>, which is 10 by default and must be between 2 and 36, or 0. Returns 0 if the conversion fails.</p>
+<p>If a conversion error occurs, *<i>ok</i> is set to <code>false</code>; otherwise *<i>ok</i> is set to <code>true</code>.</p>
+<p>If <i>base</i> is 0, the C language convention is used: If the string begins with &quot;0x&quot;, base 16 is used; if the string begins with &quot;0&quot;, base 8 is used; otherwise, base 10 is used.</p>
+<p>The string conversion will always happen in the &#39;C&#39; locale. For locale dependent conversion use QLocale::toLong()</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toLong">QString::toLong</a>().</p></div></p>
+</div><h4 id='method.to_long_long' class='method'><code>fn <a href='#method.to_long_long' class='fnname'>to_long_long</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToLongLongArgs.html' title='qt_core::string_ref::overloading::StringRefToLongLongArgs'>StringRefToLongLongArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toLongLong</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_long_long(&amp;self, ()) -&gt; i64</code><br>2) <code>fn to_long_long(&amp;self, *mut bool) -&gt; i64</code><br>3) <code>fn to_long_long(&amp;self, (*mut bool, libc::c_int)) -&gt; i64</code><br>
+C++ method: <span style='color: green;'><code>qlonglong QStringRef::toLongLong(bool* ok = ?, int base = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toLongLong">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the string converted to a <code>long long</code> using base <i>base</i>, which is 10 by default and must be between 2 and 36, or 0. Returns 0 if the conversion fails.</p>
+<p>If a conversion error occurs, *<i>ok</i> is set to <code>false</code>; otherwise *<i>ok</i> is set to <code>true</code>.</p>
+<p>If <i>base</i> is 0, the C language convention is used: If the string begins with &quot;0x&quot;, base 16 is used; if the string begins with &quot;0&quot;, base 8 is used; otherwise, base 10 is used.</p>
+<p>The string conversion will always happen in the &#39;C&#39; locale. For locale dependent conversion use <a href="http://doc.qt.io/qt-5/qlocale.html#toLongLong">QLocale::toLongLong</a>()</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toLongLong">QString::toLongLong</a>().</p></div></p>
+</div><h4 id='method.to_short' class='method'><code>fn <a href='#method.to_short' class='fnname'>to_short</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_short.html' title='libc::c_short'>c_short</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToShortArgs.html' title='qt_core::string_ref::overloading::StringRefToShortArgs'>StringRefToShortArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toShort</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_short(&amp;self, ()) -&gt; libc::c_short</code><br>2) <code>fn to_short(&amp;self, *mut bool) -&gt; libc::c_short</code><br>3) <code>fn to_short(&amp;self, (*mut bool, libc::c_int)) -&gt; libc::c_short</code><br>
+C++ method: <span style='color: green;'><code>short QStringRef::toShort(bool* ok = ?, int base = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toShort">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the string converted to a <code>short</code> using base <i>base</i>, which is 10 by default and must be between 2 and 36, or 0. Returns 0 if the conversion fails.</p>
+<p>If a conversion error occurs, *<i>ok</i> is set to <code>false</code>; otherwise *<i>ok</i> is set to <code>true</code>.</p>
+<p>If <i>base</i> is 0, the C language convention is used: If the string begins with &quot;0x&quot;, base 16 is used; if the string begins with &quot;0&quot;, base 8 is used; otherwise, base 10 is used.</p>
+<p>The string conversion will always happen in the &#39;C&#39; locale. For locale dependent conversion use <a href="http://doc.qt.io/qt-5/qlocale.html#toShort">QLocale::toShort</a>()</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toShort">QString::toShort</a>().</p></div></p>
+</div><h4 id='method.to_string' class='method'><code>fn <a href='#method.to_string' class='fnname'>to_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToStringArgs.html' title='qt_core::string_ref::overloading::StringRefToStringArgs'>StringRefToStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStringRef::toString() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of the string reference as a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> object.</p>
+<p>If the string reference is not a complete reference of the string (meaning that <a href="http://doc.qt.io/qt-5/qstringref.html#position">position</a>() is 0 and <a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>() equals <a href="http://doc.qt.io/qt-5/qstringref.html#string">string</a>()-&gt;<a href="http://doc.qt.io/qt-5/qstringref.html#size">size</a>()), this function will allocate a new string to return.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#string">string</a>().</p></div></p>
+</div><h4 id='method.to_u_int' class='method'><code>fn <a href='#method.to_u_int' class='fnname'>to_u_int</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToUIntArgs.html' title='qt_core::string_ref::overloading::StringRefToUIntArgs'>StringRefToUIntArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toUInt</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_u_int(&amp;self, ()) -&gt; libc::c_uint</code><br>2) <code>fn to_u_int(&amp;self, *mut bool) -&gt; libc::c_uint</code><br>3) <code>fn to_u_int(&amp;self, (*mut bool, libc::c_int)) -&gt; libc::c_uint</code><br>
+C++ method: <span style='color: green;'><code>unsigned int QStringRef::toUInt(bool* ok = ?, int base = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toUInt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the string converted to an <code>unsigned int</code> using base <i>base</i>, which is 10 by default and must be between 2 and 36, or 0. Returns 0 if the conversion fails.</p>
+<p>If a conversion error occurs, *<i>ok</i> is set to <code>false</code>; otherwise *<i>ok</i> is set to <code>true</code>.</p>
+<p>If <i>base</i> is 0, the C language convention is used: If the string begins with &quot;0x&quot;, base 16 is used; if the string begins with &quot;0&quot;, base 8 is used; otherwise, base 10 is used.</p>
+<p>The string conversion will always happen in the &#39;C&#39; locale. For locale dependent conversion use <a href="http://doc.qt.io/qt-5/qlocale.html#toUInt">QLocale::toUInt</a>()</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toUInt">QString::toUInt</a>().</p></div></p>
+</div><h4 id='method.to_u_long' class='method'><code>fn <a href='#method.to_u_long' class='fnname'>to_u_long</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_ulong.html' title='libc::unix::notbsd::linux::other::b64::c_ulong'>c_ulong</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToULongArgs.html' title='qt_core::string_ref::overloading::StringRefToULongArgs'>StringRefToULongArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toULong</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_u_long(&amp;self, ()) -&gt; libc::c_ulong</code><br>2) <code>fn to_u_long(&amp;self, *mut bool) -&gt; libc::c_ulong</code><br>3) <code>fn to_u_long(&amp;self, (*mut bool, libc::c_int)) -&gt; libc::c_ulong</code><br>
+C++ method: <span style='color: green;'><code>unsigned long QStringRef::toULong(bool* ok = ?, int base = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toULong">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the string converted to an <code>unsigned long</code> using base <i>base</i>, which is 10 by default and must be between 2 and 36, or 0. Returns 0 if the conversion fails.</p>
+<p>If a conversion error occurs, *<i>ok</i> is set to <code>false</code>; otherwise *<i>ok</i> is set to <code>true</code>.</p>
+<p>If <i>base</i> is 0, the C language convention is used: If the string begins with &quot;0x&quot;, base 16 is used; if the string begins with &quot;0&quot;, base 8 is used; otherwise, base 10 is used.</p>
+<p>The string conversion will always happen in the &#39;C&#39; locale. For locale dependent conversion use <a href="http://doc.qt.io/qt-5/qlocale.html#toULongLong">QLocale::toULongLong</a>()</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toULong">QString::toULong</a>().</p></div></p>
+</div><h4 id='method.to_u_long_long' class='method'><code>fn <a href='#method.to_u_long_long' class='fnname'>to_u_long_long</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToULongLongArgs.html' title='qt_core::string_ref::overloading::StringRefToULongLongArgs'>StringRefToULongLongArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toULongLong</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_u_long_long(&amp;self, ()) -&gt; u64</code><br>2) <code>fn to_u_long_long(&amp;self, *mut bool) -&gt; u64</code><br>3) <code>fn to_u_long_long(&amp;self, (*mut bool, libc::c_int)) -&gt; u64</code><br>
+C++ method: <span style='color: green;'><code>qulonglong QStringRef::toULongLong(bool* ok = ?, int base = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toULongLong">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the string converted to an <code>unsigned long long</code> using base <i>base</i>, which is 10 by default and must be between 2 and 36, or 0. Returns 0 if the conversion fails.</p>
+<p>If a conversion error occurs, *<i>ok</i> is set to <code>false</code>; otherwise *<i>ok</i> is set to <code>true</code>.</p>
+<p>If <i>base</i> is 0, the C language convention is used: If the string begins with &quot;0x&quot;, base 16 is used; if the string begins with &quot;0&quot;, base 8 is used; otherwise, base 10 is used.</p>
+<p>The string conversion will always happen in the &#39;C&#39; locale. For locale dependent conversion use <a href="http://doc.qt.io/qt-5/qlocale.html#toULongLong">QLocale::toULongLong</a>()</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toULongLong">QString::toULongLong</a>().</p></div></p>
+</div><h4 id='method.to_u_short' class='method'><code>fn <a href='#method.to_u_short' class='fnname'>to_u_short</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_ushort.html' title='libc::c_ushort'>c_ushort</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToUShortArgs.html' title='qt_core::string_ref::overloading::StringRefToUShortArgs'>StringRefToUShortArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toUShort</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_u_short(&amp;self, ()) -&gt; libc::c_ushort</code><br>2) <code>fn to_u_short(&amp;self, *mut bool) -&gt; libc::c_ushort</code><br>3) <code>fn to_u_short(&amp;self, (*mut bool, libc::c_int)) -&gt; libc::c_ushort</code><br>
+C++ method: <span style='color: green;'><code>unsigned short QStringRef::toUShort(bool* ok = ?, int base = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toUShort">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the string converted to an <code>unsigned short</code> using base <i>base</i>, which is 10 by default and must be between 2 and 36, or 0. Returns 0 if the conversion fails.</p>
+<p>If a conversion error occurs, *<i>ok</i> is set to <code>false</code>; otherwise *<i>ok</i> is set to <code>true</code>.</p>
+<p>If <i>base</i> is 0, the C language convention is used: If the string begins with &quot;0x&quot;, base 16 is used; if the string begins with &quot;0&quot;, base 8 is used; otherwise, base 10 is used.</p>
+<p>The string conversion will always happen in the &#39;C&#39; locale. For locale dependent conversion use <a href="http://doc.qt.io/qt-5/qlocale.html#toUShort">QLocale::toUShort</a>()</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toUShort">QString::toUShort</a>().</p></div></p>
+</div><h4 id='method.to_ucs4' class='method'><code>fn <a href='#method.to_ucs4' class='fnname'>to_ucs4</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToUcs4Args.html' title='qt_core::string_ref::overloading::StringRefToUcs4Args'>StringRefToUcs4Args</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toUcs4</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_ucs4(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::vector::VectorCUint&gt;</code><br>2) <code>fn to_ucs4(&amp;self, cpp_utils::AsStruct) -&gt; ::vector::VectorCUint</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;unsigned int&gt; QStringRef::toUcs4() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toUcs4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a UCS-4/UTF-32 representation of the string as a <a href="http://doc.qt.io/qt-5/qvector.html">QVector</a>&lt;uint&gt;.</p>
+<p>UCS-4 is a Unicode codec and therefore it is lossless. All characters from this string will be encoded in UCS-4. Any invalid sequence of code units in this string is replaced by the Unicode&#39;s replacement character (<a href="http://doc.qt.io/qt-5/qchar.html#SpecialCharacter-enum">QChar::ReplacementCharacter</a>, which corresponds to <code>U+FFFD</code>).</p>
+<p>The returned vector is not NUL terminated.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#toUtf8">toUtf8</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#toLatin1">toLatin1</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#toLocal8Bit">toLocal8Bit</a>(), and <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a>.</p></div></p>
+</div><h4 id='method.to_utf8' class='method'><code>fn <a href='#method.to_utf8' class='fnname'>to_utf8</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefToUtf8Args.html' title='qt_core::string_ref::overloading::StringRefToUtf8Args'>StringRefToUtf8Args</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::toUtf8</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_utf8(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn to_utf8(&amp;self, cpp_utils::AsStruct) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QStringRef::toUtf8() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#toUtf8">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a UTF-8 representation of the string as a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>.</p>
+<p>UTF-8 is a Unicode codec and can represent all characters in a Unicode string like <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#toLatin1">toLatin1</a>(), <a href="http://doc.qt.io/qt-5/qstringref.html#toLocal8Bit">toLocal8Bit</a>(), and <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a>.</p></div></p>
+</div><h4 id='method.trimmed' class='method'><code>fn <a href='#method.trimmed' class='fnname'>trimmed</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefTrimmedArgs.html' title='qt_core::string_ref::overloading::StringRefTrimmedArgs'>StringRefTrimmedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStringRef::trimmed</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn trimmed(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn trimmed(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QStringRef::trimmed() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#trimmed">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a string that has whitespace removed from the start and the end.</p>
+<p>Whitespace means any character for which <a href="http://doc.qt.io/qt-5/qchar.html#isSpace">QChar::isSpace</a>() returns <code>true</code>. This includes the ASCII characters &#39;\t&#39;, &#39;\n&#39;, &#39;\v&#39;, &#39;\f&#39;, &#39;\r&#39;, and &#39; &#39;.</p>
+<p>Unlike <a href="http://doc.qt.io/qt-5/qstring.html#simplified">QString::simplified</a>(), trimmed() leaves internal whitespace alone.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#trimmed">QString::trimmed</a>().</p></div></p>
+</div><h4 id='method.unicode' class='method'><code>fn <a href='#method.unicode' class='fnname'>unicode</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/char/struct.Char.html' title='qt_core::char::Char'>Char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QChar* QStringRef::unicode() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#unicode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a Unicode representation of the string reference. Since the data stems directly from the referenced string, it is not null-terminated unless the string reference includes the string&#39;s null terminator.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstringref.html#string">string</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/debug/overloading/trait.DebugOpShlArgs.html' title='qt_core::debug::overloading::DebugOpShlArgs'>DebugOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-67402' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/debug.rs.html#512-521' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/debug/overloading/trait.DebugOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/debug/struct.Debug.html' title='qt_core::debug::Debug'>Debug</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/debug/struct.Debug.html' title='qt_core::debug::Debug'>Debug</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='../../qt_core/hash/overloading/trait.HashArgs.html' title='qt_core::hash::overloading::HashArgs'>HashArgs</a> for &amp;'a <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-77781' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/hash.rs.html#1141-1146' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/hash/overloading/trait.HashArgs.html#tymethod.exec' class='fnname'>exec</a>(self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='../../qt_core/hash/overloading/trait.QtHashArgs.html' title='qt_core::hash::overloading::QtHashArgs'>QtHashArgs</a> for &amp;'a <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-78408' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/hash.rs.html#1988-1993' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/hash/overloading/trait.QtHashArgs.html#tymethod.exec' class='fnname'>exec</a>(self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToDoubleArgs.html' title='qt_core::locale::overloading::LocaleToDoubleArgs'>LocaleToDoubleArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103118' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#4943-4951' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_core/locale/overloading/trait.LocaleToDoubleArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToFloatArgs.html' title='qt_core::locale::overloading::LocaleToFloatArgs'>LocaleToFloatArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103149' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#4987-4995' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_core/locale/overloading/trait.LocaleToFloatArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToIntArgs.html' title='qt_core::locale::overloading::LocaleToIntArgs'>LocaleToIntArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103180' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#5031-5039' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_core/locale/overloading/trait.LocaleToIntArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToLongLongArgs.html' title='qt_core::locale::overloading::LocaleToLongLongArgs'>LocaleToLongLongArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103211' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#5075-5083' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-6' class='method'><code>fn <a href='../../qt_core/locale/overloading/trait.LocaleToLongLongArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToShortArgs.html' title='qt_core::locale::overloading::LocaleToShortArgs'>LocaleToShortArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103264' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#5151-5159' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-7' class='method'><code>fn <a href='../../qt_core/locale/overloading/trait.LocaleToShortArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; <a class='type' href='../../libc/type.c_short.html' title='libc::c_short'>c_short</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToUIntArgs.html' title='qt_core::locale::overloading::LocaleToUIntArgs'>LocaleToUIntArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103719' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#5864-5872' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-8' class='method'><code>fn <a href='../../qt_core/locale/overloading/trait.LocaleToUIntArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToULongLongArgs.html' title='qt_core::locale::overloading::LocaleToULongLongArgs'>LocaleToULongLongArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103750' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#5908-5916' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-9' class='method'><code>fn <a href='../../qt_core/locale/overloading/trait.LocaleToULongLongArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/locale/overloading/trait.LocaleToUShortArgs.html' title='qt_core::locale::overloading::LocaleToUShortArgs'>LocaleToUShortArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103781' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/locale.rs.html#5952-5960' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-10' class='method'><code>fn <a href='../../qt_core/locale/overloading/trait.LocaleToUShortArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>) -&gt; <a class='type' href='../../libc/type.c_ushort.html' title='libc::c_ushort'>c_ushort</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringAppendArgs.html' title='qt_core::string::overloading::StringAppendArgs'>StringAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-140385' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#4638-4647' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-11' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringCompareArgs.html' title='qt_core::string::overloading::StringCompareArgs'>StringCompareArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141369' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#6274-6282' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-12' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringCompareArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringContainsArgs.html' title='qt_core::string::overloading::StringContainsArgs'>StringContainsArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141500' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#6464-6472' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-13' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringContainsArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringCountArgs.html' title='qt_core::string::overloading::StringCountArgs'>StringCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141562' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#6549-6557' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-14' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringEndsWithArgs.html' title='qt_core::string::overloading::StringEndsWithArgs'>StringEndsWithArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141624' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#6639-6647' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-15' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringEndsWithArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringIndexOfArgs.html' title='qt_core::string::overloading::StringIndexOfArgs'>StringIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141998' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#7206-7214' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-16' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringLastIndexOfArgs.html' title='qt_core::string::overloading::StringLastIndexOfArgs'>StringLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142172' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#7442-7450' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-17' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringLocaleAwareCompareArgs.html' title='qt_core::string::overloading::StringLocaleAwareCompareArgs'>StringLocaleAwareCompareArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142329' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#7659-7667' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-18' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringLocaleAwareCompareArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringOpAddAssignArgs.html' title='qt_core::string::overloading::StringOpAddAssignArgs'>StringOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142819' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8417-8427' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-19' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringStartsWithArgs.html' title='qt_core::string::overloading::StringStartsWithArgs'>StringStartsWithArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-144391' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#10633-10641' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-20' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringStartsWithArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefCompareArgs.html' title='qt_core::string_ref::overloading::StringRefCompareArgs'>StringRefCompareArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147469' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1200-1208' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-21' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefCompareArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefContainsArgs.html' title='qt_core::string_ref::overloading::StringRefContainsArgs'>StringRefContainsArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147568' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1336-1344' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-22' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefContainsArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefCountArgs.html' title='qt_core::string_ref::overloading::StringRefCountArgs'>StringRefCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147612' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1394-1402' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-23' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefEndsWithArgs.html' title='qt_core::string_ref::overloading::StringRefEndsWithArgs'>StringRefEndsWithArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147674' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1478-1486' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-24' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefEndsWithArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefIndexOfArgs.html' title='qt_core::string_ref::overloading::StringRefIndexOfArgs'>StringRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147747' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1573-1581' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-25' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefLastIndexOfArgs.html' title='qt_core::string_ref::overloading::StringRefLastIndexOfArgs'>StringRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147836' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1690-1698' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-26' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefLocaleAwareCompareArgs.html' title='qt_core::string_ref::overloading::StringRefLocaleAwareCompareArgs'>StringRefLocaleAwareCompareArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147905' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1781-1789' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-27' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefLocaleAwareCompareArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefOpAssignArgs.html' title='qt_core::string_ref::overloading::StringRefOpAssignArgs'>StringRefOpAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-148027' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1966-1976' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-28' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefOpAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefStartsWithArgs.html' title='qt_core::string_ref::overloading::StringRefStartsWithArgs'>StringRefStartsWithArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-148214' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#2220-2228' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-29' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefStartsWithArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147181' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#18-22' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147394' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1092-1100' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QStringRef::~QStringRef()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstringref.html#dtor.QStringRef">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the string reference.</p>
+<p>Since this class is only used to refer to string data, and does not take ownership of it, no memory is freed when instances are destroyed.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147397' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1102-1106' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/vector/overloading/trait.VectorStringRefRefAppendArgs.html' title='qt_core::vector::overloading::VectorStringRefRefAppendArgs'>VectorStringRefRefAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167131' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/vector.rs.html#12013-12021' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-30' class='method'><code>fn <a href='../../qt_core/vector/overloading/trait.VectorStringRefRefAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/vector/struct.VectorStringRefRef.html' title='qt_core::vector::VectorStringRefRef'>VectorStringRefRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/vector/overloading/trait.VectorStringRefRefCountArgs.html' title='qt_core::vector::overloading::VectorStringRefRefCountArgs'>VectorStringRefRefCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167147' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/vector.rs.html#12032-12040' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-31' class='method'><code>fn <a href='../../qt_core/vector/overloading/trait.VectorStringRefRefCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/vector/struct.VectorStringRefRef.html' title='qt_core::vector::VectorStringRefRef'>VectorStringRefRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/vector/overloading/trait.VectorStringRefRefFillArgs.html' title='qt_core::vector::overloading::VectorStringRefRefFillArgs'>VectorStringRefRefFillArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167158' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/vector.rs.html#12045-12054' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-32' class='method'><code>fn <a href='../../qt_core/vector/overloading/trait.VectorStringRefRefFillArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/vector/struct.VectorStringRefRef.html' title='qt_core::vector::VectorStringRefRef'>VectorStringRefRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/vector/struct.VectorStringRefRef.html' title='qt_core::vector::VectorStringRefRef'>VectorStringRefRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/vector/overloading/trait.VectorStringRefRefIndexOfArgs.html' title='qt_core::vector::overloading::VectorStringRefRefIndexOfArgs'>VectorStringRefRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167178' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/vector.rs.html#12072-12080' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-33' class='method'><code>fn <a href='../../qt_core/vector/overloading/trait.VectorStringRefRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/vector/struct.VectorStringRefRef.html' title='qt_core::vector::VectorStringRefRef'>VectorStringRefRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/vector/overloading/trait.VectorStringRefRefLastIndexOfArgs.html' title='qt_core::vector::overloading::VectorStringRefRefLastIndexOfArgs'>VectorStringRefRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167216' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/vector.rs.html#12124-12132' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-34' class='method'><code>fn <a href='../../qt_core/vector/overloading/trait.VectorStringRefRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/vector/struct.VectorStringRefRef.html' title='qt_core::vector::VectorStringRefRef'>VectorStringRefRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/vector/overloading/trait.VectorStringRefRefOpAddAssignArgs.html' title='qt_core::vector::overloading::VectorStringRefRefOpAddAssignArgs'>VectorStringRefRefOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167359' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/vector.rs.html#12343-12352' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-35' class='method'><code>fn <a href='../../qt_core/vector/overloading/trait.VectorStringRefRefOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/vector/struct.VectorStringRefRef.html' title='qt_core::vector::VectorStringRefRef'>VectorStringRefRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/vector/struct.VectorStringRefRef.html' title='qt_core::vector::VectorStringRefRef'>VectorStringRefRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/vector/overloading/trait.VectorStringRefRefOpShlArgs.html' title='qt_core::vector::overloading::VectorStringRefRefOpShlArgs'>VectorStringRefRefOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167378' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/vector.rs.html#12368-12378' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-36' class='method'><code>fn <a href='../../qt_core/vector/overloading/trait.VectorStringRefRefOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/vector/struct.VectorStringRefRef.html' title='qt_core::vector::VectorStringRefRef'>VectorStringRefRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/vector/struct.VectorStringRefRef.html' title='qt_core::vector::VectorStringRefRef'>VectorStringRefRef</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

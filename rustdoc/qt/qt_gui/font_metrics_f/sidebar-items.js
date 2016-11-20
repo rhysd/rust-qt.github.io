@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["FontMetricsF","C++ type: <span style='color: green;'>```QFontMetricsF```</span>"]]});

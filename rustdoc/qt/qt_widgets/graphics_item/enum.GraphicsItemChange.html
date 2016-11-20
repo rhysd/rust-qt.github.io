@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GraphicsItemChange` enum in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GraphicsItemChange">
+
+    <title>qt_widgets::graphics_item::GraphicsItemChange - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>graphics_item</a></p><script>window.sidebarCurrent = {name: 'GraphicsItemChange', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>graphics_item</a>::<wbr><a class='enum' href=''>GraphicsItemChange</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-272655' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2299-2368' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum GraphicsItemChange {
+    PositionChange,
+    MatrixChange,
+    VisibleChange,
+    EnabledChange,
+    SelectedChange,
+    ParentChange,
+    ChildAddedChange,
+    ChildRemovedChange,
+    TransformChange,
+    PositionHasChanged,
+    TransformHasChanged,
+    SceneChange,
+    VisibleHasChanged,
+    EnabledHasChanged,
+    SelectedHasChanged,
+    ParentHasChanged,
+    SceneHasChanged,
+    CursorChange,
+    CursorHasChanged,
+    ToolTipChange,
+    ToolTipHasChanged,
+    FlagsChange,
+    FlagsHaveChanged,
+    ZValueChange,
+    ZValueHasChanged,
+    OpacityChange,
+    OpacityHasChanged,
+    ScenePositionHasChanged,
+    RotationChange,
+    RotationHasChanged,
+    ScaleChange,
+    ScaleHasChanged,
+    TransformOriginPointChange,
+    TransformOriginPointHasChanged,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QGraphicsItem::GraphicsItemChange</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemChange-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum describes the state changes that are notified by <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">QGraphicsItem::itemChange</a>(). The notifications are sent as the state changes, and in some cases, adjustments can be made (see the documentation for each change for details).</p>
+<p>Note: Be careful with calling functions on the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> itself inside <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(), as certain function calls can lead to unwanted recursion. For example, you cannot call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setPos">setPos</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() on an ItemPositionChange notification, as the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setPos">setPos</a>() function will again call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(ItemPositionChange). Instead, you can return the new, adjusted position from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>().</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.PositionChange' class='variant'><code>PositionChange</code></span><div class='docblock'><p>The item&#39;s position changes. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsGeometryChanges</a> flag is enabled, and when the item&#39;s local position changes, relative to its parent (i.e., as a result of calling <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setPos">setPos</a>() or <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#moveBy">moveBy</a>()). The value argument is the new position (i.e., a <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a>). You can call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#pos">pos</a>() to get the original position. Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setPos">setPos</a>() or <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#moveBy">moveBy</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new, adjusted position from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). After this notification, <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> immediately sends the ItemPositionHasChanged notification if the position changed. (C++ enum variant: <span style='color: green;'><code>ItemPositionChange = 0</code></span>)</p>
+</div><span id='variant.MatrixChange' class='variant'><code>MatrixChange</code></span><div class='docblock'><p>The item&#39;s affine transformation matrix is changing. This value is obsolete; you can use ItemTransformChange instead. (C++ enum variant: <span style='color: green;'><code>ItemMatrixChange = 1</code></span>)</p>
+</div><span id='variant.VisibleChange' class='variant'><code>VisibleChange</code></span><div class='docblock'><p>The item&#39;s visible state changes. If the item is presently visible, it will become invisible, and vice verca. The value argument is the new visible state (i.e., true or false). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setVisible">setVisible</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new visible state from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemVisibleChange = 2</code></span>)</p>
+</div><span id='variant.EnabledChange' class='variant'><code>EnabledChange</code></span><div class='docblock'><p>The item&#39;s enabled state changes. If the item is presently enabled, it will become disabled, and vice verca. The value argument is the new enabled state (i.e., true or false). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setEnabled">setEnabled</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return the new state from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemEnabledChange = 3</code></span>)</p>
+</div><span id='variant.SelectedChange' class='variant'><code>SelectedChange</code></span><div class='docblock'><p>The item&#39;s selected state changes. If the item is presently selected, it will become unselected, and vice verca. The value argument is the new selected state (i.e., true or false). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setSelected">setSelected</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new selected state from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemSelectedChange = 4</code></span>)</p>
+</div><span id='variant.ParentChange' class='variant'><code>ParentChange</code></span><div class='docblock'><p>The item&#39;s parent changes. The value argument is the new parent item (i.e., a <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> pointer). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setParentItem">setParentItem</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new parent from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemParentChange = 5</code></span>)</p>
+</div><span id='variant.ChildAddedChange' class='variant'><code>ChildAddedChange</code></span><div class='docblock'><p>A child is added to this item. The value argument is the new child item (i.e., a <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> pointer). Do not pass this item to any item&#39;s <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setParentItem">setParentItem</a>() function as this notification is delivered. The return value is unused; you cannot adjust anything in this notification. Note that the new child might not be fully constructed when this notification is sent; calling pure virtual functions on the child can lead to a crash. (C++ enum variant: <span style='color: green;'><code>ItemChildAddedChange = 6</code></span>)</p>
+</div><span id='variant.ChildRemovedChange' class='variant'><code>ChildRemovedChange</code></span><div class='docblock'><p>A child is removed from this item. The value argument is the child item that is about to be removed (i.e., a <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> pointer). The return value is unused; you cannot adjust anything in this notification. (C++ enum variant: <span style='color: green;'><code>ItemChildRemovedChange = 7</code></span>)</p>
+</div><span id='variant.TransformChange' class='variant'><code>TransformChange</code></span><div class='docblock'><p>The item&#39;s transformation matrix changes. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsGeometryChanges</a> flag is enabled, and when the item&#39;s local transformation matrix changes (i.e., as a result of calling <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setTransform">setTransform</a>(). The value argument is the new matrix (i.e., a <a href="http://doc.qt.io/qt-5/qtransform.html">QTransform</a>); to get the old matrix, call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#transform">transform</a>(). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setTransform">setTransform</a>() or set any of the transformation properties in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new matrix from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). This notification is not sent if you change the transformation properties. (C++ enum variant: <span style='color: green;'><code>ItemTransformChange = 8</code></span>)</p>
+</div><span id='variant.PositionHasChanged' class='variant'><code>PositionHasChanged</code></span><div class='docblock'><p>The item&#39;s position has changed. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsGeometryChanges</a> flag is enabled, and after the item&#39;s local position, relative to its parent, has changed. The value argument is the new position (the same as <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#pos">pos</a>()), and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> ignores the return value for this notification (i.e., a read-only notification). (C++ enum variant: <span style='color: green;'><code>ItemPositionHasChanged = 9</code></span>)</p>
+</div><span id='variant.TransformHasChanged' class='variant'><code>TransformHasChanged</code></span><div class='docblock'><p>The item&#39;s transformation matrix has changed either because <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setTransform">setTransform</a> is called, or one of the transformation properties is changed. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsGeometryChanges</a> flag is enabled, and after the item&#39;s local transformation matrix has changed. The value argument is the new matrix (same as <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#transform">transform</a>()), and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> ignores the return value for this notification (i.e., a read-only notification). (C++ enum variant: <span style='color: green;'><code>ItemTransformHasChanged = 10</code></span>)</p>
+</div><span id='variant.SceneChange' class='variant'><code>SceneChange</code></span><div class='docblock'><p>The item is moved to a new scene. This notification is also sent when the item is added to its initial scene, and when it is removed. The item&#39;s <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#scene">scene</a>() is the old scene (or 0 if the item has not been added to a scene yet). The value argument is the new scene (i.e., a <a href="http://doc.qt.io/qt-5/qgraphicsscene.html">QGraphicsScene</a> pointer), or a null pointer if the item is removed from a scene. Do not override this change by passing this item to <a href="http://doc.qt.io/qt-5/qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>() as this notification is delivered; instead, you can return the new scene from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). Use this feature with caution; objecting to a scene change can quickly lead to unwanted recursion. (C++ enum variant: <span style='color: green;'><code>ItemSceneChange = 11</code></span>)</p>
+</div><span id='variant.VisibleHasChanged' class='variant'><code>VisibleHasChanged</code></span><div class='docblock'><p>The item&#39;s visible state has changed. The value argument is the new visible state (i.e., true or false). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setVisible">setVisible</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored. (C++ enum variant: <span style='color: green;'><code>ItemVisibleHasChanged = 12</code></span>)</p>
+</div><span id='variant.EnabledHasChanged' class='variant'><code>EnabledHasChanged</code></span><div class='docblock'><p>The item&#39;s enabled state has changed. The value argument is the new enabled state (i.e., true or false). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setEnabled">setEnabled</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored. (C++ enum variant: <span style='color: green;'><code>ItemEnabledHasChanged = 13</code></span>)</p>
+</div><span id='variant.SelectedHasChanged' class='variant'><code>SelectedHasChanged</code></span><div class='docblock'><p>The item&#39;s selected state has changed. The value argument is the new selected state (i.e., true or false). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setSelected">setSelected</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored. (C++ enum variant: <span style='color: green;'><code>ItemSelectedHasChanged = 14</code></span>)</p>
+</div><span id='variant.ParentHasChanged' class='variant'><code>ParentHasChanged</code></span><div class='docblock'><p>The item&#39;s parent has changed. The value argument is the new parent (i.e., a pointer to a <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a>). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setParentItem">setParentItem</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored. (C++ enum variant: <span style='color: green;'><code>ItemParentHasChanged = 15</code></span>)</p>
+</div><span id='variant.SceneHasChanged' class='variant'><code>SceneHasChanged</code></span><div class='docblock'><p>The item&#39;s scene has changed. The item&#39;s <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#scene">scene</a>() is the new scene. This notification is also sent when the item is added to its initial scene, and when it is removed.The value argument is the new scene (i.e., a pointer to a <a href="http://doc.qt.io/qt-5/qgraphicsscene.html">QGraphicsScene</a>). Do not call setScene() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored. (C++ enum variant: <span style='color: green;'><code>ItemSceneHasChanged = 16</code></span>)</p>
+</div><span id='variant.CursorChange' class='variant'><code>CursorChange</code></span><div class='docblock'><p>The item&#39;s cursor changes. The value argument is the new cursor (i.e., a <a href="http://doc.qt.io/qt-5/qcursor.html">QCursor</a>). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setCursor">setCursor</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return a new cursor from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemCursorChange = 17</code></span>)</p>
+</div><span id='variant.CursorHasChanged' class='variant'><code>CursorHasChanged</code></span><div class='docblock'><p>The item&#39;s cursor has changed. The value argument is the new cursor (i.e., a <a href="http://doc.qt.io/qt-5/qcursor.html">QCursor</a>). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setCursor">setCursor</a>() as this notification is delivered. The return value is ignored. (C++ enum variant: <span style='color: green;'><code>ItemCursorHasChanged = 18</code></span>)</p>
+</div><span id='variant.ToolTipChange' class='variant'><code>ToolTipChange</code></span><div class='docblock'><p>The item&#39;s tooltip changes. The value argument is the new tooltip (i.e., a <a href="http://doc.qt.io/qt-5/qtooltip.html">QToolTip</a>). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setToolTip">setToolTip</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return a new tooltip from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemToolTipChange = 19</code></span>)</p>
+</div><span id='variant.ToolTipHasChanged' class='variant'><code>ToolTipHasChanged</code></span><div class='docblock'><p>The item&#39;s tooltip has changed. The value argument is the new tooltip (i.e., a <a href="http://doc.qt.io/qt-5/qtooltip.html">QToolTip</a>). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setToolTip">setToolTip</a>() as this notification is delivered. The return value is ignored. (C++ enum variant: <span style='color: green;'><code>ItemToolTipHasChanged = 20</code></span>)</p>
+</div><span id='variant.FlagsChange' class='variant'><code>FlagsChange</code></span><div class='docblock'><p>The item&#39;s flags change. The value argument is the new flags (i.e., a quint32). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setFlags">setFlags</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return the new flags from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemFlagsChange = 21</code></span>)</p>
+</div><span id='variant.FlagsHaveChanged' class='variant'><code>FlagsHaveChanged</code></span><div class='docblock'><p>The item&#39;s flags have changed. The value argument is the new flags (i.e., a quint32). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setFlags">setFlags</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored. (C++ enum variant: <span style='color: green;'><code>ItemFlagsHaveChanged = 22</code></span>)</p>
+</div><span id='variant.ZValueChange' class='variant'><code>ZValueChange</code></span><div class='docblock'><p>The item&#39;s Z-value changes. The value argument is the new Z-value (i.e., a double). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setZValue">setZValue</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return a new Z-value from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemZValueChange = 23</code></span>)</p>
+</div><span id='variant.ZValueHasChanged' class='variant'><code>ZValueHasChanged</code></span><div class='docblock'><p>The item&#39;s Z-value has changed. The value argument is the new Z-value (i.e., a double). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setZValue">setZValue</a>() as this notification is delivered. The return value is ignored. (C++ enum variant: <span style='color: green;'><code>ItemZValueHasChanged = 24</code></span>)</p>
+</div><span id='variant.OpacityChange' class='variant'><code>OpacityChange</code></span><div class='docblock'><p>The item&#39;s opacity changes. The value argument is the new opacity (i.e., a double). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setOpacity">setOpacity</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return a new opacity from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemOpacityChange = 25</code></span>)</p>
+</div><span id='variant.OpacityHasChanged' class='variant'><code>OpacityHasChanged</code></span><div class='docblock'><p>The item&#39;s opacity has changed. The value argument is the new opacity (i.e., a double). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setOpacity">setOpacity</a>() as this notification is delivered. The return value is ignored. (C++ enum variant: <span style='color: green;'><code>ItemOpacityHasChanged = 26</code></span>)</p>
+</div><span id='variant.ScenePositionHasChanged' class='variant'><code>ScenePositionHasChanged</code></span><div class='docblock'><p>The item&#39;s scene position has changed. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsScenePositionChanges</a> flag is enabled, and after the item&#39;s scene position has changed (i.e., the position or transformation of the item itself or the position or transformation of any ancestor has changed). The value argument is the new scene position (the same as <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#scenePos">scenePos</a>()), and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> ignores the return value for this notification (i.e., a read-only notification). (C++ enum variant: <span style='color: green;'><code>ItemScenePositionHasChanged = 27</code></span>)</p>
+</div><span id='variant.RotationChange' class='variant'><code>RotationChange</code></span><div class='docblock'><p>The item&#39;s rotation property changes. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsGeometryChanges</a> flag is enabled, and when the item&#39;s rotation property changes (i.e., as a result of calling <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setRotation">setRotation</a>()). The value argument is the new rotation (i.e., a double); to get the old rotation, call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#rotation">rotation</a>(). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setRotation">setRotation</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new rotation from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemRotationChange = 28</code></span>)</p>
+</div><span id='variant.RotationHasChanged' class='variant'><code>RotationHasChanged</code></span><div class='docblock'><p>The item&#39;s rotation property has changed. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsGeometryChanges</a> flag is enabled, and after the item&#39;s rotation property has changed. The value argument is the new rotation (i.e., a double), and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> ignores the return value for this notification (i.e., a read-only notification). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setRotation">setRotation</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. (C++ enum variant: <span style='color: green;'><code>ItemRotationHasChanged = 29</code></span>)</p>
+</div><span id='variant.ScaleChange' class='variant'><code>ScaleChange</code></span><div class='docblock'><p>The item&#39;s scale property changes. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsGeometryChanges</a> flag is enabled, and when the item&#39;s scale property changes (i.e., as a result of calling <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setScale">setScale</a>()). The value argument is the new scale (i.e., a double); to get the old scale, call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#scale">scale</a>(). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setScale">setScale</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new scale from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemScaleChange = 30</code></span>)</p>
+</div><span id='variant.ScaleHasChanged' class='variant'><code>ScaleHasChanged</code></span><div class='docblock'><p>The item&#39;s scale property has changed. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsGeometryChanges</a> flag is enabled, and after the item&#39;s scale property has changed. The value argument is the new scale (i.e., a double), and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> ignores the return value for this notification (i.e., a read-only notification). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setScale">setScale</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. (C++ enum variant: <span style='color: green;'><code>ItemScaleHasChanged = 31</code></span>)</p>
+</div><span id='variant.TransformOriginPointChange' class='variant'><code>TransformOriginPointChange</code></span><div class='docblock'><p>The item&#39;s transform origin point property changes. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsGeometryChanges</a> flag is enabled, and when the item&#39;s transform origin point property changes (i.e., as a result of calling <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setTransformOriginPoint">setTransformOriginPoint</a>()). The value argument is the new origin point (i.e., a <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a>); to get the old origin point, call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#transformOriginPoint">transformOriginPoint</a>(). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setTransformOriginPoint">setTransformOriginPoint</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new transform origin point from <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>(). (C++ enum variant: <span style='color: green;'><code>ItemTransformOriginPointChange = 32</code></span>)</p>
+</div><span id='variant.TransformOriginPointHasChanged' class='variant'><code>TransformOriginPointHasChanged</code></span><div class='docblock'><p>The item&#39;s transform origin point property has changed. This notification is sent if the <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#GraphicsItemFlag-enum">ItemSendsGeometryChanges</a> flag is enabled, and after the item&#39;s transform origin point property has changed. The value argument is the new origin point (i.e., a <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a>), and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> ignores the return value for this notification (i.e., a read-only notification). Do not call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setTransformOriginPoint">setTransformOriginPoint</a>() in <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. (C++ enum variant: <span style='color: green;'><code>ItemTransformOriginPointHasChanged = 33</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemChange.html' title='qt_widgets::graphics_item::GraphicsItemChange'>GraphicsItemChange</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272605' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemChange.html' title='qt_widgets::graphics_item::GraphicsItemChange'>GraphicsItemChange</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemChange.html' title='qt_widgets::graphics_item::GraphicsItemChange'>GraphicsItemChange</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272608' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemChange.html' title='qt_widgets::graphics_item::GraphicsItemChange'>GraphicsItemChange</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272611' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemChange.html' title='qt_widgets::graphics_item::GraphicsItemChange'>GraphicsItemChange</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.GraphicsItemChange.html' title='qt_widgets::graphics_item::GraphicsItemChange'>GraphicsItemChange</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272617' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#2297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

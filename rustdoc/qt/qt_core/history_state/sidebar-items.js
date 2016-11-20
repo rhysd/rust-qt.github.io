@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["HistoryType","C++ type: <span style='color: green;'>```QHistoryState::HistoryType```</span>"]],"mod":[["overloading",""]],"struct":[["HistoryState","C++ type: <span style='color: green;'>```QHistoryState```</span>"]]});

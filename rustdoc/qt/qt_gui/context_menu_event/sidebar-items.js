@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Reason","C++ type: <span style='color: green;'>```QContextMenuEvent::Reason```</span>"]],"mod":[["overloading",""]],"struct":[["ContextMenuEvent","C++ type: <span style='color: green;'>```QContextMenuEvent```</span>"]]});

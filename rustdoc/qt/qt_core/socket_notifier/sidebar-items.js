@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Type","C++ type: <span style='color: green;'>```QSocketNotifier::Type```</span>"]],"mod":[["overloading",""]],"struct":[["SocketNotifier","C++ type: <span style='color: green;'>```QSocketNotifier```</span>"]]});

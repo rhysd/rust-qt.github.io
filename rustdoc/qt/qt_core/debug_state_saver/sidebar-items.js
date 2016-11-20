@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["DebugStateSaver","C++ type: <span style='color: green;'>```QDebugStateSaver```</span>"]]});

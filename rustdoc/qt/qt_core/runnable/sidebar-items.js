@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Runnable","C++ type: <span style='color: green;'>```QRunnable```</span>"]]});

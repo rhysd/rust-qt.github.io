@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["StaticPluginMetaDataArgs","This trait represents a set of arguments accepted by StaticPlugin::meta_data method."]]});

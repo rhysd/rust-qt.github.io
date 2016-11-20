@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Semaphore` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Semaphore">
+
+    <title>qt_core::semaphore::Semaphore - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>semaphore</a></p><script>window.sidebarCurrent = {name: 'Semaphore', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>semaphore</a>::<wbr><a class='struct' href=''>Semaphore</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-129576' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/semaphore.rs.html#27-29' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Semaphore {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QSemaphore</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qsemaphore.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qsemaphore.html">QSemaphore</a> class provides a general counting semaphore.</p>
+<p>A semaphore is a generalization of a mutex. While a mutex can only be locked once, it&#39;s possible to acquire a semaphore multiple times. Semaphores are typically used to protect a certain number of identical resources.</p>
+<p>Semaphores support two fundamental operations, <a href="http://doc.qt.io/qt-5/qsemaphore.html#acquire">acquire</a>() and <a href="http://doc.qt.io/qt-5/qsemaphore.html#release">release</a>():</p>
+<ul>
+<li>acquire(<i>n</i>) tries to acquire <i>n</i> resources. If there aren&#39;t that many resources available, the call will block until this is the case.</li>
+<li>release(<i>n</i>) releases <i>n</i> resources.</li>
+</ul>
+<p>There&#39;s also a <a href="http://doc.qt.io/qt-5/qsemaphore.html#tryAcquire">tryAcquire</a>() function that returns immediately if it cannot acquire the resources, and an <a href="http://doc.qt.io/qt-5/qsemaphore.html#available">available</a>() function that returns the number of available resources at any time.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qsemaphore.html#QSemaphore">QSemaphore</a></span> sem(<span class="number">5</span>);      <span class="comment">// sem.available() == 5</span></p>
+
+<p>sem<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qsemaphore.html#acquire">acquire</a>(<span class="number">3</span>);         <span class="comment">// sem.available() == 2</span>
+sem<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qsemaphore.html#acquire">acquire</a>(<span class="number">2</span>);         <span class="comment">// sem.available() == 0</span>
+sem<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qsemaphore.html#release">release</a>(<span class="number">5</span>);         <span class="comment">// sem.available() == 5</span>
+sem<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qsemaphore.html#release">release</a>(<span class="number">5</span>);         <span class="comment">// sem.available() == 10</span></p>
+
+<p>sem<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qsemaphore.html#tryAcquire">tryAcquire</a>(<span class="number">1</span>);      <span class="comment">// sem.available() == 9, returns true</span>
+sem<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qsemaphore.html#tryAcquire">tryAcquire</a>(<span class="number">250</span>);    <span class="comment">// sem.available() == 9, returns false</span></pre>
+<p>A typical application of semaphores is for controlling access to a circular buffer shared by a producer thread and a consumer thread. The <a href="http://doc.qt.io/qt-5/qtcore-threads-semaphores-example.html">Semaphores Example</a> shows how to use <a href="http://doc.qt.io/qt-5/qsemaphore.html">QSemaphore</a> to solve that problem.</p>
+<p>A non-computing example of a semaphore would be dining at a restaurant. A semaphore is initialized with the number of chairs in the restaurant. As people arrive, they want a seat. As seats are filled, <a href="http://doc.qt.io/qt-5/qsemaphore.html#available">available</a>() is decremented. As people leave, the <a href="http://doc.qt.io/qt-5/qsemaphore.html#available">available</a>() is incremented, allowing more people to enter. If a party of 10 people want to be seated, but there are only 9 seats, those 10 people will wait, but a party of 4 people would be seated (taking the available seats to 5, making the party of 10 people wait longer).</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/semaphore/struct.Semaphore.html' title='qt_core::semaphore::Semaphore'>Semaphore</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-129581' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/semaphore.rs.html#37-127' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.acquire' class='method'><code>fn <a href='#method.acquire' class='fnname'>acquire</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/semaphore/overloading/trait.SemaphoreAcquireArgs.html' title='qt_core::semaphore::overloading::SemaphoreAcquireArgs'>SemaphoreAcquireArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSemaphore::acquire</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn acquire(&amp;mut self, libc::c_int) -&gt; ()</code><br>2) <code>fn acquire(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QSemaphore::acquire(int n = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qsemaphore.html#acquire">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Tries to acquire <code>n</code> resources guarded by the semaphore. If <i>n</i> &gt; <a href="http://doc.qt.io/qt-5/qsemaphore.html#available">available</a>(), this call will block until enough resources are available.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qsemaphore.html#release">release</a>(), <a href="http://doc.qt.io/qt-5/qsemaphore.html#available">available</a>(), and <a href="http://doc.qt.io/qt-5/qsemaphore.html#tryAcquire">tryAcquire</a>().</p></div></p>
+</div><h4 id='method.available' class='method'><code>fn <a href='#method.available' class='fnname'>available</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QSemaphore::available() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qsemaphore.html#available">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of resources currently available to the semaphore. This number can never be negative.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qsemaphore.html#acquire">acquire</a>() and <a href="http://doc.qt.io/qt-5/qsemaphore.html#release">release</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/semaphore/overloading/trait.SemaphoreNewArgs.html' title='qt_core::semaphore::overloading::SemaphoreNewArgs'>SemaphoreNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSemaphore::QSemaphore</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, cpp_utils::AsStruct)) -&gt; ::semaphore::Semaphore</code><br>2) <code>fn new(cpp_utils::AsStruct) -&gt; ::semaphore::Semaphore</code><br>3) <code>fn new((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::semaphore::Semaphore&gt;</code><br>4) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::semaphore::Semaphore&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QSemaphore::QSemaphore(int n = ?)</code></span></p>
+</div><h4 id='method.release' class='method'><code>fn <a href='#method.release' class='fnname'>release</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/semaphore/overloading/trait.SemaphoreReleaseArgs.html' title='qt_core::semaphore::overloading::SemaphoreReleaseArgs'>SemaphoreReleaseArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSemaphore::release</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn release(&amp;mut self, libc::c_int) -&gt; ()</code><br>2) <code>fn release(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QSemaphore::release(int n = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qsemaphore.html#release">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Releases <i>n</i> resources guarded by the semaphore.</p>
+<p>This function can be used to &quot;create&quot; resources as well. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qsemaphore.html#QSemaphore">QSemaphore</a></span> sem(<span class="number">5</span>);      <span class="comment">// a semaphore that guards 5 resources</span>
+sem<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qsemaphore.html#acquire">acquire</a>(<span class="number">5</span>);         <span class="comment">// acquire all 5 resources</span>
+sem<span class="operator">.</span>release(<span class="number">5</span>);         <span class="comment">// release the 5 resources</span>
+sem<span class="operator">.</span>release(<span class="number">10</span>);        <span class="comment">// &quot;create&quot; 10 new resources</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qsemaphore.html#acquire">acquire</a>() and <a href="http://doc.qt.io/qt-5/qsemaphore.html#available">available</a>().</p></div></p>
+</div><h4 id='method.try_acquire' class='method'><code>fn <a href='#method.try_acquire' class='fnname'>try_acquire</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/semaphore/overloading/trait.SemaphoreTryAcquireArgs.html' title='qt_core::semaphore::overloading::SemaphoreTryAcquireArgs'>SemaphoreTryAcquireArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSemaphore::tryAcquire</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn try_acquire(&amp;mut self, libc::c_int) -&gt; bool</code><br>2) <code>fn try_acquire(&amp;mut self, ()) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QSemaphore::tryAcquire(int n = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qsemaphore.html#tryAcquire">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Tries to acquire <code>n</code> resources guarded by the semaphore and returns <code>true</code> on success. If <a href="http://doc.qt.io/qt-5/qsemaphore.html#available">available</a>() &lt; <i>n</i>, this call immediately returns <code>false</code> without acquiring any resources.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qsemaphore.html#QSemaphore">QSemaphore</a></span> sem(<span class="number">5</span>);      <span class="comment">// sem.available() == 5</span>
+sem<span class="operator">.</span>tryAcquire(<span class="number">250</span>);    <span class="comment">// sem.available() == 5, returns false</span>
+sem<span class="operator">.</span>tryAcquire(<span class="number">3</span>);      <span class="comment">// sem.available() == 2, returns true</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qsemaphore.html#acquire">acquire</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn try_acquire(&amp;mut self, (libc::c_int, libc::c_int)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QSemaphore::tryAcquire(int n, int timeout)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qsemaphore.html#tryAcquire-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Tries to acquire <code>n</code> resources guarded by the semaphore and returns <code>true</code> on success. If <a href="http://doc.qt.io/qt-5/qsemaphore.html#available">available</a>() &lt; <i>n</i>, this call will wait for at most <i>timeout</i> milliseconds for resources to become available.</p>
+<p>Note: Passing a negative number as the <i>timeout</i> is equivalent to calling <a href="http://doc.qt.io/qt-5/qsemaphore.html#acquire">acquire</a>(), i.e. this function will wait forever for resources to become available if <i>timeout</i> is negative.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qsemaphore.html#QSemaphore">QSemaphore</a></span> sem(<span class="number">5</span>);            <span class="comment">// sem.available() == 5</span>
+sem<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qsemaphore.html#tryAcquire">tryAcquire</a>(<span class="number">250</span><span class="operator">,</span> <span class="number">1000</span>);    <span class="comment">// sem.available() == 5, waits 1000 milliseconds and returns false</span>
+sem<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qsemaphore.html#tryAcquire">tryAcquire</a>(<span class="number">3</span><span class="operator">,</span> <span class="number">30000</span>);     <span class="comment">// sem.available() == 2, returns true without waiting</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qsemaphore.html#acquire">acquire</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/semaphore/struct.Semaphore.html' title='qt_core::semaphore::Semaphore'>Semaphore</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-129579' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/semaphore.rs.html#31-35' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/semaphore/struct.Semaphore.html' title='qt_core::semaphore::Semaphore'>Semaphore</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/semaphore/struct.Semaphore.html' title='qt_core::semaphore::Semaphore'>Semaphore</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-129602' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/semaphore.rs.html#129-137' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QSemaphore::~QSemaphore()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qsemaphore.html#dtor.QSemaphore">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the semaphore.</p>
+<p><b>Warning:</b> Destroying a semaphore that is in use may result in undefined behavior.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/semaphore/struct.Semaphore.html' title='qt_core::semaphore::Semaphore'>Semaphore</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-129605' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/semaphore.rs.html#139-143' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ItemEditorCreatorBase","C++ type: <span style='color: green;'>```QItemEditorCreatorBase```</span>"]]});

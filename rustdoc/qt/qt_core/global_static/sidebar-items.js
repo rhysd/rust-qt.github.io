@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["GuardValues","C++ type: <span style='color: green;'>```QtGlobalStatic::GuardValues```</span>"]]});

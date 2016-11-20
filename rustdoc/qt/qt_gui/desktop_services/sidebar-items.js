@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DesktopServices","C++ type: <span style='color: green;'>```QDesktopServices```</span>"]]});

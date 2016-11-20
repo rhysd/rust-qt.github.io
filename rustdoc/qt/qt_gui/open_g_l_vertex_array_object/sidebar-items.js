@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["Binder","C++ type: <span style='color: green;'>```QOpenGLVertexArrayObject::Binder```</span>"],["OpenGLVertexArrayObject","C++ type: <span style='color: green;'>```QOpenGLVertexArrayObject```</span>"]]});

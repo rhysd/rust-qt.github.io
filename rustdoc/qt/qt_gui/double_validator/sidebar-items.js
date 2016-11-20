@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Notation","C++ type: <span style='color: green;'>```QDoubleValidator::Notation```</span>"]],"mod":[["overloading",""]],"struct":[["DoubleValidator","C++ type: <span style='color: green;'>```QDoubleValidator```</span>"]]});

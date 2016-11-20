@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AccessibleTextInterface` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AccessibleTextInterface">
+
+    <title>qt_gui::accessible_text_interface::AccessibleTextInterface - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>accessible_text_interface</a></p><script>window.sidebarCurrent = {name: 'AccessibleTextInterface', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>accessible_text_interface</a>::<wbr><a class='struct' href=''>AccessibleTextInterface</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-62222' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible_text_interface.rs.html#10-12' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AccessibleTextInterface {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QAccessibleTextInterface</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html">QAccessibleTextInterface</a> class implements support for text handling.</p>
+<p>This interface corresponds to the IAccessibleText interface. It should be implemented for widgets that display more text than a plain label. Labels should be represented by only <a href="http://doc.qt.io/qt-5/qaccessibleinterface.html">QAccessibleInterface</a> and return their text as name (<a href="http://doc.qt.io/qt-5/qaccessibleinterface.html#text">QAccessibleInterface::text</a>() with <a href="http://doc.qt.io/qt-5/qaccessible.html#Text-enum">QAccessible::Name</a> as type). The <a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html">QAccessibleTextInterface</a> is typically for text that a screen reader might want to read line by line, and for widgets that support text selection and input. This interface is, for example, implemented for <a href="http://doc.qt.io/qt-5/qlineedit.html">QLineEdit</a>.</p>
+<p><a href="http://www.linux-foundation.org/en/Accessibility/IAccessible2">IAccessible2 Specification</a></p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/accessible_text_interface/struct.AccessibleTextInterface.html' title='qt_gui::accessible_text_interface::AccessibleTextInterface'>AccessibleTextInterface</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-62227' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible_text_interface.rs.html#20-182' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.add_selection' class='method'><code>fn <a href='#method.add_selection' class='fnname'>add_selection</a>(&amp;mut self, start_offset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, end_offset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QAccessibleTextInterface::addSelection(int startOffset, int endOffset)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#addSelection">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Select the text from <i>startOffset</i> to <i>endOffset</i>. The <i>startOffset</i> is the first character that will be selected. The <i>endOffset</i> is the first character that will not be selected.</p>
+<p>When the object supports multiple selections (e.g. in a word processor), this adds a new selection, otherwise it replaces the previous selection.</p>
+<p>The selection will be <i>endOffset</i> - <i>startOffset</i> characters long.</p></div></p>
+</div><h4 id='method.attributes' class='method'><code>fn <a href='#method.attributes' class='fnname'>attributes</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_text_interface/overloading/trait.AccessibleTextInterfaceAttributesArgs.html' title='qt_gui::accessible_text_interface::overloading::AccessibleTextInterfaceAttributesArgs'>AccessibleTextInterfaceAttributesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleTextInterface::attributes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn attributes(&amp;self, (libc::c_int, *mut libc::c_int, *mut libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn attributes(&amp;self, (libc::c_int, *mut libc::c_int, *mut libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>pure virtual QString QAccessibleTextInterface::attributes(int offset, int* startOffset, int* endOffset) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#attributes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text attributes at the position <i>offset</i>. In addition the range of the attributes is returned in <i>startOffset</i> and <i>endOffset</i>.</p></div></p>
+</div><h4 id='method.character_count' class='method'><code>fn <a href='#method.character_count' class='fnname'>character_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual int QAccessibleTextInterface::characterCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#characterCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the length of the text (total size including spaces).</p></div></p>
+</div><h4 id='method.character_rect' class='method'><code>fn <a href='#method.character_rect' class='fnname'>character_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_text_interface/overloading/trait.AccessibleTextInterfaceCharacterRectArgs.html' title='qt_gui::accessible_text_interface::overloading::AccessibleTextInterfaceCharacterRectArgs'>AccessibleTextInterfaceCharacterRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleTextInterface::characterRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn character_rect(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn character_rect(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>pure virtual QRect QAccessibleTextInterface::characterRect(int offset) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#characterRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position and size of the character at position <i>offset</i> in screen coordinates.</p></div></p>
+</div><h4 id='method.cursor_position' class='method'><code>fn <a href='#method.cursor_position' class='fnname'>cursor_position</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual int QAccessibleTextInterface::cursorPosition() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#cursorPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current cursor position.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#setCursorPosition">setCursorPosition</a>().</p></div></p>
+</div><h4 id='method.offset_at_point' class='method'><code>fn <a href='#method.offset_at_point' class='fnname'>offset_at_point</a>(&amp;self, point: &amp;<a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual int QAccessibleTextInterface::offsetAtPoint(const QPoint&amp; point) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#offsetAtPoint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the offset of the character at the <i>point</i> in screen coordinates.</p></div></p>
+</div><h4 id='method.remove_selection' class='method'><code>fn <a href='#method.remove_selection' class='fnname'>remove_selection</a>(&amp;mut self, selection_index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QAccessibleTextInterface::removeSelection(int selectionIndex)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#removeSelection">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the selection with index <i>selectionIndex</i>.</p></div></p>
+</div><h4 id='method.scroll_to_substring' class='method'><code>fn <a href='#method.scroll_to_substring' class='fnname'>scroll_to_substring</a>(&amp;mut self, start_index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, end_index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QAccessibleTextInterface::scrollToSubstring(int startIndex, int endIndex)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#scrollToSubstring">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Ensures that the text between <i>startIndex</i> and <i>endIndex</i> is visible.</p></div></p>
+</div><h4 id='method.selection' class='method'><code>fn <a href='#method.selection' class='fnname'>selection</a>(&amp;self, selection_index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, start_offset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, end_offset: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QAccessibleTextInterface::selection(int selectionIndex, int* startOffset, int* endOffset) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#selection">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a selection. The size of the selection is returned in <i>startOffset</i> and <i>endOffset</i>. If there is no selection both <i>startOffset</i> and <i>endOffset</i> are 0.</p>
+<p>The accessibility APIs support multiple selections. For most widgets though, only one selection is supported with <i>selectionIndex</i> equal to 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#setSelection">setSelection</a>().</p></div></p>
+</div><h4 id='method.selection_count' class='method'><code>fn <a href='#method.selection_count' class='fnname'>selection_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual int QAccessibleTextInterface::selectionCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#selectionCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of selections in this text.</p></div></p>
+</div><h4 id='method.set_cursor_position' class='method'><code>fn <a href='#method.set_cursor_position' class='fnname'>set_cursor_position</a>(&amp;mut self, position: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QAccessibleTextInterface::setCursorPosition(int position)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#setCursorPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the cursor to <i>position</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#cursorPosition">cursorPosition</a>().</p></div></p>
+</div><h4 id='method.set_selection' class='method'><code>fn <a href='#method.set_selection' class='fnname'>set_selection</a>(&amp;mut self, selection_index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, start_offset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, end_offset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QAccessibleTextInterface::setSelection(int selectionIndex, int startOffset, int endOffset)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#setSelection">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Set the selection <i>selectionIndex</i> to the range from <i>startOffset</i> to <i>endOffset</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#selection">selection</a>(), <a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#addSelection">addSelection</a>(), and <a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#removeSelection">removeSelection</a>().</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_text_interface/overloading/trait.AccessibleTextInterfaceTextArgs.html' title='qt_gui::accessible_text_interface::overloading::AccessibleTextInterfaceTextArgs'>AccessibleTextInterfaceTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleTextInterface::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>pure virtual QString QAccessibleTextInterface::text(int startOffset, int endOffset) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text from <i>startOffset</i> to <i>endOffset</i>. The <i>startOffset</i> is the first character that will be returned. The <i>endOffset</i> is the first character that will not be returned.</p></div></p>
+</div><h4 id='method.text_after_offset' class='method'><code>fn <a href='#method.text_after_offset' class='fnname'>text_after_offset</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_text_interface/overloading/trait.AccessibleTextInterfaceTextAfterOffsetArgs.html' title='qt_gui::accessible_text_interface::overloading::AccessibleTextInterfaceTextAfterOffsetArgs'>AccessibleTextInterfaceTextAfterOffsetArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleTextInterface::textAfterOffset</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text_after_offset(&amp;self, (libc::c_int, ::accessible::TextBoundaryType, *mut libc::c_int, *mut libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text_after_offset(&amp;self, (libc::c_int, ::accessible::TextBoundaryType, *mut libc::c_int, *mut libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>virtual QString QAccessibleTextInterface::textAfterOffset(int offset, QAccessible::TextBoundaryType boundaryType, int* startOffset, int* endOffset) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#textAfterOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text item of type <i>boundaryType</i> that is right after offset <i>offset</i> and sets <i>startOffset</i> and <i>endOffset</i> values to the start and end positions of that item; returns an empty string if there is no such an item. Sets <i>startOffset</i> and <i>endOffset</i> values to -1 on error.</p>
+<p>This default implementation is provided for small text edits. A word processor or text editor should provide their own efficient implementations. This function makes no distinction between paragraphs and lines.</p>
+<p><b>Note: </b>this function can not take the cursor position into account. By convention an <i>offset</i> of -2 means that this function should use the cursor position as offset. Thus an offset of -2 must be converted to the cursor position before calling this function. An offset of -1 is used for the text length and custom implementations of this function have to return the result as if the length was passed in as offset.</p></div></p>
+</div><h4 id='method.text_at_offset' class='method'><code>fn <a href='#method.text_at_offset' class='fnname'>text_at_offset</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_text_interface/overloading/trait.AccessibleTextInterfaceTextAtOffsetArgs.html' title='qt_gui::accessible_text_interface::overloading::AccessibleTextInterfaceTextAtOffsetArgs'>AccessibleTextInterfaceTextAtOffsetArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleTextInterface::textAtOffset</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text_at_offset(&amp;self, (libc::c_int, ::accessible::TextBoundaryType, *mut libc::c_int, *mut libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text_at_offset(&amp;self, (libc::c_int, ::accessible::TextBoundaryType, *mut libc::c_int, *mut libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>virtual QString QAccessibleTextInterface::textAtOffset(int offset, QAccessible::TextBoundaryType boundaryType, int* startOffset, int* endOffset) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#textAtOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text item of type <i>boundaryType</i> at offset <i>offset</i> and sets <i>startOffset</i> and <i>endOffset</i> values to the start and end positions of that item; returns an empty string if there is no such an item. Sets <i>startOffset</i> and <i>endOffset</i> values to -1 on error.</p>
+<p>This default implementation is provided for small text edits. A word processor or text editor should provide their own efficient implementations. This function makes no distinction between paragraphs and lines.</p>
+<p><b>Note: </b>this function can not take the cursor position into account. By convention an <i>offset</i> of -2 means that this function should use the cursor position as offset. Thus an offset of -2 must be converted to the cursor position before calling this function. An offset of -1 is used for the text length and custom implementations of this function have to return the result as if the length was passed in as offset.</p></div></p>
+</div><h4 id='method.text_before_offset' class='method'><code>fn <a href='#method.text_before_offset' class='fnname'>text_before_offset</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_text_interface/overloading/trait.AccessibleTextInterfaceTextBeforeOffsetArgs.html' title='qt_gui::accessible_text_interface::overloading::AccessibleTextInterfaceTextBeforeOffsetArgs'>AccessibleTextInterfaceTextBeforeOffsetArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleTextInterface::textBeforeOffset</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text_before_offset(&amp;self, (libc::c_int, ::accessible::TextBoundaryType, *mut libc::c_int, *mut libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text_before_offset(&amp;self, (libc::c_int, ::accessible::TextBoundaryType, *mut libc::c_int, *mut libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>virtual QString QAccessibleTextInterface::textBeforeOffset(int offset, QAccessible::TextBoundaryType boundaryType, int* startOffset, int* endOffset) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#textBeforeOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text item of type <i>boundaryType</i> that is close to offset <i>offset</i> and sets <i>startOffset</i> and <i>endOffset</i> values to the start and end positions of that item; returns an empty string if there is no such an item. Sets <i>startOffset</i> and <i>endOffset</i> values to -1 on error.</p>
+<p>This default implementation is provided for small text edits. A word processor or text editor should provide their own efficient implementations. This function makes no distinction between paragraphs and lines.</p>
+<p><b>Note: </b>this function can not take the cursor position into account. By convention an <i>offset</i> of -2 means that this function should use the cursor position as offset. Thus an offset of -2 must be converted to the cursor position before calling this function. An offset of -1 is used for the text length and custom implementations of this function have to return the result as if the length was passed in as offset.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/accessible_text_interface/struct.AccessibleTextInterface.html' title='qt_gui::accessible_text_interface::AccessibleTextInterface'>AccessibleTextInterface</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-62225' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible_text_interface.rs.html#14-18' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/accessible_text_interface/struct.AccessibleTextInterface.html' title='qt_gui::accessible_text_interface::AccessibleTextInterface'>AccessibleTextInterface</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/accessible_text_interface/struct.AccessibleTextInterface.html' title='qt_gui::accessible_text_interface::AccessibleTextInterface'>AccessibleTextInterface</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-62291' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible_text_interface.rs.html#184-191' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QAccessibleTextInterface::~QAccessibleTextInterface()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html#dtor.QAccessibleTextInterface">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qaccessibletextinterface.html">QAccessibleTextInterface</a>.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/accessible_text_interface/struct.AccessibleTextInterface.html' title='qt_gui::accessible_text_interface::AccessibleTextInterface'>AccessibleTextInterface</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-62294' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible_text_interface.rs.html#193-197' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

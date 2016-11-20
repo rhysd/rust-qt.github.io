@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ImageReader` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ImageReader">
+
+    <title>qt_gui::image_reader::ImageReader - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>image_reader</a></p><script>window.sidebarCurrent = {name: 'ImageReader', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>image_reader</a>::<wbr><a class='struct' href=''>ImageReader</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-80072' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_reader.rs.html#12-14' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ImageReader {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QImageReader</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> class provides a format independent interface for reading images from files or other devices.</p>
+<p>The most common way to read images is through <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> and <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a>&#39;s constructors, or by calling <a href="http://doc.qt.io/qt-5/qimage.html#load">QImage::load</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#load">QPixmap::load</a>(). <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> is a specialized class which gives you more control when reading images. For example, you can read an image into a specific size by calling <a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledSize">setScaledSize</a>(), and you can select a clip rect, effectively loading only parts of an image, by calling <a href="http://doc.qt.io/qt-5/qimagereader.html#setClipRect">setClipRect</a>(). Depending on the underlying support in the image format, this can save memory and speed up loading of images.</p>
+<p>To read an image, you start by constructing a <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> object. Pass either a file name or a device pointer, and the image format to <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a>&#39;s constructor. You can then set several options, such as the clip rect (by calling <a href="http://doc.qt.io/qt-5/qimagereader.html#setClipRect">setClipRect</a>()) and scaled size (by calling <a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledSize">setScaledSize</a>()). <a href="http://doc.qt.io/qt-5/qimagereader.html#canRead">canRead</a>() returns the image if the <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> can read the image (i.e., the image format is supported and the device is open for reading). Call <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>() to read the image.</p>
+<p>If any error occurs when reading the image, <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>() will return a null <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>. You can then call <a href="http://doc.qt.io/qt-5/qimagereader.html#error">error</a>() to find the type of error that occurred, or <a href="http://doc.qt.io/qt-5/qimagereader.html#errorString">errorString</a>() to get a human readable description of what went wrong.</p>
+<a name="formats"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/image_reader/struct.ImageReader.html' title='qt_gui::image_reader::ImageReader'>ImageReader</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-80077' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_reader.rs.html#22-661' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.auto_detect_image_format' class='method'><code>fn <a href='#method.auto_detect_image_format' class='fnname'>auto_detect_image_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImageReader::autoDetectImageFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#autoDetectImageFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if image format autodetection is enabled on this image reader; otherwise returns <code>false</code>. By default, autodetection is enabled.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setAutoDetectImageFormat">setAutoDetectImageFormat</a>().</p></div></p>
+</div><h4 id='method.auto_transform' class='method'><code>fn <a href='#method.auto_transform' class='fnname'>auto_transform</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImageReader::autoTransform() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#autoTransform">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the image handler will apply transformation metadata on <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>().</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setAutoTransform">setAutoTransform</a>(), <a href="http://doc.qt.io/qt-5/qimagereader.html#transformation">transformation</a>(), and <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>().</p></div></p>
+</div><h4 id='method.background_color' class='method'><code>fn <a href='#method.background_color' class='fnname'>background_color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderBackgroundColorArgs.html' title='qt_gui::image_reader::overloading::ImageReaderBackgroundColorArgs'>ImageReaderBackgroundColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::backgroundColor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn background_color(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn background_color(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QImageReader::backgroundColor() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#backgroundColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the background color that&#39;s used when reading an image. If the image format does not support setting the background color an invalid color is returned.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setBackgroundColor">setBackgroundColor</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>().</p></div></p>
+</div><h4 id='method.can_read' class='method'><code>fn <a href='#method.can_read' class='fnname'>can_read</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImageReader::canRead() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#canRead">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if an image can be read for the device (i.e., the image format is supported, and the device seems to contain valid data); otherwise returns <code>false</code>.</p>
+<p>canRead() is a lightweight function that only does a quick test to see if the image data is valid. <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>() may still return false after canRead() returns <code>true</code>, if the image data is corrupt.</p>
+<p>For images that support animation, canRead() returns <code>false</code> when all frames have been read.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">supportedImageFormats</a>().</p></div></p>
+</div><h4 id='method.clip_rect' class='method'><code>fn <a href='#method.clip_rect' class='fnname'>clip_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderClipRectArgs.html' title='qt_gui::image_reader::overloading::ImageReaderClipRectArgs'>ImageReaderClipRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::clipRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn clip_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn clip_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QImageReader::clipRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#clipRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the clip rect (also known as the ROI, or Region Of Interest) of the image. If no clip rect has been set, an invalid <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setClipRect">setClipRect</a>().</p></div></p>
+</div><h4 id='method.current_image_number' class='method'><code>fn <a href='#method.current_image_number' class='fnname'>current_image_number</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImageReader::currentImageNumber() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#currentImageNumber">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function returns the sequence number of the current frame. If the image format doesn&#39;t support animation, 0 is returned.</p>
+<p>This function returns -1 if an error occurred.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#supportsAnimation">supportsAnimation</a>(), <a href="http://doc.qt.io/qt-5/qimageiohandler.html#currentImageNumber">QImageIOHandler::currentImageNumber</a>(), and <a href="http://doc.qt.io/qt-5/qimagereader.html#canRead">canRead</a>().</p></div></p>
+</div><h4 id='method.current_image_rect' class='method'><code>fn <a href='#method.current_image_rect' class='fnname'>current_image_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderCurrentImageRectArgs.html' title='qt_gui::image_reader::overloading::ImageReaderCurrentImageRectArgs'>ImageReaderCurrentImageRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::currentImageRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn current_image_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn current_image_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QImageReader::currentImageRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#currentImageRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function returns the rect for the current frame. Otherwise, a null rect is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#supportsAnimation">supportsAnimation</a>() and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#currentImageRect">QImageIOHandler::currentImageRect</a>().</p></div></p>
+</div><h4 id='method.decide_format_from_content' class='method'><code>fn <a href='#method.decide_format_from_content' class='fnname'>decide_format_from_content</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImageReader::decideFormatFromContent() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#decideFormatFromContent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether the image reader should decide which plugin to use only based on the contents of the datastream rather than on the file extension.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setDecideFormatFromContent">setDecideFormatFromContent</a>().</p></div></p>
+</div><h4 id='method.device' class='method'><code>fn <a href='#method.device' class='fnname'>device</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIODevice* QImageReader::device() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#device">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the device currently assigned to <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a>, or 0 if no device has been assigned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setDevice">setDevice</a>().</p></div></p>
+</div><h4 id='method.error' class='method'><code>fn <a href='#method.error' class='fnname'>error</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/image_reader/enum.ImageReaderError.html' title='qt_gui::image_reader::ImageReaderError'>ImageReaderError</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::ImageReaderError QImageReader::error() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#error">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type of error that occurred last.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#ImageReaderError-enum">ImageReaderError</a> and <a href="http://doc.qt.io/qt-5/qimagereader.html#errorString">errorString</a>().</p></div></p>
+</div><h4 id='method.error_string' class='method'><code>fn <a href='#method.error_string' class='fnname'>error_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderErrorStringArgs.html' title='qt_gui::image_reader::overloading::ImageReaderErrorStringArgs'>ImageReaderErrorStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::errorString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn error_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn error_string(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QImageReader::errorString() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#errorString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a human readable description of the last error that occurred.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#error">error</a>().</p></div></p>
+</div><h4 id='method.file_name' class='method'><code>fn <a href='#method.file_name' class='fnname'>file_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderFileNameArgs.html' title='qt_gui::image_reader::overloading::ImageReaderFileNameArgs'>ImageReaderFileNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::fileName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn file_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn file_name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QImageReader::fileName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#fileName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the currently assigned device is a <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a>, or if <a href="http://doc.qt.io/qt-5/qimagereader.html#setFileName">setFileName</a>() has been called, this function returns the name of the file <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> reads from. Otherwise (i.e., if no device has been assigned or the device is not a <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a>), an empty <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setFileName">setFileName</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html#setDevice">setDevice</a>().</p></div></p>
+</div><h4 id='method.format' class='method'><code>fn <a href='#method.format' class='fnname'>format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderFormatArgs.html' title='qt_gui::image_reader::overloading::ImageReaderFormatArgs'>ImageReaderFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::format</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::byte_array::ByteArray&gt;</code><br>2) <code>fn format(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QImageReader::format() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#format">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the format <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> uses for reading images.</p>
+<p>You can call this function after assigning a device to the reader to determine the format of the device. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qimagereader.html#QImageReader">QImageReader</a></span> reader(<span class="string">&quot;image.png&quot;</span>);
+<span class="comment">// reader.format() == &quot;png&quot;</span></pre>
+<p>If the reader cannot read any image from the device (e.g., there is no image there, or the image has already been read), or if the format is unsupported, this function returns an empty QByteArray().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setFormat">setFormat</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">supportedImageFormats</a>().</p></div></p>
+</div><h4 id='method.image_count' class='method'><code>fn <a href='#method.image_count' class='fnname'>image_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImageReader::imageCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#imageCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function returns the total number of images in the animation. If the format does not support animation, 0 is returned.</p>
+<p>This function returns -1 if an error occurred.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#supportsAnimation">supportsAnimation</a>(), <a href="http://doc.qt.io/qt-5/qimageiohandler.html#imageCount">QImageIOHandler::imageCount</a>(), and <a href="http://doc.qt.io/qt-5/qimagereader.html#canRead">canRead</a>().</p></div></p>
+</div><h4 id='method.image_format' class='method'><code>fn <a href='#method.image_format' class='fnname'>image_format</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/image/enum.Format.html' title='qt_gui::image::Format'>Format</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::Format QImageReader::imageFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#imageFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the format of the image, without actually reading the image contents. The format describes the image format <a href="http://doc.qt.io/qt-5/qimagereader.html#read">QImageReader::read</a>() returns, not the format of the actual image.</p>
+<p>If the image format does not support this feature, this function returns an invalid format.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#ImageOption-enum">QImageIOHandler::ImageOption</a>, <a href="http://doc.qt.io/qt-5/qimageiohandler.html#option">QImageIOHandler::option</a>(), and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#supportsOption">QImageIOHandler::supportsOption</a>().</p></div></p>
+</div><h4 id='method.image_format_static' class='method'><code>fn <a href='#method.image_format_static' class='fnname'>image_format_static</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderImageFormatStaticArgs.html' title='qt_gui::image_reader::overloading::ImageReaderImageFormatStaticArgs'>ImageReaderImageFormatStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::imageFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn image_format_static((*mut qt_core::qiod_evice::QiodEvice, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::byte_array::ByteArray&gt;</code><br>2) <code>fn image_format_static((*mut qt_core::qiod_evice::QiodEvice, cpp_utils::AsStruct)) -&gt; qt_core::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>static QByteArray QImageReader::imageFormat(QIODevice* device)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#imageFormat-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If supported, this function returns the image format of the device <i>device</i>. Otherwise, an empty string is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#autoDetectImageFormat">QImageReader::autoDetectImageFormat</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn image_format_static((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::byte_array::ByteArray&gt;</code><br>2) <code>fn image_format_static((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>static QByteArray QImageReader::imageFormat(const QString&amp; fileName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#imageFormat-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If supported, this function returns the image format of the file <i>fileName</i>. Otherwise, an empty string is returned.</p></div></p>
+</div><h4 id='method.jump_to_image' class='method'><code>fn <a href='#method.jump_to_image' class='fnname'>jump_to_image</a>(&amp;mut self, image_number: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImageReader::jumpToImage(int imageNumber)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#jumpToImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function skips to the image whose sequence number is <i>imageNumber</i>, returning true if successful or false if the corresponding image cannot be found.</p>
+<p>The next call to <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>() will attempt to read this image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#jumpToNextImage">jumpToNextImage</a>() and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#jumpToImage">QImageIOHandler::jumpToImage</a>().</p></div></p>
+</div><h4 id='method.jump_to_next_image' class='method'><code>fn <a href='#method.jump_to_next_image' class='fnname'>jump_to_next_image</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImageReader::jumpToNextImage()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#jumpToNextImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function steps over the current image, returning true if successful or false if there is no following image in the animation.</p>
+<p>The default implementation calls <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>(), then discards the resulting image, but the image handler may have a more efficient way of implementing this operation.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#jumpToImage">jumpToImage</a>() and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#jumpToNextImage">QImageIOHandler::jumpToNextImage</a>().</p></div></p>
+</div><h4 id='method.loop_count' class='method'><code>fn <a href='#method.loop_count' class='fnname'>loop_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImageReader::loopCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#loopCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function returns the number of times the animation should loop. If this function returns -1, it can either mean the animation should loop forever, or that an error occurred. If an error occurred, <a href="http://doc.qt.io/qt-5/qimagereader.html#canRead">canRead</a>() will return false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#supportsAnimation">supportsAnimation</a>(), <a href="http://doc.qt.io/qt-5/qimageiohandler.html#loopCount">QImageIOHandler::loopCount</a>(), and <a href="http://doc.qt.io/qt-5/qimagereader.html#canRead">canRead</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderNewArgs.html' title='qt_gui::image_reader::overloading::ImageReaderNewArgs'>ImageReaderNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::QImageReader</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::image_reader::ImageReader</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image_reader::ImageReader&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImageReader::QImageReader()</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut qt_core::qiod_evice::QiodEvice, cpp_utils::AsStruct)) -&gt; ::image_reader::ImageReader</code><br>2) <code>fn new((*mut qt_core::qiod_evice::QiodEvice, &amp;qt_core::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::image_reader::ImageReader</code><br>3) <code>fn new((*mut qt_core::qiod_evice::QiodEvice, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image_reader::ImageReader&gt;</code><br>4) <code>fn new((*mut qt_core::qiod_evice::QiodEvice, &amp;qt_core::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image_reader::ImageReader&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImageReader::QImageReader(QIODevice* device, const QByteArray&amp; format = ?)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::image_reader::ImageReader</code><br>2) <code>fn new((&amp;qt_core::string::String, &amp;qt_core::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::image_reader::ImageReader</code><br>3) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image_reader::ImageReader&gt;</code><br>4) <code>fn new((&amp;qt_core::string::String, &amp;qt_core::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image_reader::ImageReader&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImageReader::QImageReader(const QString&amp; fileName, const QByteArray&amp; format = ?)</code></span></p>
+</div><h4 id='method.next_image_delay' class='method'><code>fn <a href='#method.next_image_delay' class='fnname'>next_image_delay</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImageReader::nextImageDelay() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#nextImageDelay">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function returns the number of milliseconds to wait until displaying the next frame in the animation. If the image format doesn&#39;t support animation, 0 is returned.</p>
+<p>This function returns -1 if an error occurred.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#supportsAnimation">supportsAnimation</a>(), <a href="http://doc.qt.io/qt-5/qimageiohandler.html#nextImageDelay">QImageIOHandler::nextImageDelay</a>(), and <a href="http://doc.qt.io/qt-5/qimagereader.html#canRead">canRead</a>().</p></div></p>
+</div><h4 id='method.quality' class='method'><code>fn <a href='#method.quality' class='fnname'>quality</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImageReader::quality() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#quality">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the quality setting of the image format.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setQuality">setQuality</a>().</p></div></p>
+</div><h4 id='method.read' class='method'><code>fn <a href='#method.read' class='fnname'>read</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderReadArgs.html' title='qt_gui::image_reader::overloading::ImageReaderReadArgs'>ImageReaderReadArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::read</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn read(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn read(&amp;mut self, cpp_utils::AsStruct) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImageReader::read()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#read">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads an image from the device. On success, the image that was read is returned; otherwise, a null <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> is returned. You can then call <a href="http://doc.qt.io/qt-5/qimagereader.html#error">error</a>() to find the type of error that occurred, or <a href="http://doc.qt.io/qt-5/qimagereader.html#errorString">errorString</a>() to get a human readable description of the error.</p>
+<p>For image formats that support animation, calling read() repeatedly will return the next frame. When all frames have been read, a null image will be returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#canRead">canRead</a>(), <a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">supportedImageFormats</a>(), <a href="http://doc.qt.io/qt-5/qimagereader.html#supportsAnimation">supportsAnimation</a>(), and <a href="http://doc.qt.io/qt-5/qmovie.html">QMovie</a>.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn read(&amp;mut self, *mut ::image::Image) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QImageReader::read(QImage* image)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#read-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads an image from the device into <i>image</i>, which must point to a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>. Returns <code>true</code> on success; otherwise, returns <code>false</code>.</p>
+<p>If <i>image</i> has same format and size as the image data that is about to be read, this function may not need to allocate a new image before reading. Because of this, it can be faster than the other <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>() overload, which always constructs a new image; especially when reading several images with the same format and size.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qimage.html">QImage</a></span> icon(<span class="number">64</span><span class="operator">,</span> <span class="number">64</span><span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qimage.html">QImage</a></span><span class="operator">::</span>Format_RGB32);
+<span class="type"><a href="http://doc.qt.io/qt-5/qimagereader.html#QImageReader">QImageReader</a></span> reader(<span class="string">&quot;icon_64x64.bmp&quot;</span>);
+<span class="keyword">if</span> (reader<span class="operator">.</span>read(<span class="operator">&amp;</span>icon)) {
+&#32;   <span class="comment">// Display icon</span>
+}</pre>
+<p>For image formats that support animation, calling <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>() repeatedly will return the next frame. When all frames have been read, a null image will be returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#canRead">canRead</a>(), <a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">supportedImageFormats</a>(), <a href="http://doc.qt.io/qt-5/qimagereader.html#supportsAnimation">supportsAnimation</a>(), and <a href="http://doc.qt.io/qt-5/qmovie.html">QMovie</a>.</p></div></p>
+</div><h4 id='method.scaled_clip_rect' class='method'><code>fn <a href='#method.scaled_clip_rect' class='fnname'>scaled_clip_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderScaledClipRectArgs.html' title='qt_gui::image_reader::overloading::ImageReaderScaledClipRectArgs'>ImageReaderScaledClipRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::scaledClipRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scaled_clip_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn scaled_clip_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QImageReader::scaledClipRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#scaledClipRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the scaled clip rect of the image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledClipRect">setScaledClipRect</a>().</p></div></p>
+</div><h4 id='method.scaled_size' class='method'><code>fn <a href='#method.scaled_size' class='fnname'>scaled_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderScaledSizeArgs.html' title='qt_gui::image_reader::overloading::ImageReaderScaledSizeArgs'>ImageReaderScaledSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::scaledSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scaled_size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn scaled_size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QImageReader::scaledSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#scaledSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the scaled size of the image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledSize">setScaledSize</a>().</p></div></p>
+</div><h4 id='method.set_auto_detect_image_format' class='method'><code>fn <a href='#method.set_auto_detect_image_format' class='fnname'>set_auto_detect_image_format</a>(&amp;mut self, enabled: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setAutoDetectImageFormat(bool enabled)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setAutoDetectImageFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>enabled</i> is true, image format autodetection is enabled; otherwise, it is disabled. By default, autodetection is enabled.</p>
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> uses an extensive approach to detecting the image format; firstly, if you pass a file name to <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a>, it will attempt to detect the file extension if the given file name does not point to an existing file, by appending supported default extensions to the given file name, one at a time. It then uses the following approach to detect the image format:</p>
+<ul>
+<li>Image plugins are queried first, based on either the optional format string, or the file name suffix (if the source device is a file). No content detection is done at this stage. <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will choose the first plugin that supports reading for this format.</li>
+<li>If no plugin supports the image format, Qt&#39;s built-in handlers are checked based on either the optional format string, or the file name suffix.</li>
+<li>If no capable plugins or built-in handlers are found, each plugin is tested by inspecting the content of the data stream.</li>
+<li>If no plugins could detect the image format based on data contents, each built-in image handler is tested by inspecting the contents.</li>
+<li>Finally, if all above approaches fail, <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will report failure when trying to read the image.</li>
+</ul>
+<p>By disabling image format autodetection, <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will only query the plugins and built-in handlers based on the format string (i.e., no file name extensions are tested).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#autoDetectImageFormat">autoDetectImageFormat</a>(), <a href="http://doc.qt.io/qt-5/qimageiohandler.html#canRead">QImageIOHandler::canRead</a>(), and <a href="http://doc.qt.io/qt-5/qimageioplugin.html#capabilities">QImageIOPlugin::capabilities</a>().</p></div></p>
+</div><h4 id='method.set_auto_transform' class='method'><code>fn <a href='#method.set_auto_transform' class='fnname'>set_auto_transform</a>(&amp;mut self, enabled: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setAutoTransform(bool enabled)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setAutoTransform">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets if images returned by <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>() should have transformation metadata automatically applied.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#autoTransform">autoTransform</a>(), transform(), and <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>().</p></div></p>
+</div><h4 id='method.set_background_color' class='method'><code>fn <a href='#method.set_background_color' class='fnname'>set_background_color</a>(&amp;mut self, color: &amp;<a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setBackgroundColor(const QColor&amp; color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setBackgroundColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the background color to <i>color</i>. Image formats that support this operation are expected to initialize the background to <i>color</i> before reading an image.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#backgroundColor">backgroundColor</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html#read">read</a>().</p></div></p>
+</div><h4 id='method.set_clip_rect' class='method'><code>fn <a href='#method.set_clip_rect' class='fnname'>set_clip_rect</a>(&amp;mut self, rect: &amp;<a class='struct' href='../../qt_core/rect/struct.Rect.html' title='qt_core::rect::Rect'>Rect</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setClipRect(const QRect&amp; rect)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setClipRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the image clip rect (also known as the ROI, or Region Of Interest) to <i>rect</i>. The coordinates of <i>rect</i> are relative to the untransformed image size, as returned by <a href="http://doc.qt.io/qt-5/qimagereader.html#size">size</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#clipRect">clipRect</a>(), <a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledSize">setScaledSize</a>(), and <a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledClipRect">setScaledClipRect</a>().</p></div></p>
+</div><h4 id='method.set_decide_format_from_content' class='method'><code>fn <a href='#method.set_decide_format_from_content' class='fnname'>set_decide_format_from_content</a>(&amp;mut self, ignored: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setDecideFormatFromContent(bool ignored)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setDecideFormatFromContent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>ignored</i> is set to true, then the image reader will ignore specified formats or file extensions and decide which plugin to use only based on the contents in the datastream.</p>
+<p>Setting this flag means that all image plugins gets loaded. Each plugin will read the first bytes in the image data and decide if the plugin is compatible or not.</p>
+<p>This also disables auto detecting the image format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#decideFormatFromContent">decideFormatFromContent</a>().</p></div></p>
+</div><h4 id='method.set_device' class='method'><code>fn <a href='#method.set_device' class='fnname'>set_device</a>(&amp;mut self, device: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setDevice(QIODevice* device)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setDevice">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a>&#39;s device to <i>device</i>. If a device has already been set, the old device is removed from <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> and is otherwise left unchanged.</p>
+<p>If the device is not already open, <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will attempt to open the device in <a href="http://doc.qt.io/qt-5/qiodevice.html#OpenModeFlag-enum">QIODevice::ReadOnly</a> mode by calling open(). Note that this does not work for certain devices, such as <a href="http://doc.qt.io/qt-5/qprocess.html">QProcess</a>, <a href="http://doc.qt.io/qt-5/qtcpsocket.html">QTcpSocket</a> and <a href="http://doc.qt.io/qt-5/qudpsocket.html">QUdpSocket</a>, where more logic is required to open the device.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#device">device</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html#setFileName">setFileName</a>().</p></div></p>
+</div><h4 id='method.set_file_name' class='method'><code>fn <a href='#method.set_file_name' class='fnname'>set_file_name</a>(&amp;mut self, file_name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setFileName(const QString&amp; fileName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setFileName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the file name of <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> to <i>fileName</i>. Internally, <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will create a <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a> object and open it in <a href="http://doc.qt.io/qt-5/qiodevice.html#OpenModeFlag-enum">QIODevice::ReadOnly</a> mode, and use this when reading images.</p>
+<p>If <i>fileName</i> does not include a file extension (e.g., .png or .bmp), <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will cycle through all supported extensions until it finds a matching file.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#fileName">fileName</a>(), <a href="http://doc.qt.io/qt-5/qimagereader.html#setDevice">setDevice</a>(), and <a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">supportedImageFormats</a>().</p></div></p>
+</div><h4 id='method.set_format' class='method'><code>fn <a href='#method.set_format' class='fnname'>set_format</a>(&amp;mut self, format: &amp;<a class='struct' href='../../qt_core/byte_array/struct.ByteArray.html' title='qt_core::byte_array::ByteArray'>ByteArray</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setFormat(const QByteArray&amp; format)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the format <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will use when reading images, to <i>format</i>. <i>format</i> is a case insensitive text string. Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qimagereader.html#QImageReader">QImageReader</a></span> reader;
+reader<span class="operator">.</span>setFormat(<span class="string">&quot;png&quot;</span>); <span class="comment">// same as reader.setFormat(&quot;PNG&quot;);</span></pre>
+<p>You can call <a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">supportedImageFormats</a>() for the full list of formats <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> supports.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#format">format</a>().</p></div></p>
+</div><h4 id='method.set_quality' class='method'><code>fn <a href='#method.set_quality' class='fnname'>set_quality</a>(&amp;mut self, quality: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setQuality(int quality)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setQuality">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the quality setting of the image format to <i>quality</i>.</p>
+<p>Some image formats, in particular lossy ones, entail a tradeoff between a) visual quality of the resulting image, and b) decoding execution time. This function sets the level of that tradeoff for image formats that support it.</p>
+<p>In case of scaled image reading, the quality setting may also influence the tradeoff level between visual quality and execution speed of the scaling algorithm.</p>
+<p>The value range of <i>quality</i> depends on the image format. For example, the &quot;jpeg&quot; format supports a quality range from 0 (low visual quality) to 100 (high visual quality).</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#quality">quality</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledSize">setScaledSize</a>().</p></div></p>
+</div><h4 id='method.set_scaled_clip_rect' class='method'><code>fn <a href='#method.set_scaled_clip_rect' class='fnname'>set_scaled_clip_rect</a>(&amp;mut self, rect: &amp;<a class='struct' href='../../qt_core/rect/struct.Rect.html' title='qt_core::rect::Rect'>Rect</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setScaledClipRect(const QRect&amp; rect)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledClipRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the scaled clip rect to <i>rect</i>. The scaled clip rect is the clip rect (also known as ROI, or Region Of Interest) that is applied after the image has been scaled.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#scaledClipRect">scaledClipRect</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledSize">setScaledSize</a>().</p></div></p>
+</div><h4 id='method.set_scaled_size' class='method'><code>fn <a href='#method.set_scaled_size' class='fnname'>set_scaled_size</a>(&amp;mut self, size: &amp;<a class='struct' href='../../qt_core/size/struct.Size.html' title='qt_core::size::Size'>Size</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageReader::setScaledSize(const QSize&amp; size)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the scaled size of the image to <i>size</i>. The scaling is performed after the initial clip rect, but before the scaled clip rect is applied. The algorithm used for scaling depends on the image format. By default (i.e., if the image format does not support scaling), <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will use QImage::scale() with Qt::SmoothScaling.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#scaledSize">scaledSize</a>(), <a href="http://doc.qt.io/qt-5/qimagereader.html#setClipRect">setClipRect</a>(), and <a href="http://doc.qt.io/qt-5/qimagereader.html#setScaledClipRect">setScaledClipRect</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderSizeArgs.html' title='qt_gui::image_reader::overloading::ImageReaderSizeArgs'>ImageReaderSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::size</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QImageReader::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the image, without actually reading the image contents.</p>
+<p>If the image format does not support this feature, this function returns an invalid size. Qt&#39;s built-in image handlers all support this feature, but custom image format plugins are not required to do so.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#ImageOption-enum">QImageIOHandler::ImageOption</a>, <a href="http://doc.qt.io/qt-5/qimageiohandler.html#option">QImageIOHandler::option</a>(), and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#supportsOption">QImageIOHandler::supportsOption</a>().</p></div></p>
+</div><h4 id='method.sub_type' class='method'><code>fn <a href='#method.sub_type' class='fnname'>sub_type</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderSubTypeArgs.html' title='qt_gui::image_reader::overloading::ImageReaderSubTypeArgs'>ImageReaderSubTypeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::subType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn sub_type(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::byte_array::ByteArray&gt;</code><br>2) <code>fn sub_type(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QImageReader::subType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#subType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the subtype of the image.</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.supported_image_formats' class='method'><code>fn <a href='#method.supported_image_formats' class='fnname'>supported_image_formats</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderSupportedImageFormatsArgs.html' title='qt_gui::image_reader::overloading::ImageReaderSupportedImageFormatsArgs'>ImageReaderSupportedImageFormatsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::supportedImageFormats</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn supported_image_formats(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::list::ListByteArrayRef&gt;</code><br>2) <code>fn supported_image_formats(cpp_utils::AsStruct) -&gt; qt_core::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QByteArray&gt; QImageReader::supportedImageFormats()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the list of image formats supported by <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a>.</p>
+<p>By default, Qt can read the following formats:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Format</th><th>MIME type</th><th>Description</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td>BMP</td><td>image/bmp</td><td>Windows Bitmap</td></tr>
+<tr valign="top" class="even"><td>GIF</td><td>image/gif</td><td>Graphic Interchange Format (optional)</td></tr>
+<tr valign="top" class="odd"><td>JPG</td><td>image/jpeg</td><td>Joint Photographic Experts Group</td></tr>
+<tr valign="top" class="even"><td>PNG</td><td>image/png</td><td>Portable Network Graphics</td></tr>
+<tr valign="top" class="odd"><td>PBM</td><td>image/x-portable-bitmap</td><td>Portable Bitmap</td></tr>
+<tr valign="top" class="even"><td>PGM</td><td>image/x-portable-graymap</td><td>Portable Graymap</td></tr>
+<tr valign="top" class="odd"><td>PPM</td><td>image/x-portable-pixmap</td><td>Portable Pixmap</td></tr>
+<tr valign="top" class="even"><td>XBM</td><td>image/x-xbitmap</td><td>X11 Bitmap</td></tr>
+<tr valign="top" class="odd"><td>XPM</td><td>image/x-xpixmap</td><td>X11 Pixmap</td></tr>
+<tr valign="top" class="even"><td>SVG</td><td>image/svg+xml</td><td>Scalable Vector Graphics</td></tr>
+</tbody></table></div>
+<p>Reading and writing SVG files is supported through the <a href="http://doc.qt.io/qt-5/qtsvg-index.html">Qt SVG</a> module. The <a href="http://doc.qt.io/qt-5/qtimageformats-index.html">Qt Image Formats</a> module provides support for additional image formats.</p>
+<p>Note that the <a href="http://doc.qt.io/qt-5/qapplication.html">QApplication</a> instance must be created before this function is called.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setFormat">setFormat</a>(), <a href="http://doc.qt.io/qt-5/qimagewriter.html#supportedImageFormats">QImageWriter::supportedImageFormats</a>(), and <a href="http://doc.qt.io/qt-5/qimageioplugin.html">QImageIOPlugin</a>.</p></div></p>
+</div><h4 id='method.supported_mime_types' class='method'><code>fn <a href='#method.supported_mime_types' class='fnname'>supported_mime_types</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderSupportedMimeTypesArgs.html' title='qt_gui::image_reader::overloading::ImageReaderSupportedMimeTypesArgs'>ImageReaderSupportedMimeTypesArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::supportedMimeTypes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn supported_mime_types(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::list::ListByteArrayRef&gt;</code><br>2) <code>fn supported_mime_types(cpp_utils::AsStruct) -&gt; qt_core::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QByteArray&gt; QImageReader::supportedMimeTypes()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#supportedMimeTypes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the list of MIME types supported by <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a>.</p>
+<p>Note that the <a href="http://doc.qt.io/qt-5/qapplication.html">QApplication</a> instance must be created before this function is called.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">supportedImageFormats</a>() and <a href="http://doc.qt.io/qt-5/qimagewriter.html#supportedMimeTypes">QImageWriter::supportedMimeTypes</a>().</p></div></p>
+</div><h4 id='method.supported_sub_types' class='method'><code>fn <a href='#method.supported_sub_types' class='fnname'>supported_sub_types</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderSupportedSubTypesArgs.html' title='qt_gui::image_reader::overloading::ImageReaderSupportedSubTypesArgs'>ImageReaderSupportedSubTypesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::supportedSubTypes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn supported_sub_types(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::list::ListByteArrayRef&gt;</code><br>2) <code>fn supported_sub_types(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QByteArray&gt; QImageReader::supportedSubTypes() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#supportedSubTypes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the list of subtypes supported by an image.</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.supports_animation' class='method'><code>fn <a href='#method.supports_animation' class='fnname'>supports_animation</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImageReader::supportsAnimation() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#supportsAnimation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the image format supports animation; otherwise, false is returned.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmovie.html#supportedFormats">QMovie::supportedFormats</a>().</p></div></p>
+</div><h4 id='method.supports_option' class='method'><code>fn <a href='#method.supports_option' class='fnname'>supports_option</a>(&amp;self, option: <a class='enum' href='../../qt_gui/image_i_o_handler/enum.ImageOption.html' title='qt_gui::image_i_o_handler::ImageOption'>ImageOption</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImageReader::supportsOption(QImageIOHandler::ImageOption option) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#supportsOption">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the reader supports <i>option</i>; otherwise returns false.</p>
+<p>Different image formats support different options. Call this function to determine whether a certain option is supported by the current format. For example, the PNG format allows you to embed text into the image&#39;s metadata (see <a href="http://doc.qt.io/qt-5/qimagereader.html#text">text</a>()), and the BMP format allows you to determine the image&#39;s size without loading the whole image into memory (see <a href="http://doc.qt.io/qt-5/qimagereader.html#size">size</a>()).</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qimagereader.html#QImageReader">QImageReader</a></span> reader(<span class="string">&quot;:/image.png&quot;</span>);
+<span class="keyword">if</span> (reader<span class="operator">.</span>supportsOption(<span class="type"><a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a></span><span class="operator">::</span>Size))
+&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Size:&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> reader<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qimagereader.html#size">size</a>();</pre>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagewriter.html#supportsOption">QImageWriter::supportsOption</a>().</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderTextArgs.html' title='qt_gui::image_reader::overloading::ImageReaderTextArgs'>ImageReaderTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QImageReader::text(const QString&amp; key) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the image text associated with <i>key</i>.</p>
+<p>Support for this option is implemented through <a href="http://doc.qt.io/qt-5/qimageiohandler.html#ImageOption-enum">QImageIOHandler::Description</a>.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#textKeys">textKeys</a>() and <a href="http://doc.qt.io/qt-5/qimagewriter.html#setText">QImageWriter::setText</a>().</p></div></p>
+</div><h4 id='method.text_keys' class='method'><code>fn <a href='#method.text_keys' class='fnname'>text_keys</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderTextKeysArgs.html' title='qt_gui::image_reader::overloading::ImageReaderTextKeysArgs'>ImageReaderTextKeysArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::textKeys</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text_keys(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn text_keys(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>QStringList QImageReader::textKeys() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#textKeys">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text keys for this image. You can use these keys with <a href="http://doc.qt.io/qt-5/qimagereader.html#text">text</a>() to list the image text for a certain key.</p>
+<p>Support for this option is implemented through <a href="http://doc.qt.io/qt-5/qimageiohandler.html#ImageOption-enum">QImageIOHandler::Description</a>.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#text">text</a>(), <a href="http://doc.qt.io/qt-5/qimagewriter.html#setText">QImageWriter::setText</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#textKeys">QImage::textKeys</a>().</p></div></p>
+</div><h4 id='method.tr' class='method'><code>fn <a href='#method.tr' class='fnname'>tr</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderTrArgs.html' title='qt_gui::image_reader::overloading::ImageReaderTrArgs'>ImageReaderTrArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::tr</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn tr((*const libc::c_char, *const libc::c_char, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn tr((*const libc::c_char, *const libc::c_char, libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QImageReader::tr(const char* sourceText, const char* disambiguation, int n)</code></span></p>
+</div><h4 id='method.tr_utf8' class='method'><code>fn <a href='#method.tr_utf8' class='fnname'>tr_utf8</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_reader/overloading/trait.ImageReaderTrUtf8Args.html' title='qt_gui::image_reader::overloading::ImageReaderTrUtf8Args'>ImageReaderTrUtf8Args</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageReader::trUtf8</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn tr_utf8((*const libc::c_char, *const libc::c_char, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn tr_utf8((*const libc::c_char, *const libc::c_char, libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QImageReader::trUtf8(const char* sourceText, const char* disambiguation, int n)</code></span></p>
+</div><h4 id='method.transformation' class='method'><code>fn <a href='#method.transformation' class='fnname'>transformation</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/image_i_o_handler/enum.Transformation.html' title='qt_gui::image_i_o_handler::Transformation'>Transformation</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QImageIOHandler::Transformation&gt; QImageReader::transformation() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#transformation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the transformation metadata of the image, including image orientation. If the format does not support transformation metadata <code>QImageIOHandler::Transformation_None</code> is returned.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimagereader.html#setAutoTransform">setAutoTransform</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html#autoTransform">autoTransform</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/image_reader/struct.ImageReader.html' title='qt_gui::image_reader::ImageReader'>ImageReader</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-80075' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_reader.rs.html#16-20' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/image_reader/struct.ImageReader.html' title='qt_gui::image_reader::ImageReader'>ImageReader</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/image_reader/struct.ImageReader.html' title='qt_gui::image_reader::ImageReader'>ImageReader</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-80236' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_reader.rs.html#663-670' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QImageReader::~QImageReader()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimagereader.html#dtor.QImageReader">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructs the <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/image_reader/struct.ImageReader.html' title='qt_gui::image_reader::ImageReader'>ImageReader</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-80239' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_reader.rs.html#672-676' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

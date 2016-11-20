@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["StackingMode","C++ type: <span style='color: green;'>```QStackedLayout::StackingMode```</span>"]],"mod":[["overloading",""]],"struct":[["StackedLayout","C++ type: <span style='color: green;'>```QStackedLayout```</span>"]]});

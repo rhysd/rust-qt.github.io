@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["AbstractScrollAreaElement","C++ type: <span style='color: green;'>```QAccessibleAbstractScrollArea::AbstractScrollAreaElement```</span>"]],"mod":[["overloading",""]],"struct":[["AccessibleAbstractScrollArea","C++ type: <span style='color: green;'>```QAccessibleAbstractScrollArea```</span>"]]});

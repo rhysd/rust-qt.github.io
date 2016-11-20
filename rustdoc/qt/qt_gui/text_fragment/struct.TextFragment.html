@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TextFragment` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TextFragment">
+
+    <title>qt_gui::text_fragment::TextFragment - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>text_fragment</a></p><script>window.sidebarCurrent = {name: 'TextFragment', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>text_fragment</a>::<wbr><a class='struct' href=''>TextFragment</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-159243' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_fragment.rs.html#11-13' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TextFragment {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTextFragment</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtextfragment.html">QTextFragment</a> class holds a piece of text in a <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a> with a single <a href="http://doc.qt.io/qt-5/qtextcharformat.html">QTextCharFormat</a>.</p>
+<p>A text fragment describes a piece of text that is stored with a single character format. Text in which the character format changes can be represented by sequences of text fragments with different formats.</p>
+<p>If the user edits the text in a fragment and introduces a different character format, the fragment&#39;s text will be split at each point where the format changes, and new fragments will be created. For example, changing the style of some text in the middle of a sentence will cause the fragment to be broken into three separate fragments: the first and third with the same format as before, and the second with the new style. The first fragment will contain the text from the beginning of the sentence, the second will contain the text from the middle, and the third takes the text from the end of the sentence.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qtextfragment-split.png" alt=""></img></p><p>A fragment&#39;s text and character format can be obtained with the <a href="http://doc.qt.io/qt-5/qtextfragment.html#text">text</a>() and <a href="http://doc.qt.io/qt-5/qtextfragment.html#charFormat">charFormat</a>() functions. The <a href="http://doc.qt.io/qt-5/qtextfragment.html#length">length</a>() function gives the length of the text in the fragment. <a href="http://doc.qt.io/qt-5/qtextfragment.html#position">position</a>() gives the position in the document of the start of the fragment. To determine whether the fragment contains a particular position within the document, use the <a href="http://doc.qt.io/qt-5/qtextfragment.html#contains">contains</a>() function.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/text_fragment/struct.TextFragment.html' title='qt_gui::text_fragment::TextFragment'>TextFragment</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-159248' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_fragment.rs.html#21-169' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.char_format' class='method'><code>fn <a href='#method.char_format' class='fnname'>char_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_fragment/overloading/trait.TextFragmentCharFormatArgs.html' title='qt_gui::text_fragment::overloading::TextFragmentCharFormatArgs'>TextFragmentCharFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFragment::charFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn char_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_char_format::TextCharFormat&gt;</code><br>2) <code>fn char_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_char_format::TextCharFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextCharFormat QTextFragment::charFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#charFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text fragment&#39;s character format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextfragment.html#text">text</a>().</p></div></p>
+</div><h4 id='method.char_format_index' class='method'><code>fn <a href='#method.char_format_index' class='fnname'>char_format_index</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextFragment::charFormatIndex() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#charFormatIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an index into the document&#39;s internal list of character formats for the text fragment&#39;s character format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextdocument.html#allFormats">QTextDocument::allFormats</a>().</p></div></p>
+</div><h4 id='method.contains' class='method'><code>fn <a href='#method.contains' class='fnname'>contains</a>(&amp;self, position: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFragment::contains(int position) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#contains">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the text fragment contains the text at the given <i>position</i> in the document; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.glyph_runs' class='method'><code>fn <a href='#method.glyph_runs' class='fnname'>glyph_runs</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_fragment/overloading/trait.TextFragmentGlyphRunsArgs.html' title='qt_gui::text_fragment::overloading::TextFragmentGlyphRunsArgs'>TextFragmentGlyphRunsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFragment::glyphRuns</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn glyph_runs(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListGlyphRunRef&gt;</code><br>2) <code>fn glyph_runs(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListGlyphRunRef&gt;</code><br>3) <code>fn glyph_runs(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListGlyphRunRef&gt;</code><br>4) <code>fn glyph_runs(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListGlyphRunRef</code><br>5) <code>fn glyph_runs(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListGlyphRunRef</code><br>6) <code>fn glyph_runs(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListGlyphRunRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QGlyphRun&gt; QTextFragment::glyphRuns(int from = ?, int length = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#glyphRuns">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the glyphs corresponding to <i>len</i> characters of this text fragment starting at position <i>pos</i>. The positions of the glyphs are relative to the position of the <a href="http://doc.qt.io/qt-5/qtextblock.html">QTextBlock</a>&#39;s layout.</p>
+<p>If <i>pos</i> is less than zero, it will default to the start of the <a href="http://doc.qt.io/qt-5/qtextfragment.html">QTextFragment</a>. If <i>len</i> is less than zero, it will default to the length of the fragment.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qglyphrun.html">QGlyphRun</a>, <a href="http://doc.qt.io/qt-5/qtextblock.html#layout">QTextBlock::layout</a>(), <a href="http://doc.qt.io/qt-5/qtextlayout.html#position">QTextLayout::position</a>(), and <a href="http://doc.qt.io/qt-5/qpainter.html#drawGlyphRun">QPainter::drawGlyphRun</a>().</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFragment::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this is a valid text fragment (i.e. has a valid position in a document); otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.length' class='method'><code>fn <a href='#method.length' class='fnname'>length</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextFragment::length() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#length">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of characters in the text fragment.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextfragment.html#text">text</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_fragment/overloading/trait.TextFragmentNewArgs.html' title='qt_gui::text_fragment::overloading::TextFragmentNewArgs'>TextFragmentNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFragment::QTextFragment</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::text_fragment::TextFragment</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_fragment::TextFragment&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextFragment::QTextFragment()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::text_fragment::TextFragment, cpp_utils::AsStruct)) -&gt; ::text_fragment::TextFragment</code><br>2) <code>fn new((&amp;::text_fragment::TextFragment, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_fragment::TextFragment&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextFragment::QTextFragment(const QTextFragment&amp; o)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, o: &amp;'l1 <a class='struct' href='../../qt_gui/text_fragment/struct.TextFragment.html' title='qt_gui::text_fragment::TextFragment'>TextFragment</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/text_fragment/struct.TextFragment.html' title='qt_gui::text_fragment::TextFragment'>TextFragment</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFragment&amp; QTextFragment::operator=(const QTextFragment&amp; o)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the content (text and format) of the <i>other</i> text fragment to this text fragment.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, o: &amp;<a class='struct' href='../../qt_gui/text_fragment/struct.TextFragment.html' title='qt_gui::text_fragment::TextFragment'>TextFragment</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFragment::operator==(const QTextFragment&amp; o) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text fragment is the same (at the same position) as the <i>other</i> text fragment; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>(&amp;self, o: &amp;<a class='struct' href='../../qt_gui/text_fragment/struct.TextFragment.html' title='qt_gui::text_fragment::TextFragment'>TextFragment</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFragment::operator&lt;(const QTextFragment&amp; o) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#operator-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text fragment appears earlier in the document than the <i>other</i> text fragment; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, o: &amp;<a class='struct' href='../../qt_gui/text_fragment/struct.TextFragment.html' title='qt_gui::text_fragment::TextFragment'>TextFragment</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFragment::operator!=(const QTextFragment&amp; o) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text fragment is different (at a different position) from the <i>other</i> text fragment; otherwise returns false.</p></div></p>
+</div><h4 id='method.position' class='method'><code>fn <a href='#method.position' class='fnname'>position</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextFragment::position() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#position">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position of this text fragment in the document.</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_fragment/overloading/trait.TextFragmentTextArgs.html' title='qt_gui::text_fragment::overloading::TextFragmentTextArgs'>TextFragmentTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFragment::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextFragment::text() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextfragment.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text fragment&#39;s as plain text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextfragment.html#length">length</a>() and <a href="http://doc.qt.io/qt-5/qtextfragment.html#charFormat">charFormat</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/text_fragment/struct.TextFragment.html' title='qt_gui::text_fragment::TextFragment'>TextFragment</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-159246' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_fragment.rs.html#15-19' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/text_fragment/struct.TextFragment.html' title='qt_gui::text_fragment::TextFragment'>TextFragment</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/text_fragment/struct.TextFragment.html' title='qt_gui::text_fragment::TextFragment'>TextFragment</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-159293' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_fragment.rs.html#171-178' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QTextFragment::~QTextFragment()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/text_fragment/struct.TextFragment.html' title='qt_gui::text_fragment::TextFragment'>TextFragment</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-159296' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_fragment.rs.html#180-184' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

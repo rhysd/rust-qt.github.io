@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["TextDecoderNewArgs","This trait represents a set of arguments accepted by TextDecoder::new method."],["TextDecoderToUnicodeArgs","This trait represents a set of arguments accepted by TextDecoder::to_unicode method."]]});

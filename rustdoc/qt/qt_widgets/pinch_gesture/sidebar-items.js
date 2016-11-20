@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ChangeFlag","C++ type: <span style='color: green;'>```QPinchGesture::ChangeFlag```</span>"]],"mod":[["overloading",""]],"struct":[["PinchGesture","C++ type: <span style='color: green;'>```QPinchGesture```</span>"]]});

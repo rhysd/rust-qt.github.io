@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["TabPosition","C++ type: <span style='color: green;'>```QTabWidget::TabPosition```</span>"],["TabShape","C++ type: <span style='color: green;'>```QTabWidget::TabShape```</span>"]],"mod":[["overloading",""]],"struct":[["TabWidget","C++ type: <span style='color: green;'>```QTabWidget```</span>"]]});

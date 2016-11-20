@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ClockType","C++ type: <span style='color: green;'>```QElapsedTimer::ClockType```</span>"]],"mod":[["overloading",""]],"struct":[["ElapsedTimer","C++ type: <span style='color: green;'>```QElapsedTimer```</span>"]]});

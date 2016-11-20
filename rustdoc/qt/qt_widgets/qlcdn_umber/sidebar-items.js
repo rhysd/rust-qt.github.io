@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Mode","C++ type: <span style='color: green;'>```QLCDNumber::Mode```</span>"],["SegmentStyle","C++ type: <span style='color: green;'>```QLCDNumber::SegmentStyle```</span>"]],"mod":[["overloading",""]],"struct":[["QlcdnUmber","C++ type: <span style='color: green;'>```QLCDNumber```</span>"]]});

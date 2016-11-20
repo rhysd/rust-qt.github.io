@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `KeySequence` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, KeySequence">
+
+    <title>qt_gui::key_sequence::KeySequence - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>key_sequence</a></p><script>window.sidebarCurrent = {name: 'KeySequence', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>key_sequence</a>::<wbr><a class='struct' href=''>KeySequence</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-83094' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/key_sequence.rs.html#26-28' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct KeySequence {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QKeySequence</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qkeysequence.html">QKeySequence</a> class encapsulates a key sequence as used by shortcuts.</p>
+<p>In its most common form, a key sequence describes a combination of keys that must be used together to perform some action. Key sequences are used with <a href="http://doc.qt.io/qt-5/qaction.html">QAction</a> objects to specify which keyboard shortcuts can be used to trigger actions.</p>
+<p>Key sequences can be constructed for use as keyboard shortcuts in three different ways:</p>
+<ul>
+<li>For standard shortcuts, a <a href="http://doc.qt.io/qt-5/qkeysequence.html#StandardKey-enum">standard key</a> can be used to request the platform-specific key sequence associated with each shortcut.</li>
+<li>For custom shortcuts, human-readable strings such as &quot;Ctrl+X&quot; can be used, and these can be translated into the appropriate shortcuts for users of different languages. Translations are made in the &quot;<a href="http://doc.qt.io/qt-5/qshortcut.html">QShortcut</a>&quot; context.</li>
+<li>For hard-coded shortcuts, integer key codes can be specified with a combination of values defined by the <a href="http://doc.qt.io/qt-5/qt.html#Key-enum">Qt::Key</a> and <a href="http://doc.qt.io/qt-5/qt.html#Modifier-enum">Qt::Modifier</a> enum values. Each key code consists of a single <a href="http://doc.qt.io/qt-5/qt.html#Key-enum">Qt::Key</a> value and zero or more modifiers, such as <a href="http://doc.qt.io/qt-5/qt.html#Modifier-enum">Qt::SHIFT</a>, <a href="http://doc.qt.io/qt-5/qt.html#Modifier-enum">Qt::CTRL</a>, <a href="http://doc.qt.io/qt-5/qt.html#Modifier-enum">Qt::ALT</a> and <a href="http://doc.qt.io/qt-5/qt.html#Modifier-enum">Qt::META</a>.</li>
+</ul>
+<p>For example, <b>Ctrl P</b> might be a sequence used as a shortcut for printing a document, and can be specified in any of the following ways:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qkeysequence.html#QKeySequence">QKeySequence</a></span>(<span class="type"><a href="http://doc.qt.io/qt-5/qkeysequence.html#QKeySequence">QKeySequence</a></span><span class="operator">::</span>Print);
+<span class="type"><a href="http://doc.qt.io/qt-5/qkeysequence.html#QKeySequence">QKeySequence</a></span>(tr(<span class="string">&quot;Ctrl+P&quot;</span>));
+<span class="type"><a href="http://doc.qt.io/qt-5/qkeysequence.html#QKeySequence">QKeySequence</a></span>(tr(<span class="string">&quot;Ctrl+p&quot;</span>));
+<span class="type"><a href="http://doc.qt.io/qt-5/qkeysequence.html#QKeySequence">QKeySequence</a></span>(<span class="type">Qt</span><span class="operator">::</span>CTRL <span class="operator">+</span> <span class="type">Qt</span><span class="operator">::</span>Key_P);</pre>
+<p>Note that, for letters, the case used in the specification string does not matter. In the above examples, the user does not need to hold down the <b>Shift</b> key to activate a shortcut specified with &quot;Ctrl+P&quot;. However, for other keys, the use of <b>Shift</b> as an unspecified extra modifier key can lead to confusion for users of an application whose keyboards have different layouts to those used by the developers. See the <a href="http://doc.qt.io/qt-5/qkeysequence.html#keyboard-layout-issues">Keyboard Layout Issues</a> section below for more details.</p>
+<p>It is preferable to use standard shortcuts where possible. When creating key sequences for non-standard shortcuts, you should use human-readable strings in preference to hard-coded integer values.</p>
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html">QKeySequence</a> objects can be cast to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> to obtain a human-readable translated version of the sequence. Similarly, the <a href="http://doc.qt.io/qt-5/qkeysequence.html#toString">toString</a>() function produces human-readable strings for use in menus. On Mac OS X, the appropriate symbols are used to describe keyboard shortcuts using special keys on the Macintosh keyboard.</p>
+<p>An alternative way to specify hard-coded key codes is to use the Unicode code point of the character; for example, &#39;A&#39; gives the same key sequence as <a href="http://doc.qt.io/qt-5/qt.html#Key-enum">Qt::Key_A</a>.</p>
+<p><b>Note:</b> On Mac OS X, references to &quot;Ctrl&quot;, <a href="http://doc.qt.io/qt-5/qt.html#Modifier-enum">Qt::CTRL</a>, Qt::Control and <a href="http://doc.qt.io/qt-5/qt.html#KeyboardModifier-enum">Qt::ControlModifier</a> correspond to the <b>Command</b> keys on the Macintosh keyboard, and references to &quot;Meta&quot;, <a href="http://doc.qt.io/qt-5/qt.html#Modifier-enum">Qt::META</a>, Qt::Meta and <a href="http://doc.qt.io/qt-5/qt.html#KeyboardModifier-enum">Qt::MetaModifier</a> correspond to the <b>Control</b> keys. Developers on Mac OS X can use the same shortcut descriptions across all platforms, and their applications will automatically work as expected on Mac OS X.</p>
+<a name="standard-shortcuts"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-83099' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/key_sequence.rs.html#36-314' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_sequence/overloading/trait.KeySequenceAsQVariantArgs.html' title='qt_gui::key_sequence::overloading::KeySequenceAsQVariantArgs'>KeySequenceAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeySequence::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QKeySequence::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the key sequence as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></p></div></p>
+</div><h4 id='method.count' class='method'><code>fn <a href='#method.count' class='fnname'>count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QKeySequence::count() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#count">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of keys in the key sequence. The maximum is 4.</p></div></p>
+</div><h4 id='method.from_string' class='method'><code>fn <a href='#method.from_string' class='fnname'>from_string</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_sequence/overloading/trait.KeySequenceFromStringArgs.html' title='qt_gui::key_sequence::overloading::KeySequenceFromStringArgs'>KeySequenceFromStringArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeySequence::fromString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_string((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>2) <code>fn from_string((&amp;qt_core::string::String, ::key_sequence::SequenceFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>3) <code>fn from_string((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>4) <code>fn from_string((&amp;qt_core::string::String, ::key_sequence::SequenceFormat, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>
+C++ method: <span style='color: green;'><code>static QKeySequence QKeySequence::fromString(const QString&amp; str, QKeySequence::SequenceFormat format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#fromString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Return a <a href="http://doc.qt.io/qt-5/qkeysequence.html">QKeySequence</a> from the string <i>str</i> based on <i>format</i>.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qkeysequence.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeySequence::isDetached() const</code></span></p>
+</div><h4 id='method.is_empty' class='method'><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeySequence::isEmpty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#isEmpty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the key sequence is empty; otherwise returns false.</p></div></p>
+</div><h4 id='method.key_bindings' class='method'><code>fn <a href='#method.key_bindings' class='fnname'>key_bindings</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_sequence/overloading/trait.KeySequenceKeyBindingsArgs.html' title='qt_gui::key_sequence::overloading::KeySequenceKeyBindingsArgs'>KeySequenceKeyBindingsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeySequence::keyBindings</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn key_bindings((::key_sequence::StandardKey, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListKeySequenceRef&gt;</code><br>2) <code>fn key_bindings((::key_sequence::StandardKey, cpp_utils::AsStruct)) -&gt; ::list::ListKeySequenceRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QKeySequence&gt; QKeySequence::keyBindings(QKeySequence::StandardKey key)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#keyBindings">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of key bindings for the given <i>key</i>. The result of calling this function will vary based on the target platform. The first element of the list indicates the primary shortcut for the given platform. If the result contains more than one result, these can be considered alternative shortcuts on the same platform for the given <i>key</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p></div></p>
+</div><h4 id='method.list_from_string' class='method'><code>fn <a href='#method.list_from_string' class='fnname'>list_from_string</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_sequence/overloading/trait.KeySequenceListFromStringArgs.html' title='qt_gui::key_sequence::overloading::KeySequenceListFromStringArgs'>KeySequenceListFromStringArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeySequence::listFromString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn list_from_string((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListKeySequenceRef&gt;</code><br>2) <code>fn list_from_string((&amp;qt_core::string::String, ::key_sequence::SequenceFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListKeySequenceRef&gt;</code><br>3) <code>fn list_from_string((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::list::ListKeySequenceRef</code><br>4) <code>fn list_from_string((&amp;qt_core::string::String, ::key_sequence::SequenceFormat, cpp_utils::AsStruct)) -&gt; ::list::ListKeySequenceRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QKeySequence&gt; QKeySequence::listFromString(const QString&amp; str, QKeySequence::SequenceFormat format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#listFromString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Return a list of <a href="http://doc.qt.io/qt-5/qkeysequence.html">QKeySequence</a> from the string <i>str</i> based on <i>format</i>.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qkeysequence.html#fromString">fromString</a>() and <a href="http://doc.qt.io/qt-5/qkeysequence.html#listToString">listToString</a>().</p></div></p>
+</div><h4 id='method.list_to_string' class='method'><code>fn <a href='#method.list_to_string' class='fnname'>list_to_string</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_sequence/overloading/trait.KeySequenceListToStringArgs.html' title='qt_gui::key_sequence::overloading::KeySequenceListToStringArgs'>KeySequenceListToStringArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeySequence::listToString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn list_to_string((&amp;::list::ListKeySequenceRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn list_to_string((&amp;::list::ListKeySequenceRef, ::key_sequence::SequenceFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>3) <code>fn list_to_string((&amp;::list::ListKeySequenceRef, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>4) <code>fn list_to_string((&amp;::list::ListKeySequenceRef, ::key_sequence::SequenceFormat, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QKeySequence::listToString(const QList&lt;QKeySequence&gt;&amp; list, QKeySequence::SequenceFormat format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#listToString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Return a string representation of <i>list</i> based on <i>format</i>.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qkeysequence.html#toString">toString</a>() and <a href="http://doc.qt.io/qt-5/qkeysequence.html#listFromString">listFromString</a>().</p></div></p>
+</div><h4 id='method.matches' class='method'><code>fn <a href='#method.matches' class='fnname'>matches</a>(&amp;self, seq: &amp;<a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a>) -&gt; <a class='enum' href='../../qt_gui/key_sequence/enum.SequenceMatch.html' title='qt_gui::key_sequence::SequenceMatch'>SequenceMatch</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeySequence::SequenceMatch QKeySequence::matches(const QKeySequence&amp; seq) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#matches">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Matches the sequence with <i>seq</i>. Returns <a href="http://doc.qt.io/qt-5/qkeysequence.html#SequenceMatch-enum">ExactMatch</a> if successful, <a href="http://doc.qt.io/qt-5/qkeysequence.html#SequenceMatch-enum">PartialMatch</a> if <i>seq</i> matches incompletely, and <a href="http://doc.qt.io/qt-5/qkeysequence.html#SequenceMatch-enum">NoMatch</a> if the sequences have nothing in common. Returns <a href="http://doc.qt.io/qt-5/qkeysequence.html#SequenceMatch-enum">NoMatch</a> if <i>seq</i> is shorter.</p></div></p>
+</div><h4 id='method.mnemonic' class='method'><code>fn <a href='#method.mnemonic' class='fnname'>mnemonic</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_sequence/overloading/trait.KeySequenceMnemonicArgs.html' title='qt_gui::key_sequence::overloading::KeySequenceMnemonicArgs'>KeySequenceMnemonicArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeySequence::mnemonic</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn mnemonic((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>2) <code>fn mnemonic((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>
+C++ method: <span style='color: green;'><code>static QKeySequence QKeySequence::mnemonic(const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#mnemonic">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the shortcut key sequence for the mnemonic in <i>text</i>, or an empty key sequence if no mnemonics are found.</p>
+<p>For example, mnemonic(&quot;E&amp;xit&quot;) returns <code>Qt::ALT+Qt::Key_X</code>, mnemonic(&quot;&amp;Quit&quot;) returns <code>ALT+Key_Q</code>, and mnemonic(&quot;Quit&quot;) returns an empty <a href="http://doc.qt.io/qt-5/qkeysequence.html">QKeySequence</a>.</p>
+<p>We provide a <a href="http://doc.qt.io/qt-5/accelerators.html">list of common mnemonics</a> in English. At the time of writing, Microsoft and Open Group do not appear to have issued equivalent recommendations for other languages.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_sequence/overloading/trait.KeySequenceNewArgs.html' title='qt_gui::key_sequence::overloading::KeySequenceNewArgs'>KeySequenceNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeySequence::QKeySequence</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::key_sequence::KeySequence</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QKeySequence::QKeySequence()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((::key_sequence::StandardKey, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>2) <code>fn new((::key_sequence::StandardKey, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QKeySequence::QKeySequence(QKeySequence::StandardKey key)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::key_sequence::KeySequence, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>2) <code>fn new((&amp;::key_sequence::KeySequence, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QKeySequence::QKeySequence(const QKeySequence&amp; ks)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>2) <code>fn new((&amp;qt_core::string::String, ::key_sequence::SequenceFormat, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>3) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>4) <code>fn new((&amp;qt_core::string::String, ::key_sequence::SequenceFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QKeySequence::QKeySequence(const QString&amp; key, QKeySequence::SequenceFormat format = ?)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>2) <code>fn new((libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>3) <code>fn new((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>4) <code>fn new((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::key_sequence::KeySequence</code><br>5) <code>fn new((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>6) <code>fn new((libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>7) <code>fn new((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>8) <code>fn new((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_sequence::KeySequence&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QKeySequence::QKeySequence(int k1, int k2 = ?, int k3 = ?, int k4 = ?)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeySequence&amp; QKeySequence::operator=(const QKeySequence&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assignment operator. Assigns the <i>other</i> key sequence to this object.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeySequence::operator==(const QKeySequence&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this key sequence is equal to the <i>other</i> key sequence; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_ge' class='method'><code>fn <a href='#method.op_ge' class='fnname'>op_ge</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeySequence::operator&gt;=(const QKeySequence&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-gt-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this key sequence is larger or equal to the <i>other</i> key sequence; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-eq-eq">operator==</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-not-eq">operator!=</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-lt">operator&lt;</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-gt">operator&gt;</a>(), and <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-lt-eq">operator&lt;=</a>().</p></div></p>
+</div><h4 id='method.op_gt' class='method'><code>fn <a href='#method.op_gt' class='fnname'>op_gt</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeySequence::operator&gt;(const QKeySequence&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-gt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this key sequence is larger than the <i>other</i> key sequence; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-eq-eq">operator==</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-not-eq">operator!=</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-lt">operator&lt;</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-lt-eq">operator&lt;=</a>(), and <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-gt-eq">operator&gt;=</a>().</p></div></p>
+</div><h4 id='method.op_index' class='method'><code>fn <a href='#method.op_index' class='fnname'>op_index</a>(&amp;self, i: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QKeySequence::operator[](unsigned int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-5b-5d">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a reference to the element at position <i>index</i> in the key sequence. This can only be used to read an element.</p></div></p>
+</div><h4 id='method.op_le' class='method'><code>fn <a href='#method.op_le' class='fnname'>op_le</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeySequence::operator&lt;=(const QKeySequence&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-lt-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this key sequence is smaller or equal to the <i>other</i> key sequence; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-eq-eq">operator==</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-not-eq">operator!=</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-lt">operator&lt;</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-gt">operator&gt;</a>(), and <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-gt-eq">operator&gt;=</a>().</p></div></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>(&amp;self, ks: &amp;<a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeySequence::operator&lt;(const QKeySequence&amp; ks) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Provides an arbitrary comparison of this key sequence and <i>other</i> key sequence. All that is guaranteed is that the operator returns <code>false</code> if both key sequences are equal and that (ks1 &lt; ks2) == !( ks2 &lt; ks1) if the key sequences are not equal.</p>
+<p>This function is useful in some circumstances, for example if you want to use <a href="http://doc.qt.io/qt-5/qkeysequence.html">QKeySequence</a> objects as keys in a <a href="http://doc.qt.io/qt-5/qmap.html">QMap</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-eq-eq">operator==</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-not-eq">operator!=</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-gt">operator&gt;</a>(), <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-lt-eq">operator&lt;=</a>(), and <a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-gt-eq">operator&gt;=</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeySequence::operator!=(const QKeySequence&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this key sequence is not equal to the <i>other</i> key sequence; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QKeySequence::swap(QKeySequence&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps key sequence <i>other</i> with this key sequence. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.to_string' class='method'><code>fn <a href='#method.to_string' class='fnname'>to_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_sequence/overloading/trait.KeySequenceToStringArgs.html' title='qt_gui::key_sequence::overloading::KeySequenceToStringArgs'>KeySequenceToStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeySequence::toString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, (::key_sequence::SequenceFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>3) <code>fn to_string(&amp;self, (::key_sequence::SequenceFormat, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>4) <code>fn to_string(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QKeySequence::toString(QKeySequence::SequenceFormat format = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#toString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Return a string representation of the key sequence, based on <i>format</i>.</p>
+<p>For example, the value <a href="http://doc.qt.io/qt-5/qt.html#Modifier-enum">Qt::CTRL</a>+<a href="http://doc.qt.io/qt-5/qt.html#Key-enum">Qt::Key_O</a> results in &quot;Ctrl+O&quot;. If the key sequence has multiple key codes, each is separated by commas in the string returned, such as &quot;Alt+X, Ctrl+Y, Z&quot;. The strings, &quot;Ctrl&quot;, &quot;Shift&quot;, etc. are translated using <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>() in the &quot;<a href="http://doc.qt.io/qt-5/qshortcut.html">QShortcut</a>&quot; context.</p>
+<p>If the key sequence has no keys, an empty string is returned.</p>
+<p>On Mac OS X, the string returned resembles the sequence that is shown in the menu bar.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qkeysequence.html#fromString">fromString</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-83097' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/key_sequence.rs.html#30-34' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-83167' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/key_sequence.rs.html#316-323' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QKeySequence::~QKeySequence()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeysequence.html#dtor.QKeySequence">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the key sequence.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-83170' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/key_sequence.rs.html#325-329' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListKeySequenceRefAppendArgs.html' title='qt_gui::list::overloading::ListKeySequenceRefAppendArgs'>ListKeySequenceRefAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-89341' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#17306-17314' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListKeySequenceRefAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/list/struct.ListKeySequenceRef.html' title='qt_gui::list::ListKeySequenceRef'>ListKeySequenceRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListKeySequenceRefCountArgs.html' title='qt_gui::list::overloading::ListKeySequenceRefCountArgs'>ListKeySequenceRefCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-89363' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#17334-17342' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListKeySequenceRefCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/list/struct.ListKeySequenceRef.html' title='qt_gui::list::ListKeySequenceRef'>ListKeySequenceRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListKeySequenceRefIndexOfArgs.html' title='qt_gui::list::overloading::ListKeySequenceRefIndexOfArgs'>ListKeySequenceRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-89374' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#17347-17355' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListKeySequenceRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/list/struct.ListKeySequenceRef.html' title='qt_gui::list::ListKeySequenceRef'>ListKeySequenceRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListKeySequenceRefLastIndexOfArgs.html' title='qt_gui::list::overloading::ListKeySequenceRefLastIndexOfArgs'>ListKeySequenceRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-89392' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#17371-17379' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListKeySequenceRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/list/struct.ListKeySequenceRef.html' title='qt_gui::list::ListKeySequenceRef'>ListKeySequenceRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListKeySequenceRefOpAddAssignArgs.html' title='qt_gui::list::overloading::ListKeySequenceRefOpAddAssignArgs'>ListKeySequenceRefOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-89507' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#17541-17551' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListKeySequenceRefOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/list/struct.ListKeySequenceRef.html' title='qt_gui::list::ListKeySequenceRef'>ListKeySequenceRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_gui/list/struct.ListKeySequenceRef.html' title='qt_gui::list::ListKeySequenceRef'>ListKeySequenceRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListKeySequenceRefOpShlArgs.html' title='qt_gui::list::overloading::ListKeySequenceRefOpShlArgs'>ListKeySequenceRefOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/key_sequence/struct.KeySequence.html' title='qt_gui::key_sequence::KeySequence'>KeySequence</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-89526' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#17567-17577' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListKeySequenceRefOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/list/struct.ListKeySequenceRef.html' title='qt_gui::list::ListKeySequenceRef'>ListKeySequenceRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_gui/list/struct.ListKeySequenceRef.html' title='qt_gui::list::ListKeySequenceRef'>ListKeySequenceRef</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

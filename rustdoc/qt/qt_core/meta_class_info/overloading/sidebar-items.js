@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["MetaClassInfoNewArgs","This trait represents a set of arguments accepted by MetaClassInfo::new method."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ChildIndicatorPolicy","C++ type: <span style='color: green;'>```QTreeWidgetItem::ChildIndicatorPolicy```</span>"],["ItemType","C++ type: <span style='color: green;'>```QTreeWidgetItem::ItemType```</span>"]],"mod":[["overloading",""]],"struct":[["TreeWidgetItem","C++ type: <span style='color: green;'>```QTreeWidgetItem```</span>"]]});

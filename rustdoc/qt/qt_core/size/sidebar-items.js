@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["op_shl","C++ method: <span style='color: green;'>```operator<<```</span>"],["op_shr","C++ method: <span style='color: green;'>```operator>>```</span>"]],"mod":[["overloading",""]],"struct":[["Size","C++ type: <span style='color: green;'>```QSize```</span>"]]});

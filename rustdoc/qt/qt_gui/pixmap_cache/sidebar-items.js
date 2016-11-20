@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["Key","C++ type: <span style='color: green;'>```QPixmapCache::Key```</span>"],["PixmapCache","C++ type: <span style='color: green;'>```QPixmapCache```</span>"]]});

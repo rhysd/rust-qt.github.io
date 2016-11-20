@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["DataValidation","C++ type: <span style='color: green;'>```QJsonDocument::DataValidation```</span>"],["JsonFormat","C++ type: <span style='color: green;'>```QJsonDocument::JsonFormat```</span>"]],"mod":[["overloading",""]],"struct":[["JsonDocument","C++ type: <span style='color: green;'>```QJsonDocument```</span>"]]});

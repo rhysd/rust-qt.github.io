@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `WindowType` enum in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, WindowType">
+
+    <title>qt_core::qt::WindowType - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>qt</a></p><script>window.sidebarCurrent = {name: 'WindowType', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>qt</a>::<wbr><a class='enum' href=''>WindowType</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-123378' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#3299-3386' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum WindowType {
+    WindowFullscreenButtonHint,
+    Widget,
+    Window,
+    Dialog,
+    Sheet,
+    Drawer,
+    Popup,
+    Tool,
+    ToolTip,
+    SplashScreen,
+    Desktop,
+    SubWindow,
+    ForeignWindow,
+    CoverWindow,
+    WindowTypeMask,
+    MswIndowsFixedSizeDialogHint,
+    MswIndowsOwnDC,
+    BypassWindowManagerHint,
+    FramelessWindowHint,
+    WindowTitleHint,
+    WindowSystemMenuHint,
+    WindowMinimizeButtonHint,
+    WindowMaximizeButtonHint,
+    WindowMinMaxButtonsHint,
+    WindowContextHelpButtonHint,
+    WindowShadeButtonHint,
+    WindowStaysOnTopHint,
+    WindowTransparentForInput,
+    WindowOverridesSystemGestures,
+    WindowDoesNotAcceptFocus,
+    MaximizeUsingFullscreenGeometryHint,
+    CustomizeWindowHint,
+    WindowStaysOnBottomHint,
+    WindowCloseButtonHint,
+    MacWindowToolBarButtonHint,
+    BypassGraphicsProxyWidget,
+    NoDropShadowWindowHint,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>Qt::WindowType</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qt.html#WindowType-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum type is used to specify various window-system properties for the widget. They are fairly unusual but necessary in a few cases. Some of these flags depend on whether the underlying window manager supports them.</p>
+<p>The main types are</p></p>
+
+<p>There are also a number of flags which you can use to customize the appearance of top-level windows. These have no effect on other windows:</p>
+
+<p>The <code>CustomizeWindowHint</code> flag is used to enable customization of the window controls. This flag must be set to allow the <code>WindowTitleHint</code>, <code>WindowSystemMenuHint</code>, <code>WindowMinimizeButtonHint</code>, <code>WindowMaximizeButtonHint</code> and <code>WindowCloseButtonHint</code> flags to be changed.</p>
+
+<p>The WindowFlags type is a typedef for <a href="http://doc.qt.io/qt-5/qflags.html">QFlags</a>&lt;WindowType&gt;. It stores an OR combination of WindowType values.</p>
+
+<p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qwidget.html#windowFlags-prop">QWidget::windowFlags</a> and <a href="http://doc.qt.io/qt-5/qtwidgets-widgets-windowflags-example.html">Window Flags Example</a>.</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.WindowFullscreenButtonHint' class='variant'><code>WindowFullscreenButtonHint</code></span><div class='docblock'><p>On OS X adds a fullscreen button. (C++ enum variant: <span style='color: green;'><code>WindowFullscreenButtonHint = -2147483648</code></span>)</p>
+</div><span id='variant.Widget' class='variant'><code>Widget</code></span><div class='docblock'><p>This is the default type for <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a>. Widgets of this type are child widgets if they have a parent, and independent windows if they have no parent. See also Qt::Window and Qt::SubWindow. (C++ enum variant: <span style='color: green;'><code>Widget = 0</code></span>)</p>
+</div><span id='variant.Window' class='variant'><code>Window</code></span><div class='docblock'><p>Indicates that the widget is a window, usually with a window system frame and a title bar, irrespective of whether the widget has a parent or not. Note that it is not possible to unset this flag if the widget does not have a parent. (C++ enum variant: <span style='color: green;'><code>Window = 1</code></span>)</p>
+</div><span id='variant.Dialog' class='variant'><code>Dialog</code></span><div class='docblock'><p>Indicates that the widget is a window that should be decorated as a dialog (i.e., typically no maximize or minimize buttons in the title bar). This is the default type for <a href="http://doc.qt.io/qt-5/qdialog.html">QDialog</a>. If you want to use it as a modal dialog, it should be launched from another window, or have a parent and used with the <a href="http://doc.qt.io/qt-5/qwidget.html#windowModality-prop">QWidget::windowModality</a> property. If you make it modal, the dialog will prevent other top-level windows in the application from getting any input. We refer to a top-level window that has a parent as a <i>secondary</i> window. (C++ enum variant: <span style='color: green;'><code>Dialog = 3</code></span>)</p>
+</div><span id='variant.Sheet' class='variant'><code>Sheet</code></span><div class='docblock'><p>Indicates that the window is a Macintosh sheet. Since using a sheet implies window modality, the recommended way is to use <a href="http://doc.qt.io/qt-5/qwidget.html#windowModality-prop">QWidget::setWindowModality</a>(), or <a href="http://doc.qt.io/qt-5/qdialog.html#open">QDialog::open</a>(), instead. (C++ enum variant: <span style='color: green;'><code>Sheet = 5</code></span>)</p>
+</div><span id='variant.Drawer' class='variant'><code>Drawer</code></span><div class='docblock'><p>Indicates that the widget is a Macintosh drawer. (C++ enum variant: <span style='color: green;'><code>Drawer = 7</code></span>)</p>
+</div><span id='variant.Popup' class='variant'><code>Popup</code></span><div class='docblock'><p>Indicates that the widget is a pop-up top-level window, i.e. that it is modal, but has a window system frame appropriate for pop-up menus. (C++ enum variant: <span style='color: green;'><code>Popup = 9</code></span>)</p>
+</div><span id='variant.Tool' class='variant'><code>Tool</code></span><div class='docblock'><p>Indicates that the widget is a tool window. A tool window is often a small window with a smaller than usual title bar and decoration, typically used for collections of tool buttons. If there is a parent, the tool window will always be kept on top of it. If there isn&#39;t a parent, you may consider using Qt::WindowStaysOnTopHint as well. If the window system supports it, a tool window can be decorated with a somewhat lighter frame. It can also be combined with Qt::FramelessWindowHint. On OS X, tool windows correspond to the <a href="http://developer.apple.com/documentation/Carbon/Conceptual/HandlingWindowsControls/hitb-wind_cont_concept/chapter_2_section_2.html">Floating</a> class of windows. This means that the window lives on a level above normal windows; it impossible to put a normal window on top of it. By default, tool windows will disappear when the application is inactive. This can be controlled by the <a href="http://doc.qt.io/qt-5/qt.html#WidgetAttribute-enum">Qt::WA_MacAlwaysShowToolWindow</a> attribute. (C++ enum variant: <span style='color: green;'><code>Tool = 11</code></span>)</p>
+</div><span id='variant.ToolTip' class='variant'><code>ToolTip</code></span><div class='docblock'><p>Indicates that the widget is a tooltip. This is used internally to implement <a href="http://doc.qt.io/qt-5/qwidget.html#toolTip-prop">tooltips</a>. (C++ enum variant: <span style='color: green;'><code>ToolTip = 13</code></span>)</p>
+</div><span id='variant.SplashScreen' class='variant'><code>SplashScreen</code></span><div class='docblock'><p>Indicates that the window is a splash screen. This is the default type for <a href="http://doc.qt.io/qt-5/qsplashscreen.html">QSplashScreen</a>. (C++ enum variant: <span style='color: green;'><code>SplashScreen = 15</code></span>)</p>
+</div><span id='variant.Desktop' class='variant'><code>Desktop</code></span><div class='docblock'><p>Indicates that this widget is the desktop. This is the type for <a href="http://doc.qt.io/qt-5/qdesktopwidget.html">QDesktopWidget</a>. (C++ enum variant: <span style='color: green;'><code>Desktop = 17</code></span>)</p>
+</div><span id='variant.SubWindow' class='variant'><code>SubWindow</code></span><div class='docblock'><p>Indicates that this widget is a sub-window, such as a <a href="http://doc.qt.io/qt-5/qmdisubwindow.html">QMdiSubWindow</a> widget. (C++ enum variant: <span style='color: green;'><code>SubWindow = 18</code></span>)</p>
+</div><span id='variant.ForeignWindow' class='variant'><code>ForeignWindow</code></span><div class='docblock'><p>Indicates that this window object is a handle representing a native platform window created by another process or by manually using native code. (C++ enum variant: <span style='color: green;'><code>ForeignWindow = 33</code></span>)</p>
+</div><span id='variant.CoverWindow' class='variant'><code>CoverWindow</code></span><div class='docblock'><p>Indicates that the window represents a cover window, which is shown when the application is minimized on the BlackBerry platform for instance. (C++ enum variant: <span style='color: green;'><code>CoverWindow = 65</code></span>)</p>
+</div><span id='variant.WindowTypeMask' class='variant'><code>WindowTypeMask</code></span><div class='docblock'><p>A mask for extracting the window type part of the window flags. (C++ enum variant: <span style='color: green;'><code>WindowType_Mask = 255</code></span>)</p>
+</div><span id='variant.MswIndowsFixedSizeDialogHint' class='variant'><code>MswIndowsFixedSizeDialogHint</code></span><div class='docblock'><p>Gives the window a thin dialog border on Windows. This style is traditionally used for fixed-size dialogs. (C++ enum variant: <span style='color: green;'><code>MSWindowsFixedSizeDialogHint = 256</code></span>)</p>
+</div><span id='variant.MswIndowsOwnDC' class='variant'><code>MswIndowsOwnDC</code></span><div class='docblock'><p>Gives the window its own display context on Windows. (C++ enum variant: <span style='color: green;'><code>MSWindowsOwnDC = 512</code></span>)</p>
+</div><span id='variant.BypassWindowManagerHint' class='variant'><code>BypassWindowManagerHint</code></span><div class='docblock'><p>This variant corresponds to multiple C++ enum variants with the same value:</p>
+
+<ul>
+<li><span style='color: green;'><code>BypassWindowManagerHint = 1024</code></span>: This flag can be used to indicate to the platform plugin that &quot;all&quot; window manager protocols should be disabled. This flag will behave different depending on what operating system the application is running on and what window manager is running. The flag can be used to get a native window with no configuration set.</li>
+<li><span style='color: green;'><code>X11BypassWindowManagerHint = 1024</code></span>: Bypass the window manager completely. This results in a borderless window that is not managed at all (i.e., no keyboard input unless you call <a href="http://doc.qt.io/qt-5/qwidget.html#activateWindow">QWidget::activateWindow</a>() manually).</li>
+</ul>
+</div><span id='variant.FramelessWindowHint' class='variant'><code>FramelessWindowHint</code></span><div class='docblock'><p>Produces a borderless window. The user cannot move or resize a borderless window via the window system. On X11, the result of the flag is dependent on the window manager and its ability to understand Motif and/or NETWM hints. Most existing modern window managers can handle this. (C++ enum variant: <span style='color: green;'><code>FramelessWindowHint = 2048</code></span>)</p>
+</div><span id='variant.WindowTitleHint' class='variant'><code>WindowTitleHint</code></span><div class='docblock'><p>Gives the window a title bar. (C++ enum variant: <span style='color: green;'><code>WindowTitleHint = 4096</code></span>)</p>
+</div><span id='variant.WindowSystemMenuHint' class='variant'><code>WindowSystemMenuHint</code></span><div class='docblock'><p>Adds a window system menu, and possibly a close button (for example on Mac). If you need to hide or show a close button, it is more portable to use <code>WindowCloseButtonHint</code>. (C++ enum variant: <span style='color: green;'><code>WindowSystemMenuHint = 8192</code></span>)</p>
+</div><span id='variant.WindowMinimizeButtonHint' class='variant'><code>WindowMinimizeButtonHint</code></span><div class='docblock'><p>Adds a minimize button. On some platforms this implies Qt::WindowSystemMenuHint for it to work. (C++ enum variant: <span style='color: green;'><code>WindowMinimizeButtonHint = 16384</code></span>)</p>
+</div><span id='variant.WindowMaximizeButtonHint' class='variant'><code>WindowMaximizeButtonHint</code></span><div class='docblock'><p>Adds a maximize button. On some platforms this implies Qt::WindowSystemMenuHint for it to work. (C++ enum variant: <span style='color: green;'><code>WindowMaximizeButtonHint = 32768</code></span>)</p>
+</div><span id='variant.WindowMinMaxButtonsHint' class='variant'><code>WindowMinMaxButtonsHint</code></span><div class='docblock'><p>Adds a minimize and a maximize button. On some platforms this implies Qt::WindowSystemMenuHint for it to work. (C++ enum variant: <span style='color: green;'><code>WindowMinMaxButtonsHint = 49152</code></span>)</p>
+</div><span id='variant.WindowContextHelpButtonHint' class='variant'><code>WindowContextHelpButtonHint</code></span><div class='docblock'><p>Adds a context help button to dialogs. On some platforms this implies Qt::WindowSystemMenuHint for it to work. (C++ enum variant: <span style='color: green;'><code>WindowContextHelpButtonHint = 65536</code></span>)</p>
+</div><span id='variant.WindowShadeButtonHint' class='variant'><code>WindowShadeButtonHint</code></span><div class='docblock'><p>Adds a shade button in place of the minimize button if the underlying window manager supports it. (C++ enum variant: <span style='color: green;'><code>WindowShadeButtonHint = 131072</code></span>)</p>
+</div><span id='variant.WindowStaysOnTopHint' class='variant'><code>WindowStaysOnTopHint</code></span><div class='docblock'><p>Informs the window system that the window should stay on top of all other windows. Note that on some window managers on X11 you also have to pass Qt::X11BypassWindowManagerHint for this flag to work correctly. (C++ enum variant: <span style='color: green;'><code>WindowStaysOnTopHint = 262144</code></span>)</p>
+</div><span id='variant.WindowTransparentForInput' class='variant'><code>WindowTransparentForInput</code></span><div class='docblock'><p>This variant corresponds to multiple C++ enum variants with the same value:</p>
+
+<ul>
+<li><span style='color: green;'><code>WindowTransparentForInput = 524288</code></span>: Informs the window system that this window is used only for output (displaying something) and does not take input. Therefore input events should pass through as if it wasn&#39;t there.</li>
+<li><span style='color: green;'><code>WindowOkButtonHint = 524288</code></span>: Adds an OK button to the window decoration of a dialog. Only supported for Windows CE.</li>
+</ul>
+</div><span id='variant.WindowOverridesSystemGestures' class='variant'><code>WindowOverridesSystemGestures</code></span><div class='docblock'><p>This variant corresponds to multiple C++ enum variants with the same value:</p>
+
+<ul>
+<li><span style='color: green;'><code>WindowOverridesSystemGestures = 1048576</code></span>: Informs the window system that this window implements its own set of gestures and that system level gestures, like for instance three-finger desktop switching, should be disabled.</li>
+<li><span style='color: green;'><code>WindowCancelButtonHint = 1048576</code></span>: Adds a Cancel button to the window decoration of a dialog. Only supported for Windows CE.</li>
+</ul>
+</div><span id='variant.WindowDoesNotAcceptFocus' class='variant'><code>WindowDoesNotAcceptFocus</code></span><div class='docblock'><p>Informs the window system that this window should not receive the input focus. (C++ enum variant: <span style='color: green;'><code>WindowDoesNotAcceptFocus = 2097152</code></span>)</p>
+</div><span id='variant.MaximizeUsingFullscreenGeometryHint' class='variant'><code>MaximizeUsingFullscreenGeometryHint</code></span><div class='docblock'><p>Informs the window system that when maximizing the window it should use as much of the available screen geometry as possible, including areas that may be covered by system UI such as status bars or application launchers. This may result in the window being placed under these system UIs, but does not guarantee it, depending on whether or not the platform supports it. When the flag is enabled the user is responsible for taking <a href="http://doc.qt.io/qt-5/qscreen.html#availableGeometry-prop">QScreen::availableGeometry</a>() into account, so that any UI elements in the application that require user interaction are not covered by system UI. (C++ enum variant: <span style='color: green;'><code>MaximizeUsingFullscreenGeometryHint = 4194304</code></span>)</p>
+</div><span id='variant.CustomizeWindowHint' class='variant'><code>CustomizeWindowHint</code></span><div class='docblock'><p>Turns off the default window title hints. (C++ enum variant: <span style='color: green;'><code>CustomizeWindowHint = 33554432</code></span>)</p>
+</div><span id='variant.WindowStaysOnBottomHint' class='variant'><code>WindowStaysOnBottomHint</code></span><div class='docblock'><p>Informs the window system that the window should stay on bottom of all other windows. Note that on X11 this hint will work only in window managers that support _NET_WM_STATE_BELOW atom. If a window always on the bottom has a parent, the parent will also be left on the bottom. This window hint is currently not implemented for OS X. (C++ enum variant: <span style='color: green;'><code>WindowStaysOnBottomHint = 67108864</code></span>)</p>
+</div><span id='variant.WindowCloseButtonHint' class='variant'><code>WindowCloseButtonHint</code></span><div class='docblock'><p>Adds a close button. On some platforms this implies Qt::WindowSystemMenuHint for it to work. (C++ enum variant: <span style='color: green;'><code>WindowCloseButtonHint = 134217728</code></span>)</p>
+</div><span id='variant.MacWindowToolBarButtonHint' class='variant'><code>MacWindowToolBarButtonHint</code></span><div class='docblock'><p>On OS X adds a tool bar button (i.e., the oblong button that is on the top right of windows that have toolbars). (C++ enum variant: <span style='color: green;'><code>MacWindowToolBarButtonHint = 268435456</code></span>)</p>
+</div><span id='variant.BypassGraphicsProxyWidget' class='variant'><code>BypassGraphicsProxyWidget</code></span><div class='docblock'><p>Prevents the window and its children from automatically embedding themselves into a <a href="http://doc.qt.io/qt-5/qgraphicsproxywidget.html">QGraphicsProxyWidget</a> if the parent widget is already embedded. You can set this flag if you want your widget to always be a toplevel widget on the desktop, regardless of whether the parent widget is embedded in a scene or not. (C++ enum variant: <span style='color: green;'><code>BypassGraphicsProxyWidget = 536870912</code></span>)</p>
+</div><span id='variant.NoDropShadowWindowHint' class='variant'><code>NoDropShadowWindowHint</code></span><div class='docblock'><p>Disables window drop shadow on supporting platforms. (C++ enum variant: <span style='color: green;'><code>NoDropShadowWindowHint = 1073741824</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/qt/overloading/trait.QtGetEnumMetaObjectArgs.html' title='qt_core::qt::overloading::QtGetEnumMetaObjectArgs'>QtGetEnumMetaObjectArgs</a> for <a class='enum' href='../../qt_core/qt/enum.WindowType.html' title='qt_core::qt::WindowType'>WindowType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-124348' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#6295-6300' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/qt/overloading/trait.QtGetEnumMetaObjectArgs.html#tymethod.exec' class='fnname'>exec</a>(self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/meta_object/struct.MetaObject.html' title='qt_core::meta_object::MetaObject'>MetaObject</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/qt/overloading/trait.QtGetEnumNameArgs.html' title='qt_core::qt::overloading::QtGetEnumNameArgs'>QtGetEnumNameArgs</a> for <a class='enum' href='../../qt_core/qt/enum.WindowType.html' title='qt_core::qt::WindowType'>WindowType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-124667' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#6773-6778' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/qt/overloading/trait.QtGetEnumNameArgs.html#tymethod.exec' class='fnname'>exec</a>(self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_core/qt/enum.WindowType.html' title='qt_core::qt::WindowType'>WindowType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-123325' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#3297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.WindowType.html' title='qt_core::qt::WindowType'>WindowType</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_core/qt/enum.WindowType.html' title='qt_core::qt::WindowType'>WindowType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-123328' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#3297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_core/qt/enum.WindowType.html' title='qt_core::qt::WindowType'>WindowType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-123331' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#3297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_core/qt/enum.WindowType.html' title='qt_core::qt::WindowType'>WindowType</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_core/qt/enum.WindowType.html' title='qt_core::qt::WindowType'>WindowType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-123337' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#3297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/flags/trait.FlaggableEnum.html' title='qt_core::flags::FlaggableEnum'>FlaggableEnum</a> for <a class='enum' href='../../qt_core/qt/enum.WindowType.html' title='qt_core::qt::WindowType'>WindowType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-123453' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#3388-3395' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_flag_value' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.to_flag_value' class='fnname'>to_flag_value</a>(self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<h4 id='method.enum_name' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.enum_name' class='fnname'>enum_name</a>() -&gt; &amp;'static <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

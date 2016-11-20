@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["SignalMapper","C++ type: <span style='color: green;'>```QSignalMapper```</span>"]]});

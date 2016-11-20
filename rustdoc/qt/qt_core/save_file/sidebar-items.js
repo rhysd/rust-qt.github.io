@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["SaveFile","C++ type: <span style='color: green;'>```QSaveFile```</span>"]]});

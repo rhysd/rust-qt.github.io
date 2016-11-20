@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Palette` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Palette">
+
+    <title>qt_gui::palette::Palette - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>palette</a></p><script>window.sidebarCurrent = {name: 'Palette', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>palette</a>::<wbr><a class='struct' href=''>Palette</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-130737' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#120-122' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Palette {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPalette</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a> class contains color groups for each widget state.</p>
+<p>A palette consists of three color groups: <i>Active</i>, <i>Disabled</i>, and <i>Inactive</i>. All widgets in Qt contain a palette and use their palette to draw themselves. This makes the user interface easily configurable and easier to keep consistent.</p>
+<p>If you create a new widget we strongly recommend that you use the colors in the palette rather than hard-coding specific colors.</p>
+<p>The color groups:</p>
+<ul>
+<li>The Active group is used for the window that has keyboard focus.</li>
+<li>The Inactive group is used for other windows.</li>
+<li>The Disabled group is used for widgets (not windows) that are disabled for some reason.</li>
+</ul>
+<p>Both active and inactive windows can contain disabled widgets. (Disabled widgets are often called <i>inaccessible</i> or <i>grayed out</i>.)</p>
+<p>In most styles, Active and Inactive look the same.</p>
+<p>Colors and brushes can be set for particular roles in any of a palette&#39;s color groups with <a href="http://doc.qt.io/qt-5/qpalette.html#setColor">setColor</a>() and <a href="http://doc.qt.io/qt-5/qpalette.html#setBrush">setBrush</a>(). A color group contains a group of colors used by widgets for drawing themselves. We recommend that widgets use color group roles from the palette such as &quot;foreground&quot; and &quot;base&quot; rather than literal colors like &quot;red&quot; or &quot;turquoise&quot;. The color roles are enumerated and defined in the <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> documentation.</p>
+<p>We strongly recommend that you use the default palette of the current style (returned by <a href="http://doc.qt.io/qt-5/qguiapplication.html#palette">QGuiApplication::palette</a>()) and modify that as necessary. This is done by Qt&#39;s widgets when they are drawn.</p>
+<p>To modify a color group you call the functions <a href="http://doc.qt.io/qt-5/qpalette.html#setColor">setColor</a>() and <a href="http://doc.qt.io/qt-5/qpalette.html#setBrush">setBrush</a>(), depending on whether you want a pure color or a pixmap pattern.</p>
+<p>There are also corresponding <a href="http://doc.qt.io/qt-5/qpalette.html#color">color</a>() and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>() getters, and a commonly used convenience function to get the <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> for the current <a href="http://doc.qt.io/qt-5/qpalette.html#ColorGroup-enum">ColorGroup</a>: <a href="http://doc.qt.io/qt-5/qpalette.html#window">window</a>(), <a href="http://doc.qt.io/qt-5/qpalette.html#windowText">windowText</a>(), <a href="http://doc.qt.io/qt-5/qpalette.html#base">base</a>(), etc.</p>
+<p>You can copy a palette using the copy constructor and test to see if two palettes are <i>identical</i> using <a href="http://doc.qt.io/qt-5/qpalette.html#isCopyOf">isCopyOf</a>().</p>
+<p><a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a> is optimized by the use of <a href="http://doc.qt.io/qt-5/implicit-sharing.html#implicit-sharing">implicit sharing</a>, so it is very efficient to pass <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a> objects as arguments.</p>
+<p><b>Warning:</b> Some styles do not use the palette for all drawing, for instance, if they make use of native theme engines. This is the case for both the Windows XP, Windows Vista, and the Mac OS X styles.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130742' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#130-656' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.alternate_base' class='method'><code>fn <a href='#method.alternate_base' class='fnname'>alternate_base</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::alternateBase() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#alternateBase">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the alternate base brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/palette/overloading/trait.PaletteAsQVariantArgs.html' title='qt_gui::palette::overloading::PaletteAsQVariantArgs'>PaletteAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPalette::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QPalette::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the palette as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></p></div></p>
+</div><h4 id='method.background' class='method'><code>fn <a href='#method.background' class='fnname'>background</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::background() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette-obsolete.html#background">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use <a href="http://doc.qt.io/qt-5/qpalette.html#window">window</a>() instead.</p></div></p>
+</div><h4 id='method.base' class='method'><code>fn <a href='#method.base' class='fnname'>base</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::base() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#base">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the base brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.bright_text' class='method'><code>fn <a href='#method.bright_text' class='fnname'>bright_text</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::brightText() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#brightText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the bright text foreground brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.brush' class='method'><code>fn <a href='#method.brush' class='fnname'>brush</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; &amp;'largs <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/palette/overloading/trait.PaletteBrushArgs.html' title='qt_gui::palette::overloading::PaletteBrushArgs'>PaletteBrushArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPalette::brush</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn brush(&amp;self, (::palette::ColorGroup, ::palette::ColorRole)) -&gt; &amp;&#39;l0 ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::brush(QPalette::ColorGroup cg, QPalette::ColorRole cr) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#brush">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush in the specified color <i>group</i>, used for the given color <i>role</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#color">color</a>(), <a href="http://doc.qt.io/qt-5/qpalette.html#setBrush">setBrush</a>(), and <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a>.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn brush(&amp;self, ::palette::ColorRole) -&gt; &amp;&#39;l0 ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::brush(QPalette::ColorRole cr) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#brush-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns the brush that has been set for the given color <i>role</i> in the current <a href="http://doc.qt.io/qt-5/qpalette.html#ColorGroup-enum">ColorGroup</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#color">color</a>(), <a href="http://doc.qt.io/qt-5/qpalette.html#setBrush">setBrush</a>(), and <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a>.</p></div></p>
+</div><h4 id='method.button' class='method'><code>fn <a href='#method.button' class='fnname'>button</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::button() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#button">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the button brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.button_text' class='method'><code>fn <a href='#method.button_text' class='fnname'>button_text</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::buttonText() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#buttonText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the button text foreground brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.cache_key' class='method'><code>fn <a href='#method.cache_key' class='fnname'>cache_key</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QPalette::cacheKey() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#cacheKey">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a number that identifies the contents of this <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a> object. Distinct <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a> objects can have the same key if they refer to the same contents.</p>
+<p>The cacheKey() will change when the palette is altered.</p></div></p>
+</div><h4 id='method.color' class='method'><code>fn <a href='#method.color' class='fnname'>color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; &amp;'largs <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/palette/overloading/trait.PaletteColorArgs.html' title='qt_gui::palette::overloading::PaletteColorArgs'>PaletteColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPalette::color</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn color(&amp;self, (::palette::ColorGroup, ::palette::ColorRole)) -&gt; &amp;&#39;l0 ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>const QColor&amp; QPalette::color(QPalette::ColorGroup cg, QPalette::ColorRole cr) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#color">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the color in the specified color <i>group</i>, used for the given color <i>role</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>(), <a href="http://doc.qt.io/qt-5/qpalette.html#setColor">setColor</a>(), and <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a>.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn color(&amp;self, ::palette::ColorRole) -&gt; &amp;&#39;l0 ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>const QColor&amp; QPalette::color(QPalette::ColorRole cr) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#color-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns the color that has been set for the given color <i>role</i> in the current <a href="http://doc.qt.io/qt-5/qpalette.html#ColorGroup-enum">ColorGroup</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>() and <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a>.</p></div></p>
+</div><h4 id='method.current_color_group' class='method'><code>fn <a href='#method.current_color_group' class='fnname'>current_color_group</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/palette/enum.ColorGroup.html' title='qt_gui::palette::ColorGroup'>ColorGroup</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPalette::ColorGroup QPalette::currentColorGroup() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#currentColorGroup">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the palette&#39;s current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#setCurrentColorGroup">setCurrentColorGroup</a>().</p></div></p>
+</div><h4 id='method.dark' class='method'><code>fn <a href='#method.dark' class='fnname'>dark</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::dark() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#dark">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the dark brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.foreground' class='method'><code>fn <a href='#method.foreground' class='fnname'>foreground</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::foreground() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette-obsolete.html#foreground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use <a href="http://doc.qt.io/qt-5/qpalette.html#windowText">windowText</a>() instead.</p></div></p>
+</div><h4 id='method.highlight' class='method'><code>fn <a href='#method.highlight' class='fnname'>highlight</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::highlight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#highlight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the highlight brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.highlighted_text' class='method'><code>fn <a href='#method.highlighted_text' class='fnname'>highlighted_text</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::highlightedText() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#highlightedText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the highlighted text brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.is_brush_set' class='method'><code>fn <a href='#method.is_brush_set' class='fnname'>is_brush_set</a>(&amp;self, cg: <a class='enum' href='../../qt_gui/palette/enum.ColorGroup.html' title='qt_gui::palette::ColorGroup'>ColorGroup</a>, cr: <a class='enum' href='../../qt_gui/palette/enum.ColorRole.html' title='qt_gui::palette::ColorRole'>ColorRole</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPalette::isBrushSet(QPalette::ColorGroup cg, QPalette::ColorRole cr) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#isBrushSet">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the <a href="http://doc.qt.io/qt-5/qpalette.html#ColorGroup-enum">ColorGroup</a> <i>cg</i> and <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> <i>cr</i> has been set previously on this palette; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#setBrush">setBrush</a>().</p></div></p>
+</div><h4 id='method.is_copy_of' class='method'><code>fn <a href='#method.is_copy_of' class='fnname'>is_copy_of</a>(&amp;self, p: &amp;<a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPalette::isCopyOf(const QPalette&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#isCopyOf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this palette and <i>p</i> are copies of each other, i.e. one of them was created as a copy of the other and neither was subsequently modified; otherwise returns <code>false</code>. This is much stricter than equality.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#operator-eq">operator=</a>() and <a href="http://doc.qt.io/qt-5/qpalette.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.is_equal' class='method'><code>fn <a href='#method.is_equal' class='fnname'>is_equal</a>(&amp;self, cr1: <a class='enum' href='../../qt_gui/palette/enum.ColorGroup.html' title='qt_gui::palette::ColorGroup'>ColorGroup</a>, cr2: <a class='enum' href='../../qt_gui/palette/enum.ColorGroup.html' title='qt_gui::palette::ColorGroup'>ColorGroup</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPalette::isEqual(QPalette::ColorGroup cr1, QPalette::ColorGroup cr2) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#isEqual">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> (usually quickly) if color group <i>cg1</i> is equal to <i>cg2</i>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.light' class='method'><code>fn <a href='#method.light' class='fnname'>light</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::light() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#light">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the light brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.link' class='method'><code>fn <a href='#method.link' class='fnname'>link</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::link() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#link">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the unvisited link text brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.link_visited' class='method'><code>fn <a href='#method.link_visited' class='fnname'>link_visited</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::linkVisited() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#linkVisited">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the visited link text brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.mid' class='method'><code>fn <a href='#method.mid' class='fnname'>mid</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::mid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#mid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the mid brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.midlight' class='method'><code>fn <a href='#method.midlight' class='fnname'>midlight</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::midlight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#midlight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the midlight brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/palette/overloading/trait.PaletteNewArgs.html' title='qt_gui::palette::overloading::PaletteNewArgs'>PaletteNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPalette::QPalette</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::palette::Palette</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::palette::Palette&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPalette::QPalette()</code></span></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::qt::GlobalColor, cpp_utils::AsStruct)) -&gt; ::palette::Palette</code><br>2) <code>fn new((qt_core::qt::GlobalColor, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::palette::Palette&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPalette::QPalette(Qt::GlobalColor button)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, cpp_utils::AsStruct)) -&gt; ::palette::Palette</code><br>2) <code>fn new((&amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, &amp;::brush::Brush, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::palette::Palette&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPalette::QPalette(const QBrush&amp; windowText, const QBrush&amp; button, const QBrush&amp; light, const QBrush&amp; dark, const QBrush&amp; mid, const QBrush&amp; text, const QBrush&amp; bright_text, const QBrush&amp; base, const QBrush&amp; window)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::color::Color, cpp_utils::AsStruct)) -&gt; ::palette::Palette</code><br>2) <code>fn new((&amp;::color::Color, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::palette::Palette&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPalette::QPalette(const QColor&amp; button)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::color::Color, &amp;::color::Color, cpp_utils::AsStruct)) -&gt; ::palette::Palette</code><br>2) <code>fn new((&amp;::color::Color, &amp;::color::Color, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::palette::Palette&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPalette::QPalette(const QColor&amp; button, const QColor&amp; window)</code></span></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::color::Color, &amp;::color::Color, &amp;::color::Color, &amp;::color::Color, &amp;::color::Color, &amp;::color::Color, &amp;::color::Color, cpp_utils::AsStruct)) -&gt; ::palette::Palette</code><br>2) <code>fn new((&amp;::color::Color, &amp;::color::Color, &amp;::color::Color, &amp;::color::Color, &amp;::color::Color, &amp;::color::Color, &amp;::color::Color, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::palette::Palette&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPalette::QPalette(const QColor&amp; windowText, const QColor&amp; window, const QColor&amp; light, const QColor&amp; dark, const QColor&amp; mid, const QColor&amp; text, const QColor&amp; base)</code></span></p>
+
+<h2 id='variant-7' class='section-header'><a href='#variant-7'>Variant 7</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::palette::Palette, cpp_utils::AsStruct)) -&gt; ::palette::Palette</code><br>2) <code>fn new((&amp;::palette::Palette, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::palette::Palette&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPalette::QPalette(const QPalette&amp; palette)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, palette: &amp;'l1 <a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPalette&amp; QPalette::operator=(const QPalette&amp; palette)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns <i>p</i> to this palette and returns a reference to this palette.</p>
+<p>This operation is fast thanks to <a href="http://doc.qt.io/qt-5/implicit-sharing.html#implicit-sharing">implicit sharing</a>.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, p: &amp;<a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPalette::operator==(const QPalette&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> (usually quickly) if this palette is equal to <i>p</i>; otherwise returns <code>false</code> (slowly).</p>
+<p><b>Note: </b>The current <a href="http://doc.qt.io/qt-5/qpalette.html#ColorGroup-enum">ColorGroup</a> is not taken into account when comparing palettes</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#operator-not-eq">operator!=</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, p: &amp;<a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPalette::operator!=(const QPalette&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> (slowly) if this palette is different from <i>p</i>; otherwise returns <code>false</code> (usually quickly).</p>
+<p><b>Note: </b>The current <a href="http://doc.qt.io/qt-5/qpalette.html#ColorGroup-enum">ColorGroup</a> is not taken into account when comparing palettes</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.resolve' class='method'><code>fn <a href='#method.resolve' class='fnname'>resolve</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/palette/overloading/trait.PaletteResolveArgs.html' title='qt_gui::palette::overloading::PaletteResolveArgs'>PaletteResolveArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPalette::resolve</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn resolve(&amp;self, (&amp;::palette::Palette, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::palette::Palette&gt;</code><br>2) <code>fn resolve(&amp;self, (&amp;::palette::Palette, cpp_utils::AsStruct)) -&gt; ::palette::Palette</code><br>
+C++ method: <span style='color: green;'><code>QPalette QPalette::resolve(const QPalette&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#resolve">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a new <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a> that has attributes copied from <i>other</i>.</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn resolve(&amp;self, ()) -&gt; libc::c_uint</code><br>
+C++ method: <span style='color: green;'><code>unsigned int QPalette::resolve() const</code></span></p>
+</div><h4 id='method.resolve_mut' class='method'><code>fn <a href='#method.resolve_mut' class='fnname'>resolve_mut</a>(&amp;mut self, mask: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPalette::resolve(unsigned int mask)</code></span></p>
+
+<p>Warning: no exact match found in C++ documentation.Below is the <a href="http://doc.qt.io/qt-5/qpalette.html#resolve">C++ documentation</a> for <code>QPalette QPalette::resolve(const QPalette &amp; other) const</code>: <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a new <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a> that has attributes copied from <i>other</i>.</p></div></p>
+</div><h4 id='method.set_brush' class='method'><code>fn <a href='#method.set_brush' class='fnname'>set_brush</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/palette/overloading/trait.PaletteSetBrushArgs.html' title='qt_gui::palette::overloading::PaletteSetBrushArgs'>PaletteSetBrushArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPalette::setBrush</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_brush(&amp;mut self, (::palette::ColorGroup, ::palette::ColorRole, &amp;::brush::Brush)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPalette::setBrush(QPalette::ColorGroup cg, QPalette::ColorRole cr, const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#setBrush-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the brush in the specified color <i>group</i>, used for the given color <i>role</i>, to <i>brush</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>(), <a href="http://doc.qt.io/qt-5/qpalette.html#setColor">setColor</a>(), and <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a>.</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_brush(&amp;mut self, (::palette::ColorRole, &amp;::brush::Brush)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPalette::setBrush(QPalette::ColorRole cr, const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#setBrush">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the brush for the given color <i>role</i> to the specified <i>brush</i> for all groups in the palette.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>(), <a href="http://doc.qt.io/qt-5/qpalette.html#setColor">setColor</a>(), and <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a>.</p></div></p>
+</div><h4 id='method.set_color' class='method'><code>fn <a href='#method.set_color' class='fnname'>set_color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/palette/overloading/trait.PaletteSetColorArgs.html' title='qt_gui::palette::overloading::PaletteSetColorArgs'>PaletteSetColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPalette::setColor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_color(&amp;mut self, (::palette::ColorGroup, ::palette::ColorRole, &amp;::color::Color)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPalette::setColor(QPalette::ColorGroup cg, QPalette::ColorRole cr, const QColor&amp; color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#setColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the color in the specified color <i>group</i>, used for the given color <i>role</i>, to the specified solid <i>color</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#setBrush">setBrush</a>(), <a href="http://doc.qt.io/qt-5/qpalette.html#color">color</a>(), and <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a>.</p></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_color(&amp;mut self, (::palette::ColorRole, &amp;::color::Color)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPalette::setColor(QPalette::ColorRole cr, const QColor&amp; color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#setColor-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the color used for the given color <i>role</i>, in all color groups, to the specified solid <i>color</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>(), <a href="http://doc.qt.io/qt-5/qpalette.html#setColor">setColor</a>(), and <a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a>.</p></div></p>
+</div><h4 id='method.set_color_group' class='method'><code>fn <a href='#method.set_color_group' class='fnname'>set_color_group</a>(&amp;mut self, cr: <a class='enum' href='../../qt_gui/palette/enum.ColorGroup.html' title='qt_gui::palette::ColorGroup'>ColorGroup</a>, window_text: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>, button: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>, light: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>, dark: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>, mid: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>, text: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>, bright_text: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>, base: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>, window: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPalette::setColorGroup(QPalette::ColorGroup cr, const QBrush&amp; windowText, const QBrush&amp; button, const QBrush&amp; light, const QBrush&amp; dark, const QBrush&amp; mid, const QBrush&amp; text, const QBrush&amp; bright_text, const QBrush&amp; base, const QBrush&amp; window)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#setColorGroup">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a the group at <i>cg</i>. You can pass either brushes, pixmaps or plain colors for <i>windowText</i>, <i>button</i>, <i>light</i>, <i>dark</i>, <i>mid</i>, <i>text</i>, <i>bright_text</i>, <i>base</i> and <i>window</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbrush.html">QBrush</a>.</p></div></p>
+</div><h4 id='method.set_current_color_group' class='method'><code>fn <a href='#method.set_current_color_group' class='fnname'>set_current_color_group</a>(&amp;mut self, cg: <a class='enum' href='../../qt_gui/palette/enum.ColorGroup.html' title='qt_gui::palette::ColorGroup'>ColorGroup</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPalette::setCurrentColorGroup(QPalette::ColorGroup cg)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#setCurrentColorGroup">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Set the palette&#39;s current color group to <i>cg</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#currentColorGroup">currentColorGroup</a>().</p></div></p>
+</div><h4 id='method.shadow' class='method'><code>fn <a href='#method.shadow' class='fnname'>shadow</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::shadow() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#shadow">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the shadow brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPalette::swap(QPalette&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this palette instance with <i>other</i>. This function is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::text() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text foreground brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.tool_tip_base' class='method'><code>fn <a href='#method.tool_tip_base' class='fnname'>tool_tip_base</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::toolTipBase() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#toolTipBase">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the tool tip base brush of the current color group. This brush is used by <a href="http://doc.qt.io/qt-5/qtooltip.html">QToolTip</a> and <a href="http://doc.qt.io/qt-5/qwhatsthis.html">QWhatsThis</a>.</p>
+<p><b>Note: </b>Tool tips use the Inactive color group of <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a>, because tool tips are not active windows.</p><p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.tool_tip_text' class='method'><code>fn <a href='#method.tool_tip_text' class='fnname'>tool_tip_text</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::toolTipText() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#toolTipText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the tool tip text brush of the current color group. This brush is used by <a href="http://doc.qt.io/qt-5/qtooltip.html">QToolTip</a> and <a href="http://doc.qt.io/qt-5/qwhatsthis.html">QWhatsThis</a>.</p>
+<p><b>Note: </b>Tool tips use the Inactive color group of <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a>, because tool tips are not active windows.</p><p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.window' class='method'><code>fn <a href='#method.window' class='fnname'>window</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::window() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#window">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the window (general background) brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div><h4 id='method.window_text' class='method'><code>fn <a href='#method.window_text' class='fnname'>window_text</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QBrush&amp; QPalette::windowText() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#windowText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the window text (general foreground) brush of the current color group.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">ColorRole</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#brush">brush</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130740' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#124-128' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130908' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#658-665' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QPalette::~QPalette()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#dtor.QPalette">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the palette.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130911' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#667-671' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

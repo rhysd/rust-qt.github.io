@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ScrollMetric` enum in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ScrollMetric">
+
+    <title>qt_widgets::scroller_properties::ScrollMetric - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>scroller_properties</a></p><script>window.sidebarCurrent = {name: 'ScrollMetric', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>scroller_properties</a>::<wbr><a class='enum' href=''>ScrollMetric</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-412533' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/scroller_properties.rs.html#40-83' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum ScrollMetric {
+    MousePressEventDelay,
+    DragStartDistance,
+    DragVelocitySmoothingFactor,
+    AxisLockThreshold,
+    ScrollingCurve,
+    DecelerationFactor,
+    MinimumVelocity,
+    MaximumVelocity,
+    MaximumClickThroughVelocity,
+    AcceleratingFlickMaximumTime,
+    AcceleratingFlickSpeedupFactor,
+    SnapPositionRatio,
+    SnapTime,
+    OvershootDragResistanceFactor,
+    OvershootDragDistanceFactor,
+    OvershootScrollDistanceFactor,
+    OvershootScrollTime,
+    HorizontalOvershootPolicy,
+    VerticalOvershootPolicy,
+    FrameRate,
+    ScrollMetricCount,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QScrollerProperties::ScrollMetric</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qscrollerproperties.html#ScrollMetric-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum contains the different scroll metric types. When not indicated otherwise the <a href="http://doc.qt.io/qt-5/qscrollerproperties.html#setScrollMetric">setScrollMetric</a> function expects a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> of type qreal.</p>
+<p>See the <a href="http://doc.qt.io/qt-5/qscroller.html">QScroller</a> documentation for further details of the concepts behind the different values.</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.MousePressEventDelay' class='variant'><code>MousePressEventDelay</code></span><div class='docblock'><p>This is the time a mouse press event is delayed when starting a flick gesture in <code>[s]</code>. If the gesture is triggered within that time, no mouse press or release is sent to the scrolled object. If it triggers after that delay the delayed mouse press plus a faked release event at global position <code>QPoint(-QWIDGETSIZE_MAX, -QWIDGETSIZE_MAX)</code> is sent. If the gesture is canceled, then both the delayed mouse press plus the real release event are delivered. (C++ enum variant: <span style='color: green;'><code>MousePressEventDelay = 0</code></span>)</p>
+</div><span id='variant.DragStartDistance' class='variant'><code>DragStartDistance</code></span><div class='docblock'><p>This is the minimum distance the touch or mouse point needs to be moved before the flick gesture is triggered in <code>m</code>. (C++ enum variant: <span style='color: green;'><code>DragStartDistance = 1</code></span>)</p>
+</div><span id='variant.DragVelocitySmoothingFactor' class='variant'><code>DragVelocitySmoothingFactor</code></span><div class='docblock'><p>A value that describes to which extent new drag velocities are included in the final scrolling velocity. This value should be in the range between <code>0</code> and <code>1</code>. The lower the value, the more smoothing is applied to the dragging velocity. (C++ enum variant: <span style='color: green;'><code>DragVelocitySmoothingFactor = 2</code></span>)</p>
+</div><span id='variant.AxisLockThreshold' class='variant'><code>AxisLockThreshold</code></span><div class='docblock'><p>Restricts the movement to one axis if the movement is inside an angle around the axis. The threshold must be in the range <code>0</code> to <code>1</code>. (C++ enum variant: <span style='color: green;'><code>AxisLockThreshold = 3</code></span>)</p>
+</div><span id='variant.ScrollingCurve' class='variant'><code>ScrollingCurve</code></span><div class='docblock'><p>The <a href="http://doc.qt.io/qt-5/qeasingcurve.html">QEasingCurve</a> used when decelerating the scrolling velocity after an user initiated flick. Please note that this is the easing curve for the positions, <b>not</b> the velocity: the default is <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::OutQuad</a>, which results in a linear decrease in velocity (1st derivative) and a constant deceleration (2nd derivative). (C++ enum variant: <span style='color: green;'><code>ScrollingCurve = 4</code></span>)</p>
+</div><span id='variant.DecelerationFactor' class='variant'><code>DecelerationFactor</code></span><div class='docblock'><p>This factor influences how long it takes the scroller to decelerate to 0 velocity. The actual value depends on the chosen ScrollingCurve. For most types the value should be in the range from <code>0.1</code> to <code>2.0</code> (C++ enum variant: <span style='color: green;'><code>DecelerationFactor = 5</code></span>)</p>
+</div><span id='variant.MinimumVelocity' class='variant'><code>MinimumVelocity</code></span><div class='docblock'><p>The minimum velocity that is needed after ending the touch or releasing the mouse to start scrolling in <code>m/s</code>. (C++ enum variant: <span style='color: green;'><code>MinimumVelocity = 6</code></span>)</p>
+</div><span id='variant.MaximumVelocity' class='variant'><code>MaximumVelocity</code></span><div class='docblock'><p>This is the maximum velocity that can be reached in <code>m/s</code>. (C++ enum variant: <span style='color: green;'><code>MaximumVelocity = 7</code></span>)</p>
+</div><span id='variant.MaximumClickThroughVelocity' class='variant'><code>MaximumClickThroughVelocity</code></span><div class='docblock'><p>This is the maximum allowed scroll speed for a click-through in <code>m/s</code>. This means that a click on a currently (slowly) scrolling object will not only stop the scrolling but the click event will also be delivered to the UI control. This is useful when using exponential-type scrolling curves. (C++ enum variant: <span style='color: green;'><code>MaximumClickThroughVelocity = 8</code></span>)</p>
+</div><span id='variant.AcceleratingFlickMaximumTime' class='variant'><code>AcceleratingFlickMaximumTime</code></span><div class='docblock'><p>This is the maximum time in <code>seconds</code> that a flick gesture can take to be recognized as an accelerating flick. If set to zero no such gesture is detected. An &quot;accelerating flick&quot; is a flick gesture executed on an already scrolling object. In such cases the scrolling speed is multiplied by AcceleratingFlickSpeedupFactor in order to accelerate it. (C++ enum variant: <span style='color: green;'><code>AcceleratingFlickMaximumTime = 9</code></span>)</p>
+</div><span id='variant.AcceleratingFlickSpeedupFactor' class='variant'><code>AcceleratingFlickSpeedupFactor</code></span><div class='docblock'><p>The current speed is multiplied by this number if an accelerating flick is detected. Should be <code>&gt;= 1</code>. (C++ enum variant: <span style='color: green;'><code>AcceleratingFlickSpeedupFactor = 10</code></span>)</p>
+</div><span id='variant.SnapPositionRatio' class='variant'><code>SnapPositionRatio</code></span><div class='docblock'><p>This is the distance that the user must drag the area beween two snap points in order to snap it to the next position. <code>0.33</code> means that the scroll must only reach one third of the distance between two snap points to snap to the next one. The ratio must be between <code>0</code> and <code>1</code>. (C++ enum variant: <span style='color: green;'><code>SnapPositionRatio = 11</code></span>)</p>
+</div><span id='variant.SnapTime' class='variant'><code>SnapTime</code></span><div class='docblock'><p>This is the time factor for the scrolling curve. A lower value means that the scrolling will take longer. The scrolling distance is independet of this value. (C++ enum variant: <span style='color: green;'><code>SnapTime = 12</code></span>)</p>
+</div><span id='variant.OvershootDragResistanceFactor' class='variant'><code>OvershootDragResistanceFactor</code></span><div class='docblock'><p>This value is the factor between the mouse dragging and the actual scroll area movement (during overshoot). The factor must be between <code>0</code> and <code>1</code>. (C++ enum variant: <span style='color: green;'><code>OvershootDragResistanceFactor = 13</code></span>)</p>
+</div><span id='variant.OvershootDragDistanceFactor' class='variant'><code>OvershootDragDistanceFactor</code></span><div class='docblock'><p>This is the maximum distance for overshoot movements while dragging. The actual overshoot distance is calculated by multiplying this value with the viewport size of the scrolled object. The factor must be between <code>0</code> and <code>1</code>. (C++ enum variant: <span style='color: green;'><code>OvershootDragDistanceFactor = 14</code></span>)</p>
+</div><span id='variant.OvershootScrollDistanceFactor' class='variant'><code>OvershootScrollDistanceFactor</code></span><div class='docblock'><p>This is the maximum distance for overshoot movements while scrolling. The actual overshoot distance is calculated by multiplying this value with the viewport size of the scrolled object. The factor must be between <code>0</code> and <code>1</code>. (C++ enum variant: <span style='color: green;'><code>OvershootScrollDistanceFactor = 15</code></span>)</p>
+</div><span id='variant.OvershootScrollTime' class='variant'><code>OvershootScrollTime</code></span><div class='docblock'><p>This is the time in <code>seconds</code> that is used to play the complete overshoot animation. (C++ enum variant: <span style='color: green;'><code>OvershootScrollTime = 16</code></span>)</p>
+</div><span id='variant.HorizontalOvershootPolicy' class='variant'><code>HorizontalOvershootPolicy</code></span><div class='docblock'><p>This is the horizontal overshooting policy (see <a href="http://doc.qt.io/qt-5/qscrollerproperties.html#OvershootPolicy-enum">OvershootPolicy</a>). (C++ enum variant: <span style='color: green;'><code>HorizontalOvershootPolicy = 17</code></span>)</p>
+</div><span id='variant.VerticalOvershootPolicy' class='variant'><code>VerticalOvershootPolicy</code></span><div class='docblock'><p>This is the horizontal overshooting policy (see <a href="http://doc.qt.io/qt-5/qscrollerproperties.html#OvershootPolicy-enum">OvershootPolicy</a>). (C++ enum variant: <span style='color: green;'><code>VerticalOvershootPolicy = 18</code></span>)</p>
+</div><span id='variant.FrameRate' class='variant'><code>FrameRate</code></span><div class='docblock'><p>This is the frame rate which should be used while dragging or scrolling. <a href="http://doc.qt.io/qt-5/qscroller.html">QScroller</a> uses a <a href="http://doc.qt.io/qt-5/qabstractanimation.html">QAbstractAnimation</a> timer internally to sync all scrolling operations to other animations that might be active at the same time. If the standard value of 60 frames per second is too fast, it can be lowered with this setting, while still being in-sync with <a href="http://doc.qt.io/qt-5/qabstractanimation.html">QAbstractAnimation</a>. Please note that only the values of the <a href="http://doc.qt.io/qt-5/qscrollerproperties.html#FrameRates-enum">FrameRates</a> enum are allowed here. (C++ enum variant: <span style='color: green;'><code>FrameRate = 19</code></span>)</p>
+</div><span id='variant.ScrollMetricCount' class='variant'><code>ScrollMetricCount</code></span><div class='docblock'><p>This is always the last entry. (C++ enum variant: <span style='color: green;'><code>ScrollMetricCount = 20</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_widgets/scroller_properties/enum.ScrollMetric.html' title='qt_widgets::scroller_properties::ScrollMetric'>ScrollMetric</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-412496' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/scroller_properties.rs.html#38' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_widgets/scroller_properties/enum.ScrollMetric.html' title='qt_widgets::scroller_properties::ScrollMetric'>ScrollMetric</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_widgets/scroller_properties/enum.ScrollMetric.html' title='qt_widgets::scroller_properties::ScrollMetric'>ScrollMetric</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-412499' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/scroller_properties.rs.html#38' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_widgets/scroller_properties/enum.ScrollMetric.html' title='qt_widgets::scroller_properties::ScrollMetric'>ScrollMetric</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-412502' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/scroller_properties.rs.html#38' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_widgets/scroller_properties/enum.ScrollMetric.html' title='qt_widgets::scroller_properties::ScrollMetric'>ScrollMetric</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_widgets/scroller_properties/enum.ScrollMetric.html' title='qt_widgets::scroller_properties::ScrollMetric'>ScrollMetric</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-412508' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/scroller_properties.rs.html#38' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

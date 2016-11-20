@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["GraphicsScale","C++ type: <span style='color: green;'>```QGraphicsScale```</span>"]]});

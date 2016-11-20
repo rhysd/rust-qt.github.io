@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DesktopServices` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DesktopServices">
+
+    <title>qt_gui::desktop_services::DesktopServices - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>desktop_services</a></p><script>window.sidebarCurrent = {name: 'DesktopServices', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>desktop_services</a>::<wbr><a class='struct' href=''>DesktopServices</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-68050' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/desktop_services.rs.html#13-15' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct DesktopServices {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QDesktopServices</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdesktopservices.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qdesktopservices.html">QDesktopServices</a> class provides methods for accessing common desktop services.</p>
+<p>Many desktop environments provide services that can be used by applications to perform common tasks, such as opening a web page, in a way that is both consistent and takes into account the user&#39;s application preferences.</p>
+<p>This class contains functions that provide simple interfaces to these services that indicate whether they succeeded or failed.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qdesktopservices.html#openUrl">openUrl</a>() function is used to open files located at arbitrary URLs in external applications. For URLs that correspond to resources on the local filing system (where the URL scheme is &quot;file&quot;), a suitable application will be used to open the file; otherwise, a web browser will be used to fetch and display the file.</p>
+<p>The user&#39;s desktop settings control whether certain executable file types are opened for browsing, or if they are executed instead. Some desktop environments are configured to prevent users from executing files obtained from non-local URLs, or to ask the user&#39;s permission before doing so.</p>
+<a name="url-handlers"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/desktop_services/struct.DesktopServices.html' title='qt_gui::desktop_services::DesktopServices'>DesktopServices</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-68055' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/desktop_services.rs.html#23-63' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.open_url' class='method'><code>fn <a href='#method.open_url' class='fnname'>open_url</a>(url: &amp;<a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QDesktopServices::openUrl(const QUrl&amp; url)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdesktopservices.html#openUrl">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Opens the given <i>url</i> in the appropriate Web browser for the user&#39;s desktop environment, and returns <code>true</code> if successful; otherwise returns <code>false</code>.</p>
+<p>If the URL is a reference to a local file (i.e., the URL scheme is &quot;file&quot;) then it will be opened with a suitable application instead of a Web browser.</p>
+<p>The following example opens a file on the Windows file system residing on a path that contains spaces:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qdesktopservices.html">QDesktopServices</a></span><span class="operator">::</span>openUrl(<span class="type"><a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a></span>(<span class="string">&quot;file:///C:/Documents and Settings/All Users/Desktop&quot;</span><span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a></span><span class="operator">::</span>TolerantMode));</pre>
+<p>If a <code>mailto</code> URL is specified, the user&#39;s e-mail client will be used to open a composer window containing the options specified in the URL, similar to the way <code>mailto</code> links are handled by a Web browser.</p>
+<p>For example, the following URL contains a recipient (<code><a href="mailto:user@foo.com">user@foo.com</a></code>), a subject (<code>Test</code>), and a message body (<code>Just a test</code>):</p>
+<pre class="cpp">mailto:user@foo<span class="operator">.</span>com<span class="operator">?</span>subject<span class="operator">=</span>Test<span class="operator">&amp;</span>body<span class="operator">=</span>Just a test</pre>
+<p><b>Warning:</b> Although many e-mail clients can send attachments and are Unicode-aware, the user may have configured their client without these features. Also, certain e-mail clients (e.g., Lotus Notes) have problems with long URLs.</p>
+<p><b>Warning:</b> A return value of <code>true</code> indicates that the application has successfully requested the operating system to open the URL in an external application. The external application may still fail to launch or fail to open the requested URL. This result will not be reported back to the application.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdesktopservices.html#setUrlHandler">setUrlHandler</a>().</p></div></p>
+</div><h4 id='method.set_url_handler' class='method'><code>fn <a href='#method.set_url_handler' class='fnname'>set_url_handler</a>(scheme: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>, receiver: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>, method: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QDesktopServices::setUrlHandler(const QString&amp; scheme, QObject* receiver, const char* method)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdesktopservices.html#setUrlHandler">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the handler for the given <i>scheme</i> to be the handler <i>method</i> provided by the <i>receiver</i> object.</p>
+<p>This function provides a way to customize the behavior of <a href="http://doc.qt.io/qt-5/qdesktopservices.html#openUrl">openUrl</a>(). If <a href="http://doc.qt.io/qt-5/qdesktopservices.html#openUrl">openUrl</a>() is called with a URL with the specified <i>scheme</i> then the given <i>method</i> on the <i>receiver</i> object is called instead of <a href="http://doc.qt.io/qt-5/qdesktopservices.html">QDesktopServices</a> launching an external application.</p>
+<p>The provided method must be implemented as a slot that only accepts a single <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> argument.</p>
+<p>If setUrlHandler() is used to set a new handler for a scheme which already has a handler, the existing handler is simply replaced with the new one. Since <a href="http://doc.qt.io/qt-5/qdesktopservices.html">QDesktopServices</a> does not take ownership of handlers, no objects are deleted when a handler is replaced.</p>
+<p>Note that the handler will always be called from within the same thread that calls <a href="http://doc.qt.io/qt-5/qdesktopservices.html#openUrl">QDesktopServices::openUrl</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdesktopservices.html#openUrl">openUrl</a>() and <a href="http://doc.qt.io/qt-5/qdesktopservices.html#unsetUrlHandler">unsetUrlHandler</a>().</p></div></p>
+</div><h4 id='method.unset_url_handler' class='method'><code>fn <a href='#method.unset_url_handler' class='fnname'>unset_url_handler</a>(scheme: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QDesktopServices::unsetUrlHandler(const QString&amp; scheme)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdesktopservices.html#unsetUrlHandler">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes a previously set URL handler for the specified <i>scheme</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdesktopservices.html#setUrlHandler">setUrlHandler</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/desktop_services/struct.DesktopServices.html' title='qt_gui::desktop_services::DesktopServices'>DesktopServices</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-68053' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/desktop_services.rs.html#17-21' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/desktop_services/struct.DesktopServices.html' title='qt_gui::desktop_services::DesktopServices'>DesktopServices</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/desktop_services/struct.DesktopServices.html' title='qt_gui::desktop_services::DesktopServices'>DesktopServices</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-68064' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/desktop_services.rs.html#65-72' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QDesktopServices::~QDesktopServices()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/desktop_services/struct.DesktopServices.html' title='qt_gui::desktop_services::DesktopServices'>DesktopServices</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-68067' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/desktop_services.rs.html#74-78' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

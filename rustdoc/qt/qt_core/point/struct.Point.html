@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Point` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Point">
+
+    <title>qt_core::point::Point - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>point</a></p><script>window.sidebarCurrent = {name: 'Point', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>point</a>::<wbr><a class='struct' href=''>Point</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-115011' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/point.rs.html#17-19' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Point {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPoint</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a> class defines a point in the plane using integer precision.</p>
+<p>A point is specified by a x coordinate and an y coordinate which can be accessed using the <a href="http://doc.qt.io/qt-5/qpoint.html#x">x</a>() and <a href="http://doc.qt.io/qt-5/qpoint.html#y">y</a>() functions. The <a href="http://doc.qt.io/qt-5/qpoint.html#isNull">isNull</a>() function returns <code>true</code> if both x and y are set to 0. The coordinates can be set (or altered) using the <a href="http://doc.qt.io/qt-5/qpoint.html#setX">setX</a>() and <a href="http://doc.qt.io/qt-5/qpoint.html#setY">setY</a>() functions, or alternatively the <a href="http://doc.qt.io/qt-5/qpoint.html#rx">rx</a>() and <a href="http://doc.qt.io/qt-5/qpoint.html#ry">ry</a>() functions which return references to the coordinates (allowing direct manipulation).</p>
+<p>Given a point <i>p</i>, the following statements are all equivalent:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> p;</p>
+
+<p>p<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qpoint.html#setX">setX</a>(p<span class="operator">.</span>x() <span class="operator">+</span> <span class="number">1</span>);
+p <span class="operator">+</span><span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span>(<span class="number">1</span><span class="operator">,</span> <span class="number">0</span>);
+p<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qpoint.html#rx">rx</a>()<span class="operator">+</span><span class="operator">+</span>;</pre>
+<p>A <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a> object can also be used as a vector: Addition and subtraction are defined as for vectors (each component is added separately). A <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a> object can also be divided or multiplied by an <code>int</code> or a <code>qreal</code>.</p>
+<p>In addition, the <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a> class provides the <a href="http://doc.qt.io/qt-5/qpoint.html#manhattanLength">manhattanLength</a>() function which gives an inexpensive approximation of the length of the <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a> object interpreted as a vector. Finally, <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a> objects can be streamed as well as compared.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-115016' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/point.rs.html#27-220' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.dot_product' class='method'><code>fn <a href='#method.dot_product' class='fnname'>dot_product</a>(p1: &amp;<a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a>, p2: &amp;<a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static int QPoint::dotProduct(const QPoint&amp; p1, const QPoint&amp; p2)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#dotProduct">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> p( <span class="number">3</span><span class="operator">,</span> <span class="number">7</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> q(<span class="operator">-</span><span class="number">1</span><span class="operator">,</span> <span class="number">4</span>);
+<span class="type">int</span> lengthSquared <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span><span class="operator">::</span>dotProduct(p<span class="operator">,</span> q);   <span class="comment">// lengthSquared becomes 25</span></pre>
+<p>Returns the dot product of <i>p1</i> and <i>p2</i>.</p>
+<p>This function was introduced in  Qt 5.1.</p></div></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPoint::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if both the x and y coordinates are set to 0, otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.manhattan_length' class='method'><code>fn <a href='#method.manhattan_length' class='fnname'>manhattan_length</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPoint::manhattanLength() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#manhattanLength">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the sum of the absolute values of <a href="http://doc.qt.io/qt-5/qpoint.html#x">x</a>() and <a href="http://doc.qt.io/qt-5/qpoint.html#y">y</a>(), traditionally known as the &quot;Manhattan length&quot; of the vector from the origin to the point. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> oldPosition;</p>
+
+<p>MyWidget<span class="operator">::</span>mouseMoveEvent(<span class="type"><a href="http://doc.qt.io/qt-5/qmouseevent.html">QMouseEvent</a></span> <span class="operator">*</span>event)
+{
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> point <span class="operator">=</span> event<span class="operator">-</span><span class="operator">&gt;</span>pos() <span class="operator">-</span> oldPosition;
+&#32;   <span class="keyword">if</span> (point<span class="operator">.</span>manhattanLength() <span class="operator">&gt;</span> <span class="number">3</span>)
+&#32;       <span class="comment">// the mouse has moved more than 3 pixels since the oldPosition</span>
+}</pre>
+<p>This is a useful, and quick to calculate, approximation to the true length:</p>
+<pre class="cpp"><span class="type">double</span> trueLength <span class="operator">=</span> std<span class="operator">::</span>sqrt(std<span class="operator">::</span>pow(x()<span class="operator">,</span> <span class="number">2</span>) <span class="operator">+</span> std<span class="operator">::</span>pow(y()<span class="operator">,</span> <span class="number">2</span>));</pre>
+<p>The tradition of &quot;Manhattan length&quot; arises because such distances apply to travelers who can only travel on a rectangular grid, like the streets of Manhattan.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/point/overloading/trait.PointNewArgs.html' title='qt_core::point::overloading::PointNewArgs'>PointNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPoint::QPoint</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::point::Point</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::point::Point&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPoint::QPoint()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::point::Point</code><br>2) <code>fn new((libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::point::Point&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPoint::QPoint(int xpos, int ypos)</code></span></p>
+</div><h4 id='method.op_add_assign' class='method'><code>fn <a href='#method.op_add_assign' class='fnname'>op_add_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, p: &amp;'l1 <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPoint&amp; QPoint::operator+=(const QPoint&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#operator-2b-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds the given <i>point</i> to this point and returns a reference to this point. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> p( <span class="number">3</span><span class="operator">,</span> <span class="number">7</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> q(<span class="operator">-</span><span class="number">1</span><span class="operator">,</span> <span class="number">4</span>);
+p <span class="operator">+</span><span class="operator">=</span> q;    <span class="comment">// p becomes (2, 11)</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#operator--eq">operator-=</a>().</p></div></p>
+</div><h4 id='method.op_div_assign' class='method'><code>fn <a href='#method.op_div_assign' class='fnname'>op_div_assign</a>&lt;'l0&gt;(&amp;'l0 mut self, divisor: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPoint&amp; QPoint::operator/=(double divisor)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#operator-2f-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Divides both x and y by the given <i>divisor</i>, and returns a reference to this point. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> p(<span class="operator">-</span><span class="number">3</span><span class="operator">,</span> <span class="number">10</span>);
+p <span class="operator">/</span><span class="operator">=</span> <span class="number">2.5</span>;           <span class="comment">// p becomes (-1, 4)</span></pre>
+<p>Note that the result is rounded to the nearest integer as points are held as integers. Use <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a> for floating point accuracy.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#operator-2a-eq">operator*=</a>().</p></div></p>
+</div><h4 id='method.op_mul_assign' class='method'><code>fn <a href='#method.op_mul_assign' class='fnname'>op_mul_assign</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/point/overloading/trait.PointOpMulAssignArgs.html' title='qt_core::point::overloading::PointOpMulAssignArgs'>PointOpMulAssignArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPoint::operator*=</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_mul_assign(&amp;mut self, libc::c_double) -&gt; &amp;&#39;l0 mut ::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint&amp; QPoint::operator*=(double factor)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#operator-2a-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Multiplies this point&#39;s coordinates by the given <i>factor</i>, and returns a reference to this point. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> p(<span class="operator">-</span><span class="number">1</span><span class="operator">,</span> <span class="number">4</span>);
+p <span class="operator">*</span><span class="operator">=</span> <span class="number">2.5</span>;    <span class="comment">// p becomes (-3, 10)</span></pre>
+<p>Note that the result is rounded to the nearest integer as points are held as integers. Use <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a> for floating point accuracy.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#operator-2f-eq">operator/=</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_mul_assign(&amp;mut self, libc::c_float) -&gt; &amp;&#39;l0 mut ::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint&amp; QPoint::operator*=(float factor)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#operator-2a-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Multiplies this point&#39;s coordinates by the given <i>factor</i>, and returns a reference to this point.</p>
+<p>Note that the result is rounded to the nearest integer as points are held as integers. Use <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a> for floating point accuracy.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#operator-2f-eq">operator/=</a>().</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_mul_assign(&amp;mut self, libc::c_int) -&gt; &amp;&#39;l0 mut ::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint&amp; QPoint::operator*=(int factor)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#operator-2a-eq-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Multiplies this point&#39;s coordinates by the given <i>factor</i>, and returns a reference to this point.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#operator-2f-eq">operator/=</a>().</p></div></p>
+</div><h4 id='method.op_sub_assign' class='method'><code>fn <a href='#method.op_sub_assign' class='fnname'>op_sub_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, p: &amp;'l1 <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPoint&amp; QPoint::operator-=(const QPoint&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#operator--eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Subtracts the given <i>point</i> from this point and returns a reference to this point. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> p( <span class="number">3</span><span class="operator">,</span> <span class="number">7</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> q(<span class="operator">-</span><span class="number">1</span><span class="operator">,</span> <span class="number">4</span>);
+p <span class="operator">-</span><span class="operator">=</span> q;    <span class="comment">// p becomes (4, 3)</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#operator-2b-eq">operator+=</a>().</p></div></p>
+</div><h4 id='method.rx' class='method'><code>fn <a href='#method.rx' class='fnname'>rx</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int&amp; QPoint::rx()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#rx">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a reference to the x coordinate of this point.</p>
+<p>Using a reference makes it possible to directly manipulate x. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> p(<span class="number">1</span><span class="operator">,</span> <span class="number">2</span>);
+p<span class="operator">.</span>rx()<span class="operator">-</span><span class="operator">-</span>;   <span class="comment">// p becomes (0, 2)</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#x">x</a>() and <a href="http://doc.qt.io/qt-5/qpoint.html#setX">setX</a>().</p></div></p>
+</div><h4 id='method.ry' class='method'><code>fn <a href='#method.ry' class='fnname'>ry</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int&amp; QPoint::ry()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#ry">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a reference to the y coordinate of this point.</p>
+<p>Using a reference makes it possible to directly manipulate y. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html#QPoint">QPoint</a></span> p(<span class="number">1</span><span class="operator">,</span> <span class="number">2</span>);
+p<span class="operator">.</span>ry()<span class="operator">+</span><span class="operator">+</span>;   <span class="comment">// p becomes (1, 3)</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#y">y</a>() and <a href="http://doc.qt.io/qt-5/qpoint.html#setY">setY</a>().</p></div></p>
+</div><h4 id='method.set_x' class='method'><code>fn <a href='#method.set_x' class='fnname'>set_x</a>(&amp;mut self, x: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPoint::setX(int x)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#setX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the x coordinate of this point to the given <i>x</i> coordinate.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#x">x</a>() and <a href="http://doc.qt.io/qt-5/qpoint.html#setY">setY</a>().</p></div></p>
+</div><h4 id='method.set_y' class='method'><code>fn <a href='#method.set_y' class='fnname'>set_y</a>(&amp;mut self, y: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPoint::setY(int y)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#setY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the y coordinate of this point to the given <i>y</i> coordinate.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#y">y</a>() and <a href="http://doc.qt.io/qt-5/qpoint.html#setX">setX</a>().</p></div></p>
+</div><h4 id='method.x' class='method'><code>fn <a href='#method.x' class='fnname'>x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPoint::x() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#x">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the x coordinate of this point.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#setX">setX</a>() and <a href="http://doc.qt.io/qt-5/qpoint.html#rx">rx</a>().</p></div></p>
+</div><h4 id='method.y' class='method'><code>fn <a href='#method.y' class='fnname'>y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPoint::y() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpoint.html#y">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the y coordinate of this point.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpoint.html#setY">setY</a>() and <a href="http://doc.qt.io/qt-5/qpoint.html#ry">ry</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/line/overloading/trait.LineTranslateArgs.html' title='qt_core::line::overloading::LineTranslateArgs'>LineTranslateArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-87794' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/line.rs.html#465-473' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/line/overloading/trait.LineTranslateArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/line/struct.Line.html' title='qt_core::line::Line'>Line</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-115014' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/point.rs.html#21-25' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-115067' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/point.rs.html#222-229' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QPoint::~QPoint()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-115070' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/point.rs.html#231-235' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/rect/overloading/trait.RectContainsArgs.html' title='qt_core::rect::overloading::RectContainsArgs'>RectContainsArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-125359' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/rect.rs.html#1323-1331' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/rect/overloading/trait.RectContainsArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/rect/struct.Rect.html' title='qt_core::rect::Rect'>Rect</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/rect/overloading/trait.RectMoveToArgs.html' title='qt_core::rect::overloading::RectMoveToArgs'>RectMoveToArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-125471' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/rect.rs.html#1475-1483' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/rect/overloading/trait.RectMoveToArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/rect/struct.Rect.html' title='qt_core::rect::Rect'>Rect</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/rect/overloading/trait.RectTranslateArgs.html' title='qt_core::rect::overloading::RectTranslateArgs'>RectTranslateArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-125684' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/rect.rs.html#1765-1773' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_core/rect/overloading/trait.RectTranslateArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/rect/struct.Rect.html' title='qt_core::rect::Rect'>Rect</a>)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

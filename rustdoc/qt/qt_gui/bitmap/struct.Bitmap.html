@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Bitmap` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Bitmap">
+
+    <title>qt_gui::bitmap::Bitmap - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>bitmap</a></p><script>window.sidebarCurrent = {name: 'Bitmap', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>bitmap</a>::<wbr><a class='struct' href=''>Bitmap</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-63224' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/bitmap.rs.html#14-16' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Bitmap {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QBitmap</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbitmap.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> class provides monochrome (1-bit depth) pixmaps.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> class is a monochrome off-screen paint device used mainly for creating custom <a href="http://doc.qt.io/qt-5/qcursor.html">QCursor</a> and <a href="http://doc.qt.io/qt-5/qbrush.html">QBrush</a> objects, constructing <a href="http://doc.qt.io/qt-5/qregion.html">QRegion</a> objects, and for setting masks for pixmaps and widgets.</p>
+<p><a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> is a <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> subclass ensuring a depth of 1, except for null objects which have a depth of 0. If a pixmap with a depth greater than 1 is assigned to a bitmap, the bitmap will be dithered automatically.</p>
+<p>Use the <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> objects <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::color0</a> and <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::color1</a> when drawing on a <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> object (or a <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> object with depth 1).</p>
+<p>Painting with <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::color0</a> sets the bitmap bits to 0, and painting with <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::color1</a> sets the bits to 1. For a bitmap, 0-bits indicate background (or transparent pixels) and 1-bits indicate foreground (or opaque pixels). Use the <a href="http://doc.qt.io/qt-5/qbitmap.html#clear">clear</a>() function to set all the bits to <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::color0</a>. Note that using the <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::black</a> and <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::white</a> colors make no sense because the QColor::pixel() value is not necessarily 0 for black and 1 for white.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> class provides the <a href="http://doc.qt.io/qt-5/qbitmap.html#transformed">transformed</a>() function returning a transformed copy of the bitmap; use the <a href="http://doc.qt.io/qt-5/qtransform.html">QTransform</a> argument to translate, scale, shear, and rotate the bitmap. In addition, <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> provides the static <a href="http://doc.qt.io/qt-5/qbitmap.html#fromData">fromData</a>() function which returns a bitmap constructed from the given <code>uchar</code> data, and the static <a href="http://doc.qt.io/qt-5/qbitmap.html#fromImage">fromImage</a>() function returning a converted copy of a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> object.</p>
+<p>Just like the <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> class, <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> is optimized by the use of implicit data sharing. For more information, see the <a href="http://doc.qt.io/qt-5/implicit-sharing.html#implicit-data-sharing">Implicit Data Sharing</a> documentation.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/bitmap/struct.Bitmap.html' title='qt_gui::bitmap::Bitmap'>Bitmap</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-63229' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/bitmap.rs.html#24-813' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapAsQVariantArgs.html' title='qt_gui::bitmap::overloading::BitmapAsQVariantArgs'>BitmapAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QBitmap::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbitmap.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the bitmap as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>.</p></div></p>
+</div><h4 id='method.cache_key' class='method'><code>fn <a href='#method.cache_key' class='fnname'>cache_key</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QBitmap::cacheKey() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#cacheKey">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a number that identifies this <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a>. Distinct <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> objects can only have the same cache key if they refer to the same contents.</p>
+<p>The cacheKey() will change when the pixmap is altered.</p></div></p>
+</div><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBitmap::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbitmap.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the bitmap, setting all its bits to <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::color0</a>.</p></div></p>
+</div><h4 id='method.color_count' class='method'><code>fn <a href='#method.color_count' class='fnname'>color_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QBitmap::colorCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#colorCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of different colors available for the paint device. If the number of colors available is too great to be represented by the int data type, then INT_MAX will be returned instead.</p></div></p>
+</div><h4 id='method.convert_from_image' class='method'><code>fn <a href='#method.convert_from_image' class='fnname'>convert_from_image</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapConvertFromImageArgs.html' title='qt_gui::bitmap::overloading::BitmapConvertFromImageArgs'>BitmapConvertFromImageArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::convertFromImage</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn convert_from_image(&amp;mut self, &amp;::image::Image) -&gt; bool</code><br>2) <code>fn convert_from_image(&amp;mut self, (&amp;::image::Image, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QBitmap::convertFromImage(const QImage&amp; img, QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#convertFromImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Replaces this pixmap&#39;s data with the given <i>image</i> using the specified <i>flags</i> to control the conversion. The <i>flags</i> argument is a bitwise-OR of the <a href="http://doc.qt.io/qt-5/qt.html#ImageConversionFlag-enum">Qt::ImageConversionFlags</a>. Passing 0 for <i>flags</i> sets all the default options. Returns <code>true</code> if the result is that this pixmap is not null.</p>
+<p>Note: this function was part of Qt 3 support in Qt 4.6 and earlier. It has been promoted to official API status in 4.7 to support updating the pixmap&#39;s image without creating a new <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> as <a href="http://doc.qt.io/qt-5/qpixmap.html#fromImage">fromImage</a>() would.</p>
+<p>This function was introduced in  Qt 4.7.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#fromImage">fromImage</a>().</p></div></p>
+</div><h4 id='method.copy' class='method'><code>fn <a href='#method.copy' class='fnname'>copy</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapCopyArgs.html' title='qt_gui::bitmap::overloading::BitmapCopyArgs'>BitmapCopyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::copy</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn copy(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn copy(&amp;self, (&amp;qt_core::rect::Rect, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn copy(&amp;self, cpp_utils::AsStruct) -&gt; ::pixmap::Pixmap</code><br>4) <code>fn copy(&amp;self, (&amp;qt_core::rect::Rect, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QBitmap::copy(const QRect&amp; rect = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#copy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a deep copy of the subset of the pixmap that is specified by the given <i>rectangle</i>. For more information on deep copies, see the <a href="http://doc.qt.io/qt-5/implicit-sharing.html#implicit-data-sharing">Implicit Data Sharing</a> documentation.</p>
+<p>If the given <i>rectangle</i> is empty, the whole image is copied.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#operator-eq">operator=</a>(), <a href="http://doc.qt.io/qt-5/qpixmap.html#QPixmap">QPixmap</a>(), and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-transformations">Pixmap Transformations</a>.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn copy(&amp;self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn copy(&amp;self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QBitmap::copy(int x, int y, int width, int height) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#copy-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns a deep copy of the subset of the pixmap that is specified by the rectangle <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a>( <i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>).</p></div></p>
+</div><h4 id='method.create_heuristic_mask' class='method'><code>fn <a href='#method.create_heuristic_mask' class='fnname'>create_heuristic_mask</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapCreateHeuristicMaskArgs.html' title='qt_gui::bitmap::overloading::BitmapCreateHeuristicMaskArgs'>BitmapCreateHeuristicMaskArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::createHeuristicMask</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn create_heuristic_mask(&amp;self, (bool, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>2) <code>fn create_heuristic_mask(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>3) <code>fn create_heuristic_mask(&amp;self, (bool, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>4) <code>fn create_heuristic_mask(&amp;self, cpp_utils::AsStruct) -&gt; ::bitmap::Bitmap</code><br>
+C++ method: <span style='color: green;'><code>QBitmap QBitmap::createHeuristicMask(bool clipTight = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#createHeuristicMask">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns a heuristic mask for this pixmap.</p>
+<p>The function works by selecting a color from one of the corners and then chipping away pixels of that color, starting at all the edges. If <i>clipTight</i> is true (the default) the mask is just large enough to cover the pixels; otherwise, the mask is larger than the data pixels.</p>
+<p>The mask may not be perfect but it should be reasonable, so you can do things such as the following:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpixmap.html#QPixmap">QPixmap</a></span> myPixmap;
+myPixmap<span class="operator">.</span>setMask(myPixmap<span class="operator">.</span>createHeuristicMask());</pre>
+<p>This function is slow because it involves converting to/from a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>, and non-trivial computations.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#createHeuristicMask">QImage::createHeuristicMask</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#createMaskFromColor">createMaskFromColor</a>().</p></div></p>
+</div><h4 id='method.create_mask_from_color' class='method'><code>fn <a href='#method.create_mask_from_color' class='fnname'>create_mask_from_color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapCreateMaskFromColorArgs.html' title='qt_gui::bitmap::overloading::BitmapCreateMaskFromColorArgs'>BitmapCreateMaskFromColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::createMaskFromColor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn create_mask_from_color(&amp;self, (&amp;::color::Color, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>2) <code>fn create_mask_from_color(&amp;self, (&amp;::color::Color, qt_core::qt::MaskMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>3) <code>fn create_mask_from_color(&amp;self, (&amp;::color::Color, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>4) <code>fn create_mask_from_color(&amp;self, (&amp;::color::Color, qt_core::qt::MaskMode, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>
+C++ method: <span style='color: green;'><code>QBitmap QBitmap::createMaskFromColor(const QColor&amp; maskColor, Qt::MaskMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#createMaskFromColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns a mask for this pixmap based on the given <i>maskColor</i>. If the <i>mode</i> is <a href="http://doc.qt.io/qt-5/qt.html#MaskMode-enum">Qt::MaskInColor</a>, all pixels matching the maskColor will be transparent. If <i>mode</i> is <a href="http://doc.qt.io/qt-5/qt.html#MaskMode-enum">Qt::MaskOutColor</a>, all pixels matching the maskColor will be opaque.</p>
+<p>This function is slow because it involves converting to/from a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#createHeuristicMask">createHeuristicMask</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#createMaskFromColor">QImage::createMaskFromColor</a>().</p></div></p>
+</div><h4 id='method.default_depth' class='method'><code>fn <a href='#method.default_depth' class='fnname'>default_depth</a>() -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static int QBitmap::defaultDepth()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#defaultDepth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the default pixmap depth used by the application.</p>
+<p>On all platforms the depth of the primary screen will be returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#depth">depth</a>(), <a href="http://doc.qt.io/qt-5/qcolormap.html#depth">QColormap::depth</a>(), and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-information">Pixmap Information</a>.</p></div></p>
+</div><h4 id='method.depth' class='method'><code>fn <a href='#method.depth' class='fnname'>depth</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QBitmap::depth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#depth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the depth of the pixmap.</p>
+<p>The pixmap depth is also called bits per pixel (bpp) or bit planes of a pixmap. A null pixmap has depth 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#defaultDepth">defaultDepth</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-information">Pixmap Information</a>.</p></div></p>
+</div><h4 id='method.detach' class='method'><code>fn <a href='#method.detach' class='fnname'>detach</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBitmap::detach()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#detach">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Detaches the pixmap from shared pixmap data.</p>
+<p>A pixmap is automatically detached by Qt whenever its contents are about to change. This is done in almost all <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> member functions that modify the pixmap (<a href="http://doc.qt.io/qt-5/qpixmap.html#fill">fill</a>(), <a href="http://doc.qt.io/qt-5/qpixmap.html#fromImage">fromImage</a>(), <a href="http://doc.qt.io/qt-5/qpixmap.html#load">load</a>(), etc.), and in <a href="http://doc.qt.io/qt-5/qpainter.html#begin">QPainter::begin</a>() on a pixmap.</p>
+<p>There are two exceptions in which detach() must be called explicitly, that is when calling the handle() or the x11PictureHandle() function (only available on X11). Otherwise, any modifications done using system calls, will be performed on the shared data.</p>
+<p>The detach() function returns immediately if there is just a single reference or if the pixmap has not been initialized yet.</p></div></p>
+</div><h4 id='method.dev_type' class='method'><code>fn <a href='#method.dev_type' class='fnname'>dev_type</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual int QBitmap::devType() const</code></span></p>
+</div><h4 id='method.device_pixel_ratio' class='method'><code>fn <a href='#method.device_pixel_ratio' class='fnname'>device_pixel_ratio</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QBitmap::devicePixelRatio() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#devicePixelRatio">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the device pixel ratio for the pixmap. This is the ratio between <i>device pixels</i> and <i>device independent pixels</i>.</p>
+<p>Use this function when calculating layout geometry based on the pixmap size: <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> layoutSize = image.<a href="http://doc.qt.io/qt-5/qpixmap.html#size">size</a>() / image.devicePixelRatio()</p>
+<p>The default value is 1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#setDevicePixelRatio">setDevicePixelRatio</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a>.</p></div></p>
+</div><h4 id='method.fill' class='method'><code>fn <a href='#method.fill' class='fnname'>fill</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapFillArgs.html' title='qt_gui::bitmap::overloading::BitmapFillArgs'>BitmapFillArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::fill</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn fill(&amp;mut self, &amp;::color::Color) -&gt; ()</code><br>2) <code>fn fill(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QBitmap::fill(const QColor&amp; fillColor = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#fill">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Fills the pixmap with the given <i>color</i>.</p>
+<p>The effect of this function is undefined when the pixmap is being painted on.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-transformations">Pixmap Transformations</a>.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn fill(&amp;mut self, (*const ::paint_device::PaintDevice, &amp;qt_core::point::Point)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QBitmap::fill(const QPaintDevice* device, const QPoint&amp; ofs)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn fill(&amp;mut self, (*const ::paint_device::PaintDevice, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QBitmap::fill(const QPaintDevice* device, int xofs, int yofs)</code></span></p>
+</div><h4 id='method.from_data' class='method'><code>fn <a href='#method.from_data' class='fnname'>from_data</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapFromDataArgs.html' title='qt_gui::bitmap::overloading::BitmapFromDataArgs'>BitmapFromDataArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::fromData</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_data((&amp;qt_core::size::Size, *const libc::c_uchar, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>2) <code>fn from_data((&amp;qt_core::size::Size, *const libc::c_uchar, ::image::Format, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>3) <code>fn from_data((&amp;qt_core::size::Size, *const libc::c_uchar, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>4) <code>fn from_data((&amp;qt_core::size::Size, *const libc::c_uchar, ::image::Format, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>
+C++ method: <span style='color: green;'><code>static QBitmap QBitmap::fromData(const QSize&amp; size, const unsigned char* bits, QImage::Format monoFormat = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbitmap.html#fromData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Constructs a bitmap with the given <i>size</i>, and sets the contents to the <i>bits</i> supplied.</p>
+<p>The bitmap data has to be byte aligned and provided in in the bit order specified by <i>monoFormat</i>. The mono format must be either <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_Mono</a> or <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_MonoLSB</a>. Use <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_Mono</a> to specify data on the XBM format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbitmap.html#fromImage">fromImage</a>().</p></div></p>
+</div><h4 id='method.from_image' class='method'><code>fn <a href='#method.from_image' class='fnname'>from_image</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapFromImageArgs.html' title='qt_gui::bitmap::overloading::BitmapFromImageArgs'>BitmapFromImageArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::fromImage</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_image((&amp;::image::Image, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>2) <code>fn from_image((&amp;::image::Image, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>3) <code>fn from_image((&amp;::image::Image, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>4) <code>fn from_image((&amp;::image::Image, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>
+C++ method: <span style='color: green;'><code>static QBitmap QBitmap::fromImage(const QImage&amp; image, QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbitmap.html#fromImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of the given <i>image</i> converted to a bitmap using the specified image conversion <i>flags</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbitmap.html#fromData">fromData</a>().</p></div></p>
+</div><h4 id='method.from_image_reader' class='method'><code>fn <a href='#method.from_image_reader' class='fnname'>from_image_reader</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapFromImageReaderArgs.html' title='qt_gui::bitmap::overloading::BitmapFromImageReaderArgs'>BitmapFromImageReaderArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::fromImageReader</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_image_reader((*mut ::image_reader::ImageReader, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn from_image_reader((*mut ::image_reader::ImageReader, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn from_image_reader((*mut ::image_reader::ImageReader, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>4) <code>fn from_image_reader((*mut ::image_reader::ImageReader, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>static QPixmap QBitmap::fromImageReader(QImageReader* imageReader, QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#fromImageReader">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Create a <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> from an image read directly from an <i>imageReader</i>. The <i>flags</i> argument is a bitwise-OR of the <a href="http://doc.qt.io/qt-5/qt.html#ImageConversionFlag-enum">Qt::ImageConversionFlags</a>. Passing 0 for <i>flags</i> sets all the default options.</p>
+<p>On some systems, reading an image directly to <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> can use less memory than reading a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> to convert it to <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#fromImage">fromImage</a>(), <a href="http://doc.qt.io/qt-5/qpixmap.html#toImage">toImage</a>(), and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-conversion">Pixmap Conversion</a>.</p></div></p>
+</div><h4 id='method.grab_widget' class='method'><code>fn <a href='#method.grab_widget' class='fnname'>grab_widget</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapGrabWidgetArgs.html' title='qt_gui::bitmap::overloading::BitmapGrabWidgetArgs'>BitmapGrabWidgetArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::grabWidget</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn grab_widget((*mut qt_core::object::Object, &amp;qt_core::rect::Rect, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn grab_widget((*mut qt_core::object::Object, &amp;qt_core::rect::Rect, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>static QPixmap QBitmap::grabWidget(QObject* widget, const QRect&amp; rect)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap-obsolete.html#grabWidget">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use <a href="http://doc.qt.io/qt-5/qwidget.html#grab">QWidget::grab</a>() instead.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn grab_widget((*mut qt_core::object::Object, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn grab_widget((*mut qt_core::object::Object, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn grab_widget((*mut qt_core::object::Object, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>4) <code>fn grab_widget((*mut qt_core::object::Object, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>5) <code>fn grab_widget((*mut qt_core::object::Object, libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>6) <code>fn grab_widget((*mut qt_core::object::Object, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>7) <code>fn grab_widget((*mut qt_core::object::Object, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>8) <code>fn grab_widget((*mut qt_core::object::Object, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>9) <code>fn grab_widget((*mut qt_core::object::Object, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>10) <code>fn grab_widget((*mut qt_core::object::Object, libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>static QPixmap QBitmap::grabWidget(QObject* widget, int x = ?, int y = ?, int w = ?, int h = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap-obsolete.html#grabWidget-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use <a href="http://doc.qt.io/qt-5/qwidget.html#grab">QWidget::grab</a>() instead.</p></div></p>
+</div><h4 id='method.grab_window' class='method'><code>fn <a href='#method.grab_window' class='fnname'>grab_window</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapGrabWindowArgs.html' title='qt_gui::bitmap::overloading::BitmapGrabWindowArgs'>BitmapGrabWindowArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::grabWindow</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn grab_window((libc::c_ulonglong, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn grab_window((libc::c_ulonglong, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn grab_window((libc::c_ulonglong, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>4) <code>fn grab_window((libc::c_ulonglong, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>5) <code>fn grab_window((libc::c_ulonglong, libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>6) <code>fn grab_window((libc::c_ulonglong, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>7) <code>fn grab_window((libc::c_ulonglong, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>8) <code>fn grab_window((libc::c_ulonglong, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>9) <code>fn grab_window((libc::c_ulonglong, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>10) <code>fn grab_window((libc::c_ulonglong, libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>static QPixmap QBitmap::grabWindow(unsigned long long arg1, int x = ?, int y = ?, int w = ?, int h = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap-obsolete.html#grabWindow">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns a pixmap constructed by grabbing the contents of the given <i>window</i> restricted by <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a>(<i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>).</p>
+<p>The arguments (<i>x</i>, <i>y</i>) specify the offset in the window, whereas (<i>width</i>, <i>height</i>) specify the area to be copied. If <i>width</i> is negative, the function copies everything to the right border of the window. If <i>height</i> is negative, the function copies everything to the bottom of the window.</p>
+<p>The window system identifier (<code>WId</code>) can be retrieved using the <a href="http://doc.qt.io/qt-5/qwidget.html#winId">QWidget::winId</a>() function. The rationale for using a window identifier and not a <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a>, is to enable grabbing of windows that are not part of the application, window system frames, and so on.</p>
+<p>The grabWindow() function grabs pixels from the screen, not from the window, i.e. if there is another window partially or entirely over the one you grab, you get pixels from the overlying window, too. The mouse cursor is generally not grabbed.</p>
+<p>Note on X11 that if the given <i>window</i> doesn&#39;t have the same depth as the root window, and another window partially or entirely obscures the one you grab, you will <i>not</i> get pixels from the overlying window. The contents of the obscured areas in the pixmap will be undefined and uninitialized.</p>
+<p>On Windows Vista and above grabbing a layered window, which is created by setting the <a href="http://doc.qt.io/qt-5/qt.html#WidgetAttribute-enum">Qt::WA_TranslucentBackground</a> attribute, will not work. Instead grabbing the desktop widget should work.</p>
+<p><b>Warning:</b> In general, grabbing an area outside the screen is not safe. This depends on the underlying window system.</p>
+<p><b>Warning:</b> The function is deprecated in Qt 5.0 since there might be platform plugins in which window system identifiers (<code>WId</code>) are local to a screen. Use <a href="http://doc.qt.io/qt-5/qscreen.html#grabWindow">QScreen::grabWindow</a>() instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap-obsolete.html#grabWidget">grabWidget</a>(), <a href="http://doc.qt.io/qt-5/qtwidgets-desktop-screenshot-example.html">Screenshot Example</a>, and <a href="http://doc.qt.io/qt-5/qscreen.html">QScreen</a>.</p></div></p>
+</div><h4 id='method.has_alpha' class='method'><code>fn <a href='#method.has_alpha' class='fnname'>has_alpha</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBitmap::hasAlpha() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#hasAlpha">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this pixmap has an alpha channel, <i>or</i> has a mask, otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#hasAlphaChannel">hasAlphaChannel</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#mask">mask</a>().</p></div></p>
+</div><h4 id='method.has_alpha_channel' class='method'><code>fn <a href='#method.has_alpha_channel' class='fnname'>has_alpha_channel</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBitmap::hasAlphaChannel() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#hasAlphaChannel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the pixmap has a format that respects the alpha channel, otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#hasAlpha">hasAlpha</a>().</p></div></p>
+</div><h4 id='method.height' class='method'><code>fn <a href='#method.height' class='fnname'>height</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QBitmap::height() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#height">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the height of the pixmap.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#size">size</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-information">Pixmap Information</a>.</p></div></p>
+</div><h4 id='method.height_m_m' class='method'><code>fn <a href='#method.height_m_m' class='fnname'>height_m_m</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QBitmap::heightMM() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#heightMM">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the height of the paint device in millimeters. Due to platform limitations it may not be possible to use this function to determine the actual physical size of a widget on the screen.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#height">height</a>().</p></div></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBitmap::isDetached() const</code></span></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBitmap::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this is a null pixmap; otherwise returns <code>false</code>.</p>
+<p>A null pixmap has zero width, zero height and no contents. You cannot draw in a null pixmap.</p></div></p>
+</div><h4 id='method.is_q_bitmap' class='method'><code>fn <a href='#method.is_q_bitmap' class='fnname'>is_q_bitmap</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBitmap::isQBitmap() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#isQBitmap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this is a <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.load' class='method'><code>fn <a href='#method.load' class='fnname'>load</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapLoadArgs.html' title='qt_gui::bitmap::overloading::BitmapLoadArgs'>BitmapLoadArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::load</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn load(&amp;mut self, &amp;qt_core::string::String) -&gt; bool</code><br>2) <code>fn load(&amp;mut self, (&amp;qt_core::string::String, *const libc::c_char)) -&gt; bool</code><br>3) <code>fn load(&amp;mut self, (&amp;qt_core::string::String, *const libc::c_char, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QBitmap::load(const QString&amp; fileName, const char* format = ?, QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#load">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Loads a pixmap from the file with the given <i>fileName</i>. Returns true if the pixmap was successfully loaded; otherwise invalidates the pixmap and returns <code>false</code>.</p>
+<p>The loader attempts to read the pixmap using the specified <i>format</i>. If the <i>format</i> is not specified (which is the default), the loader probes the file for a header to guess the file format.</p>
+<p>The file name can either refer to an actual file on disk or to one of the application&#39;s embedded resources. See the <a href="http://doc.qt.io/qt-5/resources.html">Resource System</a> overview for details on how to embed pixmaps and other resource files in the application&#39;s executable.</p>
+<p>If the data needs to be modified to fit in a lower-resolution result (e.g. converting from 32-bit to 8-bit), use the <i>flags</i> to control the conversion.</p>
+<p>Note that QPixmaps are automatically added to the <a href="http://doc.qt.io/qt-5/qpixmapcache.html">QPixmapCache</a> when loaded from a file; the key used is internal and can not be acquired.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#loadFromData">loadFromData</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#reading-and-writing-image-files">Reading and Writing Image Files</a>.</p></div></p>
+</div><h4 id='method.load_from_data' class='method'><code>fn <a href='#method.load_from_data' class='fnname'>load_from_data</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapLoadFromDataArgs.html' title='qt_gui::bitmap::overloading::BitmapLoadFromDataArgs'>BitmapLoadFromDataArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::loadFromData</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn load_from_data(&amp;mut self, &amp;qt_core::byte_array::ByteArray) -&gt; bool</code><br>2) <code>fn load_from_data(&amp;mut self, (&amp;qt_core::byte_array::ByteArray, *const libc::c_char)) -&gt; bool</code><br>3) <code>fn load_from_data(&amp;mut self, (&amp;qt_core::byte_array::ByteArray, *const libc::c_char, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QBitmap::loadFromData(const QByteArray&amp; data, const char* format = ?, QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#loadFromData-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Loads a pixmap from the binary <i>data</i> using the specified <i>format</i> and conversion <i>flags</i>.</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn load_from_data(&amp;mut self, (*const libc::c_uchar, libc::c_uint)) -&gt; bool</code><br>2) <code>fn load_from_data(&amp;mut self, (*const libc::c_uchar, libc::c_uint, *const libc::c_char)) -&gt; bool</code><br>3) <code>fn load_from_data(&amp;mut self, (*const libc::c_uchar, libc::c_uint, *const libc::c_char, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QBitmap::loadFromData(const unsigned char* buf, unsigned int len, const char* format = ?, QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#loadFromData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Loads a pixmap from the <i>len</i> first bytes of the given binary <i>data</i>. Returns <code>true</code> if the pixmap was loaded successfully; otherwise invalidates the pixmap and returns <code>false</code>.</p>
+<p>The loader attempts to read the pixmap using the specified <i>format</i>. If the <i>format</i> is not specified (which is the default), the loader probes the file for a header to guess the file format.</p>
+<p>If the data needs to be modified to fit in a lower-resolution result (e.g. converting from 32-bit to 8-bit), use the <i>flags</i> to control the conversion.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#load">load</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#reading-and-writing-image-files">Reading and Writing Image Files</a>.</p></div></p>
+</div><h4 id='method.logical_dpi_x' class='method'><code>fn <a href='#method.logical_dpi_x' class='fnname'>logical_dpi_x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QBitmap::logicalDpiX() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal resolution of the device in dots per inch, which is used when computing font sizes. For X11, this is usually the same as could be computed from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#widthMM">widthMM</a>().</p>
+<p>Note that if the logicalDpiX() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">physicalDpiX</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">logicalDpiY</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">physicalDpiX</a>().</p></div></p>
+</div><h4 id='method.logical_dpi_y' class='method'><code>fn <a href='#method.logical_dpi_y' class='fnname'>logical_dpi_y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QBitmap::logicalDpiY() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the vertical resolution of the device in dots per inch, which is used when computing font sizes. For X11, this is usually the same as could be computed from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#heightMM">heightMM</a>().</p>
+<p>Note that if the logicalDpiY() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">physicalDpiY</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">logicalDpiX</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">physicalDpiY</a>().</p></div></p>
+</div><h4 id='method.mask' class='method'><code>fn <a href='#method.mask' class='fnname'>mask</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapMaskArgs.html' title='qt_gui::bitmap::overloading::BitmapMaskArgs'>BitmapMaskArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::mask</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn mask(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>2) <code>fn mask(&amp;self, cpp_utils::AsStruct) -&gt; ::bitmap::Bitmap</code><br>
+C++ method: <span style='color: green;'><code>QBitmap QBitmap::mask() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#mask">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Extracts a bitmap mask from the pixmap&#39;s alpha channel.</p>
+<p><b>Warning:</b> This is potentially an expensive operation. The mask of the pixmap is extracted dynamically from the pixeldata.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#setMask">setMask</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-information">Pixmap Information</a>.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapNewArgs.html' title='qt_gui::bitmap::overloading::BitmapNewArgs'>BitmapNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::QBitmap</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::bitmap::Bitmap</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBitmap::QBitmap()</code></span></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::pixmap::Pixmap, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>2) <code>fn new((&amp;::pixmap::Pixmap, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBitmap::QBitmap(const QPixmap&amp; arg1)</code></span></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::size::Size, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>2) <code>fn new((&amp;qt_core::size::Size, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBitmap::QBitmap(const QSize&amp; arg1)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>2) <code>fn new((&amp;qt_core::string::String, *const libc::c_char, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>3) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>4) <code>fn new((&amp;qt_core::string::String, *const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBitmap::QBitmap(const QString&amp; fileName, const char* format = ?)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>2) <code>fn new((libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBitmap::QBitmap(int w, int h)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, arg1: &amp;'l1 <a class='struct' href='../../qt_gui/pixmap/struct.Pixmap.html' title='qt_gui::pixmap::Pixmap'>Pixmap</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/bitmap/struct.Bitmap.html' title='qt_gui::bitmap::Bitmap'>Bitmap</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap&amp; QBitmap::operator=(const QPixmap&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbitmap.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Assigns the given <i>pixmap</i> to this bitmap and returns a reference to this bitmap.</p>
+<p>If the pixmap has a depth greater than 1, the resulting bitmap will be dithered automatically.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#depth">QPixmap::depth</a>().</p></div></p>
+</div><h4 id='method.op_not' class='method'><code>fn <a href='#method.op_not' class='fnname'>op_not</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBitmap::operator!() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#operator-not">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this is a null pixmap; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#isNull">isNull</a>().</p></div></p>
+</div><h4 id='method.paint_engine' class='method'><code>fn <a href='#method.paint_engine' class='fnname'>paint_engine</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/paint_engine/struct.PaintEngine.html' title='qt_gui::paint_engine::PaintEngine'>PaintEngine</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual QPaintEngine* QBitmap::paintEngine() const</code></span></p>
+</div><h4 id='method.painting_active' class='method'><code>fn <a href='#method.painting_active' class='fnname'>painting_active</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBitmap::paintingActive() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#paintingActive">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the device is currently being painted on, i.e. someone has called <a href="http://doc.qt.io/qt-5/qpainter.html#begin">QPainter::begin</a>() but not yet called <a href="http://doc.qt.io/qt-5/qpainter.html#end">QPainter::end</a>() for this device; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainter.html#isActive">QPainter::isActive</a>().</p></div></p>
+</div><h4 id='method.physical_dpi_x' class='method'><code>fn <a href='#method.physical_dpi_x' class='fnname'>physical_dpi_x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QBitmap::physicalDpiX() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal resolution of the device in dots per inch. For example, when printing, this resolution refers to the physical printer&#39;s resolution. The logical DPI on the other hand, refers to the resolution used by the actual paint engine.</p>
+<p>Note that if the physicalDpiX() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">logicalDpiX</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">physicalDpiY</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">logicalDpiX</a>().</p></div></p>
+</div><h4 id='method.physical_dpi_y' class='method'><code>fn <a href='#method.physical_dpi_y' class='fnname'>physical_dpi_y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QBitmap::physicalDpiY() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal resolution of the device in dots per inch. For example, when printing, this resolution refers to the physical printer&#39;s resolution. The logical DPI on the other hand, refers to the resolution used by the actual paint engine.</p>
+<p>Note that if the physicalDpiY() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">logicalDpiY</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">physicalDpiX</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">logicalDpiY</a>().</p></div></p>
+</div><h4 id='method.rect' class='method'><code>fn <a href='#method.rect' class='fnname'>rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapRectArgs.html' title='qt_gui::bitmap::overloading::BitmapRectArgs'>BitmapRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::rect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QBitmap::rect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#rect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pixmap&#39;s enclosing rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-information">Pixmap Information</a>.</p></div></p>
+</div><h4 id='method.save' class='method'><code>fn <a href='#method.save' class='fnname'>save</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapSaveArgs.html' title='qt_gui::bitmap::overloading::BitmapSaveArgs'>BitmapSaveArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::save</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn save(&amp;self, *mut qt_core::qiod_evice::QiodEvice) -&gt; bool</code><br>2) <code>fn save(&amp;self, (*mut qt_core::qiod_evice::QiodEvice, *const libc::c_char)) -&gt; bool</code><br>3) <code>fn save(&amp;self, (*mut qt_core::qiod_evice::QiodEvice, *const libc::c_char, libc::c_int)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QBitmap::save(QIODevice* device, const char* format = ?, int quality = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#save-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function writes a <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> to the given <i>device</i> using the specified image file <i>format</i> and <i>quality</i> factor. This can be used, for example, to save a pixmap directly into a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>:</p>
+<pre class="cpp">        <span class="type"><a href="http://doc.qt.io/qt-5/qpixmap.html#QPixmap">QPixmap</a></span> pixmap;
+&#32;       <span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> bytes;
+&#32;       <span class="type"><a href="http://doc.qt.io/qt-5/qbuffer.html">QBuffer</a></span> buffer(<span class="operator">&amp;</span>bytes);
+&#32;       buffer<span class="operator">.</span>open(<span class="type"><a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a></span><span class="operator">::</span>WriteOnly);
+&#32;       pixmap<span class="operator">.</span>save(<span class="operator">&amp;</span>buffer<span class="operator">,</span> <span class="string">&quot;PNG&quot;</span>); <span class="comment">// writes pixmap into bytes in PNG format</span></pre></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn save(&amp;self, &amp;qt_core::string::String) -&gt; bool</code><br>2) <code>fn save(&amp;self, (&amp;qt_core::string::String, *const libc::c_char)) -&gt; bool</code><br>3) <code>fn save(&amp;self, (&amp;qt_core::string::String, *const libc::c_char, libc::c_int)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QBitmap::save(const QString&amp; fileName, const char* format = ?, int quality = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#save">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Saves the pixmap to the file with the given <i>fileName</i> using the specified image file <i>format</i> and <i>quality</i> factor. Returns <code>true</code> if successful; otherwise returns <code>false</code>.</p>
+<p>The <i>quality</i> factor must be in the range [0,100] or -1. Specify 0 to obtain small compressed files, 100 for large uncompressed files, and -1 to use the default settings.</p>
+<p>If <i>format</i> is 0, an image format will be chosen from <i>fileName</i>&#39;s suffix.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#reading-and-writing-image-files">Reading and Writing Image Files</a>.</p></div></p>
+</div><h4 id='method.scaled' class='method'><code>fn <a href='#method.scaled' class='fnname'>scaled</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapScaledArgs.html' title='qt_gui::bitmap::overloading::BitmapScaledArgs'>BitmapScaledArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::scaled</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-6' class='section-header'><a href='#variant-1-6'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, qt_core::qt::AspectRatioMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, qt_core::qt::AspectRatioMode, qt_core::qt::TransformationMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>4) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>5) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, qt_core::qt::AspectRatioMode, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>6) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, qt_core::qt::AspectRatioMode, qt_core::qt::TransformationMode, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QBitmap::scaled(const QSize&amp; s, Qt::AspectRatioMode aspectMode = ?, Qt::TransformationMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#scaled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Scales the pixmap to the given <i>size</i>, using the aspect ratio and transformation modes specified by <i>aspectRatioMode</i> and <i>transformMode</i>.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qimage-scaling.png" alt=""></img></p><ul>
+<li>If <i>aspectRatioMode</i> is <a href="http://doc.qt.io/qt-5/qt.html#AspectRatioMode-enum">Qt::IgnoreAspectRatio</a>, the pixmap is scaled to <i>size</i>.</li>
+<li>If <i>aspectRatioMode</i> is <a href="http://doc.qt.io/qt-5/qt.html#AspectRatioMode-enum">Qt::KeepAspectRatio</a>, the pixmap is scaled to a rectangle as large as possible inside <i>size</i>, preserving the aspect ratio.</li>
+<li>If <i>aspectRatioMode</i> is <a href="http://doc.qt.io/qt-5/qt.html#AspectRatioMode-enum">Qt::KeepAspectRatioByExpanding</a>, the pixmap is scaled to a rectangle as small as possible outside <i>size</i>, preserving the aspect ratio.</li>
+</ul>
+<p>If the given <i>size</i> is empty, this function returns a null pixmap.</p>
+<p>In some cases it can be more beneficial to draw the pixmap to a painter with a scale set rather than scaling the pixmap. This is the case when the painter is for instance based on OpenGL or when the scale factor changes rapidly.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#isNull">isNull</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-transformations">Pixmap Transformations</a>.</p></div></p>
+
+<h2 id='variant-2-6' class='section-header'><a href='#variant-2-6'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, qt_core::qt::AspectRatioMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, qt_core::qt::AspectRatioMode, qt_core::qt::TransformationMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>4) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>5) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, qt_core::qt::AspectRatioMode, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>6) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, qt_core::qt::AspectRatioMode, qt_core::qt::TransformationMode, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QBitmap::scaled(int w, int h, Qt::AspectRatioMode aspectMode = ?, Qt::TransformationMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#scaled-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns a copy of the pixmap scaled to a rectangle with the given <i>width</i> and <i>height</i> according to the given <i>aspectRatioMode</i> and <i>transformMode</i>.</p>
+<p>If either the <i>width</i> or the <i>height</i> is zero or negative, this function returns a null pixmap.</p></div></p>
+</div><h4 id='method.scaled_to_height' class='method'><code>fn <a href='#method.scaled_to_height' class='fnname'>scaled_to_height</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapScaledToHeightArgs.html' title='qt_gui::bitmap::overloading::BitmapScaledToHeightArgs'>BitmapScaledToHeightArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::scaledToHeight</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scaled_to_height(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn scaled_to_height(&amp;self, (libc::c_int, qt_core::qt::TransformationMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn scaled_to_height(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>4) <code>fn scaled_to_height(&amp;self, (libc::c_int, qt_core::qt::TransformationMode, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QBitmap::scaledToHeight(int h, Qt::TransformationMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#scaledToHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a scaled copy of the image. The returned image is scaled to the given <i>height</i> using the specified transformation <i>mode</i>. The width of the pixmap is automatically calculated so that the aspect ratio of the pixmap is preserved.</p>
+<p>If <i>height</i> is 0 or negative, a null pixmap is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#isNull">isNull</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-transformations">Pixmap Transformations</a>.</p></div></p>
+</div><h4 id='method.scaled_to_width' class='method'><code>fn <a href='#method.scaled_to_width' class='fnname'>scaled_to_width</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapScaledToWidthArgs.html' title='qt_gui::bitmap::overloading::BitmapScaledToWidthArgs'>BitmapScaledToWidthArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::scaledToWidth</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scaled_to_width(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn scaled_to_width(&amp;self, (libc::c_int, qt_core::qt::TransformationMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn scaled_to_width(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>4) <code>fn scaled_to_width(&amp;self, (libc::c_int, qt_core::qt::TransformationMode, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QBitmap::scaledToWidth(int w, Qt::TransformationMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#scaledToWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a scaled copy of the image. The returned image is scaled to the given <i>width</i> using the specified transformation <i>mode</i>. The height of the pixmap is automatically calculated so that the aspect ratio of the pixmap is preserved.</p>
+<p>If <i>width</i> is 0 or negative, a null pixmap is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#isNull">isNull</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-transformations">Pixmap Transformations</a>.</p></div></p>
+</div><h4 id='method.scroll' class='method'><code>fn <a href='#method.scroll' class='fnname'>scroll</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapScrollArgs.html' title='qt_gui::bitmap::overloading::BitmapScrollArgs'>BitmapScrollArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::scroll</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-7' class='section-header'><a href='#variant-1-7'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn scroll(&amp;mut self, (libc::c_int, libc::c_int, &amp;qt_core::rect::Rect)) -&gt; ()</code><br>2) <code>fn scroll(&amp;mut self, (libc::c_int, libc::c_int, &amp;qt_core::rect::Rect, *mut ::region::Region)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QBitmap::scroll(int dx, int dy, const QRect&amp; rect, QRegion* exposed = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#scroll-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Scrolls the area <i>rect</i> of this pixmap by (<i>dx</i>, <i>dy</i>). The exposed region is left unchanged. You can optionally pass a pointer to an empty <a href="http://doc.qt.io/qt-5/qregion.html">QRegion</a> to get the region that is <i>exposed</i> by the scroll operation.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpixmap.html#QPixmap">QPixmap</a></span> pixmap(<span class="string">&quot;background.png&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qregion.html">QRegion</a></span> exposed;
+pixmap<span class="operator">.</span>scroll(<span class="number">10</span><span class="operator">,</span> <span class="number">10</span><span class="operator">,</span> pixmap<span class="operator">.</span>rect()<span class="operator">,</span> <span class="operator">&amp;</span>exposed);</pre>
+<p>You cannot scroll while there is an active painter on the pixmap.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwidget.html#scroll">QWidget::scroll</a>() and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#scroll">QGraphicsItem::scroll</a>().</p></div></p>
+
+<h2 id='variant-2-7' class='section-header'><a href='#variant-2-7'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn scroll(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>2) <code>fn scroll(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int, libc::c_int, libc::c_int, *mut ::region::Region)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QBitmap::scroll(int dx, int dy, int x, int y, int width, int height, QRegion* exposed = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#scroll">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This convenience function is equivalent to calling QPixmap::scroll(<i>dx</i>, <i>dy</i>, <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a>(<i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>), <i>exposed</i>).</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwidget.html#scroll">QWidget::scroll</a>() and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#scroll">QGraphicsItem::scroll</a>().</p></div></p>
+</div><h4 id='method.set_device_pixel_ratio' class='method'><code>fn <a href='#method.set_device_pixel_ratio' class='fnname'>set_device_pixel_ratio</a>(&amp;mut self, scale_factor: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBitmap::setDevicePixelRatio(double scaleFactor)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#setDevicePixelRatio">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the device pixel ratio for the pixmap. This is the ratio between image pixels and device-independent pixels.</p>
+<p>The default <i>scaleFactor</i> is 1.0. Setting it to something else has two effects:</p>
+<p>QPainters that are opened on the pixmap will be scaled. For example, painting on a 200x200 image if with a ratio of 2.0 will result in effective (device-independent) painting bounds of 100x100.</p>
+<p>Code paths in Qt that calculate layout geometry based on the pixmap size will take the ratio into account: <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> layoutSize = pixmap.<a href="http://doc.qt.io/qt-5/qpixmap.html#size">size</a>() / pixmap.<a href="http://doc.qt.io/qt-5/qpixmap.html#devicePixelRatio">devicePixelRatio</a>() The net effect of this is that the pixmap is displayed as high-DPI pixmap rather than a large pixmap (see <a href="http://doc.qt.io/qt-5/qpainter.html#drawing-high-resolution-versions-of-pixmaps-and-images">Drawing High Resolution Versions of Pixmaps and Images</a>).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#devicePixelRatio">devicePixelRatio</a>().</p></div></p>
+</div><h4 id='method.set_mask' class='method'><code>fn <a href='#method.set_mask' class='fnname'>set_mask</a>(&amp;mut self, arg1: &amp;<a class='struct' href='../../qt_gui/bitmap/struct.Bitmap.html' title='qt_gui::bitmap::Bitmap'>Bitmap</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBitmap::setMask(const QBitmap&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#setMask">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a mask bitmap.</p>
+<p>This function merges the <i>mask</i> with the pixmap&#39;s alpha channel. A pixel value of 1 on the mask means the pixmap&#39;s pixel is unchanged; a value of 0 means the pixel is transparent. The mask must have the same size as this pixmap.</p>
+<p>Setting a null mask resets the mask, leaving the previously transparent pixels black. The effect of this function is undefined when the pixmap is being painted on.</p>
+<p><b>Warning:</b> This is potentially an expensive operation.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#mask">mask</a>(), <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-transformations">Pixmap Transformations</a>, and <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a>.</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapSizeArgs.html' title='qt_gui::bitmap::overloading::BitmapSizeArgs'>BitmapSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::size</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QBitmap::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the pixmap.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#width">width</a>(), <a href="http://doc.qt.io/qt-5/qpixmap.html#height">height</a>(), and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-information">Pixmap Information</a>.</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/bitmap/struct.Bitmap.html' title='qt_gui::bitmap::Bitmap'>Bitmap</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBitmap::swap(QBitmap&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbitmap.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps bitmap <i>other</i> with this bitmap. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.to_image' class='method'><code>fn <a href='#method.to_image' class='fnname'>to_image</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapToImageArgs.html' title='qt_gui::bitmap::overloading::BitmapToImageArgs'>BitmapToImageArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::toImage</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_image(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn to_image(&amp;self, cpp_utils::AsStruct) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QBitmap::toImage() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#toImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the pixmap to a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>. Returns a null image if the conversion fails.</p>
+<p>If the pixmap has 1-bit depth, the returned image will also be 1 bit deep. Images with more bits will be returned in a format closely represents the underlying system. Usually this will be <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_ARGB32_Premultiplied</a> for pixmaps with an alpha and <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_RGB32</a> or <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_RGB16</a> for pixmaps without alpha.</p>
+<p>Note that for the moment, alpha masks on monochrome images are ignored.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#fromImage">fromImage</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-formats">Image Formats</a>.</p></div></p>
+</div><h4 id='method.transformed' class='method'><code>fn <a href='#method.transformed' class='fnname'>transformed</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapTransformedArgs.html' title='qt_gui::bitmap::overloading::BitmapTransformedArgs'>BitmapTransformedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::transformed</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-8' class='section-header'><a href='#variant-1-8'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn transformed(&amp;self, (&amp;::transform::Transform, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>2) <code>fn transformed(&amp;self, (&amp;::transform::Transform, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>
+C++ method: <span style='color: green;'><code>QBitmap QBitmap::transformed(const QTransform&amp; matrix) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbitmap.html#transformed">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of this bitmap, transformed according to the given <i>matrix</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#transformed">QPixmap::transformed</a>().</p></div></p>
+
+<h2 id='variant-2-8' class='section-header'><a href='#variant-2-8'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn transformed(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::bitmap::Bitmap&gt;</code><br>2) <code>fn transformed(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsStruct)) -&gt; ::bitmap::Bitmap</code><br>
+C++ method: <span style='color: green;'><code>QBitmap QBitmap::transformed(const QMatrix&amp; arg1) const</code></span></p>
+</div><h4 id='method.true_matrix' class='method'><code>fn <a href='#method.true_matrix' class='fnname'>true_matrix</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapTrueMatrixArgs.html' title='qt_gui::bitmap::overloading::BitmapTrueMatrixArgs'>BitmapTrueMatrixArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBitmap::trueMatrix</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-9' class='section-header'><a href='#variant-1-9'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn true_matrix((&amp;::matrix::Matrix, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::matrix::Matrix&gt;</code><br>2) <code>fn true_matrix((&amp;::matrix::Matrix, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::matrix::Matrix</code><br>
+C++ method: <span style='color: green;'><code>static QMatrix QBitmap::trueMatrix(const QMatrix&amp; m, int w, int h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#trueMatrix-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This convenience function loads the matrix <i>m</i> into a <a href="http://doc.qt.io/qt-5/qtransform.html">QTransform</a> and calls the overloaded function with the <a href="http://doc.qt.io/qt-5/qtransform.html">QTransform</a> and the width <i>w</i> and the height <i>h</i>.</p></div></p>
+
+<h2 id='variant-2-9' class='section-header'><a href='#variant-2-9'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn true_matrix((&amp;::transform::Transform, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::transform::Transform&gt;</code><br>2) <code>fn true_matrix((&amp;::transform::Transform, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::transform::Transform</code><br>
+C++ method: <span style='color: green;'><code>static QTransform QBitmap::trueMatrix(const QTransform&amp; m, int w, int h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#trueMatrix">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the actual matrix used for transforming a pixmap with the given <i>width</i>, <i>height</i> and <i>matrix</i>.</p>
+<p>When transforming a pixmap using the <a href="http://doc.qt.io/qt-5/qpixmap.html#transformed">transformed</a>() function, the transformation matrix is internally adjusted to compensate for unwanted translation, i.e. <a href="http://doc.qt.io/qt-5/qpixmap.html#transformed">transformed</a>() returns the smallest pixmap containing all transformed points of the original pixmap. This function returns the modified matrix, which maps points correctly from the original pixmap into the new pixmap.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#transformed">transformed</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-transformations">Pixmap Transformations</a>.</p></div></p>
+</div><h4 id='method.width' class='method'><code>fn <a href='#method.width' class='fnname'>width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QBitmap::width() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmap.html#width">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the pixmap.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#size">size</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-information">Pixmap Information</a>.</p></div></p>
+</div><h4 id='method.width_m_m' class='method'><code>fn <a href='#method.width_m_m' class='fnname'>width_m_m</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QBitmap::widthMM() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#widthMM">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the paint device in millimeters. Due to platform limitations it may not be possible to use this function to determine the actual physical size of a widget on the screen.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#width">width</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/bitmap/struct.Bitmap.html' title='qt_gui::bitmap::Bitmap'>Bitmap</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-63227' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/bitmap.rs.html#18-22' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/bitmap/struct.Bitmap.html' title='qt_gui::bitmap::Bitmap'>Bitmap</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/bitmap/struct.Bitmap.html' title='qt_gui::bitmap::Bitmap'>Bitmap</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-63403' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/bitmap.rs.html#815-822' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QBitmap::~QBitmap()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbitmap.html#dtor.QBitmap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the bitmap.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/bitmap/struct.Bitmap.html' title='qt_gui::bitmap::Bitmap'>Bitmap</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-63406' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/bitmap.rs.html#824-828' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

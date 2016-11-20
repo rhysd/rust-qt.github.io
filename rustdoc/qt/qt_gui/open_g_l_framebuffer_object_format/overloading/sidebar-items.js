@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["OpenGLFramebufferObjectFormatNewArgs","This trait represents a set of arguments accepted by OpenGLFramebufferObjectFormat::new method."]]});

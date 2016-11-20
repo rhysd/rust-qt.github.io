@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ResizeMode","C++ type: <span style='color: green;'>```QHeaderView::ResizeMode```</span>"]],"mod":[["overloading",""]],"struct":[["HeaderView","C++ type: <span style='color: green;'>```QHeaderView```</span>"]]});

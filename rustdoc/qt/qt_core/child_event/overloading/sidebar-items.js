@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ChildEventNewArgs","This trait represents a set of arguments accepted by ChildEvent::new method."],["ChildEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by ChildEvent::register_event_type method."]]});

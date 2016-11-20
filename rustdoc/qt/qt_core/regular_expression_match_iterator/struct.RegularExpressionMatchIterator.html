@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RegularExpressionMatchIterator` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RegularExpressionMatchIterator">
+
+    <title>qt_core::regular_expression_match_iterator::RegularExpressionMatchIterator - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>regular_expression_match_iterator</a></p><script>window.sidebarCurrent = {name: 'RegularExpressionMatchIterator', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>regular_expression_match_iterator</a>::<wbr><a class='struct' href=''>RegularExpressionMatchIterator</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-128212' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression_match_iterator.rs.html#22-24' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RegularExpressionMatchIterator {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QRegularExpressionMatchIterator</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> class provides an iterator on the results of a global match of a <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> object against a string.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> object is a forward only Java-like iterator; it can be obtained by calling the <a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">QRegularExpression::globalMatch</a>() function. A new <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> will be positioned before the first result. You can then call the <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#hasNext">hasNext</a>() function to check if there are more results available; if so, the <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#next">next</a>() function will return the next result and advance the iterator.</p>
+<p>Each result is a <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> object holding all the information for that result (including captured substrings).</p>
+<p>For instance:</p>
+<pre class="cpp"><span class="comment">// extracts the words</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a></span> re(<span class="string">&quot;(\w+)&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> subject(<span class="string">&quot;the quick fox&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#QRegularExpressionMatchIterator">QRegularExpressionMatchIterator</a></span> i <span class="operator">=</span> re<span class="operator">.</span>globalMatch(subject);
+<span class="keyword">while</span> (i<span class="operator">.</span>hasNext()) {
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a></span> match <span class="operator">=</span> i<span class="operator">.</span>next();
+&#32;   <span class="comment">// ...</span>
+}</pre>
+<p>Moreover, <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> offers a <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#peekNext">peekNext</a>() function to get the next result <i>without</i> advancing the iterator.</p>
+<p>You can retrieve the <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> object the subject string was matched against by calling the <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#regularExpression">regularExpression</a>() function; the match type and the match options are available as well by calling the <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#matchType">matchType</a>() and the <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#matchOptions">matchOptions</a>() respectively.</p>
+<p>Please refer to the <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> documentation for more information about the Qt regular expression classes.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/regular_expression_match_iterator/struct.RegularExpressionMatchIterator.html' title='qt_core::regular_expression_match_iterator::RegularExpressionMatchIterator'>RegularExpressionMatchIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128217' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression_match_iterator.rs.html#32-148' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.has_next' class='method'><code>fn <a href='#method.has_next' class='fnname'>has_next</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRegularExpressionMatchIterator::hasNext() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#hasNext">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if there is at least one match result ahead of the iterator; otherwise it returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#next">next</a>().</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRegularExpressionMatchIterator::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the iterator object was obtained as a result from the <a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">QRegularExpression::globalMatch</a>() function invoked on a valid <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> object; returns <code>false</code> if the <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> was invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">QRegularExpression::globalMatch</a>() and <a href="http://doc.qt.io/qt-5/qregularexpression.html#isValid">QRegularExpression::isValid</a>().</p></div></p>
+</div><h4 id='method.match_options' class='method'><code>fn <a href='#method.match_options' class='fnname'>match_options</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/regular_expression/enum.MatchOption.html' title='qt_core::regular_expression::MatchOption'>MatchOption</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QRegularExpression::MatchOption&gt; QRegularExpressionMatchIterator::matchOptions() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#matchOptions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the match options that were used to get this <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> object, that is, the match options that were passed to <a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">QRegularExpression::globalMatch</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">QRegularExpression::globalMatch</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#regularExpression">regularExpression</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#matchType">matchType</a>().</p></div></p>
+</div><h4 id='method.match_type' class='method'><code>fn <a href='#method.match_type' class='fnname'>match_type</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/regular_expression/enum.MatchType.html' title='qt_core::regular_expression::MatchType'>MatchType</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpression::MatchType QRegularExpressionMatchIterator::matchType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#matchType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the match type that was used to get this <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> object, that is, the match type that was passed to <a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">QRegularExpression::globalMatch</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">QRegularExpression::globalMatch</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#regularExpression">regularExpression</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#matchOptions">matchOptions</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match_iterator/overloading/trait.RegularExpressionMatchIteratorNewArgs.html' title='qt_core::regular_expression_match_iterator::overloading::RegularExpressionMatchIteratorNewArgs'>RegularExpressionMatchIteratorNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatchIterator::QRegularExpressionMatchIterator</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::regular_expression_match_iterator::RegularExpressionMatchIterator</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::regular_expression_match_iterator::RegularExpressionMatchIterator&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRegularExpressionMatchIterator::QRegularExpressionMatchIterator()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::regular_expression_match_iterator::RegularExpressionMatchIterator, cpp_utils::AsStruct)) -&gt; ::regular_expression_match_iterator::RegularExpressionMatchIterator</code><br>2) <code>fn new((&amp;::regular_expression_match_iterator::RegularExpressionMatchIterator, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match_iterator::RegularExpressionMatchIterator&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRegularExpressionMatchIterator::QRegularExpressionMatchIterator(const QRegularExpressionMatchIterator&amp; iterator)</code></span></p>
+</div><h4 id='method.next' class='method'><code>fn <a href='#method.next' class='fnname'>next</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match_iterator/overloading/trait.RegularExpressionMatchIteratorNextArgs.html' title='qt_core::regular_expression_match_iterator::overloading::RegularExpressionMatchIteratorNextArgs'>RegularExpressionMatchIteratorNextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatchIterator::next</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn next(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>2) <code>fn next(&amp;mut self, cpp_utils::AsStruct) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>
+C++ method: <span style='color: green;'><code>QRegularExpressionMatch QRegularExpressionMatchIterator::next()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#next">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the next match result and advances the iterator by one position.</p>
+<p><b>Note: </b>Calling this function when the iterator is at the end of the result set leads to undefined results.</p></div></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, iterator: &amp;'l1 <a class='struct' href='../../qt_core/regular_expression_match_iterator/struct.RegularExpressionMatchIterator.html' title='qt_core::regular_expression_match_iterator::RegularExpressionMatchIterator'>RegularExpressionMatchIterator</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/regular_expression_match_iterator/struct.RegularExpressionMatchIterator.html' title='qt_core::regular_expression_match_iterator::RegularExpressionMatchIterator'>RegularExpressionMatchIterator</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatchIterator&amp; QRegularExpressionMatchIterator::operator=(const QRegularExpressionMatchIterator&amp; iterator)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the iterator <i>iterator</i> to this object, and returns a reference to the copy.</p></div></p>
+</div><h4 id='method.peek_next' class='method'><code>fn <a href='#method.peek_next' class='fnname'>peek_next</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match_iterator/overloading/trait.RegularExpressionMatchIteratorPeekNextArgs.html' title='qt_core::regular_expression_match_iterator::overloading::RegularExpressionMatchIteratorPeekNextArgs'>RegularExpressionMatchIteratorPeekNextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatchIterator::peekNext</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn peek_next(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>2) <code>fn peek_next(&amp;self, cpp_utils::AsStruct) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>
+C++ method: <span style='color: green;'><code>QRegularExpressionMatch QRegularExpressionMatchIterator::peekNext() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#peekNext">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the next match result without moving the iterator.</p>
+<p><b>Note: </b>Calling this function when the iterator is at the end of the result set leads to undefined results.</p></div></p>
+</div><h4 id='method.regular_expression' class='method'><code>fn <a href='#method.regular_expression' class='fnname'>regular_expression</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match_iterator/overloading/trait.RegularExpressionMatchIteratorRegularExpressionArgs.html' title='qt_core::regular_expression_match_iterator::overloading::RegularExpressionMatchIteratorRegularExpressionArgs'>RegularExpressionMatchIteratorRegularExpressionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatchIterator::regularExpression</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn regular_expression(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::regular_expression::RegularExpression&gt;</code><br>2) <code>fn regular_expression(&amp;self, cpp_utils::AsStruct) -&gt; ::regular_expression::RegularExpression</code><br>
+C++ method: <span style='color: green;'><code>QRegularExpression QRegularExpressionMatchIterator::regularExpression() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#regularExpression">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> object whose globalMatch() function returned this object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">QRegularExpression::globalMatch</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#matchType">matchType</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#matchOptions">matchOptions</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/regular_expression_match_iterator/struct.RegularExpressionMatchIterator.html' title='qt_core::regular_expression_match_iterator::RegularExpressionMatchIterator'>RegularExpressionMatchIterator</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRegularExpressionMatchIterator::swap(QRegularExpressionMatchIterator&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps the iterator <i>other</i> with this iterator object. This operation is very fast and never fails.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/regular_expression_match_iterator/struct.RegularExpressionMatchIterator.html' title='qt_core::regular_expression_match_iterator::RegularExpressionMatchIterator'>RegularExpressionMatchIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128215' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression_match_iterator.rs.html#26-30' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/regular_expression_match_iterator/struct.RegularExpressionMatchIterator.html' title='qt_core::regular_expression_match_iterator::RegularExpressionMatchIterator'>RegularExpressionMatchIterator</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/regular_expression_match_iterator/struct.RegularExpressionMatchIterator.html' title='qt_core::regular_expression_match_iterator::RegularExpressionMatchIterator'>RegularExpressionMatchIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128254' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression_match_iterator.rs.html#150-157' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QRegularExpressionMatchIterator::~QRegularExpressionMatchIterator()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html#dtor.QRegularExpressionMatchIterator">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/regular_expression_match_iterator/struct.RegularExpressionMatchIterator.html' title='qt_core::regular_expression_match_iterator::RegularExpressionMatchIterator'>RegularExpressionMatchIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128257' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression_match_iterator.rs.html#159-163' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

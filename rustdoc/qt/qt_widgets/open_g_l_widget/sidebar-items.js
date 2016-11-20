@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["UpdateBehavior","C++ type: <span style='color: green;'>```QOpenGLWidget::UpdateBehavior```</span>"]],"mod":[["overloading",""]],"struct":[["OpenGLWidget","C++ type: <span style='color: green;'>```QOpenGLWidget```</span>"]]});

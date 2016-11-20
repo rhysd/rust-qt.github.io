@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `KeyEvent` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, KeyEvent">
+
+    <title>qt_gui::key_event::KeyEvent - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>key_event</a></p><script>window.sidebarCurrent = {name: 'KeyEvent', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>key_event</a>::<wbr><a class='struct' href=''>KeyEvent</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-82807' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/key_event.rs.html#12-14' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct KeyEvent {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QKeyEvent</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeyevent.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qkeyevent.html">QKeyEvent</a> class describes a key event.</p>
+<p>Key events are sent to the widget with keyboard input focus when keys are pressed or released.</p>
+<p>A key event contains a special accept flag that indicates whether the receiver will handle the key event. This flag is set by default, so there is no need to call <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>() when acting on a key event. Calling <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>() on a key event will propagate it to the parent widget. The event is propagated up the parent widget chain until a widget accepts it or an event filter consumes it.</p>
+<p>The QWidget::setEnable() function can be used to enable or disable mouse and keyboard events for a widget.</p>
+<p>The event handlers <a href="http://doc.qt.io/qt-5/qwidget.html#keyPressEvent">QWidget::keyPressEvent</a>(), <a href="http://doc.qt.io/qt-5/qwidget.html#keyReleaseEvent">QWidget::keyReleaseEvent</a>(), <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#keyPressEvent">QGraphicsItem::keyPressEvent</a>() and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#keyReleaseEvent">QGraphicsItem::keyReleaseEvent</a>() receive key events.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/key_event/struct.KeyEvent.html' title='qt_gui::key_event::KeyEvent'>KeyEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-82812' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/key_event.rs.html#22-234' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.accept' class='method'><code>fn <a href='#method.accept' class='fnname'>accept</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QKeyEvent::accept()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accept">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the accept flag of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(true).</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p></div></p>
+</div><h4 id='method.count' class='method'><code>fn <a href='#method.count' class='fnname'>count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QKeyEvent::count() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeyevent.html#count">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of keys involved in this event. If <a href="http://doc.qt.io/qt-5/qkeyevent.html#text">text</a>() is not empty, this is simply the length of the string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qt.html#WidgetAttribute-enum">Qt::WA_KeyCompression</a>.</p></div></p>
+</div><h4 id='method.ignore' class='method'><code>fn <a href='#method.ignore' class='fnname'>ignore</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QKeyEvent::ignore()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#ignore">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the accept flag parameter of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(false).</p>
+<p>Clearing the accept parameter indicates that the event receiver does not want the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>().</p></div></p>
+</div><h4 id='method.is_accepted' class='method'><code>fn <a href='#method.is_accepted' class='fnname'>is_accepted</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeyEvent::isAccepted() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.is_auto_repeat' class='method'><code>fn <a href='#method.is_auto_repeat' class='fnname'>is_auto_repeat</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeyEvent::isAutoRepeat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeyevent.html#isAutoRepeat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this event comes from an auto-repeating key; returns <code>false</code> if it comes from an initial key press.</p>
+<p>Note that if the event is a multiple-key compressed event that is partly due to auto-repeat, this function could return either true or false indeterminately.</p></div></p>
+</div><h4 id='method.key' class='method'><code>fn <a href='#method.key' class='fnname'>key</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QKeyEvent::key() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeyevent.html#key">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the code of the key that was pressed or released.</p>
+<p>See <a href="http://doc.qt.io/qt-5/qt.html#Key-enum">Qt::Key</a> for the list of keyboard codes. These codes are independent of the underlying window system. Note that this function does not distinguish between capital and non-capital letters, use the <a href="http://doc.qt.io/qt-5/qkeyevent.html#text">text</a>() function (returning the Unicode text the key generated) for this purpose.</p>
+<p>A value of either 0 or <a href="http://doc.qt.io/qt-5/qt.html#Key-enum">Qt::Key_unknown</a> means that the event is not the result of a known key; for example, it may be the result of a compose sequence, a keyboard macro, or due to key event compression.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qt.html#WidgetAttribute-enum">Qt::WA_KeyCompression</a>.</p></div></p>
+</div><h4 id='method.matches' class='method'><code>fn <a href='#method.matches' class='fnname'>matches</a>(&amp;self, key: <a class='enum' href='../../qt_gui/key_sequence/enum.StandardKey.html' title='qt_gui::key_sequence::StandardKey'>StandardKey</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeyEvent::matches(QKeySequence::StandardKey key) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeyevent.html#matches">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the key event matches the given standard <i>key</i>; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.2.</p></div></p>
+</div><h4 id='method.modifiers' class='method'><code>fn <a href='#method.modifiers' class='fnname'>modifiers</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.KeyboardModifier.html' title='qt_core::qt::KeyboardModifier'>KeyboardModifier</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::KeyboardModifier&gt; QKeyEvent::modifiers() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeyevent.html#modifiers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the keyboard modifier flags that existed immediately after the event occurred.</p>
+<p><b>Warning:</b> This function cannot always be trusted. The user can confuse it by pressing both <b>Shift</b> keys simultaneously and releasing one of them, for example.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qguiapplication.html#keyboardModifiers">QGuiApplication::keyboardModifiers</a>().</p></div></p>
+</div><h4 id='method.native_modifiers' class='method'><code>fn <a href='#method.native_modifiers' class='fnname'>native_modifiers</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>quint32 QKeyEvent::nativeModifiers() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeyevent.html#nativeModifiers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the native modifiers of a key event. If the key event does not contain this data 0 is returned.</p>
+<p>Note: The native modifiers may be 0, even if the key event contains extended information.</p>
+<p>This function was introduced in  Qt 4.2.</p></div></p>
+</div><h4 id='method.native_scan_code' class='method'><code>fn <a href='#method.native_scan_code' class='fnname'>native_scan_code</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>quint32 QKeyEvent::nativeScanCode() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeyevent.html#nativeScanCode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the native scan code of the key event. If the key event does not contain this data 0 is returned.</p>
+<p>Note: The native scan code may be 0, even if the key event contains extended information.</p>
+<p>Note: On Mac OS/X, this function is not useful, because there is no way to get the scan code from Carbon or Cocoa. The function always returns 1 (or 0 in the case explained above).</p>
+<p>This function was introduced in  Qt 4.2.</p></div></p>
+</div><h4 id='method.native_virtual_key' class='method'><code>fn <a href='#method.native_virtual_key' class='fnname'>native_virtual_key</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>quint32 QKeyEvent::nativeVirtualKey() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeyevent.html#nativeVirtualKey">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the native virtual key, or key sym of the key event. If the key event does not contain this data 0 is returned.</p>
+<p>Note: The native virtual key may be 0, even if the key event contains extended information.</p>
+<p>This function was introduced in  Qt 4.2.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_event/overloading/trait.KeyEventNewArgs.html' title='qt_gui::key_event::overloading::KeyEventNewArgs'>KeyEventNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeyEvent::QKeyEvent</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, cpp_utils::AsStruct)) -&gt; ::key_event::KeyEvent</code><br>2) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, &amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::key_event::KeyEvent</code><br>3) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, &amp;qt_core::string::String, bool, cpp_utils::AsStruct)) -&gt; ::key_event::KeyEvent</code><br>4) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, &amp;qt_core::string::String, bool, libc::c_ushort, cpp_utils::AsStruct)) -&gt; ::key_event::KeyEvent</code><br>5) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_event::KeyEvent&gt;</code><br>6) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, &amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_event::KeyEvent&gt;</code><br>7) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, &amp;qt_core::string::String, bool, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_event::KeyEvent&gt;</code><br>8) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, &amp;qt_core::string::String, bool, libc::c_ushort, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_event::KeyEvent&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QKeyEvent::QKeyEvent(QEvent::Type type, int key, QFlags&lt;Qt::KeyboardModifier&gt; modifiers, const QString&amp; text = ?, bool autorep = ?, unsigned short count = ?)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, u32, u32, u32, cpp_utils::AsStruct)) -&gt; ::key_event::KeyEvent</code><br>2) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, u32, u32, u32, &amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::key_event::KeyEvent</code><br>3) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, u32, u32, u32, &amp;qt_core::string::String, bool, cpp_utils::AsStruct)) -&gt; ::key_event::KeyEvent</code><br>4) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, u32, u32, u32, &amp;qt_core::string::String, bool, libc::c_ushort, cpp_utils::AsStruct)) -&gt; ::key_event::KeyEvent</code><br>5) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, u32, u32, u32, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_event::KeyEvent&gt;</code><br>6) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, u32, u32, u32, &amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_event::KeyEvent&gt;</code><br>7) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, u32, u32, u32, &amp;qt_core::string::String, bool, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_event::KeyEvent&gt;</code><br>8) <code>fn new((qt_core::event::Type, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, u32, u32, u32, &amp;qt_core::string::String, bool, libc::c_ushort, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::key_event::KeyEvent&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QKeyEvent::QKeyEvent(QEvent::Type type, int key, QFlags&lt;Qt::KeyboardModifier&gt; modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString&amp; text = ?, bool autorep = ?, unsigned short count = ?)</code></span></p>
+</div><h4 id='method.register_event_type' class='method'><code>fn <a href='#method.register_event_type' class='fnname'>register_event_type</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_event/overloading/trait.KeyEventRegisterEventTypeArgs.html' title='qt_gui::key_event::overloading::KeyEventRegisterEventTypeArgs'>KeyEventRegisterEventTypeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeyEvent::registerEventType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn register_event_type(libc::c_int) -&gt; libc::c_int</code><br>2) <code>fn register_event_type(()) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QKeyEvent::registerEventType(int hint = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#registerEventType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Registers and returns a custom event type. The <i>hint</i> provided will be used if it is available, otherwise it will return a value between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a> that has not yet been registered. The <i>hint</i> is ignored if its value is not between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a>.</p>
+<p>Returns -1 if all available values are already taken or the program is shutting down.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.set_accepted' class='method'><code>fn <a href='#method.set_accepted' class='fnname'>set_accepted</a>(&amp;mut self, accepted: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QKeyEvent::setAccepted(bool accepted)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.set_modifiers' class='method'><code>fn <a href='#method.set_modifiers' class='fnname'>set_modifiers</a>(&amp;mut self, amodifiers: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.KeyboardModifier.html' title='qt_core::qt::KeyboardModifier'>KeyboardModifier</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QKeyEvent::setModifiers(QFlags&lt;Qt::KeyboardModifier&gt; amodifiers)</code></span></p>
+</div><h4 id='method.set_timestamp' class='method'><code>fn <a href='#method.set_timestamp' class='fnname'>set_timestamp</a>(&amp;mut self, atimestamp: <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_ulong.html' title='libc::unix::notbsd::linux::other::b64::c_ulong'>c_ulong</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QKeyEvent::setTimestamp(unsigned long atimestamp)</code></span></p>
+</div><h4 id='method.spontaneous' class='method'><code>fn <a href='#method.spontaneous' class='fnname'>spontaneous</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QKeyEvent::spontaneous() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#spontaneous">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the event originated outside the application (a system event); otherwise returns <code>false</code>.</p>
+<p>The return value of this function is not defined for paint events.</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/key_event/overloading/trait.KeyEventTextArgs.html' title='qt_gui::key_event::overloading::KeyEventTextArgs'>KeyEventTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QKeyEvent::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QKeyEvent::text() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qkeyevent.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the Unicode text that this key generated.</p>
+<p>Return values when modifier keys such as Shift, Control, Alt, and Meta are pressed differ among platforms and could return an empty string.</p>
+<p><b>Note: </b><a href="http://doc.qt.io/qt-5/qkeyevent.html#key">key</a>() will always return a valid value, independent of modifier keys.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qt.html#WidgetAttribute-enum">Qt::WA_KeyCompression</a>.</p></div></p>
+</div><h4 id='method.timestamp' class='method'><code>fn <a href='#method.timestamp' class='fnname'>timestamp</a>(&amp;self) -&gt; <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_ulong.html' title='libc::unix::notbsd::linux::other::b64::c_ulong'>c_ulong</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned long QKeyEvent::timestamp() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputevent.html#timestamp">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the window system&#39;s timestamp for this event.</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/event/enum.Type.html' title='qt_core::event::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QEvent::Type QKeyEvent::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the event type.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/key_event/struct.KeyEvent.html' title='qt_gui::key_event::KeyEvent'>KeyEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-82810' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/key_event.rs.html#16-20' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/key_event/struct.KeyEvent.html' title='qt_gui::key_event::KeyEvent'>KeyEvent</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/key_event/struct.KeyEvent.html' title='qt_gui::key_event::KeyEvent'>KeyEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-82863' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/key_event.rs.html#236-243' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QKeyEvent::~QKeyEvent()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/key_event/struct.KeyEvent.html' title='qt_gui::key_event::KeyEvent'>KeyEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-82866' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/key_event.rs.html#245-249' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

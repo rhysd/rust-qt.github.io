@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CppBox` struct in crate `cpp_utils`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CppBox">
+
+    <title>cpp_utils::CppBox - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>cpp_utils</a></p><script>window.sidebarCurrent = {name: 'CppBox', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>cpp_utils</a>::<wbr><a class='struct' href=''>CppBox</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-9' class='srclink' href='../src/cpp_utils/up/cpp_utils/src/lib.rs.html#63-66' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct CppBox&lt;T&gt; {
+    // some fields omitted
+}</pre><div class='docblock'><p>A C++ pointer wrapper to manage deletion of objects.</p>
+
+<p>Objects of CppBox should be created by calling into_box() for
+types that implement CppDeletable trait. The object will
+be deleted when corresponding CppBox is deleted.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class='struct' href='../cpp_utils/struct.CppBox.html' title='cpp_utils::CppBox'>CppBox</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-13' class='srclink' href='../src/cpp_utils/up/cpp_utils/src/lib.rs.html#68-81' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_ptr' class='method'><code>fn <a href='#method.as_ptr' class='fnname'>as_ptr</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const T</a></code></h4>
+<h4 id='method.as_mut_ptr' class='method'><code>fn <a href='#method.as_mut_ptr' class='fnname'>as_mut_ptr</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut T</a></code></h4>
+<h4 id='method.unbox' class='method'><code>fn <a href='#method.unbox' class='fnname'>unbox</a>(self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut T</a></code></h4>
+<div class='docblock'><p>Returns the pointer that was used to create the object and destroys the box.
+The caller of the function becomes the owner of the object and should
+ensure that the object will be deleted at some point.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class='trait' href='../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a>&gt; <a class='struct' href='../cpp_utils/struct.CppBox.html' title='cpp_utils::CppBox'>CppBox</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-21' class='srclink' href='../src/cpp_utils/up/cpp_utils/src/lib.rs.html#83-105' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>unsafe fn <a href='#method.new' class='fnname'>new</a>(ptr: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut T</a>) -&gt; <a class='struct' href='../cpp_utils/struct.CppBox.html' title='cpp_utils::CppBox'>CppBox</a>&lt;T&gt;</code></h4>
+<div class='docblock'><p>Encapsulates the object into a CppBox.</p>
+
+<p>You should use this function only for
+pointers that were created on C++ side and passed through
+a FFI boundary to Rust. An object created with C++ &quot;new&quot;
+must be deleted using C++ &quot;delete&quot;, which is executed by CppBox.</p>
+
+<p>Do not use this function for objects created in memory managed by Rust.
+Any wrapper constructor or function that returns an owned object
+is supposed to be deleted using Rust&#39;s ownage system and Drop trait.</p>
+
+<p>Do not use this function for objects that would be deleted by other means.
+If another C++ object is the owner of the passed object,
+it will attempt to delete it. Together with CppBox, it would result
+in a double deletion, which should never happen.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html' title='core::convert::AsRef'>AsRef</a>&lt;T&gt; for <a class='struct' href='../cpp_utils/struct.CppBox.html' title='cpp_utils::CppBox'>CppBox</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-25' class='srclink' href='../src/cpp_utils/up/cpp_utils/src/lib.rs.html#108-114' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_ref' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref' class='fnname'>as_ref</a>(&amp;self) -&gt; &amp;T</code></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.AsMut.html' title='core::convert::AsMut'>AsMut</a>&lt;T&gt; for <a class='struct' href='../cpp_utils/struct.CppBox.html' title='cpp_utils::CppBox'>CppBox</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-29' class='srclink' href='../src/cpp_utils/up/cpp_utils/src/lib.rs.html#116-122' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_mut' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.AsMut.html#tymethod.as_mut' class='fnname'>as_mut</a>(&amp;mut self) -&gt; &amp;mut T</code></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a> for <a class='struct' href='../cpp_utils/struct.CppBox.html' title='cpp_utils::CppBox'>CppBox</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-33' class='srclink' href='../src/cpp_utils/up/cpp_utils/src/lib.rs.html#124-131' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Target' class='type'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#associatedtype.Target' class='type'>Target</a> = T</code></h4>
+<div class='docblock'><p>The resulting type after dereferencing</p>
+</div><h4 id='method.deref' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#tymethod.deref' class='fnname'>deref</a>(&amp;self) -&gt; &amp;T</code></h4>
+<div class='docblock'><p>The method called to dereference a value</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.DerefMut.html' title='core::ops::DerefMut'>DerefMut</a> for <a class='struct' href='../cpp_utils/struct.CppBox.html' title='cpp_utils::CppBox'>CppBox</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-38' class='srclink' href='../src/cpp_utils/up/cpp_utils/src/lib.rs.html#133-139' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deref_mut' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.DerefMut.html#tymethod.deref_mut' class='fnname'>deref_mut</a>(&amp;mut self) -&gt; &amp;mut T</code></h4>
+<div class='docblock'><p>The method called to mutably dereference a value</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../cpp_utils/struct.CppBox.html' title='cpp_utils::CppBox'>CppBox</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-42' class='srclink' href='../src/cpp_utils/up/cpp_utils/src/lib.rs.html#141-149' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>A method called when the value goes out of scope. <a href="https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "cpp_utils";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

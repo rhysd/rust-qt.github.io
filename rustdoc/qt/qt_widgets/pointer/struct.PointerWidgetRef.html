@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PointerWidgetRef` struct in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PointerWidgetRef">
+
+    <title>qt_widgets::pointer::PointerWidgetRef - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>pointer</a></p><script>window.sidebarCurrent = {name: 'PointerWidgetRef', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>pointer</a>::<wbr><a class='struct' href=''>PointerWidgetRef</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-385003' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/pointer.rs.html#161-163' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PointerWidgetRef {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPointer&lt;QWidget&gt;</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpointer.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a> class is a template class that provides guarded pointers to <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a>.</p>
+<p>A guarded pointer, <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a>&lt;T&gt;, behaves like a normal C++ pointer <code>T <em></code>, except that it is automatically set to 0 when the referenced object is destroyed (unlike normal C++ pointers, which become &quot;dangling pointers&quot; in such cases). <code>T</code> must be a subclass of <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a>.</p>
+<p>Guarded pointers are useful whenever you need to store a pointer to a <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> that is owned by someone else, and therefore might be destroyed while you still hold a reference to it. You can safely test the pointer for validity.</p>
+<p>Note that Qt 5 introduces a slight change in behavior when using <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a>.</p>
+<ul>
+<li>When using <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a> on a <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> (or a subclass of <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a>), previously the <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a> would be cleared by the <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> destructor. Now, the <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a> is cleared by the <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> destructor (since this is when <a href="http://doc.qt.io/qt-5/qweakpointer.html">QWeakPointer</a> objects are cleared). Any QPointers tracking a widget will <b>NOT</b> be cleared before the <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> destructor destroys the children for the widget being tracked.</li>
+</ul>
+<p>Qt also provides <a href="http://doc.qt.io/qt-5/qsharedpointer.html">QSharedPointer</a>, an implementation of a reference-counted shared pointer object, which can be used to maintain a collection of references to an individual pointer.</p>
+<p>Example:</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qpointer.html#QPointer">QPointer</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a></span><span class="operator">&gt;</span> label <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a></span>;
+&#32;   label<span class="operator">-</span><span class="operator">&gt;</span>setText(<span class="string">&quot;&amp;Status:&quot;</span>);
+&#32;   ...
+&#32;   <span class="keyword">if</span> (label)
+&#32;       label<span class="operator">-</span><span class="operator">&gt;</span>show();</pre>
+<p>If the <a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a> is deleted in the meantime, the <code>label</code> variable will hold 0 instead of an invalid address, and the last line will never be executed.</p>
+<p>The functions and operators available with a <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a> are the same as those available with a normal unguarded pointer, except the pointer arithmetic operators (<code>+</code>, <code>-</code>, <code>++</code>, and <code>--</code>), which are normally used only with arrays of objects.</p>
+<p>Use QPointers like normal pointers and you will not need to read this class documentation.</p>
+<p>For creating guarded pointers, you can construct or assign to them from a T</em> or from another guarded pointer of the same type. You can compare them with each other using operator==() and operator!=(), or test for 0 with <a href="http://doc.qt.io/qt-5/qpointer.html#isNull">isNull</a>(). You can dereference them using either the <code>*x</code> or the <code>x-&gt;member</code> notation.</p>
+<p>A guarded pointer will automatically cast to a <code>T</code> *, so you can freely mix guarded and unguarded pointers. This means that if you have a <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a>&lt;<a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a>&gt;, you can pass it to a function that requires a <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> *. For this reason, it is of little value to declare functions to take a <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a> as a parameter; just use normal pointers. Use a <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a> when you are storing a pointer over time.</p>
+<p>Note that class <code>T</code> must inherit <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a>, or a compilation or link error will result.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_widgets/pointer/struct.PointerWidgetRef.html' title='qt_widgets::pointer::PointerWidgetRef'>PointerWidgetRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-385008' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/pointer.rs.html#171-251' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_q_widget_ptr' class='method'><code>fn <a href='#method.as_q_widget_ptr' class='fnname'>as_q_widget_ptr</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/widget/struct.Widget.html' title='qt_widgets::widget::Widget'>Widget</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWidget* QPointer&lt;QWidget&gt;::operator QWidget*() const</code></span></p>
+</div><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPointer&lt;QWidget&gt;::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpointer.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears this <a href="http://doc.qt.io/qt-5/qpointer.html">QPointer</a> object.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpointer.html#isNull">isNull</a>().</p></div></p>
+</div><h4 id='method.data' class='method'><code>fn <a href='#method.data' class='fnname'>data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/widget/struct.Widget.html' title='qt_widgets::widget::Widget'>Widget</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWidget* QPointer&lt;QWidget&gt;::data() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpointer.html#data">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pointer to the object being guarded.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPointer&lt;QWidget&gt;::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpointer.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the referenced object has been destroyed or if there is no referenced object; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/pointer/overloading/trait.PointerWidgetRefNewArgs.html' title='qt_widgets::pointer::overloading::PointerWidgetRefNewArgs'>PointerWidgetRefNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPointer&lt;QWidget&gt;::QPointer</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::pointer::PointerWidgetRef</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pointer::PointerWidgetRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPointer&lt;QWidget&gt;::QPointer()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::widget::Widget, cpp_utils::AsStruct)) -&gt; ::pointer::PointerWidgetRef</code><br>2) <code>fn new((*mut ::widget::Widget, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pointer::PointerWidgetRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPointer&lt;QWidget&gt;::QPointer(QWidget* p)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0&gt;(&amp;'l0 mut self, p: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/widget/struct.Widget.html' title='qt_widgets::widget::Widget'>Widget</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_widgets/pointer/struct.PointerWidgetRef.html' title='qt_widgets::pointer::PointerWidgetRef'>PointerWidgetRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPointer&lt;QWidget&gt;&amp; QPointer&lt;QWidget&gt;::operator=(QWidget* p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpointer.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assignment operator. This guarded pointer will now point to the same object that <i>p</i> points to.</p></div></p>
+</div><h4 id='method.op_indirection' class='method'><code>fn <a href='#method.op_indirection' class='fnname'>op_indirection</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_widgets/widget/struct.Widget.html' title='qt_widgets::widget::Widget'>Widget</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWidget&amp; QPointer&lt;QWidget&gt;::operator*() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpointer.html#operator-2a">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Dereference operator; implements pointer semantics. Just use this operator as you would with a normal C++ pointer.</p></div></p>
+</div><h4 id='method.op_struct_deref' class='method'><code>fn <a href='#method.op_struct_deref' class='fnname'>op_struct_deref</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/widget/struct.Widget.html' title='qt_widgets::widget::Widget'>Widget</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWidget* QPointer&lt;QWidget&gt;::operator-&gt;() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpointer.html#operator--gt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Overloaded arrow operator; implements pointer semantics. Just use this operator as you would with a normal C++ pointer.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_widgets/pointer/struct.PointerWidgetRef.html' title='qt_widgets::pointer::PointerWidgetRef'>PointerWidgetRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-385006' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/pointer.rs.html#165-169' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_widgets/pointer/struct.PointerWidgetRef.html' title='qt_widgets::pointer::PointerWidgetRef'>PointerWidgetRef</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_widgets/pointer/struct.PointerWidgetRef.html' title='qt_widgets::pointer::PointerWidgetRef'>PointerWidgetRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-385031' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/pointer.rs.html#253-260' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QPointer&lt;QWidget&gt;::~QPointer()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpointer.html#dtor.QPointer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the guarded pointer. Just like a normal pointer, destroying a guarded pointer does <i>not</i> destroy the object being pointed to.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_widgets/pointer/struct.PointerWidgetRef.html' title='qt_widgets::pointer::PointerWidgetRef'>PointerWidgetRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-385034' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/pointer.rs.html#262-266' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

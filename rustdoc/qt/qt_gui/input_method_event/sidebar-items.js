@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["AttributeType","C++ type: <span style='color: green;'>```QInputMethodEvent::AttributeType```</span>"]],"mod":[["overloading",""]],"struct":[["Attribute","C++ type: <span style='color: green;'>```QInputMethodEvent::Attribute```</span>"],["InputMethodEvent","C++ type: <span style='color: green;'>```QInputMethodEvent```</span>"]]});

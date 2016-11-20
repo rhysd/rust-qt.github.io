@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["StyleOptionGroupBoxNewArgs","This trait represents a set of arguments accepted by StyleOptionGroupBox::new method."]]});

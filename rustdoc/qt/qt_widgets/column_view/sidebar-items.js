@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ColumnView","C++ type: <span style='color: green;'>```QColumnView```</span>"]]});

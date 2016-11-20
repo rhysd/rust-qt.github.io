@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["TextObjectInterfaceIntrinsicSizeArgs","This trait represents a set of arguments accepted by TextObjectInterface::intrinsic_size method."]]});

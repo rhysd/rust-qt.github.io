@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ClockType` enum in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ClockType">
+
+    <title>qt_core::elapsed_timer::ClockType - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>elapsed_timer</a></p><script>window.sidebarCurrent = {name: 'ClockType', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>elapsed_timer</a>::<wbr><a class='enum' href=''>ClockType</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-69637' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/elapsed_timer.rs.html#33-44' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum ClockType {
+    SystemTime,
+    MonotonicClock,
+    TickCounter,
+    MachAbsoluteTime,
+    PerformanceCounter,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QElapsedTimer::ClockType</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qelapsedtimer.html#ClockType-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum contains the different clock types that <a href="http://doc.qt.io/qt-5/qelapsedtimer.html">QElapsedTimer</a> may use.</p>
+<p><a href="http://doc.qt.io/qt-5/qelapsedtimer.html">QElapsedTimer</a> will always use the same clock type in a particular machine, so this value will not change during the lifetime of a program. It is provided so that <a href="http://doc.qt.io/qt-5/qelapsedtimer.html">QElapsedTimer</a> can be used with other non-Qt implementations, to guarantee that the same reference clock is being used.</p></p>
+
+<p><a name="systemtime"></a>
+<h5>SystemTime</h5>
+<p>The system time clock is purely the real time, expressed in milliseconds since Jan 1, 1970 at 0:00 UTC. It&#39;s equivalent to the value returned by the C and POSIX <code>time</code> function, with the milliseconds added. This clock type is currently only used on Unix systems that do not support monotonic clocks (see below).</p>
+<p>This is the only non-monotonic clock that <a href="http://doc.qt.io/qt-5/qelapsedtimer.html">QElapsedTimer</a> may use.</p>
+<a name="monotonicclock"></a>
+<h5>MonotonicClock</h5>
+<p>This is the system&#39;s monotonic clock, expressed in milliseconds since an arbitrary point in the past. This clock type is used on Unix systems which support POSIX monotonic clocks (<code>_POSIX_MONOTONIC_CLOCK</code>).</p>
+<p>This clock does not overflow.</p>
+<a name="tickcounter"></a>
+<h5>TickCounter</h5>
+<p>The tick counter clock type is based on the system&#39;s or the processor&#39;s tick counter, multiplied by the duration of a tick. This clock type is used on Windows platforms. If the high-precision performance counter is available on Windows, the <code>PerformanceCounter</code> clock type is used instead.</p>
+<p>The TickCounter clock type is the only clock type that may overflow. Windows Vista and Windows Server 2008 support the extended 64-bit tick counter, which allows avoiding the overflow.</p>
+<p>On Windows systems, the clock overflows after 2<sup>32</sup> milliseconds, which corresponds to roughly 49.7 days. This means two processes&#39; reckoning of the time since the reference may be different by multiples of 2<sup>32</sup> milliseconds. When comparing such values, it&#39;s recommended that the high 32 bits of the millisecond count be masked off.</p>
+<a name="machabsolutetime"></a>
+<h5>MachAbsoluteTime</h5>
+<p>This clock type is based on the absolute time presented by Mach kernels, such as that found on OS X. This clock type is presented separately from MonotonicClock since OS X and iOS are also Unix systems and may support a POSIX monotonic clock with values differing from the Mach absolute time.</p>
+<p>This clock is monotonic and does not overflow.</p>
+<a name="performancecounter"></a>
+<h5>PerformanceCounter</h5>
+<p>This clock uses the Windows functions <code>QueryPerformanceCounter</code> and <code>QueryPerformanceFrequency</code> to access the system&#39;s high-precision performance counter. Since this counter may not be available on all systems, <a href="http://doc.qt.io/qt-5/qelapsedtimer.html">QElapsedTimer</a> will fall back to the <code>TickCounter</code> clock automatically, if this clock cannot be used.</p>
+<p>This clock is monotonic and does not overflow.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qelapsedtimer.html#clockType">clockType</a>() and <a href="http://doc.qt.io/qt-5/qelapsedtimer.html#isMonotonic">isMonotonic</a>().</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.SystemTime' class='variant'><code>SystemTime</code></span><div class='docblock'><p>The human-readable system time. This clock is not monotonic. (C++ enum variant: <span style='color: green;'><code>SystemTime = 0</code></span>)</p>
+</div><span id='variant.MonotonicClock' class='variant'><code>MonotonicClock</code></span><div class='docblock'><p>The system&#39;s monotonic clock, usually found in Unix systems. This clock is monotonic and does not overflow. (C++ enum variant: <span style='color: green;'><code>MonotonicClock = 1</code></span>)</p>
+</div><span id='variant.TickCounter' class='variant'><code>TickCounter</code></span><div class='docblock'><p>The system&#39;s tick counter, used on Windows systems. This clock may overflow. (C++ enum variant: <span style='color: green;'><code>TickCounter = 2</code></span>)</p>
+</div><span id='variant.MachAbsoluteTime' class='variant'><code>MachAbsoluteTime</code></span><div class='docblock'><p>The Mach kernel&#39;s absolute time (OS X and iOS). This clock is monotonic and does not overflow. (C++ enum variant: <span style='color: green;'><code>MachAbsoluteTime = 3</code></span>)</p>
+</div><span id='variant.PerformanceCounter' class='variant'><code>PerformanceCounter</code></span><div class='docblock'><p>The high-resolution performance counter provided by Windows. This clock is monotonic and does not overflow. (C++ enum variant: <span style='color: green;'><code>PerformanceCounter = 4</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_core/elapsed_timer/enum.ClockType.html' title='qt_core::elapsed_timer::ClockType'>ClockType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69616' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/elapsed_timer.rs.html#31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/elapsed_timer/enum.ClockType.html' title='qt_core::elapsed_timer::ClockType'>ClockType</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_core/elapsed_timer/enum.ClockType.html' title='qt_core::elapsed_timer::ClockType'>ClockType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69619' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/elapsed_timer.rs.html#31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_core/elapsed_timer/enum.ClockType.html' title='qt_core::elapsed_timer::ClockType'>ClockType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69622' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/elapsed_timer.rs.html#31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_core/elapsed_timer/enum.ClockType.html' title='qt_core::elapsed_timer::ClockType'>ClockType</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_core/elapsed_timer/enum.ClockType.html' title='qt_core::elapsed_timer::ClockType'>ClockType</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69628' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/elapsed_timer.rs.html#31' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

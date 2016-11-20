@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PainterPath` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PainterPath">
+
+    <title>qt_gui::painter_path::PainterPath - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>painter_path</a></p><script>window.sidebarCurrent = {name: 'PainterPath', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>painter_path</a>::<wbr><a class='struct' href=''>PainterPath</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-128956' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter_path.rs.html#168-170' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PainterPath {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPainterPath</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qpainterpath.html">QPainterPath</a> class provides a container for painting operations, enabling graphical shapes to be constructed and reused.</p>
+<p>A painter path is an object composed of a number of graphical building blocks, such as rectangles, ellipses, lines, and curves. Building blocks can be joined in closed subpaths, for example as a rectangle or an ellipse. A closed path has coinciding start and end points. Or they can exist independently as unclosed subpaths, such as lines and curves.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qpainterpath.html">QPainterPath</a> object can be used for filling, outlining, and clipping. To generate fillable outlines for a given painter path, use the <a href="http://doc.qt.io/qt-5/qpainterpathstroker.html">QPainterPathStroker</a> class. The main advantage of painter paths over normal drawing operations is that complex shapes only need to be created once; then they can be drawn many times using only calls to the <a href="http://doc.qt.io/qt-5/qpainter.html#drawPath">QPainter::drawPath</a>() function.</p>
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html">QPainterPath</a> provides a collection of functions that can be used to obtain information about the path and its elements. In addition it is possible to reverse the order of the elements using the <a href="http://doc.qt.io/qt-5/qpainterpath.html#toReversed">toReversed</a>() function. There are also several functions to convert this painter path object into a polygon representation.</p>
+<a name="composing-a-qpainterpath"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128961' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter_path.rs.html#178-1289' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.add_ellipse' class='method'><code>fn <a href='#method.add_ellipse' class='fnname'>add_ellipse</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathAddEllipseArgs.html' title='qt_gui::painter_path::overloading::PainterPathAddEllipseArgs'>PainterPathAddEllipseArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::addEllipse</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn add_ellipse(&amp;mut self, (&amp;qt_core::point_f::PointF, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addEllipse(const QPointF&amp; center, double rx, double ry)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addEllipse-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates an ellipse positioned at <i>center</i> with radii <i>rx</i> and <i>ry</i>, and adds it to the painter path as a closed subpath.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn add_ellipse(&amp;mut self, &amp;qt_core::rect_f::RectF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addEllipse(const QRectF&amp; rect)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addEllipse">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates an ellipse within the specified <i>boundingRectangle</i> and adds it to the painter path as a closed subpath.</p>
+<p>The ellipse is composed of a clockwise curve, starting and finishing at zero degrees (the 3 o&#39;clock position).</p>
+<div class="table"><table class="generic" width="100%">
+ <tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qpainterpath-addellipse.png" alt=""></img></td><td><pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlineargradient.html">QLinearGradient</a></span> myGradient;
+<span class="type"><a href="http://doc.qt.io/qt-5/qpen.html">QPen</a></span> myPen;
+<span class="type"><a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a></span> boundingRectangle;</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainterpath.html#QPainterPath">QPainterPath</a></span> myPath;
+myPath<span class="operator">.</span>addEllipse(boundingRectangle);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+painter<span class="operator">.</span>setBrush(myGradient);
+painter<span class="operator">.</span>setPen(myPen);
+painter<span class="operator">.</span>drawPath(myPath);</pre>
+</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#arcTo">arcTo</a>(), <a href="http://doc.qt.io/qt-5/qpainter.html#drawEllipse">QPainter::drawEllipse</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn add_ellipse(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addEllipse(double x, double y, double w, double h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addEllipse-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates an ellipse within the bounding rectangle defined by its top-left corner at (<i>x</i>, <i>y</i>), <i>width</i> and <i>height</i>, and adds it to the painter path as a closed subpath.</p></div></p>
+</div><h4 id='method.add_path' class='method'><code>fn <a href='#method.add_path' class='fnname'>add_path</a>(&amp;mut self, path: &amp;<a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPainterPath::addPath(const QPainterPath&amp; path)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addPath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds the given <i>path</i> to <i>this</i> path as a closed subpath.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#connectPath">connectPath</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+</div><h4 id='method.add_polygon' class='method'><code>fn <a href='#method.add_polygon' class='fnname'>add_polygon</a>(&amp;mut self, polygon: &amp;<a class='struct' href='../../qt_gui/polygon_f/struct.PolygonF.html' title='qt_gui::polygon_f::PolygonF'>PolygonF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPainterPath::addPolygon(const QPolygonF&amp; polygon)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addPolygon">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds the given <i>polygon</i> to the path as an (unclosed) subpath.</p>
+<p>Note that the current position after the polygon has been added, is the last point in <i>polygon</i>. To draw a line back to the first point, use the <a href="http://doc.qt.io/qt-5/qpainterpath.html#closeSubpath">closeSubpath</a>() function.</p>
+<div class="table"><table class="generic" width="100%">
+ <tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qpainterpath-addpolygon.png" alt=""></img></td><td><pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlineargradient.html">QLinearGradient</a></span> myGradient;
+<span class="type"><a href="http://doc.qt.io/qt-5/qpen.html">QPen</a></span> myPen;
+<span class="type"><a href="http://doc.qt.io/qt-5/qpolygonf.html">QPolygonF</a></span> myPolygon;</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainterpath.html#QPainterPath">QPainterPath</a></span> myPath;
+myPath<span class="operator">.</span>addPolygon(myPolygon);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+painter<span class="operator">.</span>setBrush(myGradient);
+painter<span class="operator">.</span>setPen(myPen);
+painter<span class="operator">.</span>drawPath(myPath);</pre>
+</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#lineTo">lineTo</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+</div><h4 id='method.add_rect' class='method'><code>fn <a href='#method.add_rect' class='fnname'>add_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathAddRectArgs.html' title='qt_gui::painter_path::overloading::PainterPathAddRectArgs'>PainterPathAddRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::addRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn add_rect(&amp;mut self, &amp;qt_core::rect_f::RectF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addRect(const QRectF&amp; rect)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds the given <i>rectangle</i> to this path as a closed subpath.</p>
+<p>The <i>rectangle</i> is added as a clockwise set of lines. The painter path&#39;s current position after the <i>rectangle</i> has been added is at the top-left corner of the rectangle.</p>
+<div class="table"><table class="generic" width="100%">
+ <tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qpainterpath-addrectangle.png" alt=""></img></td><td><pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlineargradient.html">QLinearGradient</a></span> myGradient;
+<span class="type"><a href="http://doc.qt.io/qt-5/qpen.html">QPen</a></span> myPen;
+<span class="type"><a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a></span> myRectangle;</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainterpath.html#QPainterPath">QPainterPath</a></span> myPath;
+myPath<span class="operator">.</span>addRect(myRectangle);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+painter<span class="operator">.</span>setBrush(myGradient);
+painter<span class="operator">.</span>setPen(myPen);
+painter<span class="operator">.</span>drawPath(myPath);</pre>
+</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRegion">addRegion</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#lineTo">lineTo</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn add_rect(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addRect(double x, double y, double w, double h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRect-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Adds a rectangle at position (<i>x</i>, <i>y</i>), with the given <i>width</i> and <i>height</i>, as a closed subpath.</p></div></p>
+</div><h4 id='method.add_region' class='method'><code>fn <a href='#method.add_region' class='fnname'>add_region</a>(&amp;mut self, region: &amp;<a class='struct' href='../../qt_gui/region/struct.Region.html' title='qt_gui::region::Region'>Region</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPainterPath::addRegion(const QRegion&amp; region)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRegion">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds the given <i>region</i> to the path by adding each rectangle in the region as a separate closed subpath.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRect">addRect</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+</div><h4 id='method.add_round_rect' class='method'><code>fn <a href='#method.add_round_rect' class='fnname'>add_round_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathAddRoundRectArgs.html' title='qt_gui::painter_path::overloading::PainterPathAddRoundRectArgs'>PainterPathAddRoundRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::addRoundRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn add_round_rect(&amp;mut self, (&amp;qt_core::rect_f::RectF, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addRoundRect(const QRectF&amp; rect, int roundness)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath-obsolete.html#addRoundRect-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Adds a rounded rectangle, <i>rect</i>, to the path.</p>
+<p>The <i>roundness</i> argument specifies uniform roundness for the rectangle. Vertical and horizontal roundness factors will be adjusted accordingly to act uniformly around both axes. Use this method if you want a rectangle equally rounded across both the X and Y axis.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRoundedRect">addRoundedRect</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn add_round_rect(&amp;mut self, (&amp;qt_core::rect_f::RectF, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addRoundRect(const QRectF&amp; rect, int xRnd, int yRnd)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath-obsolete.html#addRoundRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds a rectangle <i>r</i> with rounded corners to the path.</p>
+<p>The <i>xRnd</i> and <i>yRnd</i> arguments specify how rounded the corners should be. 0 is angled corners, 99 is maximum roundedness.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRoundedRect">addRoundedRect</a>().</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn add_round_rect(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addRoundRect(double x, double y, double w, double h, int roundness)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath-obsolete.html#addRoundRect-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Adds a rounded rectangle to the path, defined by the coordinates <i>x</i> and <i>y</i> with the specified <i>width</i> and <i>height</i>.</p>
+<p>The <i>roundness</i> argument specifies uniform roundness for the rectangle. Vertical and horizontal roundness factors will be adjusted accordingly to act uniformly around both axes. Use this method if you want a rectangle equally rounded across both the X and Y axis.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRoundedRect">addRoundedRect</a>().</p></div></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <code>fn add_round_rect(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addRoundRect(double x, double y, double w, double h, int xRnd, int yRnd)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath-obsolete.html#addRoundRect-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Adds a rectangle with rounded corners to the path. The rectangle is constructed from <i>x</i>, <i>y</i>, and the width and height <i>w</i> and <i>h</i>.</p>
+<p>The <i>xRnd</i> and <i>yRnd</i> arguments specify how rounded the corners should be. 0 is angled corners, 99 is maximum roundedness.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRoundedRect">addRoundedRect</a>().</p></div></p>
+</div><h4 id='method.add_rounded_rect' class='method'><code>fn <a href='#method.add_rounded_rect' class='fnname'>add_rounded_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathAddRoundedRectArgs.html' title='qt_gui::painter_path::overloading::PainterPathAddRoundedRectArgs'>PainterPathAddRoundedRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::addRoundedRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn add_rounded_rect(&amp;mut self, (&amp;qt_core::rect_f::RectF, libc::c_double, libc::c_double)) -&gt; ()</code><br>2) <code>fn add_rounded_rect(&amp;mut self, (&amp;qt_core::rect_f::RectF, libc::c_double, libc::c_double, qt_core::qt::SizeMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addRoundedRect(const QRectF&amp; rect, double xRadius, double yRadius, Qt::SizeMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRoundedRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds the given rectangle <i>rect</i> with rounded corners to the path.</p>
+<p>The <i>xRadius</i> and <i>yRadius</i> arguments specify the radii of the ellipses defining the corners of the rounded rectangle. When <i>mode</i> is <a href="http://doc.qt.io/qt-5/qt.html#SizeMode-enum">Qt::RelativeSize</a>, <i>xRadius</i> and <i>yRadius</i> are specified in percentage of half the rectangle&#39;s width and height respectively, and should be in the range 0.0 to 100.0.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRect">addRect</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn add_rounded_rect(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>2) <code>fn add_rounded_rect(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, qt_core::qt::SizeMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addRoundedRect(double x, double y, double w, double h, double xRadius, double yRadius, Qt::SizeMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addRoundedRect-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Adds the given rectangle <i>x</i>, <i>y</i>, <i>w</i>, <i>h</i> with rounded corners to the path.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.add_text' class='method'><code>fn <a href='#method.add_text' class='fnname'>add_text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathAddTextArgs.html' title='qt_gui::painter_path::overloading::PainterPathAddTextArgs'>PainterPathAddTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::addText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn add_text(&amp;mut self, (&amp;qt_core::point_f::PointF, &amp;::font::Font, &amp;qt_core::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addText(const QPointF&amp; point, const QFont&amp; f, const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds the given <i>text</i> to this path as a set of closed subpaths created from the <i>font</i> supplied. The subpaths are positioned so that the left end of the text&#39;s baseline lies at the specified <i>point</i>.</p>
+<div class="table"><table class="generic" width="100%">
+ <tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qpainterpath-addtext.png" alt=""></img></td><td><pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlineargradient.html">QLinearGradient</a></span> myGradient;
+<span class="type"><a href="http://doc.qt.io/qt-5/qpen.html">QPen</a></span> myPen;
+<span class="type"><a href="http://doc.qt.io/qt-5/qfont.html">QFont</a></span> myFont;
+<span class="type"><a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a></span> baseline(x<span class="operator">,</span> y);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainterpath.html#QPainterPath">QPainterPath</a></span> myPath;
+myPath<span class="operator">.</span>addText(baseline<span class="operator">,</span> myFont<span class="operator">,</span> tr(<span class="string">&quot;Qt&quot;</span>));</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+painter<span class="operator">.</span>setBrush(myGradient);
+painter<span class="operator">.</span>setPen(myPen);
+painter<span class="operator">.</span>drawPath(myPath);</pre>
+</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainter.html#drawText">QPainter::drawText</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn add_text(&amp;mut self, (libc::c_double, libc::c_double, &amp;::font::Font, &amp;qt_core::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::addText(double x, double y, const QFont&amp; f, const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#addText-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Adds the given <i>text</i> to this path as a set of closed subpaths created from the <i>font</i> supplied. The subpaths are positioned so that the left end of the text&#39;s baseline lies at the point specified by (<i>x</i>, <i>y</i>).</p></div></p>
+</div><h4 id='method.angle_at_percent' class='method'><code>fn <a href='#method.angle_at_percent' class='fnname'>angle_at_percent</a>(&amp;self, t: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QPainterPath::angleAtPercent(double t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#angleAtPercent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the angle of the path tangent at the percentage <i>t</i>. The argument <i>t</i> has to be between 0 and 1.</p>
+<p>Positive values for the angles mean counter-clockwise while negative values mean the clockwise direction. Zero degrees is at the 3 o&#39;clock position.</p>
+<p>Note that similarly to the other percent methods, the percentage measurement is not linear with regards to the length if curves are present in the path. When curves are present the percentage argument is mapped to the t parameter of the Bezier equations.</p></div></p>
+</div><h4 id='method.arc_move_to' class='method'><code>fn <a href='#method.arc_move_to' class='fnname'>arc_move_to</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathArcMoveToArgs.html' title='qt_gui::painter_path::overloading::PainterPathArcMoveToArgs'>PainterPathArcMoveToArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::arcMoveTo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn arc_move_to(&amp;mut self, (&amp;qt_core::rect_f::RectF, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::arcMoveTo(const QRectF&amp; rect, double angle)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#arcMoveTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates a move to that lies on the arc that occupies the given <i>rectangle</i> at <i>angle</i>.</p>
+<p>Angles are specified in degrees. Clockwise arcs can be specified using negative angles.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#moveTo">moveTo</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#arcTo">arcTo</a>().</p></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn arc_move_to(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::arcMoveTo(double x, double y, double w, double h, double angle)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#arcMoveTo-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates a move to that lies on the arc that occupies the <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>) at <i>angle</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p></div></p>
+</div><h4 id='method.arc_to' class='method'><code>fn <a href='#method.arc_to' class='fnname'>arc_to</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathArcToArgs.html' title='qt_gui::painter_path::overloading::PainterPathArcToArgs'>PainterPathArcToArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::arcTo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-6' class='section-header'><a href='#variant-1-6'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn arc_to(&amp;mut self, (&amp;qt_core::rect_f::RectF, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::arcTo(const QRectF&amp; rect, double startAngle, double arcLength)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#arcTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates an arc that occupies the given <i>rectangle</i>, beginning at the specified <i>startAngle</i> and extending <i>sweepLength</i> degrees counter-clockwise.</p>
+<p>Angles are specified in degrees. Clockwise arcs can be specified using negative angles.</p>
+<p>Note that this function connects the starting point of the arc to the current position if they are not already connected. After the arc has been added, the current position is the last point in arc. To draw a line back to the first point, use the <a href="http://doc.qt.io/qt-5/qpainterpath.html#closeSubpath">closeSubpath</a>() function.</p>
+<div class="table"><table class="generic" width="100%">
+ <tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qpainterpath-arcto.png" alt=""></img></td><td><pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlineargradient.html">QLinearGradient</a></span> myGradient;
+<span class="type"><a href="http://doc.qt.io/qt-5/qpen.html">QPen</a></span> myPen;</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a></span> center<span class="operator">,</span> startPoint;</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainterpath.html#QPainterPath">QPainterPath</a></span> myPath;
+myPath<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qpainterpath.html#moveTo">moveTo</a>(center);
+myPath<span class="operator">.</span>arcTo(boundingRect<span class="operator">,</span> startAngle<span class="operator">,</span>
+&#32;            sweepLength);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+painter<span class="operator">.</span>setBrush(myGradient);
+painter<span class="operator">.</span>setPen(myPen);
+painter<span class="operator">.</span>drawPath(myPath);</pre>
+</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#arcMoveTo">arcMoveTo</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#addEllipse">addEllipse</a>(), <a href="http://doc.qt.io/qt-5/qpainter.html#drawArc">QPainter::drawArc</a>(), <a href="http://doc.qt.io/qt-5/qpainter.html#drawPie">QPainter::drawPie</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+
+<h2 id='variant-2-6' class='section-header'><a href='#variant-2-6'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn arc_to(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::arcTo(double x, double y, double w, double h, double startAngle, double arcLength)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#arcTo-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates an arc that occupies the rectangle <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>), beginning at the specified <i>startAngle</i> and extending <i>sweepLength</i> degrees counter-clockwise.</p></div></p>
+</div><h4 id='method.bounding_rect' class='method'><code>fn <a href='#method.bounding_rect' class='fnname'>bounding_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathBoundingRectArgs.html' title='qt_gui::painter_path::overloading::PainterPathBoundingRectArgs'>PainterPathBoundingRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::boundingRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn bounding_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn bounding_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QPainterPath::boundingRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#boundingRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the bounding rectangle of this painter path as a rectangle with floating point precision.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#controlPointRect">controlPointRect</a>().</p></div></p>
+</div><h4 id='method.close_subpath' class='method'><code>fn <a href='#method.close_subpath' class='fnname'>close_subpath</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPainterPath::closeSubpath()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#closeSubpath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Closes the current subpath by drawing a line to the beginning of the subpath, automatically starting a new path. The current point of the new path is (0, 0).</p>
+<p>If the subpath does not contain any elements, this function does nothing.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#moveTo">moveTo</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+</div><h4 id='method.connect_path' class='method'><code>fn <a href='#method.connect_path' class='fnname'>connect_path</a>(&amp;mut self, path: &amp;<a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPainterPath::connectPath(const QPainterPath&amp; path)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#connectPath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Connects the given <i>path</i> to <i>this</i> path by adding a line from the last element of this path to the first element of the given path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#addPath">addPath</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+</div><h4 id='method.contains' class='method'><code>fn <a href='#method.contains' class='fnname'>contains</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathContainsArgs.html' title='qt_gui::painter_path::overloading::PainterPathContainsArgs'>PainterPathContainsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::contains</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-7' class='section-header'><a href='#variant-1-7'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn contains(&amp;self, &amp;::painter_path::PainterPath) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QPainterPath::contains(const QPainterPath&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#contains-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the given path <i>p</i> is contained within the current path. Returns <code>false</code> if any edges of the current path and <i>p</i> intersect.</p>
+<p>Set operations on paths will treat the paths as areas. Non-closed paths will be treated as implicitly closed.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#intersects">intersects</a>().</p></div></p>
+
+<h2 id='variant-2-7' class='section-header'><a href='#variant-2-7'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn contains(&amp;self, &amp;qt_core::point_f::PointF) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QPainterPath::contains(const QPointF&amp; pt) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#contains">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the given <i>point</i> is inside the path, otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#intersects">intersects</a>().</p></div></p>
+
+<h2 id='variant-3-2' class='section-header'><a href='#variant-3-2'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn contains(&amp;self, &amp;qt_core::rect_f::RectF) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QPainterPath::contains(const QRectF&amp; rect) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#contains-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the given <i>rectangle</i> is inside the path, otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.control_point_rect' class='method'><code>fn <a href='#method.control_point_rect' class='fnname'>control_point_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathControlPointRectArgs.html' title='qt_gui::painter_path::overloading::PainterPathControlPointRectArgs'>PainterPathControlPointRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::controlPointRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn control_point_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn control_point_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QPainterPath::controlPointRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#controlPointRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the rectangle containing all the points and control points in this path.</p>
+<p>This function is significantly faster to compute than the exact <a href="http://doc.qt.io/qt-5/qpainterpath.html#boundingRect">boundingRect</a>(), and the returned rectangle is always a superset of the rectangle returned by <a href="http://doc.qt.io/qt-5/qpainterpath.html#boundingRect">boundingRect</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#boundingRect">boundingRect</a>().</p></div></p>
+</div><h4 id='method.cubic_to' class='method'><code>fn <a href='#method.cubic_to' class='fnname'>cubic_to</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathCubicToArgs.html' title='qt_gui::painter_path::overloading::PainterPathCubicToArgs'>PainterPathCubicToArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::cubicTo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-8' class='section-header'><a href='#variant-1-8'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn cubic_to(&amp;mut self, (&amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::cubicTo(const QPointF&amp; ctrlPt1, const QPointF&amp; ctrlPt2, const QPointF&amp; endPt)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#cubicTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds a cubic Bezier curve between the current position and the given <i>endPoint</i> using the control points specified by <i>c1</i>, and <i>c2</i>.</p>
+<p>After the curve is added, the current position is updated to be at the end point of the curve.</p>
+<div class="table"><table class="generic" width="100%">
+ <tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qpainterpath-cubicto.png" alt=""></img></td><td><pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlineargradient.html">QLinearGradient</a></span> myGradient;
+<span class="type"><a href="http://doc.qt.io/qt-5/qpen.html">QPen</a></span> myPen;</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainterpath.html#QPainterPath">QPainterPath</a></span> myPath;
+myPath<span class="operator">.</span>cubicTo(c1<span class="operator">,</span> c2<span class="operator">,</span> endPoint);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+painter<span class="operator">.</span>setBrush(myGradient);
+painter<span class="operator">.</span>setPen(myPen);
+painter<span class="operator">.</span>drawPath(myPath);</pre>
+</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#quadTo">quadTo</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+
+<h2 id='variant-2-8' class='section-header'><a href='#variant-2-8'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn cubic_to(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::cubicTo(double ctrlPt1x, double ctrlPt1y, double ctrlPt2x, double ctrlPt2y, double endPtx, double endPty)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#cubicTo-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Adds a cubic Bezier curve between the current position and the end point (<i>endPointX</i>, <i>endPointY</i>) with control points specified by (<i>c1X</i>, <i>c1Y</i>) and (<i>c2X</i>, <i>c2Y</i>).</p></div></p>
+</div><h4 id='method.current_position' class='method'><code>fn <a href='#method.current_position' class='fnname'>current_position</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathCurrentPositionArgs.html' title='qt_gui::painter_path::overloading::PainterPathCurrentPositionArgs'>PainterPathCurrentPositionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::currentPosition</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn current_position(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::point_f::PointF&gt;</code><br>2) <code>fn current_position(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QPainterPath::currentPosition() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#currentPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current position of the path.</p></div></p>
+</div><h4 id='method.element_at' class='method'><code>fn <a href='#method.element_at' class='fnname'>element_at</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathElementAtArgs.html' title='qt_gui::painter_path::overloading::PainterPathElementAtArgs'>PainterPathElementAtArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::elementAt</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn element_at(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::Element&gt;</code><br>2) <code>fn element_at(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::painter_path::Element</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath::Element QPainterPath::elementAt(int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#elementAt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the element at the given <i>index</i> in the painter path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#ElementType-enum">ElementType</a>, <a href="http://doc.qt.io/qt-5/qpainterpath.html#elementCount">elementCount</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#isEmpty">isEmpty</a>().</p></div></p>
+</div><h4 id='method.element_count' class='method'><code>fn <a href='#method.element_count' class='fnname'>element_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPainterPath::elementCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#elementCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of path elements in the painter path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#ElementType-enum">ElementType</a>, <a href="http://doc.qt.io/qt-5/qpainterpath.html#elementAt">elementAt</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#isEmpty">isEmpty</a>().</p></div></p>
+</div><h4 id='method.fill_rule' class='method'><code>fn <a href='#method.fill_rule' class='fnname'>fill_rule</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.FillRule.html' title='qt_core::qt::FillRule'>FillRule</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::FillRule QPainterPath::fillRule() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#fillRule">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the painter path&#39;s currently set fill rule.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#setFillRule">setFillRule</a>().</p></div></p>
+</div><h4 id='method.intersected' class='method'><code>fn <a href='#method.intersected' class='fnname'>intersected</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathIntersectedArgs.html' title='qt_gui::painter_path::overloading::PainterPathIntersectedArgs'>PainterPathIntersectedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::intersected</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn intersected(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn intersected(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::intersected(const QPainterPath&amp; r) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#intersected">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a path which is the intersection of this path&#39;s fill area and <i>p</i>&#39;s fill area. Bezier curves may be flattened to line segments due to numerical instability of doing bezier curve intersections.</p>
+<p>This function was introduced in  Qt 4.3.</p></div></p>
+</div><h4 id='method.intersects' class='method'><code>fn <a href='#method.intersects' class='fnname'>intersects</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathIntersectsArgs.html' title='qt_gui::painter_path::overloading::PainterPathIntersectsArgs'>PainterPathIntersectsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::intersects</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-9' class='section-header'><a href='#variant-1-9'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn intersects(&amp;self, &amp;::painter_path::PainterPath) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QPainterPath::intersects(const QPainterPath&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#intersects-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the current path intersects at any point the given path <i>p</i>. Also returns <code>true</code> if the current path contains or is contained by any part of <i>p</i>.</p>
+<p>Set operations on paths will treat the paths as areas. Non-closed paths will be treated as implicitly closed.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#contains">contains</a>().</p></div></p>
+
+<h2 id='variant-2-9' class='section-header'><a href='#variant-2-9'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn intersects(&amp;self, &amp;qt_core::rect_f::RectF) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QPainterPath::intersects(const QRectF&amp; rect) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#intersects">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if any point in the given <i>rectangle</i> intersects the path; otherwise returns <code>false</code>.</p>
+<p>There is an intersection if any of the lines making up the rectangle crosses a part of the path or if any part of the rectangle overlaps with any area enclosed by the path. This function respects the current <a href="http://doc.qt.io/qt-5/qpainterpath.html#fillRule">fillRule</a> to determine what is considered inside the path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#contains">contains</a>().</p></div></p>
+</div><h4 id='method.is_empty' class='method'><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPainterPath::isEmpty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#isEmpty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if either there are no elements in this path, or if the only element is a <a href="http://doc.qt.io/qt-5/qpainterpath.html#ElementType-enum">MoveToElement</a>; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#elementCount">elementCount</a>().</p></div></p>
+</div><h4 id='method.length' class='method'><code>fn <a href='#method.length' class='fnname'>length</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QPainterPath::length() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#length">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the length of the current path.</p></div></p>
+</div><h4 id='method.line_to' class='method'><code>fn <a href='#method.line_to' class='fnname'>line_to</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathLineToArgs.html' title='qt_gui::painter_path::overloading::PainterPathLineToArgs'>PainterPathLineToArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::lineTo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-10' class='section-header'><a href='#variant-1-10'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn line_to(&amp;mut self, &amp;qt_core::point_f::PointF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::lineTo(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#lineTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds a straight line from the current position to the given <i>endPoint</i>. After the line is drawn, the current position is updated to be at the end point of the line.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#addPolygon">addPolygon</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#addRect">addRect</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+
+<h2 id='variant-2-10' class='section-header'><a href='#variant-2-10'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn line_to(&amp;mut self, (libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::lineTo(double x, double y)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#lineTo-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Draws a line from the current position to the point (<i>x</i>, <i>y</i>).</p></div></p>
+</div><h4 id='method.move_to' class='method'><code>fn <a href='#method.move_to' class='fnname'>move_to</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathMoveToArgs.html' title='qt_gui::painter_path::overloading::PainterPathMoveToArgs'>PainterPathMoveToArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::moveTo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-11' class='section-header'><a href='#variant-1-11'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn move_to(&amp;mut self, &amp;qt_core::point_f::PointF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::moveTo(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#moveTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the current point to the given <i>point</i>, implicitly starting a new subpath and closing the previous one.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#closeSubpath">closeSubpath</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+
+<h2 id='variant-2-11' class='section-header'><a href='#variant-2-11'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn move_to(&amp;mut self, (libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::moveTo(double x, double y)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#moveTo-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Moves the current position to (<i>x</i>, <i>y</i>) and starts a new subpath, implicitly closing the previous path.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathNewArgs.html' title='qt_gui::painter_path::overloading::PainterPathNewArgs'>PainterPathNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::QPainterPath</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-12' class='section-header'><a href='#variant-1-12'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::painter_path::PainterPath</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPainterPath::QPainterPath()</code></span></p>
+
+<h2 id='variant-2-12' class='section-header'><a href='#variant-2-12'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::painter_path::PainterPath, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>2) <code>fn new((&amp;::painter_path::PainterPath, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPainterPath::QPainterPath(const QPainterPath&amp; other)</code></span></p>
+
+<h2 id='variant-3-3' class='section-header'><a href='#variant-3-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::point_f::PointF, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>2) <code>fn new((&amp;qt_core::point_f::PointF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPainterPath::QPainterPath(const QPointF&amp; startPoint)</code></span></p>
+</div><h4 id='method.op_add' class='method'><code>fn <a href='#method.op_add' class='fnname'>op_add</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathOpAddArgs.html' title='qt_gui::painter_path::overloading::PainterPathOpAddArgs'>PainterPathOpAddArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::operator+</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_add(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn op_add(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::operator+(const QPainterPath&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-2b">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the union of this path and the <i>other</i> path. This function is equivalent to operator|().</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#united">united</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-2b-eq">operator+=</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-">operator-</a>().</p></div></p>
+</div><h4 id='method.op_add_assign' class='method'><code>fn <a href='#method.op_add_assign' class='fnname'>op_add_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath&amp; QPainterPath::operator+=(const QPainterPath&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-2b-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unites this path with <i>other</i>, and returns a reference to this path. This is equivalent to operator|=().</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#united">united</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-2b">operator+</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator--eq">operator-=</a>().</p></div></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath&amp; QPainterPath::operator=(const QPainterPath&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the given <i>path</i> to this painter path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#QPainterPath">QPainterPath</a>().</p></div></p>
+</div><h4 id='method.op_bit_and' class='method'><code>fn <a href='#method.op_bit_and' class='fnname'>op_bit_and</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathOpBitAndArgs.html' title='qt_gui::painter_path::overloading::PainterPathOpBitAndArgs'>PainterPathOpBitAndArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::operator&amp;</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_bit_and(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn op_bit_and(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::operator&amp;(const QPainterPath&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-and">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the intersection of this path and the <i>other</i> path.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#intersected">intersected</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-and-eq">operator&amp;=</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#united">united</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-7c">operator|</a>().</p></div></p>
+</div><h4 id='method.op_bit_and_assign' class='method'><code>fn <a href='#method.op_bit_and_assign' class='fnname'>op_bit_and_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath&amp; QPainterPath::operator&amp;=(const QPainterPath&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-and-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Intersects this path with <i>other</i> and returns a reference to this path.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#intersected">intersected</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-and">operator&amp;</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-7c-eq">operator|=</a>().</p></div></p>
+</div><h4 id='method.op_bit_or' class='method'><code>fn <a href='#method.op_bit_or' class='fnname'>op_bit_or</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathOpBitOrArgs.html' title='qt_gui::painter_path::overloading::PainterPathOpBitOrArgs'>PainterPathOpBitOrArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::operator|</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_bit_or(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn op_bit_or(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::operator|(const QPainterPath&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-7c">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the union of this path and the <i>other</i> path.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#united">united</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-7c-eq">operator|=</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#intersected">intersected</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-and">operator&amp;</a>().</p></div></p>
+</div><h4 id='method.op_bit_or_assign' class='method'><code>fn <a href='#method.op_bit_or_assign' class='fnname'>op_bit_or_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath&amp; QPainterPath::operator|=(const QPainterPath&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-7c-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unites this path with <i>other</i> and returns a reference to this path.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#united">united</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-7c">operator|</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-and-eq">operator&amp;=</a>().</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPainterPath::operator==(const QPainterPath&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this painterpath is equal to the given <i>path</i>.</p>
+<p>Note that comparing paths may involve a per element comparison which can be slow for complex paths.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-not-eq">operator!=</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPainterPath::operator!=(const QPainterPath&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this painter path differs from the given <i>path</i>.</p>
+<p>Note that comparing paths may involve a per element comparison which can be slow for complex paths.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.op_sub' class='method'><code>fn <a href='#method.op_sub' class='fnname'>op_sub</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathOpSubArgs.html' title='qt_gui::painter_path::overloading::PainterPathOpSubArgs'>PainterPathOpSubArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::operator-</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_sub(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn op_sub(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::operator-(const QPainterPath&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Subtracts the <i>other</i> path from a copy of this path, and returns the copy.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#subtracted">subtracted</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator--eq">operator-=</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-2b">operator+</a>().</p></div></p>
+</div><h4 id='method.op_sub_assign' class='method'><code>fn <a href='#method.op_sub_assign' class='fnname'>op_sub_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath&amp; QPainterPath::operator-=(const QPainterPath&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#operator--eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Subtracts <i>other</i> from this path, and returns a reference to this path.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#subtracted">subtracted</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-">operator-</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#operator-2b-eq">operator+=</a>().</p></div></p>
+</div><h4 id='method.percent_at_length' class='method'><code>fn <a href='#method.percent_at_length' class='fnname'>percent_at_length</a>(&amp;self, t: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QPainterPath::percentAtLength(double t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#percentAtLength">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns percentage of the whole path at the specified length <i>len</i>.</p>
+<p>Note that similarly to other percent methods, the percentage measurement is not linear with regards to the length, if curves are present in the path. When curves are present the percentage argument is mapped to the t parameter of the Bezier equations.</p></div></p>
+</div><h4 id='method.point_at_percent' class='method'><code>fn <a href='#method.point_at_percent' class='fnname'>point_at_percent</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathPointAtPercentArgs.html' title='qt_gui::painter_path::overloading::PainterPathPointAtPercentArgs'>PainterPathPointAtPercentArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::pointAtPercent</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn point_at_percent(&amp;self, (libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::point_f::PointF&gt;</code><br>2) <code>fn point_at_percent(&amp;self, (libc::c_double, cpp_utils::AsStruct)) -&gt; qt_core::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QPainterPath::pointAtPercent(double t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#pointAtPercent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the point at at the percentage <i>t</i> of the current path. The argument <i>t</i> has to be between 0 and 1.</p>
+<p>Note that similarly to other percent methods, the percentage measurement is not linear with regards to the length, if curves are present in the path. When curves are present the percentage argument is mapped to the t parameter of the Bezier equations.</p></div></p>
+</div><h4 id='method.quad_to' class='method'><code>fn <a href='#method.quad_to' class='fnname'>quad_to</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathQuadToArgs.html' title='qt_gui::painter_path::overloading::PainterPathQuadToArgs'>PainterPathQuadToArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::quadTo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-13' class='section-header'><a href='#variant-1-13'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn quad_to(&amp;mut self, (&amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::quadTo(const QPointF&amp; ctrlPt, const QPointF&amp; endPt)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#quadTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds a quadratic Bezier curve between the current position and the given <i>endPoint</i> with the control point specified by <i>c</i>.</p>
+<p>After the curve is added, the current point is updated to be at the end point of the curve.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#cubicTo">cubicTo</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#composing-a-qpainterpath">Composing a QPainterPath</a>.</p></div></p>
+
+<h2 id='variant-2-13' class='section-header'><a href='#variant-2-13'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn quad_to(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::quadTo(double ctrlPtx, double ctrlPty, double endPtx, double endPty)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#quadTo-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Adds a quadratic Bezier curve between the current point and the endpoint (<i>endPointX</i>, <i>endPointY</i>) with the control point specified by (<i>cx</i>, <i>cy</i>).</p></div></p>
+</div><h4 id='method.set_element_position_at' class='method'><code>fn <a href='#method.set_element_position_at' class='fnname'>set_element_position_at</a>(&amp;mut self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, x: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, y: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPainterPath::setElementPositionAt(int i, double x, double y)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#setElementPositionAt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the x and y coordinate of the element at index <i>index</i> to <i>x</i> and <i>y</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p></div></p>
+</div><h4 id='method.set_fill_rule' class='method'><code>fn <a href='#method.set_fill_rule' class='fnname'>set_fill_rule</a>(&amp;mut self, fill_rule: <a class='enum' href='../../qt_core/qt/enum.FillRule.html' title='qt_core::qt::FillRule'>FillRule</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPainterPath::setFillRule(Qt::FillRule fillRule)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#setFillRule">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the fill rule of the painter path to the given <i>fillRule</i>. Qt provides two methods for filling paths:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th><a href="http://doc.qt.io/qt-5/qt.html#FillRule-enum">Qt::OddEvenFill</a> (default)</th><th><a href="http://doc.qt.io/qt-5/qt.html#FillRule-enum">Qt::WindingFill</a></th></tr></thead>
+<tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qt-fillrule-oddeven.png" alt=""></img></td><td><img src="http://doc.qt.io/qt-5/images/qt-fillrule-winding.png" alt=""></img></td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#fillRule">fillRule</a>().</p></div></p>
+</div><h4 id='method.simplified' class='method'><code>fn <a href='#method.simplified' class='fnname'>simplified</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathSimplifiedArgs.html' title='qt_gui::painter_path::overloading::PainterPathSimplifiedArgs'>PainterPathSimplifiedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::simplified</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn simplified(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn simplified(&amp;self, cpp_utils::AsStruct) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::simplified() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#simplified">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a simplified version of this path. This implies merging all subpaths that intersect, and returning a path containing no intersecting edges. Consecutive parallel lines will also be merged. The simplified path will always use the default fill rule, <a href="http://doc.qt.io/qt-5/qt.html#FillRule-enum">Qt::OddEvenFill</a>. Bezier curves may be flattened to line segments due to numerical instability of doing bezier curve intersections.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.slope_at_percent' class='method'><code>fn <a href='#method.slope_at_percent' class='fnname'>slope_at_percent</a>(&amp;self, t: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QPainterPath::slopeAtPercent(double t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#slopeAtPercent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the slope of the path at the percentage <i>t</i>. The argument <i>t</i> has to be between 0 and 1.</p>
+<p>Note that similarly to other percent methods, the percentage measurement is not linear with regards to the length, if curves are present in the path. When curves are present the percentage argument is mapped to the t parameter of the Bezier equations.</p></div></p>
+</div><h4 id='method.subtracted' class='method'><code>fn <a href='#method.subtracted' class='fnname'>subtracted</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathSubtractedArgs.html' title='qt_gui::painter_path::overloading::PainterPathSubtractedArgs'>PainterPathSubtractedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::subtracted</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn subtracted(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn subtracted(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::subtracted(const QPainterPath&amp; r) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#subtracted">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a path which is <i>p</i>&#39;s fill area subtracted from this path&#39;s fill area.</p>
+<p>Set operations on paths will treat the paths as areas. Non-closed paths will be treated as implicitly closed. Bezier curves may be flattened to line segments due to numerical instability of doing bezier curve intersections.</p>
+<p>This function was introduced in  Qt 4.3.</p></div></p>
+</div><h4 id='method.subtracted_inverted' class='method'><code>fn <a href='#method.subtracted_inverted' class='fnname'>subtracted_inverted</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathSubtractedInvertedArgs.html' title='qt_gui::painter_path::overloading::PainterPathSubtractedInvertedArgs'>PainterPathSubtractedInvertedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::subtractedInverted</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn subtracted_inverted(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn subtracted_inverted(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::subtractedInverted(const QPainterPath&amp; r) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath-obsolete.html#subtractedInverted">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use <a href="http://doc.qt.io/qt-5/qpainterpath.html#subtracted">subtracted</a>() instead.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#subtracted">subtracted</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPainterPath::swap(QPainterPath&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps painter path <i>other</i> with this painter path. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.to_fill_polygon' class='method'><code>fn <a href='#method.to_fill_polygon' class='fnname'>to_fill_polygon</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathToFillPolygonArgs.html' title='qt_gui::painter_path::overloading::PainterPathToFillPolygonArgs'>PainterPathToFillPolygonArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::toFillPolygon</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-14' class='section-header'><a href='#variant-1-14'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_fill_polygon(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::polygon_f::PolygonF&gt;</code><br>2) <code>fn to_fill_polygon(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::polygon_f::PolygonF&gt;</code><br>3) <code>fn to_fill_polygon(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsStruct)) -&gt; ::polygon_f::PolygonF</code><br>4) <code>fn to_fill_polygon(&amp;self, cpp_utils::AsStruct) -&gt; ::polygon_f::PolygonF</code><br>
+C++ method: <span style='color: green;'><code>QPolygonF QPainterPath::toFillPolygon(const QMatrix&amp; matrix = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygon-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-2-14' class='section-header'><a href='#variant-2-14'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_fill_polygon(&amp;self, (&amp;::transform::Transform, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::polygon_f::PolygonF&gt;</code><br>2) <code>fn to_fill_polygon(&amp;self, (&amp;::transform::Transform, cpp_utils::AsStruct)) -&gt; ::polygon_f::PolygonF</code><br>
+C++ method: <span style='color: green;'><code>QPolygonF QPainterPath::toFillPolygon(const QTransform&amp; matrix) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygon">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the path into a polygon using the <a href="http://doc.qt.io/qt-5/qtransform.html">QTransform</a> <i>matrix</i>, and returns the polygon.</p>
+<p>The polygon is created by first converting all subpaths to polygons, then using a rewinding technique to make sure that overlapping subpaths can be filled using the correct fill rule.</p>
+<p>Note that rewinding inserts addition lines in the polygon so the outline of the fill polygon does not match the outline of the path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#toSubpathPolygons">toSubpathPolygons</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygons">toFillPolygons</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#qpainterpath-conversion">QPainterPath Conversion</a>.</p></div></p>
+</div><h4 id='method.to_fill_polygons' class='method'><code>fn <a href='#method.to_fill_polygons' class='fnname'>to_fill_polygons</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathToFillPolygonsArgs.html' title='qt_gui::painter_path::overloading::PainterPathToFillPolygonsArgs'>PainterPathToFillPolygonsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::toFillPolygons</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-15' class='section-header'><a href='#variant-1-15'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_fill_polygons(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListPolygonFRef&gt;</code><br>2) <code>fn to_fill_polygons(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListPolygonFRef&gt;</code><br>3) <code>fn to_fill_polygons(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsStruct)) -&gt; ::list::ListPolygonFRef</code><br>4) <code>fn to_fill_polygons(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListPolygonFRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QPolygonF&gt; QPainterPath::toFillPolygons(const QMatrix&amp; matrix = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygons-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-2-15' class='section-header'><a href='#variant-2-15'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_fill_polygons(&amp;self, (&amp;::transform::Transform, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListPolygonFRef&gt;</code><br>2) <code>fn to_fill_polygons(&amp;self, (&amp;::transform::Transform, cpp_utils::AsStruct)) -&gt; ::list::ListPolygonFRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QPolygonF&gt; QPainterPath::toFillPolygons(const QTransform&amp; matrix) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygons">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the path into a list of polygons using the <a href="http://doc.qt.io/qt-5/qtransform.html">QTransform</a> <i>matrix</i>, and returns the list.</p>
+<p>The function differs from the <a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygon">toFillPolygon</a>() function in that it creates several polygons. It is provided because it is usually faster to draw several small polygons than to draw one large polygon, even though the total number of points drawn is the same.</p>
+<p>The toFillPolygons() function differs from the <a href="http://doc.qt.io/qt-5/qpainterpath.html#toSubpathPolygons">toSubpathPolygons</a>() function in that it create only polygon for subpaths that have overlapping bounding rectangles.</p>
+<p>Like the <a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygon">toFillPolygon</a>() function, this function uses a rewinding technique to make sure that overlapping subpaths can be filled using the correct fill rule. Note that rewinding inserts addition lines in the polygons so the outline of the fill polygon does not match the outline of the path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#toSubpathPolygons">toSubpathPolygons</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygon">toFillPolygon</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#qpainterpath-conversion">QPainterPath Conversion</a>.</p></div></p>
+</div><h4 id='method.to_reversed' class='method'><code>fn <a href='#method.to_reversed' class='fnname'>to_reversed</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathToReversedArgs.html' title='qt_gui::painter_path::overloading::PainterPathToReversedArgs'>PainterPathToReversedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::toReversed</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_reversed(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn to_reversed(&amp;self, cpp_utils::AsStruct) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::toReversed() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#toReversed">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns a reversed copy of the path.</p>
+<p>It is the order of the elements that is reversed: If a <a href="http://doc.qt.io/qt-5/qpainterpath.html">QPainterPath</a> is composed by calling the <a href="http://doc.qt.io/qt-5/qpainterpath.html#moveTo">moveTo</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#lineTo">lineTo</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#cubicTo">cubicTo</a>() functions in the specified order, the reversed copy is composed by calling <a href="http://doc.qt.io/qt-5/qpainterpath.html#cubicTo">cubicTo</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#lineTo">lineTo</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#moveTo">moveTo</a>().</p></div></p>
+</div><h4 id='method.to_subpath_polygons' class='method'><code>fn <a href='#method.to_subpath_polygons' class='fnname'>to_subpath_polygons</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathToSubpathPolygonsArgs.html' title='qt_gui::painter_path::overloading::PainterPathToSubpathPolygonsArgs'>PainterPathToSubpathPolygonsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::toSubpathPolygons</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-16' class='section-header'><a href='#variant-1-16'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_subpath_polygons(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListPolygonFRef&gt;</code><br>2) <code>fn to_subpath_polygons(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListPolygonFRef&gt;</code><br>3) <code>fn to_subpath_polygons(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsStruct)) -&gt; ::list::ListPolygonFRef</code><br>4) <code>fn to_subpath_polygons(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListPolygonFRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QPolygonF&gt; QPainterPath::toSubpathPolygons(const QMatrix&amp; matrix = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#toSubpathPolygons-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-2-16' class='section-header'><a href='#variant-2-16'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_subpath_polygons(&amp;self, (&amp;::transform::Transform, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListPolygonFRef&gt;</code><br>2) <code>fn to_subpath_polygons(&amp;self, (&amp;::transform::Transform, cpp_utils::AsStruct)) -&gt; ::list::ListPolygonFRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QPolygonF&gt; QPainterPath::toSubpathPolygons(const QTransform&amp; matrix) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#toSubpathPolygons">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the path into a list of polygons using the <a href="http://doc.qt.io/qt-5/qtransform.html">QTransform</a> <i>matrix</i>, and returns the list.</p>
+<p>This function creates one polygon for each subpath regardless of intersecting subpaths (i.e. overlapping bounding rectangles). To make sure that such overlapping subpaths are filled correctly, use the <a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygons">toFillPolygons</a>() function instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygons">toFillPolygons</a>(), <a href="http://doc.qt.io/qt-5/qpainterpath.html#toFillPolygon">toFillPolygon</a>(), and <a href="http://doc.qt.io/qt-5/qpainterpath.html#qpainterpath-conversion">QPainterPath Conversion</a>.</p></div></p>
+</div><h4 id='method.translate' class='method'><code>fn <a href='#method.translate' class='fnname'>translate</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathTranslateArgs.html' title='qt_gui::painter_path::overloading::PainterPathTranslateArgs'>PainterPathTranslateArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::translate</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-17' class='section-header'><a href='#variant-1-17'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn translate(&amp;mut self, &amp;qt_core::point_f::PointF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::translate(const QPointF&amp; offset)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#translate-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Translates all elements in the path by the given <i>offset</i>.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#translated">translated</a>().</p></div></p>
+
+<h2 id='variant-2-17' class='section-header'><a href='#variant-2-17'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn translate(&amp;mut self, (libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPainterPath::translate(double dx, double dy)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#translate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Translates all elements in the path by (<i>dx</i>, <i>dy</i>).</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#translated">translated</a>().</p></div></p>
+</div><h4 id='method.translated' class='method'><code>fn <a href='#method.translated' class='fnname'>translated</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathTranslatedArgs.html' title='qt_gui::painter_path::overloading::PainterPathTranslatedArgs'>PainterPathTranslatedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::translated</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-18' class='section-header'><a href='#variant-1-18'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn translated(&amp;self, (&amp;qt_core::point_f::PointF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn translated(&amp;self, (&amp;qt_core::point_f::PointF, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::translated(const QPointF&amp; offset) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#translated-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns a copy of the path that is translated by the given <i>offset</i>.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#translate">translate</a>().</p></div></p>
+
+<h2 id='variant-2-18' class='section-header'><a href='#variant-2-18'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn translated(&amp;self, (libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn translated(&amp;self, (libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::translated(double dx, double dy) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#translated">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of the path that is translated by (<i>dx</i>, <i>dy</i>).</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#translate">translate</a>().</p></div></p>
+</div><h4 id='method.united' class='method'><code>fn <a href='#method.united' class='fnname'>united</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathUnitedArgs.html' title='qt_gui::painter_path::overloading::PainterPathUnitedArgs'>PainterPathUnitedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainterPath::united</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn united(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn united(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QPainterPath::united(const QPainterPath&amp; r) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#united">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a path which is the union of this path&#39;s fill area and <i>p</i>&#39;s fill area.</p>
+<p>Set operations on paths will treat the paths as areas. Non-closed paths will be treated as implicitly closed. Bezier curves may be flattened to line segments due to numerical instability of doing bezier curve intersections.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainterpath.html#intersected">intersected</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#subtracted">subtracted</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/painter/overloading/trait.PainterSetClipPathArgs.html' title='qt_gui::painter::overloading::PainterSetClipPathArgs'>PainterSetClipPathArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128447' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#5429-5437' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/painter/overloading/trait.PainterSetClipPathArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/painter/struct.Painter.html' title='qt_gui::painter::Painter'>Painter</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathContainsArgs.html' title='qt_gui::painter_path::overloading::PainterPathContainsArgs'>PainterPathContainsArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-129485' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter_path.rs.html#1700-1708' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_gui/painter_path/overloading/trait.PainterPathContainsArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/painter_path/overloading/trait.PainterPathIntersectsArgs.html' title='qt_gui::painter_path::overloading::PainterPathIntersectsArgs'>PainterPathIntersectsArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-129616' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter_path.rs.html#1890-1898' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_gui/painter_path/overloading/trait.PainterPathIntersectsArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128959' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter_path.rs.html#172-176' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-129208' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter_path.rs.html#1291-1298' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QPainterPath::~QPainterPath()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainterpath.html#dtor.QPainterPath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys this <a href="http://doc.qt.io/qt-5/qpainterpath.html">QPainterPath</a> object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-129211' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter_path.rs.html#1300-1304' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

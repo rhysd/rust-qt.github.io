@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["GenericArgumentNewArgs","This trait represents a set of arguments accepted by GenericArgument::new method."]]});

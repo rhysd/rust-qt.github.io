@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["FutureVoid","C++ type: <span style='color: green;'>```QFuture<void>```</span>"]]});

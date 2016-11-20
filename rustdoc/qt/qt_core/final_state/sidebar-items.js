@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["FinalState","C++ type: <span style='color: green;'>```QFinalState```</span>"]]});

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TextBlock` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TextBlock">
+
+    <title>qt_gui::text_block::TextBlock - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>text_block</a></p><script>window.sidebarCurrent = {name: 'TextBlock', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>text_block</a>::<wbr><a class='struct' href=''>TextBlock</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-152488' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_block.rs.html#159-161' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TextBlock {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTextBlock</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtextblock.html">QTextBlock</a> class provides a container for text fragments in a <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a>.</p>
+<p>A text block encapsulates a block or paragraph of text in a <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a>. <a href="http://doc.qt.io/qt-5/qtextblock.html">QTextBlock</a> provides read-only access to the block/paragraph structure of QTextDocuments. It is mainly of use if you want to implement your own layouts for the visual representation of a <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a>, or if you want to iterate over a document and write out the contents in your own custom format.</p>
+<p>Text blocks are created by their parent documents. If you need to create a new text block, or modify the contents of a document while examining its contents, use the cursor-based interface provided by <a href="http://doc.qt.io/qt-5/qtextcursor.html">QTextCursor</a> instead.</p>
+<p>Each text block is located at a specific <a href="http://doc.qt.io/qt-5/qtextblock.html#position">position</a>() in a <a href="http://doc.qt.io/qt-5/qtextblock.html#document">document</a>(). The contents of the block can be obtained by using the <a href="http://doc.qt.io/qt-5/qtextblock.html#text">text</a>() function. The <a href="http://doc.qt.io/qt-5/qtextblock.html#length">length</a>() function determines the block&#39;s size within the document (including formatting characters). The visual properties of the block are determined by its text <a href="http://doc.qt.io/qt-5/qtextblock.html#layout">layout</a>(), its <a href="http://doc.qt.io/qt-5/qtextblock.html#charFormat">charFormat</a>(), and its <a href="http://doc.qt.io/qt-5/qtextblock.html#blockFormat">blockFormat</a>().</p>
+<p>The <a href="http://doc.qt.io/qt-5/qtextblock.html#next">next</a>() and <a href="http://doc.qt.io/qt-5/qtextblock.html#previous">previous</a>() functions enable iteration over consecutive valid blocks in a document under the condition that the document is not modified by other means during the iteration process. Note that, although blocks are returned in sequence, adjacent blocks may come from different places in the document structure. The validity of a block can be determined by calling <a href="http://doc.qt.io/qt-5/qtextblock.html#isValid">isValid</a>().</p>
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html">QTextBlock</a> provides comparison operators to make it easier to work with blocks: <a href="http://doc.qt.io/qt-5/qtextblock.html#operator-eq-eq">operator==</a>() compares two block for equality, <a href="http://doc.qt.io/qt-5/qtextblock.html#operator-not-eq">operator!=</a>() compares two blocks for inequality, and <a href="http://doc.qt.io/qt-5/qtextblock.html#operator-lt">operator&lt;</a>() determines whether a block precedes another in the same document.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qtextblock-sequence.png" alt=""></img></p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-152493' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_block.rs.html#169-553' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.begin' class='method'><code>fn <a href='#method.begin' class='fnname'>begin</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_block/overloading/trait.TextBlockBeginArgs.html' title='qt_gui::text_block::overloading::TextBlockBeginArgs'>TextBlockBeginArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlock::begin</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn begin(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_block::Iterator&gt;</code><br>2) <code>fn begin(&amp;self, cpp_utils::AsStruct) -&gt; ::text_block::Iterator</code><br>
+C++ method: <span style='color: green;'><code>QTextBlock::iterator QTextBlock::begin() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#begin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a text block iterator pointing to the beginning of the text block.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#end">end</a>().</p></div></p>
+</div><h4 id='method.block_format' class='method'><code>fn <a href='#method.block_format' class='fnname'>block_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_block/overloading/trait.TextBlockBlockFormatArgs.html' title='qt_gui::text_block::overloading::TextBlockBlockFormatArgs'>TextBlockBlockFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlock::blockFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn block_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_block_format::TextBlockFormat&gt;</code><br>2) <code>fn block_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_block_format::TextBlockFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextBlockFormat QTextBlock::blockFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#blockFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qtextblockformat.html">QTextBlockFormat</a> that describes block-specific properties.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#charFormat">charFormat</a>().</p></div></p>
+</div><h4 id='method.block_format_index' class='method'><code>fn <a href='#method.block_format_index' class='fnname'>block_format_index</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextBlock::blockFormatIndex() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#blockFormatIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an index into the document&#39;s internal list of block formats for the text block&#39;s format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextdocument.html#allFormats">QTextDocument::allFormats</a>().</p></div></p>
+</div><h4 id='method.block_number' class='method'><code>fn <a href='#method.block_number' class='fnname'>block_number</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextBlock::blockNumber() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#blockNumber">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of this block, or -1 if the block is invalid.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextcursor.html#blockNumber">QTextCursor::blockNumber</a>().</p></div></p>
+</div><h4 id='method.char_format' class='method'><code>fn <a href='#method.char_format' class='fnname'>char_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_block/overloading/trait.TextBlockCharFormatArgs.html' title='qt_gui::text_block::overloading::TextBlockCharFormatArgs'>TextBlockCharFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlock::charFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn char_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_char_format::TextCharFormat&gt;</code><br>2) <code>fn char_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_char_format::TextCharFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextCharFormat QTextBlock::charFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#charFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qtextcharformat.html">QTextCharFormat</a> that describes the block&#39;s character format. The block&#39;s character format is used when inserting text into an empty block.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#blockFormat">blockFormat</a>().</p></div></p>
+</div><h4 id='method.char_format_index' class='method'><code>fn <a href='#method.char_format_index' class='fnname'>char_format_index</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextBlock::charFormatIndex() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#charFormatIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an index into the document&#39;s internal list of character formats for the text block&#39;s character format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextdocument.html#allFormats">QTextDocument::allFormats</a>().</p></div></p>
+</div><h4 id='method.clear_layout' class='method'><code>fn <a href='#method.clear_layout' class='fnname'>clear_layout</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextBlock::clearLayout()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#clearLayout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> that is used to lay out and display the block&#39;s contents.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#layout">layout</a>().</p></div></p>
+</div><h4 id='method.contains' class='method'><code>fn <a href='#method.contains' class='fnname'>contains</a>(&amp;self, position: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextBlock::contains(int position) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#contains">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the given <i>position</i> is located within the text block; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.document' class='method'><code>fn <a href='#method.document' class='fnname'>document</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_gui/text_document/struct.TextDocument.html' title='qt_gui::text_document::TextDocument'>TextDocument</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QTextDocument* QTextBlock::document() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#document">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text document this text block belongs to, or 0 if the text block does not belong to any document.</p></div></p>
+</div><h4 id='method.end' class='method'><code>fn <a href='#method.end' class='fnname'>end</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_block/overloading/trait.TextBlockEndArgs.html' title='qt_gui::text_block::overloading::TextBlockEndArgs'>TextBlockEndArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlock::end</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn end(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_block::Iterator&gt;</code><br>2) <code>fn end(&amp;self, cpp_utils::AsStruct) -&gt; ::text_block::Iterator</code><br>
+C++ method: <span style='color: green;'><code>QTextBlock::iterator QTextBlock::end() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#end">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a text block iterator pointing to the end of the text block.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#begin">begin</a>(), <a href="http://doc.qt.io/qt-5/qtextblock.html#next">next</a>(), and <a href="http://doc.qt.io/qt-5/qtextblock.html#previous">previous</a>().</p></div></p>
+</div><h4 id='method.first_line_number' class='method'><code>fn <a href='#method.first_line_number' class='fnname'>first_line_number</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextBlock::firstLineNumber() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#firstLineNumber">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the first line number of this block, or -1 if the block is invalid. Unless the layout supports it, the line number is identical to the block number.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#blockNumber">QTextBlock::blockNumber</a>().</p></div></p>
+</div><h4 id='method.fragment_index' class='method'><code>fn <a href='#method.fragment_index' class='fnname'>fragment_index</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextBlock::fragmentIndex() const</code></span></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextBlock::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text block is valid; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_visible' class='method'><code>fn <a href='#method.is_visible' class='fnname'>is_visible</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextBlock::isVisible() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#isVisible">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the block is visible; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#setVisible">setVisible</a>().</p></div></p>
+</div><h4 id='method.layout' class='method'><code>fn <a href='#method.layout' class='fnname'>layout</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/text_layout/struct.TextLayout.html' title='qt_gui::text_layout::TextLayout'>TextLayout</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout* QTextBlock::layout() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#layout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> that is used to lay out and display the block&#39;s contents.</p>
+<p>Note that the returned <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> object can only be modified from the documentChanged implementation of a <a href="http://doc.qt.io/qt-5/qabstracttextdocumentlayout.html">QAbstractTextDocumentLayout</a> subclass. Any changes applied from the outside cause undefined behavior.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#clearLayout">clearLayout</a>().</p></div></p>
+</div><h4 id='method.length' class='method'><code>fn <a href='#method.length' class='fnname'>length</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextBlock::length() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#length">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the length of the block in characters.</p>
+<p><b>Note: </b>The length returned includes all formatting characters, for example, newline.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#text">text</a>(), <a href="http://doc.qt.io/qt-5/qtextblock.html#charFormat">charFormat</a>(), and <a href="http://doc.qt.io/qt-5/qtextblock.html#blockFormat">blockFormat</a>().</p></div></p>
+</div><h4 id='method.line_count' class='method'><code>fn <a href='#method.line_count' class='fnname'>line_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextBlock::lineCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#lineCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the line count. Not all document layouts support this feature.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#setLineCount">setLineCount</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_block/overloading/trait.TextBlockNewArgs.html' title='qt_gui::text_block::overloading::TextBlockNewArgs'>TextBlockNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlock::QTextBlock</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::text_block::TextBlock</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_block::TextBlock&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextBlock::QTextBlock()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::text_block::TextBlock, cpp_utils::AsStruct)) -&gt; ::text_block::TextBlock</code><br>2) <code>fn new((&amp;::text_block::TextBlock, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_block::TextBlock&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextBlock::QTextBlock(const QTextBlock&amp; o)</code></span></p>
+</div><h4 id='method.next' class='method'><code>fn <a href='#method.next' class='fnname'>next</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_block/overloading/trait.TextBlockNextArgs.html' title='qt_gui::text_block::overloading::TextBlockNextArgs'>TextBlockNextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlock::next</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn next(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_block::TextBlock&gt;</code><br>2) <code>fn next(&amp;self, cpp_utils::AsStruct) -&gt; ::text_block::TextBlock</code><br>
+C++ method: <span style='color: green;'><code>QTextBlock QTextBlock::next() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#next">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text block in the document after this block, or an empty text block if this is the last one.</p>
+<p>Note that the next block may be in a different frame or table to this block.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#previous">previous</a>(), <a href="http://doc.qt.io/qt-5/qtextblock.html#begin">begin</a>(), and <a href="http://doc.qt.io/qt-5/qtextblock.html#end">end</a>().</p></div></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, o: &amp;'l1 <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlock&amp; QTextBlock::operator=(const QTextBlock&amp; o)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the <i>other</i> text block to this text block.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, o: &amp;<a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextBlock::operator==(const QTextBlock&amp; o) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text block is the same as the <i>other</i> text block.</p></div></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>(&amp;self, o: &amp;<a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextBlock::operator&lt;(const QTextBlock&amp; o) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#operator-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text block occurs before the <i>other</i> text block in the document.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, o: &amp;<a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextBlock::operator!=(const QTextBlock&amp; o) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text block is different from the <i>other</i> text block.</p></div></p>
+</div><h4 id='method.position' class='method'><code>fn <a href='#method.position' class='fnname'>position</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextBlock::position() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#position">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index of the block&#39;s first character within the document.</p></div></p>
+</div><h4 id='method.previous' class='method'><code>fn <a href='#method.previous' class='fnname'>previous</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_block/overloading/trait.TextBlockPreviousArgs.html' title='qt_gui::text_block::overloading::TextBlockPreviousArgs'>TextBlockPreviousArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlock::previous</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn previous(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_block::TextBlock&gt;</code><br>2) <code>fn previous(&amp;self, cpp_utils::AsStruct) -&gt; ::text_block::TextBlock</code><br>
+C++ method: <span style='color: green;'><code>QTextBlock QTextBlock::previous() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#previous">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text block in the document before this block, or an empty text block if this is the first one.</p>
+<p>Note that the previous block may be in a different frame or table to this block.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#next">next</a>(), <a href="http://doc.qt.io/qt-5/qtextblock.html#begin">begin</a>(), and <a href="http://doc.qt.io/qt-5/qtextblock.html#end">end</a>().</p></div></p>
+</div><h4 id='method.revision' class='method'><code>fn <a href='#method.revision' class='fnname'>revision</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextBlock::revision() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#revision">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the blocks revision.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#setRevision">setRevision</a>() and <a href="http://doc.qt.io/qt-5/qtextdocument.html#revision">QTextDocument::revision</a>().</p></div></p>
+</div><h4 id='method.set_line_count' class='method'><code>fn <a href='#method.set_line_count' class='fnname'>set_line_count</a>(&amp;mut self, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextBlock::setLineCount(int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#setLineCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the line count to <i>count</i>.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#lineCount">lineCount</a>().</p></div></p>
+</div><h4 id='method.set_revision' class='method'><code>fn <a href='#method.set_revision' class='fnname'>set_revision</a>(&amp;mut self, rev: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextBlock::setRevision(int rev)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#setRevision">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a blocks revision to <i>rev</i>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#revision">revision</a>() and <a href="http://doc.qt.io/qt-5/qtextdocument.html#revision">QTextDocument::revision</a>().</p></div></p>
+</div><h4 id='method.set_user_data' class='method'><code>fn <a href='#method.set_user_data' class='fnname'>set_user_data</a>(&amp;mut self, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/text_block_user_data/struct.TextBlockUserData.html' title='qt_gui::text_block_user_data::TextBlockUserData'>TextBlockUserData</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextBlock::setUserData(QTextBlockUserData* data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#setUserData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Attaches the given <i>data</i> object to the text block.</p>
+<p><a href="http://doc.qt.io/qt-5/qtextblockuserdata.html">QTextBlockUserData</a> can be used to store custom settings. The ownership is passed to the underlying text document, i.e. the provided <a href="http://doc.qt.io/qt-5/qtextblockuserdata.html">QTextBlockUserData</a> object will be deleted if the corresponding text block gets deleted. The user data object is not stored in the undo history, so it will not be available after undoing the deletion of a text block.</p>
+<p>For example, if you write a programming editor in an IDE, you may want to let your user set breakpoints visually in your code for an integrated debugger. In a programming editor a line of text usually corresponds to one <a href="http://doc.qt.io/qt-5/qtextblock.html">QTextBlock</a>. The <a href="http://doc.qt.io/qt-5/qtextblockuserdata.html">QTextBlockUserData</a> interface allows the developer to store data for each <a href="http://doc.qt.io/qt-5/qtextblock.html">QTextBlock</a>, like for example in which lines of the source code the user has a breakpoint set. Of course this could also be stored externally, but by storing it inside the <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a>, it will for example be automatically deleted when the user deletes the associated line. It&#39;s really just a way to store custom information in the <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a> without using custom properties in <a href="http://doc.qt.io/qt-5/qtextformat.html">QTextFormat</a> which would affect the undo/redo stack.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#userData">userData</a>().</p></div></p>
+</div><h4 id='method.set_user_state' class='method'><code>fn <a href='#method.set_user_state' class='fnname'>set_user_state</a>(&amp;mut self, state: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextBlock::setUserState(int state)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#setUserState">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Stores the specified <i>state</i> integer value in the text block. This may be useful for example in a syntax highlighter to store a text parsing state.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#userState">userState</a>().</p></div></p>
+</div><h4 id='method.set_visible' class='method'><code>fn <a href='#method.set_visible' class='fnname'>set_visible</a>(&amp;mut self, visible: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextBlock::setVisible(bool visible)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#setVisible">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the block&#39;s visibility to <i>visible</i>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#isVisible">isVisible</a>().</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_block/overloading/trait.TextBlockTextArgs.html' title='qt_gui::text_block::overloading::TextBlockTextArgs'>TextBlockTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlock::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextBlock::text() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the block&#39;s contents as plain text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#length">length</a>(), <a href="http://doc.qt.io/qt-5/qtextblock.html#charFormat">charFormat</a>(), and <a href="http://doc.qt.io/qt-5/qtextblock.html#blockFormat">blockFormat</a>().</p></div></p>
+</div><h4 id='method.text_direction' class='method'><code>fn <a href='#method.text_direction' class='fnname'>text_direction</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.LayoutDirection.html' title='qt_core::qt::LayoutDirection'>LayoutDirection</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::LayoutDirection QTextBlock::textDirection() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#textDirection">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the resolved text direction.</p>
+<p>If the block has no explicit direction set, it will resolve the direction from the blocks content. Returns either <a href="http://doc.qt.io/qt-5/qt.html#LayoutDirection-enum">Qt::LeftToRight</a> or <a href="http://doc.qt.io/qt-5/qt.html#LayoutDirection-enum">Qt::RightToLeft</a>.</p>
+<p>This function was introduced in  Qt 4.7.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#layoutDirection">QTextFormat::layoutDirection</a>(), <a href="http://doc.qt.io/qt-5/qstring.html#isRightToLeft">QString::isRightToLeft</a>(), and <a href="http://doc.qt.io/qt-5/qt.html#LayoutDirection-enum">Qt::LayoutDirection</a>.</p></div></p>
+</div><h4 id='method.text_formats' class='method'><code>fn <a href='#method.text_formats' class='fnname'>text_formats</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_block/overloading/trait.TextBlockTextFormatsArgs.html' title='qt_gui::text_block::overloading::TextBlockTextFormatsArgs'>TextBlockTextFormatsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlock::textFormats</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text_formats(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::vector::VectorFormatRangeRef&gt;</code><br>2) <code>fn text_formats(&amp;self, cpp_utils::AsStruct) -&gt; ::vector::VectorFormatRangeRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QTextLayout::FormatRange&gt; QTextBlock::textFormats() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#textFormats">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the block&#39;s text format options as a list of continuous ranges of <a href="http://doc.qt.io/qt-5/qtextcharformat.html">QTextCharFormat</a>. The range&#39;s character format is used when inserting text within the range boundaries.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#charFormat">charFormat</a>() and <a href="http://doc.qt.io/qt-5/qtextblock.html#blockFormat">blockFormat</a>().</p></div></p>
+</div><h4 id='method.text_list' class='method'><code>fn <a href='#method.text_list' class='fnname'>text_list</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/text_list/struct.TextList.html' title='qt_gui::text_list::TextList'>TextList</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextList* QTextBlock::textList() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#textList">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the block represents a list item, returns the list that the item belongs to; otherwise returns 0.</p></div></p>
+</div><h4 id='method.user_data' class='method'><code>fn <a href='#method.user_data' class='fnname'>user_data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/text_block_user_data/struct.TextBlockUserData.html' title='qt_gui::text_block_user_data::TextBlockUserData'>TextBlockUserData</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextBlockUserData* QTextBlock::userData() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#userData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to a <a href="http://doc.qt.io/qt-5/qtextblockuserdata.html">QTextBlockUserData</a> object if previously set with <a href="http://doc.qt.io/qt-5/qtextblock.html#setUserData">setUserData</a>() or a null pointer.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#setUserData">setUserData</a>().</p></div></p>
+</div><h4 id='method.user_state' class='method'><code>fn <a href='#method.user_state' class='fnname'>user_state</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextBlock::userState() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextblock.html#userState">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the integer value previously set with <a href="http://doc.qt.io/qt-5/qtextblock.html#setUserState">setUserState</a>() or -1.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextblock.html#setUserState">setUserState</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListTextBlockRefAppendArgs.html' title='qt_gui::list::overloading::ListTextBlockRefAppendArgs'>ListTextBlockRefAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-91864' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#20744-20752' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListTextBlockRefAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/list/struct.ListTextBlockRef.html' title='qt_gui::list::ListTextBlockRef'>ListTextBlockRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListTextBlockRefCountArgs.html' title='qt_gui::list::overloading::ListTextBlockRefCountArgs'>ListTextBlockRefCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-91880' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#20763-20771' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListTextBlockRefCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/list/struct.ListTextBlockRef.html' title='qt_gui::list::ListTextBlockRef'>ListTextBlockRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListTextBlockRefIndexOfArgs.html' title='qt_gui::list::overloading::ListTextBlockRefIndexOfArgs'>ListTextBlockRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-91891' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#20776-20784' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListTextBlockRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/list/struct.ListTextBlockRef.html' title='qt_gui::list::ListTextBlockRef'>ListTextBlockRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListTextBlockRefLastIndexOfArgs.html' title='qt_gui::list::overloading::ListTextBlockRefLastIndexOfArgs'>ListTextBlockRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-91909' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#20800-20808' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListTextBlockRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/list/struct.ListTextBlockRef.html' title='qt_gui::list::ListTextBlockRef'>ListTextBlockRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListTextBlockRefOpAddAssignArgs.html' title='qt_gui::list::overloading::ListTextBlockRefOpAddAssignArgs'>ListTextBlockRefOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-92024' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#20977-20987' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListTextBlockRefOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/list/struct.ListTextBlockRef.html' title='qt_gui::list::ListTextBlockRef'>ListTextBlockRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_gui/list/struct.ListTextBlockRef.html' title='qt_gui::list::ListTextBlockRef'>ListTextBlockRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/list/overloading/trait.ListTextBlockRefOpShlArgs.html' title='qt_gui::list::overloading::ListTextBlockRefOpShlArgs'>ListTextBlockRefOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-92043' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/list.rs.html#21002-21011' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_gui/list/overloading/trait.ListTextBlockRefOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/list/struct.ListTextBlockRef.html' title='qt_gui::list::ListTextBlockRef'>ListTextBlockRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_gui/list/struct.ListTextBlockRef.html' title='qt_gui::list::ListTextBlockRef'>ListTextBlockRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-152491' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_block.rs.html#163-167' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-152606' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_block.rs.html#555-562' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QTextBlock::~QTextBlock()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/text_block/struct.TextBlock.html' title='qt_gui::text_block::TextBlock'>TextBlock</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-152609' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_block.rs.html#564-568' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

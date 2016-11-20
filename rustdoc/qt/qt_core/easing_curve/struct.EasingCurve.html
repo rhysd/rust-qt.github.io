@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `EasingCurve` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, EasingCurve">
+
+    <title>qt_core::easing_curve::EasingCurve - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>easing_curve</a></p><script>window.sidebarCurrent = {name: 'EasingCurve', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>easing_curve</a>::<wbr><a class='struct' href=''>EasingCurve</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-69313' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/easing_curve.rs.html#26-28' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct EasingCurve {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QEasingCurve</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qeasingcurve.html">QEasingCurve</a> class provides easing curves for controlling animation.</p>
+<p>Easing curves describe a function that controls how the speed of the interpolation between 0 and 1 should be. Easing curves allow transitions from one value to another to appear more natural than a simple constant speed would allow. The <a href="http://doc.qt.io/qt-5/qeasingcurve.html">QEasingCurve</a> class is usually used in conjunction with the <a href="http://doc.qt.io/qt-5/qvariantanimation.html">QVariantAnimation</a> and <a href="http://doc.qt.io/qt-5/qpropertyanimation.html">QPropertyAnimation</a> classes but can be used on its own. It is usually used to accelerate the interpolation from zero velocity (ease in) or decelerate to zero velocity (ease out). Ease in and ease out can also be combined in the same easing curve.</p>
+<p>To calculate the speed of the interpolation, the easing curve provides the function <a href="http://doc.qt.io/qt-5/qeasingcurve.html#valueForProgress">valueForProgress</a>(), where the <i>progress</i> argument specifies the progress of the interpolation: 0 is the start value of the interpolation, 1 is the end value of the interpolation. The returned value is the effective progress of the interpolation. If the returned value is the same as the input value for all input values the easing curve is a linear curve. This is the default behaviour.</p>
+<p>For example,</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qeasingcurve.html#QEasingCurve">QEasingCurve</a></span> easing(<span class="type"><a href="http://doc.qt.io/qt-5/qeasingcurve.html#QEasingCurve">QEasingCurve</a></span><span class="operator">::</span>InOutQuad);</p>
+
+<p><span class="keyword">for</span>(<span class="type"><a href="http://doc.qt.io/qt-5/qtglobal.html#qreal-typedef">qreal</a></span> t <span class="operator">=</span> <span class="number">0.0</span>; t <span class="operator">&lt;</span> <span class="number">1.0</span>; t<span class="operator">+</span><span class="operator">=</span><span class="number">0.1</span>)
+&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qWarning">qWarning</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Effective progress&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> t <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot; is
+&#32;              &lt;&lt; easing.valueForProgress(t);
+</span></pre>
+<p>will print the effective progress of the interpolation between 0 and 1.</p>
+<p>When using a <a href="http://doc.qt.io/qt-5/qpropertyanimation.html">QPropertyAnimation</a>, the associated easing curve will be used to control the progress of the interpolation between startValue and endValue:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpropertyanimation.html">QPropertyAnimation</a></span> animation;
+animation<span class="operator">.</span>setStartValue(<span class="number">0</span>);
+animation<span class="operator">.</span>setEndValue(<span class="number">1000</span>);
+animation<span class="operator">.</span>setDuration(<span class="number">1000</span>);
+animation<span class="operator">.</span>setEasingCurve(<span class="type"><a href="http://doc.qt.io/qt-5/qeasingcurve.html#QEasingCurve">QEasingCurve</a></span><span class="operator">::</span>InOutQuad);</pre>
+<p>The ability to set an amplitude, overshoot, or period depends on the <a href="http://doc.qt.io/qt-5/qeasingcurve.html">QEasingCurve</a> type. Amplitude access is available to curves that behave as springs such as elastic and bounce curves. Changing the amplitude changes the height of the curve. Period access is only available to elastic curves and setting a higher period slows the rate of bounce. Only curves that have &quot;boomerang&quot; behaviors such as the <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">InBack</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">OutBack</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">InOutBack</a>, and <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">OutInBack</a> have overshoot settings. These curves will interpolate beyond the end points and return to the end point, acting similar to a boomerang.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qtwidgets-animation-easing-example.html">Easing Curves Example</a> contains samples of <a href="http://doc.qt.io/qt-5/qeasingcurve.html">QEasingCurve</a> types and lets you change the curve settings.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/easing_curve/struct.EasingCurve.html' title='qt_core::easing_curve::EasingCurve'>EasingCurve</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69318' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/easing_curve.rs.html#36-240' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.add_cubic_bezier_segment' class='method'><code>fn <a href='#method.add_cubic_bezier_segment' class='fnname'>add_cubic_bezier_segment</a>(&amp;mut self, c1: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>, c2: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>, end_point: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QEasingCurve::addCubicBezierSegment(const QPointF&amp; c1, const QPointF&amp; c2, const QPointF&amp; endPoint)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#addCubicBezierSegment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds a segment of a cubic bezier spline to define a custom easing curve. It is only applicable if <a href="http://doc.qt.io/qt-5/qeasingcurve.html#type">type</a>() is <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::BezierSpline</a>. Note that the spline implicitly starts at (0.0, 0.0) and has to end at (1.0, 1.0) to be a valid easing curve. <i>c1</i> and <i>c2</i> are the control points used for drawing the curve. <i>endPoint</i> is the endpoint of the curve.</p></div></p>
+</div><h4 id='method.add_tcbs_egment' class='method'><code>fn <a href='#method.add_tcbs_egment' class='fnname'>add_tcbs_egment</a>(&amp;mut self, next_point: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>, t: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, c: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, b: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QEasingCurve::addTCBSegment(const QPointF&amp; nextPoint, double t, double c, double b)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#addTCBSegment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds a segment of a TCB bezier spline to define a custom easing curve. It is only applicable if <a href="http://doc.qt.io/qt-5/qeasingcurve.html#type">type</a>() is <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::TCBSpline</a>. The spline has to start explitly at (0.0, 0.0) and has to end at (1.0, 1.0) to be a valid easing curve. The tension <i>t</i> changes the length of the tangent vector. The continuity <i>c</i> changes the sharpness in change between the tangents. The bias <i>b</i> changes the direction of the tangent vector. <i>nextPoint</i> is the sample position. All three parameters are valid between -1 and 1 and define the tangent of the control point. If all three parameters are 0 the resulting spline is a Catmull-Rom spline. The begin and endpoint always have a bias of -1 and 1, since the outer tangent is not defined.</p></div></p>
+</div><h4 id='method.amplitude' class='method'><code>fn <a href='#method.amplitude' class='fnname'>amplitude</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QEasingCurve::amplitude() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#amplitude">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the amplitude. This is not applicable for all curve types. It is only applicable for bounce and elastic curves (curves of <a href="http://doc.qt.io/qt-5/qeasingcurve.html#type">type</a>() <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::InBounce</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::OutBounce</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::InOutBounce</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::OutInBounce</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::InElastic</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::OutElastic</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::InOutElastic</a> or <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::OutInElastic</a>).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#setAmplitude">setAmplitude</a>().</p></div></p>
+</div><h4 id='method.custom_type' class='method'><code>fn <a href='#method.custom_type' class='fnname'>custom_type</a>(&amp;self) -&gt; extern fn(<a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double (*FN_PTR)(double) QEasingCurve::customType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#customType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the function pointer to the custom easing curve. If <a href="http://doc.qt.io/qt-5/qeasingcurve.html#type">type</a>() does not return <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::Custom</a>, this function will return 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#setCustomType">setCustomType</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/easing_curve/overloading/trait.EasingCurveNewArgs.html' title='qt_core::easing_curve::overloading::EasingCurveNewArgs'>EasingCurveNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QEasingCurve::QEasingCurve</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::easing_curve::EasingCurve</code><br>2) <code>fn new((::easing_curve::Type, cpp_utils::AsStruct)) -&gt; ::easing_curve::EasingCurve</code><br>3) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::easing_curve::EasingCurve&gt;</code><br>4) <code>fn new((::easing_curve::Type, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::easing_curve::EasingCurve&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QEasingCurve::QEasingCurve(QEasingCurve::Type type = ?)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::easing_curve::EasingCurve, cpp_utils::AsStruct)) -&gt; ::easing_curve::EasingCurve</code><br>2) <code>fn new((&amp;::easing_curve::EasingCurve, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::easing_curve::EasingCurve&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QEasingCurve::QEasingCurve(const QEasingCurve&amp; other)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_core/easing_curve/struct.EasingCurve.html' title='qt_core::easing_curve::EasingCurve'>EasingCurve</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/easing_curve/struct.EasingCurve.html' title='qt_core::easing_curve::EasingCurve'>EasingCurve</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QEasingCurve&amp; QEasingCurve::operator=(const QEasingCurve&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Copy <i>other</i>.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/easing_curve/struct.EasingCurve.html' title='qt_core::easing_curve::EasingCurve'>EasingCurve</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QEasingCurve::operator==(const QEasingCurve&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compare this easing curve with <i>other</i> and returns <code>true</code> if they are equal. It will also compare the properties of a curve.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/easing_curve/struct.EasingCurve.html' title='qt_core::easing_curve::EasingCurve'>EasingCurve</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QEasingCurve::operator!=(const QEasingCurve&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compare this easing curve with <i>other</i> and returns <code>true</code> if they are not equal. It will also compare the properties of a curve.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.overshoot' class='method'><code>fn <a href='#method.overshoot' class='fnname'>overshoot</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QEasingCurve::overshoot() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#overshoot">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the overshoot. This is not applicable for all curve types. It is only applicable if <a href="http://doc.qt.io/qt-5/qeasingcurve.html#type">type</a>() is <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::InBack</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::OutBack</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::InOutBack</a> or <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::OutInBack</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#setOvershoot">setOvershoot</a>().</p></div></p>
+</div><h4 id='method.period' class='method'><code>fn <a href='#method.period' class='fnname'>period</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QEasingCurve::period() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#period">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the period. This is not applicable for all curve types. It is only applicable if <a href="http://doc.qt.io/qt-5/qeasingcurve.html#type">type</a>() is <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::InElastic</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::OutElastic</a>, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::InOutElastic</a> or <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::OutInElastic</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#setPeriod">setPeriod</a>().</p></div></p>
+</div><h4 id='method.set_amplitude' class='method'><code>fn <a href='#method.set_amplitude' class='fnname'>set_amplitude</a>(&amp;mut self, amplitude: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QEasingCurve::setAmplitude(double amplitude)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#setAmplitude">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the amplitude to <i>amplitude</i>.</p>
+<p>This will set the amplitude of the bounce or the amplitude of the elastic &quot;spring&quot; effect. The higher the number, the higher the amplitude.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#amplitude">amplitude</a>().</p></div></p>
+</div><h4 id='method.set_custom_type' class='method'><code>fn <a href='#method.set_custom_type' class='fnname'>set_custom_type</a>(&amp;mut self, func: extern fn(<a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QEasingCurve::setCustomType(double (*FN_PTR)(double) func)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#setCustomType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a custom easing curve that is defined by the user in the function <i>func</i>. The signature of the function is qreal myEasingFunction(qreal progress), where <i>progress</i> and the return value are considered to be normalized between 0 and 1. (In some cases the return value can be outside that range) After calling this function <a href="http://doc.qt.io/qt-5/qeasingcurve.html#type">type</a>() will return <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::Custom</a>. <i>func</i> cannot be zero.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#customType">customType</a>() and <a href="http://doc.qt.io/qt-5/qeasingcurve.html#valueForProgress">valueForProgress</a>().</p></div></p>
+</div><h4 id='method.set_overshoot' class='method'><code>fn <a href='#method.set_overshoot' class='fnname'>set_overshoot</a>(&amp;mut self, overshoot: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QEasingCurve::setOvershoot(double overshoot)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#setOvershoot">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the overshoot to <i>overshoot</i>.</p>
+<p>0 produces no overshoot, and the default value of 1.70158 produces an overshoot of 10 percent.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#overshoot">overshoot</a>().</p></div></p>
+</div><h4 id='method.set_period' class='method'><code>fn <a href='#method.set_period' class='fnname'>set_period</a>(&amp;mut self, period: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QEasingCurve::setPeriod(double period)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#setPeriod">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the period to <i>period</i>. Setting a small period value will give a high frequency of the curve. A large period will give it a small frequency.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#period">period</a>().</p></div></p>
+</div><h4 id='method.set_type' class='method'><code>fn <a href='#method.set_type' class='fnname'>set_type</a>(&amp;mut self, type_: <a class='enum' href='../../qt_core/easing_curve/enum.Type.html' title='qt_core::easing_curve::Type'>Type</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QEasingCurve::setType(QEasingCurve::Type type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#setType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the type of the easing curve to <i>type</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#type">type</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/easing_curve/struct.EasingCurve.html' title='qt_core::easing_curve::EasingCurve'>EasingCurve</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QEasingCurve::swap(QEasingCurve&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps curve <i>other</i> with this curve. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.to_cubic_spline' class='method'><code>fn <a href='#method.to_cubic_spline' class='fnname'>to_cubic_spline</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/easing_curve/overloading/trait.EasingCurveToCubicSplineArgs.html' title='qt_core::easing_curve::overloading::EasingCurveToCubicSplineArgs'>EasingCurveToCubicSplineArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QEasingCurve::toCubicSpline</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_cubic_spline(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::vector::VectorPointFRef&gt;</code><br>2) <code>fn to_cubic_spline(&amp;self, cpp_utils::AsStruct) -&gt; ::vector::VectorPointFRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QPointF&gt; QEasingCurve::toCubicSpline() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#toCubicSpline">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the cubicBezierSpline that defines a custom easing curve. If the easing curve does not have a custom bezier easing curve the list is empty.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/easing_curve/enum.Type.html' title='qt_core::easing_curve::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QEasingCurve::Type QEasingCurve::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type of the easing curve.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qeasingcurve.html#setType">setType</a>().</p></div></p>
+</div><h4 id='method.value_for_progress' class='method'><code>fn <a href='#method.value_for_progress' class='fnname'>value_for_progress</a>(&amp;self, progress: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QEasingCurve::valueForProgress(double progress) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#valueForProgress">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Return the effective progress for the easing curve at <i>progress</i>. Whereas <i>progress</i> must be between 0 and 1, the returned effective progress can be outside those bounds. For example, <a href="http://doc.qt.io/qt-5/qeasingcurve.html#Type-enum">QEasingCurve::InBack</a> will return negative values in the beginning of the function.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/easing_curve/struct.EasingCurve.html' title='qt_core::easing_curve::EasingCurve'>EasingCurve</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69316' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/easing_curve.rs.html#30-34' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/easing_curve/struct.EasingCurve.html' title='qt_core::easing_curve::EasingCurve'>EasingCurve</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/easing_curve/struct.EasingCurve.html' title='qt_core::easing_curve::EasingCurve'>EasingCurve</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69383' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/easing_curve.rs.html#242-249' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QEasingCurve::~QEasingCurve()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qeasingcurve.html#dtor.QEasingCurve">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructor.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/easing_curve/struct.EasingCurve.html' title='qt_core::easing_curve::EasingCurve'>EasingCurve</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69386' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/easing_curve.rs.html#251-255' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

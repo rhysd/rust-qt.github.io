@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["FutureVoidNewArgs","This trait represents a set of arguments accepted by FutureVoid::new method."],["FutureVoidProgressTextArgs","This trait represents a set of arguments accepted by FutureVoid::progress_text method."]]});

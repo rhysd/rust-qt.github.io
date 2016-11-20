@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DirIterator` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DirIterator">
+
+    <title>qt_core::dir_iterator::DirIterator - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>dir_iterator</a></p><script>window.sidebarCurrent = {name: 'DirIterator', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>dir_iterator</a>::<wbr><a class='struct' href=''>DirIterator</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-68864' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir_iterator.rs.html#22-24' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct DirIterator {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QDirIterator</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdiriterator.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qdiriterator.html">QDirIterator</a> class provides an iterator for directory entrylists.</p>
+<p>You can use <a href="http://doc.qt.io/qt-5/qdiriterator.html">QDirIterator</a> to navigate entries of a directory one at a time. It is similar to <a href="http://doc.qt.io/qt-5/qdir.html#entryList">QDir::entryList</a>() and <a href="http://doc.qt.io/qt-5/qdir.html#entryInfoList">QDir::entryInfoList</a>(), but because it lists entries one at a time instead of all at once, it scales better and is more suitable for large directories. It also supports listing directory contents recursively, and following symbolic links. Unlike <a href="http://doc.qt.io/qt-5/qdir.html#entryList">QDir::entryList</a>(), <a href="http://doc.qt.io/qt-5/qdiriterator.html">QDirIterator</a> does not support sorting.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qdiriterator.html">QDirIterator</a> constructor takes a <a href="http://doc.qt.io/qt-5/qdir.html">QDir</a> or a directory as argument. After construction, the iterator is located before the first directory entry. Here&#39;s how to iterate over all the entries sequentially:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qdiriterator.html#QDirIterator">QDirIterator</a></span> it(<span class="string">&quot;/etc&quot;</span><span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qdiriterator.html#QDirIterator">QDirIterator</a></span><span class="operator">::</span>Subdirectories);
+<span class="keyword">while</span> (it<span class="operator">.</span>hasNext()) {
+&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> it<span class="operator">.</span>next();</p>
+
+<p>&#32;   <span class="comment">// /etc/.</span>
+&#32;   <span class="comment">// /etc/..</span>
+&#32;   <span class="comment">// /etc/X11</span>
+&#32;   <span class="comment">// /etc/X11/fs</span>
+&#32;   <span class="comment">// ...</span>
+}</pre>
+<p>The <a href="http://doc.qt.io/qt-5/qdiriterator.html#next">next</a>() function returns the path to the next directory entry and advances the iterator. You can also call <a href="http://doc.qt.io/qt-5/qdiriterator.html#filePath">filePath</a>() to get the current file path without advancing the iterator. The <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileName">fileName</a>() function returns only the name of the file, similar to how <a href="http://doc.qt.io/qt-5/qdir.html#entryList">QDir::entryList</a>() works. You can also call <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileInfo">fileInfo</a>() to get a <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> for the current entry.</p>
+<p>Unlike Qt&#39;s container iterators, <a href="http://doc.qt.io/qt-5/qdiriterator.html">QDirIterator</a> is uni-directional (i.e., you cannot iterate directories in reverse order) and does not allow random access.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/dir_iterator/struct.DirIterator.html' title='qt_core::dir_iterator::DirIterator'>DirIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-68869' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir_iterator.rs.html#32-150' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.file_info' class='method'><code>fn <a href='#method.file_info' class='fnname'>file_info</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/dir_iterator/overloading/trait.DirIteratorFileInfoArgs.html' title='qt_core::dir_iterator::overloading::DirIteratorFileInfoArgs'>DirIteratorFileInfoArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDirIterator::fileInfo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn file_info(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::file_info::FileInfo&gt;</code><br>2) <code>fn file_info(&amp;self, cpp_utils::AsStruct) -&gt; ::file_info::FileInfo</code><br>
+C++ method: <span style='color: green;'><code>QFileInfo QDirIterator::fileInfo() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdiriterator.html#fileInfo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> for the current directory entry.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdiriterator.html#filePath">filePath</a>() and <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileName">fileName</a>().</p></div></p>
+</div><h4 id='method.file_name' class='method'><code>fn <a href='#method.file_name' class='fnname'>file_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/dir_iterator/overloading/trait.DirIteratorFileNameArgs.html' title='qt_core::dir_iterator::overloading::DirIteratorFileNameArgs'>DirIteratorFileNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDirIterator::fileName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn file_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn file_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QDirIterator::fileName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdiriterator.html#fileName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the file name for the current directory entry, without the path prepended.</p>
+<p>This function is convenient when iterating a single directory. When using the <a href="http://doc.qt.io/qt-5/qdiriterator.html#IteratorFlag-enum">QDirIterator::Subdirectories</a> flag, you can use <a href="http://doc.qt.io/qt-5/qdiriterator.html#filePath">filePath</a>() to get the full path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdiriterator.html#filePath">filePath</a>() and <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileInfo">fileInfo</a>().</p></div></p>
+</div><h4 id='method.file_path' class='method'><code>fn <a href='#method.file_path' class='fnname'>file_path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/dir_iterator/overloading/trait.DirIteratorFilePathArgs.html' title='qt_core::dir_iterator::overloading::DirIteratorFilePathArgs'>DirIteratorFilePathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDirIterator::filePath</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn file_path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn file_path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QDirIterator::filePath() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdiriterator.html#filePath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the full file path for the current directory entry.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdiriterator.html#fileInfo">fileInfo</a>() and <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileName">fileName</a>().</p></div></p>
+</div><h4 id='method.has_next' class='method'><code>fn <a href='#method.has_next' class='fnname'>has_next</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDirIterator::hasNext() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdiriterator.html#hasNext">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if there is at least one more entry in the directory; otherwise, false is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdiriterator.html#next">next</a>(), <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileName">fileName</a>(), <a href="http://doc.qt.io/qt-5/qdiriterator.html#filePath">filePath</a>(), and <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileInfo">fileInfo</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/dir_iterator/overloading/trait.DirIteratorNewArgs.html' title='qt_core::dir_iterator::overloading::DirIteratorNewArgs'>DirIteratorNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDirIterator::QDirIterator</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::dir::Dir, cpp_utils::AsStruct)) -&gt; ::dir_iterator::DirIterator</code><br>2) <code>fn new((&amp;::dir::Dir, ::flags::Flags&lt;::dir_iterator::IteratorFlag&gt;, cpp_utils::AsStruct)) -&gt; ::dir_iterator::DirIterator</code><br>3) <code>fn new((&amp;::dir::Dir, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::dir_iterator::DirIterator&gt;</code><br>4) <code>fn new((&amp;::dir::Dir, ::flags::Flags&lt;::dir_iterator::IteratorFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::dir_iterator::DirIterator&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDirIterator::QDirIterator(const QDir&amp; dir, QFlags&lt;QDirIterator::IteratorFlag&gt; flags = ?)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, ::flags::Flags&lt;::dir::Filter&gt;, cpp_utils::AsStruct)) -&gt; ::dir_iterator::DirIterator</code><br>2) <code>fn new((&amp;::string::String, ::flags::Flags&lt;::dir::Filter&gt;, ::flags::Flags&lt;::dir_iterator::IteratorFlag&gt;, cpp_utils::AsStruct)) -&gt; ::dir_iterator::DirIterator</code><br>3) <code>fn new((&amp;::string::String, ::flags::Flags&lt;::dir::Filter&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::dir_iterator::DirIterator&gt;</code><br>4) <code>fn new((&amp;::string::String, ::flags::Flags&lt;::dir::Filter&gt;, ::flags::Flags&lt;::dir_iterator::IteratorFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::dir_iterator::DirIterator&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDirIterator::QDirIterator(const QString&amp; path, QFlags&lt;QDir::Filter&gt; filter, QFlags&lt;QDirIterator::IteratorFlag&gt; flags = ?)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::dir_iterator::DirIterator</code><br>2) <code>fn new((&amp;::string::String, ::flags::Flags&lt;::dir_iterator::IteratorFlag&gt;, cpp_utils::AsStruct)) -&gt; ::dir_iterator::DirIterator</code><br>3) <code>fn new((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::dir_iterator::DirIterator&gt;</code><br>4) <code>fn new((&amp;::string::String, ::flags::Flags&lt;::dir_iterator::IteratorFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::dir_iterator::DirIterator&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDirIterator::QDirIterator(const QString&amp; path, QFlags&lt;QDirIterator::IteratorFlag&gt; flags = ?)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, &amp;::string_list::StringList, cpp_utils::AsStruct)) -&gt; ::dir_iterator::DirIterator</code><br>2) <code>fn new((&amp;::string::String, &amp;::string_list::StringList, ::flags::Flags&lt;::dir::Filter&gt;, cpp_utils::AsStruct)) -&gt; ::dir_iterator::DirIterator</code><br>3) <code>fn new((&amp;::string::String, &amp;::string_list::StringList, ::flags::Flags&lt;::dir::Filter&gt;, ::flags::Flags&lt;::dir_iterator::IteratorFlag&gt;, cpp_utils::AsStruct)) -&gt; ::dir_iterator::DirIterator</code><br>4) <code>fn new((&amp;::string::String, &amp;::string_list::StringList, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::dir_iterator::DirIterator&gt;</code><br>5) <code>fn new((&amp;::string::String, &amp;::string_list::StringList, ::flags::Flags&lt;::dir::Filter&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::dir_iterator::DirIterator&gt;</code><br>6) <code>fn new((&amp;::string::String, &amp;::string_list::StringList, ::flags::Flags&lt;::dir::Filter&gt;, ::flags::Flags&lt;::dir_iterator::IteratorFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::dir_iterator::DirIterator&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDirIterator::QDirIterator(const QString&amp; path, const QStringList&amp; nameFilters, QFlags&lt;QDir::Filter&gt; filters = ?, QFlags&lt;QDirIterator::IteratorFlag&gt; flags = ?)</code></span></p>
+</div><h4 id='method.next' class='method'><code>fn <a href='#method.next' class='fnname'>next</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/dir_iterator/overloading/trait.DirIteratorNextArgs.html' title='qt_core::dir_iterator::overloading::DirIteratorNextArgs'>DirIteratorNextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDirIterator::next</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn next(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn next(&amp;mut self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QDirIterator::next()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdiriterator.html#next">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Advances the iterator to the next entry, and returns the file path of this new entry. If <a href="http://doc.qt.io/qt-5/qdiriterator.html#hasNext">hasNext</a>() returns <code>false</code>, this function does nothing, and returns an empty <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>You can call <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileName">fileName</a>() or <a href="http://doc.qt.io/qt-5/qdiriterator.html#filePath">filePath</a>() to get the current entry file name or path, or <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileInfo">fileInfo</a>() to get a <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> for the current entry.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdiriterator.html#hasNext">hasNext</a>(), <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileName">fileName</a>(), <a href="http://doc.qt.io/qt-5/qdiriterator.html#filePath">filePath</a>(), and <a href="http://doc.qt.io/qt-5/qdiriterator.html#fileInfo">fileInfo</a>().</p></div></p>
+</div><h4 id='method.path' class='method'><code>fn <a href='#method.path' class='fnname'>path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/dir_iterator/overloading/trait.DirIteratorPathArgs.html' title='qt_core::dir_iterator::overloading::DirIteratorPathArgs'>DirIteratorPathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDirIterator::path</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QDirIterator::path() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdiriterator.html#path">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the base directory of the iterator.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/dir_iterator/struct.DirIterator.html' title='qt_core::dir_iterator::DirIterator'>DirIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-68867' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir_iterator.rs.html#26-30' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/dir_iterator/struct.DirIterator.html' title='qt_core::dir_iterator::DirIterator'>DirIterator</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/dir_iterator/struct.DirIterator.html' title='qt_core::dir_iterator::DirIterator'>DirIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-68900' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir_iterator.rs.html#152-159' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QDirIterator::~QDirIterator()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdiriterator.html#dtor.QDirIterator">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qdiriterator.html">QDirIterator</a>.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/dir_iterator/struct.DirIterator.html' title='qt_core::dir_iterator::DirIterator'>DirIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-68903' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir_iterator.rs.html#161-165' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

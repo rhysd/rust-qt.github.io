@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PageLayout` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PageLayout">
+
+    <title>qt_gui::page_layout::PageLayout - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>page_layout</a></p><script>window.sidebarCurrent = {name: 'PageLayout', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>page_layout</a>::<wbr><a class='struct' href=''>PageLayout</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-121472' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_layout.rs.html#39-41' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PageLayout {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPageLayout</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Describes the size, orientation and margins of a page.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qpagelayout.html">QPageLayout</a> class defines the layout of a page in a paged document, with the page size, orientation and margins able to be set and the full page and paintable page rectangles defined by those attributes able to be queried in a variety of units.</p>
+<p>The page size is defined by the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> class which can be queried for page size attributes. Note that the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> itself is always defined in a Portrait orientation.</p>
+<p>The minimum margins can be defined for the layout but normally default to 0. When used in conjunction with Qt&#39;s printing support the minimum margins will reflect the minimum printable area defined by the printer.</p>
+<p>In the default <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">StandardMode</a> the current margins and minimum margins are always taken into account. The paintable rectangle is the full page rectangle less the current margins, and the current margins can only be set to values between the minimum margins and the maximum margins allowed by the full page size.</p>
+<p>In <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> the current margins and minimum margins are not taken into account. The paintable rectangle is the full page rectangle, and the current margins can be set to any values regardless of the minimum margins and page size.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/page_layout/struct.PageLayout.html' title='qt_gui::page_layout::PageLayout'>PageLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-121477' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_layout.rs.html#49-470' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.full_rect' class='method'><code>fn <a href='#method.full_rect' class='fnname'>full_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutFullRectArgs.html' title='qt_gui::page_layout::overloading::PageLayoutFullRectArgs'>PageLayoutFullRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::fullRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn full_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn full_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QPageLayout::fullRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#fullRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the full page rectangle in the current layout units.</p>
+<p>The page rectangle takes into account the page size and page orientation, but not the page margins.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#paintRect">paintRect</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#units">units</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn full_rect(&amp;self, (::page_layout::Unit, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn full_rect(&amp;self, (::page_layout::Unit, cpp_utils::AsStruct)) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QPageLayout::fullRect(QPageLayout::Unit units) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#fullRect-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the full page rectangle in the required <i>units</i>.</p>
+<p>The page rectangle takes into account the page size and page orientation, but not the page margins.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#paintRect">paintRect</a>().</p></div></p>
+</div><h4 id='method.full_rect_pixels' class='method'><code>fn <a href='#method.full_rect_pixels' class='fnname'>full_rect_pixels</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutFullRectPixelsArgs.html' title='qt_gui::page_layout::overloading::PageLayoutFullRectPixelsArgs'>PageLayoutFullRectPixelsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::fullRectPixels</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn full_rect_pixels(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn full_rect_pixels(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QPageLayout::fullRectPixels(int resolution) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#fullRectPixels">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the full page rectangle in device pixels for the given <i>resolution</i>.</p>
+<p>The page rectangle takes into account the page size and page orientation, but not the page margins.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#paintRect">paintRect</a>().</p></div></p>
+</div><h4 id='method.full_rect_points' class='method'><code>fn <a href='#method.full_rect_points' class='fnname'>full_rect_points</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutFullRectPointsArgs.html' title='qt_gui::page_layout::overloading::PageLayoutFullRectPointsArgs'>PageLayoutFullRectPointsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::fullRectPoints</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn full_rect_points(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn full_rect_points(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QPageLayout::fullRectPoints() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#fullRectPoints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the full page rectangle in Postscript Points (1/72 of an inch).</p>
+<p>The page rectangle takes into account the page size and page orientation, but not the page margins.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#paintRect">paintRect</a>().</p></div></p>
+</div><h4 id='method.is_equivalent_to' class='method'><code>fn <a href='#method.is_equivalent_to' class='fnname'>is_equivalent_to</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/page_layout/struct.PageLayout.html' title='qt_gui::page_layout::PageLayout'>PageLayout</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPageLayout::isEquivalentTo(const QPageLayout&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#isEquivalentTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this page layout is equivalent to the <i>other</i> page layout, i.e. if the page has the same size, margins and orientation.</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPageLayout::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this page layout is valid.</p></div></p>
+</div><h4 id='method.margins' class='method'><code>fn <a href='#method.margins' class='fnname'>margins</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutMarginsArgs.html' title='qt_gui::page_layout::overloading::PageLayoutMarginsArgs'>PageLayoutMarginsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::margins</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn margins(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::margins_f::MarginsF&gt;</code><br>2) <code>fn margins(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::margins_f::MarginsF</code><br>
+C++ method: <span style='color: green;'><code>QMarginsF QPageLayout::margins() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#margins">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the margins of the page layout using the currently set units.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMargins">setMargins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#units">units</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn margins(&amp;self, (::page_layout::Unit, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::margins_f::MarginsF&gt;</code><br>2) <code>fn margins(&amp;self, (::page_layout::Unit, cpp_utils::AsStruct)) -&gt; qt_core::margins_f::MarginsF</code><br>
+C++ method: <span style='color: green;'><code>QMarginsF QPageLayout::margins(QPageLayout::Unit units) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#margins-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the margins of the page layout using the requested <i>units</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMargins">setMargins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#margins">margins</a>().</p></div></p>
+</div><h4 id='method.margins_pixels' class='method'><code>fn <a href='#method.margins_pixels' class='fnname'>margins_pixels</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutMarginsPixelsArgs.html' title='qt_gui::page_layout::overloading::PageLayoutMarginsPixelsArgs'>PageLayoutMarginsPixelsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::marginsPixels</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn margins_pixels(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::margins::Margins&gt;</code><br>2) <code>fn margins_pixels(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::margins::Margins</code><br>
+C++ method: <span style='color: green;'><code>QMargins QPageLayout::marginsPixels(int resolution) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#marginsPixels">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the margins of the page layout in device pixels for the given <i>resolution</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMargins">setMargins</a>().</p></div></p>
+</div><h4 id='method.margins_points' class='method'><code>fn <a href='#method.margins_points' class='fnname'>margins_points</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutMarginsPointsArgs.html' title='qt_gui::page_layout::overloading::PageLayoutMarginsPointsArgs'>PageLayoutMarginsPointsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::marginsPoints</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn margins_points(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::margins::Margins&gt;</code><br>2) <code>fn margins_points(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::margins::Margins</code><br>
+C++ method: <span style='color: green;'><code>QMargins QPageLayout::marginsPoints() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#marginsPoints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the margins of the page layout in Postscript Points (1/72 of an inch).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMargins">setMargins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#margins">margins</a>().</p></div></p>
+</div><h4 id='method.maximum_margins' class='method'><code>fn <a href='#method.maximum_margins' class='fnname'>maximum_margins</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutMaximumMarginsArgs.html' title='qt_gui::page_layout::overloading::PageLayoutMaximumMarginsArgs'>PageLayoutMaximumMarginsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::maximumMargins</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn maximum_margins(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::margins_f::MarginsF&gt;</code><br>2) <code>fn maximum_margins(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::margins_f::MarginsF</code><br>
+C++ method: <span style='color: green;'><code>QMarginsF QPageLayout::maximumMargins() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#maximumMargins">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the maximum margins that would be applied if the page layout was in <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">StandardMode</a>.</p>
+<p>The maximum margins allowed are calculated as the full size of the page minus the minimum margins set. For example, if the page width is 100 points and the minimum right margin is 10 points, then the maximum left margin will be 90 points.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMinimumMargins">setMinimumMargins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#minimumMargins">minimumMargins</a>().</p></div></p>
+</div><h4 id='method.minimum_margins' class='method'><code>fn <a href='#method.minimum_margins' class='fnname'>minimum_margins</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutMinimumMarginsArgs.html' title='qt_gui::page_layout::overloading::PageLayoutMinimumMarginsArgs'>PageLayoutMinimumMarginsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::minimumMargins</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn minimum_margins(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::margins_f::MarginsF&gt;</code><br>2) <code>fn minimum_margins(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::margins_f::MarginsF</code><br>
+C++ method: <span style='color: green;'><code>QMarginsF QPageLayout::minimumMargins() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#minimumMargins">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the minimum margins of the page layout.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMinimumMargins">setMinimumMargins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#maximumMargins">maximumMargins</a>().</p></div></p>
+</div><h4 id='method.mode' class='method'><code>fn <a href='#method.mode' class='fnname'>mode</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/page_layout/enum.Mode.html' title='qt_gui::page_layout::Mode'>Mode</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::Mode QPageLayout::mode() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#mode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the page layout mode.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMode">setMode</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutNewArgs.html' title='qt_gui::page_layout::overloading::PageLayoutNewArgs'>PageLayoutNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::QPageLayout</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::page_layout::PageLayout</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::page_layout::PageLayout&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPageLayout::QPageLayout()</code></span></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::page_layout::PageLayout, cpp_utils::AsStruct)) -&gt; ::page_layout::PageLayout</code><br>2) <code>fn new((&amp;::page_layout::PageLayout, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_layout::PageLayout&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPageLayout::QPageLayout(const QPageLayout&amp; other)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::page_size::PageSize, ::page_layout::Orientation, &amp;qt_core::margins_f::MarginsF, cpp_utils::AsStruct)) -&gt; ::page_layout::PageLayout</code><br>2) <code>fn new((&amp;::page_size::PageSize, ::page_layout::Orientation, &amp;qt_core::margins_f::MarginsF, ::page_layout::Unit, cpp_utils::AsStruct)) -&gt; ::page_layout::PageLayout</code><br>3) <code>fn new((&amp;::page_size::PageSize, ::page_layout::Orientation, &amp;qt_core::margins_f::MarginsF, ::page_layout::Unit, &amp;qt_core::margins_f::MarginsF, cpp_utils::AsStruct)) -&gt; ::page_layout::PageLayout</code><br>4) <code>fn new((&amp;::page_size::PageSize, ::page_layout::Orientation, &amp;qt_core::margins_f::MarginsF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_layout::PageLayout&gt;</code><br>5) <code>fn new((&amp;::page_size::PageSize, ::page_layout::Orientation, &amp;qt_core::margins_f::MarginsF, ::page_layout::Unit, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_layout::PageLayout&gt;</code><br>6) <code>fn new((&amp;::page_size::PageSize, ::page_layout::Orientation, &amp;qt_core::margins_f::MarginsF, ::page_layout::Unit, &amp;qt_core::margins_f::MarginsF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_layout::PageLayout&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPageLayout::QPageLayout(const QPageSize&amp; pageSize, QPageLayout::Orientation orientation, const QMarginsF&amp; margins, QPageLayout::Unit units = ?, const QMarginsF&amp; minMargins = ?)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/page_layout/struct.PageLayout.html' title='qt_gui::page_layout::PageLayout'>PageLayout</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/page_layout/struct.PageLayout.html' title='qt_gui::page_layout::PageLayout'>PageLayout</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout&amp; QPageLayout::operator=(const QPageLayout&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assignment operator, assigns <i>other</i> to this.</p></div></p>
+</div><h4 id='method.orientation' class='method'><code>fn <a href='#method.orientation' class='fnname'>orientation</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/page_layout/enum.Orientation.html' title='qt_gui::page_layout::Orientation'>Orientation</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::Orientation QPageLayout::orientation() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#orientation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the page orientation of the page layout.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setOrientation">setOrientation</a>().</p></div></p>
+</div><h4 id='method.page_size' class='method'><code>fn <a href='#method.page_size' class='fnname'>page_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutPageSizeArgs.html' title='qt_gui::page_layout::overloading::PageLayoutPageSizeArgs'>PageLayoutPageSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::pageSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn page_size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::page_size::PageSize&gt;</code><br>2) <code>fn page_size(&amp;self, cpp_utils::AsStruct) -&gt; ::page_size::PageSize</code><br>
+C++ method: <span style='color: green;'><code>QPageSize QPageLayout::pageSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#pageSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the page size of the page layout.</p>
+<p>Note that the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is always defined in a Portrait orientation. To obtain a size that takes the set orientation into account you must use <a href="http://doc.qt.io/qt-5/qpagelayout.html#fullRect">fullRect</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setPageSize">setPageSize</a>().</p></div></p>
+</div><h4 id='method.paint_rect' class='method'><code>fn <a href='#method.paint_rect' class='fnname'>paint_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutPaintRectArgs.html' title='qt_gui::page_layout::overloading::PageLayoutPaintRectArgs'>PageLayoutPaintRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::paintRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn paint_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn paint_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QPageLayout::paintRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#paintRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the page rectangle in the current layout units.</p>
+<p>The paintable rectangle takes into account the page size, orientation and margins.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> mode is set then the <a href="http://doc.qt.io/qt-5/qpagelayout.html#fullRect">fullRect</a>() is returned and the margins must be manually managed.</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn paint_rect(&amp;self, (::page_layout::Unit, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn paint_rect(&amp;self, (::page_layout::Unit, cpp_utils::AsStruct)) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QPageLayout::paintRect(QPageLayout::Unit units) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#paintRect-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the page rectangle in the required <i>units</i>.</p>
+<p>The paintable rectangle takes into account the page size, orientation and margins.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> mode is set then the <a href="http://doc.qt.io/qt-5/qpagelayout.html#fullRect">fullRect</a>() is returned and the margins must be manually managed.</p></div></p>
+</div><h4 id='method.paint_rect_pixels' class='method'><code>fn <a href='#method.paint_rect_pixels' class='fnname'>paint_rect_pixels</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutPaintRectPixelsArgs.html' title='qt_gui::page_layout::overloading::PageLayoutPaintRectPixelsArgs'>PageLayoutPaintRectPixelsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::paintRectPixels</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn paint_rect_pixels(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn paint_rect_pixels(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QPageLayout::paintRectPixels(int resolution) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#paintRectPixels">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the paintable rectangle in rounded device pixels for the given <i>resolution</i>.</p>
+<p>The paintable rectangle takes into account the page size, orientation and margins.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> mode is set then the <a href="http://doc.qt.io/qt-5/qpagelayout.html#fullRect">fullRect</a>() is returned and the margins must be manually managed.</p></div></p>
+</div><h4 id='method.paint_rect_points' class='method'><code>fn <a href='#method.paint_rect_points' class='fnname'>paint_rect_points</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutPaintRectPointsArgs.html' title='qt_gui::page_layout::overloading::PageLayoutPaintRectPointsArgs'>PageLayoutPaintRectPointsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::paintRectPoints</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn paint_rect_points(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn paint_rect_points(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QPageLayout::paintRectPoints() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#paintRectPoints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the paintable rectangle in rounded Postscript Points (1/72 of an inch).</p>
+<p>The paintable rectangle takes into account the page size, orientation and margins.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> mode is set then the <a href="http://doc.qt.io/qt-5/qpagelayout.html#fullRect">fullRect</a>() is returned and the margins must be manually managed.</p></div></p>
+</div><h4 id='method.set_bottom_margin' class='method'><code>fn <a href='#method.set_bottom_margin' class='fnname'>set_bottom_margin</a>(&amp;mut self, bottom_margin: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPageLayout::setBottomMargin(double bottomMargin)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#setBottomMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the bottom page margin of the page layout to <i>bottomMargin</i>. Returns true if the margin was successfully set.</p>
+<p>The units used are those currently defined for the layout. To use different units call <a href="http://doc.qt.io/qt-5/qpagelayout.html#setUnits">setUnits</a>() first.</p>
+<p>If in the default <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">StandardMode</a> then the new margin must fall between the minimum margin set and the maximum margin allowed by the page size, otherwise the margin will not be set.</p>
+<p>If in <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> then any margin values will be accepted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMargins">setMargins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#margins">margins</a>().</p></div></p>
+</div><h4 id='method.set_left_margin' class='method'><code>fn <a href='#method.set_left_margin' class='fnname'>set_left_margin</a>(&amp;mut self, left_margin: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPageLayout::setLeftMargin(double leftMargin)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#setLeftMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the left page margin of the page layout to <i>leftMargin</i>. Returns true if the margin was successfully set.</p>
+<p>The units used are those currently defined for the layout. To use different units call <a href="http://doc.qt.io/qt-5/qpagelayout.html#setUnits">setUnits</a>() first.</p>
+<p>If in the default <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">StandardMode</a> then the new margin must fall between the minimum margin set and the maximum margin allowed by the page size, otherwise the margin will not be set.</p>
+<p>If in <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> then any margin values will be accepted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMargins">setMargins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#margins">margins</a>().</p></div></p>
+</div><h4 id='method.set_margins' class='method'><code>fn <a href='#method.set_margins' class='fnname'>set_margins</a>(&amp;mut self, margins: &amp;<a class='struct' href='../../qt_core/margins_f/struct.MarginsF.html' title='qt_core::margins_f::MarginsF'>MarginsF</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPageLayout::setMargins(const QMarginsF&amp; margins)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMargins">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the page margins of the page layout to <i>margins</i> Returns true if the margins were successfully set.</p>
+<p>The units used are those currently defined for the layout. To use different units then call <a href="http://doc.qt.io/qt-5/qpagelayout.html#setUnits">setUnits</a>() first.</p>
+<p>If in the default <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">StandardMode</a> then all the new margins must fall between the minimum margins set and the maximum margins allowed by the page size, otherwise the margins will not be set.</p>
+<p>If in <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> then any margin values will be accepted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#margins">margins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#units">units</a>().</p></div></p>
+</div><h4 id='method.set_minimum_margins' class='method'><code>fn <a href='#method.set_minimum_margins' class='fnname'>set_minimum_margins</a>(&amp;mut self, min_margins: &amp;<a class='struct' href='../../qt_core/margins_f/struct.MarginsF.html' title='qt_core::margins_f::MarginsF'>MarginsF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPageLayout::setMinimumMargins(const QMarginsF&amp; minMargins)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMinimumMargins">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the minimum page margins of the page layout to <i>minMargins</i>.</p>
+<p>It is not recommended to override the default values set for a page size as this may be the minimum printable area for a physical print device.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">StandardMode</a> mode is set then the existing margins will be clamped to the new <i>minMargins</i> and the maximum allowed by the page size. If the <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> is set then the existing margins will be unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#minimumMargins">minimumMargins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#setMargins">setMargins</a>().</p></div></p>
+</div><h4 id='method.set_mode' class='method'><code>fn <a href='#method.set_mode' class='fnname'>set_mode</a>(&amp;mut self, mode: <a class='enum' href='../../qt_gui/page_layout/enum.Mode.html' title='qt_gui::page_layout::Mode'>Mode</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPageLayout::setMode(QPageLayout::Mode mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a page layout mode to <i>mode</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#mode">mode</a>().</p></div></p>
+</div><h4 id='method.set_orientation' class='method'><code>fn <a href='#method.set_orientation' class='fnname'>set_orientation</a>(&amp;mut self, orientation: <a class='enum' href='../../qt_gui/page_layout/enum.Orientation.html' title='qt_gui::page_layout::Orientation'>Orientation</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPageLayout::setOrientation(QPageLayout::Orientation orientation)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#setOrientation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the page orientation of the page layout to <i>orientation</i>.</p>
+<p>Changing the orientation does not affect the current margins or the minimum margins.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#orientation">orientation</a>().</p></div></p>
+</div><h4 id='method.set_page_size' class='method'><code>fn <a href='#method.set_page_size' class='fnname'>set_page_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutSetPageSizeArgs.html' title='qt_gui::page_layout::overloading::PageLayoutSetPageSizeArgs'>PageLayoutSetPageSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::setPageSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_page_size(&amp;mut self, &amp;::page_size::PageSize) -&gt; ()</code><br>2) <code>fn set_page_size(&amp;mut self, (&amp;::page_size::PageSize, &amp;qt_core::margins_f::MarginsF)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QPageLayout::setPageSize(const QPageSize&amp; pageSize, const QMarginsF&amp; minMargins = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#setPageSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the page size of the page layout to <i>pageSize</i>.</p>
+<p>Optionally define the minimum allowed margins <i>minMargins</i>, e.g. the minimum margins able to be printed by a physical print device, otherwise the minimum margins will default to 0.</p>
+<p>If <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">StandardMode</a> is set then the existing margins will be clamped to the new minimum margins and the maximum margins allowed by the page size. If <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> is set then the existing margins will be unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#pageSize">pageSize</a>().</p></div></p>
+</div><h4 id='method.set_right_margin' class='method'><code>fn <a href='#method.set_right_margin' class='fnname'>set_right_margin</a>(&amp;mut self, right_margin: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPageLayout::setRightMargin(double rightMargin)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#setRightMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the right page margin of the page layout to <i>rightMargin</i>. Returns true if the margin was successfully set.</p>
+<p>The units used are those currently defined for the layout. To use different units call <a href="http://doc.qt.io/qt-5/qpagelayout.html#setUnits">setUnits</a>() first.</p>
+<p>If in the default <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">StandardMode</a> then the new margin must fall between the minimum margin set and the maximum margin allowed by the page size, otherwise the margin will not be set.</p>
+<p>If in <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> then any margin values will be accepted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMargins">setMargins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#margins">margins</a>().</p></div></p>
+</div><h4 id='method.set_top_margin' class='method'><code>fn <a href='#method.set_top_margin' class='fnname'>set_top_margin</a>(&amp;mut self, top_margin: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPageLayout::setTopMargin(double topMargin)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#setTopMargin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the top page margin of the page layout to <i>topMargin</i>. Returns true if the margin was successfully set.</p>
+<p>The units used are those currently defined for the layout. To use different units call <a href="http://doc.qt.io/qt-5/qpagelayout.html#setUnits">setUnits</a>() first.</p>
+<p>If in the default <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">StandardMode</a> then the new margin must fall between the minimum margin set and the maximum margin allowed by the page size, otherwise the margin will not be set.</p>
+<p>If in <a href="http://doc.qt.io/qt-5/qpagelayout.html#Mode-enum">FullPageMode</a> then any margin values will be accepted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setMargins">setMargins</a>() and <a href="http://doc.qt.io/qt-5/qpagelayout.html#margins">margins</a>().</p></div></p>
+</div><h4 id='method.set_units' class='method'><code>fn <a href='#method.set_units' class='fnname'>set_units</a>(&amp;mut self, units: <a class='enum' href='../../qt_gui/page_layout/enum.Unit.html' title='qt_gui::page_layout::Unit'>Unit</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPageLayout::setUnits(QPageLayout::Unit units)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#setUnits">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>units</i> used to define the page layout.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#units">units</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/page_layout/struct.PageLayout.html' title='qt_gui::page_layout::PageLayout'>PageLayout</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPageLayout::swap(QPageLayout&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this page layout with <i>other</i>. This function is very fast and never fails.</p></div></p>
+</div><h4 id='method.units' class='method'><code>fn <a href='#method.units' class='fnname'>units</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/page_layout/enum.Unit.html' title='qt_gui::page_layout::Unit'>Unit</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageLayout::Unit QPageLayout::units() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#units">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the units the page layout is currently defined in.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagelayout.html#setUnits">setUnits</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/page_layout/struct.PageLayout.html' title='qt_gui::page_layout::PageLayout'>PageLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-121475' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_layout.rs.html#43-47' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/page_layout/struct.PageLayout.html' title='qt_gui::page_layout::PageLayout'>PageLayout</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/page_layout/struct.PageLayout.html' title='qt_gui::page_layout::PageLayout'>PageLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-121593' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_layout.rs.html#472-479' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QPageLayout::~QPageLayout()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagelayout.html#dtor.QPageLayout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the page layout.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/page_layout/struct.PageLayout.html' title='qt_gui::page_layout::PageLayout'>PageLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-121596' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_layout.rs.html#481-485' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

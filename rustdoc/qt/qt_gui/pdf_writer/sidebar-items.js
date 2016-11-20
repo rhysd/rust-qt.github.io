@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["PdfWriter","C++ type: <span style='color: green;'>```QPdfWriter```</span>"]]});

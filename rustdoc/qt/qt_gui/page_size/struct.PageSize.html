@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PageSize` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PageSize">
+
+    <title>qt_gui::page_size::PageSize - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>page_size</a></p><script>window.sidebarCurrent = {name: 'PageSize', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>page_size</a>::<wbr><a class='struct' href=''>PageSize</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-122066' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_size.rs.html#15-17' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PageSize {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPageSize</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> class describes the size and name of a defined page size</p>
+<p>This class implements support for the set of standard page sizes as defined in the Adobe Postscript PPD Standard v4.3. It defines the standard set of page sizes in points, millimeters and inches and ensures these sizes are consistently used. Other size units can be used but will be calculated results and so may not always be consistent. The defined point sizes are always a integer, all other sizes can be fractions of a unit.</p>
+<p>The defined size is always in width x height order with no implied page orientation. Note that it is possible for page sizes to be defined where the width is greater than the height, such as <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">QPageSize::Ledger</a>, so you cannot rely on comparing the width and height values to determine page orientation.</p>
+<p>For example, A4 is defined by the standard as 210mm x 297mm, 8.27in x 11.69in, or 595pt x 842pt.</p>
+<p>You can also define custom page sizes with custom names in any units you want and this unit size will be preserved and used as the base for all other unit size calculations.</p>
+<p>When creating a <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> using a custom <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> you can choose if you want <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> to try match the size to a standard page size. By default QPaperSize uses a <a href="http://doc.qt.io/qt-5/qpagesize.html#SizeMatchPolicy-enum">FuzzyMatch</a> mode where it will match a given page size to a standard page size if it falls within 3 postscript points of a defined standard size. You can override this to request only an exact match but this is not recommended as conversions between units can easily lose 3 points and result in incorrect page sizes.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> instance may also be obtained by querying the supported page sizes for a print device. In this case the localized name returned is that defined by the printer itself. Note that the print device may not support the current default locale language.</p>
+<p>The class also provides convenience methods for converting page size IDs to and from various unit sizes.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-122071' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_size.rs.html#25-402' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.definition_size' class='method'><code>fn <a href='#method.definition_size' class='fnname'>definition_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeDefinitionSizeArgs.html' title='qt_gui::page_size::overloading::PageSizeDefinitionSizeArgs'>PageSizeDefinitionSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::definitionSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn definition_size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size_f::SizeF&gt;</code><br>2) <code>fn definition_size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>QSizeF QPageSize::definitionSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#definitionSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the definition size of the page size.</p>
+<p>For a standard page size this will be the size as defined in the relevant standard, i.e. ISO A4 will be defined in millimeters while ANSI Letter will be defined in inches.</p>
+<p>For a custom page size this will be the original size used to create the page size object.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the <a href="http://doc.qt.io/qt-5/qsizef.html">QSizeF</a> will be invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagesize.html#definitionUnits">definitionUnits</a>().</p></div></p>
+</div><h4 id='method.definition_size_static' class='method'><code>fn <a href='#method.definition_size_static' class='fnname'>definition_size_static</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeDefinitionSizeStaticArgs.html' title='qt_gui::page_size::overloading::PageSizeDefinitionSizeStaticArgs'>PageSizeDefinitionSizeStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::definitionSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn definition_size_static((::page_size::PageSizeId, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size_f::SizeF&gt;</code><br>2) <code>fn definition_size_static((::page_size::PageSizeId, cpp_utils::AsStruct)) -&gt; qt_core::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>static QSizeF QPageSize::definitionSize(QPageSize::PageSizeId pageSizeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#definitionSize-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the definition size of the standard <i>pageSizeId</i>.</p>
+<p>To obtain the definition units, call <a href="http://doc.qt.io/qt-5/qpagesize.html#definitionUnits">QPageSize::definitionUnits</a>().</p></div></p>
+</div><h4 id='method.definition_units' class='method'><code>fn <a href='#method.definition_units' class='fnname'>definition_units</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/page_size/enum.Unit.html' title='qt_gui::page_size::Unit'>Unit</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::Unit QPageSize::definitionUnits() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#definitionUnits">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the definition units of the page size.</p>
+<p>For a standard page size this will be the units as defined in the relevant standard, i.e. ISO A4 will be defined in millimeters while ANSI Letter will be defined in inches.</p>
+<p>For a custom page size this will be the original units used to create the page size object.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the <a href="http://doc.qt.io/qt-5/qpagesize.html#Unit-enum">QPageSize::Unit</a> will be invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagesize.html#definitionSize">definitionSize</a>().</p></div></p>
+</div><h4 id='method.definition_units_static' class='method'><code>fn <a href='#method.definition_units_static' class='fnname'>definition_units_static</a>(page_size_id: <a class='enum' href='../../qt_gui/page_size/enum.PageSizeId.html' title='qt_gui::page_size::PageSizeId'>PageSizeId</a>) -&gt; <a class='enum' href='../../qt_gui/page_size/enum.Unit.html' title='qt_gui::page_size::Unit'>Unit</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static QPageSize::Unit QPageSize::definitionUnits(QPageSize::PageSizeId pageSizeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#definitionUnits-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the definition units of the standard <i>pageSizeId</i>.</p>
+<p>To obtain the definition size, call <a href="http://doc.qt.io/qt-5/qpagesize.html#definitionSize">QPageSize::definitionSize</a>().</p></div></p>
+</div><h4 id='method.id' class='method'><code>fn <a href='#method.id' class='fnname'>id</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/page_size/enum.PageSizeId.html' title='qt_gui::page_size::PageSizeId'>PageSizeId</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::PageSizeId QPageSize::id() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#id">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the standard <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">QPageSize::PageSizeId</a> of the page, or <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">QPageSize::Custom</a>.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the ID will be <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">QPageSize::Custom</a>.</p></div></p>
+</div><h4 id='method.id_static' class='method'><code>fn <a href='#method.id_static' class='fnname'>id_static</a>&lt;Args&gt;(args: Args) -&gt; <a class='enum' href='../../qt_gui/page_size/enum.PageSizeId.html' title='qt_gui::page_size::PageSizeId'>PageSizeId</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeIdStaticArgs.html' title='qt_gui::page_size::overloading::PageSizeIdStaticArgs'>PageSizeIdStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::id</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn id_static(&amp;qt_core::size::Size) -&gt; ::page_size::PageSizeId</code><br>2) <code>fn id_static((&amp;qt_core::size::Size, ::page_size::SizeMatchPolicy)) -&gt; ::page_size::PageSizeId</code><br>
+C++ method: <span style='color: green;'><code>static QPageSize::PageSizeId QPageSize::id(const QSize&amp; pointSize, QPageSize::SizeMatchPolicy matchPolicy = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#id-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the standard <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">QPageSize::PageSizeId</a> of the given <i>pointSize</i> in points using the given <i>matchPolicy</i>.</p>
+<p>If using <a href="http://doc.qt.io/qt-5/qpagesize.html#SizeMatchPolicy-enum">FuzzyMatch</a> then the point size of the <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">PageSizeId</a> returned may not exactly match the <i>pointSize</i> you passed in. You should call <a href="http://doc.qt.io/qt-5/qpagesize.html#sizePoints">QPageSize::sizePoints</a>() using the returned <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">PageSizeId</a> to find out the actual point size of the <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">PageSizeId</a> before using it in any calculations.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn id_static((&amp;qt_core::size_f::SizeF, ::page_size::Unit)) -&gt; ::page_size::PageSizeId</code><br>2) <code>fn id_static((&amp;qt_core::size_f::SizeF, ::page_size::Unit, ::page_size::SizeMatchPolicy)) -&gt; ::page_size::PageSizeId</code><br>
+C++ method: <span style='color: green;'><code>static QPageSize::PageSizeId QPageSize::id(const QSizeF&amp; size, QPageSize::Unit units, QPageSize::SizeMatchPolicy matchPolicy = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#id-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the standard <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">QPageSize::PageSizeId</a> of the given <i>size</i> in <i>units</i> using the given <i>matchPolicy</i>.</p>
+<p>If using <a href="http://doc.qt.io/qt-5/qpagesize.html#SizeMatchPolicy-enum">FuzzyMatch</a> then the unit size of the <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">PageSizeId</a> returned may not exactly match the <i>size</i> you passed in. You should call <a href="http://doc.qt.io/qt-5/qpagesize.html#size">QPageSize::size</a>() using the returned <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">PageSizeId</a> to find out the actual unit size of the <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">PageSizeId</a> before using it in any calculations.</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn id_static(libc::c_int) -&gt; ::page_size::PageSizeId</code><br>
+C++ method: <span style='color: green;'><code>static QPageSize::PageSizeId QPageSize::id(int windowsId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#id-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">PageSizeId</a> for the given Windows DMPAPER enum value <i>windowsId</i>.</p>
+<p>If there is no matching <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">PageSizeId</a> then <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">QPageSize::Custom</a> is returned.</p></div></p>
+</div><h4 id='method.is_equivalent_to' class='method'><code>fn <a href='#method.is_equivalent_to' class='fnname'>is_equivalent_to</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPageSize::isEquivalentTo(const QPageSize&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#isEquivalentTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this page is equivalent to the <i>other</i> page, i.e. if the page has the same size regardless of other attributes like name.</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPageSize::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this page size is valid.</p>
+<p>The page size may be invalid if created with an invalid <a href="http://doc.qt.io/qt-5/qpagesize.html#PageSizeId-enum">PageSizeId</a>, or a negative or invalid <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> or <a href="http://doc.qt.io/qt-5/qsizef.html">QSizeF</a>, or the null constructor.</p></div></p>
+</div><h4 id='method.key' class='method'><code>fn <a href='#method.key' class='fnname'>key</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeKeyArgs.html' title='qt_gui::page_size::overloading::PageSizeKeyArgs'>PageSizeKeyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::key</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn key(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn key(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QPageSize::key() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#key">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the unique key of the page size.</p>
+<p>By default this is the PPD standard mediaOption keyword for the page size, or the PPD custom format key. If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> instance was obtained from a print device then this will be the key provided by the print device and may differ from the standard key.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the key will be an empty string.</p>
+<p>This key should never be shown to end users, it is an internal key only. For a human-readable name use <a href="http://doc.qt.io/qt-5/qpagesize.html#name">name</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagesize.html#name">name</a>().</p></div></p>
+</div><h4 id='method.key_static' class='method'><code>fn <a href='#method.key_static' class='fnname'>key_static</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeKeyStaticArgs.html' title='qt_gui::page_size::overloading::PageSizeKeyStaticArgs'>PageSizeKeyStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::key</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn key_static((::page_size::PageSizeId, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn key_static((::page_size::PageSizeId, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QPageSize::key(QPageSize::PageSizeId pageSizeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#key-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the PPD mediaOption keyword of the standard <i>pageSizeId</i>.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the key will be empty.</p></div></p>
+</div><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeNameArgs.html' title='qt_gui::page_size::overloading::PageSizeNameArgs'>PageSizeNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QPageSize::name() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#name">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized human-readable name for the page size.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> instance was obtained from a print device then the name used is that provided by the print device. Note that a print device may not support the current default locale language.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the name will be an empty string.</p></div></p>
+</div><h4 id='method.name_static' class='method'><code>fn <a href='#method.name_static' class='fnname'>name_static</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeNameStaticArgs.html' title='qt_gui::page_size::overloading::PageSizeNameStaticArgs'>PageSizeNameStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn name_static((::page_size::PageSizeId, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn name_static((::page_size::PageSizeId, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QPageSize::name(QPageSize::PageSizeId pageSizeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#name-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the localized name of the standard <i>pageSizeId</i>.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the name will be empty.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeNewArgs.html' title='qt_gui::page_size::overloading::PageSizeNewArgs'>PageSizeNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::QPageSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::page_size::PageSize</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::page_size::PageSize&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPageSize::QPageSize()</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((::page_size::PageSizeId, cpp_utils::AsStruct)) -&gt; ::page_size::PageSize</code><br>2) <code>fn new((::page_size::PageSizeId, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_size::PageSize&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPageSize::QPageSize(QPageSize::PageSizeId pageSizeId)</code></span></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::page_size::PageSize, cpp_utils::AsStruct)) -&gt; ::page_size::PageSize</code><br>2) <code>fn new((&amp;::page_size::PageSize, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_size::PageSize&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPageSize::QPageSize(const QPageSize&amp; other)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::size::Size, cpp_utils::AsStruct)) -&gt; ::page_size::PageSize</code><br>2) <code>fn new((&amp;qt_core::size::Size, &amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::page_size::PageSize</code><br>3) <code>fn new((&amp;qt_core::size::Size, &amp;qt_core::string::String, ::page_size::SizeMatchPolicy, cpp_utils::AsStruct)) -&gt; ::page_size::PageSize</code><br>4) <code>fn new((&amp;qt_core::size::Size, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_size::PageSize&gt;</code><br>5) <code>fn new((&amp;qt_core::size::Size, &amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_size::PageSize&gt;</code><br>6) <code>fn new((&amp;qt_core::size::Size, &amp;qt_core::string::String, ::page_size::SizeMatchPolicy, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_size::PageSize&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPageSize::QPageSize(const QSize&amp; pointSize, const QString&amp; name = ?, QPageSize::SizeMatchPolicy matchPolicy = ?)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::size_f::SizeF, ::page_size::Unit, cpp_utils::AsStruct)) -&gt; ::page_size::PageSize</code><br>2) <code>fn new((&amp;qt_core::size_f::SizeF, ::page_size::Unit, &amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::page_size::PageSize</code><br>3) <code>fn new((&amp;qt_core::size_f::SizeF, ::page_size::Unit, &amp;qt_core::string::String, ::page_size::SizeMatchPolicy, cpp_utils::AsStruct)) -&gt; ::page_size::PageSize</code><br>4) <code>fn new((&amp;qt_core::size_f::SizeF, ::page_size::Unit, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_size::PageSize&gt;</code><br>5) <code>fn new((&amp;qt_core::size_f::SizeF, ::page_size::Unit, &amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_size::PageSize&gt;</code><br>6) <code>fn new((&amp;qt_core::size_f::SizeF, ::page_size::Unit, &amp;qt_core::string::String, ::page_size::SizeMatchPolicy, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::page_size::PageSize&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPageSize::QPageSize(const QSizeF&amp; size, QPageSize::Unit units, const QString&amp; name = ?, QPageSize::SizeMatchPolicy matchPolicy = ?)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize&amp; QPageSize::operator=(const QPageSize&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assignment operator, assigns <i>other</i> to this.</p></div></p>
+</div><h4 id='method.rect' class='method'><code>fn <a href='#method.rect' class='fnname'>rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeRectArgs.html' title='qt_gui::page_size::overloading::PageSizeRectArgs'>PageSizeRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::rect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn rect(&amp;self, (::page_size::Unit, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn rect(&amp;self, (::page_size::Unit, cpp_utils::AsStruct)) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QPageSize::rect(QPageSize::Unit units) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#rect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the page rectangle in the required <i>units</i>.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> will be invalid.</p></div></p>
+</div><h4 id='method.rect_pixels' class='method'><code>fn <a href='#method.rect_pixels' class='fnname'>rect_pixels</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeRectPixelsArgs.html' title='qt_gui::page_size::overloading::PageSizeRectPixelsArgs'>PageSizeRectPixelsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::rectPixels</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn rect_pixels(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn rect_pixels(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QPageSize::rectPixels(int resolution) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#rectPixels">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the page rectangle in Device Pixels at the given <i>resolution</i>.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> will be invalid.</p></div></p>
+</div><h4 id='method.rect_points' class='method'><code>fn <a href='#method.rect_points' class='fnname'>rect_points</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeRectPointsArgs.html' title='qt_gui::page_size::overloading::PageSizeRectPointsArgs'>PageSizeRectPointsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::rectPoints</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn rect_points(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn rect_points(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QPageSize::rectPoints() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#rectPoints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the page rectangle in Postscript Points (1/72 of an inch).</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> will be invalid.</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeSizeArgs.html' title='qt_gui::page_size::overloading::PageSizeSizeArgs'>PageSizeSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::size</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size(&amp;self, (::page_size::Unit, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size_f::SizeF&gt;</code><br>2) <code>fn size(&amp;self, (::page_size::Unit, cpp_utils::AsStruct)) -&gt; qt_core::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>QSizeF QPageSize::size(QPageSize::Unit units) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the page in the required <i>units</i>.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the <a href="http://doc.qt.io/qt-5/qsizef.html">QSizeF</a> will be invalid.</p></div></p>
+</div><h4 id='method.size_pixels' class='method'><code>fn <a href='#method.size_pixels' class='fnname'>size_pixels</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeSizePixelsArgs.html' title='qt_gui::page_size::overloading::PageSizeSizePixelsArgs'>PageSizeSizePixelsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::sizePixels</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size_pixels(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size_pixels(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QPageSize::sizePixels(int resolution) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#sizePixels">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the page in Device Pixels at the given <i>resolution</i>.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> will be invalid.</p></div></p>
+</div><h4 id='method.size_pixels_static' class='method'><code>fn <a href='#method.size_pixels_static' class='fnname'>size_pixels_static</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeSizePixelsStaticArgs.html' title='qt_gui::page_size::overloading::PageSizeSizePixelsStaticArgs'>PageSizeSizePixelsStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::sizePixels</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size_pixels_static((::page_size::PageSizeId, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size_pixels_static((::page_size::PageSizeId, libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>static QSize QPageSize::sizePixels(QPageSize::PageSizeId pageSizeId, int resolution)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#sizePixels-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the standard <i>pageSizeId</i> in Device Pixels for the given <i>resolution</i>.</p></div></p>
+</div><h4 id='method.size_points' class='method'><code>fn <a href='#method.size_points' class='fnname'>size_points</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeSizePointsArgs.html' title='qt_gui::page_size::overloading::PageSizeSizePointsArgs'>PageSizeSizePointsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::sizePoints</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size_points(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size_points(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QPageSize::sizePoints() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#sizePoints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the page in Postscript Points (1/72 of an inch).</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> will be invalid.</p></div></p>
+</div><h4 id='method.size_points_static' class='method'><code>fn <a href='#method.size_points_static' class='fnname'>size_points_static</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeSizePointsStaticArgs.html' title='qt_gui::page_size::overloading::PageSizeSizePointsStaticArgs'>PageSizeSizePointsStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::sizePoints</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size_points_static((::page_size::PageSizeId, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size_points_static((::page_size::PageSizeId, cpp_utils::AsStruct)) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>static QSize QPageSize::sizePoints(QPageSize::PageSizeId pageSizeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#sizePoints-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the standard <i>pageSizeId</i> in Points.</p></div></p>
+</div><h4 id='method.size_static' class='method'><code>fn <a href='#method.size_static' class='fnname'>size_static</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/page_size/overloading/trait.PageSizeSizeStaticArgs.html' title='qt_gui::page_size::overloading::PageSizeSizeStaticArgs'>PageSizeSizeStaticArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPageSize::size</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size_static((::page_size::PageSizeId, ::page_size::Unit, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size_f::SizeF&gt;</code><br>2) <code>fn size_static((::page_size::PageSizeId, ::page_size::Unit, cpp_utils::AsStruct)) -&gt; qt_core::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>static QSizeF QPageSize::size(QPageSize::PageSizeId pageSizeId, QPageSize::Unit units)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#size-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the standard <i>pageSizeId</i> in the requested <i>units</i>.</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPageSize::swap(QPageSize&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> with <i>other</i>. This function is very fast and never fails.</p></div></p>
+</div><h4 id='method.windows_id' class='method'><code>fn <a href='#method.windows_id' class='fnname'>windows_id</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPageSize::windowsId() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#windowsId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the Windows DMPAPER enum value for the page size.</p>
+<p>Not all valid PPD page sizes have a Windows equivalent, in which case 0 will be returned.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qpagesize.html">QPageSize</a> is invalid then the Windows ID will be 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpagesize.html#id">id</a>().</p></div></p>
+</div><h4 id='method.windows_id_static' class='method'><code>fn <a href='#method.windows_id_static' class='fnname'>windows_id_static</a>(page_size_id: <a class='enum' href='../../qt_gui/page_size/enum.PageSizeId.html' title='qt_gui::page_size::PageSizeId'>PageSizeId</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static int QPageSize::windowsId(QPageSize::PageSizeId pageSizeId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#windowsId-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the Windows DMPAPER enum value of the standard <i>pageSizeId</i>.</p>
+<p>Not all valid PPD page sizes have a Windows equivalent, in which case 0 will be returned.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/page_layout/overloading/trait.PageLayoutSetPageSizeArgs.html' title='qt_gui::page_layout::overloading::PageLayoutSetPageSizeArgs'>PageLayoutSetPageSizeArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-122051' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_layout.rs.html#1185-1193' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/page_layout/overloading/trait.PageLayoutSetPageSizeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/page_layout/struct.PageLayout.html' title='qt_gui::page_layout::PageLayout'>PageLayout</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-122069' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_size.rs.html#19-23' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-122165' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_size.rs.html#404-411' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QPageSize::~QPageSize()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpagesize.html#dtor.QPageSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the page.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-122168' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/page_size.rs.html#413-417' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/paged_paint_device/overloading/trait.PagedPaintDeviceSetPageSizeArgs.html' title='qt_gui::paged_paint_device::overloading::PagedPaintDeviceSetPageSizeArgs'>PagedPaintDeviceSetPageSizeArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-123670' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/paged_paint_device.rs.html#796-802' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.ReturnType' class='type'><code>type <a href='../../qt_gui/paged_paint_device/overloading/trait.PagedPaintDeviceSetPageSizeArgs.html#associatedtype.ReturnType' class='type'>ReturnType</a> = <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_gui/paged_paint_device/overloading/trait.PagedPaintDeviceSetPageSizeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/paged_paint_device/struct.PagedPaintDevice.html' title='qt_gui::paged_paint_device::PagedPaintDevice'>PagedPaintDevice</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/pdf_writer/overloading/trait.PdfWriterSetPageSizeArgs.html' title='qt_gui::pdf_writer::overloading::PdfWriterSetPageSizeArgs'>PdfWriterSetPageSizeArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/page_size/struct.PageSize.html' title='qt_gui::page_size::PageSize'>PageSize</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-131838' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pdf_writer.rs.html#1711-1720' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.ReturnType-1' class='type'><code>type <a href='../../qt_gui/pdf_writer/overloading/trait.PdfWriterSetPageSizeArgs.html#associatedtype.ReturnType' class='type'>ReturnType</a> = <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_gui/pdf_writer/overloading/trait.PdfWriterSetPageSizeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/pdf_writer/struct.PdfWriter.html' title='qt_gui::pdf_writer::PdfWriter'>PdfWriter</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

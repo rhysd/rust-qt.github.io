@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SingleDashWordOptionMode","C++ type: <span style='color: green;'>```QCommandLineParser::SingleDashWordOptionMode```</span>"]],"mod":[["overloading",""]],"struct":[["CommandLineParser","C++ type: <span style='color: green;'>```QCommandLineParser```</span>"]]});

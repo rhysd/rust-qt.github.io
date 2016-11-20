@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ColorSpec","C++ type: <span style='color: green;'>```QApplication::ColorSpec```</span>"]],"mod":[["overloading",""]],"struct":[["Application","C++ type: <span style='color: green;'>```QApplication```</span>"]]});

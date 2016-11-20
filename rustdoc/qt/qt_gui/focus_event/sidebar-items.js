@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["FocusEvent","C++ type: <span style='color: green;'>```QFocusEvent```</span>"]]});

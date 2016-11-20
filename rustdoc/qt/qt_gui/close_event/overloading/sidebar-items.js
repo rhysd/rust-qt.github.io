@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["CloseEventNewArgs","This trait represents a set of arguments accepted by CloseEvent::new method."],["CloseEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by CloseEvent::register_event_type method."]]});

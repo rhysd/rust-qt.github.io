@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["swap","C++ method: <span style='color: green;'>```void swap(QFontInfo& value1, QFontInfo& value2)```</span>"]],"mod":[["overloading",""]],"struct":[["FontInfo","C++ type: <span style='color: green;'>```QFontInfo```</span>"]]});

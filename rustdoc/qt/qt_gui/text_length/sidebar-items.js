@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Type","C++ type: <span style='color: green;'>```QTextLength::Type```</span>"]],"mod":[["overloading",""]],"struct":[["TextLength","C++ type: <span style='color: green;'>```QTextLength```</span>"]]});

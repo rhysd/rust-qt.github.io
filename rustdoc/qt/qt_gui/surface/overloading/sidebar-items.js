@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["SurfaceFormatArgs","This trait represents a set of arguments accepted by Surface::format method."],["SurfaceSizeArgs","This trait represents a set of arguments accepted by Surface::size method."]]});

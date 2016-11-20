@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AssociativeIterable","C++ type: <span style='color: green;'>```QAssociativeIterable```</span>"],["ConstIterator","C++ type: <span style='color: green;'>```QAssociativeIterable::const_iterator```</span>"]]});

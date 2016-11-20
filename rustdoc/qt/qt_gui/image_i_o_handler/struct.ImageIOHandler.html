@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ImageIOHandler` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ImageIOHandler">
+
+    <title>qt_gui::image_i_o_handler::ImageIOHandler - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>image_i_o_handler</a></p><script>window.sidebarCurrent = {name: 'ImageIOHandler', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>image_i_o_handler</a>::<wbr><a class='struct' href=''>ImageIOHandler</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-79231' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_i_o_handler.rs.html#13-15' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ImageIOHandler {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QImageIOHandler</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> class defines the common image I/O interface for all image formats in Qt.</p>
+<p>Qt uses <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> for reading and writing images through <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> and <a href="http://doc.qt.io/qt-5/qimagewriter.html">QImageWriter</a>. You can also derive from this class to write your own image format handler using Qt&#39;s plugin mechanism.</p>
+<p>Call <a href="http://doc.qt.io/qt-5/qimageiohandler.html#setDevice">setDevice</a>() to assign a device to the handler, and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#setFormat">setFormat</a>() to assign a format to it. One <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> may support more than one image format. <a href="http://doc.qt.io/qt-5/qimageiohandler.html#canRead">canRead</a>() returns <code>true</code> if an image can be read from the device, and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#read">read</a>() and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#write">write</a>() return true if reading or writing an image was completed successfully.</p>
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> also has support for animations formats, through the functions <a href="http://doc.qt.io/qt-5/qimageiohandler.html#loopCount">loopCount</a>(), <a href="http://doc.qt.io/qt-5/qimageiohandler.html#imageCount">imageCount</a>(), <a href="http://doc.qt.io/qt-5/qimageiohandler.html#nextImageDelay">nextImageDelay</a>() and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#currentImageNumber">currentImageNumber</a>().</p>
+<p>In order to determine what options an image handler supports, Qt will call <a href="http://doc.qt.io/qt-5/qimageiohandler.html#supportsOption">supportsOption</a>() and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#setOption">setOption</a>(). Make sure to reimplement these functions if you can provide support for any of the options in the <a href="http://doc.qt.io/qt-5/qimageiohandler.html#ImageOption-enum">ImageOption</a> enum.</p>
+<p>To write your own image handler, you must at least reimplement <a href="http://doc.qt.io/qt-5/qimageiohandler.html#canRead">canRead</a>() and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#read">read</a>(). Then create a <a href="http://doc.qt.io/qt-5/qimageioplugin.html">QImageIOPlugin</a> that can create the handler. Finally, install your plugin, and <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> and <a href="http://doc.qt.io/qt-5/qimagewriter.html">QImageWriter</a> will then automatically load the plugin, and start using it.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/image_i_o_handler/struct.ImageIOHandler.html' title='qt_gui::image_i_o_handler::ImageIOHandler'>ImageIOHandler</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-79236' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_i_o_handler.rs.html#23-219' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.can_read' class='method'><code>fn <a href='#method.can_read' class='fnname'>can_read</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual bool QImageIOHandler::canRead() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#canRead">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if an image can be read from the device (i.e., the image format is supported, the device can be read from and the initial header information suggests that the image can be read); otherwise returns <code>false</code>.</p>
+<p>When reimplementing canRead(), make sure that the I/O device (<a href="http://doc.qt.io/qt-5/qimageiohandler.html#device">device</a>()) is left in its original state (e.g., by using peek() rather than <a href="http://doc.qt.io/qt-5/qimageiohandler.html#read">read</a>()).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#read">read</a>() and <a href="http://doc.qt.io/qt-5/qiodevice.html#peek">QIODevice::peek</a>().</p></div></p>
+</div><h4 id='method.current_image_number' class='method'><code>fn <a href='#method.current_image_number' class='fnname'>current_image_number</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual int QImageIOHandler::currentImageNumber() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#currentImageNumber">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function returns the sequence number of the current image in the animation. If this function is called before any image is <a href="http://doc.qt.io/qt-5/qimageiohandler.html#read">read</a>(), -1 is returned. The number of the first image in the sequence is 0.</p>
+<p>If the image format does not support animation, 0 is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#read">read</a>().</p></div></p>
+</div><h4 id='method.current_image_rect' class='method'><code>fn <a href='#method.current_image_rect' class='fnname'>current_image_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_i_o_handler/overloading/trait.ImageIOHandlerCurrentImageRectArgs.html' title='qt_gui::image_i_o_handler::overloading::ImageIOHandlerCurrentImageRectArgs'>ImageIOHandlerCurrentImageRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageIOHandler::currentImageRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn current_image_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn current_image_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>virtual QRect QImageIOHandler::currentImageRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#currentImageRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the rect of the current image. If no rect is defined for the image, and empty QRect() is returned.</p>
+<p>This function is useful for animations, where only parts of the frame may be updated at a time.</p></div></p>
+</div><h4 id='method.device' class='method'><code>fn <a href='#method.device' class='fnname'>device</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIODevice* QImageIOHandler::device() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#device">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the device currently assigned to the <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a>. If not device has been assigned, 0 is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#setDevice">setDevice</a>().</p></div></p>
+</div><h4 id='method.format' class='method'><code>fn <a href='#method.format' class='fnname'>format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_i_o_handler/overloading/trait.ImageIOHandlerFormatArgs.html' title='qt_gui::image_i_o_handler::overloading::ImageIOHandlerFormatArgs'>ImageIOHandlerFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageIOHandler::format</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::byte_array::ByteArray&gt;</code><br>2) <code>fn format(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QImageIOHandler::format() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#format">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the format that is currently assigned to <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a>. If no format has been assigned, an empty string is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#setFormat">setFormat</a>().</p></div></p>
+</div><h4 id='method.image_count' class='method'><code>fn <a href='#method.image_count' class='fnname'>image_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual int QImageIOHandler::imageCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#imageCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function returns the number of images in the animation. If the image format does not support animation, or if it is unable to determine the number of images, 0 is returned.</p>
+<p>The default implementation returns 1 if <a href="http://doc.qt.io/qt-5/qimageiohandler.html#canRead">canRead</a>() returns <code>true</code>; otherwise 0 is returned.</p></div></p>
+</div><h4 id='method.jump_to_image' class='method'><code>fn <a href='#method.jump_to_image' class='fnname'>jump_to_image</a>(&amp;mut self, image_number: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual bool QImageIOHandler::jumpToImage(int imageNumber)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#jumpToImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function jumps to the image whose sequence number is <i>imageNumber</i>. The next call to <a href="http://doc.qt.io/qt-5/qimageiohandler.html#read">read</a>() will attempt to read this image.</p>
+<p>The default implementation does nothing, and returns <code>false</code>.</p></div></p>
+</div><h4 id='method.jump_to_next_image' class='method'><code>fn <a href='#method.jump_to_next_image' class='fnname'>jump_to_next_image</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual bool QImageIOHandler::jumpToNextImage()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#jumpToNextImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function jumps to the next image.</p>
+<p>The default implementation does nothing, and returns <code>false</code>.</p></div></p>
+</div><h4 id='method.loop_count' class='method'><code>fn <a href='#method.loop_count' class='fnname'>loop_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual int QImageIOHandler::loopCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#loopCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function returns the number of times the animation should loop. If the image format does not support animation, 0 is returned.</p></div></p>
+</div><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_i_o_handler/overloading/trait.ImageIOHandlerNameArgs.html' title='qt_gui::image_i_o_handler::overloading::ImageIOHandlerNameArgs'>ImageIOHandlerNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageIOHandler::name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::byte_array::ByteArray&gt;</code><br>2) <code>fn name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>virtual QByteArray QImageIOHandler::name() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler-obsolete.html#name">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use <a href="http://doc.qt.io/qt-5/qimageiohandler.html#format">format</a>() instead.</p></div></p>
+</div><h4 id='method.next_image_delay' class='method'><code>fn <a href='#method.next_image_delay' class='fnname'>next_image_delay</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual int QImageIOHandler::nextImageDelay() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#nextImageDelay">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For image formats that support animation, this function returns the number of milliseconds to wait until reading the next image. If the image format does not support animation, 0 is returned.</p></div></p>
+</div><h4 id='method.option' class='method'><code>fn <a href='#method.option' class='fnname'>option</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image_i_o_handler/overloading/trait.ImageIOHandlerOptionArgs.html' title='qt_gui::image_i_o_handler::overloading::ImageIOHandlerOptionArgs'>ImageIOHandlerOptionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImageIOHandler::option</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn option(&amp;self, (::image_i_o_handler::ImageOption, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn option(&amp;self, (::image_i_o_handler::ImageOption, cpp_utils::AsStruct)) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>virtual QVariant QImageIOHandler::option(QImageIOHandler::ImageOption option) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#option">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value assigned to <i>option</i> as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>. The type of the value depends on the option. For example, option(Size) returns a <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> variant.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#setOption">setOption</a>() and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#supportsOption">supportsOption</a>().</p></div></p>
+</div><h4 id='method.read' class='method'><code>fn <a href='#method.read' class='fnname'>read</a>(&amp;mut self, image: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual bool QImageIOHandler::read(QImage* image)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#read">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Read an image from the device, and stores it in <i>image</i>. Returns <code>true</code> if the image is successfully read; otherwise returns false.</p>
+<p>For image formats that support incremental loading, and for animation formats, the image handler can assume that <i>image</i> points to the previous frame.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#canRead">canRead</a>().</p></div></p>
+</div><h4 id='method.set_device' class='method'><code>fn <a href='#method.set_device' class='fnname'>set_device</a>(&amp;mut self, device: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageIOHandler::setDevice(QIODevice* device)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#setDevice">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the device of the <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> to <i>device</i>. The image handler will use this device when reading and writing images.</p>
+<p>The device can only be set once and must be set before calling <a href="http://doc.qt.io/qt-5/qimageiohandler.html#canRead">canRead</a>(), <a href="http://doc.qt.io/qt-5/qimageiohandler.html#read">read</a>(), <a href="http://doc.qt.io/qt-5/qimageiohandler.html#write">write</a>(), etc. If you need to read multiple files, construct multiple instances of the appropriate <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> subclass.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#device">device</a>().</p></div></p>
+</div><h4 id='method.set_format' class='method'><code>fn <a href='#method.set_format' class='fnname'>set_format</a>(&amp;self, format: &amp;<a class='struct' href='../../qt_core/byte_array/struct.ByteArray.html' title='qt_core::byte_array::ByteArray'>ByteArray</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageIOHandler::setFormat(const QByteArray&amp; format) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#setFormat-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the format of the <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> to <i>format</i>. The format is most useful for handlers that support multiple image formats.</p>
+<p>This function is declared const so that it can be called from <a href="http://doc.qt.io/qt-5/qimageiohandler.html#canRead">canRead</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#format">format</a>().</p></div></p>
+</div><h4 id='method.set_format_mut' class='method'><code>fn <a href='#method.set_format_mut' class='fnname'>set_format_mut</a>(&amp;mut self, format: &amp;<a class='struct' href='../../qt_core/byte_array/struct.ByteArray.html' title='qt_core::byte_array::ByteArray'>ByteArray</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImageIOHandler::setFormat(const QByteArray&amp; format)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#setFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the format of the <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> to <i>format</i>. The format is most useful for handlers that support multiple image formats.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#format">format</a>().</p></div></p>
+</div><h4 id='method.set_option' class='method'><code>fn <a href='#method.set_option' class='fnname'>set_option</a>(&amp;mut self, option: <a class='enum' href='../../qt_gui/image_i_o_handler/enum.ImageOption.html' title='qt_gui::image_i_o_handler::ImageOption'>ImageOption</a>, value: &amp;<a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QImageIOHandler::setOption(QImageIOHandler::ImageOption option, const QVariant&amp; value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#setOption">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the option <i>option</i> with the value <i>value</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#option">option</a>() and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#ImageOption-enum">ImageOption</a>.</p></div></p>
+</div><h4 id='method.supports_option' class='method'><code>fn <a href='#method.supports_option' class='fnname'>supports_option</a>(&amp;self, option: <a class='enum' href='../../qt_gui/image_i_o_handler/enum.ImageOption.html' title='qt_gui::image_i_o_handler::ImageOption'>ImageOption</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual bool QImageIOHandler::supportsOption(QImageIOHandler::ImageOption option) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#supportsOption">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> supports the option <i>option</i>; otherwise returns <code>false</code>. For example, if the <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> supports the <a href="http://doc.qt.io/qt-5/qimageiohandler.html#ImageOption-enum">Size</a> option, supportsOption(Size) must return true.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimageiohandler.html#setOption">setOption</a>() and <a href="http://doc.qt.io/qt-5/qimageiohandler.html#option">option</a>().</p></div></p>
+</div><h4 id='method.write' class='method'><code>fn <a href='#method.write' class='fnname'>write</a>(&amp;mut self, image: &amp;<a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual bool QImageIOHandler::write(const QImage&amp; image)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#write">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the image <i>image</i> to the assigned device. Returns <code>true</code> on success; otherwise returns <code>false</code>.</p>
+<p>The default implementation does nothing, and simply returns <code>false</code>.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/image_i_o_handler/struct.ImageIOHandler.html' title='qt_gui::image_i_o_handler::ImageIOHandler'>ImageIOHandler</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-79234' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_i_o_handler.rs.html#17-21' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/image_i_o_handler/struct.ImageIOHandler.html' title='qt_gui::image_i_o_handler::ImageIOHandler'>ImageIOHandler</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/image_i_o_handler/struct.ImageIOHandler.html' title='qt_gui::image_i_o_handler::ImageIOHandler'>ImageIOHandler</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-79296' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_i_o_handler.rs.html#221-228' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QImageIOHandler::~QImageIOHandler()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#dtor.QImageIOHandler">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructs the <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/image_i_o_handler/struct.ImageIOHandler.html' title='qt_gui::image_i_o_handler::ImageIOHandler'>ImageIOHandler</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-79299' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_i_o_handler.rs.html#230-234' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

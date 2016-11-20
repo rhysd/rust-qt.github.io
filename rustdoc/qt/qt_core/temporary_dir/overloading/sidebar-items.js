@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["TemporaryDirNewArgs","This trait represents a set of arguments accepted by TemporaryDir::new method."],["TemporaryDirPathArgs","This trait represents a set of arguments accepted by TemporaryDir::path method."]]});

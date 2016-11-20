@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["op_lt","C++ method: <span style='color: green;'>```bool operator<(const QCollatorSortKey& lhs, const QCollatorSortKey& rhs)```</span>"],["swap","C++ method: <span style='color: green;'>```swap```</span>"]],"mod":[["overloading",""]],"struct":[["Collator","C++ type: <span style='color: green;'>```QCollator```</span>"]]});

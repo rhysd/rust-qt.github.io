@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `set_message_pattern` fn in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, set_message_pattern">
+
+    <title>qt_core::message_logger::set_message_pattern - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>message_logger</a></p><script>window.sidebarCurrent = {name: 'set_message_pattern', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content fn">
+<h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>message_logger</a>::<wbr><a class='fn' href=''>set_message_pattern</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-106233' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/message_logger.rs.html#284-286' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn set_message_pattern(message_pattern: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</pre><div class='docblock'><p>C++ method: <span style='color: green;'><code>void qSetMessagePattern(const QString&amp; messagePattern)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtglobal.html#qSetMessagePattern">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Changes the output of the default message handler.</p>
+<p>Allows to tweak the output of <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>(), <a href="http://doc.qt.io/qt-5/qtglobal.html#qWarning">qWarning</a>(), <a href="http://doc.qt.io/qt-5/qtglobal.html#qCritical">qCritical</a>() and <a href="http://doc.qt.io/qt-5/qtglobal.html#qFatal">qFatal</a>().</p>
+<p>Following placeholders are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Placeholder</th><th>Description</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td><code>%{appname}</code></td><td><a href="http://doc.qt.io/qt-5/qcoreapplication.html#applicationName-prop">QCoreApplication::applicationName</a>()</td></tr>
+<tr valign="top" class="even"><td><code>%{category}</code></td><td>Logging category</td></tr>
+<tr valign="top" class="odd"><td><code>%{file}</code></td><td>Path to source file</td></tr>
+<tr valign="top" class="even"><td><code>%{function}</code></td><td>Function</td></tr>
+<tr valign="top" class="odd"><td><code>%{line}</code></td><td>Line in source file</td></tr>
+<tr valign="top" class="even"><td><code>%{message}</code></td><td>The actual message</td></tr>
+<tr valign="top" class="odd"><td><code>%{pid}</code></td><td><a href="http://doc.qt.io/qt-5/qcoreapplication.html#applicationPid">QCoreApplication::applicationPid</a>()</td></tr>
+<tr valign="top" class="even"><td><code>%{threadid}</code></td><td>The system-wide ID of current thread (if it can be obtained)</td></tr>
+<tr valign="top" class="odd"><td><code>%{qthreadptr}</code></td><td>A pointer to the current <a href="http://doc.qt.io/qt-5/qthread.html">QThread</a> (result of <a href="http://doc.qt.io/qt-5/qthread.html#currentThread">QThread::currentThread</a>())</td></tr>
+<tr valign="top" class="even"><td><code>%{type}</code></td><td>&quot;debug&quot;, &quot;warning&quot;, &quot;critical&quot; or &quot;fatal&quot;</td></tr>
+<tr valign="top" class="odd"><td><code>%{time process}</code></td><td>time of the message, in seconds since the process started (the token &quot;process&quot; is literal)</td></tr>
+<tr valign="top" class="even"><td><code>%{time boot}</code></td><td>the time of the message, in seconds since the system boot if that can be determined (the token &quot;boot&quot; is literal). If the time since boot could not be obtained, the output is indeterminate (see <a href="http://doc.qt.io/qt-5/qelapsedtimer.html#msecsSinceReference">QElapsedTimer::msecsSinceReference</a>()).</td></tr>
+<tr valign="top" class="odd"><td><code>%{time [format]}</code></td><td>system time when the message occurred, formatted by passing the <code>format</code> to <a href="http://doc.qt.io/qt-5/qdatetime.html#toString">QDateTime::toString</a>(). If the format is not specified, the format of <a href="http://doc.qt.io/qt-5/qt.html#DateFormat-enum">Qt::ISODate</a> is used.</td></tr>
+<tr valign="top" class="even"><td><code>%{backtrace [depth=N] [separator=&quot;...&quot;]}</code></td><td>A backtrace with the number of frames specified by the optional <code>depth</code> parameter (defaults to 5), and separated by the optional <code>separator</code> parameter (defaults to &quot;|&quot;). This expansion is available only on some platforms (currently only platfoms using glibc). Names are only known for exported functions. If you want to see the name of every function in your application, use <code>QMAKE_LFLAGS += -rdynamic</code>. When reading backtraces, take into account that frames might be missing due to inlining or tail call optimization.</td></tr>
+</tbody></table></div>
+<p>You can also use conditionals on the type of the message using <code>%{if-debug}</code>, <code>%{if-info}</code> <code>%{if-warning}</code>, <code>%{if-critical}</code> or <code>%{if-fatal}</code> followed by an <code>%{endif}</code>. What is inside the <code>%{if-*}</code> and <code>%{endif}</code> will only be printed if the type matches.</p>
+<p>Finally, text inside <code>%{if-category}</code> ... <code>%{endif}</code> is only printed if the category is not the default one.</p>
+<p>Example:</p>
+<pre class="cpp">QT_MESSAGE_PATTERN<span class="operator">=</span><span class="string">&quot;[%{time yyyyMMdd h:mm:ss.zzz t} %{if-debug}D%{endif}%{if-info}I%{endif}%{if-warning}W%{endif}%{if-critical}C%{endif}%{if-fatal}F%{endif}] %{file}:%{line} - %{message}&quot;</span></pre>
+<p>The default <i>pattern</i> is &quot;%{if-category}%{category}: %{endif}%{message}&quot;.</p>
+<p>The <i>pattern</i> can also be changed at runtime by setting the QT_MESSAGE_PATTERN environment variable; if both qSetMessagePattern() is called and QT_MESSAGE_PATTERN is set, the environment variable takes precedence.</p>
+<p>Custom message handlers can use <a href="http://doc.qt.io/qt-5/qtglobal.html#qFormatLogMessage">qFormatLogMessage</a>() to take <i>pattern</i> into account.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtglobal.html#qInstallMessageHandler">qInstallMessageHandler</a>() and <a href="http://doc.qt.io/qt-5/testing-and-debugging.html#debugging-techniques">Debugging Techniques</a>.</p></div></p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

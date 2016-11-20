@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ImageReaderError","C++ type: <span style='color: green;'>```QImageReader::ImageReaderError```</span>"]],"mod":[["overloading",""]],"struct":[["ImageReader","C++ type: <span style='color: green;'>```QImageReader```</span>"]]});

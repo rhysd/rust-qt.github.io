@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["GraphicsDropShadowEffect","C++ type: <span style='color: green;'>```QGraphicsDropShadowEffect```</span>"]]});

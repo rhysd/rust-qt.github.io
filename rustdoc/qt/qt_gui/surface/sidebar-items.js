@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SurfaceClass","C++ type: <span style='color: green;'>```QSurface::SurfaceClass```</span>"],["SurfaceType","C++ type: <span style='color: green;'>```QSurface::SurfaceType```</span>"]],"mod":[["overloading",""]],"struct":[["Surface","C++ type: <span style='color: green;'>```QSurface```</span>"]]});

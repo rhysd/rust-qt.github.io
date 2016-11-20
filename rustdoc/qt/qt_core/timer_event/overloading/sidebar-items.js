@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["TimerEventNewArgs","This trait represents a set of arguments accepted by TimerEvent::new method."],["TimerEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by TimerEvent::register_event_type method."]]});

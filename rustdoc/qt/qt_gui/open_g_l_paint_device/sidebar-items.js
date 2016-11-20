@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["OpenGLPaintDevice","C++ type: <span style='color: green;'>```QOpenGLPaintDevice```</span>"]]});

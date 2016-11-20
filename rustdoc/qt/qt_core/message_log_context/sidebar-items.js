@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["MessageLogContext","C++ type: <span style='color: green;'>```QMessageLogContext```</span>"]]});

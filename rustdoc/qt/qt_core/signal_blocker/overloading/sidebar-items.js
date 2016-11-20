@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["SignalBlockerNewArgs","This trait represents a set of arguments accepted by SignalBlocker::new method."]]});

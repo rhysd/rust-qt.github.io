@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["Latin1CharNewArgs","This trait represents a set of arguments accepted by Latin1Char::new method."]]});

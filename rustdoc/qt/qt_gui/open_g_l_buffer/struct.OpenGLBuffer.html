@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `OpenGLBuffer` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, OpenGLBuffer">
+
+    <title>qt_gui::open_g_l_buffer::OpenGLBuffer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>open_g_l_buffer</a></p><script>window.sidebarCurrent = {name: 'OpenGLBuffer', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>open_g_l_buffer</a>::<wbr><a class='struct' href=''>OpenGLBuffer</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-95936' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_buffer.rs.html#29-31' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct OpenGLBuffer {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QOpenGLBuffer</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qopenglbuffer.html">QOpenGLBuffer</a> class provides functions for creating and managing OpenGL buffer objects.</p>
+<p>Buffer objects are created in the OpenGL server so that the client application can avoid uploading vertices, indices, texture image data, etc every time they are needed.</p>
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html">QOpenGLBuffer</a> objects can be copied around as a reference to the underlying OpenGL buffer object:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#QOpenGLBuffer">QOpenGLBuffer</a></span> buffer1(<span class="type"><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#QOpenGLBuffer">QOpenGLBuffer</a></span><span class="operator">::</span>IndexBuffer);
+buffer1<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>();</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#QOpenGLBuffer">QOpenGLBuffer</a></span> buffer2 <span class="operator">=</span> buffer1;</pre>
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html">QOpenGLBuffer</a> performs a shallow copy when objects are copied in this manner, but does not implement copy-on-write semantics. The original object will be affected whenever the copy is modified.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/open_g_l_buffer/struct.OpenGLBuffer.html' title='qt_gui::open_g_l_buffer::OpenGLBuffer'>OpenGLBuffer</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95941' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_buffer.rs.html#39-269' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.allocate' class='method'><code>fn <a href='#method.allocate' class='fnname'>allocate</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_buffer/overloading/trait.OpenGLBufferAllocateArgs.html' title='qt_gui::open_g_l_buffer::overloading::OpenGLBufferAllocateArgs'>OpenGLBufferAllocateArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLBuffer::allocate</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn allocate(&amp;mut self, (*const libc::c_void, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLBuffer::allocate(const void* data, int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#allocate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Allocates <i>count</i> bytes of space to the buffer, initialized to the contents of <i>data</i>. Any previous contents will be removed.</p>
+<p>It is assumed that <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>() has been called on this buffer and that it has been bound to the current context.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>(), <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#read">read</a>(), and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#write">write</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn allocate(&amp;mut self, libc::c_int) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLBuffer::allocate(int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#allocate-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Allocates <i>count</i> bytes of space to the buffer. Any previous contents will be removed.</p>
+<p>It is assumed that <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>() has been called on this buffer and that it has been bound to the current context.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>() and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#write">write</a>().</p></div></p>
+</div><h4 id='method.bind' class='method'><code>fn <a href='#method.bind' class='fnname'>bind</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLBuffer::bind()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#bind">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Binds the buffer associated with this object to the current OpenGL context. Returns <code>false</code> if binding was not possible, usually because <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#type">type</a>() is not supported on this OpenGL implementation.</p>
+<p>The buffer must be bound to the same <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a> current when <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>() was called, or to another <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a> that is sharing with it. Otherwise, false will be returned from this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#release">release</a>() and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>().</p></div></p>
+</div><h4 id='method.buffer_id' class='method'><code>fn <a href='#method.buffer_id' class='fnname'>buffer_id</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QOpenGLBuffer::bufferId() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#bufferId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the OpenGL identifier associated with this buffer; zero if the buffer has not been created.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#isCreated">isCreated</a>().</p></div></p>
+</div><h4 id='method.create' class='method'><code>fn <a href='#method.create' class='fnname'>create</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLBuffer::create()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates the buffer object in the OpenGL server. Returns <code>true</code> if the object was created; false otherwise.</p>
+<p>This function must be called with a current <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a>. The buffer will be bound to and can only be used in that context (or any other context that is shared with it).</p>
+<p>This function will return false if the OpenGL implementation does not support buffers, or there is no current <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#isCreated">isCreated</a>(), <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#allocate">allocate</a>(), <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#write">write</a>(), and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#destroy">destroy</a>().</p></div></p>
+</div><h4 id='method.destroy' class='method'><code>fn <a href='#method.destroy' class='fnname'>destroy</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLBuffer::destroy()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#destroy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys this buffer object, including the storage being used in the OpenGL server. All references to the buffer will become invalid.</p></div></p>
+</div><h4 id='method.is_created' class='method'><code>fn <a href='#method.is_created' class='fnname'>is_created</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLBuffer::isCreated() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#isCreated">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this buffer has been created; false otherwise.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>() and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#destroy">destroy</a>().</p></div></p>
+</div><h4 id='method.map' class='method'><code>fn <a href='#method.map' class='fnname'>map</a>(&amp;mut self, access: <a class='enum' href='../../qt_gui/open_g_l_buffer/enum.Access.html' title='qt_gui::open_g_l_buffer::Access'>Access</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void* QOpenGLBuffer::map(QOpenGLBuffer::Access access)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#map">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Maps the contents of this buffer into the application&#39;s memory space and returns a pointer to it. Returns null if memory mapping is not possible. The <i>access</i> parameter indicates the type of access to be performed.</p>
+<p>It is assumed that <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>() has been called on this buffer and that it has been bound to the current context.</p>
+<p><b>Note: </b>This function is only supported under OpenGL ES 2.0 or earlier if the <code>GL_OES_mapbuffer</code> extension is present.</p><p><b>Note: </b>On OpenGL ES 3.0 and newer, or, in case if desktop OpenGL, if <code>GL_ARB_map_buffer_range</code> is supported, this function uses <code>glMapBufferRange</code> instead of <code>glMapBuffer</code>.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#unmap">unmap</a>(), <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>(), <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#bind">bind</a>(), and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#mapRange">mapRange</a>().</p></div></p>
+</div><h4 id='method.map_range' class='method'><code>fn <a href='#method.map_range' class='fnname'>map_range</a>(&amp;mut self, offset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, access: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/open_g_l_buffer/enum.RangeAccessFlag.html' title='qt_gui::open_g_l_buffer::RangeAccessFlag'>RangeAccessFlag</a>&gt;) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void* QOpenGLBuffer::mapRange(int offset, int count, QFlags&lt;QOpenGLBuffer::RangeAccessFlag&gt; access)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#mapRange">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Maps the range specified by <i>offset</i> and <i>count</i> of the contents of this buffer into the application&#39;s memory space and returns a pointer to it. Returns null if memory mapping is not possible. The <i>access</i> parameter specifies a combination of access flags.</p>
+<p>It is assumed that <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>() has been called on this buffer and that it has been bound to the current context.</p>
+<p><b>Note: </b>This function is not available on OpenGL ES 2.0 and earlier.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#unmap">unmap</a>(), <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>(), and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#bind">bind</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_buffer/overloading/trait.OpenGLBufferNewArgs.html' title='qt_gui::open_g_l_buffer::overloading::OpenGLBufferNewArgs'>OpenGLBufferNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLBuffer::QOpenGLBuffer</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::open_g_l_buffer::OpenGLBuffer</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::open_g_l_buffer::OpenGLBuffer&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLBuffer::QOpenGLBuffer()</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((::open_g_l_buffer::Type, cpp_utils::AsStruct)) -&gt; ::open_g_l_buffer::OpenGLBuffer</code><br>2) <code>fn new((::open_g_l_buffer::Type, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_buffer::OpenGLBuffer&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLBuffer::QOpenGLBuffer(QOpenGLBuffer::Type type)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::open_g_l_buffer::OpenGLBuffer, cpp_utils::AsStruct)) -&gt; ::open_g_l_buffer::OpenGLBuffer</code><br>2) <code>fn new((&amp;::open_g_l_buffer::OpenGLBuffer, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_buffer::OpenGLBuffer&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLBuffer::QOpenGLBuffer(const QOpenGLBuffer&amp; other)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/open_g_l_buffer/struct.OpenGLBuffer.html' title='qt_gui::open_g_l_buffer::OpenGLBuffer'>OpenGLBuffer</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/open_g_l_buffer/struct.OpenGLBuffer.html' title='qt_gui::open_g_l_buffer::OpenGLBuffer'>OpenGLBuffer</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLBuffer&amp; QOpenGLBuffer::operator=(const QOpenGLBuffer&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns a shallow copy of <i>other</i> to this object.</p>
+<p>Note: <a href="http://doc.qt.io/qt-5/qopenglbuffer.html">QOpenGLBuffer</a> does not implement copy-on-write semantics, so <i>other</i> will be affected whenever the copy is modified.</p></div></p>
+</div><h4 id='method.read' class='method'><code>fn <a href='#method.read' class='fnname'>read</a>(&amp;mut self, offset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLBuffer::read(int offset, void* data, int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#read">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads the <i>count</i> bytes in this buffer starting at <i>offset</i> into <i>data</i>. Returns <code>true</code> on success; false if reading from the buffer is not supported. Buffer reading is not supported under OpenGL/ES.</p>
+<p>It is assumed that this buffer has been bound to the current context.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#write">write</a>() and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#bind">bind</a>().</p></div></p>
+</div><h4 id='method.release' class='method'><code>fn <a href='#method.release' class='fnname'>release</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLBuffer::release()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#release">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Releases the buffer associated with this object from the current OpenGL context.</p>
+<p>This function must be called with the same <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a> current as when <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#bind">bind</a>() was called on the buffer.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#bind">bind</a>().</p></div></p>
+</div><h4 id='method.release_static' class='method'><code>fn <a href='#method.release_static' class='fnname'>release_static</a>(type_: <a class='enum' href='../../qt_gui/open_g_l_buffer/enum.Type.html' title='qt_gui::open_g_l_buffer::Type'>Type</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QOpenGLBuffer::release(QOpenGLBuffer::Type type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#release-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Releases the buffer associated with <i>type</i> in the current <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a>.</p>
+<p>This function is a direct call to <code>glBindBuffer(type, 0)</code> for use when the caller does not know which <a href="http://doc.qt.io/qt-5/qopenglbuffer.html">QOpenGLBuffer</a> has been bound to the context but wants to make sure that it is released.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#QOpenGLBuffer">QOpenGLBuffer</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#release">release</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#QOpenGLBuffer">QOpenGLBuffer</a></span><span class="operator">::</span>VertexBuffer);</pre></div></p>
+</div><h4 id='method.set_usage_pattern' class='method'><code>fn <a href='#method.set_usage_pattern' class='fnname'>set_usage_pattern</a>(&amp;mut self, value: <a class='enum' href='../../qt_gui/open_g_l_buffer/enum.UsagePattern.html' title='qt_gui::open_g_l_buffer::UsagePattern'>UsagePattern</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLBuffer::setUsagePattern(QOpenGLBuffer::UsagePattern value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#setUsagePattern">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the usage pattern for this buffer object to <i>value</i>. This function must be called before <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#allocate">allocate</a>() or <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#write">write</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#usagePattern">usagePattern</a>(), <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#allocate">allocate</a>(), and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#write">write</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLBuffer::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the data in this buffer, for reading operations. Returns -1 if fetching the buffer size is not supported, or the buffer has not been created.</p>
+<p>It is assumed that this buffer has been bound to the current context.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#isCreated">isCreated</a>() and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#bind">bind</a>().</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/open_g_l_buffer/enum.Type.html' title='qt_gui::open_g_l_buffer::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLBuffer::Type QOpenGLBuffer::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type of buffer represented by this object.</p></div></p>
+</div><h4 id='method.unmap' class='method'><code>fn <a href='#method.unmap' class='fnname'>unmap</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLBuffer::unmap()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#unmap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unmaps the buffer after it was mapped into the application&#39;s memory space with a previous call to <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#map">map</a>(). Returns <code>true</code> if the unmap succeeded; false otherwise.</p>
+<p>It is assumed that this buffer has been bound to the current context, and that it was previously mapped with <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#map">map</a>().</p>
+<p><b>Note: </b>This function is only supported under OpenGL ES 2.0 and earlier if the <code>GL_OES_mapbuffer</code> extension is present.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#map">map</a>().</p></div></p>
+</div><h4 id='method.usage_pattern' class='method'><code>fn <a href='#method.usage_pattern' class='fnname'>usage_pattern</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/open_g_l_buffer/enum.UsagePattern.html' title='qt_gui::open_g_l_buffer::UsagePattern'>UsagePattern</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLBuffer::UsagePattern QOpenGLBuffer::usagePattern() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#usagePattern">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the usage pattern for this buffer object. The default value is <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#UsagePattern-enum">StaticDraw</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#setUsagePattern">setUsagePattern</a>().</p></div></p>
+</div><h4 id='method.write' class='method'><code>fn <a href='#method.write' class='fnname'>write</a>(&amp;mut self, offset: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLBuffer::write(int offset, const void* data, int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#write">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Replaces the <i>count</i> bytes of this buffer starting at <i>offset</i> with the contents of <i>data</i>. Any other bytes in the buffer will be left unmodified.</p>
+<p>It is assumed that <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>() has been called on this buffer and that it has been bound to the current context.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#create">create</a>(), <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#read">read</a>(), and <a href="http://doc.qt.io/qt-5/qopenglbuffer.html#allocate">allocate</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/open_g_l_buffer/struct.OpenGLBuffer.html' title='qt_gui::open_g_l_buffer::OpenGLBuffer'>OpenGLBuffer</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95939' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_buffer.rs.html#33-37' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/open_g_l_buffer/struct.OpenGLBuffer.html' title='qt_gui::open_g_l_buffer::OpenGLBuffer'>OpenGLBuffer</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/open_g_l_buffer/struct.OpenGLBuffer.html' title='qt_gui::open_g_l_buffer::OpenGLBuffer'>OpenGLBuffer</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95999' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_buffer.rs.html#271-278' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QOpenGLBuffer::~QOpenGLBuffer()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglbuffer.html#dtor.QOpenGLBuffer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys this buffer object, including the storage being used in the OpenGL server.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/open_g_l_buffer/struct.OpenGLBuffer.html' title='qt_gui::open_g_l_buffer::OpenGLBuffer'>OpenGLBuffer</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-96002' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_buffer.rs.html#280-284' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

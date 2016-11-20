@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Direction","C++ type: <span style='color: green;'>```QBoxLayout::Direction```</span>"]],"mod":[["overloading",""]],"struct":[["BoxLayout","C++ type: <span style='color: green;'>```QBoxLayout```</span>"]]});

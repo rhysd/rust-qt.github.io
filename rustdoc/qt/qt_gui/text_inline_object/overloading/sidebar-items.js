@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["TextInlineObjectFormatArgs","This trait represents a set of arguments accepted by TextInlineObject::format method."],["TextInlineObjectNewArgs","This trait represents a set of arguments accepted by TextInlineObject::new method."],["TextInlineObjectRectArgs","This trait represents a set of arguments accepted by TextInlineObject::rect method."]]});

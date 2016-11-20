@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["FileSystemWatcher","C++ type: <span style='color: green;'>```QFileSystemWatcher```</span>"]]});

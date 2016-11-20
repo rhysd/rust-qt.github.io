@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StringDataPtr","C++ type: <span style='color: green;'>```QStringDataPtr```</span>"]]});

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BackingStore` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BackingStore">
+
+    <title>qt_gui::backing_store::BackingStore - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>backing_store</a></p><script>window.sidebarCurrent = {name: 'BackingStore', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>backing_store</a>::<wbr><a class='struct' href=''>BackingStore</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-63087' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/backing_store.rs.html#11-13' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct BackingStore {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QBackingStore</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qbackingstore.html">QBackingStore</a> class provides a drawing area for <a href="http://doc.qt.io/qt-5/qwindow.html">QWindow</a>.</p>
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html">QBackingStore</a> enables the use of <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> to paint on a <a href="http://doc.qt.io/qt-5/qwindow.html">QWindow</a> with type RasterSurface. The other way of rendering to a <a href="http://doc.qt.io/qt-5/qwindow.html">QWindow</a> is through the use of OpenGL with <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a>.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qbackingstore.html">QBackingStore</a> contains a buffered representation of the window contents, and thus supports partial updates by using <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> to only update a sub region of the window contents.</p>
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html">QBackingStore</a> might be used by an application that wants to use <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> without OpenGL acceleration and without the extra overhead of using the <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> or <a href="http://doc.qt.io/qt-5/qgraphicsview.html">QGraphicsView</a> UI stacks. For an example of how to use <a href="http://doc.qt.io/qt-5/qbackingstore.html">QBackingStore</a> see the <a href="http://doc.qt.io/qt-5/qtgui-rasterwindow-example.html">Raster Window Example</a>.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/backing_store/struct.BackingStore.html' title='qt_gui::backing_store::BackingStore'>BackingStore</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-63092' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/backing_store.rs.html#21-148' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.begin_paint' class='method'><code>fn <a href='#method.begin_paint' class='fnname'>begin_paint</a>(&amp;mut self, arg1: &amp;<a class='struct' href='../../qt_gui/region/struct.Region.html' title='qt_gui::region::Region'>Region</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBackingStore::beginPaint(const QRegion&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#beginPaint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is called before painting onto the surface begins, with the <i>region</i> in which the painting will occur.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbackingstore.html#endPaint">endPaint</a>() and <a href="http://doc.qt.io/qt-5/qbackingstore.html#paintDevice">paintDevice</a>().</p></div></p>
+</div><h4 id='method.end_paint' class='method'><code>fn <a href='#method.end_paint' class='fnname'>end_paint</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBackingStore::endPaint()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#endPaint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is called after painting onto the surface has ended.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbackingstore.html#beginPaint">beginPaint</a>() and <a href="http://doc.qt.io/qt-5/qbackingstore.html#paintDevice">paintDevice</a>().</p></div></p>
+</div><h4 id='method.flush' class='method'><code>fn <a href='#method.flush' class='fnname'>flush</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/backing_store/overloading/trait.BackingStoreFlushArgs.html' title='qt_gui::backing_store::overloading::BackingStoreFlushArgs'>BackingStoreFlushArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBackingStore::flush</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn flush(&amp;mut self, &amp;::region::Region) -&gt; ()</code><br>2) <code>fn flush(&amp;mut self, (&amp;::region::Region, *mut ::window::Window)) -&gt; ()</code><br>3) <code>fn flush(&amp;mut self, (&amp;::region::Region, *mut ::window::Window, &amp;qt_core::point::Point)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QBackingStore::flush(const QRegion&amp; region, QWindow* window = ?, const QPoint&amp; offset = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#flush">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Flushes the given <i>region</i> from the specified window <i>win</i> onto the screen.</p>
+<p>Note that the <i>offset</i> parameter is currently unused.</p></div></p>
+</div><h4 id='method.has_static_contents' class='method'><code>fn <a href='#method.has_static_contents' class='fnname'>has_static_contents</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBackingStore::hasStaticContents() const</code></span></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/backing_store/overloading/trait.BackingStoreNewArgs.html' title='qt_gui::backing_store::overloading::BackingStoreNewArgs'>BackingStoreNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBackingStore::QBackingStore</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((*mut ::window::Window, cpp_utils::AsStruct)) -&gt; ::backing_store::BackingStore</code><br>2) <code>fn new((*mut ::window::Window, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::backing_store::BackingStore&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QBackingStore::QBackingStore(QWindow* window)</code></span></p>
+</div><h4 id='method.paint_device' class='method'><code>fn <a href='#method.paint_device' class='fnname'>paint_device</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/paint_device/struct.PaintDevice.html' title='qt_gui::paint_device::PaintDevice'>PaintDevice</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintDevice* QBackingStore::paintDevice()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#paintDevice">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Implement this function to return the appropriate paint device.</p></div></p>
+</div><h4 id='method.resize' class='method'><code>fn <a href='#method.resize' class='fnname'>resize</a>(&amp;mut self, size: &amp;<a class='struct' href='../../qt_core/size/struct.Size.html' title='qt_core::size::Size'>Size</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBackingStore::resize(const QSize&amp; size)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#resize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the size of the windowsurface to be <i>size</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qbackingstore.html#size">size</a>().</p></div></p>
+</div><h4 id='method.scroll' class='method'><code>fn <a href='#method.scroll' class='fnname'>scroll</a>(&amp;mut self, area: &amp;<a class='struct' href='../../qt_gui/region/struct.Region.html' title='qt_gui::region::Region'>Region</a>, dx: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, dy: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QBackingStore::scroll(const QRegion&amp; area, int dx, int dy)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#scroll">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Scrolls the given <i>area</i> <i>dx</i> pixels to the right and <i>dy</i> downward; both <i>dx</i> and <i>dy</i> may be negative.</p>
+<p>Returns <code>true</code> if the area was scrolled successfully; false otherwise.</p></div></p>
+</div><h4 id='method.set_static_contents' class='method'><code>fn <a href='#method.set_static_contents' class='fnname'>set_static_contents</a>(&amp;mut self, region: &amp;<a class='struct' href='../../qt_gui/region/struct.Region.html' title='qt_gui::region::Region'>Region</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QBackingStore::setStaticContents(const QRegion&amp; region)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#setStaticContents">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p><b>See also </b><a href="http://doc.qt.io/qt-5/qbackingstore.html#staticContents">staticContents</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/backing_store/overloading/trait.BackingStoreSizeArgs.html' title='qt_gui::backing_store::overloading::BackingStoreSizeArgs'>BackingStoreSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBackingStore::size</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QBackingStore::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current size of the windowsurface.</p></div></p>
+</div><h4 id='method.static_contents' class='method'><code>fn <a href='#method.static_contents' class='fnname'>static_contents</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/backing_store/overloading/trait.BackingStoreStaticContentsArgs.html' title='qt_gui::backing_store::overloading::BackingStoreStaticContentsArgs'>BackingStoreStaticContentsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QBackingStore::staticContents</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn static_contents(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::region::Region&gt;</code><br>2) <code>fn static_contents(&amp;self, cpp_utils::AsStruct) -&gt; ::region::Region</code><br>
+C++ method: <span style='color: green;'><code>QRegion QBackingStore::staticContents() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#staticContents">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p><b>See also </b><a href="http://doc.qt.io/qt-5/qbackingstore.html#setStaticContents">setStaticContents</a>().</p></div></p>
+</div><h4 id='method.window' class='method'><code>fn <a href='#method.window' class='fnname'>window</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/window/struct.Window.html' title='qt_gui::window::Window'>Window</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWindow* QBackingStore::window() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#window">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to the top-level window associated with this surface.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/backing_store/struct.BackingStore.html' title='qt_gui::backing_store::BackingStore'>BackingStore</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-63090' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/backing_store.rs.html#15-19' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/backing_store/struct.BackingStore.html' title='qt_gui::backing_store::BackingStore'>BackingStore</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/backing_store/struct.BackingStore.html' title='qt_gui::backing_store::BackingStore'>BackingStore</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-63133' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/backing_store.rs.html#150-157' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QBackingStore::~QBackingStore()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qbackingstore.html#dtor.QBackingStore">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys this surface.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/backing_store/struct.BackingStore.html' title='qt_gui::backing_store::BackingStore'>BackingStore</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-63136' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/backing_store.rs.html#159-163' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

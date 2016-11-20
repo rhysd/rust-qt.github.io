@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FontDatabase` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FontDatabase">
+
+    <title>qt_gui::font_database::FontDatabase - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>font_database</a></p><script>window.sidebarCurrent = {name: 'FontDatabase', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>font_database</a>::<wbr><a class='struct' href=''>FontDatabase</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-71404' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font_database.rs.html#36-38' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct FontDatabase {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QFontDatabase</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qfontdatabase.html">QFontDatabase</a> class provides information about the fonts available in the underlying window system.</p>
+<p>The most common uses of this class are to query the database for the list of font <a href="http://doc.qt.io/qt-5/qfontdatabase.html#families">families</a>() and for the <a href="http://doc.qt.io/qt-5/qfontdatabase.html#pointSizes">pointSizes</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#styles">styles</a>() that are available for each family. An alternative to <a href="http://doc.qt.io/qt-5/qfontdatabase.html#pointSizes">pointSizes</a>() is <a href="http://doc.qt.io/qt-5/qfontdatabase.html#smoothSizes">smoothSizes</a>() which returns the sizes at which a given family and style will look attractive.</p>
+<p>If the font family is available from two or more foundries the foundry name is included in the family name; for example: &quot;Helvetica [Adobe]&quot; and &quot;Helvetica [Cronyx]&quot;. When you specify a family, you can either use the old hyphenated &quot;foundry-family&quot; format or the bracketed &quot;family [foundry]&quot; format; for example: &quot;Cronyx-Helvetica&quot; or &quot;Helvetica [Cronyx]&quot;. If the family has a foundry it is always returned using the bracketed format, as is the case with the value returned by <a href="http://doc.qt.io/qt-5/qfontdatabase.html#families">families</a>().</p>
+<p>The <a href="http://doc.qt.io/qt-5/qfontdatabase.html#font">font</a>() function returns a <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> given a family, style and point size.</p>
+<p>A family and style combination can be checked to see if it is <a href="http://doc.qt.io/qt-5/qfontdatabase.html#italic">italic</a>() or <a href="http://doc.qt.io/qt-5/qfontdatabase.html#bold">bold</a>(), and to retrieve its <a href="http://doc.qt.io/qt-5/qfontdatabase.html#weight">weight</a>(). Similarly we can call <a href="http://doc.qt.io/qt-5/qfontdatabase.html#isBitmapScalable">isBitmapScalable</a>(), <a href="http://doc.qt.io/qt-5/qfontdatabase.html#isSmoothlyScalable">isSmoothlyScalable</a>(), <a href="http://doc.qt.io/qt-5/qfontdatabase.html#isScalable">isScalable</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#isFixedPitch">isFixedPitch</a>().</p>
+<p>Use the <a href="http://doc.qt.io/qt-5/qfontdatabase.html#styleString">styleString</a>() to obtain a text version of a style.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qfontdatabase.html">QFontDatabase</a> class also supports some static functions, for example, <a href="http://doc.qt.io/qt-5/qfontdatabase.html#standardSizes">standardSizes</a>(). You can retrieve the description of a writing system using <a href="http://doc.qt.io/qt-5/qfontdatabase.html#writingSystemName">writingSystemName</a>(), and a sample of characters in a writing system with <a href="http://doc.qt.io/qt-5/qfontdatabase.html#writingSystemSample">writingSystemSample</a>().</p>
+<p>Example:</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qfontdatabase.html#QFontDatabase">QFontDatabase</a></span> database;
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qtreewidget.html">QTreeWidget</a></span> fontTree;
+&#32;   fontTree<span class="operator">.</span>setColumnCount(<span class="number">2</span>);
+&#32;   fontTree<span class="operator">.</span>setHeaderLabels(<span class="type"><a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a></span>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Font&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Smooth Sizes&quot;</span>);</p>
+
+<p>&#32;   foreach (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> <span class="operator">&amp;</span>family<span class="operator">,</span> database<span class="operator">.</span>families()) {
+&#32;       <span class="type"><a href="http://doc.qt.io/qt-5/qtreewidgetitem.html">QTreeWidgetItem</a></span> <span class="operator">*</span>familyItem <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qtreewidgetitem.html">QTreeWidgetItem</a></span>(<span class="operator">&amp;</span>fontTree);
+&#32;       familyItem<span class="operator">-</span><span class="operator">&gt;</span>setText(<span class="number">0</span><span class="operator">,</span> family);</p>
+
+<p>&#32;       foreach (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> <span class="operator">&amp;</span>style<span class="operator">,</span> database<span class="operator">.</span>styles(family)) {
+&#32;           <span class="type"><a href="http://doc.qt.io/qt-5/qtreewidgetitem.html">QTreeWidgetItem</a></span> <span class="operator">*</span>styleItem <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qtreewidgetitem.html">QTreeWidgetItem</a></span>(familyItem);
+&#32;           styleItem<span class="operator">-</span><span class="operator">&gt;</span>setText(<span class="number">0</span><span class="operator">,</span> style);</p>
+
+<p>&#32;           <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> sizes;
+&#32;           foreach (<span class="type">int</span> points<span class="operator">,</span> database<span class="operator">.</span>smoothSizes(family<span class="operator">,</span> style))
+&#32;               sizes <span class="operator">+</span><span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">::</span>number(points) <span class="operator">+</span> <span class="string">&quot; &quot;</span>;</p>
+
+<p>&#32;           styleItem<span class="operator">-</span><span class="operator">&gt;</span>setText(<span class="number">1</span><span class="operator">,</span> sizes<span class="operator">.</span>trimmed());
+&#32;       }
+&#32;   }</pre>
+<p>This example gets the list of font families, the list of styles for each family, and the point sizes that are available for each combination of family and style, displaying this information in a tree view.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/font_database/struct.FontDatabase.html' title='qt_gui::font_database::FontDatabase'>FontDatabase</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-71409' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font_database.rs.html#46-418' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.add_application_font' class='method'><code>fn <a href='#method.add_application_font' class='fnname'>add_application_font</a>(file_name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static int QFontDatabase::addApplicationFont(const QString&amp; fileName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Loads the font from the file specified by <i>fileName</i> and makes it available to the application. An ID is returned that can be used to remove the font again with <a href="http://doc.qt.io/qt-5/qfontdatabase.html#removeApplicationFont">removeApplicationFont</a>() or to retrieve the list of family names contained in the font.</p>
+<p>The function returns -1 if the font could not be loaded.</p>
+<p>Currently only TrueType fonts, TrueType font collections, and OpenType fonts are supported.</p>
+<p><b>Note: </b>Adding application fonts on Unix/X11 platforms without fontconfig is currently not supported.</p><p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a>(), <a href="http://doc.qt.io/qt-5/qfontdatabase.html#applicationFontFamilies">applicationFontFamilies</a>(), and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#removeApplicationFont">removeApplicationFont</a>().</p></div></p>
+</div><h4 id='method.add_application_font_from_data' class='method'><code>fn <a href='#method.add_application_font_from_data' class='fnname'>add_application_font_from_data</a>(font_data: &amp;<a class='struct' href='../../qt_core/byte_array/struct.ByteArray.html' title='qt_core::byte_array::ByteArray'>ByteArray</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static int QFontDatabase::addApplicationFontFromData(const QByteArray&amp; fontData)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFontFromData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Loads the font from binary data specified by <i>fontData</i> and makes it available to the application. An ID is returned that can be used to remove the font again with <a href="http://doc.qt.io/qt-5/qfontdatabase.html#removeApplicationFont">removeApplicationFont</a>() or to retrieve the list of family names contained in the font.</p>
+<p>The function returns -1 if the font could not be loaded.</p>
+<p>Currently only TrueType fonts and TrueType font collections are supported.</p>
+<p><b>Note:</b> Adding application fonts on Unix/X11 platforms without fontconfig is currently not supported.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFont">addApplicationFont</a>(), <a href="http://doc.qt.io/qt-5/qfontdatabase.html#applicationFontFamilies">applicationFontFamilies</a>(), and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#removeApplicationFont">removeApplicationFont</a>().</p></div></p>
+</div><h4 id='method.application_font_families' class='method'><code>fn <a href='#method.application_font_families' class='fnname'>application_font_families</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseApplicationFontFamiliesArgs.html' title='qt_gui::font_database::overloading::FontDatabaseApplicationFontFamiliesArgs'>FontDatabaseApplicationFontFamiliesArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::applicationFontFamilies</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn application_font_families((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn application_font_families((libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>static QStringList QFontDatabase::applicationFontFamilies(int id)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#applicationFontFamilies">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of font families for the given application font identified by <i>id</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFont">addApplicationFont</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a>().</p></div></p>
+</div><h4 id='method.bold' class='method'><code>fn <a href='#method.bold' class='fnname'>bold</a>(&amp;self, family: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>, style: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontDatabase::bold(const QString&amp; family, const QString&amp; style) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#bold">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the font that has family <i>family</i> and style <i>style</i> is bold; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#italic">italic</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#weight">weight</a>().</p></div></p>
+</div><h4 id='method.families' class='method'><code>fn <a href='#method.families' class='fnname'>families</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseFamiliesArgs.html' title='qt_gui::font_database::overloading::FontDatabaseFamiliesArgs'>FontDatabaseFamiliesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::families</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn families(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn families(&amp;self, (::font_database::WritingSystem, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>3) <code>fn families(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string_list::StringList</code><br>4) <code>fn families(&amp;self, (::font_database::WritingSystem, cpp_utils::AsStruct)) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>QStringList QFontDatabase::families(QFontDatabase::WritingSystem writingSystem = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#families">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a sorted list of the available font families which support the <i>writingSystem</i>.</p>
+<p>If a family exists in several foundries, the returned name for that font is in the form &quot;family [foundry]&quot;. Examples: &quot;Times [Adobe]&quot;, &quot;Times [Cronyx]&quot;, &quot;Palatino&quot;.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#writingSystems">writingSystems</a>().</p></div></p>
+</div><h4 id='method.font' class='method'><code>fn <a href='#method.font' class='fnname'>font</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseFontArgs.html' title='qt_gui::font_database::overloading::FontDatabaseFontArgs'>FontDatabaseFontArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::font</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn font(&amp;self, (&amp;qt_core::string::String, &amp;qt_core::string::String, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>2) <code>fn font(&amp;self, (&amp;qt_core::string::String, &amp;qt_core::string::String, libc::c_int, cpp_utils::AsStruct)) -&gt; ::font::Font</code><br>
+C++ method: <span style='color: green;'><code>QFont QFontDatabase::font(const QString&amp; family, const QString&amp; style, int pointSize) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#font">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> object that has family <i>family</i>, style <i>style</i> and point size <i>pointSize</i>. If no matching font could be created, a <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> object that uses the application&#39;s default font is returned.</p></div></p>
+</div><h4 id='method.has_family' class='method'><code>fn <a href='#method.has_family' class='fnname'>has_family</a>(&amp;self, family: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontDatabase::hasFamily(const QString&amp; family) const</code></span></p>
+</div><h4 id='method.is_bitmap_scalable' class='method'><code>fn <a href='#method.is_bitmap_scalable' class='fnname'>is_bitmap_scalable</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseIsBitmapScalableArgs.html' title='qt_gui::font_database::overloading::FontDatabaseIsBitmapScalableArgs'>FontDatabaseIsBitmapScalableArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::isBitmapScalable</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn is_bitmap_scalable(&amp;self, &amp;qt_core::string::String) -&gt; bool</code><br>2) <code>fn is_bitmap_scalable(&amp;self, (&amp;qt_core::string::String, &amp;qt_core::string::String)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QFontDatabase::isBitmapScalable(const QString&amp; family, const QString&amp; style = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#isBitmapScalable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the font that has family <i>family</i> and style <i>style</i> is a scalable bitmap font; otherwise returns <code>false</code>. Scaling a bitmap font usually produces an unattractive hardly readable result, because the pixels of the font are scaled. If you need to scale a bitmap font it is better to scale it to one of the fixed sizes returned by <a href="http://doc.qt.io/qt-5/qfontdatabase.html#smoothSizes">smoothSizes</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#isScalable">isScalable</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#isSmoothlyScalable">isSmoothlyScalable</a>().</p></div></p>
+</div><h4 id='method.is_fixed_pitch' class='method'><code>fn <a href='#method.is_fixed_pitch' class='fnname'>is_fixed_pitch</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseIsFixedPitchArgs.html' title='qt_gui::font_database::overloading::FontDatabaseIsFixedPitchArgs'>FontDatabaseIsFixedPitchArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::isFixedPitch</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn is_fixed_pitch(&amp;self, &amp;qt_core::string::String) -&gt; bool</code><br>2) <code>fn is_fixed_pitch(&amp;self, (&amp;qt_core::string::String, &amp;qt_core::string::String)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QFontDatabase::isFixedPitch(const QString&amp; family, const QString&amp; style = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#isFixedPitch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the font that has family <i>family</i> and style <i>style</i> is fixed pitch; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_private_family' class='method'><code>fn <a href='#method.is_private_family' class='fnname'>is_private_family</a>(&amp;self, family: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontDatabase::isPrivateFamily(const QString&amp; family) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#isPrivateFamily">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if and only if the <i>family</i> font family is private.</p>
+<p>This happens, for instance, on OS X and iOS, where the system UI fonts are not accessible to the user. For completeness, <a href="http://doc.qt.io/qt-5/qfontdatabase.html#families">QFontDatabase::families</a>() returns all font families, including the private ones. You should use this function if you are developing a font selection control in order to keep private fonts hidden.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#families">families</a>().</p></div></p>
+</div><h4 id='method.is_scalable' class='method'><code>fn <a href='#method.is_scalable' class='fnname'>is_scalable</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseIsScalableArgs.html' title='qt_gui::font_database::overloading::FontDatabaseIsScalableArgs'>FontDatabaseIsScalableArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::isScalable</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn is_scalable(&amp;self, &amp;qt_core::string::String) -&gt; bool</code><br>2) <code>fn is_scalable(&amp;self, (&amp;qt_core::string::String, &amp;qt_core::string::String)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QFontDatabase::isScalable(const QString&amp; family, const QString&amp; style = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#isScalable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the font that has family <i>family</i> and style <i>style</i> is scalable; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#isBitmapScalable">isBitmapScalable</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#isSmoothlyScalable">isSmoothlyScalable</a>().</p></div></p>
+</div><h4 id='method.is_smoothly_scalable' class='method'><code>fn <a href='#method.is_smoothly_scalable' class='fnname'>is_smoothly_scalable</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseIsSmoothlyScalableArgs.html' title='qt_gui::font_database::overloading::FontDatabaseIsSmoothlyScalableArgs'>FontDatabaseIsSmoothlyScalableArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::isSmoothlyScalable</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn is_smoothly_scalable(&amp;self, &amp;qt_core::string::String) -&gt; bool</code><br>2) <code>fn is_smoothly_scalable(&amp;self, (&amp;qt_core::string::String, &amp;qt_core::string::String)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QFontDatabase::isSmoothlyScalable(const QString&amp; family, const QString&amp; style = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#isSmoothlyScalable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the font that has family <i>family</i> and style <i>style</i> is smoothly scalable; otherwise returns <code>false</code>. If this function returns <code>true</code>, it&#39;s safe to scale this font to any size, and the result will always look attractive.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#isScalable">isScalable</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#isBitmapScalable">isBitmapScalable</a>().</p></div></p>
+</div><h4 id='method.italic' class='method'><code>fn <a href='#method.italic' class='fnname'>italic</a>(&amp;self, family: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>, style: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontDatabase::italic(const QString&amp; family, const QString&amp; style) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#italic">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the font that has family <i>family</i> and style <i>style</i> is italic; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#weight">weight</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#bold">bold</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseNewArgs.html' title='qt_gui::font_database::overloading::FontDatabaseNewArgs'>FontDatabaseNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::QFontDatabase</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::font_database::FontDatabase</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::font_database::FontDatabase&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFontDatabase::QFontDatabase()</code></span></p>
+</div><h4 id='method.point_sizes' class='method'><code>fn <a href='#method.point_sizes' class='fnname'>point_sizes</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabasePointSizesArgs.html' title='qt_gui::font_database::overloading::FontDatabasePointSizesArgs'>FontDatabasePointSizesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::pointSizes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn point_sizes(&amp;mut self, (&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::list::ListCInt&gt;</code><br>2) <code>fn point_sizes(&amp;mut self, (&amp;qt_core::string::String, &amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::list::ListCInt&gt;</code><br>3) <code>fn point_sizes(&amp;mut self, (&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::list::ListCInt</code><br>4) <code>fn point_sizes(&amp;mut self, (&amp;qt_core::string::String, &amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::list::ListCInt</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;int&gt; QFontDatabase::pointSizes(const QString&amp; family, const QString&amp; style = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#pointSizes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of the point sizes available for the font that has family <i>family</i> and style <i>styleName</i>. The list may be empty.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#smoothSizes">smoothSizes</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#standardSizes">standardSizes</a>().</p></div></p>
+</div><h4 id='method.remove_all_application_fonts' class='method'><code>fn <a href='#method.remove_all_application_fonts' class='fnname'>remove_all_application_fonts</a>() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QFontDatabase::removeAllApplicationFonts()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#removeAllApplicationFonts">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes all application-local fonts previously added using <a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFont">addApplicationFont</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a>().</p>
+<p>Returns <code>true</code> if unloading of the fonts succeeded; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#removeApplicationFont">removeApplicationFont</a>(), <a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFont">addApplicationFont</a>(), and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a>().</p></div></p>
+</div><h4 id='method.remove_application_font' class='method'><code>fn <a href='#method.remove_application_font' class='fnname'>remove_application_font</a>(id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QFontDatabase::removeApplicationFont(int id)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#removeApplicationFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the previously loaded application font identified by <i>id</i>. Returns <code>true</code> if unloading of the font succeeded; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#removeAllApplicationFonts">removeAllApplicationFonts</a>(), <a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFont">addApplicationFont</a>(), and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a>().</p></div></p>
+</div><h4 id='method.smooth_sizes' class='method'><code>fn <a href='#method.smooth_sizes' class='fnname'>smooth_sizes</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseSmoothSizesArgs.html' title='qt_gui::font_database::overloading::FontDatabaseSmoothSizesArgs'>FontDatabaseSmoothSizesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::smoothSizes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn smooth_sizes(&amp;mut self, (&amp;qt_core::string::String, &amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::list::ListCInt&gt;</code><br>2) <code>fn smooth_sizes(&amp;mut self, (&amp;qt_core::string::String, &amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::list::ListCInt</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;int&gt; QFontDatabase::smoothSizes(const QString&amp; family, const QString&amp; style)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#smoothSizes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the point sizes of a font that has family <i>family</i> and style <i>styleName</i> that will look attractive. The list may be empty. For non-scalable fonts and bitmap scalable fonts, this function is equivalent to <a href="http://doc.qt.io/qt-5/qfontdatabase.html#pointSizes">pointSizes</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#pointSizes">pointSizes</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#standardSizes">standardSizes</a>().</p></div></p>
+</div><h4 id='method.standard_sizes' class='method'><code>fn <a href='#method.standard_sizes' class='fnname'>standard_sizes</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseStandardSizesArgs.html' title='qt_gui::font_database::overloading::FontDatabaseStandardSizesArgs'>FontDatabaseStandardSizesArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::standardSizes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn standard_sizes(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::list::ListCInt&gt;</code><br>2) <code>fn standard_sizes(cpp_utils::AsStruct) -&gt; qt_core::list::ListCInt</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;int&gt; QFontDatabase::standardSizes()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#standardSizes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of standard font sizes.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#smoothSizes">smoothSizes</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#pointSizes">pointSizes</a>().</p></div></p>
+</div><h4 id='method.style_string' class='method'><code>fn <a href='#method.style_string' class='fnname'>style_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseStyleStringArgs.html' title='qt_gui::font_database::overloading::FontDatabaseStyleStringArgs'>FontDatabaseStyleStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::styleString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn style_string(&amp;mut self, (&amp;::font::Font, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn style_string(&amp;mut self, (&amp;::font::Font, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFontDatabase::styleString(const QFont&amp; font)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#styleString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a string that describes the style of the <i>font</i>. For example, &quot;Bold Italic&quot;, &quot;Bold&quot;, &quot;Italic&quot; or &quot;Normal&quot;. An empty string may be returned.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn style_string(&amp;mut self, (&amp;::font_info::FontInfo, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn style_string(&amp;mut self, (&amp;::font_info::FontInfo, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFontDatabase::styleString(const QFontInfo&amp; fontInfo)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#styleString-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a string that describes the style of the <i>fontInfo</i>. For example, &quot;Bold Italic&quot;, &quot;Bold&quot;, &quot;Italic&quot; or &quot;Normal&quot;. An empty string may be returned.</p></div></p>
+</div><h4 id='method.styles' class='method'><code>fn <a href='#method.styles' class='fnname'>styles</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseStylesArgs.html' title='qt_gui::font_database::overloading::FontDatabaseStylesArgs'>FontDatabaseStylesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::styles</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn styles(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn styles(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>QStringList QFontDatabase::styles(const QString&amp; family) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#styles">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of the styles available for the font family <i>family</i>. Some example styles: &quot;Light&quot;, &quot;Light Italic&quot;, &quot;Bold&quot;, &quot;Oblique&quot;, &quot;Demi&quot;. The list may be empty.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#families">families</a>().</p></div></p>
+</div><h4 id='method.supports_threaded_font_rendering' class='method'><code>fn <a href='#method.supports_threaded_font_rendering' class='fnname'>supports_threaded_font_rendering</a>() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QFontDatabase::supportsThreadedFontRendering()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase-obsolete.html#supportsThreadedFontRendering">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if font rendering is supported outside the GUI thread, false otherwise. In other words, a return value of false means that all <a href="http://doc.qt.io/qt-5/qpainter.html#drawText">QPainter::drawText</a>() calls outside the GUI thread will not produce readable output.</p>
+<p>As of 5.0, always returns <code>true</code>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/threads-modules.html#painting-in-threads">Painting In Threads</a>.</p></div></p>
+</div><h4 id='method.system_font' class='method'><code>fn <a href='#method.system_font' class='fnname'>system_font</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseSystemFontArgs.html' title='qt_gui::font_database::overloading::FontDatabaseSystemFontArgs'>FontDatabaseSystemFontArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::systemFont</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn system_font((::font_database::SystemFont, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>2) <code>fn system_font((::font_database::SystemFont, cpp_utils::AsStruct)) -&gt; ::font::Font</code><br>
+C++ method: <span style='color: green;'><code>static QFont QFontDatabase::systemFont(QFontDatabase::SystemFont type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#systemFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the most adequate font for a given <i>type</i> case for proper integration with the system&#39;s look and feel.</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qguiapplication.html#font">QGuiApplication::font</a>().</p></div></p>
+</div><h4 id='method.weight' class='method'><code>fn <a href='#method.weight' class='fnname'>weight</a>(&amp;self, family: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>, style: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QFontDatabase::weight(const QString&amp; family, const QString&amp; style) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#weight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the weight of the font that has family <i>family</i> and style <i>style</i>. If there is no such family and style combination, returns -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#italic">italic</a>() and <a href="http://doc.qt.io/qt-5/qfontdatabase.html#bold">bold</a>().</p></div></p>
+</div><h4 id='method.writing_system_name' class='method'><code>fn <a href='#method.writing_system_name' class='fnname'>writing_system_name</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseWritingSystemNameArgs.html' title='qt_gui::font_database::overloading::FontDatabaseWritingSystemNameArgs'>FontDatabaseWritingSystemNameArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::writingSystemName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn writing_system_name((::font_database::WritingSystem, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn writing_system_name((::font_database::WritingSystem, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QFontDatabase::writingSystemName(QFontDatabase::WritingSystem writingSystem)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#writingSystemName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the names the <i>writingSystem</i> (e.g. for displaying to the user in a dialog).</p></div></p>
+</div><h4 id='method.writing_system_sample' class='method'><code>fn <a href='#method.writing_system_sample' class='fnname'>writing_system_sample</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseWritingSystemSampleArgs.html' title='qt_gui::font_database::overloading::FontDatabaseWritingSystemSampleArgs'>FontDatabaseWritingSystemSampleArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::writingSystemSample</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn writing_system_sample((::font_database::WritingSystem, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn writing_system_sample((::font_database::WritingSystem, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QFontDatabase::writingSystemSample(QFontDatabase::WritingSystem writingSystem)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#writingSystemSample">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a string with sample characters from <i>writingSystem</i>.</p></div></p>
+</div><h4 id='method.writing_systems' class='method'><code>fn <a href='#method.writing_systems' class='fnname'>writing_systems</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_database/overloading/trait.FontDatabaseWritingSystemsArgs.html' title='qt_gui::font_database::overloading::FontDatabaseWritingSystemsArgs'>FontDatabaseWritingSystemsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontDatabase::writingSystems</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn writing_systems(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListWritingSystem&gt;</code><br>2) <code>fn writing_systems(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListWritingSystem</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QFontDatabase::WritingSystem&gt; QFontDatabase::writingSystems() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#writingSystems">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a sorted list of the available writing systems. This is list generated from information about all installed fonts on the system.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#families">families</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn writing_systems(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListWritingSystem&gt;</code><br>2) <code>fn writing_systems(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::list::ListWritingSystem</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QFontDatabase::WritingSystem&gt; QFontDatabase::writingSystems(const QString&amp; family) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontdatabase.html#writingSystems-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a sorted list of the writing systems supported by a given font <i>family</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontdatabase.html#families">families</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/font_database/struct.FontDatabase.html' title='qt_gui::font_database::FontDatabase'>FontDatabase</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-71407' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font_database.rs.html#40-44' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/font_database/struct.FontDatabase.html' title='qt_gui::font_database::FontDatabase'>FontDatabase</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/font_database/struct.FontDatabase.html' title='qt_gui::font_database::FontDatabase'>FontDatabase</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-71509' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font_database.rs.html#420-427' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QFontDatabase::~QFontDatabase()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/font_database/struct.FontDatabase.html' title='qt_gui::font_database::FontDatabase'>FontDatabase</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-71512' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font_database.rs.html#429-433' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

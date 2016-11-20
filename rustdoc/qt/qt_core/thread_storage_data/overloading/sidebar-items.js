@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ThreadStorageDataNewArgs","This trait represents a set of arguments accepted by ThreadStorageData::new method."]]});

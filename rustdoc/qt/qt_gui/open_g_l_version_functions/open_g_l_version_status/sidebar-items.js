@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["OpenGLStatus","C++ type: <span style='color: green;'>```QOpenGLVersionStatus::OpenGLStatus```</span>"]]});

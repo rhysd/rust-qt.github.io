@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ByteArrayDataPtr","C++ type: <span style='color: green;'>```QByteArrayDataPtr```</span>"]]});

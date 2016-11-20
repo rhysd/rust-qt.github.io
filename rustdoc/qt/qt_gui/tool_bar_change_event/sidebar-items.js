@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ToolBarChangeEvent","C++ type: <span style='color: green;'>```QToolBarChangeEvent```</span>"]]});

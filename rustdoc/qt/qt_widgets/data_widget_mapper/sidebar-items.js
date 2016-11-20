@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SubmitPolicy","C++ type: <span style='color: green;'>```QDataWidgetMapper::SubmitPolicy```</span>"]],"mod":[["overloading",""]],"struct":[["DataWidgetMapper","C++ type: <span style='color: green;'>```QDataWidgetMapper```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["StyleOptionProgressBarNewArgs","This trait represents a set of arguments accepted by StyleOptionProgressBar::new method."]]});

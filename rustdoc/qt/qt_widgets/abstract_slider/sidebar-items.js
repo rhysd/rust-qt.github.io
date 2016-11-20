@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SliderAction","C++ type: <span style='color: green;'>```QAbstractSlider::SliderAction```</span>"],["SliderChange","C++ type: <span style='color: green;'>```QAbstractSlider::SliderChange```</span>"]],"mod":[["overloading",""]],"struct":[["AbstractSlider","C++ type: <span style='color: green;'>```QAbstractSlider```</span>"]]});

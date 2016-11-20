@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["AncestorMode","C++ type: <span style='color: green;'>```QWindow::AncestorMode```</span>"],["Visibility","C++ type: <span style='color: green;'>```QWindow::Visibility```</span>"]],"mod":[["overloading",""]],"struct":[["Window","C++ type: <span style='color: green;'>```QWindow```</span>"]]});

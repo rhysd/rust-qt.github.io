@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AccessibleImageInterface","C++ type: <span style='color: green;'>```QAccessibleImageInterface```</span>"]]});

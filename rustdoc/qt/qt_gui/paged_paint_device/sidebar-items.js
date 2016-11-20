@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["PageSize","C++ type: <span style='color: green;'>```QPagedPaintDevice::PageSize```</span>"]],"mod":[["overloading",""]],"struct":[["Margins","C++ type: <span style='color: green;'>```QPagedPaintDevice::Margins```</span>"],["PagedPaintDevice","C++ type: <span style='color: green;'>```QPagedPaintDevice```</span>"]]});

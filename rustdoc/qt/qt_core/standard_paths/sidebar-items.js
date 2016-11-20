@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["LocateOption","C++ type: <span style='color: green;'>```QStandardPaths::LocateOption```</span>"],["StandardLocation","C++ type: <span style='color: green;'>```QStandardPaths::StandardLocation```</span>"]],"mod":[["overloading",""]],"struct":[["StandardPaths","C++ type: <span style='color: green;'>```QStandardPaths```</span>"]]});

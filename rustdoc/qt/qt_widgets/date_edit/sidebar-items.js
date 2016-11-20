@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["DateEdit","C++ type: <span style='color: green;'>```QDateEdit```</span>"]]});

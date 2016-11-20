@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["CursorMode","C++ type: <span style='color: green;'>```QTextLayout::CursorMode```</span>"]],"mod":[["overloading",""]],"struct":[["FormatRange","C++ type: <span style='color: green;'>```QTextLayout::FormatRange```</span>"],["TextLayout","C++ type: <span style='color: green;'>```QTextLayout```</span>"]]});

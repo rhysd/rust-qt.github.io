@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Url` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Url">
+
+    <title>qt_core::url::Url - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>url</a></p><script>window.sidebarCurrent = {name: 'Url', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>url</a>::<wbr><a class='struct' href=''>Url</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-156770' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#116-118' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Url {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QUrl</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> class provides a convenient interface for working with URLs.</p>
+<p>It can parse and construct URLs in both encoded and unencoded form. <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> also has support for internationalized domain names (IDNs).</p>
+<p>The most common way to use <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> is to initialize it via the constructor by passing a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>. Otherwise, <a href="http://doc.qt.io/qt-5/qurl.html#setUrl">setUrl</a>() can also be used.</p>
+<p>URLs can be represented in two forms: encoded or unencoded. The unencoded representation is suitable for showing to users, but the encoded representation is typically what you would send to a web server. For example, the unencoded URL &quot;http://bühler.example.com/List of applicants.xml&quot; would be sent to the server as &quot;<a href="http://xn--bhler-kva.example.com/List%20of%20applicants.xml">http://xn--bhler-kva.example.com/List%20of%20applicants.xml</a>&quot;.</p>
+<p>A URL can also be constructed piece by piece by calling <a href="http://doc.qt.io/qt-5/qurl.html#setScheme">setScheme</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setUserName">setUserName</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setPassword">setPassword</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setHost">setHost</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setPort">setPort</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setPath">setPath</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setQuery">setQuery</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#setFragment">setFragment</a>(). Some convenience functions are also available: <a href="http://doc.qt.io/qt-5/qurl.html#setAuthority">setAuthority</a>() sets the user name, password, host and port. <a href="http://doc.qt.io/qt-5/qurl.html#setUserInfo">setUserInfo</a>() sets the user name and password at once.</p>
+<p>Call <a href="http://doc.qt.io/qt-5/qurl.html#isValid">isValid</a>() to check if the URL is valid. This can be done at any point during the constructing of a URL. If <a href="http://doc.qt.io/qt-5/qurl.html#isValid">isValid</a>() returns <code>false</code>, you should <a href="http://doc.qt.io/qt-5/qurl.html#clear">clear</a>() the URL before proceeding, or start over by parsing a new URL with <a href="http://doc.qt.io/qt-5/qurl.html#setUrl">setUrl</a>().</p>
+<p>Constructing a query is particularly convenient through the use of the <a href="http://doc.qt.io/qt-5/qurlquery.html">QUrlQuery</a> class and its methods <a href="http://doc.qt.io/qt-5/qurlquery.html#setQueryItems">QUrlQuery::setQueryItems</a>(), <a href="http://doc.qt.io/qt-5/qurlquery.html#addQueryItem">QUrlQuery::addQueryItem</a>() and <a href="http://doc.qt.io/qt-5/qurlquery.html#removeQueryItem">QUrlQuery::removeQueryItem</a>(). Use <a href="http://doc.qt.io/qt-5/qurlquery.html#setQueryDelimiters">QUrlQuery::setQueryDelimiters</a>() to customize the delimiters used for generating the query string.</p>
+<p>For the convenience of generating encoded URL strings or query strings, there are two static functions called <a href="http://doc.qt.io/qt-5/qurl.html#fromPercentEncoding">fromPercentEncoding</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#toPercentEncoding">toPercentEncoding</a>() which deal with percent encoding and decoding of <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> objects.</p>
+<p>Calling <a href="http://doc.qt.io/qt-5/qurl.html#isRelative">isRelative</a>() will tell whether or not the URL is relative. A relative URL can be resolved by passing it as argument to <a href="http://doc.qt.io/qt-5/qurl.html#resolved">resolved</a>(), which returns an absolute URL. <a href="http://doc.qt.io/qt-5/qurl.html#isParentOf">isParentOf</a>() is used for determining whether one URL is a parent of another.</p>
+<p><a href="http://doc.qt.io/qt-5/qurl.html#fromLocalFile">fromLocalFile</a>() constructs a <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> by parsing a local file path. <a href="http://doc.qt.io/qt-5/qurl.html#toLocalFile">toLocalFile</a>() converts a URL to a local file path.</p>
+<p>The human readable representation of the URL is fetched with <a href="http://doc.qt.io/qt-5/qurl.html#toString">toString</a>(). This representation is appropriate for displaying a URL to a user in unencoded form. The encoded form however, as returned by <a href="http://doc.qt.io/qt-5/qurl.html#toEncoded">toEncoded</a>(), is for internal use, passing to web servers, mail clients and so on. Both forms are technically correct and represent the same URL unambiguously -- in fact, passing either form to <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a>&#39;s constructor or to <a href="http://doc.qt.io/qt-5/qurl.html#setUrl">setUrl</a>() will yield the same <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> object.</p>
+<p><a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> conforms to the URI specification from <a href="http://www.rfc-editor.org/rfc/rfc3986.txt">RFC 3986</a> (Uniform Resource Identifier: Generic Syntax), and includes scheme extensions from <a href="http://www.rfc-editor.org/rfc/rfc1738.txt">RFC 1738</a> (Uniform Resource Locators). Case folding rules in <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> conform to <a href="http://www.rfc-editor.org/rfc/rfc3491.txt">RFC 3491</a> (Nameprep: A Stringprep Profile for Internationalized Domain Names (IDN)). It is also compatible with the <a href="http://freedesktop.org/wiki/Specifications/file-uri-spec/">file URI specification</a> from freedesktop.org, provided that the locale encodes file names using UTF-8 (required by IDN).</p>
+<a name="error-checking"></a>
+<h4>Error checking</h4>
+<p><a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> is capable of detecting many errors in URLs while parsing it or when components of the URL are set with individual setter methods (like <a href="http://doc.qt.io/qt-5/qurl.html#setScheme">setScheme</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setHost">setHost</a>() or <a href="http://doc.qt.io/qt-5/qurl.html#setPath">setPath</a>()). If the parsing or setter function is successful, any previously recorded error conditions will be discarded.</p>
+<p>By default, <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> setter methods operate in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::TolerantMode</a>, which means they accept some common mistakes and mis-representation of data. An alternate method of parsing is <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::StrictMode</a>, which applies further checks. See <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::ParsingMode</a> for a description of the difference of the parsing modes.</p>
+<p><a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> only checks for conformance with the URL specification. It does not try to verify that high-level protocol URLs are in the format they are expected to be by handlers elsewhere. For example, the following URIs are all considered valid by <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a>, even if they do not make sense when used:</p>
+<ul>
+<li>&quot;http:/filename.html&quot;</li>
+<li>&quot;mailto://example.com&quot;</li>
+</ul>
+<p>When the parser encounters an error, it signals the event by making <a href="http://doc.qt.io/qt-5/qurl.html#isValid">isValid</a>() return false and <a href="http://doc.qt.io/qt-5/qurl.html#toString">toString</a>() / <a href="http://doc.qt.io/qt-5/qurl.html#toEncoded">toEncoded</a>() return an empty string. If it is necessary to show the user the reason why the URL failed to parse, the error condition can be obtained from <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> by calling <a href="http://doc.qt.io/qt-5/qurl.html#errorString">errorString</a>(). Note that this message is highly technical and may not make sense to end-users.</p>
+<p><a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> is capable of recording only one error condition. If more than one error is found, it is undefined which error is reported.</p>
+<a name="character-conversions"></a>
+<h4>Character Conversions</h4>
+<p>Follow these rules to avoid erroneous character conversion when dealing with URLs and strings:</p>
+<ul>
+<li>When creating an <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> to contain a URL from a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> or a char*, always use <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>().</li>
+</ul></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-156775' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#126-1028' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.adjusted' class='method'><code>fn <a href='#method.adjusted' class='fnname'>adjusted</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlAdjustedArgs.html' title='qt_core::url::overloading::UrlAdjustedArgs'>UrlAdjustedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::adjusted</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn adjusted(&amp;self, (&amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>2) <code>fn adjusted(&amp;self, (&amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>
+C++ method: <span style='color: green;'><code>QUrl QUrl::adjusted(QUrlTwoFlags&lt;QUrl::UrlFormattingOption, QUrl::ComponentFormattingOption&gt; options) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#adjusted">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an adjusted version of the URL. The output can be customized by passing flags with <i>options</i>.</p>
+<p>The encoding options from <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::ComponentFormattingOption</a> don&#39;t make much sense for this method, nor does <a href="http://doc.qt.io/qt-5/qurl.html#UrlFormattingOption-enum">QUrl::PreferLocalFile</a>.</p>
+<p>This is always equivalent to <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a>(url.<a href="http://doc.qt.io/qt-5/qurl.html#toString">toString</a>(options)).</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#UrlFormattingOption-enum">FormattingOptions</a>, <a href="http://doc.qt.io/qt-5/qurl.html#toEncoded">toEncoded</a>(), and <a href="http://doc.qt.io/qt-5/qurl.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.authority' class='method'><code>fn <a href='#method.authority' class='fnname'>authority</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlAuthorityArgs.html' title='qt_core::url::overloading::UrlAuthorityArgs'>UrlAuthorityArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::authority</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn authority(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn authority(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn authority(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn authority(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::authority(QFlags&lt;QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#authority">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the authority of the URL if it is defined; otherwise an empty string is returned.</p>
+<p>This function returns an unambiguous value, which may contain that characters still percent-encoded, plus some control sequences not representable in decoded form in <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>The <i>options</i> argument controls how to format the user info component. The value of <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> is not permitted in this function. If you need to obtain fully decoded data, call <a href="http://doc.qt.io/qt-5/qurl.html#userName">userName</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#password">password</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#host">host</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#port">port</a>() individually.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setAuthority">setAuthority</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#userInfo">userInfo</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#userName">userName</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#password">password</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#host">host</a>(), and <a href="http://doc.qt.io/qt-5/qurl.html#port">port</a>().</p></div></p>
+</div><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QUrl::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Resets the content of the <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a>. After calling this function, the <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> is equal to one that has been constructed with the default empty constructor.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#isEmpty">isEmpty</a>().</p></div></p>
+</div><h4 id='method.detach' class='method'><code>fn <a href='#method.detach' class='fnname'>detach</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QUrl::detach()</code></span></p>
+</div><h4 id='method.error_string' class='method'><code>fn <a href='#method.error_string' class='fnname'>error_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlErrorStringArgs.html' title='qt_core::url::overloading::UrlErrorStringArgs'>UrlErrorStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::errorString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn error_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn error_string(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::errorString() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#errorString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an error message if the last operation that modified this <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> object ran into a parsing error. If no error was detected, this function returns an empty string and <a href="http://doc.qt.io/qt-5/qurl.html#isValid">isValid</a>() returns <code>true</code>.</p>
+<p>The error message returned by this function is technical in nature and may not be understood by end users. It is mostly useful to developers trying to understand why <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> will not accept some input.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::ParsingMode</a>.</p></div></p>
+</div><h4 id='method.file_name' class='method'><code>fn <a href='#method.file_name' class='fnname'>file_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlFileNameArgs.html' title='qt_core::url::overloading::UrlFileNameArgs'>UrlFileNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::fileName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn file_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn file_name(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn file_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn file_name(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::fileName(QFlags&lt;QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#fileName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the file, excluding the directory path.</p>
+<p>Note that, if this <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> object is given a path ending in a slash, the name of the file is considered empty.</p>
+<p>If the path doesn&#39;t contain any slash, it is fully returned as the fileName.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qurl.html#QUrl">QUrl</a></span> <a href="http://doc.qt.io/qt-5/qurl.html#url">url</a>(<span class="string">&quot;<a href="http://qt-project.org/support/file.html">http://qt-project.org/support/file.html</a>&quot;</span>);
+<span class="comment">// url.adjusted(RemoveFilename) == &quot;<a href="http://qt-project.org/support/">http://qt-project.org/support/</a>&quot;</span>
+<span class="comment">// url.fileName() == &quot;file.html&quot;</span></pre>
+<p>The <i>options</i> argument controls how to format the file name component. All values produce an unambiguous result. With <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a>, all percent-encoded sequences are decoded; otherwise, the returned value may contain some percent-encoded sequences for some control sequences not representable in decoded form in <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#path">path</a>().</p></div></p>
+</div><h4 id='method.fragment' class='method'><code>fn <a href='#method.fragment' class='fnname'>fragment</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlFragmentArgs.html' title='qt_core::url::overloading::UrlFragmentArgs'>UrlFragmentArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::fragment</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn fragment(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn fragment(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn fragment(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn fragment(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::fragment(QFlags&lt;QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#fragment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the fragment of the URL. To determine if the parsed URL contained a fragment, use <a href="http://doc.qt.io/qt-5/qurl.html#hasFragment">hasFragment</a>().</p>
+<p>The <i>options</i> argument controls how to format the fragment component. All values produce an unambiguous result. With <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a>, all percent-encoded sequences are decoded; otherwise, the returned value may contain some percent-encoded sequences for some control sequences not representable in decoded form in <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> may cause data loss if those non-representable sequences are present. It is recommended to use that value when the result will be used in a non-URL context.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setFragment">setFragment</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#hasFragment">hasFragment</a>().</p></div></p>
+</div><h4 id='method.from_ace' class='method'><code>fn <a href='#method.from_ace' class='fnname'>from_ace</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlFromAceArgs.html' title='qt_core::url::overloading::UrlFromAceArgs'>UrlFromAceArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::fromAce</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_ace((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn from_ace((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QUrl::fromAce(const QByteArray&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#fromAce">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the Unicode form of the given domain name <i>domain</i>, which is encoded in the ASCII Compatible Encoding (ACE). The result of this function is considered equivalent to <i>domain</i>.</p>
+<p>If the value in <i>domain</i> cannot be encoded, it will be converted to <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> and returned.</p>
+<p>The ASCII Compatible Encoding (ACE) is defined by RFC 3490, RFC 3491 and RFC 3492. It is part of the Internationalizing Domain Names in Applications (IDNA) specification, which allows for domain names (like <code>&quot;example.com&quot;</code>) to be written using international characters.</p>
+<p>This function was introduced in  Qt 4.2.</p></div></p>
+</div><h4 id='method.from_encoded' class='method'><code>fn <a href='#method.from_encoded' class='fnname'>from_encoded</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlFromEncodedArgs.html' title='qt_core::url::overloading::UrlFromEncodedArgs'>UrlFromEncodedArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::fromEncoded</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_encoded((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>2) <code>fn from_encoded((&amp;::byte_array::ByteArray, ::url::ParsingMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>3) <code>fn from_encoded((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>4) <code>fn from_encoded((&amp;::byte_array::ByteArray, ::url::ParsingMode, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>
+C++ method: <span style='color: green;'><code>static QUrl QUrl::fromEncoded(const QByteArray&amp; url, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#fromEncoded">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Parses <i>input</i> and returns the corresponding <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a>. <i>input</i> is assumed to be in encoded form, containing only ASCII characters.</p>
+<p>Parses the URL using <i>parsingMode</i>. See <a href="http://doc.qt.io/qt-5/qurl.html#setUrl">setUrl</a>() for more information on this parameter. <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::DecodedMode</a> is not permitted in this context.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#toEncoded">toEncoded</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#setUrl">setUrl</a>().</p></div></p>
+</div><h4 id='method.from_local_file' class='method'><code>fn <a href='#method.from_local_file' class='fnname'>from_local_file</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlFromLocalFileArgs.html' title='qt_core::url::overloading::UrlFromLocalFileArgs'>UrlFromLocalFileArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::fromLocalFile</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_local_file((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>2) <code>fn from_local_file((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>
+C++ method: <span style='color: green;'><code>static QUrl QUrl::fromLocalFile(const QString&amp; localfile)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#fromLocalFile">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> representation of <i>localFile</i>, interpreted as a local file. This function accepts paths separated by slashes as well as the native separator for this platform.</p>
+<p>This function also accepts paths with a doubled leading slash (or backslash) to indicate a remote file, as in &quot;//servername/path/to/file.txt&quot;. Note that only certain platforms can actually open this file using <a href="http://doc.qt.io/qt-5/qfile.html#open">QFile::open</a>().</p>
+<p>An empty <i>localFile</i> leads to an empty URL (since Qt 5.4).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#toLocalFile">toLocalFile</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#isLocalFile">isLocalFile</a>(), and <a href="http://doc.qt.io/qt-5/qdir.html#toNativeSeparators">QDir::toNativeSeparators</a>().</p></div></p>
+</div><h4 id='method.from_percent_encoding' class='method'><code>fn <a href='#method.from_percent_encoding' class='fnname'>from_percent_encoding</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlFromPercentEncodingArgs.html' title='qt_core::url::overloading::UrlFromPercentEncodingArgs'>UrlFromPercentEncodingArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::fromPercentEncoding</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_percent_encoding((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn from_percent_encoding((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QUrl::fromPercentEncoding(const QByteArray&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#fromPercentEncoding">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a decoded copy of <i>input</i>. <i>input</i> is first decoded from percent encoding, then converted from UTF-8 to unicode.</p></div></p>
+</div><h4 id='method.from_string_list' class='method'><code>fn <a href='#method.from_string_list' class='fnname'>from_string_list</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlFromStringListArgs.html' title='qt_core::url::overloading::UrlFromStringListArgs'>UrlFromStringListArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::fromStringList</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_string_list((&amp;::string_list::StringList, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListUrlRef&gt;</code><br>2) <code>fn from_string_list((&amp;::string_list::StringList, ::url::ParsingMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListUrlRef&gt;</code><br>3) <code>fn from_string_list((&amp;::string_list::StringList, cpp_utils::AsStruct)) -&gt; ::list::ListUrlRef</code><br>4) <code>fn from_string_list((&amp;::string_list::StringList, ::url::ParsingMode, cpp_utils::AsStruct)) -&gt; ::list::ListUrlRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QUrl&gt; QUrl::fromStringList(const QStringList&amp; uris, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#fromStringList">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts a list of strings representing <i>urls</i> into a list of urls, using <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a>(str, <i>mode</i>). Note that this means all strings must be urls, not for instance local paths.</p>
+<p>This function was introduced in  Qt 5.1.</p></div></p>
+</div><h4 id='method.from_user_input' class='method'><code>fn <a href='#method.from_user_input' class='fnname'>from_user_input</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlFromUserInputArgs.html' title='qt_core::url::overloading::UrlFromUserInputArgs'>UrlFromUserInputArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::fromUserInput</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn from_user_input((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>2) <code>fn from_user_input((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>
+C++ method: <span style='color: green;'><code>static QUrl QUrl::fromUserInput(const QString&amp; userInput)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#fromUserInput">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a valid URL from a user supplied <i>userInput</i> string if one can be deducted. In the case that is not possible, an invalid <a href="http://doc.qt.io/qt-5/qurl.html#QUrl">QUrl</a>() is returned.</p>
+<p>Most applications that can browse the web, allow the user to input a URL in the form of a plain string. This string can be manually typed into a location bar, obtained from the clipboard, or passed in via command line arguments.</p>
+<p>When the string is not already a valid URL, a best guess is performed, making various web related assumptions.</p>
+<p>In the case the string corresponds to a valid file path on the system, a file:// URL is constructed, using <a href="http://doc.qt.io/qt-5/qurl.html#fromLocalFile">QUrl::fromLocalFile</a>().</p>
+<p>If that is not the case, an attempt is made to turn the string into a http:// or ftp:// URL. The latter in the case the string starts with &#39;ftp&#39;. The result is then passed through <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a>&#39;s tolerant parser, and in the case or success, a valid <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> is returned, or else a <a href="http://doc.qt.io/qt-5/qurl.html#QUrl">QUrl</a>().</p>
+<a name="examples"></a>
+<h4>Examples:</h4>
+<ul>
+<li>qt-project.org becomes <a href="http://qt-project.org">http://qt-project.org</a></li>
+<li>ftp.qt-project.org becomes <a href="ftp://ftp.qt-project.org">ftp://ftp.qt-project.org</a></li>
+<li>hostname becomes http://hostname</li>
+<li>/home/user/test.html becomes file:///home/user/test.html</li>
+</ul>
+<p>This function was introduced in  Qt 4.6.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn from_user_input((&amp;::string::String, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>2) <code>fn from_user_input((&amp;::string::String, &amp;::string::String, ::flags::Flags&lt;::url::UserInputResolutionOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>3) <code>fn from_user_input((&amp;::string::String, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>4) <code>fn from_user_input((&amp;::string::String, &amp;::string::String, ::flags::Flags&lt;::url::UserInputResolutionOption&gt;, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>
+C++ method: <span style='color: green;'><code>static QUrl QUrl::fromUserInput(const QString&amp; userInput, const QString&amp; workingDirectory, QFlags&lt;QUrl::UserInputResolutionOption&gt; options = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#fromUserInput-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a valid URL from a user supplied <i>userInput</i> string if one can be deducted. In the case that is not possible, an invalid <a href="http://doc.qt.io/qt-5/qurl.html#QUrl">QUrl</a>() is returned.</p>
+<p>This overload takes a <i>workingDirectory</i> path, in order to be able to handle relative paths. This is especially useful when handling command line arguments. If <i>workingDirectory</i> is empty, no handling of relative paths will be done, so this method will behave like its one argument overload.</p>
+<p>By default, an input string that looks like a relative path will only be treated as such if the file actually exists in the given working directory.</p>
+<p>If the application can handle files that don&#39;t exist yet, it should pass the flag <a href="http://doc.qt.io/qt-5/qurl.html#UserInputResolutionOption-enum">AssumeLocalFile</a> in <i>options</i>.</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.has_fragment' class='method'><code>fn <a href='#method.has_fragment' class='fnname'>has_fragment</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::hasFragment() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#hasFragment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this URL contains a fragment (i.e., if # was seen on it).</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#fragment">fragment</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#setFragment">setFragment</a>().</p></div></p>
+</div><h4 id='method.has_query' class='method'><code>fn <a href='#method.has_query' class='fnname'>has_query</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::hasQuery() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#hasQuery">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this URL contains a Query (i.e., if ? was seen on it).</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setQuery">setQuery</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#query">query</a>(), and <a href="http://doc.qt.io/qt-5/qurl.html#hasFragment">hasFragment</a>().</p></div></p>
+</div><h4 id='method.host' class='method'><code>fn <a href='#method.host' class='fnname'>host</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlHostArgs.html' title='qt_core::url::overloading::UrlHostArgs'>UrlHostArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::host</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn host(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn host(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn host(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn host(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::host(QFlags&lt;QUrl::ComponentFormattingOption&gt; arg1 = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#host">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the host of the URL if it is defined; otherwise an empty string is returned.</p>
+<p>The <i>options</i> argument controls how the hostname will be formatted. The <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::EncodeUnicode</a> option will cause this function to return the hostname in the ASCII-Compatible Encoding (ACE) form, which is suitable for use in channels that are not 8-bit clean or that require the legacy hostname (such as DNS requests or in HTTP request headers). If that flag is not present, this function returns the International Domain Name (IDN) in Unicode form, according to the list of permissible top-level domains (see <a href="http://doc.qt.io/qt-5/qurl.html#idnWhitelist">idnWhitelist</a>()).</p>
+<p>All other flags are ignored. Host names cannot contain control or percent characters, so the returned value can be considered fully decoded.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setHost">setHost</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#idnWhitelist">idnWhitelist</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setIdnWhitelist">setIdnWhitelist</a>(), and <a href="http://doc.qt.io/qt-5/qurl.html#authority">authority</a>().</p></div></p>
+</div><h4 id='method.idn_whitelist' class='method'><code>fn <a href='#method.idn_whitelist' class='fnname'>idn_whitelist</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlIdnWhitelistArgs.html' title='qt_core::url::overloading::UrlIdnWhitelistArgs'>UrlIdnWhitelistArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::idnWhitelist</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn idn_whitelist(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_list::StringList&gt;</code><br>2) <code>fn idn_whitelist(cpp_utils::AsStruct) -&gt; ::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>static QStringList QUrl::idnWhitelist()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#idnWhitelist">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current whitelist of top-level domains that are allowed to have non-ASCII characters in their compositions.</p>
+<p>See <a href="http://doc.qt.io/qt-5/qurl.html#setIdnWhitelist">setIdnWhitelist</a>() for the rationale of this list.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setIdnWhitelist">setIdnWhitelist</a>().</p></div></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::isDetached() const</code></span></p>
+</div><h4 id='method.is_empty' class='method'><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::isEmpty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#isEmpty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the URL has no data; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#clear">clear</a>().</p></div></p>
+</div><h4 id='method.is_local_file' class='method'><code>fn <a href='#method.is_local_file' class='fnname'>is_local_file</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::isLocalFile() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#isLocalFile">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this URL is pointing to a local file path. A URL is a local file path if the scheme is &quot;file&quot;.</p>
+<p>Note that this function considers URLs with hostnames to be local file paths, even if the eventual file path cannot be opened with <a href="http://doc.qt.io/qt-5/qfile.html#open">QFile::open</a>().</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#fromLocalFile">fromLocalFile</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#toLocalFile">toLocalFile</a>().</p></div></p>
+</div><h4 id='method.is_parent_of' class='method'><code>fn <a href='#method.is_parent_of' class='fnname'>is_parent_of</a>(&amp;self, url: &amp;<a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::isParentOf(const QUrl&amp; url) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#isParentOf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this URL is a parent of <i>childUrl</i>. <i>childUrl</i> is a child of this URL if the two URLs share the same scheme and authority, and this URL&#39;s path is a parent of the path of <i>childUrl</i>.</p></div></p>
+</div><h4 id='method.is_relative' class='method'><code>fn <a href='#method.is_relative' class='fnname'>is_relative</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::isRelative() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#isRelative">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the URL is relative; otherwise returns <code>false</code>. A URL is relative reference if its scheme is undefined; this function is therefore equivalent to calling <a href="http://doc.qt.io/qt-5/qurl.html#scheme">scheme</a>().<a href="http://doc.qt.io/qt-5/qurl.html#isEmpty">isEmpty</a>().</p>
+<p>Relative references are defined in RFC 3986 section 4.2.</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the URL is non-empty and valid; otherwise returns <code>false</code>.</p>
+<p>The URL is run through a conformance test. Every part of the URL must conform to the standard encoding rules of the URI standard for the URL to be reported as valid.</p>
+<pre class="cpp">bool checkUrl(<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qurl.html#QUrl">QUrl</a></span> <span class="operator">&amp;</span>url) {
+&#32;   <span class="keyword">if</span> (<span class="operator">!</span>url<span class="operator">.</span>isValid()) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;Invalid URL: %1&quot;</span>)<span class="operator">.</span>arg(url<span class="operator">.</span>toString()));
+&#32;       <span class="keyword">return</span> <span class="keyword">false</span>;
+&#32;   }</p>
+
+<p>&#32;   <span class="keyword">return</span> <span class="keyword">true</span>;
+}</pre></div></p>
+</div><h4 id='method.matches' class='method'><code>fn <a href='#method.matches' class='fnname'>matches</a>(&amp;self, url: &amp;<a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a>, options: &amp;<a class='struct' href='../../qt_core/url_two_flags/struct.UrlTwoFlagsUrlFormattingOptionComponentFormattingOption.html' title='qt_core::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption'>UrlTwoFlagsUrlFormattingOptionComponentFormattingOption</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::matches(const QUrl&amp; url, QUrlTwoFlags&lt;QUrl::UrlFormattingOption, QUrl::ComponentFormattingOption&gt; options) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#matches">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this URL and the given <i>url</i> are equal after applying <i>options</i> to both; otherwise returns <code>false</code>.</p>
+<p>This is equivalent to calling adjusted(options) on both URLs and comparing the resulting urls, but faster.</p>
+<p>This function was introduced in  Qt 5.2.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlNewArgs.html' title='qt_core::url::overloading::UrlNewArgs'>UrlNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::QUrl</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::url::Url</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QUrl::QUrl()</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>2) <code>fn new((&amp;::string::String, ::url::ParsingMode, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>3) <code>fn new((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>4) <code>fn new((&amp;::string::String, ::url::ParsingMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QUrl::QUrl(const QString&amp; url, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::url::Url, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>2) <code>fn new((&amp;::url::Url, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QUrl::QUrl(const QUrl&amp; copy)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlOpAssignArgs.html' title='qt_core::url::overloading::UrlOpAssignArgs'>UrlOpAssignArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::operator=</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_assign(&amp;mut self, &amp;&#39;l1 ::string::String) -&gt; &amp;&#39;l0 mut ::url::Url</code><br>
+C++ method: <span style='color: green;'><code>QUrl&amp; QUrl::operator=(const QString&amp; url)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#operator-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the specified <i>url</i> to this object.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_assign(&amp;mut self, &amp;&#39;l1 ::url::Url) -&gt; &amp;&#39;l0 mut ::url::Url</code><br>
+C++ method: <span style='color: green;'><code>QUrl&amp; QUrl::operator=(const QUrl&amp; copy)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the specified <i>url</i> to this object.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, url: &amp;<a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::operator==(const QUrl&amp; url) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this URL and the given <i>url</i> are equal; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>(&amp;self, url: &amp;<a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::operator&lt;(const QUrl&amp; url) const</code></span></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, url: &amp;<a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QUrl::operator!=(const QUrl&amp; url) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this URL and the given <i>url</i> are not equal; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.password' class='method'><code>fn <a href='#method.password' class='fnname'>password</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlPasswordArgs.html' title='qt_core::url::overloading::UrlPasswordArgs'>UrlPasswordArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::password</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn password(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn password(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn password(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn password(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::password(QFlags&lt;QUrl::ComponentFormattingOption&gt; arg1 = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#password">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the password of the URL if it is defined; otherwise an empty string is returned.</p>
+<p>The <i>options</i> argument controls how to format the user name component. All values produce an unambiguous result. With <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a>, all percent-encoded sequences are decoded; otherwise, the returned value may contain some percent-encoded sequences for some control sequences not representable in decoded form in <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> may cause data loss if those non-representable sequences are present. It is recommended to use that value when the result will be used in a non-URL context, such as setting in <a href="http://doc.qt.io/qt-5/qauthenticator.html">QAuthenticator</a> or negotiating a login.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setPassword">setPassword</a>().</p></div></p>
+</div><h4 id='method.path' class='method'><code>fn <a href='#method.path' class='fnname'>path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlPathArgs.html' title='qt_core::url::overloading::UrlPathArgs'>UrlPathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::path</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn path(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn path(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::path(QFlags&lt;QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#path">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the path of the URL.</p>
+<p>The <i>options</i> argument controls how to format the path component. All values produce an unambiguous result. With <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a>, all percent-encoded sequences are decoded; otherwise, the returned value may contain some percent-encoded sequences for some control sequences not representable in decoded form in <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> may cause data loss if those non-representable sequences are present. It is recommended to use that value when the result will be used in a non-URL context, such as sending to an FTP server.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setPath">setPath</a>().</p></div></p>
+</div><h4 id='method.port' class='method'><code>fn <a href='#method.port' class='fnname'>port</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlPortArgs.html' title='qt_core::url::overloading::UrlPortArgs'>UrlPortArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::port</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn port(&amp;self, libc::c_int) -&gt; libc::c_int</code><br>2) <code>fn port(&amp;self, ()) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QUrl::port(int defaultPort = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#port">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the port of the URL, or <i>defaultPort</i> if the port is unspecified.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qtcpsocket.html">QTcpSocket</a></span> sock;
+sock<span class="operator">.</span>connectToHost(url<span class="operator">.</span>host()<span class="operator">,</span> url<span class="operator">.</span>port(<span class="number">80</span>));</pre>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setPort">setPort</a>().</p></div></p>
+</div><h4 id='method.query' class='method'><code>fn <a href='#method.query' class='fnname'>query</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlQueryArgs.html' title='qt_core::url::overloading::UrlQueryArgs'>UrlQueryArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::query</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn query(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn query(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn query(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn query(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::query(QFlags&lt;QUrl::ComponentFormattingOption&gt; arg1 = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#query">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the query string of the URL if there&#39;s a query string, or an empty result if not. To determine if the parsed URL contained a query string, use <a href="http://doc.qt.io/qt-5/qurl.html#hasQuery">hasQuery</a>().</p>
+<p>The <i>options</i> argument controls how to format the query component. All values produce an unambiguous result. With <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a>, all percent-encoded sequences are decoded; otherwise, the returned value may contain some percent-encoded sequences for some control sequences not representable in decoded form in <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>Note that use of <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> in queries is discouraged, as queries often contain data that is supposed to remain percent-encoded, including the use of the &quot;%2B&quot; sequence to represent a plus character (&#39;+&#39;).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setQuery">setQuery</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#hasQuery">hasQuery</a>().</p></div></p>
+</div><h4 id='method.resolved' class='method'><code>fn <a href='#method.resolved' class='fnname'>resolved</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlResolvedArgs.html' title='qt_core::url::overloading::UrlResolvedArgs'>UrlResolvedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::resolved</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn resolved(&amp;self, (&amp;::url::Url, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::url::Url&gt;</code><br>2) <code>fn resolved(&amp;self, (&amp;::url::Url, cpp_utils::AsStruct)) -&gt; ::url::Url</code><br>
+C++ method: <span style='color: green;'><code>QUrl QUrl::resolved(const QUrl&amp; relative) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#resolved">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the result of the merge of this URL with <i>relative</i>. This URL is used as a base to convert <i>relative</i> to an absolute URL.</p>
+<p>If <i>relative</i> is not a relative URL, this function will return <i>relative</i> directly. Otherwise, the paths of the two URLs are merged, and the new URL returned has the scheme and authority of the base URL, but with the merged path, as in the following example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qurl.html#QUrl">QUrl</a></span> baseUrl(<span class="string">&quot;<a href="http://qt.digia.com/Support/">http://qt.digia.com/Support/</a>&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qurl.html#QUrl">QUrl</a></span> relativeUrl(<span class="string">&quot;../Product/Library/&quot;</span>);
+<a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>(baseUrl<span class="operator">.</span>resolved(relativeUrl)<span class="operator">.</span>toString());
+<span class="comment">// prints &quot;<a href="http://qt.digia.com/Product/Library/">http://qt.digia.com/Product/Library/</a>&quot;</span></pre>
+<p>Calling resolved() with &quot;..&quot; returns a <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> whose directory is one level higher than the original. Similarly, calling resolved() with &quot;../..&quot; removes two levels from the path. If <i>relative</i> is &quot;/&quot;, the path becomes &quot;/&quot;.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#isRelative">isRelative</a>().</p></div></p>
+</div><h4 id='method.scheme' class='method'><code>fn <a href='#method.scheme' class='fnname'>scheme</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlSchemeArgs.html' title='qt_core::url::overloading::UrlSchemeArgs'>UrlSchemeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::scheme</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scheme(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn scheme(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::scheme() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#scheme">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the scheme of the URL. If an empty string is returned, this means the scheme is undefined and the URL is then relative.</p>
+<p>The scheme can only contain US-ASCII letters or digits, which means it cannot contain any character that would otherwise require encoding. Additionally, schemes are always returned in lowercase form.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setScheme">setScheme</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#isRelative">isRelative</a>().</p></div></p>
+</div><h4 id='method.set_authority' class='method'><code>fn <a href='#method.set_authority' class='fnname'>set_authority</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlSetAuthorityArgs.html' title='qt_core::url::overloading::UrlSetAuthorityArgs'>UrlSetAuthorityArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::setAuthority</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_authority(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn set_authority(&amp;mut self, (&amp;::string::String, ::url::ParsingMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QUrl::setAuthority(const QString&amp; authority, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setAuthority">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the authority of the URL to <i>authority</i>.</p>
+<p>The authority of a URL is the combination of user info, a host name and a port. All of these elements are optional; an empty authority is therefore valid.</p>
+<p>The user info and host are separated by a &#39;@&#39;, and the host and port are separated by a &#39;:&#39;. If the user info is empty, the &#39;@&#39; must be omitted; although a stray &#39;:&#39; is permitted if the port is empty.</p>
+<p>The following example shows a valid authority string:</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qurl-authority.png" alt=""></img></p><p>The <i>authority</i> data is interpreted according to <i>mode</i>: in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>, any &#39;%&#39; characters must be followed by exactly two hexadecimal characters and some characters (including space) are not allowed in undecoded form. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">TolerantMode</a> (the default), all characters are accepted in undecoded form and the tolerant parser will correct stray &#39;%&#39; not followed by two hex characters.</p>
+<p>This function does not allow <i>mode</i> to be <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::DecodedMode</a>. To set fully decoded data, call <a href="http://doc.qt.io/qt-5/qurl.html#setUserName">setUserName</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setPassword">setPassword</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setHost">setHost</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#setPort">setPort</a>() individually.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#authority">authority</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setUserInfo">setUserInfo</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setHost">setHost</a>(), and <a href="http://doc.qt.io/qt-5/qurl.html#setPort">setPort</a>().</p></div></p>
+</div><h4 id='method.set_fragment' class='method'><code>fn <a href='#method.set_fragment' class='fnname'>set_fragment</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlSetFragmentArgs.html' title='qt_core::url::overloading::UrlSetFragmentArgs'>UrlSetFragmentArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::setFragment</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_fragment(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn set_fragment(&amp;mut self, (&amp;::string::String, ::url::ParsingMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QUrl::setFragment(const QString&amp; fragment, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setFragment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the fragment of the URL to <i>fragment</i>. The fragment is the last part of the URL, represented by a &#39;#&#39; followed by a string of characters. It is typically used in HTTP for referring to a certain link or point on a page:</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qurl-fragment.png" alt=""></img></p><p>The fragment is sometimes also referred to as the URL &quot;reference&quot;.</p>
+<p>Passing an argument of QString() (a null <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>) will unset the fragment. Passing an argument of <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>(&quot;&quot;) (an empty but not null <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>) will set the fragment to an empty string (as if the original URL had a lone &quot;#&quot;).</p>
+<p>The <i>fragment</i> data is interpreted according to <i>mode</i>: in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>, any &#39;%&#39; characters must be followed by exactly two hexadecimal characters and some characters (including space) are not allowed in undecoded form. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">TolerantMode</a>, all characters are accepted in undecoded form and the tolerant parser will correct stray &#39;%&#39; not followed by two hex characters. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">DecodedMode</a>, &#39;%&#39; stand for themselves and encoded characters are not possible.</p>
+<p><a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::DecodedMode</a> should be used when setting the fragment from a data source which is not a URL or with a fragment obtained by calling <a href="http://doc.qt.io/qt-5/qurl.html#fragment">fragment</a>() with the <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> formatting option.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#fragment">fragment</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#hasFragment">hasFragment</a>().</p></div></p>
+</div><h4 id='method.set_host' class='method'><code>fn <a href='#method.set_host' class='fnname'>set_host</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlSetHostArgs.html' title='qt_core::url::overloading::UrlSetHostArgs'>UrlSetHostArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::setHost</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_host(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn set_host(&amp;mut self, (&amp;::string::String, ::url::ParsingMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QUrl::setHost(const QString&amp; host, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setHost">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the host of the URL to <i>host</i>. The host is part of the authority.</p>
+<p>The <i>host</i> data is interpreted according to <i>mode</i>: in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>, any &#39;%&#39; characters must be followed by exactly two hexadecimal characters and some characters (including space) are not allowed in undecoded form. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">TolerantMode</a>, all characters are accepted in undecoded form and the tolerant parser will correct stray &#39;%&#39; not followed by two hex characters. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">DecodedMode</a>, &#39;%&#39; stand for themselves and encoded characters are not possible.</p>
+<p>Note that, in all cases, the result of the parsing must be a valid hostname according to STD 3 rules, as modified by the Internationalized Resource Identifiers specification (RFC 3987). Invalid hostnames are not permitted and will cause <a href="http://doc.qt.io/qt-5/qurl.html#isValid">isValid</a>() to become false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#host">host</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#setAuthority">setAuthority</a>().</p></div></p>
+</div><h4 id='method.set_idn_whitelist' class='method'><code>fn <a href='#method.set_idn_whitelist' class='fnname'>set_idn_whitelist</a>(arg1: &amp;<a class='struct' href='../../qt_core/string_list/struct.StringList.html' title='qt_core::string_list::StringList'>StringList</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QUrl::setIdnWhitelist(const QStringList&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setIdnWhitelist">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the whitelist of Top-Level Domains (TLDs) that are allowed to have non-ASCII characters in domains to the value of <i>list</i>.</p>
+<p>Note that if you call this function, you need to do so <i>before</i> you start any threads that might access <a href="http://doc.qt.io/qt-5/qurl.html#idnWhitelist">idnWhitelist</a>().</p>
+<p>Qt comes with a default list that contains the Internet top-level domains that have published support for Internationalized Domain Names (IDNs) and rules to guarantee that no deception can happen between similarly-looking characters (such as the Latin lowercase letter <code>&#39;a&#39;</code> and the Cyrillic equivalent, which in most fonts are visually identical).</p>
+<p>This list is periodically maintained, as registrars publish new rules.</p>
+<p>This function is provided for those who need to manipulate the list, in order to add or remove a TLD. It is not recommended to change its value for purposes other than testing, as it may expose users to security risks.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#idnWhitelist">idnWhitelist</a>().</p></div></p>
+</div><h4 id='method.set_password' class='method'><code>fn <a href='#method.set_password' class='fnname'>set_password</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlSetPasswordArgs.html' title='qt_core::url::overloading::UrlSetPasswordArgs'>UrlSetPasswordArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::setPassword</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_password(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn set_password(&amp;mut self, (&amp;::string::String, ::url::ParsingMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QUrl::setPassword(const QString&amp; password, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setPassword">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the URL&#39;s password to <i>password</i>. The <i>password</i> is part of the user info element in the authority of the URL, as described in <a href="http://doc.qt.io/qt-5/qurl.html#setUserInfo">setUserInfo</a>().</p>
+<p>The <i>password</i> data is interpreted according to <i>mode</i>: in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>, any &#39;%&#39; characters must be followed by exactly two hexadecimal characters and some characters (including space) are not allowed in undecoded form. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">TolerantMode</a>, all characters are accepted in undecoded form and the tolerant parser will correct stray &#39;%&#39; not followed by two hex characters. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">DecodedMode</a>, &#39;%&#39; stand for themselves and encoded characters are not possible.</p>
+<p><a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::DecodedMode</a> should be used when setting the password from a data source which is not a URL, such as a password dialog shown to the user or with a password obtained by calling <a href="http://doc.qt.io/qt-5/qurl.html#password">password</a>() with the <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> formatting option.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#password">password</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#setUserInfo">setUserInfo</a>().</p></div></p>
+</div><h4 id='method.set_path' class='method'><code>fn <a href='#method.set_path' class='fnname'>set_path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlSetPathArgs.html' title='qt_core::url::overloading::UrlSetPathArgs'>UrlSetPathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::setPath</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_path(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn set_path(&amp;mut self, (&amp;::string::String, ::url::ParsingMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QUrl::setPath(const QString&amp; path, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setPath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the path of the URL to <i>path</i>. The path is the part of the URL that comes after the authority but before the query string.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qurl-ftppath.png" alt=""></img></p><p>For non-hierarchical schemes, the path will be everything following the scheme declaration, as in the following example:</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qurl-mailtopath.png" alt=""></img></p><p>The <i>path</i> data is interpreted according to <i>mode</i>: in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>, any &#39;%&#39; characters must be followed by exactly two hexadecimal characters and some characters (including space) are not allowed in undecoded form. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">TolerantMode</a> (the default), all characters are accepted in undecoded form and the tolerant parser will correct stray &#39;%&#39; not followed by two hex characters. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">DecodedMode</a>, &#39;%&#39; stand for themselves and encoded characters are not possible.</p>
+<p><a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::DecodedMode</a> should be used when setting the path from a data source which is not a URL, such as a dialog shown to the user or with a path obtained by calling <a href="http://doc.qt.io/qt-5/qurl.html#path">path</a>() with the <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> formatting option.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#path">path</a>().</p></div></p>
+</div><h4 id='method.set_port' class='method'><code>fn <a href='#method.set_port' class='fnname'>set_port</a>(&amp;mut self, port: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QUrl::setPort(int port)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setPort">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the port of the URL to <i>port</i>. The port is part of the authority of the URL, as described in <a href="http://doc.qt.io/qt-5/qurl.html#setAuthority">setAuthority</a>().</p>
+<p><i>port</i> must be between 0 and 65535 inclusive. Setting the port to -1 indicates that the port is unspecified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#port">port</a>().</p></div></p>
+</div><h4 id='method.set_query' class='method'><code>fn <a href='#method.set_query' class='fnname'>set_query</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlSetQueryArgs.html' title='qt_core::url::overloading::UrlSetQueryArgs'>UrlSetQueryArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::setQuery</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_query(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn set_query(&amp;mut self, (&amp;::string::String, ::url::ParsingMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QUrl::setQuery(const QString&amp; query, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setQuery">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the query string of the URL to <i>query</i>.</p>
+<p>This function is useful if you need to pass a query string that does not fit into the key-value pattern, or that uses a different scheme for encoding special characters than what is suggested by <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a>.</p>
+<p>Passing a value of QString() to <i>query</i> (a null <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>) unsets the query completely. However, passing a value of <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>(&quot;&quot;) will set the query to an empty value, as if the original URL had a lone &quot;?&quot;.</p>
+<p>The <i>query</i> data is interpreted according to <i>mode</i>: in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>, any &#39;%&#39; characters must be followed by exactly two hexadecimal characters and some characters (including space) are not allowed in undecoded form. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">TolerantMode</a>, all characters are accepted in undecoded form and the tolerant parser will correct stray &#39;%&#39; not followed by two hex characters. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">DecodedMode</a>, &#39;%&#39; stand for themselves and encoded characters are not possible.</p>
+<p>Query strings often contain percent-encoded sequences, so use of <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">DecodedMode</a> is discouraged. One special sequence to be aware of is that of the plus character (&#39;+&#39;). <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> does not convert spaces to plus characters, even though HTML forms posted by web browsers do. In order to represent an actual plus character in a query, the sequence &quot;%2B&quot; is usually used. This function will leave &quot;%2B&quot; sequences untouched in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">TolerantMode</a> or <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#query">query</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#hasQuery">hasQuery</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_query(&amp;mut self, &amp;::url_query::UrlQuery) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QUrl::setQuery(const QUrlQuery&amp; query)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setQuery-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the query string of the URL to <i>query</i>.</p>
+<p>This function reconstructs the query string from the <a href="http://doc.qt.io/qt-5/qurlquery.html">QUrlQuery</a> object and sets on this <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> object. This function does not have parsing parameters because the <a href="http://doc.qt.io/qt-5/qurlquery.html">QUrlQuery</a> contains data that is already parsed.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#query">query</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#hasQuery">hasQuery</a>().</p></div></p>
+</div><h4 id='method.set_scheme' class='method'><code>fn <a href='#method.set_scheme' class='fnname'>set_scheme</a>(&amp;mut self, scheme: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QUrl::setScheme(const QString&amp; scheme)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setScheme">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the scheme of the URL to <i>scheme</i>. As a scheme can only contain ASCII characters, no conversion or decoding is done on the input. It must also start with an ASCII letter.</p>
+<p>The scheme describes the type (or protocol) of the URL. It&#39;s represented by one or more ASCII characters at the start the URL.</p>
+<p>A scheme is strictly <a href="http://www.ietf.org/rfc/rfc3986.txt">RFC 3986</a>-compliant: <code>scheme = ALPHA *( ALPHA / DIGIT / &quot;+&quot; / &quot;-&quot; / &quot;.&quot; )</code></p>
+<p>The following example shows a URL where the scheme is &quot;ftp&quot;:</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qurl-authority2.png" alt=""></img></p><p>To set the scheme, the following call is used:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qurl.html#QUrl">QUrl</a></span> url;
+url<span class="operator">.</span>setScheme(<span class="string">&quot;ftp&quot;</span>);</pre>
+<p>The scheme can also be empty, in which case the URL is interpreted as relative.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#scheme">scheme</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#isRelative">isRelative</a>().</p></div></p>
+</div><h4 id='method.set_url' class='method'><code>fn <a href='#method.set_url' class='fnname'>set_url</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlSetUrlArgs.html' title='qt_core::url::overloading::UrlSetUrlArgs'>UrlSetUrlArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::setUrl</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_url(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn set_url(&amp;mut self, (&amp;::string::String, ::url::ParsingMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QUrl::setUrl(const QString&amp; url, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setUrl">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Parses <i>url</i> and sets this object to that value. <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> will automatically percent encode all characters that are not allowed in a URL and decode the percent-encoded sequences that represent an unreserved character (letters, digits, hyphens, undercores, dots and tildes). All other characters are left in their original forms.</p>
+<p>Parses the <i>url</i> using the parser mode <i>parsingMode</i>. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">TolerantMode</a> (the default), <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> will correct certain mistakes, notably the presence of a percent character (&#39;%&#39;) not followed by two hexadecimal digits, and it will accept any character in any position. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>, encoding mistakes will not be tolerated and <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> will also check that certain forbidden characters are not present in unencoded form. If an error is detected in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>, <a href="http://doc.qt.io/qt-5/qurl.html#isValid">isValid</a>() will return false. The parsing mode <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">DecodedMode</a> is not permitted in this context and will produce a run-time warning.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#url">url</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.set_user_info' class='method'><code>fn <a href='#method.set_user_info' class='fnname'>set_user_info</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlSetUserInfoArgs.html' title='qt_core::url::overloading::UrlSetUserInfoArgs'>UrlSetUserInfoArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::setUserInfo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_user_info(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn set_user_info(&amp;mut self, (&amp;::string::String, ::url::ParsingMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QUrl::setUserInfo(const QString&amp; userInfo, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setUserInfo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the user info of the URL to <i>userInfo</i>. The user info is an optional part of the authority of the URL, as described in <a href="http://doc.qt.io/qt-5/qurl.html#setAuthority">setAuthority</a>().</p>
+<p>The user info consists of a user name and optionally a password, separated by a &#39;:&#39;. If the password is empty, the colon must be omitted. The following example shows a valid user info string:</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qurl-authority3.png" alt=""></img></p><p>The <i>userInfo</i> data is interpreted according to <i>mode</i>: in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>, any &#39;%&#39; characters must be followed by exactly two hexadecimal characters and some characters (including space) are not allowed in undecoded form. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">TolerantMode</a> (the default), all characters are accepted in undecoded form and the tolerant parser will correct stray &#39;%&#39; not followed by two hex characters.</p>
+<p>This function does not allow <i>mode</i> to be <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::DecodedMode</a>. To set fully decoded data, call <a href="http://doc.qt.io/qt-5/qurl.html#setUserName">setUserName</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#setPassword">setPassword</a>() individually.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#userInfo">userInfo</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setUserName">setUserName</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#setPassword">setPassword</a>(), and <a href="http://doc.qt.io/qt-5/qurl.html#setAuthority">setAuthority</a>().</p></div></p>
+</div><h4 id='method.set_user_name' class='method'><code>fn <a href='#method.set_user_name' class='fnname'>set_user_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlSetUserNameArgs.html' title='qt_core::url::overloading::UrlSetUserNameArgs'>UrlSetUserNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::setUserName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_user_name(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn set_user_name(&amp;mut self, (&amp;::string::String, ::url::ParsingMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QUrl::setUserName(const QString&amp; userName, QUrl::ParsingMode mode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#setUserName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the URL&#39;s user name to <i>userName</i>. The <i>userName</i> is part of the user info element in the authority of the URL, as described in <a href="http://doc.qt.io/qt-5/qurl.html#setUserInfo">setUserInfo</a>().</p>
+<p>The <i>userName</i> data is interpreted according to <i>mode</i>: in <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">StrictMode</a>, any &#39;%&#39; characters must be followed by exactly two hexadecimal characters and some characters (including space) are not allowed in undecoded form. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">TolerantMode</a> (the default), all characters are accepted in undecoded form and the tolerant parser will correct stray &#39;%&#39; not followed by two hex characters. In <a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">DecodedMode</a>, &#39;%&#39; stand for themselves and encoded characters are not possible.</p>
+<p><a href="http://doc.qt.io/qt-5/qurl.html#ParsingMode-enum">QUrl::DecodedMode</a> should be used when setting the user name from a data source which is not a URL, such as a password dialog shown to the user or with a user name obtained by calling <a href="http://doc.qt.io/qt-5/qurl.html#userName">userName</a>() with the <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> formatting option.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#userName">userName</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#setUserInfo">setUserInfo</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QUrl::swap(QUrl&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps URL <i>other</i> with this URL. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.to_ace' class='method'><code>fn <a href='#method.to_ace' class='fnname'>to_ace</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlToAceArgs.html' title='qt_core::url::overloading::UrlToAceArgs'>UrlToAceArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::toAce</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_ace((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn to_ace((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>static QByteArray QUrl::toAce(const QString&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#toAce">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the ASCII Compatible Encoding of the given domain name <i>domain</i>. The result of this function is considered equivalent to <i>domain</i>.</p>
+<p>The ASCII-Compatible Encoding (ACE) is defined by RFC 3490, RFC 3491 and RFC 3492. It is part of the Internationalizing Domain Names in Applications (IDNA) specification, which allows for domain names (like <code>&quot;example.com&quot;</code>) to be written using international characters.</p>
+<p>This function returns an empty <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> if <i>domain</i> is not a valid hostname. Note, in particular, that IPv6 literals are not valid domain names.</p>
+<p>This function was introduced in  Qt 4.2.</p></div></p>
+</div><h4 id='method.to_display_string' class='method'><code>fn <a href='#method.to_display_string' class='fnname'>to_display_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlToDisplayStringArgs.html' title='qt_core::url::overloading::UrlToDisplayStringArgs'>UrlToDisplayStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::toDisplayString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_display_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_display_string(&amp;self, (&amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_display_string(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn to_display_string(&amp;self, (&amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::toDisplayString(QUrlTwoFlags&lt;QUrl::UrlFormattingOption, QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#toDisplayString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a human-displayable string representation of the URL. The output can be customized by passing flags with <i>options</i>. The option <a href="http://doc.qt.io/qt-5/qurl.html#UrlFormattingOption-enum">RemovePassword</a> is always enabled, since passwords should never be shown back to users.</p>
+<p>With the default options, the resulting <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> can be passed back to a <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> later on, but any password that was present initially will be lost.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#UrlFormattingOption-enum">FormattingOptions</a>, <a href="http://doc.qt.io/qt-5/qurl.html#toEncoded">toEncoded</a>(), and <a href="http://doc.qt.io/qt-5/qurl.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.to_encoded' class='method'><code>fn <a href='#method.to_encoded' class='fnname'>to_encoded</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlToEncodedArgs.html' title='qt_core::url::overloading::UrlToEncodedArgs'>UrlToEncodedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::toEncoded</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_encoded(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn to_encoded(&amp;self, (&amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>3) <code>fn to_encoded(&amp;self, cpp_utils::AsStruct) -&gt; ::byte_array::ByteArray</code><br>4) <code>fn to_encoded(&amp;self, (&amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QUrl::toEncoded(QUrlTwoFlags&lt;QUrl::UrlFormattingOption, QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#toEncoded">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the encoded representation of the URL if it&#39;s valid; otherwise an empty <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> is returned. The output can be customized by passing flags with <i>options</i>.</p>
+<p>The user info, path and fragment are all converted to UTF-8, and all non-ASCII characters are then percent encoded. The host name is encoded using Punycode.</p></div></p>
+</div><h4 id='method.to_local_file' class='method'><code>fn <a href='#method.to_local_file' class='fnname'>to_local_file</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlToLocalFileArgs.html' title='qt_core::url::overloading::UrlToLocalFileArgs'>UrlToLocalFileArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::toLocalFile</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_local_file(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_local_file(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::toLocalFile() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#toLocalFile">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the path of this URL formatted as a local file path. The path returned will use forward slashes, even if it was originally created from one with backslashes.</p>
+<p>If this URL contains a non-empty hostname, it will be encoded in the returned value in the form found on SMB networks (for example, &quot;//servername/path/to/file.txt&quot;).</p>
+<p>Note: if the path component of this URL contains a non-UTF-8 binary sequence (such as %80), the behaviour of this function is undefined.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#fromLocalFile">fromLocalFile</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#isLocalFile">isLocalFile</a>().</p></div></p>
+</div><h4 id='method.to_percent_encoding' class='method'><code>fn <a href='#method.to_percent_encoding' class='fnname'>to_percent_encoding</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlToPercentEncodingArgs.html' title='qt_core::url::overloading::UrlToPercentEncodingArgs'>UrlToPercentEncodingArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::toPercentEncoding</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_percent_encoding((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn to_percent_encoding((&amp;::string::String, &amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>3) <code>fn to_percent_encoding((&amp;::string::String, &amp;::byte_array::ByteArray, &amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>4) <code>fn to_percent_encoding((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>5) <code>fn to_percent_encoding((&amp;::string::String, &amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>6) <code>fn to_percent_encoding((&amp;::string::String, &amp;::byte_array::ByteArray, &amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>static QByteArray QUrl::toPercentEncoding(const QString&amp; arg1, const QByteArray&amp; exclude = ?, const QByteArray&amp; include = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#toPercentEncoding">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an encoded copy of <i>input</i>. <i>input</i> is first converted to UTF-8, and all ASCII-characters that are not in the unreserved group are percent encoded. To prevent characters from being percent encoded pass them to <i>exclude</i>. To force characters to be percent encoded pass them to <i>include</i>.</p>
+<p>Unreserved is defined as: <code>ALPHA / DIGIT / &quot;-&quot; / &quot;.&quot; / &quot;_&quot; / &quot;~&quot;</code></p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> ba <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qurl.html#QUrl">QUrl</a></span><span class="operator">::</span>toPercentEncoding(<span class="string">&quot;{a fishy string?}&quot;</span><span class="operator">,</span> <span class="string">&quot;{}&quot;</span><span class="operator">,</span> <span class="string">&quot;s&quot;</span>);
+<a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>(ba<span class="operator">.</span>constData());
+<span class="comment">// prints &quot;{a fi%73hy %73tring%3F}&quot;</span></pre></div></p>
+</div><h4 id='method.to_string' class='method'><code>fn <a href='#method.to_string' class='fnname'>to_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlToStringArgs.html' title='qt_core::url::overloading::UrlToStringArgs'>UrlToStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::toString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, (&amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_string(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn to_string(&amp;self, (&amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::toString(QUrlTwoFlags&lt;QUrl::UrlFormattingOption, QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#toString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a string representation of the URL. The output can be customized by passing flags with <i>options</i>. The option <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> is not permitted in this function since it would generate ambiguous data.</p>
+<p>The default formatting option is <a href="http://doc.qt.io/qt-5/qurl.html#UrlFormattingOption-enum">PrettyDecoded</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#UrlFormattingOption-enum">FormattingOptions</a>, <a href="http://doc.qt.io/qt-5/qurl.html#url">url</a>(), and <a href="http://doc.qt.io/qt-5/qurl.html#setUrl">setUrl</a>().</p></div></p>
+</div><h4 id='method.to_string_list' class='method'><code>fn <a href='#method.to_string_list' class='fnname'>to_string_list</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlToStringListArgs.html' title='qt_core::url::overloading::UrlToStringListArgs'>UrlToStringListArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::toStringList</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_string_list((&amp;::list::ListUrlRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_list::StringList&gt;</code><br>2) <code>fn to_string_list((&amp;::list::ListUrlRef, &amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_list::StringList&gt;</code><br>3) <code>fn to_string_list((&amp;::list::ListUrlRef, cpp_utils::AsStruct)) -&gt; ::string_list::StringList</code><br>4) <code>fn to_string_list((&amp;::list::ListUrlRef, &amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsStruct)) -&gt; ::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>static QStringList QUrl::toStringList(const QList&lt;QUrl&gt;&amp; uris, QUrlTwoFlags&lt;QUrl::UrlFormattingOption, QUrl::ComponentFormattingOption&gt; options = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#toStringList">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts a list of <i>urls</i> into a list of <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> objects, using <a href="http://doc.qt.io/qt-5/qurl.html#toString">toString</a>(<i>options</i>).</p>
+<p>This function was introduced in  Qt 5.1.</p></div></p>
+</div><h4 id='method.top_level_domain' class='method'><code>fn <a href='#method.top_level_domain' class='fnname'>top_level_domain</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlTopLevelDomainArgs.html' title='qt_core::url::overloading::UrlTopLevelDomainArgs'>UrlTopLevelDomainArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::topLevelDomain</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn top_level_domain(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn top_level_domain(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn top_level_domain(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn top_level_domain(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::topLevelDomain(QFlags&lt;QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#topLevelDomain">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the TLD (Top-Level Domain) of the URL, (e.g. .co.uk, .net). Note that the return value is prefixed with a &#39;.&#39; unless the URL does not contain a valid TLD, in which case the function returns an empty string.</p>
+<p>Note that this function considers a TLD to be any domain that allows users to register subdomains under, including many home, dynamic DNS websites and blogging providers. This is useful for determining whether two websites belong to the same infrastructure and communication should be allowed, such as browser cookies: two domains should be considered part of the same website if they share at least one label in addition to the value returned by this function.</p>
+<ul>
+<li><code>foo.co.uk</code> and <code>foo.com</code> do not share a top-level domain</li>
+<li><code>foo.co.uk</code> and <code>bar.co.uk</code> share the <code>.co.uk</code> domain, but the next label is different</li>
+<li><code><a href="http://www.foo.co.uk">www.foo.co.uk</a></code> and <code>ftp.foo.co.uk</code> share the same top-level domain and one more label, so they are considered part of the same site</li>
+</ul>
+<p>If <i>options</i> includes <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">EncodeUnicode</a>, the returned string will be in ASCII Compatible Encoding.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.url' class='method'><code>fn <a href='#method.url' class='fnname'>url</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlUrlArgs.html' title='qt_core::url::overloading::UrlUrlArgs'>UrlUrlArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::url</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn url(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn url(&amp;self, (&amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn url(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn url(&amp;self, (&amp;::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::url(QUrlTwoFlags&lt;QUrl::UrlFormattingOption, QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#url">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a string representation of the URL. The output can be customized by passing flags with <i>options</i>. The option <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> is not permitted in this function since it would generate ambiguous data.</p>
+<p>The resulting <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> can be passed back to a <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> later on.</p>
+<p>Synonym for <a href="http://doc.qt.io/qt-5/qurl.html#toString">toString</a>(options).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setUrl">setUrl</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#UrlFormattingOption-enum">FormattingOptions</a>, <a href="http://doc.qt.io/qt-5/qurl.html#toEncoded">toEncoded</a>(), and <a href="http://doc.qt.io/qt-5/qurl.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.user_info' class='method'><code>fn <a href='#method.user_info' class='fnname'>user_info</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlUserInfoArgs.html' title='qt_core::url::overloading::UrlUserInfoArgs'>UrlUserInfoArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::userInfo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn user_info(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn user_info(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn user_info(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn user_info(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::userInfo(QFlags&lt;QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#userInfo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the user info of the URL, or an empty string if the user info is undefined.</p>
+<p>This function returns an unambiguous value, which may contain that characters still percent-encoded, plus some control sequences not representable in decoded form in <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>The <i>options</i> argument controls how to format the user info component. The value of <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> is not permitted in this function. If you need to obtain fully decoded data, call <a href="http://doc.qt.io/qt-5/qurl.html#userName">userName</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#password">password</a>() individually.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setUserInfo">setUserInfo</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#userName">userName</a>(), <a href="http://doc.qt.io/qt-5/qurl.html#password">password</a>(), and <a href="http://doc.qt.io/qt-5/qurl.html#authority">authority</a>().</p></div></p>
+</div><h4 id='method.user_name' class='method'><code>fn <a href='#method.user_name' class='fnname'>user_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/url/overloading/trait.UrlUserNameArgs.html' title='qt_core::url::overloading::UrlUserNameArgs'>UrlUserNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUrl::userName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn user_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn user_name(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn user_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn user_name(&amp;self, (::flags::Flags&lt;::url::ComponentFormattingOption&gt;, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUrl::userName(QFlags&lt;QUrl::ComponentFormattingOption&gt; options = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#userName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the user name of the URL if it is defined; otherwise an empty string is returned.</p>
+<p>The <i>options</i> argument controls how to format the user name component. All values produce an unambiguous result. With <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a>, all percent-encoded sequences are decoded; otherwise, the returned value may contain some percent-encoded sequences for some control sequences not representable in decoded form in <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::FullyDecoded</a> may cause data loss if those non-representable sequences are present. It is recommended to use that value when the result will be used in a non-URL context, such as setting in <a href="http://doc.qt.io/qt-5/qauthenticator.html">QAuthenticator</a> or negotiating a login.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#setUserName">setUserName</a>() and <a href="http://doc.qt.io/qt-5/qurl.html#userInfo">userInfo</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListUrlRefAppendArgs.html' title='qt_core::list::overloading::ListUrlRefAppendArgs'>ListUrlRefAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98431' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#23949-23957' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListUrlRefAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListUrlRef.html' title='qt_core::list::ListUrlRef'>ListUrlRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListUrlRefCountArgs.html' title='qt_core::list::overloading::ListUrlRefCountArgs'>ListUrlRefCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98447' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#23968-23976' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListUrlRefCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListUrlRef.html' title='qt_core::list::ListUrlRef'>ListUrlRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListUrlRefIndexOfArgs.html' title='qt_core::list::overloading::ListUrlRefIndexOfArgs'>ListUrlRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98458' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#23981-23989' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListUrlRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListUrlRef.html' title='qt_core::list::ListUrlRef'>ListUrlRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListUrlRefLastIndexOfArgs.html' title='qt_core::list::overloading::ListUrlRefLastIndexOfArgs'>ListUrlRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98476' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#24005-24013' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListUrlRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListUrlRef.html' title='qt_core::list::ListUrlRef'>ListUrlRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListUrlRefOpAddAssignArgs.html' title='qt_core::list::overloading::ListUrlRefOpAddAssignArgs'>ListUrlRefOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98591' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#24173-24182' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListUrlRefOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListUrlRef.html' title='qt_core::list::ListUrlRef'>ListUrlRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListUrlRef.html' title='qt_core::list::ListUrlRef'>ListUrlRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListUrlRefOpShlArgs.html' title='qt_core::list::overloading::ListUrlRefOpShlArgs'>ListUrlRefOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98610' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#24197-24206' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListUrlRefOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListUrlRef.html' title='qt_core::list::ListUrlRef'>ListUrlRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListUrlRef.html' title='qt_core::list::ListUrlRef'>ListUrlRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='../../qt_core/url/overloading/trait.HashArgs.html' title='qt_core::url::overloading::HashArgs'>HashArgs</a> for &amp;'a <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-157124' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#1296-1301' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-6' class='method'><code>fn <a href='../../qt_core/url/overloading/trait.HashArgs.html#tymethod.exec' class='fnname'>exec</a>(self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/url/overloading/trait.UrlOpAssignArgs.html' title='qt_core::url::overloading::UrlOpAssignArgs'>UrlOpAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-157780' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#2289-2297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-7' class='method'><code>fn <a href='../../qt_core/url/overloading/trait.UrlOpAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-156773' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#120-124' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-157004' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#1030-1037' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QUrl::~QUrl()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#dtor.QUrl">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructor; called immediately before the object is deleted.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/url/struct.Url.html' title='qt_core::url::Url'>Url</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-157007' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#1039-1043' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

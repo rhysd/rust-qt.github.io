@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PixmapCache` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PixmapCache">
+
+    <title>qt_gui::pixmap_cache::PixmapCache - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>pixmap_cache</a></p><script>window.sidebarCurrent = {name: 'PixmapCache', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>pixmap_cache</a>::<wbr><a class='struct' href=''>PixmapCache</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-135635' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixmap_cache.rs.html#101-103' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PixmapCache {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPixmapCache</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qpixmapcache.html">QPixmapCache</a> class provides an application-wide cache for pixmaps.</p>
+<p>This class is a tool for optimized drawing with <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a>. You can use it to store temporary pixmaps that are expensive to generate without using more storage space than <a href="http://doc.qt.io/qt-5/qpixmapcache.html#cacheLimit">cacheLimit</a>(). Use <a href="http://doc.qt.io/qt-5/qpixmapcache.html#insert">insert</a>() to insert pixmaps, <a href="http://doc.qt.io/qt-5/qpixmapcache.html#find">find</a>() to find them, and <a href="http://doc.qt.io/qt-5/qpixmapcache.html#clear">clear</a>() to empty the cache.</p>
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html">QPixmapCache</a> contains no member data, only static functions to access the global pixmap cache. It creates an internal <a href="http://doc.qt.io/qt-5/qcache.html">QCache</a> object for caching the pixmaps.</p>
+<p>The cache associates a pixmap with a user-provided string as a key, or with a <a href="http://doc.qt.io/qt-5/qpixmapcache-key.html">QPixmapCache::Key</a> that the cache generates. Using <a href="http://doc.qt.io/qt-5/qpixmapcache-key.html">QPixmapCache::Key</a> for keys is faster than using strings. The string API is very convenient for complex keys but the <a href="http://doc.qt.io/qt-5/qpixmapcache-key.html">QPixmapCache::Key</a> API will be very efficient and convenient for a one-to-one object-to-pixmap mapping - in this case, you can store the keys as members of an object.</p>
+<p>If two pixmaps are inserted into the cache using equal keys then the last pixmap will replace the first pixmap in the cache. This follows the behavior of the <a href="http://doc.qt.io/qt-5/qhash.html#qhash">QHash</a> and <a href="http://doc.qt.io/qt-5/qcache.html">QCache</a> classes.</p>
+<p>The cache becomes full when the total size of all pixmaps in the cache exceeds <a href="http://doc.qt.io/qt-5/qpixmapcache.html#cacheLimit">cacheLimit</a>(). The initial cache limit is 10240 KB (10 MB); you can change this by calling <a href="http://doc.qt.io/qt-5/qpixmapcache.html#setCacheLimit">setCacheLimit</a>() with the required value. A pixmap takes roughly (<i>width</i> * <i>height</i> * <i>depth</i>)/8 bytes of memory.</p>
+<p>The <i>Qt Quarterly</i> article <a href="http://doc.qt.digia.com/qq/qq12-qpixmapcache.html">Optimizing with QPixmapCache</a> explains how to use <a href="http://doc.qt.io/qt-5/qpixmapcache.html">QPixmapCache</a> to speed up applications by caching the results of painting.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/pixmap_cache/struct.PixmapCache.html' title='qt_gui::pixmap_cache::PixmapCache'>PixmapCache</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-135640' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixmap_cache.rs.html#111-253' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.cache_limit' class='method'><code>fn <a href='#method.cache_limit' class='fnname'>cache_limit</a>() -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static int QPixmapCache::cacheLimit()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html#cacheLimit">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the cache limit (in kilobytes).</p>
+<p>The default cache limit is 10240 KB.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmapcache.html#setCacheLimit">setCacheLimit</a>().</p></div></p>
+</div><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>()</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QPixmapCache::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes all pixmaps from the cache.</p></div></p>
+</div><h4 id='method.find' class='method'><code>fn <a href='#method.find' class='fnname'>find</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/pixmap_cache/overloading/trait.PixmapCacheFindArgs.html' title='qt_gui::pixmap_cache::overloading::PixmapCacheFindArgs'>PixmapCacheFindArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixmapCache::find</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn find(&amp;qt_core::string::String) -&gt; *mut ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>static QPixmap* QPixmapCache::find(const QString&amp; key)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn find((&amp;::pixmap_cache::Key, *mut ::pixmap::Pixmap)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QPixmapCache::find(const QPixmapCache::Key&amp; key, QPixmap* pixmap)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html#find-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Looks for a cached pixmap associated with the given <i>key</i> in the cache. If the pixmap is found, the function sets <i>pixmap</i> to that pixmap and returns <code>true</code>; otherwise it leaves <i>pixmap</i> alone and returns <code>false</code>. If the pixmap is not found, it means that the <i>key</i> is no longer valid, so it will be released for the next insertion.</p>
+<p>This function was introduced in  Qt 4.6.</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn find((&amp;qt_core::string::String, &amp;mut ::pixmap::Pixmap)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QPixmapCache::find(const QString&amp; key, QPixmap&amp; pixmap)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <code>fn find((&amp;qt_core::string::String, *mut ::pixmap::Pixmap)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QPixmapCache::find(const QString&amp; key, QPixmap* pixmap)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html#find">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Looks for a cached pixmap associated with the given <i>key</i> in the cache. If the pixmap is found, the function sets <i>pixmap</i> to that pixmap and returns <code>true</code>; otherwise it leaves <i>pixmap</i> alone and returns <code>false</code>.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a></span> pm;
+<span class="keyword">if</span> (<span class="operator">!</span><span class="type"><a href="http://doc.qt.io/qt-5/qpixmapcache.html">QPixmapCache</a></span><span class="operator">::</span>find(<span class="string">&quot;my_big_image&quot;</span><span class="operator">,</span> <span class="operator">&amp;</span>pm)) {
+&#32;   pm<span class="operator">.</span>load(<span class="string">&quot;bigimage.png&quot;</span>);
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qpixmapcache.html">QPixmapCache</a></span><span class="operator">::</span>insert(<span class="string">&quot;my_big_image&quot;</span><span class="operator">,</span> pm);
+}
+painter<span class="operator">-</span><span class="operator">&gt;</span>drawPixmap(<span class="number">0</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> pm);</pre>
+<p>This function was introduced in  Qt 4.6.</p></div></p>
+</div><h4 id='method.insert' class='method'><code>fn <a href='#method.insert' class='fnname'>insert</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/pixmap_cache/overloading/trait.PixmapCacheInsertArgs.html' title='qt_gui::pixmap_cache::overloading::PixmapCacheInsertArgs'>PixmapCacheInsertArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixmapCache::insert</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn insert((&amp;::pixmap::Pixmap, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap_cache::Key&gt;</code><br>2) <code>fn insert((&amp;::pixmap::Pixmap, cpp_utils::AsStruct)) -&gt; ::pixmap_cache::Key</code><br>
+C++ method: <span style='color: green;'><code>static QPixmapCache::Key QPixmapCache::insert(const QPixmap&amp; pixmap)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html#insert-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts a copy of the given <i>pixmap</i> into the cache and returns a key that can be used to retrieve it.</p>
+<p>When a pixmap is inserted and the cache is about to exceed its limit, it removes pixmaps until there is enough room for the pixmap to be inserted.</p>
+<p>The oldest pixmaps (least recently accessed in the cache) are deleted when more space is needed.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmapcache.html#setCacheLimit">setCacheLimit</a>() and <a href="http://doc.qt.io/qt-5/qpixmapcache.html#replace">replace</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn insert((&amp;qt_core::string::String, &amp;::pixmap::Pixmap)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QPixmapCache::insert(const QString&amp; key, const QPixmap&amp; pixmap)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html#insert">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts a copy of the pixmap <i>pixmap</i> associated with the <i>key</i> into the cache.</p>
+<p>All pixmaps inserted by the Qt library have a key starting with &quot;$qt&quot;, so your own pixmap keys should never begin &quot;$qt&quot;.</p>
+<p>When a pixmap is inserted and the cache is about to exceed its limit, it removes pixmaps until there is enough room for the pixmap to be inserted.</p>
+<p>The oldest pixmaps (least recently accessed in the cache) are deleted when more space is needed.</p>
+<p>The function returns <code>true</code> if the object was inserted into the cache; otherwise it returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmapcache.html#setCacheLimit">setCacheLimit</a>().</p></div></p>
+</div><h4 id='method.remove' class='method'><code>fn <a href='#method.remove' class='fnname'>remove</a>&lt;Args&gt;(args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/pixmap_cache/overloading/trait.PixmapCacheRemoveArgs.html' title='qt_gui::pixmap_cache::overloading::PixmapCacheRemoveArgs'>PixmapCacheRemoveArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixmapCache::remove</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn remove(&amp;::pixmap_cache::Key) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QPixmapCache::remove(const QPixmapCache::Key&amp; key)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html#remove-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the pixmap associated with <i>key</i> from the cache and releases the key for a future insertion.</p>
+<p>This function was introduced in  Qt 4.6.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn remove(&amp;qt_core::string::String) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QPixmapCache::remove(const QString&amp; key)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html#remove">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the pixmap associated with <i>key</i> from the cache.</p></div></p>
+</div><h4 id='method.replace' class='method'><code>fn <a href='#method.replace' class='fnname'>replace</a>(key: &amp;<a class='struct' href='../../qt_gui/pixmap_cache/struct.Key.html' title='qt_gui::pixmap_cache::Key'>Key</a>, pixmap: &amp;<a class='struct' href='../../qt_gui/pixmap/struct.Pixmap.html' title='qt_gui::pixmap::Pixmap'>Pixmap</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QPixmapCache::replace(const QPixmapCache::Key&amp; key, const QPixmap&amp; pixmap)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html#replace">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Replaces the pixmap associated with the given <i>key</i> with the <i>pixmap</i> specified. Returns <code>true</code> if the <i>pixmap</i> has been correctly inserted into the cache; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmapcache.html#setCacheLimit">setCacheLimit</a>() and <a href="http://doc.qt.io/qt-5/qpixmapcache.html#insert">insert</a>().</p></div></p>
+</div><h4 id='method.set_cache_limit' class='method'><code>fn <a href='#method.set_cache_limit' class='fnname'>set_cache_limit</a>(arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QPixmapCache::setCacheLimit(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixmapcache.html#setCacheLimit">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the cache limit to <i>n</i> kilobytes.</p>
+<p>The default setting is 10240 KB.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmapcache.html#cacheLimit">cacheLimit</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/pixmap_cache/struct.PixmapCache.html' title='qt_gui::pixmap_cache::PixmapCache'>PixmapCache</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-135638' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixmap_cache.rs.html#105-109' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/pixmap_cache/struct.PixmapCache.html' title='qt_gui::pixmap_cache::PixmapCache'>PixmapCache</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/pixmap_cache/struct.PixmapCache.html' title='qt_gui::pixmap_cache::PixmapCache'>PixmapCache</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-135657' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixmap_cache.rs.html#255-262' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QPixmapCache::~QPixmapCache()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/pixmap_cache/struct.PixmapCache.html' title='qt_gui::pixmap_cache::PixmapCache'>PixmapCache</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-135660' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixmap_cache.rs.html#264-268' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

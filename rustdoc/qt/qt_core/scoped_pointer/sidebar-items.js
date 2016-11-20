@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ScopedPointerObjectDataRefScopedPointerDeleterObjectDataRefRef","C++ type: <span style='color: green;'>```QScopedPointer<QObjectData, QScopedPointerDeleter<QObjectData>>```</span>"]]});

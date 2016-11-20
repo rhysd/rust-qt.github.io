@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["VectorCVoidMutPtr","C++ type: <span style='color: green;'>```QVector<void*>```</span>"],["VectorColorRef","C++ type: <span style='color: green;'>```QVector<QColor>```</span>"]]});

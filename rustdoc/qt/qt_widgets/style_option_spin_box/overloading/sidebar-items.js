@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["StyleOptionSpinBoxNewArgs","This trait represents a set of arguments accepted by StyleOptionSpinBox::new method."]]});

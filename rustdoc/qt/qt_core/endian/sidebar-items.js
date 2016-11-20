@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["qbswap_helper","C++ method: <span style='color: green;'>```void qbswap_helper(const unsigned char* src, unsigned char* dest, int size)```</span>"]]});

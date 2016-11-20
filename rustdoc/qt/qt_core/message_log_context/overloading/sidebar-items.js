@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["MessageLogContextNewArgs","This trait represents a set of arguments accepted by MessageLogContext::new method."]]});

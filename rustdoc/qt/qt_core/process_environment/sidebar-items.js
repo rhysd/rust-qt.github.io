@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ProcessEnvironment","C++ type: <span style='color: green;'>```QProcessEnvironment```</span>"]]});

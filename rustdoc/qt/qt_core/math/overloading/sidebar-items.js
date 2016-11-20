@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["DegreesToRadiansArgs","This trait represents a set of arguments accepted by degrees_to_radians method."],["NextPowerOfTwoArgs","This trait represents a set of arguments accepted by next_power_of_two method."],["RadiansToDegreesArgs","This trait represents a set of arguments accepted by radians_to_degrees method."]]});

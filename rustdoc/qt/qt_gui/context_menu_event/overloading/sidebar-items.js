@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ContextMenuEventNewArgs","This trait represents a set of arguments accepted by ContextMenuEvent::new method."],["ContextMenuEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by ContextMenuEvent::register_event_type method."]]});

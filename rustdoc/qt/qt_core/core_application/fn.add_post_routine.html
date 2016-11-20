@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `add_post_routine` fn in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, add_post_routine">
+
+    <title>qt_core::core_application::add_post_routine - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>core_application</a></p><script>window.sidebarCurrent = {name: 'add_post_routine', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content fn">
+<h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>core_application</a>::<wbr><a class='fn' href=''>add_post_routine</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-64524' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/core_application.rs.html#1411-1413' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn add_post_routine(arg1: extern fn())</pre><div class='docblock'><p>C++ method: <span style='color: green;'><code>void qAddPostRoutine(void (*FN_PTR)() arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcoreapplication.html#qAddPostRoutine">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds a global routine that will be called from the <a href="http://doc.qt.io/qt-5/qcoreapplication.html">QCoreApplication</a> destructor. This function is normally used to add cleanup routines for program-wide functionality.</p>
+<p>The cleanup routines are called in the reverse order of their addition.</p>
+<p>The function specified by <i>ptr</i> should take no arguments and should return nothing. For example:</p>
+<pre class="cpp"><span class="keyword">static</span> <span class="type">int</span> <span class="operator">*</span>global_ptr <span class="operator">=</span> <span class="number">0</span>;</p>
+
+<p><span class="keyword">static</span> <span class="type">void</span> cleanup_ptr()
+{
+&#32;   <span class="keyword">delete</span> <span class="operator">[</span><span class="operator">]</span> global_ptr;
+&#32;   global_ptr <span class="operator">=</span> <span class="number">0</span>;
+}</p>
+
+<p><span class="type">void</span> init_ptr()
+{
+&#32;   global_ptr <span class="operator">=</span> <span class="keyword">new</span> <span class="type">int</span><span class="operator">[</span><span class="number">100</span><span class="operator">]</span>;      <span class="comment">// allocate data</span>
+&#32;   qAddPostRoutine(cleanup_ptr);   <span class="comment">// delete later</span>
+}</pre>
+<p>Note that for an application- or module-wide cleanup, qaddPostRoutine() is often not suitable. For example, if the program is split into dynamically loaded modules, the relevant module may be unloaded long before the <a href="http://doc.qt.io/qt-5/qcoreapplication.html">QCoreApplication</a> destructor is called. In such cases, if using qaddPostRoutine() is still desirable, <a href="http://doc.qt.io/qt-5/qcoreapplication.html#qRemovePostRoutine">qRemovePostRoutine</a>() can be used to prevent a routine from being called by the <a href="http://doc.qt.io/qt-5/qcoreapplication.html">QCoreApplication</a> destructor. For example, if that routine was called before the module was unloaded.</p>
+<p>For modules and libraries, using a reference-counted initialization manager or Qt&#39;s parent-child deletion mechanism may be better. Here is an example of a private class that uses the parent-child mechanism to call a cleanup function at the right time:</p>
+<pre class="cpp"><span class="keyword">class</span> MyPrivateInitStuff : <span class="keyword">public</span> <span class="type"><a href="http://doc.qt.io/qt-5/qobject.html">QObject</a></span>
+{
+<span class="keyword">public</span>:
+&#32;   <span class="keyword">static</span> MyPrivateInitStuff <span class="operator"><em></span>initStuff(<span class="type"><a href="http://doc.qt.io/qt-5/qobject.html">QObject</a></span> <span class="operator"></em></span>parent)
+&#32;   {
+&#32;       <span class="keyword">if</span> (<span class="operator">!</span>p)
+&#32;           p <span class="operator">=</span> <span class="keyword">new</span> MyPrivateInitStuff(parent);
+&#32;       <span class="keyword">return</span> p;
+&#32;   }</p>
+
+<p>&#32;   <span class="operator">~</span>MyPrivateInitStuff()
+&#32;   {
+&#32;       <span class="comment">// cleanup goes here</span>
+&#32;   }</p>
+
+<p><span class="keyword">private</span>:
+&#32;   MyPrivateInitStuff(<span class="type"><a href="http://doc.qt.io/qt-5/qobject.html">QObject</a></span> <span class="operator">*</span>parent)
+&#32;       : <span class="type"><a href="http://doc.qt.io/qt-5/qobject.html">QObject</a></span>(parent)
+&#32;   {
+&#32;       <span class="comment">// initialization goes here</span>
+&#32;   }</p>
+
+<p>&#32;   MyPrivateInitStuff <span class="operator">*</span>p;
+};</pre>
+<p>By selecting the right parent object, this can often be made to clean up the module&#39;s data at the right moment.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcoreapplication.html#qRemovePostRoutine">qRemovePostRoutine</a>().</p></div></p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

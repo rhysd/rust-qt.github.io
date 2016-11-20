@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["TimeEdit","C++ type: <span style='color: green;'>```QTimeEdit```</span>"]]});

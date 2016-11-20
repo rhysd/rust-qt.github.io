@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["StyleOptionComboBoxNewArgs","This trait represents a set of arguments accepted by StyleOptionComboBox::new method."]]});

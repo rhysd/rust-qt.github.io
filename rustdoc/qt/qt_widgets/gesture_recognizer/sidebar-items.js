@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ResultFlag","C++ type: <span style='color: green;'>```QGestureRecognizer::ResultFlag```</span>"]],"fn":[["op_bit_or","C++ method: <span style='color: green;'>```operator|```</span>"]],"mod":[["overloading",""]],"struct":[["GestureRecognizer","C++ type: <span style='color: green;'>```QGestureRecognizer```</span>"]]});

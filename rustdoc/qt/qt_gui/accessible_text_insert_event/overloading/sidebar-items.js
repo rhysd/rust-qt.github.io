@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["AccessibleTextInsertEventNewArgs","This trait represents a set of arguments accepted by AccessibleTextInsertEvent::new method."],["AccessibleTextInsertEventTextInsertedArgs","This trait represents a set of arguments accepted by AccessibleTextInsertEvent::text_inserted method."]]});

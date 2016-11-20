@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AccessibleTextUpdateEvent","C++ type: <span style='color: green;'>```QAccessibleTextUpdateEvent```</span>"]]});

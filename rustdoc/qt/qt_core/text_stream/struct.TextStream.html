@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TextStream` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TextStream">
+
+    <title>qt_core::text_stream::TextStream - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>text_stream</a></p><script>window.sidebarCurrent = {name: 'TextStream', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>text_stream</a>::<wbr><a class='struct' href=''>TextStream</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-151459' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/text_stream.rs.html#151-153' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TextStream {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTextStream</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> class provides a convenient interface for reading and writing text.</p>
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> can operate on a <a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a>, a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> or a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>. Using <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>&#39;s streaming operators, you can conveniently read and write words, lines and numbers. For generating text, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> supports formatting options for field padding and alignment, and formatting of numbers. Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfile.html">QFile</a></span> data(<span class="string">&quot;output.txt&quot;</span>);
+<span class="keyword">if</span> (data<span class="operator">.</span>open(<span class="type"><a href="http://doc.qt.io/qt-5/qfile.html">QFile</a></span><span class="operator">::</span>WriteOnly <span class="operator">|</span> <span class="type"><a href="http://doc.qt.io/qt-5/qfile.html">QFile</a></span><span class="operator">::</span>Truncate)) {
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qtextstream.html#QTextStream">QTextStream</a></span> out(<span class="operator">&amp;</span>data);
+&#32;   out <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Result: &quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <a href="http://doc.qt.io/qt-5/qtextstream.html#qSetFieldWidth">qSetFieldWidth</a>(<span class="number">10</span>) <span class="operator">&lt;</span><span class="operator">&lt;</span> left <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="number">3.14</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="number">2.7</span>;
+&#32;   <span class="comment">// writes &quot;Result: 3.14      2.7       &quot;</span>
+}</pre>
+<p>It&#39;s also common to use <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> to read console input and write console output. <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> is locale aware, and will automatically decode standard input using the correct codec. Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qtextstream.html#QTextStream">QTextStream</a></span> stream(stdin);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> line;
+<span class="keyword">while</span> (stream<span class="operator">.</span>readLineInto(<span class="operator">&amp;</span>line)) {
+&#32;   <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+}</pre>
+<p>Besides using <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>&#39;s constructors, you can also set the device or string <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> operates on by calling <a href="http://doc.qt.io/qt-5/qtextstream.html#setDevice">setDevice</a>() or <a href="http://doc.qt.io/qt-5/qtextstream.html#setString">setString</a>(). You can seek to a position by calling <a href="http://doc.qt.io/qt-5/qtextstream.html#seek">seek</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#atEnd">atEnd</a>() will return true when there is no data left to be read. If you call <a href="http://doc.qt.io/qt-5/qtextstream.html#flush">flush</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will empty all data from its write buffer into the device and call <a href="http://doc.qt.io/qt-5/qtextstream.html#flush">flush</a>() on the device.</p>
+<p>Internally, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> uses a Unicode based buffer, and <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> is used by <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> to automatically support different character sets. By default, <a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForLocale">QTextCodec::codecForLocale</a>() is used for reading and writing, but you can also set the codec by calling <a href="http://doc.qt.io/qt-5/qtextstream.html#setCodec">setCodec</a>(). Automatic Unicode detection is also supported. When this feature is enabled (the default behavior), <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will detect the UTF-16 or the UTF-32 BOM (Byte Order Mark) and switch to the appropriate UTF codec when reading. <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> does not write a BOM by default, but you can enable this by calling <a href="http://doc.qt.io/qt-5/qtextstream.html#setGenerateByteOrderMark">setGenerateByteOrderMark</a>(true). When <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> operates on a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> directly, the codec is disabled.</p>
+<p>There are three general ways to use <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> when reading text files:</p>
+<ul>
+<li>Chunk by chunk, by calling <a href="http://doc.qt.io/qt-5/qtextstream.html#readLine">readLine</a>() or <a href="http://doc.qt.io/qt-5/qtextstream.html#readAll">readAll</a>().</li>
+<li>Word by word. <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> supports streaming into <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>s, <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>s and char* buffers. Words are delimited by space, and leading white space is automatically skipped.</li>
+<li>Character by character, by streaming into <a href="http://doc.qt.io/qt-5/qchar.html">QChar</a> or char types. This method is often used for convenient input handling when parsing files, independent of character encoding and end-of-line semantics. To skip white space, call <a href="http://doc.qt.io/qt-5/qtextstream.html#skipWhiteSpace">skipWhiteSpace</a>().</li>
+</ul>
+<p>Since the text stream uses a buffer, you should not read from the stream using the implementation of a superclass. For instance, if you have a <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a> and read from it directly using <a href="http://doc.qt.io/qt-5/qiodevice.html#readLine">QFile::readLine</a>() instead of using the stream, the text stream&#39;s internal position will be out of sync with the file&#39;s position.</p>
+<p>By default, when reading numbers from a stream of text, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will automatically detect the number&#39;s base representation. For example, if the number starts with &quot;0x&quot;, it is assumed to be in hexadecimal form. If it starts with the digits 1-9, it is assumed to be in decimal form, and so on. You can set the integer base, thereby disabling the automatic detection, by calling <a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">setIntegerBase</a>(). Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qtextstream.html#QTextStream">QTextStream</a></span> in(<span class="string">&quot;0x50 0x20&quot;</span>);
+<span class="type">int</span> firstNumber<span class="operator">,</span> secondNumber;</p>
+
+<p>in <span class="operator">&gt;</span><span class="operator">&gt;</span> firstNumber;             <span class="comment">// firstNumber == 80</span>
+in <span class="operator">&gt;</span><span class="operator">&gt;</span> dec <span class="operator">&gt;</span><span class="operator">&gt;</span> secondNumber;     <span class="comment">// secondNumber == 0</span></p>
+
+<p><span class="type">char</span> ch;
+in <span class="operator">&gt;</span><span class="operator">&gt;</span> ch;                      <span class="comment">// ch == &#39;x&#39;</span></pre>
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> supports many formatting options for generating text. You can set the field width and pad character by calling <a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setPadChar">setPadChar</a>(). Use <a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldAlignment">setFieldAlignment</a>() to set the alignment within each field. For real numbers, call <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberNotation">setRealNumberNotation</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberPrecision">setRealNumberPrecision</a>() to set the notation (<a href="http://doc.qt.io/qt-5/qtextstream.html#RealNumberNotation-enum">SmartNotation</a>, <a href="http://doc.qt.io/qt-5/qtextstream.html#RealNumberNotation-enum">ScientificNotation</a>, <a href="http://doc.qt.io/qt-5/qtextstream.html#RealNumberNotation-enum">FixedNotation</a>) and precision in digits of the generated number. Some extra number formatting options are also available through <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>().</p>
+<p>Like <code>&lt;iostream&gt;</code> in the standard C++ library, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> also defines several global manipulator functions:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Manipulator</th><th>Description</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td><code>bin</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">setIntegerBase</a>(2).</td></tr>
+<tr valign="top" class="even"><td><code>oct</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">setIntegerBase</a>(8).</td></tr>
+<tr valign="top" class="odd"><td><code>dec</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">setIntegerBase</a>(10).</td></tr>
+<tr valign="top" class="even"><td><code>hex</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">setIntegerBase</a>(16).</td></tr>
+<tr valign="top" class="odd"><td><code>showbase</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>() | <a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">ShowBase</a>).</td></tr>
+<tr valign="top" class="even"><td><code>forcesign</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>() | <a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">ForceSign</a>).</td></tr>
+<tr valign="top" class="odd"><td><code>forcepoint</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>() | <a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">ForcePoint</a>).</td></tr>
+<tr valign="top" class="even"><td><code>noshowbase</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>() &amp; ~<a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">ShowBase</a>).</td></tr>
+<tr valign="top" class="odd"><td><code>noforcesign</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>() &amp; ~<a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">ForceSign</a>).</td></tr>
+<tr valign="top" class="even"><td><code>noforcepoint</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>() &amp; ~<a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">ForcePoint</a>).</td></tr>
+<tr valign="top" class="odd"><td><code>uppercasebase</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>() | <a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">UppercaseBase</a>).</td></tr>
+<tr valign="top" class="even"><td><code>uppercasedigits</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>() | <a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">UppercaseDigits</a>).</td></tr>
+<tr valign="top" class="odd"><td><code>lowercasebase</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>() &amp; ~<a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">UppercaseBase</a>).</td></tr>
+<tr valign="top" class="even"><td><code>lowercasedigits</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>() &amp; ~<a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">UppercaseDigits</a>).</td></tr>
+<tr valign="top" class="odd"><td><code>fixed</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberNotation">setRealNumberNotation</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#RealNumberNotation-enum">FixedNotation</a>).</td></tr>
+<tr valign="top" class="even"><td><code>scientific</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberNotation">setRealNumberNotation</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#RealNumberNotation-enum">ScientificNotation</a>).</td></tr>
+<tr valign="top" class="odd"><td><code>left</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldAlignment">setFieldAlignment</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#FieldAlignment-enum">AlignLeft</a>).</td></tr>
+<tr valign="top" class="even"><td><code>right</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldAlignment">setFieldAlignment</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#FieldAlignment-enum">AlignRight</a>).</td></tr>
+<tr valign="top" class="odd"><td><code>center</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldAlignment">setFieldAlignment</a>(<a href="http://doc.qt.io/qt-5/qtextstream.html#FieldAlignment-enum">AlignCenter</a>).</td></tr>
+<tr valign="top" class="even"><td><code>endl</code></td><td>Same as operator&lt;&lt;(&#39;\n&#39;) and <a href="http://doc.qt.io/qt-5/qtextstream.html#flush">flush</a>().</td></tr>
+<tr valign="top" class="odd"><td><code>flush</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#flush">flush</a>().</td></tr>
+<tr valign="top" class="even"><td><code>reset</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#reset">reset</a>().</td></tr>
+<tr valign="top" class="odd"><td><code>ws</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#skipWhiteSpace">skipWhiteSpace</a>().</td></tr>
+<tr valign="top" class="even"><td><code>bom</code></td><td>Same as <a href="http://doc.qt.io/qt-5/qtextstream.html#setGenerateByteOrderMark">setGenerateByteOrderMark</a>(true).</td></tr>
+</tbody></table></div>
+<p>In addition, Qt provides three global manipulators that take a parameter: <a href="http://doc.qt.io/qt-5/qtextstream.html#qSetFieldWidth">qSetFieldWidth</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#qSetPadChar">qSetPadChar</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#qSetRealNumberPrecision">qSetRealNumberPrecision</a>().</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/text_stream/struct.TextStream.html' title='qt_core::text_stream::TextStream'>TextStream</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-151464' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/text_stream.rs.html#161-886' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.at_end' class='method'><code>fn <a href='#method.at_end' class='fnname'>at_end</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextStream::atEnd() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#atEnd">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if there is no more data to be read from the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>; otherwise returns <code>false</code>. This is similar to, but not the same as calling <a href="http://doc.qt.io/qt-5/qiodevice.html#atEnd">QIODevice::atEnd</a>(), as <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> also takes into account its internal Unicode buffer.</p></div></p>
+</div><h4 id='method.auto_detect_unicode' class='method'><code>fn <a href='#method.auto_detect_unicode' class='fnname'>auto_detect_unicode</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextStream::autoDetectUnicode() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#autoDetectUnicode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if automatic Unicode detection is enabled, otherwise returns <code>false</code>. Automatic Unicode detection is enabled by default.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setAutoDetectUnicode">setAutoDetectUnicode</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setCodec">setCodec</a>().</p></div></p>
+</div><h4 id='method.codec' class='method'><code>fn <a href='#method.codec' class='fnname'>codec</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec* QTextStream::codec() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#codec">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the codec that is current assigned to the stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setCodec">setCodec</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#setAutoDetectUnicode">setAutoDetectUnicode</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#locale">locale</a>().</p></div></p>
+</div><h4 id='method.device' class='method'><code>fn <a href='#method.device' class='fnname'>device</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIODevice* QTextStream::device() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#device">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current device associated with the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>, or 0 if no device has been assigned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setDevice">setDevice</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#string">string</a>().</p></div></p>
+</div><h4 id='method.field_alignment' class='method'><code>fn <a href='#method.field_alignment' class='fnname'>field_alignment</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/text_stream/enum.FieldAlignment.html' title='qt_core::text_stream::FieldAlignment'>FieldAlignment</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::FieldAlignment QTextStream::fieldAlignment() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#fieldAlignment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current field alignment.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldAlignment">setFieldAlignment</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#fieldWidth">fieldWidth</a>().</p></div></p>
+</div><h4 id='method.field_width' class='method'><code>fn <a href='#method.field_width' class='fnname'>field_width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextStream::fieldWidth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#fieldWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current field width.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>().</p></div></p>
+</div><h4 id='method.flush' class='method'><code>fn <a href='#method.flush' class='fnname'>flush</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::flush()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#flush">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Flushes any buffered data waiting to be written to the device.</p>
+<p>If <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> operates on a string, this function does nothing.</p></div></p>
+</div><h4 id='method.generate_byte_order_mark' class='method'><code>fn <a href='#method.generate_byte_order_mark' class='fnname'>generate_byte_order_mark</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextStream::generateByteOrderMark() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#generateByteOrderMark">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> is set to generate the UTF BOM (Byte Order Mark) when using a UTF codec; otherwise returns <code>false</code>. UTF BOM generation is set to false by default.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setGenerateByteOrderMark">setGenerateByteOrderMark</a>().</p></div></p>
+</div><h4 id='method.integer_base' class='method'><code>fn <a href='#method.integer_base' class='fnname'>integer_base</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextStream::integerBase() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#integerBase">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current base of integers. 0 means that the base is detected when reading, or 10 (decimal) when generating numbers.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">setIntegerBase</a>(), <a href="http://doc.qt.io/qt-5/qstring.html#number">QString::number</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>().</p></div></p>
+</div><h4 id='method.locale' class='method'><code>fn <a href='#method.locale' class='fnname'>locale</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamLocaleArgs.html' title='qt_core::text_stream::overloading::TextStreamLocaleArgs'>TextStreamLocaleArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::locale</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn locale(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>2) <code>fn locale(&amp;self, cpp_utils::AsStruct) -&gt; ::locale::Locale</code><br>
+C++ method: <span style='color: green;'><code>QLocale QTextStream::locale() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#locale">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the locale for this stream. The default locale is C.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setLocale">setLocale</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamNewArgs.html' title='qt_core::text_stream::overloading::TextStreamNewArgs'>TextStreamNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::QTextStream</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::text_stream::TextStream</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_stream::TextStream&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextStream::QTextStream()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::text_stream::TextStream</code><br>2) <code>fn new((*mut ::byte_array::ByteArray, ::flags::Flags&lt;::qiod_evice::OpenModeFlag&gt;, cpp_utils::AsStruct)) -&gt; ::text_stream::TextStream</code><br>3) <code>fn new((*mut ::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_stream::TextStream&gt;</code><br>4) <code>fn new((*mut ::byte_array::ByteArray, ::flags::Flags&lt;::qiod_evice::OpenModeFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_stream::TextStream&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextStream::QTextStream(QByteArray* array, QFlags&lt;QIODevice::OpenModeFlag&gt; openMode = ?)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::qiod_evice::QiodEvice, cpp_utils::AsStruct)) -&gt; ::text_stream::TextStream</code><br>2) <code>fn new((*mut ::qiod_evice::QiodEvice, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_stream::TextStream&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextStream::QTextStream(QIODevice* device)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::string::String, cpp_utils::AsStruct)) -&gt; ::text_stream::TextStream</code><br>2) <code>fn new((*mut ::string::String, ::flags::Flags&lt;::qiod_evice::OpenModeFlag&gt;, cpp_utils::AsStruct)) -&gt; ::text_stream::TextStream</code><br>3) <code>fn new((*mut ::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_stream::TextStream&gt;</code><br>4) <code>fn new((*mut ::string::String, ::flags::Flags&lt;::qiod_evice::OpenModeFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_stream::TextStream&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextStream::QTextStream(QString* string, QFlags&lt;QIODevice::OpenModeFlag&gt; openMode = ?)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::text_stream::TextStream</code><br>2) <code>fn new((&amp;::byte_array::ByteArray, ::flags::Flags&lt;::qiod_evice::OpenModeFlag&gt;, cpp_utils::AsStruct)) -&gt; ::text_stream::TextStream</code><br>3) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_stream::TextStream&gt;</code><br>4) <code>fn new((&amp;::byte_array::ByteArray, ::flags::Flags&lt;::qiod_evice::OpenModeFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_stream::TextStream&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextStream::QTextStream(const QByteArray&amp; array, QFlags&lt;QIODevice::OpenModeFlag&gt; openMode = ?)</code></span></p>
+</div><h4 id='method.number_flags' class='method'><code>fn <a href='#method.number_flags' class='fnname'>number_flags</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/text_stream/enum.NumberFlag.html' title='qt_core::text_stream::NumberFlag'>NumberFlag</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QTextStream::NumberFlag&gt; QTextStream::numberFlags() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current number flags.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#integerBase">integerBase</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#realNumberNotation">realNumberNotation</a>().</p></div></p>
+</div><h4 id='method.op_shl' class='method'><code>fn <a href='#method.op_shl' class='fnname'>op_shl</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/text_stream/struct.TextStream.html' title='qt_core::text_stream::TextStream'>TextStream</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamOpShlArgs.html' title='qt_core::text_stream::overloading::TextStreamOpShlArgs'>TextStreamOpShlArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::operator&lt;&lt;</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, &amp;&#39;l1 ::char::Char) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(QChar ch)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the character <i>c</i> to the stream, then returns a reference to the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, &amp;&#39;l1 ::latin1_string::Latin1String) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(QLatin1String s)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-14">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes <i>string</i> to the stream, and returns a reference to the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>. The contents of <i>string</i> are converted with the <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> constructor that takes a <a href="http://doc.qt.io/qt-5/qlatin1string.html">QLatin1String</a> as argument.</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, libc::c_char) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(char ch)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Converts <i>c</i> from ASCII to a <a href="http://doc.qt.io/qt-5/qchar.html">QChar</a>, then writes it to the stream.</p></div></p>
+
+<h2 id='variant-4-1' class='section-header'><a href='#variant-4-1'>Variant 4</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, &amp;&#39;l1 ::byte_array::ByteArray) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(const QByteArray&amp; array)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-15">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes <i>array</i> to the stream. The contents of <i>array</i> are converted with <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>().</p></div></p>
+
+<h2 id='variant-5-1' class='section-header'><a href='#variant-5-1'>Variant 5</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, &amp;&#39;l1 ::string::String) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(const QString&amp; s)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the string <i>string</i> to the stream, and returns a reference to the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>. The string is first encoded using the assigned codec (the default codec is <a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForLocale">QTextCodec::codecForLocale</a>()) before it is written to the stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setCodec">setCodec</a>().</p></div></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, *const libc::c_char) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(const char* c)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-16">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes the constant string pointed to by <i>string</i> to the stream. <i>string</i> is assumed to be in ISO-8859-1 encoding. This operator is convenient when working with constant string data. Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qtextstream.html#QTextStream">QTextStream</a></span> out(stdout);
+out <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Qt rocks!&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> endl;</pre>
+<p>Warning: <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> assumes that <i>string</i> points to a string of text, terminated by a &#39;\0&#39; character. If there is no terminating &#39;\0&#39; character, your application may crash.</p></div></p>
+
+<h2 id='variant-7' class='section-header'><a href='#variant-7'>Variant 7</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, *const libc::c_void) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(const void* ptr)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-17">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes <i>ptr</i> to the stream as a hexadecimal number with a base.</p></div></p>
+
+<h2 id='variant-8' class='section-header'><a href='#variant-8'>Variant 8</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, libc::c_double) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(double f)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-13">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes the double <i>f</i> to the stream.</p></div></p>
+
+<h2 id='variant-9' class='section-header'><a href='#variant-9'>Variant 9</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, libc::c_float) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(float f)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the real number <i>f</i> to the stream, then returns a reference to the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>. By default, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> stores it using <a href="http://doc.qt.io/qt-5/qtextstream.html#RealNumberNotation-enum">SmartNotation</a>, with up to 6 digits of precision. You can change the textual representation <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will use for real numbers by calling <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberNotation">setRealNumberNotation</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberPrecision">setRealNumberPrecision</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberNotation">setRealNumberNotation</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberPrecision">setRealNumberPrecision</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>().</p></div></p>
+
+<h2 id='variant-10' class='section-header'><a href='#variant-10'>Variant 10</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, libc::c_int) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(int i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-7">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes the signed int <i>i</i> to the stream.</p></div></p>
+
+<h2 id='variant-11' class='section-header'><a href='#variant-11'>Variant 11</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, libc::c_long) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(long i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-9">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes the signed long <i>i</i> to the stream.</p></div></p>
+
+<h2 id='variant-12' class='section-header'><a href='#variant-12'>Variant 12</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, u64) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(qulonglong i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-12">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes the qulonglong <i>i</i> to the stream.</p></div></p>
+
+<h2 id='variant-13' class='section-header'><a href='#variant-13'>Variant 13</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, libc::c_short) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(short i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the integer number <i>i</i> to the stream, then returns a reference to the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>. By default, the number is stored in decimal form, but you can also set the base by calling <a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">setIntegerBase</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>().</p></div></p>
+
+<h2 id='variant-14' class='section-header'><a href='#variant-14'>Variant 14</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, libc::c_uint) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(unsigned int i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-8">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes the unsigned int <i>i</i> to the stream.</p></div></p>
+
+<h2 id='variant-15' class='section-header'><a href='#variant-15'>Variant 15</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, libc::c_ushort) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&lt;&lt;(unsigned short i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-lt-lt-6">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes the unsigned short <i>i</i> to the stream.</p></div></p>
+</div><h4 id='method.op_shr' class='method'><code>fn <a href='#method.op_shr' class='fnname'>op_shr</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/text_stream/struct.TextStream.html' title='qt_core::text_stream::TextStream'>TextStream</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamOpShrArgs.html' title='qt_core::text_stream::overloading::TextStreamOpShrArgs'>TextStreamOpShrArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::operator&gt;&gt;</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut ::byte_array::ByteArray) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(QByteArray&amp; array)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-14">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Converts the word to ISO-8859-1, then stores it in <i>array</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstring.html#toLatin1">QString::toLatin1</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut ::char::Char) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(QChar&amp; ch)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads a character from the stream and stores it in <i>c</i>. Returns a reference to the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>, so several operators can be nested. Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qtextstream.html#QTextStream">QTextStream</a></span> in(file);
+<span class="type"><a href="http://doc.qt.io/qt-5/qchar.html">QChar</a></span> ch1<span class="operator">,</span> ch2<span class="operator">,</span> ch3;
+in <span class="operator">&gt;</span><span class="operator">&gt;</span> ch1 <span class="operator">&gt;</span><span class="operator">&gt;</span> ch2 <span class="operator">&gt;</span><span class="operator">&gt;</span> ch3;</pre>
+<p>Whitespace is <i>not</i> skipped.</p></div></p>
+
+<h2 id='variant-3-2' class='section-header'><a href='#variant-3-2'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut ::string::String) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(QString&amp; s)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads a word from the stream and stores it in <i>str</i>, then returns a reference to the stream. Words are separated by whitespace (i.e., all characters for which <a href="http://doc.qt.io/qt-5/qchar.html#isSpace">QChar::isSpace</a>() returns <code>true</code>).</p>
+<p>Leading whitespace is skipped.</p></div></p>
+
+<h2 id='variant-4-2' class='section-header'><a href='#variant-4-2'>Variant 4</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_char) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(char&amp; ch)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads a character from the stream and stores it in <i>c</i>. The character from the stream is converted to ISO-5589-1 before it is stored.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qchar.html#toLatin1">QChar::toLatin1</a>().</p></div></p>
+
+<h2 id='variant-5-2' class='section-header'><a href='#variant-5-2'>Variant 5</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, *mut libc::c_char) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(char* c)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-15">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Stores the word in <i>c</i>, terminated by a &#39;\0&#39; character. If no word is available, only the &#39;\0&#39; character is stored.</p>
+<p>Warning: Although convenient, this operator is dangerous and must be used with care. <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> assumes that <i>c</i> points to a buffer with enough space to hold the word. If the buffer is too small, your application may crash.</p>
+<p>If possible, use the <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> operator instead.</p></div></p>
+
+<h2 id='variant-6-1' class='section-header'><a href='#variant-6-1'>Variant 6</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_double) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(double&amp; f)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-13">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Stores the real number in the double <i>f</i>.</p></div></p>
+
+<h2 id='variant-7-1' class='section-header'><a href='#variant-7-1'>Variant 7</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_float) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(float&amp; f)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads a real number from the stream and stores it in <i>f</i>, then returns a reference to the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>. The number is cast to the correct type. If no real number is detect on the stream, <i>f</i> is set to 0.0.</p>
+<p>As a special exception, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> allows the strings &quot;nan&quot; and &quot;inf&quot; to represent NAN and INF floats or doubles.</p>
+<p>Leading whitespace is skipped.</p></div></p>
+
+<h2 id='variant-8-1' class='section-header'><a href='#variant-8-1'>Variant 8</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_int) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(int&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-7">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Stores the integer in the signed int <i>i</i>.</p></div></p>
+
+<h2 id='variant-9-1' class='section-header'><a href='#variant-9-1'>Variant 9</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_long) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(long&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-9">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Stores the integer in the signed long <i>i</i>.</p></div></p>
+
+<h2 id='variant-10-1' class='section-header'><a href='#variant-10-1'>Variant 10</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_short) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(short&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads an integer from the stream and stores it in <i>i</i>, then returns a reference to the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>. The number is cast to the correct type before it is stored. If no number was detected on the stream, <i>i</i> is set to 0.</p>
+<p>By default, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will attempt to detect the base of the number using the following rules:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Prefix</th><th>Base</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td>&quot;0b&quot; or &quot;0B&quot;</td><td>2 (binary)</td></tr>
+<tr valign="top" class="even"><td>&quot;0&quot; followed by &quot;0-7&quot;</td><td>8 (octal)</td></tr>
+<tr valign="top" class="odd"><td>&quot;0&quot; otherwise</td><td>10 (decimal)</td></tr>
+<tr valign="top" class="even"><td>&quot;0x&quot; or &quot;0X&quot;</td><td>16 (hexadecimal)</td></tr>
+<tr valign="top" class="odd"><td>&quot;1&quot; to &quot;9&quot;</td><td>10 (decimal)</td></tr>
+</tbody></table></div>
+<p>By calling <a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">setIntegerBase</a>(), you can specify the integer base explicitly. This will disable the auto-detection, and speed up <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> slightly.</p>
+<p>Leading whitespace is skipped.</p></div></p>
+
+<h2 id='variant-11-1' class='section-header'><a href='#variant-11-1'>Variant 11</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_uint) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(unsigned int&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-8">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Stores the integer in the unsigned int <i>i</i>.</p></div></p>
+
+<h2 id='variant-12-1' class='section-header'><a href='#variant-12-1'>Variant 12</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_ulong) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(unsigned long&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-10">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Stores the integer in the unsigned long <i>i</i>.</p></div></p>
+
+<h2 id='variant-13-1' class='section-header'><a href='#variant-13-1'>Variant 13</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_ushort) -&gt; &amp;&#39;l0 mut ::text_stream::TextStream</code><br>
+C++ method: <span style='color: green;'><code>QTextStream&amp; QTextStream::operator&gt;&gt;(unsigned short&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt-6">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Stores the integer in the unsigned short <i>i</i>.</p></div></p>
+</div><h4 id='method.pad_char' class='method'><code>fn <a href='#method.pad_char' class='fnname'>pad_char</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamPadCharArgs.html' title='qt_core::text_stream::overloading::TextStreamPadCharArgs'>TextStreamPadCharArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::padChar</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn pad_char(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::char::Char&gt;</code><br>2) <code>fn pad_char(&amp;self, cpp_utils::AsStruct) -&gt; ::char::Char</code><br>
+C++ method: <span style='color: green;'><code>QChar QTextStream::padChar() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#padChar">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current pad character.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setPadChar">setPadChar</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>().</p></div></p>
+</div><h4 id='method.pos' class='method'><code>fn <a href='#method.pos' class='fnname'>pos</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QTextStream::pos() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#pos">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the device position corresponding to the current position of the stream, or -1 if an error occurs (e.g., if there is no device or string, or if there&#39;s a device error).</p>
+<p>Because <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> is buffered, this function may have to seek the device to reconstruct a valid device position. This operation can be expensive, so you may want to avoid calling this function in a tight loop.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#seek">seek</a>().</p></div></p>
+</div><h4 id='method.read' class='method'><code>fn <a href='#method.read' class='fnname'>read</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamReadArgs.html' title='qt_core::text_stream::overloading::TextStreamReadArgs'>TextStreamReadArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::read</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn read(&amp;mut self, (i64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn read(&amp;mut self, (i64, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextStream::read(qint64 maxlen)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#read">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads at most <i>maxlen</i> characters from the stream, and returns the data read as a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#readAll">readAll</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#readLine">readLine</a>(), and <a href="http://doc.qt.io/qt-5/qiodevice.html#read">QIODevice::read</a>().</p></div></p>
+</div><h4 id='method.read_all' class='method'><code>fn <a href='#method.read_all' class='fnname'>read_all</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamReadAllArgs.html' title='qt_core::text_stream::overloading::TextStreamReadAllArgs'>TextStreamReadAllArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::readAll</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn read_all(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn read_all(&amp;mut self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextStream::readAll()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#readAll">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads the entire content of the stream, and returns it as a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>. Avoid this function when working on large files, as it will consume a significant amount of memory.</p>
+<p>Calling <a href="http://doc.qt.io/qt-5/qtextstream.html#readLine">readLine()</a> is better if you do not know how much data is available.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#readLine">readLine</a>().</p></div></p>
+</div><h4 id='method.read_line' class='method'><code>fn <a href='#method.read_line' class='fnname'>read_line</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamReadLineArgs.html' title='qt_core::text_stream::overloading::TextStreamReadLineArgs'>TextStreamReadLineArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::readLine</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn read_line(&amp;mut self, (i64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn read_line(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn read_line(&amp;mut self, (i64, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn read_line(&amp;mut self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextStream::readLine(qint64 maxlen = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#readLine">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads one line of text from the stream, and returns it as a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>. The maximum allowed line length is set to <i>maxlen</i>. If the stream contains lines longer than this, then the lines will be split after <i>maxlen</i> characters and returned in parts.</p>
+<p>If <i>maxlen</i> is 0, the lines can be of any length.</p>
+<p>The returned line has no trailing end-of-line characters (&quot;\n&quot; or &quot;\r\n&quot;), so calling <a href="http://doc.qt.io/qt-5/qstring.html#trimmed">QString::trimmed</a>() can be unnecessary.</p>
+<p>If the stream has read to the end of the file, readLine() will return a null <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>. For strings, or for devices that support it, you can explicitly test for the end of the stream using <a href="http://doc.qt.io/qt-5/qtextstream.html#atEnd">atEnd</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#readAll">readAll</a>() and <a href="http://doc.qt.io/qt-5/qiodevice.html#readLine">QIODevice::readLine</a>().</p></div></p>
+</div><h4 id='method.read_line_into' class='method'><code>fn <a href='#method.read_line_into' class='fnname'>read_line_into</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamReadLineIntoArgs.html' title='qt_core::text_stream::overloading::TextStreamReadLineIntoArgs'>TextStreamReadLineIntoArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::readLineInto</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn read_line_into(&amp;mut self, *mut ::string::String) -&gt; bool</code><br>2) <code>fn read_line_into(&amp;mut self, (*mut ::string::String, i64)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QTextStream::readLineInto(QString* line, qint64 maxlen = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#readLineInto">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads one line of text from the stream into <i>line</i>. If <i>line</i> is 0, the read line is not stored.</p>
+<p>The maximum allowed line length is set to <i>maxlen</i>. If the stream contains lines longer than this, then the lines will be split after <i>maxlen</i> characters and returned in parts.</p>
+<p>If <i>maxlen</i> is 0, the lines can be of any length.</p>
+<p>The resulting line has no trailing end-of-line characters (&quot;\n&quot; or &quot;\r\n&quot;), so calling <a href="http://doc.qt.io/qt-5/qstring.html#trimmed">QString::trimmed</a>() can be unnecessary.</p>
+<p>If <i>line</i> has sufficient capacity for the data that is about to be read, this function may not need to allocate new memory. Because of this, it can be faster than <a href="http://doc.qt.io/qt-5/qtextstream.html#readLine">readLine</a>().</p>
+<p>Returns <code>false</code> if the stream has read to the end of the file or an error has occurred; otherwise returns <code>true</code>. The contents in <i>line</i> before the call are discarded in any case.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#readAll">readAll</a>() and <a href="http://doc.qt.io/qt-5/qiodevice.html#readLine">QIODevice::readLine</a>().</p></div></p>
+</div><h4 id='method.real_number_notation' class='method'><code>fn <a href='#method.real_number_notation' class='fnname'>real_number_notation</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/text_stream/enum.RealNumberNotation.html' title='qt_core::text_stream::RealNumberNotation'>RealNumberNotation</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::RealNumberNotation QTextStream::realNumberNotation() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#realNumberNotation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current real number notation.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberNotation">setRealNumberNotation</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#realNumberPrecision">realNumberPrecision</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#integerBase">integerBase</a>().</p></div></p>
+</div><h4 id='method.real_number_precision' class='method'><code>fn <a href='#method.real_number_precision' class='fnname'>real_number_precision</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextStream::realNumberPrecision() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#realNumberPrecision">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current real number precision, or the number of fraction digits <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will write when generating real numbers.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberPrecision">setRealNumberPrecision</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberNotation">setRealNumberNotation</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#realNumberNotation">realNumberNotation</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#integerBase">integerBase</a>().</p></div></p>
+</div><h4 id='method.reset' class='method'><code>fn <a href='#method.reset' class='fnname'>reset</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::reset()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#reset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Resets <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>&#39;s formatting options, bringing it back to its original constructed state. The device, string and any buffered data is left untouched.</p></div></p>
+</div><h4 id='method.reset_status' class='method'><code>fn <a href='#method.reset_status' class='fnname'>reset_status</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::resetStatus()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#resetStatus">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Resets the status of the text stream.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#Status-enum">QTextStream::Status</a>, <a href="http://doc.qt.io/qt-5/qtextstream.html#status">status</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#setStatus">setStatus</a>().</p></div></p>
+</div><h4 id='method.seek' class='method'><code>fn <a href='#method.seek' class='fnname'>seek</a>(&amp;mut self, pos: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextStream::seek(qint64 pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#seek">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Seeks to the position <i>pos</i> in the device. Returns <code>true</code> on success; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.set_auto_detect_unicode' class='method'><code>fn <a href='#method.set_auto_detect_unicode' class='fnname'>set_auto_detect_unicode</a>(&amp;mut self, enabled: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setAutoDetectUnicode(bool enabled)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setAutoDetectUnicode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>enabled</i> is true, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will attempt to detect Unicode encoding by peeking into the stream data to see if it can find the UTF-16 or UTF-32 BOM (Byte Order Mark). If this mark is found, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will replace the current codec with the UTF codec.</p>
+<p>This function can be used together with <a href="http://doc.qt.io/qt-5/qtextstream.html#setCodec">setCodec</a>(). It is common to set the codec to UTF-8, and then enable UTF-16 detection.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#autoDetectUnicode">autoDetectUnicode</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setCodec">setCodec</a>().</p></div></p>
+</div><h4 id='method.set_codec' class='method'><code>fn <a href='#method.set_codec' class='fnname'>set_codec</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamSetCodecArgs.html' title='qt_core::text_stream::overloading::TextStreamSetCodecArgs'>TextStreamSetCodecArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::setCodec</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_codec(&amp;mut self, *mut ::text_codec::TextCodec) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextStream::setCodec(QTextCodec* codec)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setCodec">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the codec for this stream to <i>codec</i>. The codec is used for decoding any data that is read from the assigned device, and for encoding any data that is written. By default, <a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForLocale">QTextCodec::codecForLocale</a>() is used, and automatic unicode detection is enabled.</p>
+<p>If <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> operates on a string, this function does nothing.</p>
+<p><b>Warning:</b> If you call this function while the text stream is reading from an open sequential socket, the internal buffer may still contain text decoded using the old codec.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#codec">codec</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#setAutoDetectUnicode">setAutoDetectUnicode</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#setLocale">setLocale</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_codec(&amp;mut self, *const libc::c_char) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextStream::setCodec(const char* codecName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setCodec-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the codec for this stream to the <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> for the encoding specified by <i>codecName</i>. Common values for <code>codecName</code> include &quot;ISO 8859-1&quot;, &quot;UTF-8&quot;, and &quot;UTF-16&quot;. If the encoding isn&#39;t recognized, nothing happens.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qtextstream.html#QTextStream">QTextStream</a></span> out(<span class="operator">&amp;</span>file);
+out<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qtextstream.html#setCodec">setCodec</a>(<span class="string">&quot;UTF-8&quot;</span>);</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForName">QTextCodec::codecForName</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setLocale">setLocale</a>().</p></div></p>
+</div><h4 id='method.set_device' class='method'><code>fn <a href='#method.set_device' class='fnname'>set_device</a>(&amp;mut self, device: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setDevice(QIODevice* device)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setDevice">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the current device to <i>device</i>. If a device has already been assigned, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will call <a href="http://doc.qt.io/qt-5/qtextstream.html#flush">flush</a>() before the old device is replaced.</p>
+<p><b>Note: </b>This function resets locale to the default locale (&#39;C&#39;) and codec to the default codec, <a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForLocale">QTextCodec::codecForLocale</a>().</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#device">device</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setString">setString</a>().</p></div></p>
+</div><h4 id='method.set_field_alignment' class='method'><code>fn <a href='#method.set_field_alignment' class='fnname'>set_field_alignment</a>(&amp;mut self, alignment: <a class='enum' href='../../qt_core/text_stream/enum.FieldAlignment.html' title='qt_core::text_stream::FieldAlignment'>FieldAlignment</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setFieldAlignment(QTextStream::FieldAlignment alignment)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldAlignment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the field alignment to <i>mode</i>. When used together with <a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>(), this function allows you to generate formatted output with text aligned to the left, to the right or center aligned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#fieldAlignment">fieldAlignment</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>().</p></div></p>
+</div><h4 id='method.set_field_width' class='method'><code>fn <a href='#method.set_field_width' class='fnname'>set_field_width</a>(&amp;mut self, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setFieldWidth(int width)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the current field width to <i>width</i>. If <i>width</i> is 0 (the default), the field width is equal to the length of the generated text.</p>
+<p><b>Note: </b>The field width applies to every element appended to this stream after this function has been called (e.g., it also pads endl). This behavior is different from similar classes in the STL, where the field width only applies to the next element.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#fieldWidth">fieldWidth</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setPadChar">setPadChar</a>().</p></div></p>
+</div><h4 id='method.set_generate_byte_order_mark' class='method'><code>fn <a href='#method.set_generate_byte_order_mark' class='fnname'>set_generate_byte_order_mark</a>(&amp;mut self, generate: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setGenerateByteOrderMark(bool generate)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setGenerateByteOrderMark">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>generate</i> is true and a UTF codec is used, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will insert the BOM (Byte Order Mark) before any data has been written to the device. If <i>generate</i> is false, no BOM will be inserted. This function must be called before any data is written. Otherwise, it does nothing.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#generateByteOrderMark">generateByteOrderMark</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#bom">bom</a>().</p></div></p>
+</div><h4 id='method.set_integer_base' class='method'><code>fn <a href='#method.set_integer_base' class='fnname'>set_integer_base</a>(&amp;mut self, base: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setIntegerBase(int base)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the base of integers to <i>base</i>, both for reading and for generating numbers. <i>base</i> can be either 2 (binary), 8 (octal), 10 (decimal) or 16 (hexadecimal). If <i>base</i> is 0, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will attempt to detect the base by inspecting the data on the stream. When generating numbers, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> assumes base is 10 unless the base has been set explicitly.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#integerBase">integerBase</a>(), <a href="http://doc.qt.io/qt-5/qstring.html#number">QString::number</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>().</p></div></p>
+</div><h4 id='method.set_locale' class='method'><code>fn <a href='#method.set_locale' class='fnname'>set_locale</a>(&amp;mut self, locale: &amp;<a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setLocale(const QLocale&amp; locale)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setLocale">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the locale for this stream to <i>locale</i>. The specified locale is used for conversions between numbers and their string representations.</p>
+<p>The default locale is C and it is a special case - the thousands group separator is not used for backward compatibility reasons.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#locale">locale</a>().</p></div></p>
+</div><h4 id='method.set_number_flags' class='method'><code>fn <a href='#method.set_number_flags' class='fnname'>set_number_flags</a>(&amp;mut self, flags: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/text_stream/enum.NumberFlag.html' title='qt_core::text_stream::NumberFlag'>NumberFlag</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setNumberFlags(QFlags&lt;QTextStream::NumberFlag&gt; flags)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the current number flags to <i>flags</i>. <i>flags</i> is a set of flags from the <a href="http://doc.qt.io/qt-5/qtextstream.html#NumberFlag-enum">NumberFlag</a> enum, and describes options for formatting generated code (e.g., whether or not to always write the base or sign of a number).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#numberFlags">numberFlags</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">setIntegerBase</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberNotation">setRealNumberNotation</a>().</p></div></p>
+</div><h4 id='method.set_pad_char' class='method'><code>fn <a href='#method.set_pad_char' class='fnname'>set_pad_char</a>(&amp;mut self, ch: &amp;<a class='struct' href='../../qt_core/char/struct.Char.html' title='qt_core::char::Char'>Char</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setPadChar(QChar ch)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setPadChar">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the pad character to <i>ch</i>. The default value is the ASCII space character (&#39; &#39;), or <a href="http://doc.qt.io/qt-5/qchar.html">QChar</a>(0x20). This character is used to fill in the space in fields when generating text.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> s;
+<span class="type"><a href="http://doc.qt.io/qt-5/qtextstream.html#QTextStream">QTextStream</a></span> out(<span class="operator">&amp;</span>s);
+out<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>(<span class="number">10</span>);
+out<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldAlignment">setFieldAlignment</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qtextstream.html#QTextStream">QTextStream</a></span><span class="operator">::</span>AlignCenter);
+out<span class="operator">.</span>setPadChar(<span class="char">&#39;-&#39;</span>);
+out <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Qt&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;rocks!&quot;</span>;</pre>
+<p>The string <code>s</code> contains:</p>
+<pre class="cpp"><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="type"><a href="http://doc.qt.io/qt-5/qt.html">Qt</a></span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span><span class="operator">-</span>rocks<span class="operator">!</span><span class="operator">-</span><span class="operator">-</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#padChar">padChar</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setFieldWidth">setFieldWidth</a>().</p></div></p>
+</div><h4 id='method.set_real_number_notation' class='method'><code>fn <a href='#method.set_real_number_notation' class='fnname'>set_real_number_notation</a>(&amp;mut self, notation: <a class='enum' href='../../qt_core/text_stream/enum.RealNumberNotation.html' title='qt_core::text_stream::RealNumberNotation'>RealNumberNotation</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setRealNumberNotation(QTextStream::RealNumberNotation notation)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberNotation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the real number notation to <i>notation</i> (<a href="http://doc.qt.io/qt-5/qtextstream.html#RealNumberNotation-enum">SmartNotation</a>, <a href="http://doc.qt.io/qt-5/qtextstream.html#RealNumberNotation-enum">FixedNotation</a>, <a href="http://doc.qt.io/qt-5/qtextstream.html#RealNumberNotation-enum">ScientificNotation</a>). When reading and generating numbers, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> uses this value to detect the formatting of real numbers.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#realNumberNotation">realNumberNotation</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberPrecision">setRealNumberPrecision</a>(), <a href="http://doc.qt.io/qt-5/qtextstream.html#setNumberFlags">setNumberFlags</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#setIntegerBase">setIntegerBase</a>().</p></div></p>
+</div><h4 id='method.set_real_number_precision' class='method'><code>fn <a href='#method.set_real_number_precision' class='fnname'>set_real_number_precision</a>(&amp;mut self, precision: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setRealNumberPrecision(int precision)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberPrecision">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the precision of real numbers to <i>precision</i>. This value describes the number of fraction digits <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> should write when generating real numbers.</p>
+<p>The precision cannot be a negative value. The default value is 6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#realNumberPrecision">realNumberPrecision</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setRealNumberNotation">setRealNumberNotation</a>().</p></div></p>
+</div><h4 id='method.set_status' class='method'><code>fn <a href='#method.set_status' class='fnname'>set_status</a>(&amp;mut self, status: <a class='enum' href='../../qt_core/text_stream/enum.Status.html' title='qt_core::text_stream::Status'>Status</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::setStatus(QTextStream::Status status)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setStatus">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the status of the text stream to the <i>status</i> given.</p>
+<p>Subsequent calls to setStatus() are ignored until <a href="http://doc.qt.io/qt-5/qtextstream.html#resetStatus">resetStatus</a>() is called.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#Status-enum">Status</a>, <a href="http://doc.qt.io/qt-5/qtextstream.html#status">status</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#resetStatus">resetStatus</a>().</p></div></p>
+</div><h4 id='method.set_string' class='method'><code>fn <a href='#method.set_string' class='fnname'>set_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamSetStringArgs.html' title='qt_core::text_stream::overloading::TextStreamSetStringArgs'>TextStreamSetStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::setString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_string(&amp;mut self, *mut ::string::String) -&gt; ()</code><br>2) <code>fn set_string(&amp;mut self, (*mut ::string::String, ::flags::Flags&lt;::qiod_evice::OpenModeFlag&gt;)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextStream::setString(QString* string, QFlags&lt;QIODevice::OpenModeFlag&gt; openMode = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#setString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the current string to <i>string</i>, using the given <i>openMode</i>. If a device has already been assigned, <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> will call <a href="http://doc.qt.io/qt-5/qtextstream.html#flush">flush</a>() before replacing it.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#string">string</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#setDevice">setDevice</a>().</p></div></p>
+</div><h4 id='method.skip_white_space' class='method'><code>fn <a href='#method.skip_white_space' class='fnname'>skip_white_space</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextStream::skipWhiteSpace()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#skipWhiteSpace">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads and discards whitespace from the stream until either a non-space character is detected, or until <a href="http://doc.qt.io/qt-5/qtextstream.html#atEnd">atEnd</a>() returns true. This function is useful when reading a stream character by character.</p>
+<p>Whitespace characters are all characters for which <a href="http://doc.qt.io/qt-5/qchar.html#isSpace">QChar::isSpace</a>() returns <code>true</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#operator-gt-gt">operator&gt;&gt;</a>().</p></div></p>
+</div><h4 id='method.status' class='method'><code>fn <a href='#method.status' class='fnname'>status</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/text_stream/enum.Status.html' title='qt_core::text_stream::Status'>Status</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextStream::Status QTextStream::status() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#status">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the status of the text stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#Status-enum">QTextStream::Status</a>, <a href="http://doc.qt.io/qt-5/qtextstream.html#setStatus">setStatus</a>(), and <a href="http://doc.qt.io/qt-5/qtextstream.html#resetStatus">resetStatus</a>().</p></div></p>
+</div><h4 id='method.string' class='method'><code>fn <a href='#method.string' class='fnname'>string</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QString* QTextStream::string() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#string">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current string assigned to the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>, or 0 if no string has been assigned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextstream.html#setString">setString</a>() and <a href="http://doc.qt.io/qt-5/qtextstream.html#device">device</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/text_stream/struct.TextStream.html' title='qt_core::text_stream::TextStream'>TextStream</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-151462' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/text_stream.rs.html#155-159' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/text_stream/struct.TextStream.html' title='qt_core::text_stream::TextStream'>TextStream</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/text_stream/struct.TextStream.html' title='qt_core::text_stream::TextStream'>TextStream</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-151594' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/text_stream.rs.html#888-896' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QTextStream::~QTextStream()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextstream.html#dtor.QTextStream">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>.</p>
+<p>If the stream operates on a device, <a href="http://doc.qt.io/qt-5/qtextstream.html#flush">flush</a>() will be called implicitly. Otherwise, the device is unaffected.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/text_stream/struct.TextStream.html' title='qt_core::text_stream::TextStream'>TextStream</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-151597' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/text_stream.rs.html#898-902' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

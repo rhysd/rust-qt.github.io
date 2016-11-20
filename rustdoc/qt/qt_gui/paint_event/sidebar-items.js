@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["PaintEvent","C++ type: <span style='color: green;'>```QPaintEvent```</span>"]]});

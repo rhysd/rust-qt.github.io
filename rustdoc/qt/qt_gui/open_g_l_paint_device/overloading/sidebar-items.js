@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["OpenGLPaintDeviceNewArgs","This trait represents a set of arguments accepted by OpenGLPaintDevice::new method."],["OpenGLPaintDeviceSizeArgs","This trait represents a set of arguments accepted by OpenGLPaintDevice::size method."]]});

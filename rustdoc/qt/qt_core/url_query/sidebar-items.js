@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["swap","C++ method: <span style='color: green;'>```void swap(QUrlQuery& value1, QUrlQuery& value2)```</span>"]],"mod":[["overloading",""]],"struct":[["UrlQuery","C++ type: <span style='color: green;'>```QUrlQuery```</span>"]]});

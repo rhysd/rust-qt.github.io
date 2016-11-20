@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `HoverEvent` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, HoverEvent">
+
+    <title>qt_gui::hover_event::HoverEvent - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>hover_event</a></p><script>window.sidebarCurrent = {name: 'HoverEvent', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>hover_event</a>::<wbr><a class='struct' href=''>HoverEvent</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-75384' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/hover_event.rs.html#25-27' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct HoverEvent {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QHoverEvent</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qhoverevent.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qhoverevent.html">QHoverEvent</a> class contains parameters that describe a mouse event.</p>
+<p>Mouse events occur when a mouse cursor is moved into, out of, or within a widget, and if the widget has the <a href="http://doc.qt.io/qt-5/qt.html#WidgetAttribute-enum">Qt::WA_Hover</a> attribute.</p>
+<p>The function <a href="http://doc.qt.io/qt-5/qhoverevent.html#pos">pos</a>() gives the current cursor position, while <a href="http://doc.qt.io/qt-5/qhoverevent.html#oldPos">oldPos</a>() gives the old mouse position.</p>
+<p>There are a few similarities between the events <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::HoverEnter</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::HoverLeave</a>, and the events <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::Enter</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::Leave</a>. However, they are slightly different because we do an update() in the event handler of <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">HoverEnter</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">HoverLeave</a>.</p>
+<p><a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::HoverMove</a> is also slightly different from <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MouseMove</a>. Let us consider a top-level window A containing a child B which in turn contains a child C (all with mouse tracking enabled):</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/hoverevents.png" alt=""></img></p><p>Now, if you move the cursor from the top to the bottom in the middle of A, you will get the following <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MouseMove</a> events:</p>
+<ol class="1">
+<li>A::MouseMove</li>
+<li>B::MouseMove</li>
+<li>C::MouseMove</li>
+</ol>
+<p>You will get the same events for <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::HoverMove</a>, except that the event always propagates to the top-level regardless whether the event is accepted or not. It will only stop propagating with the <a href="http://doc.qt.io/qt-5/qt.html#WidgetAttribute-enum">Qt::WA_NoMousePropagation</a> attribute.</p>
+<p>In this case the events will occur in the following way:</p>
+<ol class="1">
+<li>A::HoverMove</li>
+<li>A::HoverMove, B::HoverMove</li>
+<li>A::HoverMove, B::HoverMove, C::HoverMove</li>
+</ol></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/hover_event/struct.HoverEvent.html' title='qt_gui::hover_event::HoverEvent'>HoverEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-75389' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/hover_event.rs.html#35-208' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.accept' class='method'><code>fn <a href='#method.accept' class='fnname'>accept</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QHoverEvent::accept()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accept">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the accept flag of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(true).</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p></div></p>
+</div><h4 id='method.ignore' class='method'><code>fn <a href='#method.ignore' class='fnname'>ignore</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QHoverEvent::ignore()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#ignore">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the accept flag parameter of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(false).</p>
+<p>Clearing the accept parameter indicates that the event receiver does not want the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>().</p></div></p>
+</div><h4 id='method.is_accepted' class='method'><code>fn <a href='#method.is_accepted' class='fnname'>is_accepted</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QHoverEvent::isAccepted() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.modifiers' class='method'><code>fn <a href='#method.modifiers' class='fnname'>modifiers</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.KeyboardModifier.html' title='qt_core::qt::KeyboardModifier'>KeyboardModifier</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::KeyboardModifier&gt; QHoverEvent::modifiers() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputevent.html#modifiers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the keyboard modifier flags that existed immediately before the event occurred.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qguiapplication.html#keyboardModifiers">QGuiApplication::keyboardModifiers</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/hover_event/overloading/trait.HoverEventNewArgs.html' title='qt_gui::hover_event::overloading::HoverEventNewArgs'>HoverEventNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QHoverEvent::QHoverEvent</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((qt_core::event::Type, &amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF, cpp_utils::AsStruct)) -&gt; ::hover_event::HoverEvent</code><br>2) <code>fn new((qt_core::event::Type, &amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, cpp_utils::AsStruct)) -&gt; ::hover_event::HoverEvent</code><br>3) <code>fn new((qt_core::event::Type, &amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::hover_event::HoverEvent&gt;</code><br>4) <code>fn new((qt_core::event::Type, &amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::hover_event::HoverEvent&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QHoverEvent::QHoverEvent(QEvent::Type type, const QPointF&amp; pos, const QPointF&amp; oldPos, QFlags&lt;Qt::KeyboardModifier&gt; modifiers = ?)</code></span></p>
+</div><h4 id='method.old_pos' class='method'><code>fn <a href='#method.old_pos' class='fnname'>old_pos</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/hover_event/overloading/trait.HoverEventOldPosArgs.html' title='qt_gui::hover_event::overloading::HoverEventOldPosArgs'>HoverEventOldPosArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QHoverEvent::oldPos</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn old_pos(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::point::Point&gt;</code><br>2) <code>fn old_pos(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint QHoverEvent::oldPos() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qhoverevent.html#oldPos">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the previous position of the mouse cursor, relative to the widget that received the event. If there is no previous position, oldPos() will return the same position as <a href="http://doc.qt.io/qt-5/qhoverevent.html#pos">pos</a>().</p>
+<p>On <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::HoverEnter</a> events, this position will always be <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a>(-1, -1).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qhoverevent.html#pos">pos</a>().</p></div></p>
+</div><h4 id='method.old_pos_f' class='method'><code>fn <a href='#method.old_pos_f' class='fnname'>old_pos_f</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPointF&amp; QHoverEvent::oldPosF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qhoverevent.html#oldPosF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the previous position of the mouse cursor, relative to the widget that received the event. If there is no previous position, oldPosF() will return the same position as <a href="http://doc.qt.io/qt-5/qhoverevent.html#posF">posF</a>().</p>
+<p>On <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::HoverEnter</a> events, this position will always be <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a>(-1, -1).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qhoverevent.html#posF">posF</a>().</p></div></p>
+</div><h4 id='method.pos' class='method'><code>fn <a href='#method.pos' class='fnname'>pos</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/hover_event/overloading/trait.HoverEventPosArgs.html' title='qt_gui::hover_event::overloading::HoverEventPosArgs'>HoverEventPosArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QHoverEvent::pos</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn pos(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::point::Point&gt;</code><br>2) <code>fn pos(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint QHoverEvent::pos() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qhoverevent.html#pos">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position of the mouse cursor, relative to the widget that received the event.</p>
+<p>On <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::HoverLeave</a> events, this position will always be <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a>(-1, -1).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qhoverevent.html#oldPos">oldPos</a>().</p></div></p>
+</div><h4 id='method.pos_f' class='method'><code>fn <a href='#method.pos_f' class='fnname'>pos_f</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPointF&amp; QHoverEvent::posF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qhoverevent.html#posF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position of the mouse cursor, relative to the widget that received the event.</p>
+<p>On <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::HoverLeave</a> events, this position will always be <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a>(-1, -1).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qhoverevent.html#oldPosF">oldPosF</a>().</p></div></p>
+</div><h4 id='method.register_event_type' class='method'><code>fn <a href='#method.register_event_type' class='fnname'>register_event_type</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/hover_event/overloading/trait.HoverEventRegisterEventTypeArgs.html' title='qt_gui::hover_event::overloading::HoverEventRegisterEventTypeArgs'>HoverEventRegisterEventTypeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QHoverEvent::registerEventType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn register_event_type(libc::c_int) -&gt; libc::c_int</code><br>2) <code>fn register_event_type(()) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QHoverEvent::registerEventType(int hint = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#registerEventType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Registers and returns a custom event type. The <i>hint</i> provided will be used if it is available, otherwise it will return a value between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a> that has not yet been registered. The <i>hint</i> is ignored if its value is not between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a>.</p>
+<p>Returns -1 if all available values are already taken or the program is shutting down.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.set_accepted' class='method'><code>fn <a href='#method.set_accepted' class='fnname'>set_accepted</a>(&amp;mut self, accepted: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QHoverEvent::setAccepted(bool accepted)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.set_modifiers' class='method'><code>fn <a href='#method.set_modifiers' class='fnname'>set_modifiers</a>(&amp;mut self, amodifiers: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.KeyboardModifier.html' title='qt_core::qt::KeyboardModifier'>KeyboardModifier</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QHoverEvent::setModifiers(QFlags&lt;Qt::KeyboardModifier&gt; amodifiers)</code></span></p>
+</div><h4 id='method.set_timestamp' class='method'><code>fn <a href='#method.set_timestamp' class='fnname'>set_timestamp</a>(&amp;mut self, atimestamp: <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_ulong.html' title='libc::unix::notbsd::linux::other::b64::c_ulong'>c_ulong</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QHoverEvent::setTimestamp(unsigned long atimestamp)</code></span></p>
+</div><h4 id='method.spontaneous' class='method'><code>fn <a href='#method.spontaneous' class='fnname'>spontaneous</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QHoverEvent::spontaneous() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#spontaneous">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the event originated outside the application (a system event); otherwise returns <code>false</code>.</p>
+<p>The return value of this function is not defined for paint events.</p></div></p>
+</div><h4 id='method.timestamp' class='method'><code>fn <a href='#method.timestamp' class='fnname'>timestamp</a>(&amp;self) -&gt; <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_ulong.html' title='libc::unix::notbsd::linux::other::b64::c_ulong'>c_ulong</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned long QHoverEvent::timestamp() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputevent.html#timestamp">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the window system&#39;s timestamp for this event.</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/event/enum.Type.html' title='qt_core::event::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QEvent::Type QHoverEvent::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the event type.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/hover_event/struct.HoverEvent.html' title='qt_gui::hover_event::HoverEvent'>HoverEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-75387' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/hover_event.rs.html#29-33' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/hover_event/struct.HoverEvent.html' title='qt_gui::hover_event::HoverEvent'>HoverEvent</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/hover_event/struct.HoverEvent.html' title='qt_gui::hover_event::HoverEvent'>HoverEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-75438' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/hover_event.rs.html#210-217' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QHoverEvent::~QHoverEvent()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/hover_event/struct.HoverEvent.html' title='qt_gui::hover_event::HoverEvent'>HoverEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-75441' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/hover_event.rs.html#219-223' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

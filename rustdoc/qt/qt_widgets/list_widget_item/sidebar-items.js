@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ItemType","C++ type: <span style='color: green;'>```QListWidgetItem::ItemType```</span>"]],"mod":[["overloading",""]],"struct":[["ListWidgetItem","C++ type: <span style='color: green;'>```QListWidgetItem```</span>"]]});

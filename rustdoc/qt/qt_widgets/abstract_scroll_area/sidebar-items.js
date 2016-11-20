@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SizeAdjustPolicy","C++ type: <span style='color: green;'>```QAbstractScrollArea::SizeAdjustPolicy```</span>"]],"mod":[["overloading",""]],"struct":[["AbstractScrollArea","C++ type: <span style='color: green;'>```QAbstractScrollArea```</span>"]]});

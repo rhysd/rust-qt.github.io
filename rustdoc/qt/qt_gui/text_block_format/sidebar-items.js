@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["LineHeightTypes","C++ type: <span style='color: green;'>```QTextBlockFormat::LineHeightTypes```</span>"]],"mod":[["overloading",""]],"struct":[["TextBlockFormat","C++ type: <span style='color: green;'>```QTextBlockFormat```</span>"]]});

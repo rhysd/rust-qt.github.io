@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["LoggingMode","C++ type: <span style='color: green;'>```QOpenGLDebugLogger::LoggingMode```</span>"]],"mod":[["overloading",""]],"struct":[["OpenGLDebugLogger","C++ type: <span style='color: green;'>```QOpenGLDebugLogger```</span>"]]});

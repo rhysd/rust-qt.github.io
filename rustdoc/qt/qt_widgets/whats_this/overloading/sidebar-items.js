@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["WhatsThisCreateActionArgs","This trait represents a set of arguments accepted by WhatsThis::create_action method."],["WhatsThisShowTextArgs","This trait represents a set of arguments accepted by WhatsThis::show_text method."]]});

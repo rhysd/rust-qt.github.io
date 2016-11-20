@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Matrix` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Matrix">
+
+    <title>qt_gui::matrix::Matrix - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>matrix</a></p><script>window.sidebarCurrent = {name: 'Matrix', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>matrix</a>::<wbr><a class='struct' href=''>Matrix</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-93329' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/matrix.rs.html#14-16' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Matrix {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QMatrix</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qmatrix.html">QMatrix</a> class specifies 2D transformations of a coordinate system.</p>
+<p>A matrix specifies how to translate, scale, shear or rotate the coordinate system, and is typically used when rendering graphics. <a href="http://doc.qt.io/qt-5/qmatrix.html">QMatrix</a>, in contrast to <a href="http://doc.qt.io/qt-5/qtransform.html">QTransform</a>, does not allow perspective transformations. <a href="http://doc.qt.io/qt-5/qtransform.html">QTransform</a> is the recommended transformation class in Qt.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qmatrix.html">QMatrix</a> object can be built using the <a href="http://doc.qt.io/qt-5/qmatrix.html#setMatrix">setMatrix</a>(), <a href="http://doc.qt.io/qt-5/qmatrix.html#scale">scale</a>(), <a href="http://doc.qt.io/qt-5/qmatrix.html#rotate">rotate</a>(), <a href="http://doc.qt.io/qt-5/qmatrix.html#translate">translate</a>() and <a href="http://doc.qt.io/qt-5/qmatrix.html#shear">shear</a>() functions. Alternatively, it can be built by applying <a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">basic matrix operations</a>. The matrix can also be defined when constructed, and it can be reset to the identity matrix (the default) using the <a href="http://doc.qt.io/qt-5/qmatrix.html#reset">reset</a>() function.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qmatrix.html">QMatrix</a> class supports mapping of graphic primitives: A given point, line, polygon, region, or painter path can be mapped to the coordinate system defined by <i>this</i> matrix using the <a href="http://doc.qt.io/qt-5/qmatrix.html#map">map</a>() function. In case of a rectangle, its coordinates can be transformed using the <a href="http://doc.qt.io/qt-5/qmatrix.html#mapRect">mapRect</a>() function. A rectangle can also be transformed into a <i>polygon</i> (mapped to the coordinate system defined by <i>this</i> matrix), using the <a href="http://doc.qt.io/qt-5/qmatrix.html#mapToPolygon">mapToPolygon</a>() function.</p>
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html">QMatrix</a> provides the <a href="http://doc.qt.io/qt-5/qmatrix.html#isIdentity">isIdentity</a>() function which returns <code>true</code> if the matrix is the identity matrix, and the <a href="http://doc.qt.io/qt-5/qmatrix.html#isInvertible">isInvertible</a>() function which returns <code>true</code> if the matrix is non-singular (i.e. AB = BA = I). The <a href="http://doc.qt.io/qt-5/qmatrix.html#inverted">inverted</a>() function returns an inverted copy of <i>this</i> matrix if it is invertible (otherwise it returns the identity matrix). In addition, <a href="http://doc.qt.io/qt-5/qmatrix.html">QMatrix</a> provides the <a href="http://doc.qt.io/qt-5/qmatrix.html#determinant">determinant</a>() function returning the matrix&#39;s determinant.</p>
+<p>Finally, the <a href="http://doc.qt.io/qt-5/qmatrix.html">QMatrix</a> class supports matrix multiplication, and objects of the class can be streamed as well as compared.</p>
+<a name="rendering-graphics"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-93334' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/matrix.rs.html#24-424' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/matrix/overloading/trait.MatrixAsQVariantArgs.html' title='qt_gui::matrix::overloading::MatrixAsQVariantArgs'>MatrixAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QMatrix::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the matrix as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>.</p>
+<p>This function was introduced in  Qt 4.2.</p></div></p>
+</div><h4 id='method.determinant' class='method'><code>fn <a href='#method.determinant' class='fnname'>determinant</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QMatrix::determinant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#determinant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the matrix&#39;s determinant.</p>
+<p>This function was introduced in  Qt 4.6.</p></div></p>
+</div><h4 id='method.dx' class='method'><code>fn <a href='#method.dx' class='fnname'>dx</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QMatrix::dx() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#dx">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal translation factor.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#translate">translate</a>() and <a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">Basic Matrix Operations</a>.</p></div></p>
+</div><h4 id='method.dy' class='method'><code>fn <a href='#method.dy' class='fnname'>dy</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QMatrix::dy() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#dy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the vertical translation factor.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#translate">translate</a>() and <a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">Basic Matrix Operations</a>.</p></div></p>
+</div><h4 id='method.inverted' class='method'><code>fn <a href='#method.inverted' class='fnname'>inverted</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/matrix/overloading/trait.MatrixInvertedArgs.html' title='qt_gui::matrix::overloading::MatrixInvertedArgs'>MatrixInvertedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix::inverted</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn inverted(&amp;self, (*mut bool, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::matrix::Matrix&gt;</code><br>2) <code>fn inverted(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::matrix::Matrix&gt;</code><br>3) <code>fn inverted(&amp;self, (*mut bool, cpp_utils::AsStruct)) -&gt; ::matrix::Matrix</code><br>4) <code>fn inverted(&amp;self, cpp_utils::AsStruct) -&gt; ::matrix::Matrix</code><br>
+C++ method: <span style='color: green;'><code>QMatrix QMatrix::inverted(bool* invertible = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#inverted">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an inverted copy of this matrix.</p>
+<p>If the matrix is singular (not invertible), the returned matrix is the identity matrix. If <i>invertible</i> is valid (i.e. not 0), its value is set to true if the matrix is invertible, otherwise it is set to false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#isInvertible">isInvertible</a>().</p></div></p>
+</div><h4 id='method.is_identity' class='method'><code>fn <a href='#method.is_identity' class='fnname'>is_identity</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QMatrix::isIdentity() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#isIdentity">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the matrix is the identity matrix, otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#reset">reset</a>().</p></div></p>
+</div><h4 id='method.is_invertible' class='method'><code>fn <a href='#method.is_invertible' class='fnname'>is_invertible</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QMatrix::isInvertible() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#isInvertible">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the matrix is invertible, otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#inverted">inverted</a>().</p></div></p>
+</div><h4 id='method.m11' class='method'><code>fn <a href='#method.m11' class='fnname'>m11</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QMatrix::m11() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#m11">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal scaling factor.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#scale">scale</a>() and <a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">Basic Matrix Operations</a>.</p></div></p>
+</div><h4 id='method.m12' class='method'><code>fn <a href='#method.m12' class='fnname'>m12</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QMatrix::m12() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#m12">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the vertical shearing factor.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#shear">shear</a>() and <a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">Basic Matrix Operations</a>.</p></div></p>
+</div><h4 id='method.m21' class='method'><code>fn <a href='#method.m21' class='fnname'>m21</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QMatrix::m21() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#m21">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal shearing factor.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#shear">shear</a>() and <a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">Basic Matrix Operations</a>.</p></div></p>
+</div><h4 id='method.m22' class='method'><code>fn <a href='#method.m22' class='fnname'>m22</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QMatrix::m22() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#m22">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the vertical scaling factor.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#scale">scale</a>() and <a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">Basic Matrix Operations</a>.</p></div></p>
+</div><h4 id='method.map' class='method'><code>fn <a href='#method.map' class='fnname'>map</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/matrix/overloading/trait.MatrixMapArgs.html' title='qt_gui::matrix::overloading::MatrixMapArgs'>MatrixMapArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix::map</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn map(&amp;self, (&amp;qt_core::line::Line, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::line::Line&gt;</code><br>2) <code>fn map(&amp;self, (&amp;qt_core::line::Line, cpp_utils::AsStruct)) -&gt; qt_core::line::Line</code><br>
+C++ method: <span style='color: green;'><code>QLine QMatrix::map(const QLine&amp; l) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#map-6">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates and returns a <a href="http://doc.qt.io/qt-5/qline.html">QLine</a> object that is a copy of the given <i>line</i>, mapped into the coordinate system defined by this matrix. Note that the transformed coordinates are rounded to the nearest integer.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn map(&amp;self, (&amp;qt_core::line_f::LineF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::line_f::LineF&gt;</code><br>2) <code>fn map(&amp;self, (&amp;qt_core::line_f::LineF, cpp_utils::AsStruct)) -&gt; qt_core::line_f::LineF</code><br>
+C++ method: <span style='color: green;'><code>QLineF QMatrix::map(const QLineF&amp; l) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#map-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates and returns a <a href="http://doc.qt.io/qt-5/qlinef.html">QLineF</a> object that is a copy of the given <i>line</i>, mapped into the coordinate system defined by this matrix.</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn map(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn map(&amp;self, (&amp;::painter_path::PainterPath, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QMatrix::map(const QPainterPath&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#map-10">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates and returns a <a href="http://doc.qt.io/qt-5/qpainterpath.html">QPainterPath</a> object that is a copy of the given <i>path</i>, mapped into the coordinate system defined by this matrix.</p></div></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn map(&amp;self, (&amp;qt_core::point::Point, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::point::Point&gt;</code><br>2) <code>fn map(&amp;self, (&amp;qt_core::point::Point, cpp_utils::AsStruct)) -&gt; qt_core::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint QMatrix::map(const QPoint&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#map-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates and returns a <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a> object that is a copy of the given <i>point</i>, mapped into the coordinate system defined by this matrix. Note that the transformed coordinates are rounded to the nearest integer.</p></div></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn map(&amp;self, (&amp;qt_core::point_f::PointF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::point_f::PointF&gt;</code><br>2) <code>fn map(&amp;self, (&amp;qt_core::point_f::PointF, cpp_utils::AsStruct)) -&gt; qt_core::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QMatrix::map(const QPointF&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#map-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates and returns a <a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a> object that is a copy of the given <i>point</i>, mapped into the coordinate system defined by this matrix.</p></div></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn map(&amp;self, (&amp;::polygon::Polygon, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::polygon::Polygon&gt;</code><br>2) <code>fn map(&amp;self, (&amp;::polygon::Polygon, cpp_utils::AsStruct)) -&gt; ::polygon::Polygon</code><br>
+C++ method: <span style='color: green;'><code>QPolygon QMatrix::map(const QPolygon&amp; a) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#map-8">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates and returns a <a href="http://doc.qt.io/qt-5/qpolygon.html">QPolygon</a> object that is a copy of the given <i>polygon</i>, mapped into the coordinate system defined by this matrix. Note that the transformed coordinates are rounded to the nearest integer.</p></div></p>
+
+<h2 id='variant-7' class='section-header'><a href='#variant-7'>Variant 7</a></h2>
+<p>Rust arguments: <br>1) <code>fn map(&amp;self, (&amp;::polygon_f::PolygonF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::polygon_f::PolygonF&gt;</code><br>2) <code>fn map(&amp;self, (&amp;::polygon_f::PolygonF, cpp_utils::AsStruct)) -&gt; ::polygon_f::PolygonF</code><br>
+C++ method: <span style='color: green;'><code>QPolygonF QMatrix::map(const QPolygonF&amp; a) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#map-7">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates and returns a <a href="http://doc.qt.io/qt-5/qpolygonf.html">QPolygonF</a> object that is a copy of the given <i>polygon</i>, mapped into the coordinate system defined by this matrix.</p></div></p>
+
+<h2 id='variant-8' class='section-header'><a href='#variant-8'>Variant 8</a></h2>
+<p>Rust arguments: <br>1) <code>fn map(&amp;self, (&amp;::region::Region, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::region::Region&gt;</code><br>2) <code>fn map(&amp;self, (&amp;::region::Region, cpp_utils::AsStruct)) -&gt; ::region::Region</code><br>
+C++ method: <span style='color: green;'><code>QRegion QMatrix::map(const QRegion&amp; r) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#map-9">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates and returns a <a href="http://doc.qt.io/qt-5/qregion.html">QRegion</a> object that is a copy of the given <i>region</i>, mapped into the coordinate system defined by this matrix.</p>
+<p>Calling this method can be rather expensive if rotations or shearing are used.</p></div></p>
+
+<h2 id='variant-9' class='section-header'><a href='#variant-9'>Variant 9</a></h2>
+<p>Rust arguments: <code>fn map(&amp;self, (libc::c_double, libc::c_double, *mut libc::c_double, *mut libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QMatrix::map(double x, double y, double* tx, double* ty) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#map">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Maps the given coordinates <i>x</i> and <i>y</i> into the coordinate system defined by this matrix. The resulting values are put in *<i>tx</i> and *<i>ty</i>, respectively.</p>
+<p>The coordinates are transformed using the following formulas:</p>
+<pre class="cpp">x<span class="char">&#39; = m11*x + m21*y + dx
+y&#39;</span> <span class="operator">=</span> m22<span class="operator"><em></span>y <span class="operator">+</span> m12<span class="operator"></em></span>x <span class="operator">+</span> dy</pre>
+<p>The point (x, y) is the original point, and (x&#39;, y&#39;) is the transformed point.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">Basic Matrix Operations</a>.</p></div></p>
+
+<h2 id='variant-10' class='section-header'><a href='#variant-10'>Variant 10</a></h2>
+<p>Rust arguments: <code>fn map(&amp;self, (libc::c_int, libc::c_int, *mut libc::c_int, *mut libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QMatrix::map(int x, int y, int* tx, int* ty) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#map-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Maps the given coordinates <i>x</i> and <i>y</i> into the coordinate system defined by this matrix. The resulting values are put in *<i>tx</i> and *<i>ty</i>, respectively. Note that the transformed coordinates are rounded to the nearest integer.</p></div></p>
+</div><h4 id='method.map_rect' class='method'><code>fn <a href='#method.map_rect' class='fnname'>map_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/matrix/overloading/trait.MatrixMapRectArgs.html' title='qt_gui::matrix::overloading::MatrixMapRectArgs'>MatrixMapRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix::mapRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn map_rect(&amp;self, (&amp;qt_core::rect::Rect, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn map_rect(&amp;self, (&amp;qt_core::rect::Rect, cpp_utils::AsStruct)) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QMatrix::mapRect(const QRect&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#mapRect-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Creates and returns a <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> object that is a copy of the given <i>rectangle</i>, mapped into the coordinate system defined by this matrix. Note that the transformed coordinates are rounded to the nearest integer.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn map_rect(&amp;self, (&amp;qt_core::rect_f::RectF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn map_rect(&amp;self, (&amp;qt_core::rect_f::RectF, cpp_utils::AsStruct)) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QMatrix::mapRect(const QRectF&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#mapRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns a <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> object that is a copy of the given <i>rectangle</i>, mapped into the coordinate system defined by this matrix.</p>
+<p>The rectangle&#39;s coordinates are transformed using the following formulas:</p>
+<pre class="cpp">x<span class="char">&#39; = m11*x + m21*y + dx
+y&#39;</span> <span class="operator">=</span> m22<span class="operator"><em></span>y <span class="operator">+</span> m12<span class="operator"></em></span>x <span class="operator">+</span> dy</pre>
+<p>If rotation or shearing has been specified, this function returns the <i>bounding</i> rectangle. To retrieve the exact region the given <i>rectangle</i> maps to, use the <a href="http://doc.qt.io/qt-5/qmatrix.html#mapToPolygon">mapToPolygon</a>() function instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#mapToPolygon">mapToPolygon</a>() and <a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">Basic Matrix Operations</a>.</p></div></p>
+</div><h4 id='method.map_to_polygon' class='method'><code>fn <a href='#method.map_to_polygon' class='fnname'>map_to_polygon</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/matrix/overloading/trait.MatrixMapToPolygonArgs.html' title='qt_gui::matrix::overloading::MatrixMapToPolygonArgs'>MatrixMapToPolygonArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix::mapToPolygon</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn map_to_polygon(&amp;self, (&amp;qt_core::rect::Rect, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::polygon::Polygon&gt;</code><br>2) <code>fn map_to_polygon(&amp;self, (&amp;qt_core::rect::Rect, cpp_utils::AsStruct)) -&gt; ::polygon::Polygon</code><br>
+C++ method: <span style='color: green;'><code>QPolygon QMatrix::mapToPolygon(const QRect&amp; r) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#mapToPolygon">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns a <a href="http://doc.qt.io/qt-5/qpolygon.html">QPolygon</a> representation of the given <i>rectangle</i>, mapped into the coordinate system defined by this matrix.</p>
+<p>The rectangle&#39;s coordinates are transformed using the following formulas:</p>
+<pre class="cpp">x<span class="char">&#39; = m11*x + m21*y + dx
+y&#39;</span> <span class="operator">=</span> m22<span class="operator"><em></span>y <span class="operator">+</span> m12<span class="operator"></em></span>x <span class="operator">+</span> dy</pre>
+<p>Polygons and rectangles behave slightly differently when transformed (due to integer rounding), so <code>matrix.map(QPolygon(rectangle))</code> is not always the same as <code>matrix.mapToPolygon(rectangle)</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#mapRect">mapRect</a>() and <a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">Basic Matrix Operations</a>.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/matrix/overloading/trait.MatrixNewArgs.html' title='qt_gui::matrix::overloading::MatrixNewArgs'>MatrixNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix::QMatrix</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::matrix::Matrix</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::matrix::Matrix&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QMatrix::QMatrix()</code></span></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::qt::Initialization, cpp_utils::AsStruct)) -&gt; ::matrix::Matrix</code><br>2) <code>fn new((qt_core::qt::Initialization, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::matrix::Matrix&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QMatrix::QMatrix(Qt::Initialization arg1)</code></span></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::matrix::Matrix, cpp_utils::AsStruct)) -&gt; ::matrix::Matrix</code><br>2) <code>fn new((&amp;::matrix::Matrix, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::matrix::Matrix&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QMatrix::QMatrix(const QMatrix&amp; matrix)</code></span></p>
+
+<h2 id='variant-4-1' class='section-header'><a href='#variant-4-1'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::matrix::Matrix</code><br>2) <code>fn new((libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::matrix::Matrix&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QMatrix::QMatrix(double m11, double m12, double m21, double m22, double dx, double dy)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, arg1: &amp;'l1 <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix&amp; QMatrix::operator=(const QMatrix&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the given <i>matrix</i>&#39;s values to this matrix.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QMatrix::operator==(const QMatrix&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this matrix is equal to the given <i>matrix</i>, otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_mul' class='method'><code>fn <a href='#method.op_mul' class='fnname'>op_mul</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/matrix/overloading/trait.MatrixOpMulArgs.html' title='qt_gui::matrix::overloading::MatrixOpMulArgs'>MatrixOpMulArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix::operator*</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_mul(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::matrix::Matrix&gt;</code><br>2) <code>fn op_mul(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsStruct)) -&gt; ::matrix::Matrix</code><br>
+C++ method: <span style='color: green;'><code>QMatrix QMatrix::operator*(const QMatrix&amp; o) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#operator-2a">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the result of multiplying this matrix by the given <i>matrix</i>.</p>
+<p>Note that matrix multiplication is not commutative, i.e. a*b != b*a.</p></div></p>
+</div><h4 id='method.op_mul_assign' class='method'><code>fn <a href='#method.op_mul_assign' class='fnname'>op_mul_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, arg1: &amp;'l1 <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix&amp; QMatrix::operator*=(const QMatrix&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#operator-2a-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns the result of multiplying this matrix by the given <i>matrix</i>.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QMatrix::operator!=(const QMatrix&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this matrix is not equal to the given <i>matrix</i>, otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.reset' class='method'><code>fn <a href='#method.reset' class='fnname'>reset</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QMatrix::reset()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#reset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Resets the matrix to an identity matrix, i.e. all elements are set to zero, except <code>m11</code> and <code>m22</code> (specifying the scale) which are set to 1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#QMatrix">QMatrix</a>(), <a href="http://doc.qt.io/qt-5/qmatrix.html#isIdentity">isIdentity</a>(), and <a href="http://doc.qt.io/qt-5/qmatrix.html#basic-matrix-operations">Basic Matrix Operations</a>.</p></div></p>
+</div><h4 id='method.rotate' class='method'><code>fn <a href='#method.rotate' class='fnname'>rotate</a>&lt;'l0&gt;(&amp;'l0 mut self, a: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix&amp; QMatrix::rotate(double a)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#rotate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Rotates the coordinate system the given <i>degrees</i> counterclockwise.</p>
+<p>Note that if you apply a <a href="http://doc.qt.io/qt-5/qmatrix.html" class="obsolete">QMatrix</a> to a point defined in widget coordinates, the direction of the rotation will be clockwise because the y-axis points downwards.</p>
+<p>Returns a reference to the matrix.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#setMatrix">setMatrix</a>().</p></div></p>
+</div><h4 id='method.scale' class='method'><code>fn <a href='#method.scale' class='fnname'>scale</a>&lt;'l0&gt;(&amp;'l0 mut self, sx: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, sy: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix&amp; QMatrix::scale(double sx, double sy)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#scale">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Scales the coordinate system by <i>sx</i> horizontally and <i>sy</i> vertically, and returns a reference to the matrix.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#setMatrix">setMatrix</a>().</p></div></p>
+</div><h4 id='method.set_matrix' class='method'><code>fn <a href='#method.set_matrix' class='fnname'>set_matrix</a>(&amp;mut self, m11: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, m12: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, m21: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, m22: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, dx: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, dy: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QMatrix::setMatrix(double m11, double m12, double m21, double m22, double dx, double dy)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#setMatrix">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the matrix elements to the specified values, <i>m11</i>, <i>m12</i>, <i>m21</i>, <i>m22</i>, <i>dx</i> and <i>dy</i>.</p>
+<p>Note that this function replaces the previous values. <a href="http://doc.qt.io/qt-5/qmatrix.html" class="obsolete">QMatrix</a> provide the <a href="http://doc.qt.io/qt-5/qmatrix.html#translate">translate</a>(), <a href="http://doc.qt.io/qt-5/qmatrix.html#rotate">rotate</a>(), <a href="http://doc.qt.io/qt-5/qmatrix.html#scale">scale</a>() and <a href="http://doc.qt.io/qt-5/qmatrix.html#shear">shear</a>() convenience functions to manipulate the various matrix elements based on the currently defined coordinate system.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#QMatrix">QMatrix</a>().</p></div></p>
+</div><h4 id='method.shear' class='method'><code>fn <a href='#method.shear' class='fnname'>shear</a>&lt;'l0&gt;(&amp;'l0 mut self, sh: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, sv: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix&amp; QMatrix::shear(double sh, double sv)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#shear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Shears the coordinate system by <i>sh</i> horizontally and <i>sv</i> vertically, and returns a reference to the matrix.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#setMatrix">setMatrix</a>().</p></div></p>
+</div><h4 id='method.translate' class='method'><code>fn <a href='#method.translate' class='fnname'>translate</a>&lt;'l0&gt;(&amp;'l0 mut self, dx: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, dy: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMatrix&amp; QMatrix::translate(double dx, double dy)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmatrix.html#translate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the coordinate system <i>dx</i> along the x axis and <i>dy</i> along the y axis, and returns a reference to the matrix.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmatrix.html#setMatrix">setMatrix</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-93332' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/matrix.rs.html#18-22' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-93437' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/matrix.rs.html#426-433' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QMatrix::~QMatrix()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-93440' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/matrix.rs.html#435-439' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/painter/overloading/trait.PainterSetMatrixArgs.html' title='qt_gui::painter::overloading::PainterSetMatrixArgs'>PainterSetMatrixArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128533' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#5545-5553' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/painter/overloading/trait.PainterSetMatrixArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/painter/struct.Painter.html' title='qt_gui::painter::Painter'>Painter</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/painter/overloading/trait.PainterSetWorldMatrixArgs.html' title='qt_gui::painter::overloading::PainterSetWorldMatrixArgs'>PainterSetWorldMatrixArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/matrix/struct.Matrix.html' title='qt_gui::matrix::Matrix'>Matrix</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128683' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#5730-5738' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_gui/painter/overloading/trait.PainterSetWorldMatrixArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/painter/struct.Painter.html' title='qt_gui::painter::Painter'>Painter</a>)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

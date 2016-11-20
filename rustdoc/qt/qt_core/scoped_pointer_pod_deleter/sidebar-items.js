@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ScopedPointerPodDeleter","C++ type: <span style='color: green;'>```QScopedPointerPodDeleter```</span>"]]});

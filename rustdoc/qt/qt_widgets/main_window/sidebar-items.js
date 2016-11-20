@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["DockOption","C++ type: <span style='color: green;'>```QMainWindow::DockOption```</span>"]],"fn":[["op_bit_or","C++ method: <span style='color: green;'>```operator|```</span>"]],"mod":[["overloading",""]],"struct":[["MainWindow","C++ type: <span style='color: green;'>```QMainWindow```</span>"]]});

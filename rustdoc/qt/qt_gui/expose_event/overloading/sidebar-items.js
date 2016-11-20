@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ExposeEventNewArgs","This trait represents a set of arguments accepted by ExposeEvent::new method."],["ExposeEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by ExposeEvent::register_event_type method."]]});

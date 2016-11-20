@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ResizeEventNewArgs","This trait represents a set of arguments accepted by ResizeEvent::new method."],["ResizeEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by ResizeEvent::register_event_type method."]]});

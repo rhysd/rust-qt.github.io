@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Image` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Image">
+
+    <title>qt_gui::image::Image - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>image</a></p><script>window.sidebarCurrent = {name: 'Image', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>image</a>::<wbr><a class='struct' href=''>Image</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-77345' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image.rs.html#77-79' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Image {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QImage</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> class provides a hardware-independent image representation that allows direct access to the pixel data, and can be used as a paint device.</p>
+<p>Qt provides four classes for handling image data: <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>, <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a>, <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> and <a href="http://doc.qt.io/qt-5/qpicture.html">QPicture</a>. <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> is designed and optimized for I/O, and for direct pixel access and manipulation, while <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> is designed and optimized for showing images on screen. <a href="http://doc.qt.io/qt-5/qbitmap.html">QBitmap</a> is only a convenience class that inherits <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a>, ensuring a depth of 1. Finally, the <a href="http://doc.qt.io/qt-5/qpicture.html">QPicture</a> class is a paint device that records and replays <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> commands.</p>
+<p>Because <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> is a <a href="http://doc.qt.io/qt-5/qpaintdevice.html">QPaintDevice</a> subclass, <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> can be used to draw directly onto images. When using <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> on a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>, the painting can be performed in another thread than the current GUI thread.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> class supports several image formats described by the <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">Format</a> enum. These include monochrome, 8-bit, 32-bit and alpha-blended images which are available in all versions of Qt 4.x.</p>
+<p><a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> provides a collection of functions that can be used to obtain a variety of information about the image. There are also several functions that enables transformation of the image.</p>
+<p><a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> objects can be passed around by value since the <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> class uses <a href="http://doc.qt.io/qt-5/implicit-sharing.html#implicit-data-sharing">implicit data sharing</a>. <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> objects can also be streamed and compared.</p>
+<p><b>Note: </b>If you would like to load <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> objects in a static build of Qt, refer to the Plugin HowTo.</p><p><b>Warning:</b> Painting on a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> with the format <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_Indexed8</a> is not supported.</p>
+<a name="reading-and-writing-image-files"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-77350' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image.rs.html#87-1305' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.all_gray' class='method'><code>fn <a href='#method.all_gray' class='fnname'>all_gray</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImage::allGray() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#allGray">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if all the colors in the image are shades of gray (i.e. their red, green and blue components are equal); otherwise false.</p>
+<p>Note that this function is slow for images without color table.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#isGrayscale">isGrayscale</a>().</p></div></p>
+</div><h4 id='method.alpha_channel' class='method'><code>fn <a href='#method.alpha_channel' class='fnname'>alpha_channel</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageAlphaChannelArgs.html' title='qt_gui::image::overloading::ImageAlphaChannelArgs'>ImageAlphaChannelArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::alphaChannel</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn alpha_channel(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn alpha_channel(&amp;self, cpp_utils::AsStruct) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::alphaChannel() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage-obsolete.html#alphaChannel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the alpha channel of the image as a new grayscale <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> in which each pixel&#39;s red, green, and blue values are given the alpha value of the original image. The color depth of the returned image is 8-bit.</p>
+<p>You can see an example of use of this function in <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a>&#39;s <a href="http://doc.qt.io/qt-5/qpixmap-compat.html#alphaChannel">alphaChannel()</a>, which works in the same way as this function on QPixmaps.</p>
+<p>Most usecases for this function can be replaced with <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> and using composition modes.</p>
+<p>Note this returns a color-indexed image if you want the alpha channel in the alpha8 format instead use <a href="http://doc.qt.io/qt-5/qimage.html#convertToFormat">convertToFormat</a>(<a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">Format_Alpha8</a>) on the source image.</p>
+<p><b>Warning:</b> This is an expensive function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage-obsolete.html#setAlphaChannel">setAlphaChannel</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#hasAlphaChannel">hasAlphaChannel</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#convertToFormat">convertToFormat</a>(), <a href="http://doc.qt.io/qt-5/qpixmap.html#pixmap-information">Pixmap</a>, and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageAsQVariantArgs.html' title='qt_gui::image::overloading::ImageAsQVariantArgs'>ImageAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QImage::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the image as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>.</p></div></p>
+</div><h4 id='method.bit_plane_count' class='method'><code>fn <a href='#method.bit_plane_count' class='fnname'>bit_plane_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::bitPlaneCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#bitPlaneCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of bit planes in the image.</p>
+<p>The number of bit planes is the number of bits of color and transparency information for each pixel. This is different from (i.e. smaller than) the depth when the image format contains unused bits.</p>
+<p>This function was introduced in  Qt 4.7.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#depth">depth</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#format">format</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#image-formats">Image Formats</a>.</p></div></p>
+</div><h4 id='method.bits' class='method'><code>fn <a href='#method.bits' class='fnname'>bits</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const unsigned char* QImage::bits() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#bits-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> uses <a href="http://doc.qt.io/qt-5/implicit-sharing.html#implicit-data-sharing">implicit data sharing</a>, but this function does <i>not</i> perform a deep copy of the shared pixel data, because the returned data is const.</p></div></p>
+</div><h4 id='method.bits_mut' class='method'><code>fn <a href='#method.bits_mut' class='fnname'>bits_mut</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char* QImage::bits()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#bits">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to the first pixel data. This is equivalent to <a href="http://doc.qt.io/qt-5/qimage.html#scanLine">scanLine</a>(0).</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> uses <a href="http://doc.qt.io/qt-5/implicit-sharing.html#implicit-data-sharing">implicit data sharing</a>. This function performs a deep copy of the shared pixel data, thus ensuring that this <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> is the only one using the current return value.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#scanLine">scanLine</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#byteCount">byteCount</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#constBits">constBits</a>().</p></div></p>
+</div><h4 id='method.byte_count' class='method'><code>fn <a href='#method.byte_count' class='fnname'>byte_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::byteCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#byteCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of bytes occupied by the image data.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#bytesPerLine">bytesPerLine</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#bits">bits</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.bytes_per_line' class='method'><code>fn <a href='#method.bytes_per_line' class='fnname'>bytes_per_line</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::bytesPerLine() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#bytesPerLine">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of bytes per image scanline.</p>
+<p>This is equivalent to <a href="http://doc.qt.io/qt-5/qimage.html#byteCount">byteCount</a>() / <a href="http://doc.qt.io/qt-5/qimage.html#height">height</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#scanLine">scanLine</a>().</p></div></p>
+</div><h4 id='method.cache_key' class='method'><code>fn <a href='#method.cache_key' class='fnname'>cache_key</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QImage::cacheKey() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#cacheKey">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a number that identifies the contents of this <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> object. Distinct <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> objects can only have the same key if they refer to the same contents.</p>
+<p>The key will change when the image is altered.</p></div></p>
+</div><h4 id='method.color' class='method'><code>fn <a href='#method.color' class='fnname'>color</a>(&amp;self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QImage::color(int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#color">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the color in the color table at index <i>i</i>. The first color is at index 0.</p>
+<p>The colors in an image&#39;s color table are specified as ARGB quadruplets (<a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a>). Use the <a href="http://doc.qt.io/qt-5/qcolor.html#qAlpha">qAlpha</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#qRed">qRed</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#qGreen">qGreen</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#qBlue">qBlue</a>() functions to get the color value components.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#setColor">setColor</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#pixelIndex">pixelIndex</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#pixel-manipulation">Pixel Manipulation</a>.</p></div></p>
+</div><h4 id='method.color_count' class='method'><code>fn <a href='#method.color_count' class='fnname'>color_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::colorCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#colorCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the color table for the image.</p>
+<p>Notice that colorCount() returns 0 for 32-bpp images because these images do not use color tables, but instead encode pixel values as ARGB quadruplets.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#setColorCount">setColorCount</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.color_table' class='method'><code>fn <a href='#method.color_table' class='fnname'>color_table</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageColorTableArgs.html' title='qt_gui::image::overloading::ImageColorTableArgs'>ImageColorTableArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::colorTable</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn color_table(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::vector::VectorCUint&gt;</code><br>2) <code>fn color_table(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::vector::VectorCUint</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;unsigned int&gt; QImage::colorTable() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#colorTable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of the colors contained in the image&#39;s color table, or an empty list if the image does not have a color table</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#setColorTable">setColorTable</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#colorCount">colorCount</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#color">color</a>().</p></div></p>
+</div><h4 id='method.const_bits' class='method'><code>fn <a href='#method.const_bits' class='fnname'>const_bits</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const unsigned char* QImage::constBits() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#constBits">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to the first pixel data.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> uses <a href="http://doc.qt.io/qt-5/implicit-sharing.html#implicit-data-sharing">implicit data sharing</a>, but this function does <i>not</i> perform a deep copy of the shared pixel data, because the returned data is const.</p>
+<p>This function was introduced in  Qt 4.7.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#bits">bits</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#constScanLine">constScanLine</a>().</p></div></p>
+</div><h4 id='method.const_scan_line' class='method'><code>fn <a href='#method.const_scan_line' class='fnname'>const_scan_line</a>(&amp;self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const unsigned char* QImage::constScanLine(int arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#constScanLine">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to the pixel data at the scanline with index <i>i</i>. The first scanline is at index 0.</p>
+<p>The scanline data is aligned on a 32-bit boundary.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> uses <a href="http://doc.qt.io/qt-5/implicit-sharing.html#implicit-data-sharing">implicit data sharing</a>, but this function does <i>not</i> perform a deep copy of the shared pixel data, because the returned data is const.</p>
+<p>This function was introduced in  Qt 4.7.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#scanLine">scanLine</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#constBits">constBits</a>().</p></div></p>
+</div><h4 id='method.convert_to_format' class='method'><code>fn <a href='#method.convert_to_format' class='fnname'>convert_to_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageConvertToFormatArgs.html' title='qt_gui::image::overloading::ImageConvertToFormatArgs'>ImageConvertToFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::convertToFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn convert_to_format(&amp;self, (::image::Format, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn convert_to_format(&amp;self, (::image::Format, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn convert_to_format(&amp;self, (::image::Format, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn convert_to_format(&amp;self, (::image::Format, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::convertToFormat(QImage::Format f, QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#convertToFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of the image in the given <i>format</i>.</p>
+<p>The specified image conversion <i>flags</i> control how the image data is handled during the conversion process.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-formats">Image Formats</a>.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn convert_to_format(&amp;self, (::image::Format, &amp;qt_core::vector::VectorCUint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn convert_to_format(&amp;self, (::image::Format, &amp;qt_core::vector::VectorCUint, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn convert_to_format(&amp;self, (::image::Format, &amp;qt_core::vector::VectorCUint, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn convert_to_format(&amp;self, (::image::Format, &amp;qt_core::vector::VectorCUint, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::convertToFormat(QImage::Format f, const QVector&lt;unsigned int&gt;&amp; colorTable, QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#convertToFormat-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns a copy of the image converted to the given <i>format</i>, using the specified <i>colorTable</i>.</p>
+<p>Conversion from 32 bit to 8 bit indexed is a slow operation and will use a straightforward nearest color approach, with no dithering.</p></div></p>
+</div><h4 id='method.convert_to_format_mut' class='method'><code>fn <a href='#method.convert_to_format_mut' class='fnname'>convert_to_format_mut</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageConvertToFormatMutArgs.html' title='qt_gui::image::overloading::ImageConvertToFormatMutArgs'>ImageConvertToFormatMutArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::convertToFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn convert_to_format_mut(&amp;mut self, (::image::Format, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn convert_to_format_mut(&amp;mut self, (::image::Format, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn convert_to_format_mut(&amp;mut self, (::image::Format, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn convert_to_format_mut(&amp;mut self, (::image::Format, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::convertToFormat(QImage::Format f, QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#convertToFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of the image in the given <i>format</i>.</p>
+<p>The specified image conversion <i>flags</i> control how the image data is handled during the conversion process.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-formats">Image Formats</a>.</p></div></p>
+</div><h4 id='method.copy' class='method'><code>fn <a href='#method.copy' class='fnname'>copy</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageCopyArgs.html' title='qt_gui::image::overloading::ImageCopyArgs'>ImageCopyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::copy</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn copy(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn copy(&amp;self, (&amp;qt_core::rect::Rect, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn copy(&amp;self, cpp_utils::AsStruct) -&gt; ::image::Image</code><br>4) <code>fn copy(&amp;self, (&amp;qt_core::rect::Rect, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::copy(const QRect&amp; rect = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#copy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a sub-area of the image as a new image.</p>
+<p>The returned image is copied from the position (<i>rectangle</i>.x(), <i>rectangle</i>.y()) in this image, and will always have the size of the given <i>rectangle</i>.</p>
+<p>In areas beyond this image, pixels are set to 0. For 32-bit RGB images, this means black; for 32-bit ARGB images, this means transparent black; for 8-bit images, this means the color with index 0 in the color table which can be anything; for 1-bit images, this means <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::color0</a>.</p>
+<p>If the given <i>rectangle</i> is a null rectangle the entire image is copied.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#QImage">QImage</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn copy(&amp;self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn copy(&amp;self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::copy(int x, int y, int w, int h) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#copy-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The returned image is copied from the position (<i>x</i>, <i>y</i>) in this image, and will always have the given <i>width</i> and <i>height</i>. In areas beyond this image, pixels are set to 0.</p></div></p>
+</div><h4 id='method.create_alpha_mask' class='method'><code>fn <a href='#method.create_alpha_mask' class='fnname'>create_alpha_mask</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageCreateAlphaMaskArgs.html' title='qt_gui::image::overloading::ImageCreateAlphaMaskArgs'>ImageCreateAlphaMaskArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::createAlphaMask</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn create_alpha_mask(&amp;self, (qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn create_alpha_mask(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn create_alpha_mask(&amp;self, (qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn create_alpha_mask(&amp;self, cpp_utils::AsStruct) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::createAlphaMask(QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#createAlphaMask">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Builds and returns a 1-bpp mask from the alpha buffer in this image. Returns a null image if the image&#39;s format is <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_RGB32</a>.</p>
+<p>The <i>flags</i> argument is a bitwise-OR of the <a href="http://doc.qt.io/qt-5/qt.html#ImageConversionFlag-enum">Qt::ImageConversionFlags</a>, and controls the conversion process. Passing 0 for flags sets all the default options.</p>
+<p>The returned image has little-endian bit order (i.e. the image&#39;s format is <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_MonoLSB</a>), which you can convert to big-endian (<a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_Mono</a>) using the <a href="http://doc.qt.io/qt-5/qimage.html#convertToFormat">convertToFormat</a>() function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#createHeuristicMask">createHeuristicMask</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.create_heuristic_mask' class='method'><code>fn <a href='#method.create_heuristic_mask' class='fnname'>create_heuristic_mask</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageCreateHeuristicMaskArgs.html' title='qt_gui::image::overloading::ImageCreateHeuristicMaskArgs'>ImageCreateHeuristicMaskArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::createHeuristicMask</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn create_heuristic_mask(&amp;self, (bool, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn create_heuristic_mask(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn create_heuristic_mask(&amp;self, (bool, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn create_heuristic_mask(&amp;self, cpp_utils::AsStruct) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::createHeuristicMask(bool clipTight = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#createHeuristicMask">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns a 1-bpp heuristic mask for this image.</p>
+<p>The function works by selecting a color from one of the corners, then chipping away pixels of that color starting at all the edges. The four corners vote for which color is to be masked away. In case of a draw (this generally means that this function is not applicable to the image), the result is arbitrary.</p>
+<p>The returned image has little-endian bit order (i.e. the image&#39;s format is <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_MonoLSB</a>), which you can convert to big-endian (<a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_Mono</a>) using the <a href="http://doc.qt.io/qt-5/qimage.html#convertToFormat">convertToFormat</a>() function.</p>
+<p>If <i>clipTight</i> is true (the default) the mask is just large enough to cover the pixels; otherwise, the mask is larger than the data pixels.</p>
+<p>Note that this function disregards the alpha buffer.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#createAlphaMask">createAlphaMask</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.create_mask_from_color' class='method'><code>fn <a href='#method.create_mask_from_color' class='fnname'>create_mask_from_color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageCreateMaskFromColorArgs.html' title='qt_gui::image::overloading::ImageCreateMaskFromColorArgs'>ImageCreateMaskFromColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::createMaskFromColor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn create_mask_from_color(&amp;self, (libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn create_mask_from_color(&amp;self, (libc::c_uint, qt_core::qt::MaskMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn create_mask_from_color(&amp;self, (libc::c_uint, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn create_mask_from_color(&amp;self, (libc::c_uint, qt_core::qt::MaskMode, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::createMaskFromColor(unsigned int color, Qt::MaskMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#createMaskFromColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns a mask for this image based on the given <i>color</i> value. If the <i>mode</i> is MaskInColor (the default value), all pixels matching <i>color</i> will be opaque pixels in the mask. If <i>mode</i> is MaskOutColor, all pixels matching the given color will be transparent.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#createAlphaMask">createAlphaMask</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#createHeuristicMask">createHeuristicMask</a>().</p></div></p>
+</div><h4 id='method.depth' class='method'><code>fn <a href='#method.depth' class='fnname'>depth</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::depth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#depth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the depth of the image.</p>
+<p>The image depth is the number of bits used to store a single pixel, also called bits per pixel (bpp).</p>
+<p>The supported depths are 1, 8, 16, 24 and 32.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#bitPlaneCount">bitPlaneCount</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#convertToFormat">convertToFormat</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#image-formats">Image Formats</a>, and <a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.detach' class='method'><code>fn <a href='#method.detach' class='fnname'>detach</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::detach()</code></span></p>
+</div><h4 id='method.dev_type' class='method'><code>fn <a href='#method.dev_type' class='fnname'>dev_type</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual int QImage::devType() const</code></span></p>
+</div><h4 id='method.device_pixel_ratio' class='method'><code>fn <a href='#method.device_pixel_ratio' class='fnname'>device_pixel_ratio</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QImage::devicePixelRatio() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#devicePixelRatio">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the device pixel ratio for the image. This is the ratio between <i>device pixels</i> and <i>device independent pixels</i>.</p>
+<p>Use this function when calculating layout geometry based on the image size: <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> layoutSize = image.<a href="http://doc.qt.io/qt-5/qimage.html#size">size</a>() / image.devicePixelRatio()</p>
+<p>The default value is 1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#setDevicePixelRatio">setDevicePixelRatio</a>() and <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a>.</p></div></p>
+</div><h4 id='method.dots_per_meter_x' class='method'><code>fn <a href='#method.dots_per_meter_x' class='fnname'>dots_per_meter_x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::dotsPerMeterX() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#dotsPerMeterX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of pixels that fit horizontally in a physical meter. Together with <a href="http://doc.qt.io/qt-5/qimage.html#dotsPerMeterY">dotsPerMeterY</a>(), this number defines the intended scale and aspect ratio of the image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#setDotsPerMeterX">setDotsPerMeterX</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.dots_per_meter_y' class='method'><code>fn <a href='#method.dots_per_meter_y' class='fnname'>dots_per_meter_y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::dotsPerMeterY() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#dotsPerMeterY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of pixels that fit vertically in a physical meter. Together with <a href="http://doc.qt.io/qt-5/qimage.html#dotsPerMeterX">dotsPerMeterX</a>(), this number defines the intended scale and aspect ratio of the image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#setDotsPerMeterY">setDotsPerMeterY</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.fill' class='method'><code>fn <a href='#method.fill' class='fnname'>fill</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageFillArgs.html' title='qt_gui::image::overloading::ImageFillArgs'>ImageFillArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::fill</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn fill(&amp;mut self, qt_core::qt::GlobalColor) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QImage::fill(Qt::GlobalColor color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#fill-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Fills the image with the given <i>color</i>, described as a standard global color.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn fill(&amp;mut self, &amp;::color::Color) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QImage::fill(const QColor&amp; color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#fill-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Fills the entire image with the given <i>color</i>.</p>
+<p>If the depth of the image is 1, the image will be filled with 1 if <i>color</i> equals <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::color1</a>; it will otherwise be filled with 0.</p>
+<p>If the depth of the image is 8, the image will be filled with the index corresponding the <i>color</i> in the color table if present; it will otherwise be filled with 0.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn fill(&amp;mut self, libc::c_uint) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QImage::fill(unsigned int pixel)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#fill">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Fills the entire image with the given <i>pixelValue</i>.</p>
+<p>If the depth of this image is 1, only the lowest bit is used. If you say fill(0), fill(2), etc., the image is filled with 0s. If you say fill(1), fill(3), etc., the image is filled with 1s. If the depth is 8, the lowest 8 bits are used and if the depth is 16 the lowest 16 bits are used.</p>
+<p>Note: <a href="http://doc.qt.io/qt-5/qimage.html#pixel">QImage::pixel</a>() returns the color of the pixel at the given coordinates while QColor::pixel() returns the pixel value of the underlying window system (essentially an index value), so normally you will want to use <a href="http://doc.qt.io/qt-5/qimage.html#pixel">QImage::pixel</a>() to use a color from an existing image or <a href="http://doc.qt.io/qt-5/qcolor.html#rgb">QColor::rgb</a>() to use a specific color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#depth">depth</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.format' class='method'><code>fn <a href='#method.format' class='fnname'>format</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/image/enum.Format.html' title='qt_gui::image::Format'>Format</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::Format QImage::format() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#format">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the format of the image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-formats">Image Formats</a>.</p></div></p>
+</div><h4 id='method.from_data' class='method'><code>fn <a href='#method.from_data' class='fnname'>from_data</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageFromDataArgs.html' title='qt_gui::image::overloading::ImageFromDataArgs'>ImageFromDataArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::fromData</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn from_data((&amp;qt_core::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn from_data((&amp;qt_core::byte_array::ByteArray, *const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn from_data((&amp;qt_core::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn from_data((&amp;qt_core::byte_array::ByteArray, *const libc::c_char, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>static QImage QImage::fromData(const QByteArray&amp; data, const char* format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#fromData-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Loads an image from the given <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> <i>data</i>.</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn from_data((*const libc::c_uchar, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn from_data((*const libc::c_uchar, libc::c_int, *const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn from_data((*const libc::c_uchar, libc::c_int, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn from_data((*const libc::c_uchar, libc::c_int, *const libc::c_char, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>static QImage QImage::fromData(const unsigned char* data, int size, const char* format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#fromData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Constructs a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> from the first <i>size</i> bytes of the given binary <i>data</i>. The loader attempts to read the image using the specified <i>format</i>. If <i>format</i> is not specified (which is the default), the loader probes the file for a header to guess the file format. binary <i>data</i>. The loader attempts to read the image, either using the optional image <i>format</i> specified or by determining the image format from the data.</p>
+<p>If <i>format</i> is not specified (which is the default), the loader probes the file for a header to determine the file format. If <i>format</i> is specified, it must be one of the values returned by <a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">QImageReader::supportedImageFormats</a>().</p>
+<p>If the loading of the image fails, the image returned will be a null image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#load">load</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#save">save</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files">Reading and Writing Image Files</a>.</p></div></p>
+</div><h4 id='method.has_alpha_channel' class='method'><code>fn <a href='#method.has_alpha_channel' class='fnname'>has_alpha_channel</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImage::hasAlphaChannel() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#hasAlphaChannel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the image has a format that respects the alpha channel, otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.height' class='method'><code>fn <a href='#method.height' class='fnname'>height</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::height() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#height">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the height of the image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.height_m_m' class='method'><code>fn <a href='#method.height_m_m' class='fnname'>height_m_m</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::heightMM() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#heightMM">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the height of the paint device in millimeters. Due to platform limitations it may not be possible to use this function to determine the actual physical size of a widget on the screen.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#height">height</a>().</p></div></p>
+</div><h4 id='method.invert_pixels' class='method'><code>fn <a href='#method.invert_pixels' class='fnname'>invert_pixels</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageInvertPixelsArgs.html' title='qt_gui::image::overloading::ImageInvertPixelsArgs'>ImageInvertPixelsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::invertPixels</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn invert_pixels(&amp;mut self, ::image::InvertMode) -&gt; ()</code><br>2) <code>fn invert_pixels(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QImage::invertPixels(QImage::InvertMode arg1 = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#invertPixels">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inverts all pixel values in the image.</p>
+<p>The given invert <i>mode</i> only have a meaning when the image&#39;s depth is 32. The default <i>mode</i> is <a href="http://doc.qt.io/qt-5/qimage.html#InvertMode-enum">InvertRgb</a>, which leaves the alpha channel unchanged. If the <i>mode</i> is <a href="http://doc.qt.io/qt-5/qimage.html#InvertMode-enum">InvertRgba</a>, the alpha bits are also inverted.</p>
+<p>Inverting an 8-bit image means to replace all pixels using color index <i>i</i> with a pixel using color index 255 minus <i>i</i>. The same is the case for a 1-bit image. Note that the color table is <i>not</i> changed.</p>
+<p>If the image has a premultiplied alpha channel, the image is first converted to ARGB32 to be inverted and then converted back.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImage::isDetached() const</code></span></p>
+</div><h4 id='method.is_grayscale' class='method'><code>fn <a href='#method.is_grayscale' class='fnname'>is_grayscale</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImage::isGrayscale() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#isGrayscale">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For 32-bit images, this function is equivalent to <a href="http://doc.qt.io/qt-5/qimage.html#allGray">allGray</a>().</p>
+<p>For color indexed images, this function returns <code>true</code> if color(i) is <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a>(i, i, i) for all indexes of the color table; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#allGray">allGray</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-formats">Image Formats</a>.</p></div></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImage::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if it is a null image, otherwise returns <code>false</code>.</p>
+<p>A null image has all parameters set to zero and no allocated data.</p></div></p>
+</div><h4 id='method.load' class='method'><code>fn <a href='#method.load' class='fnname'>load</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageLoadArgs.html' title='qt_gui::image::overloading::ImageLoadArgs'>ImageLoadArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::load</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn load(&amp;mut self, (*mut qt_core::qiod_evice::QiodEvice, *const libc::c_char)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QImage::load(QIODevice* device, const char* format)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#load-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function reads a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> from the given <i>device</i>. This can, for example, be used to load an image directly into a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>.</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn load(&amp;mut self, &amp;qt_core::string::String) -&gt; bool</code><br>2) <code>fn load(&amp;mut self, (&amp;qt_core::string::String, *const libc::c_char)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QImage::load(const QString&amp; fileName, const char* format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#load">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Loads an image from the file with the given <i>fileName</i>. Returns <code>true</code> if the image was successfully loaded; otherwise invalidates the image and returns <code>false</code>.</p>
+<p>The loader attempts to read the image using the specified <i>format</i>, e.g., PNG or JPG. If <i>format</i> is not specified (which is the default), the loader probes the file for a header to guess the file format.</p>
+<p>The file name can either refer to an actual file on disk or to one of the application&#39;s embedded resources. See the <a href="http://doc.qt.io/qt-5/resources.html">Resource System</a> overview for details on how to embed images and other resource files in the application&#39;s executable.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files">Reading and Writing Image Files</a>.</p></div></p>
+</div><h4 id='method.load_from_data' class='method'><code>fn <a href='#method.load_from_data' class='fnname'>load_from_data</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageLoadFromDataArgs.html' title='qt_gui::image::overloading::ImageLoadFromDataArgs'>ImageLoadFromDataArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::loadFromData</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn load_from_data(&amp;mut self, &amp;qt_core::byte_array::ByteArray) -&gt; bool</code><br>2) <code>fn load_from_data(&amp;mut self, (&amp;qt_core::byte_array::ByteArray, *const libc::c_char)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QImage::loadFromData(const QByteArray&amp; data, const char* aformat = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#loadFromData-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Loads an image from the given <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> <i>data</i>.</p></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn load_from_data(&amp;mut self, (*const libc::c_uchar, libc::c_int)) -&gt; bool</code><br>2) <code>fn load_from_data(&amp;mut self, (*const libc::c_uchar, libc::c_int, *const libc::c_char)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QImage::loadFromData(const unsigned char* buf, int len, const char* format = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#loadFromData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Loads an image from the first <i>len</i> bytes of the given binary <i>data</i>. Returns <code>true</code> if the image was successfully loaded; otherwise invalidates the image and returns <code>false</code>.</p>
+<p>The loader attempts to read the image using the specified <i>format</i>, e.g., PNG or JPG. If <i>format</i> is not specified (which is the default), the loader probes the file for a header to guess the file format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files">Reading and Writing Image Files</a>.</p></div></p>
+</div><h4 id='method.logical_dpi_x' class='method'><code>fn <a href='#method.logical_dpi_x' class='fnname'>logical_dpi_x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::logicalDpiX() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal resolution of the device in dots per inch, which is used when computing font sizes. For X11, this is usually the same as could be computed from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#widthMM">widthMM</a>().</p>
+<p>Note that if the logicalDpiX() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">physicalDpiX</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">logicalDpiY</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">physicalDpiX</a>().</p></div></p>
+</div><h4 id='method.logical_dpi_y' class='method'><code>fn <a href='#method.logical_dpi_y' class='fnname'>logical_dpi_y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::logicalDpiY() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the vertical resolution of the device in dots per inch, which is used when computing font sizes. For X11, this is usually the same as could be computed from <a href="http://doc.qt.io/qt-5/qpaintdevice.html#heightMM">heightMM</a>().</p>
+<p>Note that if the logicalDpiY() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">physicalDpiY</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">logicalDpiX</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">physicalDpiY</a>().</p></div></p>
+</div><h4 id='method.mirrored' class='method'><code>fn <a href='#method.mirrored' class='fnname'>mirrored</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageMirroredArgs.html' title='qt_gui::image::overloading::ImageMirroredArgs'>ImageMirroredArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::mirrored</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn mirrored(&amp;self, (bool, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn mirrored(&amp;self, (bool, bool, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn mirrored(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>4) <code>fn mirrored(&amp;self, (bool, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>5) <code>fn mirrored(&amp;self, (bool, bool, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>6) <code>fn mirrored(&amp;self, cpp_utils::AsStruct) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::mirrored(bool horizontally = ?, bool vertically = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#mirrored">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a mirror of the image, mirrored in the horizontal and/or the vertical direction depending on whether <i>horizontal</i> and <i>vertical</i> are set to true or false.</p>
+<p>Note that the original image is not changed.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageNewArgs.html' title='qt_gui::image::overloading::ImageNewArgs'>ImageNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::QImage</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-6' class='section-header'><a href='#variant-1-6'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::image::Image</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImage::QImage()</code></span></p>
+
+<h2 id='variant-2-6' class='section-header'><a href='#variant-2-6'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::image::Image, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>2) <code>fn new((&amp;::image::Image, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImage::QImage(const QImage&amp; arg1)</code></span></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::size::Size, ::image::Format, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>2) <code>fn new((&amp;qt_core::size::Size, ::image::Format, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImage::QImage(const QSize&amp; size, QImage::Format format)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>2) <code>fn new((&amp;qt_core::string::String, *const libc::c_char, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>3) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>4) <code>fn new((&amp;qt_core::string::String, *const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImage::QImage(const QString&amp; fileName, const char* format = ?)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>2) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>3) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), *mut libc::c_void, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>5) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>6) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), *mut libc::c_void, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImage::QImage(const unsigned char* data, int width, int height, QImage::Format format, void (*FN_PTR)(void*) cleanupFunction = ?, void* cleanupInfo = ?)</code></span></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>2) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>3) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), *mut libc::c_void, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>5) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>6) <code>fn new((*const libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), *mut libc::c_void, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImage::QImage(const unsigned char* data, int width, int height, int bytesPerLine, QImage::Format format, void (*FN_PTR)(void*) cleanupFunction = ?, void* cleanupInfo = ?)</code></span></p>
+
+<h2 id='variant-7' class='section-header'><a href='#variant-7'>Variant 7</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, libc::c_int, ::image::Format, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>2) <code>fn new((libc::c_int, libc::c_int, ::image::Format, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImage::QImage(int width, int height, QImage::Format format)</code></span></p>
+
+<h2 id='variant-8' class='section-header'><a href='#variant-8'>Variant 8</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>2) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>3) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), *mut libc::c_void, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>5) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>6) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), *mut libc::c_void, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImage::QImage(unsigned char* data, int width, int height, QImage::Format format, void (*FN_PTR)(void*) cleanupFunction = ?, void* cleanupInfo = ?)</code></span></p>
+
+<h2 id='variant-9' class='section-header'><a href='#variant-9'>Variant 9</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>2) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>3) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), *mut libc::c_void, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>5) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>6) <code>fn new((*mut libc::c_uchar, libc::c_int, libc::c_int, libc::c_int, ::image::Format, extern &quot;C&quot; fn(*mut libc::c_void), *mut libc::c_void, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QImage::QImage(unsigned char* data, int width, int height, int bytesPerLine, QImage::Format format, void (*FN_PTR)(void*) cleanupFunction = ?, void* cleanupInfo = ?)</code></span></p>
+</div><h4 id='method.offset' class='method'><code>fn <a href='#method.offset' class='fnname'>offset</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageOffsetArgs.html' title='qt_gui::image::overloading::ImageOffsetArgs'>ImageOffsetArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::offset</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn offset(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::point::Point&gt;</code><br>2) <code>fn offset(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint QImage::offset() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#offset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of pixels by which the image is intended to be offset by when positioning relative to other images.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#setOffset">setOffset</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, arg1: &amp;'l1 <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage&amp; QImage::operator=(const QImage&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns a shallow copy of the given <i>image</i> to this image and returns a reference to this image.</p>
+<p>For more information about shallow copies, see the <a href="http://doc.qt.io/qt-5/implicit-sharing.html#implicit-data-sharing">Implicit Data Sharing</a> documentation.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#copy">copy</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#QImage">QImage</a>().</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImage::operator==(const QImage&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this image and the given <i>image</i> have the same contents; otherwise returns <code>false</code>.</p>
+<p>The comparison can be slow, unless there is some obvious difference (e.g. different size or format), in which case the function will return quickly.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#operator-eq">operator=</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImage::operator!=(const QImage&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this image and the given <i>image</i> have different contents; otherwise returns <code>false</code>.</p>
+<p>The comparison can be slow, unless there is some obvious difference, such as different widths, in which case the function will return quickly.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#operator-eq">operator=</a>().</p></div></p>
+</div><h4 id='method.paint_engine' class='method'><code>fn <a href='#method.paint_engine' class='fnname'>paint_engine</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/paint_engine/struct.PaintEngine.html' title='qt_gui::paint_engine::PaintEngine'>PaintEngine</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual QPaintEngine* QImage::paintEngine() const</code></span></p>
+</div><h4 id='method.painting_active' class='method'><code>fn <a href='#method.painting_active' class='fnname'>painting_active</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QImage::paintingActive() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#paintingActive">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the device is currently being painted on, i.e. someone has called <a href="http://doc.qt.io/qt-5/qpainter.html#begin">QPainter::begin</a>() but not yet called <a href="http://doc.qt.io/qt-5/qpainter.html#end">QPainter::end</a>() for this device; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainter.html#isActive">QPainter::isActive</a>().</p></div></p>
+</div><h4 id='method.physical_dpi_x' class='method'><code>fn <a href='#method.physical_dpi_x' class='fnname'>physical_dpi_x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::physicalDpiX() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal resolution of the device in dots per inch. For example, when printing, this resolution refers to the physical printer&#39;s resolution. The logical DPI on the other hand, refers to the resolution used by the actual paint engine.</p>
+<p>Note that if the physicalDpiX() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">logicalDpiX</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">physicalDpiY</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiX">logicalDpiX</a>().</p></div></p>
+</div><h4 id='method.physical_dpi_y' class='method'><code>fn <a href='#method.physical_dpi_y' class='fnname'>physical_dpi_y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::physicalDpiY() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the horizontal resolution of the device in dots per inch. For example, when printing, this resolution refers to the physical printer&#39;s resolution. The logical DPI on the other hand, refers to the resolution used by the actual paint engine.</p>
+<p>Note that if the physicalDpiY() doesn&#39;t equal the <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">logicalDpiY</a>(), the corresponding <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> must handle the resolution mapping.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#physicalDpiX">physicalDpiX</a>() and <a href="http://doc.qt.io/qt-5/qpaintdevice.html#logicalDpiY">logicalDpiY</a>().</p></div></p>
+</div><h4 id='method.pixel' class='method'><code>fn <a href='#method.pixel' class='fnname'>pixel</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImagePixelArgs.html' title='qt_gui::image::overloading::ImagePixelArgs'>ImagePixelArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::pixel</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-7' class='section-header'><a href='#variant-1-7'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn pixel(&amp;self, &amp;qt_core::point::Point) -&gt; libc::c_uint</code><br>
+C++ method: <span style='color: green;'><code>unsigned int QImage::pixel(const QPoint&amp; pt) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#pixel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the color of the pixel at the given <i>position</i>.</p>
+<p>If the <i>position</i> is not valid, the results are undefined.</p>
+<p><b>Warning:</b> This function is expensive when used for massive pixel manipulations.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#setPixel">setPixel</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#valid">valid</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#pixel-manipulation">Pixel Manipulation</a>.</p></div></p>
+
+<h2 id='variant-2-7' class='section-header'><a href='#variant-2-7'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn pixel(&amp;self, (libc::c_int, libc::c_int)) -&gt; libc::c_uint</code><br>
+C++ method: <span style='color: green;'><code>unsigned int QImage::pixel(int x, int y) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#pixel-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns the color of the pixel at coordinates (<i>x</i>, <i>y</i>).</p></div></p>
+</div><h4 id='method.pixel_format' class='method'><code>fn <a href='#method.pixel_format' class='fnname'>pixel_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImagePixelFormatArgs.html' title='qt_gui::image::overloading::ImagePixelFormatArgs'>ImagePixelFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::pixelFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn pixel_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pixel_format::PixelFormat&gt;</code><br>2) <code>fn pixel_format(&amp;self, cpp_utils::AsStruct) -&gt; ::pixel_format::PixelFormat</code><br>
+C++ method: <span style='color: green;'><code>QPixelFormat QImage::pixelFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#pixelFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format</a> as a <a href="http://doc.qt.io/qt-5/qpixelformat.html">QPixelFormat</a></p></div></p>
+</div><h4 id='method.pixel_index' class='method'><code>fn <a href='#method.pixel_index' class='fnname'>pixel_index</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImagePixelIndexArgs.html' title='qt_gui::image::overloading::ImagePixelIndexArgs'>ImagePixelIndexArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::pixelIndex</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-8' class='section-header'><a href='#variant-1-8'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn pixel_index(&amp;self, &amp;qt_core::point::Point) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QImage::pixelIndex(const QPoint&amp; pt) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#pixelIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pixel index at the given <i>position</i>.</p>
+<p>If <i>position</i> is not valid, or if the image is not a paletted image (<a href="http://doc.qt.io/qt-5/qimage.html#depth">depth</a>() &gt; 8), the results are undefined.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#valid">valid</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#depth">depth</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#pixel-manipulation">Pixel Manipulation</a>.</p></div></p>
+
+<h2 id='variant-2-8' class='section-header'><a href='#variant-2-8'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn pixel_index(&amp;self, (libc::c_int, libc::c_int)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QImage::pixelIndex(int x, int y) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#pixelIndex-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns the pixel index at (<i>x</i>, <i>y</i>).</p></div></p>
+</div><h4 id='method.rect' class='method'><code>fn <a href='#method.rect' class='fnname'>rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageRectArgs.html' title='qt_gui::image::overloading::ImageRectArgs'>ImageRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::rect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QImage::rect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#rect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the enclosing rectangle (0, 0, <a href="http://doc.qt.io/qt-5/qimage.html#width">width</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#height">height</a>()) of the image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.rgb_swapped' class='method'><code>fn <a href='#method.rgb_swapped' class='fnname'>rgb_swapped</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageRgbSwappedArgs.html' title='qt_gui::image::overloading::ImageRgbSwappedArgs'>ImageRgbSwappedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::rgbSwapped</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn rgb_swapped(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn rgb_swapped(&amp;self, cpp_utils::AsStruct) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::rgbSwapped() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#rgbSwapped">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> in which the values of the red and blue components of all pixels have been swapped, effectively converting an RGB image to an BGR image.</p>
+<p>The original <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> is not changed.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.save' class='method'><code>fn <a href='#method.save' class='fnname'>save</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageSaveArgs.html' title='qt_gui::image::overloading::ImageSaveArgs'>ImageSaveArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::save</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-9' class='section-header'><a href='#variant-1-9'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn save(&amp;self, *mut qt_core::qiod_evice::QiodEvice) -&gt; bool</code><br>2) <code>fn save(&amp;self, (*mut qt_core::qiod_evice::QiodEvice, *const libc::c_char)) -&gt; bool</code><br>3) <code>fn save(&amp;self, (*mut qt_core::qiod_evice::QiodEvice, *const libc::c_char, libc::c_int)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QImage::save(QIODevice* device, const char* format = ?, int quality = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#save-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function writes a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> to the given <i>device</i>.</p>
+<p>This can, for example, be used to save an image directly into a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>:</p>
+<pre class="cpp">        <span class="type"><a href="http://doc.qt.io/qt-5/qimage.html#QImage">QImage</a></span> image;
+&#32;       <span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> ba;
+&#32;       <span class="type"><a href="http://doc.qt.io/qt-5/qbuffer.html">QBuffer</a></span> buffer(<span class="operator">&amp;</span>ba);
+&#32;       buffer<span class="operator">.</span>open(<span class="type"><a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a></span><span class="operator">::</span>WriteOnly);
+&#32;       image<span class="operator">.</span>save(<span class="operator">&amp;</span>buffer<span class="operator">,</span> <span class="string">&quot;PNG&quot;</span>); <span class="comment">// writes image into ba in PNG format</span></pre></div></p>
+
+<h2 id='variant-2-9' class='section-header'><a href='#variant-2-9'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn save(&amp;self, &amp;qt_core::string::String) -&gt; bool</code><br>2) <code>fn save(&amp;self, (&amp;qt_core::string::String, *const libc::c_char)) -&gt; bool</code><br>3) <code>fn save(&amp;self, (&amp;qt_core::string::String, *const libc::c_char, libc::c_int)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QImage::save(const QString&amp; fileName, const char* format = ?, int quality = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#save">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Saves the image to the file with the given <i>fileName</i>, using the given image file <i>format</i> and <i>quality</i> factor. If <i>format</i> is 0, <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> will attempt to guess the format by looking at <i>fileName</i>&#39;s suffix.</p>
+<p>The <i>quality</i> factor must be in the range 0 to 100 or -1. Specify 0 to obtain small compressed files, 100 for large uncompressed files, and -1 (the default) to use the default settings.</p>
+<p>Returns <code>true</code> if the image was successfully saved; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#reading-and-writing-image-files">Reading and Writing Image Files</a>.</p></div></p>
+</div><h4 id='method.scaled' class='method'><code>fn <a href='#method.scaled' class='fnname'>scaled</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageScaledArgs.html' title='qt_gui::image::overloading::ImageScaledArgs'>ImageScaledArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::scaled</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-10' class='section-header'><a href='#variant-1-10'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, qt_core::qt::AspectRatioMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, qt_core::qt::AspectRatioMode, qt_core::qt::TransformationMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>4) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>5) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, qt_core::qt::AspectRatioMode, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>6) <code>fn scaled(&amp;self, (&amp;qt_core::size::Size, qt_core::qt::AspectRatioMode, qt_core::qt::TransformationMode, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::scaled(const QSize&amp; s, Qt::AspectRatioMode aspectMode = ?, Qt::TransformationMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#scaled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of the image scaled to a rectangle defined by the given <i>size</i> according to the given <i>aspectRatioMode</i> and <i>transformMode</i>.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qimage-scaling.png" alt=""></img></p><ul>
+<li>If <i>aspectRatioMode</i> is <a href="http://doc.qt.io/qt-5/qt.html#AspectRatioMode-enum">Qt::IgnoreAspectRatio</a>, the image is scaled to <i>size</i>.</li>
+<li>If <i>aspectRatioMode</i> is <a href="http://doc.qt.io/qt-5/qt.html#AspectRatioMode-enum">Qt::KeepAspectRatio</a>, the image is scaled to a rectangle as large as possible inside <i>size</i>, preserving the aspect ratio.</li>
+<li>If <i>aspectRatioMode</i> is <a href="http://doc.qt.io/qt-5/qt.html#AspectRatioMode-enum">Qt::KeepAspectRatioByExpanding</a>, the image is scaled to a rectangle as small as possible outside <i>size</i>, preserving the aspect ratio.</li>
+</ul>
+<p>If the given <i>size</i> is empty, this function returns a null image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#isNull">isNull</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+
+<h2 id='variant-2-10' class='section-header'><a href='#variant-2-10'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, qt_core::qt::AspectRatioMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, qt_core::qt::AspectRatioMode, qt_core::qt::TransformationMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>4) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>5) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, qt_core::qt::AspectRatioMode, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>6) <code>fn scaled(&amp;self, (libc::c_int, libc::c_int, qt_core::qt::AspectRatioMode, qt_core::qt::TransformationMode, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::scaled(int w, int h, Qt::AspectRatioMode aspectMode = ?, Qt::TransformationMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#scaled-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns a copy of the image scaled to a rectangle with the given <i>width</i> and <i>height</i> according to the given <i>aspectRatioMode</i> and <i>transformMode</i>.</p>
+<p>If either the <i>width</i> or the <i>height</i> is zero or negative, this function returns a null image.</p></div></p>
+</div><h4 id='method.scaled_to_height' class='method'><code>fn <a href='#method.scaled_to_height' class='fnname'>scaled_to_height</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageScaledToHeightArgs.html' title='qt_gui::image::overloading::ImageScaledToHeightArgs'>ImageScaledToHeightArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::scaledToHeight</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scaled_to_height(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn scaled_to_height(&amp;self, (libc::c_int, qt_core::qt::TransformationMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn scaled_to_height(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn scaled_to_height(&amp;self, (libc::c_int, qt_core::qt::TransformationMode, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::scaledToHeight(int h, Qt::TransformationMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#scaledToHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a scaled copy of the image. The returned image is scaled to the given <i>height</i> using the specified transformation <i>mode</i>.</p>
+<p>This function automatically calculates the width of the image so that the ratio of the image is preserved.</p>
+<p>If the given <i>height</i> is 0 or negative, a null image is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.scaled_to_width' class='method'><code>fn <a href='#method.scaled_to_width' class='fnname'>scaled_to_width</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageScaledToWidthArgs.html' title='qt_gui::image::overloading::ImageScaledToWidthArgs'>ImageScaledToWidthArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::scaledToWidth</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scaled_to_width(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn scaled_to_width(&amp;self, (libc::c_int, qt_core::qt::TransformationMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn scaled_to_width(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn scaled_to_width(&amp;self, (libc::c_int, qt_core::qt::TransformationMode, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::scaledToWidth(int w, Qt::TransformationMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#scaledToWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a scaled copy of the image. The returned image is scaled to the given <i>width</i> using the specified transformation <i>mode</i>.</p>
+<p>This function automatically calculates the height of the image so that its aspect ratio is preserved.</p>
+<p>If the given <i>width</i> is 0 or negative, a null image is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.scan_line' class='method'><code>fn <a href='#method.scan_line' class='fnname'>scan_line</a>(&amp;self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const unsigned char* QImage::scanLine(int arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#scanLine">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to the pixel data at the scanline with index <i>i</i>. The first scanline is at index 0.</p>
+<p>The scanline data is aligned on a 32-bit boundary.</p>
+<p><b>Warning:</b> If you are accessing 32-bpp image data, cast the returned pointer to <code>QRgb*</code> (<a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> has a 32-bit size) and use it to read/write the pixel value. You cannot use the <code>uchar*</code> pointer directly, because the pixel format depends on the byte order on the underlying platform. Use <a href="http://doc.qt.io/qt-5/qcolor.html#qRed">qRed</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#qGreen">qGreen</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#qBlue">qBlue</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#qAlpha">qAlpha</a>() to access the pixels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#bytesPerLine">bytesPerLine</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#bits">bits</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#pixel-manipulation">Pixel Manipulation</a>, and <a href="http://doc.qt.io/qt-5/qimage.html#constScanLine">constScanLine</a>().</p></div></p>
+</div><h4 id='method.scan_line_mut' class='method'><code>fn <a href='#method.scan_line_mut' class='fnname'>scan_line_mut</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char* QImage::scanLine(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#scanLine">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to the pixel data at the scanline with index <i>i</i>. The first scanline is at index 0.</p>
+<p>The scanline data is aligned on a 32-bit boundary.</p>
+<p><b>Warning:</b> If you are accessing 32-bpp image data, cast the returned pointer to <code>QRgb*</code> (<a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> has a 32-bit size) and use it to read/write the pixel value. You cannot use the <code>uchar*</code> pointer directly, because the pixel format depends on the byte order on the underlying platform. Use <a href="http://doc.qt.io/qt-5/qcolor.html#qRed">qRed</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#qGreen">qGreen</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#qBlue">qBlue</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#qAlpha">qAlpha</a>() to access the pixels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#bytesPerLine">bytesPerLine</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#bits">bits</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#pixel-manipulation">Pixel Manipulation</a>, and <a href="http://doc.qt.io/qt-5/qimage.html#constScanLine">constScanLine</a>().</p></div></p>
+</div><h4 id='method.set_alpha_channel' class='method'><code>fn <a href='#method.set_alpha_channel' class='fnname'>set_alpha_channel</a>(&amp;mut self, alpha_channel: &amp;<a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::setAlphaChannel(const QImage&amp; alphaChannel)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage-obsolete.html#setAlphaChannel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the alpha channel of this image to the given <i>alphaChannel</i>.</p>
+<p>If <i>alphaChannel</i> is an 8 bit grayscale image, the intensity values are written into this buffer directly. Otherwise, <i>alphaChannel</i> is converted to 32 bit and the intensity of the RGB pixel values is used.</p>
+<p>Note that the image will be converted to the <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">Format_ARGB32_Premultiplied</a> format if the function succeeds.</p>
+<p>Use one of the composition modes in <a href="http://doc.qt.io/qt-5/qpainter.html#CompositionMode-enum">QPainter::CompositionMode</a> instead.</p>
+<p><b>Warning:</b> This function is expensive.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage-obsolete.html#alphaChannel">alphaChannel</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>, and <a href="http://doc.qt.io/qt-5/qimage.html#image-formats">Image Formats</a>.</p></div></p>
+</div><h4 id='method.set_color' class='method'><code>fn <a href='#method.set_color' class='fnname'>set_color</a>(&amp;mut self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, c: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::setColor(int i, unsigned int c)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#setColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the color at the given <i>index</i> in the color table, to the given to <i>colorValue</i>. The color value is an ARGB quadruplet.</p>
+<p>If <i>index</i> is outside the current size of the color table, it is expanded with <a href="http://doc.qt.io/qt-5/qimage.html#setColorCount">setColorCount</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#color">color</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#colorCount">colorCount</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#setColorTable">setColorTable</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#pixel-manipulation">Pixel Manipulation</a>.</p></div></p>
+</div><h4 id='method.set_color_count' class='method'><code>fn <a href='#method.set_color_count' class='fnname'>set_color_count</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::setColorCount(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#setColorCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Resizes the color table to contain <i>colorCount</i> entries.</p>
+<p>If the color table is expanded, all the extra colors will be set to transparent (i.e <a href="http://doc.qt.io/qt-5/qcolor.html#qRgba">qRgba</a>(0, 0, 0, 0)).</p>
+<p>When the image is used, the color table must be large enough to have entries for all the pixel/index values present in the image, otherwise the results are undefined.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#colorCount">colorCount</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#colorTable">colorTable</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#setColor">setColor</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.set_color_table' class='method'><code>fn <a href='#method.set_color_table' class='fnname'>set_color_table</a>(&amp;mut self, colors: &amp;<a class='struct' href='../../qt_core/vector/struct.VectorCUint.html' title='qt_core::vector::VectorCUint'>VectorCUint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::setColorTable(const QVector&lt;unsigned int&gt; colors)</code></span></p>
+
+<p>Warning: no exact match found in C++ documentation.Below is the <a href="http://doc.qt.io/qt-5/qimage.html#setColorTable">C++ documentation</a> for <code>void QImage::setColorTable(const QVector<QRgb> &amp; colors)</code>: <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the color table used to translate color indexes to <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> values, to the specified <i>colors</i>.</p>
+<p>When the image is used, the color table must be large enough to have entries for all the pixel/index values present in the image, otherwise the results are undefined.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#colorTable">colorTable</a>(), <a href="http://doc.qt.io/qt-5/qimage.html#setColor">setColor</a>(), and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.set_device_pixel_ratio' class='method'><code>fn <a href='#method.set_device_pixel_ratio' class='fnname'>set_device_pixel_ratio</a>(&amp;mut self, scale_factor: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::setDevicePixelRatio(double scaleFactor)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#setDevicePixelRatio">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the device pixel ratio for the image. This is the ratio between image pixels and device-independent pixels.</p>
+<p>The default <i>scaleFactor</i> is 1.0. Setting it to something else has two effects:</p>
+<p>QPainters that are opened on the image will be scaled. For example, painting on a 200x200 image if with a ratio of 2.0 will result in effective (device-independent) painting bounds of 100x100.</p>
+<p>Code paths in Qt that calculate layout geometry based on the image size will take the ratio into account: <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> layoutSize = image.<a href="http://doc.qt.io/qt-5/qimage.html#size">size</a>() / image.<a href="http://doc.qt.io/qt-5/qimage.html#devicePixelRatio">devicePixelRatio</a>() The net effect of this is that the image is displayed as high-DPI image rather than a large image (see <a href="http://doc.qt.io/qt-5/qpainter.html#drawing-high-resolution-versions-of-pixmaps-and-images">Drawing High Resolution Versions of Pixmaps and Images</a>).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#devicePixelRatio">devicePixelRatio</a>().</p></div></p>
+</div><h4 id='method.set_dots_per_meter_x' class='method'><code>fn <a href='#method.set_dots_per_meter_x' class='fnname'>set_dots_per_meter_x</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::setDotsPerMeterX(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#setDotsPerMeterX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the number of pixels that fit horizontally in a physical meter, to <i>x</i>.</p>
+<p>Together with <a href="http://doc.qt.io/qt-5/qimage.html#dotsPerMeterY">dotsPerMeterY</a>(), this number defines the intended scale and aspect ratio of the image, and determines the scale at which <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> will draw graphics on the image. It does not change the scale or aspect ratio of the image when it is rendered on other paint devices.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#dotsPerMeterX">dotsPerMeterX</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.set_dots_per_meter_y' class='method'><code>fn <a href='#method.set_dots_per_meter_y' class='fnname'>set_dots_per_meter_y</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::setDotsPerMeterY(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#setDotsPerMeterY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the number of pixels that fit vertically in a physical meter, to <i>y</i>.</p>
+<p>Together with <a href="http://doc.qt.io/qt-5/qimage.html#dotsPerMeterX">dotsPerMeterX</a>(), this number defines the intended scale and aspect ratio of the image, and determines the scale at which <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> will draw graphics on the image. It does not change the scale or aspect ratio of the image when it is rendered on other paint devices.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#dotsPerMeterY">dotsPerMeterY</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.set_offset' class='method'><code>fn <a href='#method.set_offset' class='fnname'>set_offset</a>(&amp;mut self, arg1: &amp;<a class='struct' href='../../qt_core/point/struct.Point.html' title='qt_core::point::Point'>Point</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::setOffset(const QPoint&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#setOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the number of pixels by which the image is intended to be offset by when positioning relative to other images, to <i>offset</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#offset">offset</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.set_pixel' class='method'><code>fn <a href='#method.set_pixel' class='fnname'>set_pixel</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageSetPixelArgs.html' title='qt_gui::image::overloading::ImageSetPixelArgs'>ImageSetPixelArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::setPixel</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-11' class='section-header'><a href='#variant-1-11'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_pixel(&amp;mut self, (&amp;qt_core::point::Point, libc::c_uint)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QImage::setPixel(const QPoint&amp; pt, unsigned int index_or_rgb)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#setPixel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the pixel index or color at the given <i>position</i> to <i>index_or_rgb</i>.</p>
+<p>If the image&#39;s format is either monochrome or 8-bit, the given <i>index_or_rgb</i> value must be an index in the image&#39;s color table, otherwise the parameter must be a <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> value.</p>
+<p>If <i>position</i> is not a valid coordinate pair in the image, or if <i>index_or_rgb</i> &gt;= <a href="http://doc.qt.io/qt-5/qimage.html#colorCount">colorCount</a>() in the case of monochrome and 8-bit images, the result is undefined.</p>
+<p><b>Warning:</b> This function is expensive due to the call of the internal <code>detach()</code> function called within; if performance is a concern, we recommend the use of <a href="http://doc.qt.io/qt-5/qimage.html#scanLine">scanLine()</a> to access pixel data directly.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#pixel">pixel</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#pixel-manipulation">Pixel Manipulation</a>.</p></div></p>
+
+<h2 id='variant-2-11' class='section-header'><a href='#variant-2-11'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_pixel(&amp;mut self, (libc::c_int, libc::c_int, libc::c_uint)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QImage::setPixel(int x, int y, unsigned int index_or_rgb)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#setPixel-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the pixel index or color at (<i>x</i>, <i>y</i>) to <i>index_or_rgb</i>.</p></div></p>
+</div><h4 id='method.set_text' class='method'><code>fn <a href='#method.set_text' class='fnname'>set_text</a>(&amp;mut self, key: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>, value: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::setText(const QString&amp; key, const QString&amp; value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#setText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the image text to the given <i>text</i> and associate it with the given <i>key</i>.</p>
+<p>If you just want to store a single text block (i.e., a &quot;comment&quot; or just a description), you can either pass an empty key, or use a generic key like &quot;Description&quot;.</p>
+<p>The image text is embedded into the image data when you call <a href="http://doc.qt.io/qt-5/qimage.html#save">save</a>() or <a href="http://doc.qt.io/qt-5/qimagewriter.html#write">QImageWriter::write</a>().</p>
+<p>Not all image formats support embedded text. You can find out if a specific image or format supports embedding text by using <a href="http://doc.qt.io/qt-5/qimagewriter.html#supportsOption">QImageWriter::supportsOption</a>(). We give an example:</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qimagewriter.html">QImageWriter</a></span> writer;
+&#32;   writer<span class="operator">.</span>setFormat(<span class="string">&quot;png&quot;</span>);
+&#32;   <span class="keyword">if</span> (writer<span class="operator">.</span>supportsOption(<span class="type"><a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a></span><span class="operator">::</span>Description))
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Png supports embedded text&quot;</span>;</pre>
+<p>You can use <a href="http://doc.qt.io/qt-5/qimagewriter.html#supportedImageFormats">QImageWriter::supportedImageFormats</a>() to find out which image formats are available to you.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#text">text</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#textKeys">textKeys</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageSizeArgs.html' title='qt_gui::image::overloading::ImageSizeArgs'>ImageSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::size</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QImage::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the image, i.e. its <a href="http://doc.qt.io/qt-5/qimage.html#width">width</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#height">height</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QImage::swap(QImage&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps image <i>other</i> with this image. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageTextArgs.html' title='qt_gui::image::overloading::ImageTextArgs'>ImageTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>3) <code>fn text(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>4) <code>fn text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QImage::text(const QString&amp; key = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the image text associated with the given <i>key</i>. If the specified <i>key</i> is an empty string, the whole image text is returned, with each key-text pair separated by a newline.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#setText">setText</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#textKeys">textKeys</a>().</p></div></p>
+</div><h4 id='method.text_keys' class='method'><code>fn <a href='#method.text_keys' class='fnname'>text_keys</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageTextKeysArgs.html' title='qt_gui::image::overloading::ImageTextKeysArgs'>ImageTextKeysArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::textKeys</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text_keys(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn text_keys(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>QStringList QImage::textKeys() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#textKeys">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text keys for this image.</p>
+<p>You can use these keys with <a href="http://doc.qt.io/qt-5/qimage.html#text">text</a>() to list the image text for a certain key.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#text">text</a>().</p></div></p>
+</div><h4 id='method.to_image_format' class='method'><code>fn <a href='#method.to_image_format' class='fnname'>to_image_format</a>(format: &amp;<a class='struct' href='../../qt_gui/pixel_format/struct.PixelFormat.html' title='qt_gui::pixel_format::PixelFormat'>PixelFormat</a>) -&gt; <a class='enum' href='../../qt_gui/image/enum.Format.html' title='qt_gui::image::Format'>Format</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static QImage::Format QImage::toImageFormat(QPixelFormat format)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#toImageFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts <i>format</i> into a <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format</a></p></div></p>
+</div><h4 id='method.to_pixel_format' class='method'><code>fn <a href='#method.to_pixel_format' class='fnname'>to_pixel_format</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageToPixelFormatArgs.html' title='qt_gui::image::overloading::ImageToPixelFormatArgs'>ImageToPixelFormatArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::toPixelFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_pixel_format((::image::Format, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixel_format::PixelFormat&gt;</code><br>2) <code>fn to_pixel_format((::image::Format, cpp_utils::AsStruct)) -&gt; ::pixel_format::PixelFormat</code><br>
+C++ method: <span style='color: green;'><code>static QPixelFormat QImage::toPixelFormat(QImage::Format format)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#toPixelFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts <i>format</i> into a <a href="http://doc.qt.io/qt-5/qpixelformat.html">QPixelFormat</a></p></div></p>
+</div><h4 id='method.transformed' class='method'><code>fn <a href='#method.transformed' class='fnname'>transformed</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageTransformedArgs.html' title='qt_gui::image::overloading::ImageTransformedArgs'>ImageTransformedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::transformed</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-12' class='section-header'><a href='#variant-1-12'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn transformed(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn transformed(&amp;self, (&amp;::matrix::Matrix, qt_core::qt::TransformationMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn transformed(&amp;self, (&amp;::matrix::Matrix, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn transformed(&amp;self, (&amp;::matrix::Matrix, qt_core::qt::TransformationMode, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::transformed(const QMatrix&amp; matrix, Qt::TransformationMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#transformed">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of the image that is transformed using the given transformation <i>matrix</i> and transformation <i>mode</i>.</p>
+<p>The transformation <i>matrix</i> is internally adjusted to compensate for unwanted translation; i.e. the image produced is the smallest image that contains all the transformed points of the original image. Use the <a href="http://doc.qt.io/qt-5/qimage.html#trueMatrix">trueMatrix</a>() function to retrieve the actual matrix used for transforming an image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#trueMatrix">trueMatrix</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+
+<h2 id='variant-2-12' class='section-header'><a href='#variant-2-12'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn transformed(&amp;self, (&amp;::transform::Transform, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn transformed(&amp;self, (&amp;::transform::Transform, qt_core::qt::TransformationMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn transformed(&amp;self, (&amp;::transform::Transform, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>4) <code>fn transformed(&amp;self, (&amp;::transform::Transform, qt_core::qt::TransformationMode, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QImage::transformed(const QTransform&amp; matrix, Qt::TransformationMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#transformed-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of the image that is transformed using the given transformation <i>matrix</i> and transformation <i>mode</i>.</p>
+<p>The transformation <i>matrix</i> is internally adjusted to compensate for unwanted translation; i.e. the image produced is the smallest image that contains all the transformed points of the original image. Use the <a href="http://doc.qt.io/qt-5/qimage.html#trueMatrix">trueMatrix</a>() function to retrieve the actual matrix used for transforming an image.</p>
+<p>Unlike the other overload, this function can be used to perform perspective transformations on images.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#trueMatrix">trueMatrix</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.true_matrix' class='method'><code>fn <a href='#method.true_matrix' class='fnname'>true_matrix</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageTrueMatrixArgs.html' title='qt_gui::image::overloading::ImageTrueMatrixArgs'>ImageTrueMatrixArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::trueMatrix</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-13' class='section-header'><a href='#variant-1-13'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn true_matrix((&amp;::matrix::Matrix, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::matrix::Matrix&gt;</code><br>2) <code>fn true_matrix((&amp;::matrix::Matrix, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::matrix::Matrix</code><br>
+C++ method: <span style='color: green;'><code>static QMatrix QImage::trueMatrix(const QMatrix&amp; arg1, int w, int h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#trueMatrix">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the actual matrix used for transforming an image with the given <i>width</i>, <i>height</i> and <i>matrix</i>.</p>
+<p>When transforming an image using the <a href="http://doc.qt.io/qt-5/qimage.html#transformed">transformed</a>() function, the transformation matrix is internally adjusted to compensate for unwanted translation, i.e. <a href="http://doc.qt.io/qt-5/qimage.html#transformed">transformed</a>() returns the smallest image containing all transformed points of the original image. This function returns the modified matrix, which maps points correctly from the original image into the new image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#transformed">transformed</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+
+<h2 id='variant-2-13' class='section-header'><a href='#variant-2-13'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn true_matrix((&amp;::transform::Transform, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::transform::Transform&gt;</code><br>2) <code>fn true_matrix((&amp;::transform::Transform, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::transform::Transform</code><br>
+C++ method: <span style='color: green;'><code>static QTransform QImage::trueMatrix(const QTransform&amp; arg1, int w, int h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#trueMatrix-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the actual matrix used for transforming an image with the given <i>width</i>, <i>height</i> and <i>matrix</i>.</p>
+<p>When transforming an image using the <a href="http://doc.qt.io/qt-5/qimage.html#transformed">transformed</a>() function, the transformation matrix is internally adjusted to compensate for unwanted translation, i.e. <a href="http://doc.qt.io/qt-5/qimage.html#transformed">transformed</a>() returns the smallest image containing all transformed points of the original image. This function returns the modified matrix, which maps points correctly from the original image into the new image.</p>
+<p>Unlike the other overload, this function creates transformation matrices that can be used to perform perspective transformations on images.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#transformed">transformed</a>() and <a href="http://doc.qt.io/qt-5/qimage.html#image-transformations">Image Transformations</a>.</p></div></p>
+</div><h4 id='method.valid' class='method'><code>fn <a href='#method.valid' class='fnname'>valid</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/image/overloading/trait.ImageValidArgs.html' title='qt_gui::image::overloading::ImageValidArgs'>ImageValidArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QImage::valid</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-14' class='section-header'><a href='#variant-1-14'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn valid(&amp;self, &amp;qt_core::point::Point) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QImage::valid(const QPoint&amp; pt) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#valid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <i>pos</i> is a valid coordinate pair within the image; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#rect">rect</a>() and <a href="http://doc.qt.io/qt-5/qrect.html#contains">QRect::contains</a>().</p></div></p>
+
+<h2 id='variant-2-14' class='section-header'><a href='#variant-2-14'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn valid(&amp;self, (libc::c_int, libc::c_int)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QImage::valid(int x, int y) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#valid-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a>(<i>x</i>, <i>y</i>) is a valid coordinate pair within the image; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.width' class='method'><code>fn <a href='#method.width' class='fnname'>width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::width() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#width">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the image.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qimage.html#image-information">Image Information</a>.</p></div></p>
+</div><h4 id='method.width_m_m' class='method'><code>fn <a href='#method.width_m_m' class='fnname'>width_m_m</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QImage::widthMM() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintdevice.html#widthMM">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the paint device in millimeters. Due to platform limitations it may not be possible to use this function to determine the actual physical size of a widget on the screen.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintdevice.html#width">width</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapConvertFromImageArgs.html' title='qt_gui::bitmap::overloading::BitmapConvertFromImageArgs'>BitmapConvertFromImageArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-63438' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/bitmap.rs.html#876-884' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/bitmap/overloading/trait.BitmapConvertFromImageArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/bitmap/struct.Bitmap.html' title='qt_gui::bitmap::Bitmap'>Bitmap</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/clipboard/overloading/trait.ClipboardSetImageArgs.html' title='qt_gui::clipboard::overloading::ClipboardSetImageArgs'>ClipboardSetImageArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65567' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/clipboard.rs.html#1554-1562' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_gui/clipboard/overloading/trait.ClipboardSetImageArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/clipboard/struct.Clipboard.html' title='qt_gui::clipboard::Clipboard'>Clipboard</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-77348' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image.rs.html#81-85' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-77631' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image.rs.html#1307-1314' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QImage::~QImage()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimage.html#dtor.QImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the image and cleans up.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-77634' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image.rs.html#1316-1320' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureSetDataArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureSetDataArgs'>OpenGLTextureSetDataArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104268' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_texture.rs.html#2369-2376' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureSetDataArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/open_g_l_texture/struct.OpenGLTexture.html' title='qt_gui::open_g_l_texture::OpenGLTexture'>OpenGLTexture</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/pixmap/overloading/trait.PixmapConvertFromImageArgs.html' title='qt_gui::pixmap::overloading::PixmapConvertFromImageArgs'>PixmapConvertFromImageArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-134515' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixmap.rs.html#928-936' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_gui/pixmap/overloading/trait.PixmapConvertFromImageArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/pixmap/struct.Pixmap.html' title='qt_gui::pixmap::Pixmap'>Pixmap</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/text_cursor/overloading/trait.TextCursorInsertImageArgs.html' title='qt_gui::text_cursor::overloading::TextCursorInsertImageArgs'>TextCursorInsertImageArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-155699' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_cursor.rs.html#1217-1225' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_gui/text_cursor/overloading/trait.TextCursorInsertImageArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/text_cursor/struct.TextCursor.html' title='qt_gui::text_cursor::TextCursor'>TextCursor</a>)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

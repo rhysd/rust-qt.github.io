@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `WaitCondition` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, WaitCondition">
+
+    <title>qt_core::wait_condition::WaitCondition - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>wait_condition</a></p><script>window.sidebarCurrent = {name: 'WaitCondition', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>wait_condition</a>::<wbr><a class='struct' href=''>WaitCondition</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-169047' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/wait_condition.rs.html#51-53' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct WaitCondition {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QWaitCondition</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwaitcondition.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qwaitcondition.html">QWaitCondition</a> class provides a condition variable for synchronizing threads.</p>
+<p><a href="http://doc.qt.io/qt-5/qwaitcondition.html">QWaitCondition</a> allows a thread to tell other threads that some sort of condition has been met. One or many threads can block waiting for a <a href="http://doc.qt.io/qt-5/qwaitcondition.html">QWaitCondition</a> to set a condition with <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeOne">wakeOne</a>() or <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeAll">wakeAll</a>(). Use <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeOne">wakeOne</a>() to wake one randomly selected thread or <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeAll">wakeAll</a>() to wake them all.</p>
+<p>For example, let&#39;s suppose that we have three tasks that should be performed whenever the user presses a key. Each task could be split into a thread, each of which would have a <a href="http://doc.qt.io/qt-5/qthread.html#run">run()</a> body like this:</p>
+<pre class="cpp">forever {
+&#32;   mutex<span class="operator">.</span>lock();
+&#32;   keyPressed<span class="operator">.</span>wait(<span class="operator">&amp;</span>mutex);
+&#32;   do_something();
+&#32;   mutex<span class="operator">.</span>unlock();
+}</pre>
+<p>Here, the <code>keyPressed</code> variable is a global variable of type <a href="http://doc.qt.io/qt-5/qwaitcondition.html">QWaitCondition</a>.</p>
+<p>A fourth thread would read key presses and wake the other three threads up every time it receives one, like this:</p>
+<pre class="cpp">forever {
+&#32;   getchar();
+&#32;   keyPressed<span class="operator">.</span>wakeAll();
+}</pre>
+<p>The order in which the three threads are woken up is undefined. Also, if some of the threads are still in <code>do_something()</code> when the key is pressed, they won&#39;t be woken up (since they&#39;re not waiting on the condition variable) and so the task will not be performed for that key press. This issue can be solved using a counter and a <a href="http://doc.qt.io/qt-5/qmutex.html">QMutex</a> to guard it. For example, here&#39;s the new code for the worker threads:</p>
+<pre class="cpp">forever {
+&#32;   mutex<span class="operator">.</span>lock();
+&#32;   keyPressed<span class="operator">.</span>wait(<span class="operator">&amp;</span>mutex);
+&#32;   <span class="operator">+</span><span class="operator">+</span>count;
+&#32;   mutex<span class="operator">.</span>unlock();</p>
+
+<p>&#32;   do_something();</p>
+
+<p>&#32;   mutex<span class="operator">.</span>lock();
+&#32;   <span class="operator">-</span><span class="operator">-</span>count;
+&#32;   mutex<span class="operator">.</span>unlock();
+}</pre>
+<p>Here&#39;s the code for the fourth thread:</p>
+<pre class="cpp">forever {
+&#32;   getchar();</p>
+
+<p>&#32;   mutex<span class="operator">.</span>lock();
+&#32;   <span class="comment">// Sleep until there are no busy worker threads</span>
+&#32;   <span class="keyword">while</span> (count <span class="operator">&gt;</span> <span class="number">0</span>) {
+&#32;       mutex<span class="operator">.</span>unlock();
+&#32;       sleep(<span class="number">1</span>);
+&#32;       mutex<span class="operator">.</span>lock();
+&#32;   }
+&#32;   keyPressed<span class="operator">.</span>wakeAll();
+&#32;   mutex<span class="operator">.</span>unlock();
+}</pre>
+<p>The mutex is necessary because the results of two threads attempting to change the value of the same variable simultaneously are unpredictable.</p>
+<p>Wait conditions are a powerful thread synchronization primitive. The <a href="http://doc.qt.io/qt-5/qtcore-threads-waitconditions-example.html">Wait Conditions Example</a> example shows how to use <a href="http://doc.qt.io/qt-5/qwaitcondition.html">QWaitCondition</a> as an alternative to <a href="http://doc.qt.io/qt-5/qsemaphore.html">QSemaphore</a> for controlling access to a circular buffer shared by a producer thread and a consumer thread.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/wait_condition/struct.WaitCondition.html' title='qt_core::wait_condition::WaitCondition'>WaitCondition</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-169052' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/wait_condition.rs.html#61-128' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/wait_condition/overloading/trait.WaitConditionNewArgs.html' title='qt_core::wait_condition::overloading::WaitConditionNewArgs'>WaitConditionNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWaitCondition::QWaitCondition</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::wait_condition::WaitCondition</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::wait_condition::WaitCondition&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QWaitCondition::QWaitCondition()</code></span></p>
+</div><h4 id='method.wait' class='method'><code>fn <a href='#method.wait' class='fnname'>wait</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/wait_condition/overloading/trait.WaitConditionWaitArgs.html' title='qt_core::wait_condition::overloading::WaitConditionWaitArgs'>WaitConditionWaitArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWaitCondition::wait</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn wait(&amp;mut self, *mut ::mutex::Mutex) -&gt; bool</code><br>2) <code>fn wait(&amp;mut self, (*mut ::mutex::Mutex, libc::c_ulong)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QWaitCondition::wait(QMutex* lockedMutex, unsigned long time = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwaitcondition.html#wait">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Releases the <i>lockedMutex</i> and waits on the wait condition. The <i>lockedMutex</i> must be initially locked by the calling thread. If <i>lockedMutex</i> is not in a locked state, the behavior is undefined. If <i>lockedMutex</i> is a recursive mutex, this function returns immediately. The <i>lockedMutex</i> will be unlocked, and the calling thread will block until either of these conditions is met:</p>
+<ul>
+<li>Another thread signals it using <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeOne">wakeOne</a>() or <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeAll">wakeAll</a>(). This function will return true in this case.</li>
+<li><i>time</i> milliseconds has elapsed. If <i>time</i> is <code>ULONG_MAX</code> (the default), then the wait will never timeout (the event must be signalled). This function will return false if the wait timed out.</li>
+</ul>
+<p>The <i>lockedMutex</i> will be returned to the same locked state. This function is provided to allow the atomic transition from the locked state to the wait state.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeOne">wakeOne</a>() and <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeAll">wakeAll</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn wait(&amp;mut self, *mut ::read_write_lock::ReadWriteLock) -&gt; bool</code><br>2) <code>fn wait(&amp;mut self, (*mut ::read_write_lock::ReadWriteLock, libc::c_ulong)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QWaitCondition::wait(QReadWriteLock* lockedReadWriteLock, unsigned long time = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwaitcondition.html#wait-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Releases the <i>lockedReadWriteLock</i> and waits on the wait condition. The <i>lockedReadWriteLock</i> must be initially locked by the calling thread. If <i>lockedReadWriteLock</i> is not in a locked state, this function returns immediately. The <i>lockedReadWriteLock</i> must not be locked recursively, otherwise this function will not release the lock properly. The <i>lockedReadWriteLock</i> will be unlocked, and the calling thread will block until either of these conditions is met:</p>
+<ul>
+<li>Another thread signals it using <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeOne">wakeOne</a>() or <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeAll">wakeAll</a>(). This function will return true in this case.</li>
+<li><i>time</i> milliseconds has elapsed. If <i>time</i> is <code>ULONG_MAX</code> (the default), then the wait will never timeout (the event must be signalled). This function will return false if the wait timed out.</li>
+</ul>
+<p>The <i>lockedReadWriteLock</i> will be returned to the same locked state. This function is provided to allow the atomic transition from the locked state to the wait state.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeOne">wakeOne</a>() and <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeAll">wakeAll</a>().</p></div></p>
+</div><h4 id='method.wake_all' class='method'><code>fn <a href='#method.wake_all' class='fnname'>wake_all</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QWaitCondition::wakeAll()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeAll">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Wakes all threads waiting on the wait condition. The order in which the threads are woken up depends on the operating system&#39;s scheduling policies and cannot be controlled or predicted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeOne">wakeOne</a>().</p></div></p>
+</div><h4 id='method.wake_one' class='method'><code>fn <a href='#method.wake_one' class='fnname'>wake_one</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QWaitCondition::wakeOne()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeOne">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Wakes one thread waiting on the wait condition. The thread that is woken up depends on the operating system&#39;s scheduling policies, and cannot be controlled or predicted.</p>
+<p>If you want to wake up a specific thread, the solution is typically to use different wait conditions and have different threads wait on different conditions.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwaitcondition.html#wakeAll">wakeAll</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/wait_condition/struct.WaitCondition.html' title='qt_core::wait_condition::WaitCondition'>WaitCondition</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-169050' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/wait_condition.rs.html#55-59' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/wait_condition/struct.WaitCondition.html' title='qt_core::wait_condition::WaitCondition'>WaitCondition</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/wait_condition/struct.WaitCondition.html' title='qt_core::wait_condition::WaitCondition'>WaitCondition</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-169065' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/wait_condition.rs.html#130-137' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QWaitCondition::~QWaitCondition()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwaitcondition.html#dtor.QWaitCondition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the wait condition object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/wait_condition/struct.WaitCondition.html' title='qt_core::wait_condition::WaitCondition'>WaitCondition</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-169068' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/wait_condition.rs.html#139-143' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

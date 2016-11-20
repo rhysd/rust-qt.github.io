@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["PaintDeviceMetric","C++ type: <span style='color: green;'>```QPaintDevice::PaintDeviceMetric```</span>"]],"struct":[["PaintDevice","C++ type: <span style='color: green;'>```QPaintDevice```</span>"]]});

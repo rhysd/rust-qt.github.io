@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TextCodec` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TextCodec">
+
+    <title>qt_core::text_codec::TextCodec - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>text_codec</a></p><script>window.sidebarCurrent = {name: 'TextCodec', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>text_codec</a>::<wbr><a class='struct' href=''>TextCodec</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-150719' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/text_codec.rs.html#196-198' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TextCodec {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTextCodec</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> class provides conversions between text encodings.</p>
+<p>Qt uses Unicode to store, draw and manipulate strings. In many situations you may wish to deal with data that uses a different encoding. For example, most Japanese documents are still stored in Shift-JIS or ISO 2022-JP, while Russian users often have their documents in KOI8-R or Windows-1251.</p>
+<p>Qt provides a set of <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> classes to help with converting non-Unicode formats to and from Unicode. You can also create your own codec classes.</p>
+<p>The supported encodings are:</p>
+<ul>
+<li><a href="http://doc.qt.io/qt-5/codec-big5.html">Big5</a></li>
+<li><a href="http://doc.qt.io/qt-5/codec-big5hkscs.html">Big5-HKSCS</a></li>
+<li>CP949</li>
+<li><a href="http://doc.qt.io/qt-5/codec-eucjp.html">EUC-JP</a></li>
+<li><a href="http://doc.qt.io/qt-5/codec-euckr.html">EUC-KR</a></li>
+<li><a href="http://doc.qt.io/qt-5/codec-gbk.html">GB18030</a></li>
+<li>HP-ROMAN8</li>
+<li>IBM 850</li>
+<li>IBM 866</li>
+<li>IBM 874</li>
+<li><a href="http://doc.qt.io/qt-5/codecs-jis.html">ISO 2022-JP</a></li>
+<li>ISO 8859-1 to 10</li>
+<li>ISO 8859-13 to 16</li>
+<li>Iscii-Bng, Dev, Gjr, Knd, Mlm, Ori, Pnj, Tlg, and Tml</li>
+<li>KOI8-R</li>
+<li>KOI8-U</li>
+<li>Macintosh</li>
+<li><a href="http://doc.qt.io/qt-5/codec-sjis.html">Shift-JIS</a></li>
+<li>TIS-620</li>
+<li><a href="http://doc.qt.io/qt-5/codec-tscii.html">TSCII</a></li>
+<li>UTF-8</li>
+<li>UTF-16</li>
+<li>UTF-16BE</li>
+<li>UTF-16LE</li>
+<li>UTF-32</li>
+<li>UTF-32BE</li>
+<li>UTF-32LE</li>
+<li>Windows-1250 to 1258</li>
+</ul>
+<p>If Qt is compiled with ICU support enabled, most codecs supported by ICU will also be available to the application.</p>
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a>s can be used as follows to convert some locally encoded string to Unicode. Suppose you have some string encoded in Russian KOI8-R encoding, and want to convert it to Unicode. The simple way to do it is like this:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> encodedString <span class="operator">=</span> <span class="string">&quot;...&quot;</span>;
+<span class="type"><a href="http://doc.qt.io/qt-5/qtextcodec.html#QTextCodec">QTextCodec</a></span> <span class="operator"><em></span>codec <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qtextcodec.html#QTextCodec">QTextCodec</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForName">codecForName</a>(<span class="string">&quot;KOI8-R&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> string <span class="operator">=</span> codec<span class="operator">-</span><span class="operator">&gt;</span><a href="http://doc.qt.io/qt-5/qtextcodec.html#toUnicode">toUnicode</a>(encodedString);</pre>
+<p>After this, <code>string</code> holds the text converted to Unicode. Converting a string from Unicode to the local encoding is just as easy:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> string <span class="operator">=</span> <span class="string">&quot;...&quot;</span>;
+<span class="type"><a href="http://doc.qt.io/qt-5/qtextcodec.html#QTextCodec">QTextCodec</a></span> <span class="operator"></em></span>codec <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qtextcodec.html#QTextCodec">QTextCodec</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForName">codecForName</a>(<span class="string">&quot;KOI8-R&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> encodedString <span class="operator">=</span> codec<span class="operator">-</span><span class="operator">&gt;</span><a href="http://doc.qt.io/qt-5/qtextcodec.html#fromUnicode">fromUnicode</a>(string);</pre>
+<p>To read or write files in various encodings, use <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a> and its <a href="http://doc.qt.io/qt-5/qtextstream.html#setCodec">setCodec()</a> function. See the <a href="http://doc.qt.io/qt-5/qtwidgets-tools-codecs-example.html">Codecs</a> example for an application of <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> to file I/O.</p>
+<p>Some care must be taken when trying to convert the data in chunks, for example, when receiving it over a network. In such cases it is possible that a multi-byte character will be split over two chunks. At best this might result in the loss of a character and at worst cause the entire conversion to fail.</p>
+<p>The approach to use in these situations is to create a <a href="http://doc.qt.io/qt-5/qtextdecoder.html">QTextDecoder</a> object for the codec and use this <a href="http://doc.qt.io/qt-5/qtextdecoder.html">QTextDecoder</a> for the whole decoding process, as shown below:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qtextcodec.html#QTextCodec">QTextCodec</a></span> <span class="operator"><em></span>codec <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qtextcodec.html#QTextCodec">QTextCodec</a></span><span class="operator">::</span><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForName">codecForName</a>(<span class="string">&quot;Shift-JIS&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qtextdecoder.html">QTextDecoder</a></span> <span class="operator"></em></span>decoder <span class="operator">=</span> codec<span class="operator">-</span><span class="operator">&gt;</span><a href="http://doc.qt.io/qt-5/qtextcodec.html#makeDecoder">makeDecoder</a>();</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> string;
+<span class="keyword">while</span> (new_data_available()) {
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> chunk <span class="operator">=</span> get_new_data();
+&#32;   string <span class="operator">+</span><span class="operator">=</span> decoder<span class="operator">-</span><span class="operator">&gt;</span>toUnicode(chunk);
+}
+<span class="keyword">delete</span> decoder;</pre>
+<p>The <a href="http://doc.qt.io/qt-5/qtextdecoder.html">QTextDecoder</a> object maintains state between chunks and therefore works correctly even if a multi-byte character is split between chunks.</p>
+<a name="creating-your-own-codec-class"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-150724' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/text_codec.rs.html#206-495' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.aliases' class='method'><code>fn <a href='#method.aliases' class='fnname'>aliases</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecAliasesArgs.html' title='qt_core::text_codec::overloading::TextCodecAliasesArgs'>TextCodecAliasesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::aliases</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn aliases(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListByteArrayRef&gt;</code><br>2) <code>fn aliases(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>virtual QList&lt;QByteArray&gt; QTextCodec::aliases() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#aliases">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Subclasses can return a number of aliases for the codec in question.</p>
+<p>Standard aliases for codecs can be found in the <a href="http://www.iana.org/assignments/character-sets/character-sets.xml">IANA character-sets encoding file</a>.</p></div></p>
+</div><h4 id='method.available_codecs' class='method'><code>fn <a href='#method.available_codecs' class='fnname'>available_codecs</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecAvailableCodecsArgs.html' title='qt_core::text_codec::overloading::TextCodecAvailableCodecsArgs'>TextCodecAvailableCodecsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::availableCodecs</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn available_codecs(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListByteArrayRef&gt;</code><br>2) <code>fn available_codecs(cpp_utils::AsStruct) -&gt; ::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QByteArray&gt; QTextCodec::availableCodecs()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#availableCodecs">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the list of all available codecs, by name. Call <a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForName">QTextCodec::codecForName</a>() to obtain the <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> for the name.</p>
+<p>The list may contain many mentions of the same codec if the codec has aliases.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextcodec.html#availableMibs">availableMibs</a>(), <a href="http://doc.qt.io/qt-5/qtextcodec.html#name">name</a>(), and <a href="http://doc.qt.io/qt-5/qtextcodec.html#aliases">aliases</a>().</p></div></p>
+</div><h4 id='method.available_mibs' class='method'><code>fn <a href='#method.available_mibs' class='fnname'>available_mibs</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecAvailableMibsArgs.html' title='qt_core::text_codec::overloading::TextCodecAvailableMibsArgs'>TextCodecAvailableMibsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::availableMibs</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn available_mibs(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListCInt&gt;</code><br>2) <code>fn available_mibs(cpp_utils::AsStruct) -&gt; ::list::ListCInt</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;int&gt; QTextCodec::availableMibs()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#availableMibs">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the list of MIBs for all available codecs. Call <a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForMib">QTextCodec::codecForMib</a>() to obtain the <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> for the MIB.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextcodec.html#availableCodecs">availableCodecs</a>() and <a href="http://doc.qt.io/qt-5/qtextcodec.html#mibEnum">mibEnum</a>().</p></div></p>
+</div><h4 id='method.can_encode' class='method'><code>fn <a href='#method.can_encode' class='fnname'>can_encode</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecCanEncodeArgs.html' title='qt_core::text_codec::overloading::TextCodecCanEncodeArgs'>TextCodecCanEncodeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::canEncode</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn can_encode(&amp;self, &amp;::char::Char) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QTextCodec::canEncode(QChar arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#canEncode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the Unicode character <i>ch</i> can be fully encoded with this codec; otherwise returns <code>false</code>.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn can_encode(&amp;self, &amp;::string::String) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QTextCodec::canEncode(const QString&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#canEncode-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><i>s</i> contains the string being tested for encode-ability.</p></div></p>
+</div><h4 id='method.codec_for_html' class='method'><code>fn <a href='#method.codec_for_html' class='fnname'>codec_for_html</a>&lt;Args&gt;(args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecCodecForHtmlArgs.html' title='qt_core::text_codec::overloading::TextCodecCodecForHtmlArgs'>TextCodecCodecForHtmlArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::codecForHtml</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn codec_for_html(&amp;::byte_array::ByteArray) -&gt; *mut ::text_codec::TextCodec</code><br>
+C++ method: <span style='color: green;'><code>static QTextCodec* QTextCodec::codecForHtml(const QByteArray&amp; ba)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForHtml-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Tries to detect the encoding of the provided snippet of HTML in the given byte array, <i>ba</i>, by checking the BOM (Byte Order Mark) and the content-type meta header and returns a <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> instance that is capable of decoding the html to unicode. If the codec cannot be detected, this overload returns a Latin-1 <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a>.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn codec_for_html((&amp;::byte_array::ByteArray, *mut ::text_codec::TextCodec)) -&gt; *mut ::text_codec::TextCodec</code><br>
+C++ method: <span style='color: green;'><code>static QTextCodec* QTextCodec::codecForHtml(const QByteArray&amp; ba, QTextCodec* defaultCodec)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForHtml">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Tries to detect the encoding of the provided snippet of HTML in the given byte array, <i>ba</i>, by checking the BOM (Byte Order Mark) and the content-type meta header and returns a <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> instance that is capable of decoding the html to unicode. If the codec cannot be detected from the content provided, <i>defaultCodec</i> is returned.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForUtfText">codecForUtfText</a>().</p></div></p>
+</div><h4 id='method.codec_for_locale' class='method'><code>fn <a href='#method.codec_for_locale' class='fnname'>codec_for_locale</a>() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static QTextCodec* QTextCodec::codecForLocale()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForLocale">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pointer to the codec most suitable for this locale.</p>
+<p>On Windows, the codec will be based on a system locale. On Unix systems, the codec will might fall back to using the <i>iconv</i> library if no builtin codec for the locale can be found.</p>
+<p>Note that in these cases the codec&#39;s name will be &quot;System&quot;.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextcodec.html#setCodecForLocale">setCodecForLocale</a>().</p></div></p>
+</div><h4 id='method.codec_for_mib' class='method'><code>fn <a href='#method.codec_for_mib' class='fnname'>codec_for_mib</a>(mib: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static QTextCodec* QTextCodec::codecForMib(int mib)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForMib">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> which matches the <a href="http://doc.qt.io/qt-5/qtextcodec.html#mibEnum">MIBenum</a> <i>mib</i>.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p></div></p>
+</div><h4 id='method.codec_for_name' class='method'><code>fn <a href='#method.codec_for_name' class='fnname'>codec_for_name</a>&lt;Args&gt;(args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecCodecForNameArgs.html' title='qt_core::text_codec::overloading::TextCodecCodecForNameArgs'>TextCodecCodecForNameArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::codecForName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn codec_for_name(&amp;::byte_array::ByteArray) -&gt; *mut ::text_codec::TextCodec</code><br>
+C++ method: <span style='color: green;'><code>static QTextCodec* QTextCodec::codecForName(const QByteArray&amp; name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Searches all installed <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> objects and returns the one which best matches <i>name</i>; the match is case-insensitive. Returns 0 if no codec matching the name <i>name</i> could be found.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn codec_for_name(*const libc::c_char) -&gt; *mut ::text_codec::TextCodec</code><br>
+C++ method: <span style='color: green;'><code>static QTextCodec* QTextCodec::codecForName(const char* name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForName-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Searches all installed <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> objects and returns the one which best matches <i>name</i>; the match is case-insensitive. Returns 0 if no codec matching the name <i>name</i> could be found.</p></div></p>
+</div><h4 id='method.codec_for_utf_text' class='method'><code>fn <a href='#method.codec_for_utf_text' class='fnname'>codec_for_utf_text</a>&lt;Args&gt;(args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecCodecForUtfTextArgs.html' title='qt_core::text_codec::overloading::TextCodecCodecForUtfTextArgs'>TextCodecCodecForUtfTextArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::codecForUtfText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn codec_for_utf_text(&amp;::byte_array::ByteArray) -&gt; *mut ::text_codec::TextCodec</code><br>
+C++ method: <span style='color: green;'><code>static QTextCodec* QTextCodec::codecForUtfText(const QByteArray&amp; ba)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForUtfText-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Tries to detect the encoding of the provided snippet <i>ba</i> by using the BOM (Byte Order Mark) and returns a <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> instance that is capable of decoding the text to unicode. If the codec cannot be detected, this overload returns a Latin-1 <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForHtml">codecForHtml</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn codec_for_utf_text((&amp;::byte_array::ByteArray, *mut ::text_codec::TextCodec)) -&gt; *mut ::text_codec::TextCodec</code><br>
+C++ method: <span style='color: green;'><code>static QTextCodec* QTextCodec::codecForUtfText(const QByteArray&amp; ba, QTextCodec* defaultCodec)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForUtfText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Tries to detect the encoding of the provided snippet <i>ba</i> by using the BOM (Byte Order Mark) and returns a <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> instance that is capable of decoding the text to unicode. If the codec cannot be detected from the content provided, <i>defaultCodec</i> is returned.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForHtml">codecForHtml</a>().</p></div></p>
+</div><h4 id='method.from_unicode' class='method'><code>fn <a href='#method.from_unicode' class='fnname'>from_unicode</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecFromUnicodeArgs.html' title='qt_core::text_codec::overloading::TextCodecFromUnicodeArgs'>TextCodecFromUnicodeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::fromUnicode</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn from_unicode(&amp;self, (*const ::char::Char, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn from_unicode(&amp;self, (*const ::char::Char, libc::c_int, *mut ::text_codec::ConverterState, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>3) <code>fn from_unicode(&amp;self, (*const ::char::Char, libc::c_int, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>4) <code>fn from_unicode(&amp;self, (*const ::char::Char, libc::c_int, *mut ::text_codec::ConverterState, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QTextCodec::fromUnicode(const QChar* in, int length, QTextCodec::ConverterState* state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#fromUnicode-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the first <i>number</i> of characters from the <i>input</i> array from Unicode to the encoding of this codec, and returns the result in a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>.</p>
+<p>The <i>state</i> of the convertor used is updated.</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn from_unicode(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn from_unicode(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QTextCodec::fromUnicode(const QString&amp; uc) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#fromUnicode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts <i>str</i> from Unicode to the encoding of this codec, and returns the result in a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>.</p></div></p>
+</div><h4 id='method.make_decoder' class='method'><code>fn <a href='#method.make_decoder' class='fnname'>make_decoder</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/text_decoder/struct.TextDecoder.html' title='qt_core::text_decoder::TextDecoder'>TextDecoder</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecMakeDecoderArgs.html' title='qt_core::text_codec::overloading::TextCodecMakeDecoderArgs'>TextCodecMakeDecoderArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::makeDecoder</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn make_decoder(&amp;self, ::flags::Flags&lt;::text_codec::ConversionFlag&gt;) -&gt; *mut ::text_decoder::TextDecoder</code><br>2) <code>fn make_decoder(&amp;self, ()) -&gt; *mut ::text_decoder::TextDecoder</code><br>
+C++ method: <span style='color: green;'><code>QTextDecoder* QTextCodec::makeDecoder(QFlags&lt;QTextCodec::ConversionFlag&gt; flags = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#makeDecoder">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates a <a href="http://doc.qt.io/qt-5/qtextdecoder.html">QTextDecoder</a> with a specified <i>flags</i> to decode chunks of <code>char *</code> data to create chunks of Unicode data.</p>
+<p>The caller is responsible for deleting the returned object.</p>
+<p>This function was introduced in  Qt 4.7.</p></div></p>
+</div><h4 id='method.make_encoder' class='method'><code>fn <a href='#method.make_encoder' class='fnname'>make_encoder</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/text_encoder/struct.TextEncoder.html' title='qt_core::text_encoder::TextEncoder'>TextEncoder</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecMakeEncoderArgs.html' title='qt_core::text_codec::overloading::TextCodecMakeEncoderArgs'>TextCodecMakeEncoderArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::makeEncoder</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn make_encoder(&amp;self, ::flags::Flags&lt;::text_codec::ConversionFlag&gt;) -&gt; *mut ::text_encoder::TextEncoder</code><br>2) <code>fn make_encoder(&amp;self, ()) -&gt; *mut ::text_encoder::TextEncoder</code><br>
+C++ method: <span style='color: green;'><code>QTextEncoder* QTextCodec::makeEncoder(QFlags&lt;QTextCodec::ConversionFlag&gt; flags = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#makeEncoder">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates a <a href="http://doc.qt.io/qt-5/qtextencoder.html">QTextEncoder</a> with a specified <i>flags</i> to encode chunks of Unicode data as <code>char *</code> data.</p>
+<p>The caller is responsible for deleting the returned object.</p>
+<p>This function was introduced in  Qt 4.7.</p></div></p>
+</div><h4 id='method.mib_enum' class='method'><code>fn <a href='#method.mib_enum' class='fnname'>mib_enum</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual int QTextCodec::mibEnum() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#mibEnum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Subclasses of <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> must reimplement this function. It returns the MIBenum (see <a href="http://www.iana.org/assignments/character-sets/character-sets.xml">IANA character-sets encoding file</a> for more information). It is important that each <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> subclass returns the correct unique value for this function.</p></div></p>
+</div><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecNameArgs.html' title='qt_core::text_codec::overloading::TextCodecNameArgs'>TextCodecNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn name(&amp;self, cpp_utils::AsStruct) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>pure virtual QByteArray QTextCodec::name() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#name">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p><a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> subclasses must reimplement this function. It returns the name of the encoding supported by the subclass.</p>
+<p>If the codec is registered as a character set in the <a href="http://www.iana.org/assignments/character-sets/character-sets.xml">IANA character-sets encoding file</a> this method should return the preferred mime name for the codec if defined, otherwise its name.</p></div></p>
+</div><h4 id='method.set_codec_for_locale' class='method'><code>fn <a href='#method.set_codec_for_locale' class='fnname'>set_codec_for_locale</a>(c: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QTextCodec::setCodecForLocale(QTextCodec* c)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#setCodecForLocale">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Set the codec to <i>c</i>; this will be returned by <a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForLocale">codecForLocale</a>(). If <i>c</i> is a null pointer, the codec is reset to the default.</p>
+<p>This might be needed for some applications that want to use their own mechanism for setting the locale.</p>
+<p><b>Warning:</b> This function is not <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#reentrant">reentrant</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForLocale">codecForLocale</a>().</p></div></p>
+</div><h4 id='method.to_unicode' class='method'><code>fn <a href='#method.to_unicode' class='fnname'>to_unicode</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/text_codec/overloading/trait.TextCodecToUnicodeArgs.html' title='qt_core::text_codec::overloading::TextCodecToUnicodeArgs'>TextCodecToUnicodeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec::toUnicode</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_unicode(&amp;self, (&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_unicode(&amp;self, (&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextCodec::toUnicode(const QByteArray&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#toUnicode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts <i>a</i> from the encoding of this codec to Unicode, and returns the result in a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_unicode(&amp;self, (*const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_unicode(&amp;self, (*const libc::c_char, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextCodec::toUnicode(const char* chars) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#toUnicode-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p><i>chars</i> contains the source characters.</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_unicode(&amp;self, (*const libc::c_char, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn to_unicode(&amp;self, (*const libc::c_char, libc::c_int, *mut ::text_codec::ConverterState, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn to_unicode(&amp;self, (*const libc::c_char, libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn to_unicode(&amp;self, (*const libc::c_char, libc::c_int, *mut ::text_codec::ConverterState, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextCodec::toUnicode(const char* in, int length, QTextCodec::ConverterState* state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextcodec.html#toUnicode-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the first <i>size</i> characters from the <i>input</i> from the encoding of this codec to Unicode, and returns the result in a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p>The <i>state</i> of the convertor used is updated.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-150722' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/text_codec.rs.html#200-204' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

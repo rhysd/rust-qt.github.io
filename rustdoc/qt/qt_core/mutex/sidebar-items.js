@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["RecursionMode","C++ type: <span style='color: green;'>```QMutex::RecursionMode```</span>"]],"mod":[["overloading",""]],"struct":[["Mutex","C++ type: <span style='color: green;'>```QMutex```</span>"]]});

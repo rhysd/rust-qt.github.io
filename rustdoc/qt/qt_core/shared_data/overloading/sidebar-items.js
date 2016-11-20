@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["SharedDataNewArgs","This trait represents a set of arguments accepted by SharedData::new method."]]});

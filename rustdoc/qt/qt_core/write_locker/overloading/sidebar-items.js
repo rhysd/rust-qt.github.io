@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["WriteLockerNewArgs","This trait represents a set of arguments accepted by WriteLocker::new method."]]});

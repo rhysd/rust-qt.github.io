@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `LockFile` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, LockFile">
+
+    <title>qt_core::lock_file::LockFile - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>lock_file</a></p><script>window.sidebarCurrent = {name: 'LockFile', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>lock_file</a>::<wbr><a class='struct' href=''>LockFile</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-103974' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/lock_file.rs.html#30-32' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct LockFile {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QLockFile</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qlockfile.html">QLockFile</a> class provides locking between processes using a file.</p>
+<p>A lock file can be used to prevent multiple processes from accessing concurrently the same resource. For instance, a configuration file on disk, or a socket, a port, a region of shared memory...</p>
+<p>Serialization is only guaranteed if all processes that access the shared resource use <a href="http://doc.qt.io/qt-5/qlockfile.html">QLockFile</a>, with the same file path.</p>
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html">QLockFile</a> supports two use cases: to protect a resource for a short-term operation (e.g. verifying if a configuration file has changed before saving new settings), and for long-lived protection of a resource (e.g. a document opened by a user in an editor) for an indefinite amount of time.</p>
+<p>When protecting for a short-term operation, it is acceptable to call <a href="http://doc.qt.io/qt-5/qlockfile.html#lock">lock</a>() and wait until any running operation finishes. When protecting a resource over a long time, however, the application should always call <a href="http://doc.qt.io/qt-5/qlockfile.html#setStaleLockTime">setStaleLockTime</a>(0) and then <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>() with a short timeout, in order to warn the user that the resource is locked.</p>
+<p>If the process holding the lock crashes, the lock file stays on disk and can prevent any other process from accessing the shared resource, ever. For this reason, <a href="http://doc.qt.io/qt-5/qlockfile.html">QLockFile</a> tries to detect such a &quot;stale&quot; lock file, based on the process ID written into the file. To cover the situation that the process ID got reused meanwhile, the current process name is compared to the name of the process that corresponds to the process ID from the lock file. If the process names differ, the lock file is considered stale. Additionally, the last modification time of the lock file (30s by default, for the use case of a short-lived operation) is taken into account. If the lock file is found to be stale, it will be deleted.</p>
+<p>For the use case of protecting a resource over a long time, you should therefore call <a href="http://doc.qt.io/qt-5/qlockfile.html#setStaleLockTime">setStaleLockTime</a>(0), and when <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>() returns <a href="http://doc.qt.io/qt-5/qlockfile.html#LockError-enum">LockFailedError</a>, inform the user that the document is locked, possibly using <a href="http://doc.qt.io/qt-5/qlockfile.html#getLockInfo">getLockInfo</a>() for more details.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/lock_file/struct.LockFile.html' title='qt_core::lock_file::LockFile'>LockFile</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103979' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/lock_file.rs.html#40-153' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.error' class='method'><code>fn <a href='#method.error' class='fnname'>error</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/lock_file/enum.LockError.html' title='qt_core::lock_file::LockError'>LockError</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLockFile::LockError QLockFile::error() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html#error">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the lock file error status.</p>
+<p>If <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>() returns <code>false</code>, this function can be called to find out the reason why the locking failed.</p></div></p>
+</div><h4 id='method.get_lock_info' class='method'><code>fn <a href='#method.get_lock_info' class='fnname'>get_lock_info</a>(&amp;self, pid: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_longlong.html' title='libc::c_longlong'>c_longlong</a>, hostname: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>, appname: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QLockFile::getLockInfo(long long* pid, QString* hostname, QString* appname) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html#getLockInfo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Retrieves information about the current owner of the lock file.</p>
+<p>If <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>() returns <code>false</code>, and <a href="http://doc.qt.io/qt-5/qlockfile.html#error">error</a>() returns <a href="http://doc.qt.io/qt-5/qlockfile.html#LockError-enum">LockFailedError</a>, this function can be called to find out more information about the existing lock file:</p>
+<ul>
+<li>the PID of the application (returned in <i>pid</i>)</li>
+<li>the <i>hostname</i> it&#39;s running on (useful in case of networked filesystems),</li>
+<li>the name of the application which created it (returned in <i>appname</i>),</li>
+</ul>
+<p>Note that <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>() automatically deleted the file if there is no running application with this PID, so <a href="http://doc.qt.io/qt-5/qlockfile.html#LockError-enum">LockFailedError</a> can only happen if there is an application with this PID (it could be unrelated though).</p>
+<p>This can be used to inform users about the existing lock file and give them the choice to delete it. After removing the file using <a href="http://doc.qt.io/qt-5/qlockfile.html#removeStaleLockFile">removeStaleLockFile</a>(), the application can call <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>() again.</p>
+<p>This function returns <code>true</code> if the information could be successfully retrieved, false if the lock file doesn&#39;t exist or doesn&#39;t contain the expected data. This can happen if the lock file was deleted between the time where <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>() failed and the call to this function. Simply call <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>() again if this happens.</p></div></p>
+</div><h4 id='method.is_locked' class='method'><code>fn <a href='#method.is_locked' class='fnname'>is_locked</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QLockFile::isLocked() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html#isLocked">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the lock was acquired by this <a href="http://doc.qt.io/qt-5/qlockfile.html">QLockFile</a> instance, otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlockfile.html#lock">lock</a>(), <a href="http://doc.qt.io/qt-5/qlockfile.html#unlock">unlock</a>(), and <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>().</p></div></p>
+</div><h4 id='method.lock' class='method'><code>fn <a href='#method.lock' class='fnname'>lock</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QLockFile::lock()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html#lock">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates the lock file.</p>
+<p>If another process (or another thread) has created the lock file already, this function will block until that process (or thread) releases it.</p>
+<p>Calling this function multiple times on the same lock from the same thread without unlocking first is not allowed. This function will <i>dead-lock</i> when the file is locked recursively.</p>
+<p>Returns <code>true</code> if the lock was acquired, false if it could not be acquired due to an unrecoverable error, such as no permissions in the parent directory.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlockfile.html#unlock">unlock</a>() and <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/lock_file/overloading/trait.LockFileNewArgs.html' title='qt_core::lock_file::overloading::LockFileNewArgs'>LockFileNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLockFile::QLockFile</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::lock_file::LockFile</code><br>2) <code>fn new((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::lock_file::LockFile&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QLockFile::QLockFile(const QString&amp; fileName)</code></span></p>
+</div><h4 id='method.remove_stale_lock_file' class='method'><code>fn <a href='#method.remove_stale_lock_file' class='fnname'>remove_stale_lock_file</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QLockFile::removeStaleLockFile()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html#removeStaleLockFile">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Attempts to forcefully remove an existing lock file.</p>
+<p>Calling this is not recommended when protecting a short-lived operation: <a href="http://doc.qt.io/qt-5/qlockfile.html">QLockFile</a> already takes care of removing lock files after they are older than <a href="http://doc.qt.io/qt-5/qlockfile.html#staleLockTime">staleLockTime</a>().</p>
+<p>This method should only be called when protecting a resource for a long time, i.e. with <a href="http://doc.qt.io/qt-5/qlockfile.html#staleLockTime">staleLockTime</a>(0), and after <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>() returned <a href="http://doc.qt.io/qt-5/qlockfile.html#LockError-enum">LockFailedError</a>, and the user agreed on removing the lock file.</p>
+<p>Returns <code>true</code> on success, false if the lock file couldn&#39;t be removed. This happens on Windows, when the application owning the lock is still running.</p></div></p>
+</div><h4 id='method.set_stale_lock_time' class='method'><code>fn <a href='#method.set_stale_lock_time' class='fnname'>set_stale_lock_time</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QLockFile::setStaleLockTime(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html#setStaleLockTime">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets <i>staleLockTime</i> to be the time in milliseconds after which a lock file is considered stale. The default value is 30000, i.e. 30 seconds. If your application typically keeps the file locked for more than 30 seconds (for instance while saving megabytes of data for 2 minutes), you should set a bigger value using setStaleLockTime().</p>
+<p>The value of <i>staleLockTime</i> is used by <a href="http://doc.qt.io/qt-5/qlockfile.html#lock">lock</a>() and <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>() in order to determine when an existing lock file is considered stale, i.e. left over by a crashed process. This is useful for the case where the PID got reused meanwhile, so one way to detect a stale lock file is by the fact that it has been around for a long time.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlockfile.html#staleLockTime">staleLockTime</a>().</p></div></p>
+</div><h4 id='method.stale_lock_time' class='method'><code>fn <a href='#method.stale_lock_time' class='fnname'>stale_lock_time</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QLockFile::staleLockTime() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html#staleLockTime">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the time in milliseconds after which a lock file is considered stale.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlockfile.html#setStaleLockTime">setStaleLockTime</a>().</p></div></p>
+</div><h4 id='method.try_lock' class='method'><code>fn <a href='#method.try_lock' class='fnname'>try_lock</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/lock_file/overloading/trait.LockFileTryLockArgs.html' title='qt_core::lock_file::overloading::LockFileTryLockArgs'>LockFileTryLockArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLockFile::tryLock</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn try_lock(&amp;mut self, ()) -&gt; bool</code><br>2) <code>fn try_lock(&amp;mut self, libc::c_int) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLockFile::tryLock(int timeout = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Attempts to create the lock file. This function returns <code>true</code> if the lock was obtained; otherwise it returns <code>false</code>. If another process (or another thread) has created the lock file already, this function will wait for at most <i>timeout</i> milliseconds for the lock file to become available.</p>
+<p>Note: Passing a negative number as the <i>timeout</i> is equivalent to calling <a href="http://doc.qt.io/qt-5/qlockfile.html#lock">lock</a>(), i.e. this function will wait forever until the lock file can be locked if <i>timeout</i> is negative.</p>
+<p>If the lock was obtained, it must be released with <a href="http://doc.qt.io/qt-5/qlockfile.html#unlock">unlock</a>() before another process (or thread) can successfully lock it.</p>
+<p>Calling this function multiple times on the same lock from the same thread without unlocking first is not allowed, this function will <i>always</i> return false when attempting to lock the file recursively.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlockfile.html#lock">lock</a>() and <a href="http://doc.qt.io/qt-5/qlockfile.html#unlock">unlock</a>().</p></div></p>
+</div><h4 id='method.unlock' class='method'><code>fn <a href='#method.unlock' class='fnname'>unlock</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QLockFile::unlock()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html#unlock">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Releases the lock, by deleting the lock file.</p>
+<p>Calling unlock() without locking the file first, does nothing.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlockfile.html#lock">lock</a>() and <a href="http://doc.qt.io/qt-5/qlockfile.html#tryLock">tryLock</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/lock_file/struct.LockFile.html' title='qt_core::lock_file::LockFile'>LockFile</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103977' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/lock_file.rs.html#34-38' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/lock_file/struct.LockFile.html' title='qt_core::lock_file::LockFile'>LockFile</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/lock_file/struct.LockFile.html' title='qt_core::lock_file::LockFile'>LockFile</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104008' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/lock_file.rs.html#155-162' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QLockFile::~QLockFile()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlockfile.html#dtor.QLockFile">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the lock file object. If the lock was acquired, this will release the lock, by deleting the lock file.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/lock_file/struct.LockFile.html' title='qt_core::lock_file::LockFile'>LockFile</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104011' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/lock_file.rs.html#164-168' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

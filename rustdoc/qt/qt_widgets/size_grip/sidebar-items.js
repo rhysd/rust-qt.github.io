@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["SizeGrip","C++ type: <span style='color: green;'>```QSizeGrip```</span>"]]});

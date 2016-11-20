@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SwipeDirection","C++ type: <span style='color: green;'>```QSwipeGesture::SwipeDirection```</span>"]],"mod":[["overloading",""]],"struct":[["SwipeGesture","C++ type: <span style='color: green;'>```QSwipeGesture```</span>"]]});

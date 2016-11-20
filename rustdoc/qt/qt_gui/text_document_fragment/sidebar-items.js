@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["TextDocumentFragment","C++ type: <span style='color: green;'>```QTextDocumentFragment```</span>"]]});

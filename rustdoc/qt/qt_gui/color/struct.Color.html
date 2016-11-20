@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Color` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Color">
+
+    <title>qt_gui::color::Color - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>color</a></p><script>window.sidebarCurrent = {name: 'Color', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>color</a>::<wbr><a class='struct' href=''>Color</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-65822' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/color.rs.html#21-23' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Color {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QColor</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> class provides colors based on RGB, HSV or CMYK values.</p>
+<p>A color is normally specified in terms of RGB (red, green, and blue) components, but it is also possible to specify it in terms of HSV (hue, saturation, and value) and CMYK (cyan, magenta, yellow and black) components. In addition a color can be specified using a color name. The color name can be any of the SVG 1.0 color names.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>RGB</th><th>HSV</th><th>CMYK</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qcolor-rgb.png" alt=""></img></td><td><img src="http://doc.qt.io/qt-5/images/qcolor-hsv.png" alt=""></img></td><td><img src="http://doc.qt.io/qt-5/images/qcolor-cmyk.png" alt=""></img></td></tr>
+</tbody></table></div>
+<p>The <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructor creates the color based on RGB values. To create a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> based on either HSV or CMYK values, use the <a href="http://doc.qt.io/qt-5/qcolor.html#toHsv">toHsv</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#toCmyk">toCmyk</a>() functions respectively. These functions return a copy of the color using the desired format. In addition the static <a href="http://doc.qt.io/qt-5/qcolor.html#fromRgb">fromRgb</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#fromHsv">fromHsv</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#fromCmyk">fromCmyk</a>() functions create colors from the specified values. Alternatively, a color can be converted to any of the three formats using the <a href="http://doc.qt.io/qt-5/qcolor.html#convertTo">convertTo</a>() function (returning a copy of the color in the desired format), or any of the <a href="http://doc.qt.io/qt-5/qcolor.html#setRgb">setRgb</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#setHsv">setHsv</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#setCmyk">setCmyk</a>() functions altering <i>this</i> color&#39;s format. The <a href="http://doc.qt.io/qt-5/qcolor.html#spec">spec</a>() function tells how the color was specified.</p>
+<p>A color can be set by passing an RGB string (such as &quot;#112233&quot;), or an ARGB string (such as &quot;#ff112233&quot;) or a color name (such as &quot;blue&quot;), to the <a href="http://doc.qt.io/qt-5/qcolor.html#setNamedColor">setNamedColor</a>() function. The color names are taken from the SVG 1.0 color names. The <a href="http://doc.qt.io/qt-5/qcolor.html#name">name</a>() function returns the name of the color in the format &quot;#RRGGBB&quot;. Colors can also be set using <a href="http://doc.qt.io/qt-5/qcolor.html#setRgb">setRgb</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#setHsv">setHsv</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#setCmyk">setCmyk</a>(). To get a lighter or darker color use the <a href="http://doc.qt.io/qt-5/qcolor.html#lighter">lighter</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#darker">darker</a>() functions respectively.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>() function indicates whether a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> is legal at all. For example, a RGB color with RGB values out of range is illegal. For performance reasons, <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> mostly disregards illegal colors, and for that reason, the result of using an invalid color is undefined.</p>
+<p>The color components can be retrieved individually, e.g with <a href="http://doc.qt.io/qt-5/qcolor.html#red">red</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#hue">hue</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#cyan">cyan</a>(). The values of the color components can also be retrieved in one go using the <a href="http://doc.qt.io/qt-5/qcolor.html#getRgb">getRgb</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsv">getHsv</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#getCmyk">getCmyk</a>() functions. Using the RGB color model, the color components can in addition be accessed with <a href="http://doc.qt.io/qt-5/qcolor.html#rgb">rgb</a>().</p>
+<p>There are several related non-members: <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> is a typdef for an unsigned int representing the RGB value triplet (r, g, b). Note that it also can hold a value for the alpha-channel (for more information, see the <a href="http://doc.qt.io/qt-5/qcolor.html#alpha-blended-drawing">Alpha-Blended Drawing</a> section). The <a href="http://doc.qt.io/qt-5/qcolor.html#qRed">qRed</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#qBlue">qBlue</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#qGreen">qGreen</a>() functions return the respective component of the given <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> value, while the <a href="http://doc.qt.io/qt-5/qcolor.html#qRgb">qRgb</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#qRgba">qRgba</a>() functions create and return the <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> triplet based on the given component values. Finally, the <a href="http://doc.qt.io/qt-5/qcolor.html#qAlpha">qAlpha</a>() function returns the alpha component of the provided <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a>, and the <a href="http://doc.qt.io/qt-5/qcolor.html#qGray">qGray</a>() function calculates and return a gray value based on the given value.</p>
+<p><a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> is platform and device independent. The <a href="http://doc.qt.io/qt-5/qcolormap.html">QColormap</a> class maps the color to the hardware.</p>
+<p>For more information about painting in general, see the <a href="http://doc.qt.io/qt-5/paintsystem.html">Paint System</a> documentation.</p>
+<a name="integer-vs-floating-point-precision"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65827' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/color.rs.html#31-1131' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.alpha' class='method'><code>fn <a href='#method.alpha' class='fnname'>alpha</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::alpha() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#alpha">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the alpha color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setAlpha">setAlpha</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#alphaF">alphaF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#alpha-blended-drawing">Alpha-Blended Drawing</a>.</p></div></p>
+</div><h4 id='method.alpha_f' class='method'><code>fn <a href='#method.alpha_f' class='fnname'>alpha_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::alphaF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#alphaF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the alpha color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setAlphaF">setAlphaF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#alpha">alpha</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#alpha-blended-drawing">Alpha-Blended Drawing</a>.</p></div></p>
+</div><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorAsQVariantArgs.html' title='qt_gui::color::overloading::ColorAsQVariantArgs'>ColorAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QColor::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the color as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></p></div></p>
+</div><h4 id='method.black' class='method'><code>fn <a href='#method.black' class='fnname'>black</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::black() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#black">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the black color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#blackF">blackF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getCmyk">getCmyk</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.black_f' class='method'><code>fn <a href='#method.black_f' class='fnname'>black_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::blackF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#blackF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the black color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#black">black</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getCmykF">getCmykF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.blue' class='method'><code>fn <a href='#method.blue' class='fnname'>blue</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::blue() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#blue">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the blue color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setBlue">setBlue</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#blueF">blueF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#getRgb">getRgb</a>().</p></div></p>
+</div><h4 id='method.blue_f' class='method'><code>fn <a href='#method.blue_f' class='fnname'>blue_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::blueF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#blueF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the blue color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setBlueF">setBlueF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#blue">blue</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#getRgbF">getRgbF</a>().</p></div></p>
+</div><h4 id='method.color_names' class='method'><code>fn <a href='#method.color_names' class='fnname'>color_names</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorColorNamesArgs.html' title='qt_gui::color::overloading::ColorColorNamesArgs'>ColorColorNamesArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::colorNames</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn color_names(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn color_names(cpp_utils::AsStruct) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>static QStringList QColor::colorNames()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#colorNames">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a> containing the color names Qt knows about.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#predefined-colors">Predefined Colors</a>.</p></div></p>
+</div><h4 id='method.convert_to' class='method'><code>fn <a href='#method.convert_to' class='fnname'>convert_to</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorConvertToArgs.html' title='qt_gui::color::overloading::ColorConvertToArgs'>ColorConvertToArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::convertTo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn convert_to(&amp;self, (::color::Spec, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn convert_to(&amp;self, (::color::Spec, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QColor::convertTo(QColor::Spec colorSpec) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#convertTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates a copy of <i>this</i> color in the format specified by <i>colorSpec</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#spec">spec</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#toCmyk">toCmyk</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#toHsv">toHsv</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#toRgb">toRgb</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.cyan' class='method'><code>fn <a href='#method.cyan' class='fnname'>cyan</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::cyan() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#cyan">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the cyan color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#cyanF">cyanF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getCmyk">getCmyk</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.cyan_f' class='method'><code>fn <a href='#method.cyan_f' class='fnname'>cyan_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::cyanF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#cyanF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the cyan color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#cyan">cyan</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getCmykF">getCmykF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.dark' class='method'><code>fn <a href='#method.dark' class='fnname'>dark</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorDarkArgs.html' title='qt_gui::color::overloading::ColorDarkArgs'>ColorDarkArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::dark</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn dark(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn dark(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn dark(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn dark(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QColor::dark(int f = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor-obsolete.html#dark">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use darker(<i>factor</i>) instead.</p></div></p>
+</div><h4 id='method.darker' class='method'><code>fn <a href='#method.darker' class='fnname'>darker</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorDarkerArgs.html' title='qt_gui::color::overloading::ColorDarkerArgs'>ColorDarkerArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::darker</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn darker(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn darker(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn darker(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn darker(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QColor::darker(int f = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#darker">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a darker (or lighter) color, but does not change this object.</p>
+<p>If the <i>factor</i> is greater than 100, this functions returns a darker color. Setting <i>factor</i> to 300 returns a color that has one-third the brightness. If the <i>factor</i> is less than 100, the return color is lighter, but we recommend using the <a href="http://doc.qt.io/qt-5/qcolor.html#lighter">lighter</a>() function for this purpose. If the <i>factor</i> is 0 or negative, the return value is unspecified.</p>
+<p>The function converts the current RGB color to HSV, divides the value (V) component by <i>factor</i> and converts the color back to RGB.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#lighter">lighter</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.from_cmyk' class='method'><code>fn <a href='#method.from_cmyk' class='fnname'>from_cmyk</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorFromCmykArgs.html' title='qt_gui::color::overloading::ColorFromCmykArgs'>ColorFromCmykArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::fromCmyk</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_cmyk((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn from_cmyk((libc::c_int, libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn from_cmyk((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn from_cmyk((libc::c_int, libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>static QColor QColor::fromCmyk(int c, int m, int y, int k, int a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#fromCmyk">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Static convenience function that returns a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructed from the given CMYK color values: <i>c</i> (cyan), <i>m</i> (magenta), <i>y</i> (yellow), <i>k</i> (black), and <i>a</i> (alpha-channel, i.e. transparency).</p>
+<p>All the values must be in the range 0-255.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#toCmyk">toCmyk</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#fromCmykF">fromCmykF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.from_cmyk_f' class='method'><code>fn <a href='#method.from_cmyk_f' class='fnname'>from_cmyk_f</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorFromCmykFArgs.html' title='qt_gui::color::overloading::ColorFromCmykFArgs'>ColorFromCmykFArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::fromCmykF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_cmyk_f((libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn from_cmyk_f((libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn from_cmyk_f((libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn from_cmyk_f((libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>static QColor QColor::fromCmykF(double c, double m, double y, double k, double a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#fromCmykF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Static convenience function that returns a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructed from the given CMYK color values: <i>c</i> (cyan), <i>m</i> (magenta), <i>y</i> (yellow), <i>k</i> (black), and <i>a</i> (alpha-channel, i.e. transparency).</p>
+<p>All the values must be in the range 0.0-1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#toCmyk">toCmyk</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#fromCmyk">fromCmyk</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.from_hsl' class='method'><code>fn <a href='#method.from_hsl' class='fnname'>from_hsl</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorFromHslArgs.html' title='qt_gui::color::overloading::ColorFromHslArgs'>ColorFromHslArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::fromHsl</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_hsl((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn from_hsl((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn from_hsl((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn from_hsl((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>static QColor QColor::fromHsl(int h, int s, int l, int a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#fromHsl">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Static convenience function that returns a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructed from the HSV color values, <i>h</i> (hue), <i>s</i> (saturation), <i>l</i> (lightness), and <i>a</i> (alpha-channel, i.e. transparency).</p>
+<p>The value of <i>s</i>, <i>l</i>, and <i>a</i> must all be in the range 0-255; the value of <i>h</i> must be in the range 0-359.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#toHsl">toHsl</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#fromHslF">fromHslF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.from_hsl_f' class='method'><code>fn <a href='#method.from_hsl_f' class='fnname'>from_hsl_f</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorFromHslFArgs.html' title='qt_gui::color::overloading::ColorFromHslFArgs'>ColorFromHslFArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::fromHslF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_hsl_f((libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn from_hsl_f((libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn from_hsl_f((libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn from_hsl_f((libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>static QColor QColor::fromHslF(double h, double s, double l, double a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#fromHslF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Static convenience function that returns a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructed from the HSV color values, <i>h</i> (hue), <i>s</i> (saturation), <i>l</i> (lightness), and <i>a</i> (alpha-channel, i.e. transparency).</p>
+<p>All the values must be in the range 0.0-1.0.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#toHsl">toHsl</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#fromHsl">fromHsl</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.from_hsv' class='method'><code>fn <a href='#method.from_hsv' class='fnname'>from_hsv</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorFromHsvArgs.html' title='qt_gui::color::overloading::ColorFromHsvArgs'>ColorFromHsvArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::fromHsv</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_hsv((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn from_hsv((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn from_hsv((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn from_hsv((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>static QColor QColor::fromHsv(int h, int s, int v, int a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#fromHsv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Static convenience function that returns a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructed from the HSV color values, <i>h</i> (hue), <i>s</i> (saturation), <i>v</i> (value), and <i>a</i> (alpha-channel, i.e. transparency).</p>
+<p>The value of <i>s</i>, <i>v</i>, and <i>a</i> must all be in the range 0-255; the value of <i>h</i> must be in the range 0-359.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#toHsv">toHsv</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#fromHsvF">fromHsvF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.from_hsv_f' class='method'><code>fn <a href='#method.from_hsv_f' class='fnname'>from_hsv_f</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorFromHsvFArgs.html' title='qt_gui::color::overloading::ColorFromHsvFArgs'>ColorFromHsvFArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::fromHsvF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_hsv_f((libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn from_hsv_f((libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn from_hsv_f((libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn from_hsv_f((libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>static QColor QColor::fromHsvF(double h, double s, double v, double a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#fromHsvF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Static convenience function that returns a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructed from the HSV color values, <i>h</i> (hue), <i>s</i> (saturation), <i>v</i> (value), and <i>a</i> (alpha-channel, i.e. transparency).</p>
+<p>All the values must be in the range 0.0-1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#toHsv">toHsv</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#fromHsv">fromHsv</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.from_rgb' class='method'><code>fn <a href='#method.from_rgb' class='fnname'>from_rgb</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorFromRgbArgs.html' title='qt_gui::color::overloading::ColorFromRgbArgs'>ColorFromRgbArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::fromRgb</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn from_rgb((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn from_rgb((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn from_rgb((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn from_rgb((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>static QColor QColor::fromRgb(int r, int g, int b, int a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#fromRgb-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Static convenience function that returns a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructed from the RGB color values, <i>r</i> (red), <i>g</i> (green), <i>b</i> (blue), and <i>a</i> (alpha-channel, i.e. transparency).</p>
+<p>All the values must be in the range 0-255.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#toRgb">toRgb</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#fromRgbF">fromRgbF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn from_rgb((libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn from_rgb((libc::c_uint, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>static QColor QColor::fromRgb(unsigned int rgb)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#fromRgb">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Static convenience function that returns a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructed from the given <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> value <i>rgb</i>.</p>
+<p>The alpha component of <i>rgb</i> is ignored (i.e. it is automatically set to 255), use the <a href="http://doc.qt.io/qt-5/qcolor.html#fromRgba">fromRgba</a>() function to include the alpha-channel specified by the given <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> value.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#fromRgba">fromRgba</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#fromRgbF">fromRgbF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#toRgb">toRgb</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.from_rgb_f' class='method'><code>fn <a href='#method.from_rgb_f' class='fnname'>from_rgb_f</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorFromRgbFArgs.html' title='qt_gui::color::overloading::ColorFromRgbFArgs'>ColorFromRgbFArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::fromRgbF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_rgb_f((libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn from_rgb_f((libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn from_rgb_f((libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn from_rgb_f((libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>static QColor QColor::fromRgbF(double r, double g, double b, double a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#fromRgbF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Static convenience function that returns a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructed from the RGB color values, <i>r</i> (red), <i>g</i> (green), <i>b</i> (blue), and <i>a</i> (alpha-channel, i.e. transparency).</p>
+<p>All the values must be in the range 0.0-1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#fromRgb">fromRgb</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#toRgb">toRgb</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.from_rgba' class='method'><code>fn <a href='#method.from_rgba' class='fnname'>from_rgba</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorFromRgbaArgs.html' title='qt_gui::color::overloading::ColorFromRgbaArgs'>ColorFromRgbaArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::fromRgba</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_rgba((libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn from_rgba((libc::c_uint, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>static QColor QColor::fromRgba(unsigned int rgba)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#fromRgba">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Static convenience function that returns a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> constructed from the given <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> value <i>rgba</i>.</p>
+<p>Unlike the <a href="http://doc.qt.io/qt-5/qcolor.html#fromRgb">fromRgb</a>() function, the alpha-channel specified by the given <a href="http://doc.qt.io/qt-5/qcolor.html#QRgb-typedef">QRgb</a> value is included.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#fromRgb">fromRgb</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.get_cmyk' class='method'><code>fn <a href='#method.get_cmyk' class='fnname'>get_cmyk</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorGetCmykArgs.html' title='qt_gui::color::overloading::ColorGetCmykArgs'>ColorGetCmykArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::getCmyk</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn get_cmyk(&amp;mut self, (*mut libc::c_int, *mut libc::c_int, *mut libc::c_int, *mut libc::c_int)) -&gt; ()</code><br>2) <code>fn get_cmyk(&amp;mut self, (*mut libc::c_int, *mut libc::c_int, *mut libc::c_int, *mut libc::c_int, *mut libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::getCmyk(int* c, int* m, int* y, int* k, int* a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#getCmyk">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the contents pointed to by <i>c</i>, <i>m</i>, <i>y</i>, <i>k</i>, and <i>a</i>, to the cyan, magenta, yellow, black, and alpha-channel (transparency) components of the color&#39;s CMYK value.</p>
+<p>These components can be retrieved individually using the <a href="http://doc.qt.io/qt-5/qcolor.html#cyan">cyan</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#magenta">magenta</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#yellow">yellow</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#black">black</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#alpha">alpha</a>() functions.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setCmyk">setCmyk</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.get_cmyk_f' class='method'><code>fn <a href='#method.get_cmyk_f' class='fnname'>get_cmyk_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorGetCmykFArgs.html' title='qt_gui::color::overloading::ColorGetCmykFArgs'>ColorGetCmykFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::getCmykF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn get_cmyk_f(&amp;mut self, (*mut libc::c_double, *mut libc::c_double, *mut libc::c_double, *mut libc::c_double)) -&gt; ()</code><br>2) <code>fn get_cmyk_f(&amp;mut self, (*mut libc::c_double, *mut libc::c_double, *mut libc::c_double, *mut libc::c_double, *mut libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::getCmykF(double* c, double* m, double* y, double* k, double* a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#getCmykF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the contents pointed to by <i>c</i>, <i>m</i>, <i>y</i>, <i>k</i>, and <i>a</i>, to the cyan, magenta, yellow, black, and alpha-channel (transparency) components of the color&#39;s CMYK value.</p>
+<p>These components can be retrieved individually using the <a href="http://doc.qt.io/qt-5/qcolor.html#cyanF">cyanF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#magentaF">magentaF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#yellowF">yellowF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#blackF">blackF</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#alphaF">alphaF</a>() functions.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setCmykF">setCmykF</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.get_hsl' class='method'><code>fn <a href='#method.get_hsl' class='fnname'>get_hsl</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorGetHslArgs.html' title='qt_gui::color::overloading::ColorGetHslArgs'>ColorGetHslArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::getHsl</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn get_hsl(&amp;self, (*mut libc::c_int, *mut libc::c_int, *mut libc::c_int)) -&gt; ()</code><br>2) <code>fn get_hsl(&amp;self, (*mut libc::c_int, *mut libc::c_int, *mut libc::c_int, *mut libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::getHsl(int* h, int* s, int* l, int* a = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#getHsl">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the contents pointed to by <i>h</i>, <i>s</i>, <i>l</i>, and <i>a</i>, to the hue, saturation, lightness, and alpha-channel (transparency) components of the color&#39;s HSL value.</p>
+<p>These components can be retrieved individually using the hueHsl(), saturationHsl(), <a href="http://doc.qt.io/qt-5/qcolor.html#lightness">lightness</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#alpha">alpha</a>() functions.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setHsl">setHsl</a>().</p></div></p>
+</div><h4 id='method.get_hsl_f' class='method'><code>fn <a href='#method.get_hsl_f' class='fnname'>get_hsl_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorGetHslFArgs.html' title='qt_gui::color::overloading::ColorGetHslFArgs'>ColorGetHslFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::getHslF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn get_hsl_f(&amp;self, (*mut libc::c_double, *mut libc::c_double, *mut libc::c_double)) -&gt; ()</code><br>2) <code>fn get_hsl_f(&amp;self, (*mut libc::c_double, *mut libc::c_double, *mut libc::c_double, *mut libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::getHslF(double* h, double* s, double* l, double* a = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#getHslF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the contents pointed to by <i>h</i>, <i>s</i>, <i>l</i>, and <i>a</i>, to the hue, saturation, lightness, and alpha-channel (transparency) components of the color&#39;s HSL value.</p>
+<p>These components can be retrieved individually using the hueHslF(), saturationHslF(), <a href="http://doc.qt.io/qt-5/qcolor.html#lightnessF">lightnessF</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#alphaF">alphaF</a>() functions.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setHsl">setHsl</a>().</p></div></p>
+</div><h4 id='method.get_hsv' class='method'><code>fn <a href='#method.get_hsv' class='fnname'>get_hsv</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorGetHsvArgs.html' title='qt_gui::color::overloading::ColorGetHsvArgs'>ColorGetHsvArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::getHsv</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn get_hsv(&amp;self, (*mut libc::c_int, *mut libc::c_int, *mut libc::c_int)) -&gt; ()</code><br>2) <code>fn get_hsv(&amp;self, (*mut libc::c_int, *mut libc::c_int, *mut libc::c_int, *mut libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::getHsv(int* h, int* s, int* v, int* a = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#getHsv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the contents pointed to by <i>h</i>, <i>s</i>, <i>v</i>, and <i>a</i>, to the hue, saturation, value, and alpha-channel (transparency) components of the color&#39;s HSV value.</p>
+<p>These components can be retrieved individually using the <a href="http://doc.qt.io/qt-5/qcolor.html#hue">hue</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#saturation">saturation</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#value">value</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#alpha">alpha</a>() functions.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setHsv">setHsv</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.get_hsv_f' class='method'><code>fn <a href='#method.get_hsv_f' class='fnname'>get_hsv_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorGetHsvFArgs.html' title='qt_gui::color::overloading::ColorGetHsvFArgs'>ColorGetHsvFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::getHsvF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn get_hsv_f(&amp;self, (*mut libc::c_double, *mut libc::c_double, *mut libc::c_double)) -&gt; ()</code><br>2) <code>fn get_hsv_f(&amp;self, (*mut libc::c_double, *mut libc::c_double, *mut libc::c_double, *mut libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::getHsvF(double* h, double* s, double* v, double* a = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#getHsvF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the contents pointed to by <i>h</i>, <i>s</i>, <i>v</i>, and <i>a</i>, to the hue, saturation, value, and alpha-channel (transparency) components of the color&#39;s HSV value.</p>
+<p>These components can be retrieved individually using the <a href="http://doc.qt.io/qt-5/qcolor.html#hueF">hueF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#saturationF">saturationF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#valueF">valueF</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#alphaF">alphaF</a>() functions.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setHsv">setHsv</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.get_rgb' class='method'><code>fn <a href='#method.get_rgb' class='fnname'>get_rgb</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorGetRgbArgs.html' title='qt_gui::color::overloading::ColorGetRgbArgs'>ColorGetRgbArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::getRgb</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn get_rgb(&amp;self, (*mut libc::c_int, *mut libc::c_int, *mut libc::c_int)) -&gt; ()</code><br>2) <code>fn get_rgb(&amp;self, (*mut libc::c_int, *mut libc::c_int, *mut libc::c_int, *mut libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::getRgb(int* r, int* g, int* b, int* a = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#getRgb">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the contents pointed to by <i>r</i>, <i>g</i>, <i>b</i>, and <i>a</i>, to the red, green, blue, and alpha-channel (transparency) components of the color&#39;s RGB value.</p>
+<p>These components can be retrieved individually using the <a href="http://doc.qt.io/qt-5/qcolor.html#red">red</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#green">green</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#blue">blue</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#alpha">alpha</a>() functions.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#rgb">rgb</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#setRgb">setRgb</a>().</p></div></p>
+</div><h4 id='method.get_rgb_f' class='method'><code>fn <a href='#method.get_rgb_f' class='fnname'>get_rgb_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorGetRgbFArgs.html' title='qt_gui::color::overloading::ColorGetRgbFArgs'>ColorGetRgbFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::getRgbF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn get_rgb_f(&amp;self, (*mut libc::c_double, *mut libc::c_double, *mut libc::c_double)) -&gt; ()</code><br>2) <code>fn get_rgb_f(&amp;self, (*mut libc::c_double, *mut libc::c_double, *mut libc::c_double, *mut libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::getRgbF(double* r, double* g, double* b, double* a = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#getRgbF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the contents pointed to by <i>r</i>, <i>g</i>, <i>b</i>, and <i>a</i>, to the red, green, blue, and alpha-channel (transparency) components of the color&#39;s RGB value.</p>
+<p>These components can be retrieved individually using the <a href="http://doc.qt.io/qt-5/qcolor.html#redF">redF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#greenF">greenF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#blueF">blueF</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#alphaF">alphaF</a>() functions.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#rgb">rgb</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#setRgb">setRgb</a>().</p></div></p>
+</div><h4 id='method.green' class='method'><code>fn <a href='#method.green' class='fnname'>green</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::green() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#green">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the green color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setGreen">setGreen</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#greenF">greenF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#getRgb">getRgb</a>().</p></div></p>
+</div><h4 id='method.green_f' class='method'><code>fn <a href='#method.green_f' class='fnname'>green_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::greenF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#greenF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the green color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setGreenF">setGreenF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#green">green</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#getRgbF">getRgbF</a>().</p></div></p>
+</div><h4 id='method.hsl_hue' class='method'><code>fn <a href='#method.hsl_hue' class='fnname'>hsl_hue</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::hslHue() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#hslHue">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the hue color component of this color.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#getHslF">getHslF</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#getHsl">getHsl</a>().</p></div></p>
+</div><h4 id='method.hsl_hue_f' class='method'><code>fn <a href='#method.hsl_hue_f' class='fnname'>hsl_hue_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::hslHueF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#hslHueF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the hue color component of this color.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#hue">hue</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#getHslF">getHslF</a>().</p></div></p>
+</div><h4 id='method.hsl_saturation' class='method'><code>fn <a href='#method.hsl_saturation' class='fnname'>hsl_saturation</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::hslSaturation() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#hslSaturation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the saturation color component of this color.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#saturationF">saturationF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsv">getHsv</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.hsl_saturation_f' class='method'><code>fn <a href='#method.hsl_saturation_f' class='fnname'>hsl_saturation_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::hslSaturationF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#hslSaturationF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the saturation color component of this color.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#saturationF">saturationF</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#getHslF">getHslF</a>().</p></div></p>
+</div><h4 id='method.hsv_hue' class='method'><code>fn <a href='#method.hsv_hue' class='fnname'>hsv_hue</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::hsvHue() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#hsvHue">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the hue color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#hueF">hueF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsv">getHsv</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.hsv_hue_f' class='method'><code>fn <a href='#method.hsv_hue_f' class='fnname'>hsv_hue_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::hsvHueF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#hsvHueF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the hue color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#hue">hue</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsvF">getHsvF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.hsv_saturation' class='method'><code>fn <a href='#method.hsv_saturation' class='fnname'>hsv_saturation</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::hsvSaturation() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#hsvSaturation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the saturation color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#saturationF">saturationF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsv">getHsv</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.hsv_saturation_f' class='method'><code>fn <a href='#method.hsv_saturation_f' class='fnname'>hsv_saturation_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::hsvSaturationF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#hsvSaturationF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the saturation color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#saturation">saturation</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsvF">getHsvF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.hue' class='method'><code>fn <a href='#method.hue' class='fnname'>hue</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::hue() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#hue">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the hue color component of this color.</p>
+<p>The color is implicitly converted to HSV.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#hsvHue">hsvHue</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#hueF">hueF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsv">getHsv</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.hue_f' class='method'><code>fn <a href='#method.hue_f' class='fnname'>hue_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::hueF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#hueF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the hue color component of this color.</p>
+<p>The color is implicitly converted to HSV.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#hsvHueF">hsvHueF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#hue">hue</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsvF">getHsvF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QColor::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the color is valid; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_valid_color' class='method'><code>fn <a href='#method.is_valid_color' class='fnname'>is_valid_color</a>(name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QColor::isValidColor(const QString&amp; name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#isValidColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the <i>name</i> is a valid color name and can be used to construct a valid <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> object, otherwise returns false.</p>
+<p>It uses the same algorithm used in <a href="http://doc.qt.io/qt-5/qcolor.html#setNamedColor">setNamedColor</a>().</p>
+<p>This function was introduced in  Qt 4.7.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setNamedColor">setNamedColor</a>().</p></div></p>
+</div><h4 id='method.light' class='method'><code>fn <a href='#method.light' class='fnname'>light</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorLightArgs.html' title='qt_gui::color::overloading::ColorLightArgs'>ColorLightArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::light</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn light(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn light(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn light(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn light(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QColor::light(int f = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor-obsolete.html#light">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use lighter(<i>factor</i>) instead.</p></div></p>
+</div><h4 id='method.lighter' class='method'><code>fn <a href='#method.lighter' class='fnname'>lighter</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorLighterArgs.html' title='qt_gui::color::overloading::ColorLighterArgs'>ColorLighterArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::lighter</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn lighter(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn lighter(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>3) <code>fn lighter(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>4) <code>fn lighter(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QColor::lighter(int f = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#lighter">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a lighter (or darker) color, but does not change this object.</p>
+<p>If the <i>factor</i> is greater than 100, this functions returns a lighter color. Setting <i>factor</i> to 150 returns a color that is 50% brighter. If the <i>factor</i> is less than 100, the return color is darker, but we recommend using the <a href="http://doc.qt.io/qt-5/qcolor.html#darker">darker</a>() function for this purpose. If the <i>factor</i> is 0 or negative, the return value is unspecified.</p>
+<p>The function converts the current RGB color to HSV, multiplies the value (V) component by <i>factor</i> and converts the color back to RGB.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#darker">darker</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.lightness' class='method'><code>fn <a href='#method.lightness' class='fnname'>lightness</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::lightness() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#lightness">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the lightness color component of this color.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#lightnessF">lightnessF</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#getHsl">getHsl</a>().</p></div></p>
+</div><h4 id='method.lightness_f' class='method'><code>fn <a href='#method.lightness_f' class='fnname'>lightness_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::lightnessF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#lightnessF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the lightness color component of this color.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#value">value</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#getHslF">getHslF</a>().</p></div></p>
+</div><h4 id='method.magenta' class='method'><code>fn <a href='#method.magenta' class='fnname'>magenta</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::magenta() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#magenta">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the magenta color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#magentaF">magentaF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getCmyk">getCmyk</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.magenta_f' class='method'><code>fn <a href='#method.magenta_f' class='fnname'>magenta_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::magentaF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#magentaF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the magenta color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#magenta">magenta</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getCmykF">getCmykF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorNameArgs.html' title='qt_gui::color::overloading::ColorNameArgs'>ColorNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QColor::name() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#name">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the color in the format &quot;#RRGGBB&quot;; i.e. a &quot;#&quot; character followed by three two-digit hexadecimal numbers.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setNamedColor">setNamedColor</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn name(&amp;self, (::color::NameFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn name(&amp;self, (::color::NameFormat, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QColor::name(QColor::NameFormat format) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#name-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the color in the specified <i>format</i>.</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setNamedColor">setNamedColor</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#NameFormat-enum">NameFormat</a>.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorNewArgs.html' title='qt_gui::color::overloading::ColorNewArgs'>ColorNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::QColor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::color::Color</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QColor::QColor()</code></span></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((::color::Spec, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>2) <code>fn new((::color::Spec, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QColor::QColor(QColor::Spec spec)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::qt::GlobalColor, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>2) <code>fn new((qt_core::qt::GlobalColor, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QColor::QColor(Qt::GlobalColor color)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::color::Color, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>2) <code>fn new((&amp;::color::Color, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QColor::QColor(const QColor&amp; color)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>2) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QColor::QColor(const QString&amp; name)</code></span></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const libc::c_char, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>2) <code>fn new((*const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QColor::QColor(const char* name)</code></span></p>
+
+<h2 id='variant-7' class='section-header'><a href='#variant-7'>Variant 7</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>2) <code>fn new((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>3) <code>fn new((libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>4) <code>fn new((libc::c_int, libc::c_int, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QColor::QColor(int r, int g, int b, int a = ?)</code></span></p>
+
+<h2 id='variant-8' class='section-header'><a href='#variant-8'>Variant 8</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_uint, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>2) <code>fn new((libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QColor::QColor(unsigned int rgb)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorOpAssignArgs.html' title='qt_gui::color::overloading::ColorOpAssignArgs'>ColorOpAssignArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::operator=</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_assign(&amp;mut self, qt_core::qt::GlobalColor) -&gt; &amp;&#39;l0 mut ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor&amp; QColor::operator=(Qt::GlobalColor color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#operator-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Assigns a copy of <i>color</i> and returns a reference to this color.</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_assign(&amp;mut self, &amp;&#39;l1 ::color::Color) -&gt; &amp;&#39;l0 mut ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor&amp; QColor::operator=(const QColor&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns a copy of <i>color</i> to this color, and returns a reference to it.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, c: &amp;<a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QColor::operator==(const QColor&amp; c) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this color has the same RGB and alpha values as <i>color</i>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, c: &amp;<a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QColor::operator!=(const QColor&amp; c) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this color has a different RGB and alpha values from <i>color</i>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.red' class='method'><code>fn <a href='#method.red' class='fnname'>red</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::red() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#red">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the red color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setRed">setRed</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#redF">redF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#getRgb">getRgb</a>().</p></div></p>
+</div><h4 id='method.red_f' class='method'><code>fn <a href='#method.red_f' class='fnname'>red_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::redF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#redF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the red color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setRedF">setRedF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#red">red</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#getRgbF">getRgbF</a>().</p></div></p>
+</div><h4 id='method.rgb' class='method'><code>fn <a href='#method.rgb' class='fnname'>rgb</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QColor::rgb() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#rgb">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the RGB value of the color. The alpha value is opaque.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setRgb">setRgb</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getRgb">getRgb</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#rgba">rgba</a>().</p></div></p>
+</div><h4 id='method.rgba' class='method'><code>fn <a href='#method.rgba' class='fnname'>rgba</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QColor::rgba() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#rgba">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the RGB value of the color, including its alpha.</p>
+<p>For an invalid color, the alpha value of the returned color is unspecified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#setRgba">setRgba</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#rgb">rgb</a>().</p></div></p>
+</div><h4 id='method.saturation' class='method'><code>fn <a href='#method.saturation' class='fnname'>saturation</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::saturation() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#saturation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the saturation color component of this color.</p>
+<p>The color is implicitly converted to HSV.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#hsvSaturation">hsvSaturation</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#saturationF">saturationF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsv">getHsv</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.saturation_f' class='method'><code>fn <a href='#method.saturation_f' class='fnname'>saturation_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::saturationF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#saturationF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the saturation color component of this color.</p>
+<p>The color is implicitly converted to HSV.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#hsvSaturationF">hsvSaturationF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#saturation">saturation</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsvF">getHsvF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.set_alpha' class='method'><code>fn <a href='#method.set_alpha' class='fnname'>set_alpha</a>(&amp;mut self, alpha: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QColor::setAlpha(int alpha)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setAlpha">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the alpha of this color to <i>alpha</i>. Integer alpha is specified in the range 0-255.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#alpha">alpha</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#alphaF">alphaF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#alpha-blended-drawing">Alpha-Blended Drawing</a>.</p></div></p>
+</div><h4 id='method.set_alpha_f' class='method'><code>fn <a href='#method.set_alpha_f' class='fnname'>set_alpha_f</a>(&amp;mut self, alpha: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QColor::setAlphaF(double alpha)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setAlphaF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the alpha of this color to <i>alpha</i>. qreal alpha is specified in the range 0.0-1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#alphaF">alphaF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#alpha">alpha</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#alpha-blended-drawing">Alpha-Blended Drawing</a>.</p></div></p>
+</div><h4 id='method.set_blue' class='method'><code>fn <a href='#method.set_blue' class='fnname'>set_blue</a>(&amp;mut self, blue: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QColor::setBlue(int blue)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setBlue">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the blue color component of this color to <i>blue</i>. Integer components are specified in the range 0-255.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#blue">blue</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#blueF">blueF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#setRgb">setRgb</a>().</p></div></p>
+</div><h4 id='method.set_blue_f' class='method'><code>fn <a href='#method.set_blue_f' class='fnname'>set_blue_f</a>(&amp;mut self, blue: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QColor::setBlueF(double blue)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setBlueF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the blue color component of this color to <i>blue</i>. Float components are specified in the range 0.0-1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#blueF">blueF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#blue">blue</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#setRgbF">setRgbF</a>().</p></div></p>
+</div><h4 id='method.set_cmyk' class='method'><code>fn <a href='#method.set_cmyk' class='fnname'>set_cmyk</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorSetCmykArgs.html' title='qt_gui::color::overloading::ColorSetCmykArgs'>ColorSetCmykArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::setCmyk</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_cmyk(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>2) <code>fn set_cmyk(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::setCmyk(int c, int m, int y, int k, int a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setCmyk">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the color to CMYK values, <i>c</i> (cyan), <i>m</i> (magenta), <i>y</i> (yellow), <i>k</i> (black), and <i>a</i> (alpha-channel, i.e. transparency).</p>
+<p>All the values must be in the range 0-255.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#getCmyk">getCmyk</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#setCmykF">setCmykF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.set_cmyk_f' class='method'><code>fn <a href='#method.set_cmyk_f' class='fnname'>set_cmyk_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorSetCmykFArgs.html' title='qt_gui::color::overloading::ColorSetCmykFArgs'>ColorSetCmykFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::setCmykF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_cmyk_f(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>2) <code>fn set_cmyk_f(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::setCmykF(double c, double m, double y, double k, double a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setCmykF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the color to CMYK values, <i>c</i> (cyan), <i>m</i> (magenta), <i>y</i> (yellow), <i>k</i> (black), and <i>a</i> (alpha-channel, i.e. transparency).</p>
+<p>All the values must be in the range 0.0-1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#getCmykF">getCmykF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#setCmyk">setCmyk</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.set_green' class='method'><code>fn <a href='#method.set_green' class='fnname'>set_green</a>(&amp;mut self, green: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QColor::setGreen(int green)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setGreen">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the green color component of this color to <i>green</i>. Integer components are specified in the range 0-255.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#green">green</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#greenF">greenF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#setRgb">setRgb</a>().</p></div></p>
+</div><h4 id='method.set_green_f' class='method'><code>fn <a href='#method.set_green_f' class='fnname'>set_green_f</a>(&amp;mut self, green: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QColor::setGreenF(double green)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setGreenF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the green color component of this color to <i>green</i>. Float components are specified in the range 0.0-1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#greenF">greenF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#green">green</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#setRgbF">setRgbF</a>().</p></div></p>
+</div><h4 id='method.set_hsl' class='method'><code>fn <a href='#method.set_hsl' class='fnname'>set_hsl</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorSetHslArgs.html' title='qt_gui::color::overloading::ColorSetHslArgs'>ColorSetHslArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::setHsl</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_hsl(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>2) <code>fn set_hsl(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::setHsl(int h, int s, int l, int a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setHsl">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a HSL color value; <i>h</i> is the hue, <i>s</i> is the saturation, <i>l</i> is the lightness and <i>a</i> is the alpha component of the HSL color.</p>
+<p>The saturation, value and alpha-channel values must be in the range 0-255, and the hue value must be greater than -1.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#getHsl">getHsl</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#setHslF">setHslF</a>().</p></div></p>
+</div><h4 id='method.set_hsl_f' class='method'><code>fn <a href='#method.set_hsl_f' class='fnname'>set_hsl_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorSetHslFArgs.html' title='qt_gui::color::overloading::ColorSetHslFArgs'>ColorSetHslFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::setHslF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_hsl_f(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>2) <code>fn set_hsl_f(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::setHslF(double h, double s, double l, double a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setHslF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a HSL color lightness; <i>h</i> is the hue, <i>s</i> is the saturation, <i>l</i> is the lightness and <i>a</i> is the alpha component of the HSL color.</p>
+<p>All the values must be in the range 0.0-1.0.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#getHslF">getHslF</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#setHsl">setHsl</a>().</p></div></p>
+</div><h4 id='method.set_hsv' class='method'><code>fn <a href='#method.set_hsv' class='fnname'>set_hsv</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorSetHsvArgs.html' title='qt_gui::color::overloading::ColorSetHsvArgs'>ColorSetHsvArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::setHsv</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_hsv(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>2) <code>fn set_hsv(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::setHsv(int h, int s, int v, int a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setHsv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a HSV color value; <i>h</i> is the hue, <i>s</i> is the saturation, <i>v</i> is the value and <i>a</i> is the alpha component of the HSV color.</p>
+<p>The saturation, value and alpha-channel values must be in the range 0-255, and the hue value must be greater than -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#getHsv">getHsv</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#setHsvF">setHsvF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.set_hsv_f' class='method'><code>fn <a href='#method.set_hsv_f' class='fnname'>set_hsv_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorSetHsvFArgs.html' title='qt_gui::color::overloading::ColorSetHsvFArgs'>ColorSetHsvFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::setHsvF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_hsv_f(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>2) <code>fn set_hsv_f(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::setHsvF(double h, double s, double v, double a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setHsvF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a HSV color value; <i>h</i> is the hue, <i>s</i> is the saturation, <i>v</i> is the value and <i>a</i> is the alpha component of the HSV color.</p>
+<p>All the values must be in the range 0.0-1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#getHsvF">getHsvF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#setHsv">setHsv</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.set_named_color' class='method'><code>fn <a href='#method.set_named_color' class='fnname'>set_named_color</a>(&amp;mut self, name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QColor::setNamedColor(const QString&amp; name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setNamedColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the RGB value of this <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> to <i>name</i>, which may be in one of these formats:</p>
+<ul>
+<li>#RGB (each of R, G, and B is a single hex digit)</li>
+<li>#RRGGBB</li>
+<li>#AARRGGBB (Since 5.2)</li>
+<li>#RRRGGGBBB</li>
+<li>#RRRRGGGGBBBB</li>
+<li>A name from the list of colors defined in the list of <a href="http://www.w3.org/TR/SVG/types.html#ColorKeywords">SVG color keyword names</a> provided by the World Wide Web Consortium; for example, &quot;steelblue&quot; or &quot;gainsboro&quot;. These color names work on all platforms. Note that these color names are <i>not</i> the same as defined by the <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::GlobalColor</a> enums, e.g. &quot;green&quot; and <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::green</a> does not refer to the same color.</li>
+<li><code>transparent</code> - representing the absence of a color.</li>
+</ul>
+<p>The color is invalid if <i>name</i> cannot be parsed.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#QColor">QColor</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#name">name</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.set_red' class='method'><code>fn <a href='#method.set_red' class='fnname'>set_red</a>(&amp;mut self, red: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QColor::setRed(int red)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setRed">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the red color component of this color to <i>red</i>. Integer components are specified in the range 0-255.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#red">red</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#redF">redF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#setRgb">setRgb</a>().</p></div></p>
+</div><h4 id='method.set_red_f' class='method'><code>fn <a href='#method.set_red_f' class='fnname'>set_red_f</a>(&amp;mut self, red: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QColor::setRedF(double red)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setRedF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the red color component of this color to <i>red</i>. Float components are specified in the range 0.0-1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#redF">redF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#red">red</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#setRgbF">setRgbF</a>().</p></div></p>
+</div><h4 id='method.set_rgb' class='method'><code>fn <a href='#method.set_rgb' class='fnname'>set_rgb</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorSetRgbArgs.html' title='qt_gui::color::overloading::ColorSetRgbArgs'>ColorSetRgbArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::setRgb</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_rgb(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>2) <code>fn set_rgb(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::setRgb(int r, int g, int b, int a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setRgb">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the RGB value to <i>r</i>, <i>g</i>, <i>b</i> and the alpha value to <i>a</i>.</p>
+<p>All the values must be in the range 0-255.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#rgb">rgb</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getRgb">getRgb</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#setRgbF">setRgbF</a>().</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_rgb(&amp;mut self, libc::c_uint) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::setRgb(unsigned int rgb)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setRgb-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the RGB value to <i>rgb</i>. The alpha value is set to opaque.</p></div></p>
+</div><h4 id='method.set_rgb_f' class='method'><code>fn <a href='#method.set_rgb_f' class='fnname'>set_rgb_f</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorSetRgbFArgs.html' title='qt_gui::color::overloading::ColorSetRgbFArgs'>ColorSetRgbFArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::setRgbF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_rgb_f(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>2) <code>fn set_rgb_f(&amp;mut self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QColor::setRgbF(double r, double g, double b, double a = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setRgbF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the color channels of this color to <i>r</i> (red), <i>g</i> (green), <i>b</i> (blue) and <i>a</i> (alpha, transparency).</p>
+<p>All values must be in the range 0.0-1.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#rgb">rgb</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getRgbF">getRgbF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#setRgb">setRgb</a>().</p></div></p>
+</div><h4 id='method.set_rgba' class='method'><code>fn <a href='#method.set_rgba' class='fnname'>set_rgba</a>(&amp;mut self, rgba: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QColor::setRgba(unsigned int rgba)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#setRgba">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the RGB value to <i>rgba</i>, including its alpha.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#rgba">rgba</a>() and <a href="http://doc.qt.io/qt-5/qcolor.html#rgb">rgb</a>().</p></div></p>
+</div><h4 id='method.spec' class='method'><code>fn <a href='#method.spec' class='fnname'>spec</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/color/enum.Spec.html' title='qt_gui::color::Spec'>Spec</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::Spec QColor::spec() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#spec">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns how the color was specified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#Spec-enum">Spec</a> and <a href="http://doc.qt.io/qt-5/qcolor.html#convertTo">convertTo</a>().</p></div></p>
+</div><h4 id='method.to_cmyk' class='method'><code>fn <a href='#method.to_cmyk' class='fnname'>to_cmyk</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorToCmykArgs.html' title='qt_gui::color::overloading::ColorToCmykArgs'>ColorToCmykArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::toCmyk</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_cmyk(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn to_cmyk(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QColor::toCmyk() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#toCmyk">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns a CMYK <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> based on this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#fromCmyk">fromCmyk</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#convertTo">convertTo</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.to_hsl' class='method'><code>fn <a href='#method.to_hsl' class='fnname'>to_hsl</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorToHslArgs.html' title='qt_gui::color::overloading::ColorToHslArgs'>ColorToHslArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::toHsl</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_hsl(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn to_hsl(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QColor::toHsl() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#toHsl">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns an HSL <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> based on this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#fromHsl">fromHsl</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#convertTo">convertTo</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.to_hsv' class='method'><code>fn <a href='#method.to_hsv' class='fnname'>to_hsv</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorToHsvArgs.html' title='qt_gui::color::overloading::ColorToHsvArgs'>ColorToHsvArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::toHsv</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_hsv(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn to_hsv(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QColor::toHsv() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#toHsv">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates and returns an HSV <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> based on this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#fromHsv">fromHsv</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#convertTo">convertTo</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.to_rgb' class='method'><code>fn <a href='#method.to_rgb' class='fnname'>to_rgb</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/color/overloading/trait.ColorToRgbArgs.html' title='qt_gui::color::overloading::ColorToRgbArgs'>ColorToRgbArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QColor::toRgb</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_rgb(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn to_rgb(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QColor::toRgb() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#toRgb">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Create and returns an RGB <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a> based on this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#fromRgb">fromRgb</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#convertTo">convertTo</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.value' class='method'><code>fn <a href='#method.value' class='fnname'>value</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::value() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#value">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#valueF">valueF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsv">getHsv</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.value_f' class='method'><code>fn <a href='#method.value_f' class='fnname'>value_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::valueF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#valueF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#value">value</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getHsvF">getHsvF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p></div></p>
+</div><h4 id='method.yellow' class='method'><code>fn <a href='#method.yellow' class='fnname'>yellow</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QColor::yellow() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#yellow">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the yellow color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#yellowF">yellowF</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getCmyk">getCmyk</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div><h4 id='method.yellow_f' class='method'><code>fn <a href='#method.yellow_f' class='fnname'>yellow_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QColor::yellowF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qcolor.html#yellowF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the yellow color component of this color.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qcolor.html#yellow">yellow</a>(), <a href="http://doc.qt.io/qt-5/qcolor.html#getCmykF">getCmykF</a>(), and <a href="http://doc.qt.io/qt-5/qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/bitmap/overloading/trait.BitmapFillArgs.html' title='qt_gui::bitmap::overloading::BitmapFillArgs'>BitmapFillArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-63605' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/bitmap.rs.html#1134-1142' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/bitmap/overloading/trait.BitmapFillArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/bitmap/struct.Bitmap.html' title='qt_gui::bitmap::Bitmap'>Bitmap</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/brush/overloading/trait.BrushSetColorArgs.html' title='qt_gui::brush::overloading::BrushSetColorArgs'>BrushSetColorArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-64810' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/brush.rs.html#709-717' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_gui/brush/overloading/trait.BrushSetColorArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/color/overloading/trait.ColorOpAssignArgs.html' title='qt_gui::color::overloading::ColorOpAssignArgs'>ColorOpAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-67067' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/color.rs.html#2372-2381' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_gui/color/overloading/trait.ColorOpAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65825' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/color.rs.html#25-29' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-66111' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/color.rs.html#1133-1140' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QColor::~QColor()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-66114' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/color.rs.html#1142-1146' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/image/overloading/trait.ImageFillArgs.html' title='qt_gui::image::overloading::ImageFillArgs'>ImageFillArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-78026' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image.rs.html#1896-1904' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_gui/image/overloading/trait.ImageFillArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/image/struct.Image.html' title='qt_gui::image::Image'>Image</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureSetBorderColorArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureSetBorderColorArgs'>OpenGLTextureSetBorderColorArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-104047' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_texture.rs.html#2132-2140' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureSetBorderColorArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/open_g_l_texture/struct.OpenGLTexture.html' title='qt_gui::open_g_l_texture::OpenGLTexture'>OpenGLTexture</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/painter/overloading/trait.PainterSetPenArgs.html' title='qt_gui::painter::overloading::PainterSetPenArgs'>PainterSetPenArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128551' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#5569-5577' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_gui/painter/overloading/trait.PainterSetPenArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/painter/struct.Painter.html' title='qt_gui::painter::Painter'>Painter</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/pixmap/overloading/trait.PixmapFillArgs.html' title='qt_gui::pixmap::overloading::PixmapFillArgs'>PixmapFillArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-134682' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixmap.rs.html#1186-1194' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-6' class='method'><code>fn <a href='../../qt_gui/pixmap/overloading/trait.PixmapFillArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/pixmap/struct.Pixmap.html' title='qt_gui::pixmap::Pixmap'>Pixmap</a>)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

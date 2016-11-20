@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["GraphicsSceneEventNewArgs","This trait represents a set of arguments accepted by GraphicsSceneEvent::new method."],["GraphicsSceneEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by GraphicsSceneEvent::register_event_type method."]]});

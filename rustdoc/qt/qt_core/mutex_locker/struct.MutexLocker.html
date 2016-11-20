@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MutexLocker` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MutexLocker">
+
+    <title>qt_core::mutex_locker::MutexLocker - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>mutex_locker</a></p><script>window.sidebarCurrent = {name: 'MutexLocker', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>mutex_locker</a>::<wbr><a class='struct' href=''>MutexLocker</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-111477' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/mutex_locker.rs.html#93-95' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct MutexLocker {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QMutexLocker</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmutexlocker.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> class is a convenience class that simplifies locking and unlocking mutexes.</p>
+<p>Locking and unlocking a <a href="http://doc.qt.io/qt-5/qmutex.html">QMutex</a> in complex functions and statements or in exception handling code is error-prone and difficult to debug. <a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> can be used in such situations to ensure that the state of the mutex is always well-defined.</p>
+<p><a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> should be created within a function where a <a href="http://doc.qt.io/qt-5/qmutex.html">QMutex</a> needs to be locked. The mutex is locked when <a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> is created. You can unlock and relock the mutex with <code>unlock()</code> and <code>relock()</code>. If locked, the mutex will be unlocked when the <a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> is destroyed.</p>
+<p>For example, this complex function locks a <a href="http://doc.qt.io/qt-5/qmutex.html">QMutex</a> upon entering the function and unlocks the mutex at all the exit points:</p>
+<pre class="cpp"><span class="type">int</span> complexFunction(<span class="type">int</span> flag)
+{
+&#32;   mutex<span class="operator">.</span>lock();</p>
+
+<p>&#32;   <span class="type">int</span> retVal <span class="operator">=</span> <span class="number">0</span>;</p>
+
+<p>&#32;   <span class="keyword">switch</span> (flag) {
+&#32;   <span class="keyword">case</span> <span class="number">0</span>:
+&#32;   <span class="keyword">case</span> <span class="number">1</span>:
+&#32;       retVal <span class="operator">=</span> moreComplexFunction(flag);
+&#32;       <span class="keyword">break</span>;
+&#32;   <span class="keyword">case</span> <span class="number">2</span>:
+&#32;       {
+&#32;           <span class="type">int</span> status <span class="operator">=</span> anotherFunction();
+&#32;           <span class="keyword">if</span> (status <span class="operator">&lt;</span> <span class="number">0</span>) {
+&#32;               mutex<span class="operator">.</span>unlock();
+&#32;               <span class="keyword">return</span> <span class="operator">-</span><span class="number">2</span>;
+&#32;           }
+&#32;           retVal <span class="operator">=</span> status <span class="operator">+</span> flag;
+&#32;       }
+&#32;       <span class="keyword">break</span>;
+&#32;   <span class="keyword">default</span>:
+&#32;       <span class="keyword">if</span> (flag <span class="operator">&gt;</span> <span class="number">10</span>) {
+&#32;           mutex<span class="operator">.</span>unlock();
+&#32;           <span class="keyword">return</span> <span class="operator">-</span><span class="number">1</span>;
+&#32;       }
+&#32;       <span class="keyword">break</span>;
+&#32;   }</p>
+
+<p>&#32;   mutex<span class="operator">.</span>unlock();
+&#32;   <span class="keyword">return</span> retVal;
+}</pre>
+<p>This example function will get more complicated as it is developed, which increases the likelihood that errors will occur.</p>
+<p>Using <a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> greatly simplifies the code, and makes it more readable:</p>
+<pre class="cpp"><span class="type">int</span> complexFunction(<span class="type">int</span> flag)
+{
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qmutexlocker.html#QMutexLocker">QMutexLocker</a></span> locker(<span class="operator">&amp;</span>mutex);</p>
+
+<p>&#32;   <span class="type">int</span> retVal <span class="operator">=</span> <span class="number">0</span>;</p>
+
+<p>&#32;   <span class="keyword">switch</span> (flag) {
+&#32;   <span class="keyword">case</span> <span class="number">0</span>:
+&#32;   <span class="keyword">case</span> <span class="number">1</span>:
+&#32;       <span class="keyword">return</span> moreComplexFunction(flag);
+&#32;   <span class="keyword">case</span> <span class="number">2</span>:
+&#32;       {
+&#32;           <span class="type">int</span> status <span class="operator">=</span> anotherFunction();
+&#32;           <span class="keyword">if</span> (status <span class="operator">&lt;</span> <span class="number">0</span>)
+&#32;               <span class="keyword">return</span> <span class="operator">-</span><span class="number">2</span>;
+&#32;           retVal <span class="operator">=</span> status <span class="operator">+</span> flag;
+&#32;       }
+&#32;       <span class="keyword">break</span>;
+&#32;   <span class="keyword">default</span>:
+&#32;       <span class="keyword">if</span> (flag <span class="operator">&gt;</span> <span class="number">10</span>)
+&#32;           <span class="keyword">return</span> <span class="operator">-</span><span class="number">1</span>;
+&#32;       <span class="keyword">break</span>;
+&#32;   }</p>
+
+<p>&#32;   <span class="keyword">return</span> retVal;
+}</pre>
+<p>Now, the mutex will always be unlocked when the <a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> object is destroyed (when the function returns since <code>locker</code> is an auto variable).</p>
+<p>The same principle applies to code that throws and catches exceptions. An exception that is not caught in the function that has locked the mutex has no way of unlocking the mutex before the exception is passed up the stack to the calling function.</p>
+<p><a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> also provides a <code>mutex()</code> member function that returns the mutex on which the <a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> is operating. This is useful for code that needs access to the mutex, such as <a href="http://doc.qt.io/qt-5/qwaitcondition.html#wait">QWaitCondition::wait</a>(). For example:</p>
+<pre class="cpp"><span class="keyword">class</span> SignalWaiter
+{
+<span class="keyword">private</span>:
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qmutexlocker.html#QMutexLocker">QMutexLocker</a></span> locker;</p>
+
+<p><span class="keyword">public</span>:
+&#32;   SignalWaiter(<span class="type"><a href="http://doc.qt.io/qt-5/qmutex.html">QMutex</a></span> <span class="operator">*</span>mutex)
+&#32;       : locker(mutex)
+&#32;   {
+&#32;   }</p>
+
+<p>&#32;   <span class="type">void</span> waitForSignal()
+&#32;   {
+&#32;       <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+&#32;       <span class="keyword">while</span> (<span class="operator">!</span>signalled)
+&#32;           waitCondition<span class="operator">.</span>wait(locker<span class="operator">.</span>mutex());
+&#32;       <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+&#32;   }
+};</pre></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/mutex_locker/struct.MutexLocker.html' title='qt_core::mutex_locker::MutexLocker'>MutexLocker</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-111482' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/mutex_locker.rs.html#103-139' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.mutex' class='method'><code>fn <a href='#method.mutex' class='fnname'>mutex</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/mutex/struct.Mutex.html' title='qt_core::mutex::Mutex'>Mutex</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMutex* QMutexLocker::mutex() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmutexlocker.html#mutex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the mutex on which the <a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> is operating.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/mutex_locker/overloading/trait.MutexLockerNewArgs.html' title='qt_core::mutex_locker::overloading::MutexLockerNewArgs'>MutexLockerNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMutexLocker::QMutexLocker</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((*mut ::basic_mutex::BasicMutex, cpp_utils::AsStruct)) -&gt; ::mutex_locker::MutexLocker</code><br>2) <code>fn new((*mut ::basic_mutex::BasicMutex, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::mutex_locker::MutexLocker&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QMutexLocker::QMutexLocker(QBasicMutex* m)</code></span></p>
+</div><h4 id='method.relock' class='method'><code>fn <a href='#method.relock' class='fnname'>relock</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QMutexLocker::relock()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmutexlocker.html#relock">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Relocks an unlocked mutex locker.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmutexlocker.html#unlock">unlock</a>().</p></div></p>
+</div><h4 id='method.unlock' class='method'><code>fn <a href='#method.unlock' class='fnname'>unlock</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QMutexLocker::unlock()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmutexlocker.html#unlock">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unlocks this mutex locker. You can use <code>relock()</code> to lock it again. It does not need to be locked when destroyed.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmutexlocker.html#relock">relock</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/mutex_locker/struct.MutexLocker.html' title='qt_core::mutex_locker::MutexLocker'>MutexLocker</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-111480' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/mutex_locker.rs.html#97-101' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/mutex_locker/struct.MutexLocker.html' title='qt_core::mutex_locker::MutexLocker'>MutexLocker</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/mutex_locker/struct.MutexLocker.html' title='qt_core::mutex_locker::MutexLocker'>MutexLocker</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-111492' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/mutex_locker.rs.html#141-149' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QMutexLocker::~QMutexLocker()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmutexlocker.html#dtor.QMutexLocker">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> and unlocks the mutex that was locked in the constructor.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmutex.html#unlock">QMutex::unlock</a>().</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/mutex_locker/struct.MutexLocker.html' title='qt_core::mutex_locker::MutexLocker'>MutexLocker</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-111495' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/mutex_locker.rs.html#151-155' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

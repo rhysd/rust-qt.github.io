@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["FactoryInterfaceKeysArgs","This trait represents a set of arguments accepted by FactoryInterface::keys method."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Capability","C++ type: <span style='color: green;'>```QImageIOPlugin::Capability```</span>"]],"mod":[["overloading",""]],"struct":[["ImageIOPlugin","C++ type: <span style='color: green;'>```QImageIOPlugin```</span>"]]});

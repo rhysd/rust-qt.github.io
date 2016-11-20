@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["InsertPolicy","C++ type: <span style='color: green;'>```QComboBox::InsertPolicy```</span>"],["SizeAdjustPolicy","C++ type: <span style='color: green;'>```QComboBox::SizeAdjustPolicy```</span>"]],"mod":[["overloading",""]],"struct":[["ComboBox","C++ type: <span style='color: green;'>```QComboBox```</span>"]]});

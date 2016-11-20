@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ThreadPool","C++ type: <span style='color: green;'>```QThreadPool```</span>"]]});

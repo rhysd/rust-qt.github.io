@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `UndoCommand` struct in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, UndoCommand">
+
+    <title>qt_widgets::undo_command::UndoCommand - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>undo_command</a></p><script>window.sidebarCurrent = {name: 'UndoCommand', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>undo_command</a>::<wbr><a class='struct' href=''>UndoCommand</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-493777' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/undo_command.rs.html#46-48' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct UndoCommand {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QUndoCommand</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qundocommand.html">QUndoCommand</a> class is the base class of all commands stored on a <a href="http://doc.qt.io/qt-5/qundostack.html">QUndoStack</a>.</p>
+<p>For an overview of Qt&#39;s Undo Framework, see the <a href="http://doc.qt.io/qt-5/qundo.html">overview document</a>.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qundocommand.html">QUndoCommand</a> represents a single editing action on a document; for example, inserting or deleting a block of text in a text editor. <a href="http://doc.qt.io/qt-5/qundocommand.html">QUndoCommand</a> can apply a change to the document with <a href="http://doc.qt.io/qt-5/qundocommand.html#redo">redo</a>() and undo the change with <a href="http://doc.qt.io/qt-5/qundocommand.html#undo">undo</a>(). The implementations for these functions must be provided in a derived class.</p>
+<pre class="cpp"><span class="keyword">class</span> AppendText : <span class="keyword">public</span> <span class="type"><a href="http://doc.qt.io/qt-5/qundocommand.html#QUndoCommand">QUndoCommand</a></span>
+{
+<span class="keyword">public</span>:
+&#32;   AppendText(<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> <span class="operator"><em></span>doc<span class="operator">,</span> <span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> <span class="operator">&amp;</span>text)
+&#32;       : m_document(doc)<span class="operator">,</span> m_text(text) { setText(<span class="string">&quot;append text&quot;</span>); }
+&#32;   <span class="keyword">virtual</span> <span class="type">void</span> undo()
+&#32;       { m_document<span class="operator">-</span><span class="operator">&gt;</span>chop(m_text<span class="operator">.</span>length()); }
+&#32;   <span class="keyword">virtual</span> <span class="type">void</span> redo()
+&#32;       { m_document<span class="operator">-</span><span class="operator">&gt;</span>append(m_text); }
+<span class="keyword">private</span>:
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> <span class="operator"></em></span>m_document;
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> m_text;
+};</pre>
+<p>A <a href="http://doc.qt.io/qt-5/qundocommand.html">QUndoCommand</a> has an associated <a href="http://doc.qt.io/qt-5/qundocommand.html#text">text</a>(). This is a short string describing what the command does. It is used to update the text properties of the stack&#39;s undo and redo actions; see <a href="http://doc.qt.io/qt-5/qundostack.html#createUndoAction">QUndoStack::createUndoAction</a>() and <a href="http://doc.qt.io/qt-5/qundostack.html#createRedoAction">QUndoStack::createRedoAction</a>().</p>
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html">QUndoCommand</a> objects are owned by the stack they were pushed on. <a href="http://doc.qt.io/qt-5/qundostack.html">QUndoStack</a> deletes a command if it has been undone and a new command is pushed. For example:</p>
+<pre class="cpp">MyCommand <span class="operator"><em></span>command1 <span class="operator">=</span> <span class="keyword">new</span> MyCommand();
+stack<span class="operator">-</span><span class="operator">&gt;</span>push(command1);
+MyCommand <span class="operator"></em></span>command2 <span class="operator">=</span> <span class="keyword">new</span> MyCommand();
+stack<span class="operator">-</span><span class="operator">&gt;</span>push(command2);</p>
+
+<p>stack<span class="operator">-</span><span class="operator">&gt;</span><a href="http://doc.qt.io/qt-5/qundocommand.html#undo">undo</a>();</p>
+
+<p>MyCommand <span class="operator"><em></span>command3 <span class="operator">=</span> <span class="keyword">new</span> MyCommand();
+stack<span class="operator">-</span><span class="operator">&gt;</span>push(command3); <span class="comment">// command2 gets deleted</span></pre>
+<p>In effect, when a command is pushed, it becomes the top-most command on the stack.</p>
+<p>To support command compression, <a href="http://doc.qt.io/qt-5/qundocommand.html">QUndoCommand</a> has an <a href="http://doc.qt.io/qt-5/qundocommand.html#id">id</a>() and the virtual function <a href="http://doc.qt.io/qt-5/qundocommand.html#mergeWith">mergeWith</a>(). These functions are used by <a href="http://doc.qt.io/qt-5/qundostack.html#push">QUndoStack::push</a>().</p>
+<p>To support command macros, a <a href="http://doc.qt.io/qt-5/qundocommand.html">QUndoCommand</a> object can have any number of child commands. Undoing or redoing the parent command will cause the child commands to be undone or redone. A command can be assigned to a parent explicitly in the constructor. In this case, the command will be owned by the parent.</p>
+<p>The parent in this case is usually an empty command, in that it doesn&#39;t provide its own implementation of <a href="http://doc.qt.io/qt-5/qundocommand.html#undo">undo</a>() and <a href="http://doc.qt.io/qt-5/qundocommand.html#redo">redo</a>(). Instead, it uses the base implementations of these functions, which simply call <a href="http://doc.qt.io/qt-5/qundocommand.html#undo">undo</a>() or <a href="http://doc.qt.io/qt-5/qundocommand.html#redo">redo</a>() on all its children. The parent should, however, have a meaningful <a href="http://doc.qt.io/qt-5/qundocommand.html#text">text</a>().</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qundocommand.html#QUndoCommand">QUndoCommand</a></span> <span class="operator"></em></span>insertRed <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qundocommand.html#QUndoCommand">QUndoCommand</a></span>(); <span class="comment">// an empty command</span>
+insertRed<span class="operator">-</span><span class="operator">&gt;</span><a href="http://doc.qt.io/qt-5/qundocommand.html#setText">setText</a>(<span class="string">&quot;insert red text&quot;</span>);</p>
+
+<p><span class="keyword">new</span> InsertText(document<span class="operator">,</span> idx<span class="operator">,</span> text<span class="operator">,</span> insertRed); <span class="comment">// becomes child of insertRed</span>
+<span class="keyword">new</span> SetColor(document<span class="operator">,</span> idx<span class="operator">,</span> text<span class="operator">.</span>length()<span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qt.html">Qt</a></span><span class="operator">::</span>red<span class="operator">,</span> insertRed);</p>
+
+<p>stack<span class="operator">.</span>push(insertRed);</pre>
+<p>Another way to create macros is to use the convenience functions <a href="http://doc.qt.io/qt-5/qundostack.html#beginMacro">QUndoStack::beginMacro</a>() and <a href="http://doc.qt.io/qt-5/qundostack.html#endMacro">QUndoStack::endMacro</a>().</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_widgets/undo_command/struct.UndoCommand.html' title='qt_widgets::undo_command::UndoCommand'>UndoCommand</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-493782' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/undo_command.rs.html#56-189' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.action_text' class='method'><code>fn <a href='#method.action_text' class='fnname'>action_text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/undo_command/overloading/trait.UndoCommandActionTextArgs.html' title='qt_widgets::undo_command::overloading::UndoCommandActionTextArgs'>UndoCommandActionTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUndoCommand::actionText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn action_text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn action_text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUndoCommand::actionText() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html#actionText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a short text string describing what this command does; for example, &quot;insert text&quot;.</p>
+<p>The text is used when the text properties of the stack&#39;s undo and redo actions are updated.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qundocommand.html#text">text</a>(), <a href="http://doc.qt.io/qt-5/qundocommand.html#setText">setText</a>(), <a href="http://doc.qt.io/qt-5/qundostack.html#createUndoAction">QUndoStack::createUndoAction</a>(), and <a href="http://doc.qt.io/qt-5/qundostack.html#createRedoAction">QUndoStack::createRedoAction</a>().</p></div></p>
+</div><h4 id='method.child' class='method'><code>fn <a href='#method.child' class='fnname'>child</a>(&amp;self, index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_widgets/undo_command/struct.UndoCommand.html' title='qt_widgets::undo_command::UndoCommand'>UndoCommand</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QUndoCommand* QUndoCommand::child(int index) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html#child">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the child command at <i>index</i>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qundocommand.html#childCount">childCount</a>() and <a href="http://doc.qt.io/qt-5/qundostack.html#command">QUndoStack::command</a>().</p></div></p>
+</div><h4 id='method.child_count' class='method'><code>fn <a href='#method.child_count' class='fnname'>child_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QUndoCommand::childCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html#childCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of child commands in this command.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qundocommand.html#child">child</a>().</p></div></p>
+</div><h4 id='method.id' class='method'><code>fn <a href='#method.id' class='fnname'>id</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual int QUndoCommand::id() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html#id">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the ID of this command.</p>
+<p>A command ID is used in command compression. It must be an integer unique to this command&#39;s class, or -1 if the command doesn&#39;t support compression.</p>
+<p>If the command supports compression this function must be overridden in the derived class to return the correct ID. The base implementation returns -1.</p>
+<p><a href="http://doc.qt.io/qt-5/qundostack.html#push">QUndoStack::push</a>() will only try to merge two commands if they have the same ID, and the ID is not -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qundocommand.html#mergeWith">mergeWith</a>() and <a href="http://doc.qt.io/qt-5/qundostack.html#push">QUndoStack::push</a>().</p></div></p>
+</div><h4 id='method.merge_with' class='method'><code>fn <a href='#method.merge_with' class='fnname'>merge_with</a>(&amp;mut self, other: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_widgets/undo_command/struct.UndoCommand.html' title='qt_widgets::undo_command::UndoCommand'>UndoCommand</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual bool QUndoCommand::mergeWith(const QUndoCommand* other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html#mergeWith">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Attempts to merge this command with <i>command</i>. Returns <code>true</code> on success; otherwise returns <code>false</code>.</p>
+<p>If this function returns <code>true</code>, calling this command&#39;s <a href="http://doc.qt.io/qt-5/qundocommand.html#redo">redo</a>() must have the same effect as redoing both this command and <i>command</i>. Similarly, calling this command&#39;s <a href="http://doc.qt.io/qt-5/qundocommand.html#undo">undo</a>() must have the same effect as undoing <i>command</i> and this command.</p>
+<p><a href="http://doc.qt.io/qt-5/qundostack.html">QUndoStack</a> will only try to merge two commands if they have the same id, and the id is not -1.</p>
+<p>The default implementation returns <code>false</code>.</p>
+<pre class="cpp">bool AppendText<span class="operator">::</span>mergeWith(<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qundocommand.html#QUndoCommand">QUndoCommand</a></span> <span class="operator"><em></span>other)
+{
+&#32;   <span class="keyword">if</span> (other<span class="operator">-</span><span class="operator">&gt;</span>id() <span class="operator">!</span><span class="operator">=</span> id()) <span class="comment">// make sure other is also an AppendText command</span>
+&#32;       <span class="keyword">return</span> <span class="keyword">false</span>;
+&#32;   m_text <span class="operator">+</span><span class="operator">=</span> <span class="keyword">static_cast</span><span class="operator">&lt;</span><span class="keyword">const</span> AppendText<span class="operator"></em></span><span class="operator">&gt;</span>(other)<span class="operator">-</span><span class="operator">&gt;</span>m_text;
+&#32;   <span class="keyword">return</span> <span class="keyword">true</span>;
+}</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qundocommand.html#id">id</a>() and <a href="http://doc.qt.io/qt-5/qundostack.html#push">QUndoStack::push</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/undo_command/overloading/trait.UndoCommandNewArgs.html' title='qt_widgets::undo_command::overloading::UndoCommandNewArgs'>UndoCommandNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUndoCommand::QUndoCommand</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::undo_command::UndoCommand</code><br>2) <code>fn new((*mut ::undo_command::UndoCommand, cpp_utils::AsStruct)) -&gt; ::undo_command::UndoCommand</code><br>3) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::undo_command::UndoCommand&gt;</code><br>4) <code>fn new((*mut ::undo_command::UndoCommand, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::undo_command::UndoCommand&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QUndoCommand::QUndoCommand(QUndoCommand* parent = ?)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::undo_command::UndoCommand</code><br>2) <code>fn new((&amp;qt_core::string::String, *mut ::undo_command::UndoCommand, cpp_utils::AsStruct)) -&gt; ::undo_command::UndoCommand</code><br>3) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::undo_command::UndoCommand&gt;</code><br>4) <code>fn new((&amp;qt_core::string::String, *mut ::undo_command::UndoCommand, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::undo_command::UndoCommand&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QUndoCommand::QUndoCommand(const QString&amp; text, QUndoCommand* parent = ?)</code></span></p>
+</div><h4 id='method.redo' class='method'><code>fn <a href='#method.redo' class='fnname'>redo</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QUndoCommand::redo()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html#redo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Applies a change to the document. This function must be implemented in the derived class. Calling <a href="http://doc.qt.io/qt-5/qundostack.html#push">QUndoStack::push</a>(), <a href="http://doc.qt.io/qt-5/qundostack.html#undo">QUndoStack::undo</a>() or <a href="http://doc.qt.io/qt-5/qundostack.html#redo">QUndoStack::redo</a>() from this function leads to undefined beahavior.</p>
+<p>The default implementation calls redo() on all child commands.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qundocommand.html#undo">undo</a>().</p></div></p>
+</div><h4 id='method.set_text' class='method'><code>fn <a href='#method.set_text' class='fnname'>set_text</a>(&amp;mut self, text: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QUndoCommand::setText(const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html#setText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the command&#39;s text to be the <i>text</i> specified.</p>
+<p>The specified text should be a short user-readable string describing what this command does.</p>
+<p>If you need to have two different strings for <a href="http://doc.qt.io/qt-5/qundocommand.html#text">text</a>() and <a href="http://doc.qt.io/qt-5/qundocommand.html#actionText">actionText</a>(), separate them with &quot;\n&quot; and pass into this function. Even if you do not use this feature for English strings during development, you can still let translators use two different strings in order to match specific languages&#39; needs. The described feature and the function <a href="http://doc.qt.io/qt-5/qundocommand.html#actionText">actionText</a>() are available since Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qundocommand.html#text">text</a>(), <a href="http://doc.qt.io/qt-5/qundocommand.html#actionText">actionText</a>(), <a href="http://doc.qt.io/qt-5/qundostack.html#createUndoAction">QUndoStack::createUndoAction</a>(), and <a href="http://doc.qt.io/qt-5/qundostack.html#createRedoAction">QUndoStack::createRedoAction</a>().</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/undo_command/overloading/trait.UndoCommandTextArgs.html' title='qt_widgets::undo_command::overloading::UndoCommandTextArgs'>UndoCommandTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QUndoCommand::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QUndoCommand::text() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a short text string describing what this command does; for example, &quot;insert text&quot;.</p>
+<p>The text is used for names of items in <a href="http://doc.qt.io/qt-5/qundoview.html">QUndoView</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qundocommand.html#actionText">actionText</a>(), <a href="http://doc.qt.io/qt-5/qundocommand.html#setText">setText</a>(), <a href="http://doc.qt.io/qt-5/qundostack.html#createUndoAction">QUndoStack::createUndoAction</a>(), and <a href="http://doc.qt.io/qt-5/qundostack.html#createRedoAction">QUndoStack::createRedoAction</a>().</p></div></p>
+</div><h4 id='method.undo' class='method'><code>fn <a href='#method.undo' class='fnname'>undo</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QUndoCommand::undo()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html#undo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reverts a change to the document. After undo() is called, the state of the document should be the same as before <a href="http://doc.qt.io/qt-5/qundocommand.html#redo">redo</a>() was called. This function must be implemented in the derived class. Calling <a href="http://doc.qt.io/qt-5/qundostack.html#push">QUndoStack::push</a>(), <a href="http://doc.qt.io/qt-5/qundostack.html#undo">QUndoStack::undo</a>() or <a href="http://doc.qt.io/qt-5/qundostack.html#redo">QUndoStack::redo</a>() from this function leads to undefined beahavior.</p>
+<p>The default implementation calls undo() on all child commands in reverse order.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qundocommand.html#redo">redo</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_widgets/undo_command/struct.UndoCommand.html' title='qt_widgets::undo_command::UndoCommand'>UndoCommand</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-493780' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/undo_command.rs.html#50-54' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_widgets/undo_command/struct.UndoCommand.html' title='qt_widgets::undo_command::UndoCommand'>UndoCommand</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_widgets/undo_command/struct.UndoCommand.html' title='qt_widgets::undo_command::UndoCommand'>UndoCommand</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-493813' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/undo_command.rs.html#191-199' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QUndoCommand::~QUndoCommand()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qundocommand.html#dtor.QUndoCommand">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qundocommand.html">QUndoCommand</a> object and all child commands.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qundocommand.html#QUndoCommand">QUndoCommand</a>().</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_widgets/undo_command/struct.UndoCommand.html' title='qt_widgets::undo_command::UndoCommand'>UndoCommand</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-493816' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/undo_command.rs.html#201-205' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["DebugStateSaverNewArgs","This trait represents a set of arguments accepted by DebugStateSaver::new method."]]});

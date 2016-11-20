@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["HideEventNewArgs","This trait represents a set of arguments accepted by HideEvent::new method."],["HideEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by HideEvent::register_event_type method."]]});

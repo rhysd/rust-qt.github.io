@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ShaderTypeBit","C++ type: <span style='color: green;'>```QOpenGLShader::ShaderTypeBit```</span>"]],"mod":[["overloading",""]],"struct":[["OpenGLShader","C++ type: <span style='color: green;'>```QOpenGLShader```</span>"]]});

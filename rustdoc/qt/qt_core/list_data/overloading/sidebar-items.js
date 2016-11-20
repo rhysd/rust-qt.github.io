@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ListDataAppendArgs","This trait represents a set of arguments accepted by ListData::append method."],["ListDataRemoveArgs","This trait represents a set of arguments accepted by ListData::remove method."]]});

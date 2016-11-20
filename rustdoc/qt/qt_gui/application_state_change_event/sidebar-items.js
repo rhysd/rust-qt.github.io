@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ApplicationStateChangeEvent","C++ type: <span style='color: green;'>```QApplicationStateChangeEvent```</span>"]]});

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RectF` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RectF">
+
+    <title>qt_core::rect_f::RectF - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>rect_f</a></p><script>window.sidebarCurrent = {name: 'RectF', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>rect_f</a>::<wbr><a class='struct' href=''>RectF</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-125754' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/rect_f.rs.html#24-26' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RectF {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QRectF</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> class defines a rectangle in the plane using floating point precision.</p>
+<p>A rectangle is normally expressed as an upper-left corner and a size. The size (width and height) of a <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> is always equivalent to the mathematical rectangle that forms the basis for its rendering.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> can be constructed with a set of left, top, width and height integers, or from a <a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a> and a <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a>. The following code creates two identical rectangles.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qrectf.html#QRectF">QRectF</a></span> r1(<span class="number">100</span><span class="operator">,</span> <span class="number">200</span><span class="operator">,</span> <span class="number">11</span><span class="operator">,</span> <span class="number">16</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qrectf.html#QRectF">QRectF</a></span> r2(<span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a></span>(<span class="number">100</span><span class="operator">,</span> <span class="number">200</span>)<span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qsize.html">QSize</a></span>(<span class="number">11</span><span class="operator">,</span> <span class="number">16</span>));</pre>
+<p>There is also a third constructor creating a <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> from a <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a>, and a corresponding <a href="http://doc.qt.io/qt-5/qrectf.html#toRect">toRect</a>() function that returns a <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> object based on the values of this rectangle (note that the coordinates in the returned rectangle are rounded to the nearest integer).</p>
+<p>The <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> class provides a collection of functions that return the various rectangle coordinates, and enable manipulation of these. <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> also provide functions to move the rectangle relative to the various coordinates. In addition there is a <a href="http://doc.qt.io/qt-5/qrectf.html#moveTo">moveTo</a>() function that moves the rectangle, leaving its top left corner at the given coordinates. Alternatively, the <a href="http://doc.qt.io/qt-5/qrectf.html#translate">translate</a>() function moves the rectangle the given offset relative to the current position, and the <a href="http://doc.qt.io/qt-5/qrectf.html#translated">translated</a>() function returns a translated copy of this rectangle.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qrectf.html#size">size</a>() function returns the rectange&#39;s dimensions as a <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a>. The dimensions can also be retrieved separately using the <a href="http://doc.qt.io/qt-5/qrectf.html#width">width</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#height">height</a>() functions. To manipulate the dimensions use the <a href="http://doc.qt.io/qt-5/qrectf.html#setSize">setSize</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#setWidth">setWidth</a>() or <a href="http://doc.qt.io/qt-5/qrectf.html#setHeight">setHeight</a>() functions. Alternatively, the size can be changed by applying either of the functions setting the rectangle coordinates, for example, <a href="http://doc.qt.io/qt-5/qrectf.html#setBottom">setBottom</a>() or <a href="http://doc.qt.io/qt-5/qrectf.html#setRight">setRight</a>().</p>
+<p>The <a href="http://doc.qt.io/qt-5/qrectf.html#contains">contains</a>() function tells whether a given point is inside the rectangle or not, and the <a href="http://doc.qt.io/qt-5/qrectf.html#intersects">intersects</a>() function returns <code>true</code> if this rectangle intersects with a given rectangle (otherwise false). The <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> class also provides the <a href="http://doc.qt.io/qt-5/qrectf.html#intersected">intersected</a>() function which returns the intersection rectangle, and the <a href="http://doc.qt.io/qt-5/qrectf.html#united">united</a>() function which returns the rectangle that encloses the given rectangle and this:</p>
+<div class="table"><table class="generic">
+ <tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qrect-intersect.png" alt=""></img></td><td><img src="http://doc.qt.io/qt-5/images/qrect-unite.png" alt=""></img></td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qrectf.html#intersected">intersected</a>()</td><td><a href="http://doc.qt.io/qt-5/qrectf.html#united">united</a>()</td></tr>
+</tbody></table></div>
+<p>The <a href="http://doc.qt.io/qt-5/qrectf.html#isEmpty">isEmpty</a>() function returns <code>true</code> if the rectangle&#39;s width or height is less than, or equal to, 0. Note that an empty rectangle is not valid: The <a href="http://doc.qt.io/qt-5/qrectf.html#isValid">isValid</a>() function returns <code>true</code> if both width and height is larger than 0. A null rectangle (<a href="http://doc.qt.io/qt-5/qrectf.html#isNull">isNull</a>() == true) on the other hand, has both width and height set to 0.</p>
+<p>Note that due to the way <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> and <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> are defined, an empty <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> is defined in essentially the same way as <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a>.</p>
+<p>Finally, <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> objects can be streamed as well as compared.</p>
+<a name="rendering"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-125759' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/rect_f.rs.html#34-798' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.adjust' class='method'><code>fn <a href='#method.adjust' class='fnname'>adjust</a>(&amp;mut self, x1: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, y1: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, x2: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, y2: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::adjust(double x1, double y1, double x2, double y2)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#adjust">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds <i>dx1</i>, <i>dy1</i>, <i>dx2</i> and <i>dy2</i> respectively to the existing coordinates of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#adjusted">adjusted</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#setRect">setRect</a>().</p></div></p>
+</div><h4 id='method.adjusted' class='method'><code>fn <a href='#method.adjusted' class='fnname'>adjusted</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFAdjustedArgs.html' title='qt_core::rect_f::overloading::RectFAdjustedArgs'>RectFAdjustedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::adjusted</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn adjusted(&amp;self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn adjusted(&amp;self, (libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRectF::adjusted(double x1, double y1, double x2, double y2) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#adjusted">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a new rectangle with <i>dx1</i>, <i>dy1</i>, <i>dx2</i> and <i>dy2</i> added respectively to the existing coordinates of this rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#adjust">adjust</a>().</p></div></p>
+</div><h4 id='method.bottom' class='method'><code>fn <a href='#method.bottom' class='fnname'>bottom</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRectF::bottom() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#bottom">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the y-coordinate of the rectangle&#39;s bottom edge.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setBottom">setBottom</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#bottomLeft">bottomLeft</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#bottomRight">bottomRight</a>().</p></div></p>
+</div><h4 id='method.bottom_left' class='method'><code>fn <a href='#method.bottom_left' class='fnname'>bottom_left</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFBottomLeftArgs.html' title='qt_core::rect_f::overloading::RectFBottomLeftArgs'>RectFBottomLeftArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::bottomLeft</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn bottom_left(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::point_f::PointF&gt;</code><br>2) <code>fn bottom_left(&amp;self, cpp_utils::AsStruct) -&gt; ::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QRectF::bottomLeft() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#bottomLeft">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position of the rectangle&#39;s bottom-left corner.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setBottomLeft">setBottomLeft</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#bottom">bottom</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#left">left</a>().</p></div></p>
+</div><h4 id='method.bottom_right' class='method'><code>fn <a href='#method.bottom_right' class='fnname'>bottom_right</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFBottomRightArgs.html' title='qt_core::rect_f::overloading::RectFBottomRightArgs'>RectFBottomRightArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::bottomRight</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn bottom_right(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::point_f::PointF&gt;</code><br>2) <code>fn bottom_right(&amp;self, cpp_utils::AsStruct) -&gt; ::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QRectF::bottomRight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#bottomRight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position of the rectangle&#39;s bottom-right corner.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setBottomRight">setBottomRight</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#bottom">bottom</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#right">right</a>().</p></div></p>
+</div><h4 id='method.center' class='method'><code>fn <a href='#method.center' class='fnname'>center</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFCenterArgs.html' title='qt_core::rect_f::overloading::RectFCenterArgs'>RectFCenterArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::center</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn center(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::point_f::PointF&gt;</code><br>2) <code>fn center(&amp;self, cpp_utils::AsStruct) -&gt; ::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QRectF::center() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#center">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the center point of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#moveCenter">moveCenter</a>().</p></div></p>
+</div><h4 id='method.contains' class='method'><code>fn <a href='#method.contains' class='fnname'>contains</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFContainsArgs.html' title='qt_core::rect_f::overloading::RectFContainsArgs'>RectFContainsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::contains</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn contains(&amp;self, &amp;::point_f::PointF) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QRectF::contains(const QPointF&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#contains">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the given <i>point</i> is inside or on the edge of the rectangle; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#intersects">intersects</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn contains(&amp;self, &amp;::rect_f::RectF) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QRectF::contains(const QRectF&amp; r) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#contains-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns <code>true</code> if the given <i>rectangle</i> is inside this rectangle; otherwise returns <code>false</code>.</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn contains(&amp;self, (libc::c_double, libc::c_double)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QRectF::contains(double x, double y) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#contains-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns <code>true</code> if the point (<i>x</i>, <i>y</i>) is inside or on the edge of the rectangle; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.get_coords' class='method'><code>fn <a href='#method.get_coords' class='fnname'>get_coords</a>(&amp;self, x1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, y1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, x2: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, y2: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::getCoords(double* x1, double* y1, double* x2, double* y2) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#getCoords">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Extracts the position of the rectangle&#39;s top-left corner to *<i>x1</i> and *<i>y1</i>, and the position of the bottom-right corner to *<i>x2</i> and *<i>y2</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setCoords">setCoords</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#getRect">getRect</a>().</p></div></p>
+</div><h4 id='method.get_rect' class='method'><code>fn <a href='#method.get_rect' class='fnname'>get_rect</a>(&amp;self, x: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, y: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, w: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, h: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::getRect(double* x, double* y, double* w, double* h) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#getRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Extracts the position of the rectangle&#39;s top-left corner to *<i>x</i> and *<i>y</i>, and its dimensions to *<i>width</i> and *<i>height</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setRect">setRect</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#getCoords">getCoords</a>().</p></div></p>
+</div><h4 id='method.height' class='method'><code>fn <a href='#method.height' class='fnname'>height</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRectF::height() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#height">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the height of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setHeight">setHeight</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#width">width</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#size">size</a>().</p></div></p>
+</div><h4 id='method.intersected' class='method'><code>fn <a href='#method.intersected' class='fnname'>intersected</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFIntersectedArgs.html' title='qt_core::rect_f::overloading::RectFIntersectedArgs'>RectFIntersectedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::intersected</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn intersected(&amp;self, (&amp;::rect_f::RectF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn intersected(&amp;self, (&amp;::rect_f::RectF, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRectF::intersected(const QRectF&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#intersected">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the intersection of this rectangle and the given <i>rectangle</i>. Note that <code>r.intersected(s)</code> is equivalent to <code>r &amp; s</code>.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qrect-intersect.png" alt=""></img></p><p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#intersects">intersects</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#united">united</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#operator-and-eq">operator&amp;=</a>().</p></div></p>
+</div><h4 id='method.intersects' class='method'><code>fn <a href='#method.intersects' class='fnname'>intersects</a>(&amp;self, r: &amp;<a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRectF::intersects(const QRectF&amp; r) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#intersects">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this rectangle intersects with the given <i>rectangle</i> (i.e. there is a non-empty area of overlap between them), otherwise returns <code>false</code>.</p>
+<p>The intersection rectangle can be retrieved using the <a href="http://doc.qt.io/qt-5/qrectf.html#intersected">intersected</a>() function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#contains">contains</a>().</p></div></p>
+</div><h4 id='method.is_empty' class='method'><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRectF::isEmpty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#isEmpty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the rectangle is empty, otherwise returns <code>false</code>.</p>
+<p>An empty rectangle has <a href="http://doc.qt.io/qt-5/qrectf.html#width">width</a>() &lt;= 0 or <a href="http://doc.qt.io/qt-5/qrectf.html#height">height</a>() &lt;= 0. An empty rectangle is not valid (i.e., isEmpty() == !<a href="http://doc.qt.io/qt-5/qrectf.html#isValid">isValid</a>()).</p>
+<p>Use the <a href="http://doc.qt.io/qt-5/qrectf.html#normalized">normalized</a>() function to retrieve a rectangle where the corners are swapped.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#isNull">isNull</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#isValid">isValid</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#normalized">normalized</a>().</p></div></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRectF::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the rectangle is a null rectangle, otherwise returns <code>false</code>.</p>
+<p>A null rectangle has both the width and the height set to 0. A null rectangle is also empty, and hence not valid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#isEmpty">isEmpty</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRectF::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the rectangle is valid, otherwise returns <code>false</code>.</p>
+<p>A valid rectangle has a <a href="http://doc.qt.io/qt-5/qrectf.html#width">width</a>() &gt; 0 and <a href="http://doc.qt.io/qt-5/qrectf.html#height">height</a>() &gt; 0. Note that non-trivial operations like intersections are not defined for invalid rectangles. A valid rectangle is not empty (i.e., isValid() == !<a href="http://doc.qt.io/qt-5/qrectf.html#isEmpty">isEmpty</a>()).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#isNull">isNull</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#isEmpty">isEmpty</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#normalized">normalized</a>().</p></div></p>
+</div><h4 id='method.left' class='method'><code>fn <a href='#method.left' class='fnname'>left</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRectF::left() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#left">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the x-coordinate of the rectangle&#39;s left edge. Equivalent to <a href="http://doc.qt.io/qt-5/qrectf.html#x">x</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setLeft">setLeft</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#topLeft">topLeft</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#bottomLeft">bottomLeft</a>().</p></div></p>
+</div><h4 id='method.margins_added' class='method'><code>fn <a href='#method.margins_added' class='fnname'>margins_added</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFMarginsAddedArgs.html' title='qt_core::rect_f::overloading::RectFMarginsAddedArgs'>RectFMarginsAddedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::marginsAdded</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn margins_added(&amp;self, (&amp;::margins_f::MarginsF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn margins_added(&amp;self, (&amp;::margins_f::MarginsF, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRectF::marginsAdded(const QMarginsF&amp; margins) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#marginsAdded">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a rectangle grown by the <i>margins</i>.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#operator-2b-eq">operator+=</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#marginsRemoved">marginsRemoved</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#operator--eq">operator-=</a>().</p></div></p>
+</div><h4 id='method.margins_removed' class='method'><code>fn <a href='#method.margins_removed' class='fnname'>margins_removed</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFMarginsRemovedArgs.html' title='qt_core::rect_f::overloading::RectFMarginsRemovedArgs'>RectFMarginsRemovedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::marginsRemoved</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn margins_removed(&amp;self, (&amp;::margins_f::MarginsF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn margins_removed(&amp;self, (&amp;::margins_f::MarginsF, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRectF::marginsRemoved(const QMarginsF&amp; margins) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#marginsRemoved">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the <i>margins</i> from the rectangle, shrinking it.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#marginsAdded">marginsAdded</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#operator-2b-eq">operator+=</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#operator--eq">operator-=</a>().</p></div></p>
+</div><h4 id='method.move_bottom' class='method'><code>fn <a href='#method.move_bottom' class='fnname'>move_bottom</a>(&amp;mut self, pos: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::moveBottom(double pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveBottom">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle vertically, leaving the rectangle&#39;s bottom edge at the given <i>y</i> coordinate. The rectangle&#39;s size is unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#bottom">bottom</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#setBottom">setBottom</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#moveTop">moveTop</a>().</p></div></p>
+</div><h4 id='method.move_bottom_left' class='method'><code>fn <a href='#method.move_bottom_left' class='fnname'>move_bottom_left</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::moveBottomLeft(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveBottomLeft">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle, leaving the bottom-left corner at the given <i>position</i>. The rectangle&#39;s size is unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setBottomLeft">setBottomLeft</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#moveBottom">moveBottom</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#moveLeft">moveLeft</a>().</p></div></p>
+</div><h4 id='method.move_bottom_right' class='method'><code>fn <a href='#method.move_bottom_right' class='fnname'>move_bottom_right</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::moveBottomRight(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveBottomRight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle, leaving the bottom-right corner at the given <i>position</i>. The rectangle&#39;s size is unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setBottomRight">setBottomRight</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#moveBottom">moveBottom</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#moveRight">moveRight</a>().</p></div></p>
+</div><h4 id='method.move_center' class='method'><code>fn <a href='#method.move_center' class='fnname'>move_center</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::moveCenter(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveCenter">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle, leaving the center point at the given <i>position</i>. The rectangle&#39;s size is unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#center">center</a>().</p></div></p>
+</div><h4 id='method.move_left' class='method'><code>fn <a href='#method.move_left' class='fnname'>move_left</a>(&amp;mut self, pos: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::moveLeft(double pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveLeft">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle horizontally, leaving the rectangle&#39;s left edge at the given <i>x</i> coordinate. The rectangle&#39;s size is unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#left">left</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#setLeft">setLeft</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#moveRight">moveRight</a>().</p></div></p>
+</div><h4 id='method.move_right' class='method'><code>fn <a href='#method.move_right' class='fnname'>move_right</a>(&amp;mut self, pos: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::moveRight(double pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveRight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle horizontally, leaving the rectangle&#39;s right edge at the given <i>x</i> coordinate. The rectangle&#39;s size is unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#right">right</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#setRight">setRight</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#moveLeft">moveLeft</a>().</p></div></p>
+</div><h4 id='method.move_to' class='method'><code>fn <a href='#method.move_to' class='fnname'>move_to</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFMoveToArgs.html' title='qt_core::rect_f::overloading::RectFMoveToArgs'>RectFMoveToArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::moveTo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn move_to(&amp;mut self, &amp;::point_f::PointF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QRectF::moveTo(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveTo-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Moves the rectangle, leaving the top-left corner at the given <i>position</i>.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn move_to(&amp;mut self, (libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QRectF::moveTo(double x, double y)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveTo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle, leaving the top-left corner at the given position (<i>x</i>, <i>y</i>). The rectangle&#39;s size is unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#translate">translate</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#moveTopLeft">moveTopLeft</a>().</p></div></p>
+</div><h4 id='method.move_top' class='method'><code>fn <a href='#method.move_top' class='fnname'>move_top</a>(&amp;mut self, pos: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::moveTop(double pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveTop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle vertically, leaving the rectangle&#39;s top line at the given <i>y</i> coordinate. The rectangle&#39;s size is unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#top">top</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#setTop">setTop</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#moveBottom">moveBottom</a>().</p></div></p>
+</div><h4 id='method.move_top_left' class='method'><code>fn <a href='#method.move_top_left' class='fnname'>move_top_left</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::moveTopLeft(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveTopLeft">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle, leaving the top-left corner at the given <i>position</i>. The rectangle&#39;s size is unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setTopLeft">setTopLeft</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#moveTop">moveTop</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#moveLeft">moveLeft</a>().</p></div></p>
+</div><h4 id='method.move_top_right' class='method'><code>fn <a href='#method.move_top_right' class='fnname'>move_top_right</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::moveTopRight(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#moveTopRight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle, leaving the top-right corner at the given <i>position</i>. The rectangle&#39;s size is unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setTopRight">setTopRight</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#moveTop">moveTop</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#moveRight">moveRight</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFNewArgs.html' title='qt_core::rect_f::overloading::RectFNewArgs'>RectFNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::QRectF</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::rect_f::RectF</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRectF::QRectF()</code></span></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::point_f::PointF, &amp;::point_f::PointF, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>2) <code>fn new((&amp;::point_f::PointF, &amp;::point_f::PointF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRectF::QRectF(const QPointF&amp; topleft, const QPointF&amp; bottomRight)</code></span></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::point_f::PointF, &amp;::size_f::SizeF, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>2) <code>fn new((&amp;::point_f::PointF, &amp;::size_f::SizeF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRectF::QRectF(const QPointF&amp; topleft, const QSizeF&amp; size)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::rect::Rect, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>2) <code>fn new((&amp;::rect::Rect, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRectF::QRectF(const QRect&amp; rect)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>2) <code>fn new((libc::c_double, libc::c_double, libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRectF::QRectF(double left, double top, double width, double height)</code></span></p>
+</div><h4 id='method.normalized' class='method'><code>fn <a href='#method.normalized' class='fnname'>normalized</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFNormalizedArgs.html' title='qt_core::rect_f::overloading::RectFNormalizedArgs'>RectFNormalizedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::normalized</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn normalized(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn normalized(&amp;self, cpp_utils::AsStruct) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRectF::normalized() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#normalized">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a normalized rectangle; i.e., a rectangle that has a non-negative width and height.</p>
+<p>If <a href="http://doc.qt.io/qt-5/qrectf.html#width">width</a>() &lt; 0 the function swaps the left and right corners, and it swaps the top and bottom corners if <a href="http://doc.qt.io/qt-5/qrectf.html#height">height</a>() &lt; 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#isValid">isValid</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#isEmpty">isEmpty</a>().</p></div></p>
+</div><h4 id='method.op_add_assign' class='method'><code>fn <a href='#method.op_add_assign' class='fnname'>op_add_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, margins: &amp;'l1 <a class='struct' href='../../qt_core/margins_f/struct.MarginsF.html' title='qt_core::margins_f::MarginsF'>MarginsF</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF&amp; QRectF::operator+=(const QMarginsF&amp; margins)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#operator-2b-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds the <i>margins</i> to the rectangle, growing it.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#marginsAdded">marginsAdded</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#marginsRemoved">marginsRemoved</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#operator--eq">operator-=</a>().</p></div></p>
+</div><h4 id='method.op_bit_and' class='method'><code>fn <a href='#method.op_bit_and' class='fnname'>op_bit_and</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFOpBitAndArgs.html' title='qt_core::rect_f::overloading::RectFOpBitAndArgs'>RectFOpBitAndArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::operator&amp;</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_bit_and(&amp;self, (&amp;::rect_f::RectF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn op_bit_and(&amp;self, (&amp;::rect_f::RectF, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRectF::operator&amp;(const QRectF&amp; r) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#operator-and">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the intersection of this rectangle and the given <i>rectangle</i>. Returns an empty rectangle if there is no intersection.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#operator-and-eq">operator&amp;=</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#intersected">intersected</a>().</p></div></p>
+</div><h4 id='method.op_bit_and_assign' class='method'><code>fn <a href='#method.op_bit_and_assign' class='fnname'>op_bit_and_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, r: &amp;'l1 <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF&amp; QRectF::operator&amp;=(const QRectF&amp; r)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#operator-and-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Intersects this rectangle with the given <i>rectangle</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#intersected">intersected</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#operator-7c-eq">operator|=</a>().</p></div></p>
+</div><h4 id='method.op_bit_or' class='method'><code>fn <a href='#method.op_bit_or' class='fnname'>op_bit_or</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFOpBitOrArgs.html' title='qt_core::rect_f::overloading::RectFOpBitOrArgs'>RectFOpBitOrArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::operator|</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_bit_or(&amp;self, (&amp;::rect_f::RectF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn op_bit_or(&amp;self, (&amp;::rect_f::RectF, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRectF::operator|(const QRectF&amp; r) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#operator-7c">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the bounding rectangle of this rectangle and the given <i>rectangle</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#united">united</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#operator-7c-eq">operator|=</a>().</p></div></p>
+</div><h4 id='method.op_bit_or_assign' class='method'><code>fn <a href='#method.op_bit_or_assign' class='fnname'>op_bit_or_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, r: &amp;'l1 <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF&amp; QRectF::operator|=(const QRectF&amp; r)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#operator-7c-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unites this rectangle with the given <i>rectangle</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#united">united</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#operator-7c">operator|</a>().</p></div></p>
+</div><h4 id='method.op_sub_assign' class='method'><code>fn <a href='#method.op_sub_assign' class='fnname'>op_sub_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, margins: &amp;'l1 <a class='struct' href='../../qt_core/margins_f/struct.MarginsF.html' title='qt_core::margins_f::MarginsF'>MarginsF</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF&amp; QRectF::operator-=(const QMarginsF&amp; margins)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#operator--eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a rectangle shrunk by the <i>margins</i>.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#marginsRemoved">marginsRemoved</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#operator-2b-eq">operator+=</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#marginsAdded">marginsAdded</a>().</p></div></p>
+</div><h4 id='method.right' class='method'><code>fn <a href='#method.right' class='fnname'>right</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRectF::right() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#right">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the x-coordinate of the rectangle&#39;s right edge.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setRight">setRight</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#topRight">topRight</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#bottomRight">bottomRight</a>().</p></div></p>
+</div><h4 id='method.set_bottom' class='method'><code>fn <a href='#method.set_bottom' class='fnname'>set_bottom</a>(&amp;mut self, pos: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setBottom(double pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setBottom">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the bottom edge of the rectangle to the given <i>y</i> coordinate. May change the height, but will never change the top edge of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#bottom">bottom</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#moveBottom">moveBottom</a>().</p></div></p>
+</div><h4 id='method.set_bottom_left' class='method'><code>fn <a href='#method.set_bottom_left' class='fnname'>set_bottom_left</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setBottomLeft(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setBottomLeft">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Set the bottom-left corner of the rectangle to the given <i>position</i>. May change the size, but will never change the top-right corner of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#bottomLeft">bottomLeft</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#moveBottomLeft">moveBottomLeft</a>().</p></div></p>
+</div><h4 id='method.set_bottom_right' class='method'><code>fn <a href='#method.set_bottom_right' class='fnname'>set_bottom_right</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setBottomRight(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setBottomRight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Set the bottom-right corner of the rectangle to the given <i>position</i>. May change the size, but will never change the top-left corner of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#bottomRight">bottomRight</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#moveBottomRight">moveBottomRight</a>().</p></div></p>
+</div><h4 id='method.set_coords' class='method'><code>fn <a href='#method.set_coords' class='fnname'>set_coords</a>(&amp;mut self, x1: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, y1: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, x2: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, y2: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setCoords(double x1, double y1, double x2, double y2)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setCoords">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the coordinates of the rectangle&#39;s top-left corner to (<i>x1</i>, <i>y1</i>), and the coordinates of its bottom-right corner to (<i>x2</i>, <i>y2</i>).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#getCoords">getCoords</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#setRect">setRect</a>().</p></div></p>
+</div><h4 id='method.set_height' class='method'><code>fn <a href='#method.set_height' class='fnname'>set_height</a>(&amp;mut self, h: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setHeight(double h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the height of the rectangle to the given <i>height</i>. The bottom edge is changed, but not the top one.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#height">height</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#setSize">setSize</a>().</p></div></p>
+</div><h4 id='method.set_left' class='method'><code>fn <a href='#method.set_left' class='fnname'>set_left</a>(&amp;mut self, pos: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setLeft(double pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setLeft">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the left edge of the rectangle to the given <i>x</i> coordinate. May change the width, but will never change the right edge of the rectangle.</p>
+<p>Equivalent to <a href="http://doc.qt.io/qt-5/qrectf.html#setX">setX</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#left">left</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#moveLeft">moveLeft</a>().</p></div></p>
+</div><h4 id='method.set_rect' class='method'><code>fn <a href='#method.set_rect' class='fnname'>set_rect</a>(&amp;mut self, x: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, y: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, w: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, h: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setRect(double x, double y, double w, double h)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the coordinates of the rectangle&#39;s top-left corner to (<i>x</i>, <i>y</i>), and its size to the given <i>width</i> and <i>height</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#getRect">getRect</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#setCoords">setCoords</a>().</p></div></p>
+</div><h4 id='method.set_right' class='method'><code>fn <a href='#method.set_right' class='fnname'>set_right</a>(&amp;mut self, pos: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setRight(double pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setRight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the right edge of the rectangle to the given <i>x</i> coordinate. May change the width, but will never change the left edge of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#right">right</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#moveRight">moveRight</a>().</p></div></p>
+</div><h4 id='method.set_size' class='method'><code>fn <a href='#method.set_size' class='fnname'>set_size</a>(&amp;mut self, s: &amp;<a class='struct' href='../../qt_core/size_f/struct.SizeF.html' title='qt_core::size_f::SizeF'>SizeF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setSize(const QSizeF&amp; s)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the size of the rectangle to the given <i>size</i>. The top-left corner is not moved.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#size">size</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#setWidth">setWidth</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#setHeight">setHeight</a>().</p></div></p>
+</div><h4 id='method.set_top' class='method'><code>fn <a href='#method.set_top' class='fnname'>set_top</a>(&amp;mut self, pos: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setTop(double pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setTop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the top edge of the rectangle to the given <i>y</i> coordinate. May change the height, but will never change the bottom edge of the rectangle.</p>
+<p>Equivalent to <a href="http://doc.qt.io/qt-5/qrectf.html#setY">setY</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#top">top</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#moveTop">moveTop</a>().</p></div></p>
+</div><h4 id='method.set_top_left' class='method'><code>fn <a href='#method.set_top_left' class='fnname'>set_top_left</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setTopLeft(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setTopLeft">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Set the top-left corner of the rectangle to the given <i>position</i>. May change the size, but will never change the bottom-right corner of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#topLeft">topLeft</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#moveTopLeft">moveTopLeft</a>().</p></div></p>
+</div><h4 id='method.set_top_right' class='method'><code>fn <a href='#method.set_top_right' class='fnname'>set_top_right</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setTopRight(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setTopRight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Set the top-right corner of the rectangle to the given <i>position</i>. May change the size, but will never change the bottom-left corner of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#topRight">topRight</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#moveTopRight">moveTopRight</a>().</p></div></p>
+</div><h4 id='method.set_width' class='method'><code>fn <a href='#method.set_width' class='fnname'>set_width</a>(&amp;mut self, w: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setWidth(double w)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the width of the rectangle to the given <i>width</i>. The right edge is changed, but not the left one.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#width">width</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#setSize">setSize</a>().</p></div></p>
+</div><h4 id='method.set_x' class='method'><code>fn <a href='#method.set_x' class='fnname'>set_x</a>(&amp;mut self, pos: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setX(double pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the left edge of the rectangle to the given <i>x</i> coordinate. May change the width, but will never change the right edge of the rectangle.</p>
+<p>Equivalent to <a href="http://doc.qt.io/qt-5/qrectf.html#setLeft">setLeft</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#x">x</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#setY">setY</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#setTopLeft">setTopLeft</a>().</p></div></p>
+</div><h4 id='method.set_y' class='method'><code>fn <a href='#method.set_y' class='fnname'>set_y</a>(&amp;mut self, pos: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRectF::setY(double pos)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#setY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the top edge of the rectangle to the given <i>y</i> coordinate. May change the height, but will never change the bottom edge of the rectangle.</p>
+<p>Equivalent to <a href="http://doc.qt.io/qt-5/qrectf.html#setTop">setTop</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#y">y</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#setX">setX</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#setTopLeft">setTopLeft</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFSizeArgs.html' title='qt_core::rect_f::overloading::RectFSizeArgs'>RectFSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::size</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::size_f::SizeF&gt;</code><br>2) <code>fn size(&amp;self, cpp_utils::AsStruct) -&gt; ::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>QSizeF QRectF::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setSize">setSize</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#width">width</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#height">height</a>().</p></div></p>
+</div><h4 id='method.to_aligned_rect' class='method'><code>fn <a href='#method.to_aligned_rect' class='fnname'>to_aligned_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFToAlignedRectArgs.html' title='qt_core::rect_f::overloading::RectFToAlignedRectArgs'>RectFToAlignedRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::toAlignedRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_aligned_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::rect::Rect&gt;</code><br>2) <code>fn to_aligned_rect(&amp;self, cpp_utils::AsStruct) -&gt; ::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QRectF::toAlignedRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#toAlignedRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> based on the values of this rectangle that is the smallest possible integer rectangle that completely contains this rectangle.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#toRect">toRect</a>().</p></div></p>
+</div><h4 id='method.to_rect' class='method'><code>fn <a href='#method.to_rect' class='fnname'>to_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFToRectArgs.html' title='qt_core::rect_f::overloading::RectFToRectArgs'>RectFToRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::toRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::rect::Rect&gt;</code><br>2) <code>fn to_rect(&amp;self, cpp_utils::AsStruct) -&gt; ::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QRectF::toRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#toRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> based on the values of this rectangle. Note that the coordinates in the returned rectangle are rounded to the nearest integer.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#QRectF">QRectF</a>() and <a href="http://doc.qt.io/qt-5/qrectf.html#toAlignedRect">toAlignedRect</a>().</p></div></p>
+</div><h4 id='method.top' class='method'><code>fn <a href='#method.top' class='fnname'>top</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRectF::top() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#top">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the y-coordinate of the rectangle&#39;s top edge. Equivalent to <a href="http://doc.qt.io/qt-5/qrectf.html#y">y</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setTop">setTop</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#topLeft">topLeft</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#topRight">topRight</a>().</p></div></p>
+</div><h4 id='method.top_left' class='method'><code>fn <a href='#method.top_left' class='fnname'>top_left</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFTopLeftArgs.html' title='qt_core::rect_f::overloading::RectFTopLeftArgs'>RectFTopLeftArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::topLeft</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn top_left(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::point_f::PointF&gt;</code><br>2) <code>fn top_left(&amp;self, cpp_utils::AsStruct) -&gt; ::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QRectF::topLeft() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#topLeft">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position of the rectangle&#39;s top-left corner.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setTopLeft">setTopLeft</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#top">top</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#left">left</a>().</p></div></p>
+</div><h4 id='method.top_right' class='method'><code>fn <a href='#method.top_right' class='fnname'>top_right</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFTopRightArgs.html' title='qt_core::rect_f::overloading::RectFTopRightArgs'>RectFTopRightArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::topRight</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn top_right(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::point_f::PointF&gt;</code><br>2) <code>fn top_right(&amp;self, cpp_utils::AsStruct) -&gt; ::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QRectF::topRight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#topRight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position of the rectangle&#39;s top-right corner.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setTopRight">setTopRight</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#top">top</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#right">right</a>().</p></div></p>
+</div><h4 id='method.translate' class='method'><code>fn <a href='#method.translate' class='fnname'>translate</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFTranslateArgs.html' title='qt_core::rect_f::overloading::RectFTranslateArgs'>RectFTranslateArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::translate</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn translate(&amp;mut self, &amp;::point_f::PointF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QRectF::translate(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#translate-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Moves the rectangle <i>offset</i>.<a href="http://doc.qt.io/qt-5/qpointf.html#x">x()</a> along the x axis and <i>offset</i>.<a href="http://doc.qt.io/qt-5/qpointf.html#y">y()</a> along the y axis, relative to the current position.</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn translate(&amp;mut self, (libc::c_double, libc::c_double)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QRectF::translate(double dx, double dy)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#translate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the rectangle <i>dx</i> along the x-axis and <i>dy</i> along the y-axis, relative to the current position. Positive values move the rectangle to the right and downwards.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#moveTopLeft">moveTopLeft</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#moveTo">moveTo</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#translated">translated</a>().</p></div></p>
+</div><h4 id='method.translated' class='method'><code>fn <a href='#method.translated' class='fnname'>translated</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFTranslatedArgs.html' title='qt_core::rect_f::overloading::RectFTranslatedArgs'>RectFTranslatedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::translated</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn translated(&amp;self, (&amp;::point_f::PointF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn translated(&amp;self, (&amp;::point_f::PointF, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRectF::translated(const QPointF&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#translated-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns a copy of the rectangle that is translated <i>offset</i>.<a href="http://doc.qt.io/qt-5/qpointf.html#x">x()</a> along the x axis and <i>offset</i>.<a href="http://doc.qt.io/qt-5/qpointf.html#y">y()</a> along the y axis, relative to the current position.</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn translated(&amp;self, (libc::c_double, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn translated(&amp;self, (libc::c_double, libc::c_double, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRectF::translated(double dx, double dy) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#translated">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of the rectangle that is translated <i>dx</i> along the x axis and <i>dy</i> along the y axis, relative to the current position. Positive values move the rectangle to the right and down.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#translate">translate</a>().</p></div></p>
+</div><h4 id='method.united' class='method'><code>fn <a href='#method.united' class='fnname'>united</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFUnitedArgs.html' title='qt_core::rect_f::overloading::RectFUnitedArgs'>RectFUnitedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRectF::united</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn united(&amp;self, (&amp;::rect_f::RectF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::rect_f::RectF&gt;</code><br>2) <code>fn united(&amp;self, (&amp;::rect_f::RectF, cpp_utils::AsStruct)) -&gt; ::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRectF::united(const QRectF&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#united">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the bounding rectangle of this rectangle and the given <i>rectangle</i>.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qrect-unite.png" alt=""></img></p><p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#intersected">intersected</a>().</p></div></p>
+</div><h4 id='method.width' class='method'><code>fn <a href='#method.width' class='fnname'>width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRectF::width() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#width">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the rectangle.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setWidth">setWidth</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#height">height</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#size">size</a>().</p></div></p>
+</div><h4 id='method.x' class='method'><code>fn <a href='#method.x' class='fnname'>x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRectF::x() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#x">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the x-coordinate of the rectangle&#39;s left edge. Equivalent to <a href="http://doc.qt.io/qt-5/qrectf.html#left">left</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setX">setX</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#y">y</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#topLeft">topLeft</a>().</p></div></p>
+</div><h4 id='method.y' class='method'><code>fn <a href='#method.y' class='fnname'>y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRectF::y() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrectf.html#y">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the y-coordinate of the rectangle&#39;s top edge. Equivalent to <a href="http://doc.qt.io/qt-5/qrectf.html#top">top</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrectf.html#setY">setY</a>(), <a href="http://doc.qt.io/qt-5/qrectf.html#x">x</a>(), and <a href="http://doc.qt.io/qt-5/qrectf.html#topLeft">topLeft</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/rect_f/overloading/trait.RectFContainsArgs.html' title='qt_core::rect_f::overloading::RectFContainsArgs'>RectFContainsArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126114' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/rect_f.rs.html#948-956' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/rect_f/overloading/trait.RectFContainsArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-125757' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/rect_f.rs.html#28-32' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126008' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/rect_f.rs.html#800-807' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QRectF::~QRectF()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126011' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/rect_f.rs.html#809-813' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

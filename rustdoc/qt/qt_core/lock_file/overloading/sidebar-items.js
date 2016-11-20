@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["LockFileNewArgs","This trait represents a set of arguments accepted by LockFile::new method."],["LockFileTryLockArgs","This trait represents a set of arguments accepted by LockFile::try_lock method."]]});

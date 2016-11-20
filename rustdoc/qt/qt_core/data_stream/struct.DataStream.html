@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DataStream` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DataStream">
+
+    <title>qt_core::data_stream::DataStream - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>data_stream</a></p><script>window.sidebarCurrent = {name: 'DataStream', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>data_stream</a>::<wbr><a class='struct' href=''>DataStream</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-65339' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/data_stream.rs.html#42-44' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct DataStream {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QDataStream</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qdatastream.html">QDataStream</a> class provides serialization of binary data to a <a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a>.</p>
+<p>A data stream is a binary stream of encoded information which is 100% independent of the host computer&#39;s operating system, CPU or byte order. For example, a data stream that is written by a PC under Windows can be read by a Sun SPARC running Solaris.</p>
+<p>You can also use a data stream to read/write <a href="http://doc.qt.io/qt-5/qdatastream.html#raw">raw unencoded binary data</a>. If you want a &quot;parsing&quot; input stream, see <a href="http://doc.qt.io/qt-5/qtextstream.html">QTextStream</a>.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qdatastream.html">QDataStream</a> class implements the serialization of C++&#39;s basic data types, like <code>char</code>, <code>short</code>, <code>int</code>, <code>char *</code>, etc. Serialization of more complex data is accomplished by breaking up the data into primitive units.</p>
+<p>A data stream cooperates closely with a <a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a>. A <a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a> represents an input/output medium one can read data from and write data to. The <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a> class is an example of an I/O device.</p>
+<p>Example (write binary data to a stream):</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfile.html">QFile</a></span> file(<span class="string">&quot;file.dat&quot;</span>);
+file<span class="operator">.</span>open(<span class="type"><a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a></span><span class="operator">::</span>WriteOnly);
+<span class="type"><a href="http://doc.qt.io/qt-5/qdatastream.html#QDataStream">QDataStream</a></span> out(<span class="operator">&amp;</span>file);   <span class="comment">// we will serialize the data into the file</span>
+out <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;the answer is&quot;</span>);   <span class="comment">// serialize a string</span>
+out <span class="operator">&lt;</span><span class="operator">&lt;</span> (<span class="type"><a href="http://doc.qt.io/qt-5/qtglobal.html#qint32-typedef">qint32</a></span>)<span class="number">42</span>;        <span class="comment">// serialize an integer</span></pre>
+<p>Example (read binary data from a stream):</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfile.html">QFile</a></span> file(<span class="string">&quot;file.dat&quot;</span>);
+file<span class="operator">.</span>open(<span class="type"><a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a></span><span class="operator">::</span>ReadOnly);
+<span class="type"><a href="http://doc.qt.io/qt-5/qdatastream.html#QDataStream">QDataStream</a></span> in(<span class="operator">&amp;</span>file);    <span class="comment">// read the data serialized from the file</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> str;
+<span class="type"><a href="http://doc.qt.io/qt-5/qtglobal.html#qint32-typedef">qint32</a></span> a;
+in <span class="operator">&gt;</span><span class="operator">&gt;</span> str <span class="operator">&gt;</span><span class="operator">&gt;</span> a;           <span class="comment">// extract &quot;the answer is&quot; and 42</span></pre>
+<p>Each item written to the stream is written in a predefined binary format that varies depending on the item&#39;s type. Supported Qt types include <a href="http://doc.qt.io/qt-5/qbrush.html">QBrush</a>, <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a>, <a href="http://doc.qt.io/qt-5/qdatetime.html">QDateTime</a>, <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a>, <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a>, <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>, <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> and many others. For the complete list of all Qt types supporting data streaming see <a href="http://doc.qt.io/qt-5/datastreamformat.html">Serializing Qt Data Types</a>.</p>
+<p>For integers it is best to always cast to a Qt integer type for writing, and to read back into the same Qt integer type. This ensures that you get integers of the size you want and insulates you from compiler and platform differences.</p>
+<p>To take one example, a <code>char *</code> string is written as a 32-bit integer equal to the length of the string including the &#39;\0&#39; byte, followed by all the characters of the string including the &#39;\0&#39; byte. When reading a <code>char *</code> string, 4 bytes are read to create the 32-bit length value, then that many characters for the <code>char *</code> string including the &#39;\0&#39; terminator are read.</p>
+<p>The initial I/O device is usually set in the constructor, but can be changed with <a href="http://doc.qt.io/qt-5/qdatastream.html#setDevice">setDevice</a>(). If you&#39;ve reached the end of the data (or if there is no I/O device set) <a href="http://doc.qt.io/qt-5/qdatastream.html#atEnd">atEnd</a>() will return true.</p>
+<a name="versioning"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65344' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/data_stream.rs.html#52-484' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.at_end' class='method'><code>fn <a href='#method.at_end' class='fnname'>at_end</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDataStream::atEnd() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#atEnd">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the I/O device has reached the end position (end of the stream or file) or if there is no I/O device set; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qiodevice.html#atEnd">QIODevice::atEnd</a>().</p></div></p>
+</div><h4 id='method.byte_order' class='method'><code>fn <a href='#method.byte_order' class='fnname'>byte_order</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/data_stream/enum.ByteOrder.html' title='qt_core::data_stream::ByteOrder'>ByteOrder</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDataStream::ByteOrder QDataStream::byteOrder() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#byteOrder">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current byte order setting -- either <a href="http://doc.qt.io/qt-5/qdatastream.html#ByteOrder-enum">BigEndian</a> or <a href="http://doc.qt.io/qt-5/qdatastream.html#ByteOrder-enum">LittleEndian</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#setByteOrder">setByteOrder</a>().</p></div></p>
+</div><h4 id='method.device' class='method'><code>fn <a href='#method.device' class='fnname'>device</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIODevice* QDataStream::device() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#device">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the I/O device currently set, or 0 if no device is currently set.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#setDevice">setDevice</a>().</p></div></p>
+</div><h4 id='method.floating_point_precision' class='method'><code>fn <a href='#method.floating_point_precision' class='fnname'>floating_point_precision</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/data_stream/enum.FloatingPointPrecision.html' title='qt_core::data_stream::FloatingPointPrecision'>FloatingPointPrecision</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDataStream::FloatingPointPrecision QDataStream::floatingPointPrecision() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#floatingPointPrecision">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the floating point precision of the data stream.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#FloatingPointPrecision-enum">FloatingPointPrecision</a> and <a href="http://doc.qt.io/qt-5/qdatastream.html#setFloatingPointPrecision">setFloatingPointPrecision</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/data_stream/overloading/trait.DataStreamNewArgs.html' title='qt_core::data_stream::overloading::DataStreamNewArgs'>DataStreamNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDataStream::QDataStream</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::data_stream::DataStream</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::data_stream::DataStream&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDataStream::QDataStream()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::byte_array::ByteArray, ::flags::Flags&lt;::qiod_evice::OpenModeFlag&gt;, cpp_utils::AsStruct)) -&gt; ::data_stream::DataStream</code><br>2) <code>fn new((*mut ::byte_array::ByteArray, ::flags::Flags&lt;::qiod_evice::OpenModeFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::data_stream::DataStream&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDataStream::QDataStream(QByteArray* arg1, QFlags&lt;QIODevice::OpenModeFlag&gt; flags)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::qiod_evice::QiodEvice, cpp_utils::AsStruct)) -&gt; ::data_stream::DataStream</code><br>2) <code>fn new((*mut ::qiod_evice::QiodEvice, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::data_stream::DataStream&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDataStream::QDataStream(QIODevice* arg1)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::data_stream::DataStream</code><br>2) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::data_stream::DataStream&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDataStream::QDataStream(const QByteArray&amp; arg1)</code></span></p>
+</div><h4 id='method.op_shl' class='method'><code>fn <a href='#method.op_shl' class='fnname'>op_shl</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/data_stream/overloading/trait.DataStreamOpShlArgs.html' title='qt_core::data_stream::overloading::DataStreamOpShlArgs'>DataStreamOpShlArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDataStream::operator&lt;&lt;</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, bool) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(bool i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes a boolean value, <i>i</i>, to the stream. Returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, *const libc::c_char) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(const char* str)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-12">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes the &#39;\0&#39;-terminated string <i>s</i> to the stream and returns a reference to the stream.</p>
+<p>The string is serialized using <code>writeBytes()</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#writeBytes">writeBytes</a>() and <a href="http://doc.qt.io/qt-5/qdatastream.html#writeRawData">writeRawData</a>().</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, libc::c_double) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(double f)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-11">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes a floating point number, <i>f</i>, to the stream using the standard IEEE 754 format. Returns a reference to the stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#setFloatingPointPrecision">setFloatingPointPrecision</a>().</p></div></p>
+
+<h2 id='variant-4-1' class='section-header'><a href='#variant-4-1'>Variant 4</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, libc::c_float) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(float f)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-10">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes a floating point number, <i>f</i>, to the stream using the standard IEEE 754 format. Returns a reference to the stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#setFloatingPointPrecision">setFloatingPointPrecision</a>().</p></div></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, i16) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(qint16 i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes a signed 16-bit integer, <i>i</i>, to the stream and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, i32) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(qint32 i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-6">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes a signed 32-bit integer, <i>i</i>, to the stream and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-7' class='section-header'><a href='#variant-7'>Variant 7</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, i64) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(qint64 i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-8">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes a signed 64-bit integer, <i>i</i>, to the stream and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-8' class='section-header'><a href='#variant-8'>Variant 8</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, i8) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(qint8 i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes a signed byte, <i>i</i>, to the stream and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-9' class='section-header'><a href='#variant-9'>Variant 9</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, u16) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(quint16 i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes an unsigned 16-bit integer, <i>i</i>, to the stream and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-10' class='section-header'><a href='#variant-10'>Variant 10</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, u32) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(quint32 i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-9">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes an unsigned integer, <i>i</i>, to the stream as a 32-bit unsigned integer (quint32). Returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-11' class='section-header'><a href='#variant-11'>Variant 11</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, u64) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(quint64 i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-7">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes an unsigned 64-bit integer, <i>i</i>, to the stream and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-12' class='section-header'><a href='#variant-12'>Variant 12</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, u8) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&lt;&lt;(quint8 i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-lt-lt-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes an unsigned byte, <i>i</i>, to the stream and returns a reference to the stream.</p></div></p>
+</div><h4 id='method.op_shr' class='method'><code>fn <a href='#method.op_shr' class='fnname'>op_shr</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/data_stream/overloading/trait.DataStreamOpShrArgs.html' title='qt_core::data_stream::overloading::DataStreamOpShrArgs'>DataStreamOpShrArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDataStream::operator&gt;&gt;</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut bool) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(bool&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads a boolean value from the stream into <i>i</i>. Returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut *mut libc::c_char) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(char*&amp; str)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-12">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads the &#39;\0&#39;-terminated string <i>s</i> from the stream and returns a reference to the stream.</p>
+<p>The string is deserialized using <code>readBytes()</code>.</p>
+<p>Space for the string is allocated using <code>new []</code> -- the caller must destroy it with <code>delete []</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#readBytes">readBytes</a>() and <a href="http://doc.qt.io/qt-5/qdatastream.html#readRawData">readRawData</a>().</p></div></p>
+
+<h2 id='variant-3-2' class='section-header'><a href='#variant-3-2'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_double) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(double&amp; f)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-11">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads a floating point number from the stream into <i>f</i>, using the standard IEEE 754 format. Returns a reference to the stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#setFloatingPointPrecision">setFloatingPointPrecision</a>().</p></div></p>
+
+<h2 id='variant-4-2' class='section-header'><a href='#variant-4-2'>Variant 4</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_float) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(float&amp; f)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-10">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads a floating point number from the stream into <i>f</i>, using the standard IEEE 754 format. Returns a reference to the stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#setFloatingPointPrecision">setFloatingPointPrecision</a>().</p></div></p>
+
+<h2 id='variant-5-1' class='section-header'><a href='#variant-5-1'>Variant 5</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_int) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(int&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-7">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads a signed 32-bit integer from the stream into <i>i</i>, and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-6-1' class='section-header'><a href='#variant-6-1'>Variant 6</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_longlong) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(long long&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-9">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads a signed 64-bit integer from the stream into <i>i</i>, and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-7-1' class='section-header'><a href='#variant-7-1'>Variant 7</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_short) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(short&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-5">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads a signed 16-bit integer from the stream into <i>i</i>, and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-8-1' class='section-header'><a href='#variant-8-1'>Variant 8</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_schar) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(signed char&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads a signed byte from the stream into <i>i</i>, and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-9-1' class='section-header'><a href='#variant-9-1'>Variant 9</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_uchar) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(unsigned char&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads an unsigned byte from the stream into <i>i</i>, and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-10-1' class='section-header'><a href='#variant-10-1'>Variant 10</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_uint) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(unsigned int&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-6">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads an unsigned 32-bit integer from the stream into <i>i</i>, and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-11-1' class='section-header'><a href='#variant-11-1'>Variant 11</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_ulonglong) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(unsigned long long&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-8">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads an unsigned 64-bit integer from the stream, into <i>i</i>, and returns a reference to the stream.</p></div></p>
+
+<h2 id='variant-12-1' class='section-header'><a href='#variant-12-1'>Variant 12</a></h2>
+<p>Rust arguments: <code>fn op_shr(&amp;mut self, &amp;&#39;l1 mut libc::c_ushort) -&gt; &amp;&#39;l0 mut ::data_stream::DataStream</code><br>
+C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::operator&gt;&gt;(unsigned short&amp; i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#operator-gt-gt-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reads an unsigned 16-bit integer from the stream into <i>i</i>, and returns a reference to the stream.</p></div></p>
+</div><h4 id='method.read_bytes' class='method'><code>fn <a href='#method.read_bytes' class='fnname'>read_bytes</a>&lt;'l0,&nbsp;'l1,&nbsp;'l2&gt;(&amp;'l0 mut self, arg1: &amp;'l1 mut <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>, len: &amp;'l2 mut <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::readBytes(char*&amp; arg1, unsigned int&amp; len)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#readBytes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads the buffer <i>s</i> from the stream and returns a reference to the stream.</p>
+<p>The buffer <i>s</i> is allocated using <code>new []</code>. Destroy it with the <code>delete []</code> operator.</p>
+<p>The <i>l</i> parameter is set to the length of the buffer. If the string read is empty, <i>l</i> is set to 0 and <i>s</i> is set to a null pointer.</p>
+<p>The serialization format is a quint32 length specifier first, then <i>l</i> bytes of data.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#readRawData">readRawData</a>() and <a href="http://doc.qt.io/qt-5/qdatastream.html#writeBytes">writeBytes</a>().</p></div></p>
+</div><h4 id='method.read_raw_data' class='method'><code>fn <a href='#method.read_raw_data' class='fnname'>read_raw_data</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>, len: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDataStream::readRawData(char* arg1, int len)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#readRawData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads at most <i>len</i> bytes from the stream into <i>s</i> and returns the number of bytes read. If an error occurs, this function returns -1.</p>
+<p>The buffer <i>s</i> must be preallocated. The data is <i>not</i> encoded.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#readBytes">readBytes</a>(), <a href="http://doc.qt.io/qt-5/qiodevice.html#read">QIODevice::read</a>(), and <a href="http://doc.qt.io/qt-5/qdatastream.html#writeRawData">writeRawData</a>().</p></div></p>
+</div><h4 id='method.reset_status' class='method'><code>fn <a href='#method.reset_status' class='fnname'>reset_status</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDataStream::resetStatus()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#resetStatus">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Resets the status of the data stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#Status-enum">Status</a>, <a href="http://doc.qt.io/qt-5/qdatastream.html#status">status</a>(), and <a href="http://doc.qt.io/qt-5/qdatastream.html#setStatus">setStatus</a>().</p></div></p>
+</div><h4 id='method.set_byte_order' class='method'><code>fn <a href='#method.set_byte_order' class='fnname'>set_byte_order</a>(&amp;mut self, arg1: <a class='enum' href='../../qt_core/data_stream/enum.ByteOrder.html' title='qt_core::data_stream::ByteOrder'>ByteOrder</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDataStream::setByteOrder(QDataStream::ByteOrder arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#setByteOrder">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the serialization byte order to <i>bo</i>.</p>
+<p>The <i>bo</i> parameter can be <a href="http://doc.qt.io/qt-5/qdatastream.html#ByteOrder-enum">QDataStream::BigEndian</a> or <a href="http://doc.qt.io/qt-5/qdatastream.html#ByteOrder-enum">QDataStream::LittleEndian</a>.</p>
+<p>The default setting is big endian. We recommend leaving this setting unless you have special requirements.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#byteOrder">byteOrder</a>().</p></div></p>
+</div><h4 id='method.set_device' class='method'><code>fn <a href='#method.set_device' class='fnname'>set_device</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDataStream::setDevice(QIODevice* arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#setDevice">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>void QDataStream::setDevice(<a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a> *d)</p>
+<p>Sets the I/O device to <i>d</i>, which can be 0 to unset to current I/O device.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#device">device</a>().</p></div></p>
+</div><h4 id='method.set_floating_point_precision' class='method'><code>fn <a href='#method.set_floating_point_precision' class='fnname'>set_floating_point_precision</a>(&amp;mut self, precision: <a class='enum' href='../../qt_core/data_stream/enum.FloatingPointPrecision.html' title='qt_core::data_stream::FloatingPointPrecision'>FloatingPointPrecision</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDataStream::setFloatingPointPrecision(QDataStream::FloatingPointPrecision precision)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#setFloatingPointPrecision">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the floating point precision of the data stream to <i>precision</i>. If the floating point precision is <a href="http://doc.qt.io/qt-5/qdatastream.html#FloatingPointPrecision-enum">DoublePrecision</a> and the version of the data stream is <a href="http://doc.qt.io/qt-5/qdatastream.html#Version-enum">Qt_4_6</a> or higher, all floating point numbers will be written and read with 64-bit precision. If the floating point precision is <a href="http://doc.qt.io/qt-5/qdatastream.html#FloatingPointPrecision-enum">SinglePrecision</a> and the version is <a href="http://doc.qt.io/qt-5/qdatastream.html#Version-enum">Qt_4_6</a> or higher, all floating point numbers will be written and read with 32-bit precision.</p>
+<p>For versions prior to <a href="http://doc.qt.io/qt-5/qdatastream.html#Version-enum">Qt_4_6</a>, the precision of floating point numbers in the data stream depends on the stream operator called.</p>
+<p>The default is <a href="http://doc.qt.io/qt-5/qdatastream.html#FloatingPointPrecision-enum">DoublePrecision</a>.</p>
+<p><b>Warning:</b> This property must be set to the same value on the object that writes and the object that reads the data stream.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#floatingPointPrecision">floatingPointPrecision</a>().</p></div></p>
+</div><h4 id='method.set_status' class='method'><code>fn <a href='#method.set_status' class='fnname'>set_status</a>(&amp;mut self, status: <a class='enum' href='../../qt_core/data_stream/enum.Status.html' title='qt_core::data_stream::Status'>Status</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDataStream::setStatus(QDataStream::Status status)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#setStatus">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the status of the data stream to the <i>status</i> given.</p>
+<p>Subsequent calls to setStatus() are ignored until <a href="http://doc.qt.io/qt-5/qdatastream.html#resetStatus">resetStatus</a>() is called.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#Status-enum">Status</a>, <a href="http://doc.qt.io/qt-5/qdatastream.html#status">status</a>(), and <a href="http://doc.qt.io/qt-5/qdatastream.html#resetStatus">resetStatus</a>().</p></div></p>
+</div><h4 id='method.set_version' class='method'><code>fn <a href='#method.set_version' class='fnname'>set_version</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDataStream::setVersion(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#setVersion">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the version number of the data serialization format to <i>v</i>, a value of the <a href="http://doc.qt.io/qt-5/qdatastream.html#Version-enum">Version</a> enum.</p>
+<p>You don&#39;t <i>have</i> to set a version if you are using the current version of Qt, but for your own custom binary formats we recommend that you do; see <a href="http://doc.qt.io/qt-5/qdatastream.html#versioning">Versioning</a> in the Detailed Description.</p>
+<p>To accommodate new functionality, the datastream serialization format of some Qt classes has changed in some versions of Qt. If you want to read data that was created by an earlier version of Qt, or write data that can be read by a program that was compiled with an earlier version of Qt, use this function to modify the serialization format used by <a href="http://doc.qt.io/qt-5/qdatastream.html">QDataStream</a>.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qdatastream.html#Version-enum">Version</a> enum provides symbolic constants for the different versions of Qt. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qdatastream.html#QDataStream">QDataStream</a></span> out(file);
+out<span class="operator">.</span>setVersion(<span class="type"><a href="http://doc.qt.io/qt-5/qdatastream.html#QDataStream">QDataStream</a></span><span class="operator">::</span>Qt_4_0);</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#version">version</a>() and <a href="http://doc.qt.io/qt-5/qdatastream.html#Version-enum">Version</a>.</p></div></p>
+</div><h4 id='method.skip_raw_data' class='method'><code>fn <a href='#method.skip_raw_data' class='fnname'>skip_raw_data</a>(&amp;mut self, len: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDataStream::skipRawData(int len)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#skipRawData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Skips <i>len</i> bytes from the device. Returns the number of bytes actually skipped, or -1 on error.</p>
+<p>This is equivalent to calling <a href="http://doc.qt.io/qt-5/qdatastream.html#readRawData">readRawData</a>() on a buffer of length <i>len</i> and ignoring the buffer.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qiodevice.html#seek">QIODevice::seek</a>().</p></div></p>
+</div><h4 id='method.status' class='method'><code>fn <a href='#method.status' class='fnname'>status</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/data_stream/enum.Status.html' title='qt_core::data_stream::Status'>Status</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDataStream::Status QDataStream::status() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#status">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the status of the data stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#Status-enum">Status</a>, <a href="http://doc.qt.io/qt-5/qdatastream.html#setStatus">setStatus</a>(), and <a href="http://doc.qt.io/qt-5/qdatastream.html#resetStatus">resetStatus</a>().</p></div></p>
+</div><h4 id='method.unset_device' class='method'><code>fn <a href='#method.unset_device' class='fnname'>unset_device</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDataStream::unsetDevice()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream-obsolete.html#unsetDevice">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unsets the I/O device. Use <a href="http://doc.qt.io/qt-5/qdatastream.html#setDevice">setDevice</a>(0) instead.</p></div></p>
+</div><h4 id='method.version' class='method'><code>fn <a href='#method.version' class='fnname'>version</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDataStream::version() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#version">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the version number of the data serialization format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#setVersion">setVersion</a>() and <a href="http://doc.qt.io/qt-5/qdatastream.html#Version-enum">Version</a>.</p></div></p>
+</div><h4 id='method.write_bytes' class='method'><code>fn <a href='#method.write_bytes' class='fnname'>write_bytes</a>&lt;'l0&gt;(&amp;'l0 mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>, len: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDataStream&amp; QDataStream::writeBytes(const char* arg1, unsigned int len)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#writeBytes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the length specifier <i>len</i> and the buffer <i>s</i> to the stream and returns a reference to the stream.</p>
+<p>The <i>len</i> is serialized as a quint32, followed by <i>len</i> bytes from <i>s</i>. Note that the data is <i>not</i> encoded.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#writeRawData">writeRawData</a>() and <a href="http://doc.qt.io/qt-5/qdatastream.html#readBytes">readBytes</a>().</p></div></p>
+</div><h4 id='method.write_raw_data' class='method'><code>fn <a href='#method.write_raw_data' class='fnname'>write_raw_data</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>, len: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QDataStream::writeRawData(const char* arg1, int len)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#writeRawData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes <i>len</i> bytes from <i>s</i> to the stream. Returns the number of bytes actually written, or -1 on error. The data is <i>not</i> encoded.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdatastream.html#writeBytes">writeBytes</a>(), <a href="http://doc.qt.io/qt-5/qiodevice.html#write">QIODevice::write</a>(), and <a href="http://doc.qt.io/qt-5/qdatastream.html#readRawData">readRawData</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65342' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/data_stream.rs.html#46-50' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65414' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/data_stream.rs.html#486-494' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QDataStream::~QDataStream()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdatastream.html#dtor.QDataStream">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the data stream.</p>
+<p>The destructor will not affect the current I/O device, unless it is an internal I/O device (e.g. a <a href="http://doc.qt.io/qt-5/qbuffer.html">QBuffer</a>) processing a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> passed in the <i>constructor</i>, in which case the internal I/O device is destroyed.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65417' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/data_stream.rs.html#496-500' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

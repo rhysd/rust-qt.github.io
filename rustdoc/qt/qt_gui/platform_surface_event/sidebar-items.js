@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SurfaceEventType","C++ type: <span style='color: green;'>```QPlatformSurfaceEvent::SurfaceEventType```</span>"]],"mod":[["overloading",""]],"struct":[["PlatformSurfaceEvent","C++ type: <span style='color: green;'>```QPlatformSurfaceEvent```</span>"]]});

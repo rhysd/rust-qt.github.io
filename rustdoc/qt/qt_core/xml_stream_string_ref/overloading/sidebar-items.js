@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["XmlStreamStringRefAsQStringRefArgs","This trait represents a set of arguments accepted by XmlStreamStringRef::as_q_string_ref method."],["XmlStreamStringRefNewArgs","This trait represents a set of arguments accepted by XmlStreamStringRef::new method."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["DragLeaveEventNewArgs","This trait represents a set of arguments accepted by DragLeaveEvent::new method."],["DragLeaveEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by DragLeaveEvent::register_event_type method."]]});

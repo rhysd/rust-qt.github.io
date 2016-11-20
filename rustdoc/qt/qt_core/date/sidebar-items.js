@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["MonthNameType","C++ type: <span style='color: green;'>```QDate::MonthNameType```</span>"]],"mod":[["overloading",""]],"struct":[["Date","C++ type: <span style='color: green;'>```QDate```</span>"]]});

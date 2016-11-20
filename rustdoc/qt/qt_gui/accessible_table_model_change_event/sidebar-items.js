@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ModelChangeType","C++ type: <span style='color: green;'>```QAccessibleTableModelChangeEvent::ModelChangeType```</span>"]],"mod":[["overloading",""]],"struct":[["AccessibleTableModelChangeEvent","C++ type: <span style='color: green;'>```QAccessibleTableModelChangeEvent```</span>"]]});

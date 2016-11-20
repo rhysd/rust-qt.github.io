@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Attachment","C++ type: <span style='color: green;'>```QOpenGLFramebufferObject::Attachment```</span>"]],"mod":[["overloading",""]],"struct":[["OpenGLFramebufferObject","C++ type: <span style='color: green;'>```QOpenGLFramebufferObject```</span>"]]});

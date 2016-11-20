@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ImageWriterError","C++ type: <span style='color: green;'>```QImageWriter::ImageWriterError```</span>"]],"mod":[["overloading",""]],"struct":[["ImageWriter","C++ type: <span style='color: green;'>```QImageWriter```</span>"]]});

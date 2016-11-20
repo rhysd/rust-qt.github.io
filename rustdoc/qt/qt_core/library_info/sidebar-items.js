@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["LibraryLocation","C++ type: <span style='color: green;'>```QLibraryInfo::LibraryLocation```</span>"]],"mod":[["overloading",""]],"struct":[["LibraryInfo","C++ type: <span style='color: green;'>```QLibraryInfo```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["GenericPluginFactoryKeysArgs","This trait represents a set of arguments accepted by GenericPluginFactory::keys method."]]});

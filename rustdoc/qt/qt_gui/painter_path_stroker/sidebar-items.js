@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["PainterPathStroker","C++ type: <span style='color: green;'>```QPainterPathStroker```</span>"]]});

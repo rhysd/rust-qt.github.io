@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AccessibleTextRemoveEvent","C++ type: <span style='color: green;'>```QAccessibleTextRemoveEvent```</span>"]]});

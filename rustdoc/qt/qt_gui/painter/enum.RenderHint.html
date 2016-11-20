@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RenderHint` enum in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RenderHint">
+
+    <title>qt_gui::painter::RenderHint - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>painter</a></p><script>window.sidebarCurrent = {name: 'RenderHint', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>painter</a>::<wbr><a class='enum' href=''>RenderHint</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-126758' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#2861-2874' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum RenderHint {
+    Antialiasing,
+    TextAntialiasing,
+    SmoothPixmapTransform,
+    HighQualityAntialiasing,
+    NonCosmeticDefaultPen,
+    Qt4CompatiblePainting,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPainter::RenderHint</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainter.html#RenderHint-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Renderhints are used to specify flags to <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> that may or may not be respected by any given engine.</p></p>
+
+<p>The RenderHints type is a typedef for <a href="http://doc.qt.io/qt-5/qflags.html">QFlags</a>&lt;RenderHint&gt;. It stores an OR combination of RenderHint values.</p>
+
+<p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainter.html#renderHints">renderHints</a>(), <a href="http://doc.qt.io/qt-5/qpainter.html#setRenderHint">setRenderHint</a>(), <a href="http://doc.qt.io/qt-5/qpainter.html#rendering-quality">Rendering Quality</a>, and <a href="http://doc.qt.io/qt-5/qtwidgets-painting-concentriccircles-example.html">Concentric Circles Example</a>.</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.Antialiasing' class='variant'><code>Antialiasing</code></span><div class='docblock'><p>Indicates that the engine should antialias edges of primitives if possible. (C++ enum variant: <span style='color: green;'><code>Antialiasing = 1</code></span>)</p>
+</div><span id='variant.TextAntialiasing' class='variant'><code>TextAntialiasing</code></span><div class='docblock'><p>Indicates that the engine should antialias text if possible. To forcibly disable antialiasing for text, do not use this hint. Instead, set <a href="http://doc.qt.io/qt-5/qfont.html#StyleStrategy-enum">QFont::NoAntialias</a> on your font&#39;s style strategy. (C++ enum variant: <span style='color: green;'><code>TextAntialiasing = 2</code></span>)</p>
+</div><span id='variant.SmoothPixmapTransform' class='variant'><code>SmoothPixmapTransform</code></span><div class='docblock'><p>Indicates that the engine should use a smooth pixmap transformation algorithm (such as bilinear) rather than nearest neighbor. (C++ enum variant: <span style='color: green;'><code>SmoothPixmapTransform = 4</code></span>)</p>
+</div><span id='variant.HighQualityAntialiasing' class='variant'><code>HighQualityAntialiasing</code></span><div class='docblock'><p>This value is obsolete and will be ignored, use the Antialiasing render hint instead. (C++ enum variant: <span style='color: green;'><code>HighQualityAntialiasing = 8</code></span>)</p>
+</div><span id='variant.NonCosmeticDefaultPen' class='variant'><code>NonCosmeticDefaultPen</code></span><div class='docblock'><p>This value is obsolete, the default for <a href="http://doc.qt.io/qt-5/qpen.html">QPen</a> is now non-cosmetic. (C++ enum variant: <span style='color: green;'><code>NonCosmeticDefaultPen = 16</code></span>)</p>
+</div><span id='variant.Qt4CompatiblePainting' class='variant'><code>Qt4CompatiblePainting</code></span><div class='docblock'><p>Compatibility hint telling the engine to use the same X11 based fill rules as in Qt 4, where aliased rendering is offset by slightly less than half a pixel. Also will treat default constructed pens as cosmetic. Potentially useful when porting a Qt 4 application to Qt 5. (C++ enum variant: <span style='color: green;'><code>Qt4CompatiblePainting = 32</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/painter/overloading/trait.PainterSetRenderHintArgs.html' title='qt_gui::painter::overloading::PainterSetRenderHintArgs'>PainterSetRenderHintArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_gui/painter/enum.RenderHint.html' title='qt_gui::painter::RenderHint'>RenderHint</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128589' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#5621-5626' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/painter/overloading/trait.PainterSetRenderHintArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/painter/struct.Painter.html' title='qt_gui::painter::Painter'>Painter</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_gui/painter/enum.RenderHint.html' title='qt_gui::painter::RenderHint'>RenderHint</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126736' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#2859' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/painter/enum.RenderHint.html' title='qt_gui::painter::RenderHint'>RenderHint</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_gui/painter/enum.RenderHint.html' title='qt_gui::painter::RenderHint'>RenderHint</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126739' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#2859' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_gui/painter/enum.RenderHint.html' title='qt_gui::painter::RenderHint'>RenderHint</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126742' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#2859' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_gui/painter/enum.RenderHint.html' title='qt_gui::painter::RenderHint'>RenderHint</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_gui/painter/enum.RenderHint.html' title='qt_gui::painter::RenderHint'>RenderHint</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126748' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#2859' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/flags/trait.FlaggableEnum.html' title='qt_core::flags::FlaggableEnum'>FlaggableEnum</a> for <a class='enum' href='../../qt_gui/painter/enum.RenderHint.html' title='qt_gui::painter::RenderHint'>RenderHint</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126771' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#2876-2883' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_flag_value' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.to_flag_value' class='fnname'>to_flag_value</a>(self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<h4 id='method.enum_name' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.enum_name' class='fnname'>enum_name</a>() -&gt; &amp;'static <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

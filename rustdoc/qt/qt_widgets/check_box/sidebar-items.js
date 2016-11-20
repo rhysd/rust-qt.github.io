@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["CheckBox","C++ type: <span style='color: green;'>```QCheckBox```</span>"]]});

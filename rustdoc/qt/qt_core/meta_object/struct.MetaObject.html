@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MetaObject` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MetaObject">
+
+    <title>qt_core::meta_object::MetaObject - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>meta_object</a></p><script>window.sidebarCurrent = {name: 'MetaObject', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>meta_object</a>::<wbr><a class='struct' href=''>MetaObject</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-107755' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/meta_object.rs.html#122-124' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct MetaObject {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QMetaObject</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a> class contains meta-information about Qt objects.</p>
+<p>The Qt <a href="http://doc.qt.io/qt-5/metaobjects.html#meta-object-system">Meta-Object System</a> in Qt is responsible for the signals and slots inter-object communication mechanism, runtime type information, and the Qt property system. A single <a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a> instance is created for each <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> subclass that is used in an application, and this instance stores all the meta-information for the <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> subclass. This object is available as <a href="http://doc.qt.io/qt-5/qobject.html#metaObject">QObject::metaObject</a>().</p>
+<p>This class is not normally required for application programming, but it is useful if you write meta-applications, such as scripting engines or GUI builders.</p>
+<p>The functions you are most likely to find useful are these:</p>
+<ul>
+<li><a href="http://doc.qt.io/qt-5/qmetaobject.html#className">className</a>() returns the name of a class.</li>
+<li><a href="http://doc.qt.io/qt-5/qmetaobject.html#superClass">superClass</a>() returns the superclass&#39;s meta-object.</li>
+<li><a href="http://doc.qt.io/qt-5/qmetaobject.html#method">method</a>() and <a href="http://doc.qt.io/qt-5/qmetaobject.html#methodCount">methodCount</a>() provide information about a class&#39;s meta-methods (signals, slots and other <a href="http://doc.qt.io/qt-5/qobject.html#Q_INVOKABLE">invokable</a> member functions).</li>
+<li><a href="http://doc.qt.io/qt-5/qmetaobject.html#enumerator">enumerator</a>() and <a href="http://doc.qt.io/qt-5/qmetaobject.html#enumeratorCount">enumeratorCount</a>() and provide information about a class&#39;s enumerators.</li>
+<li><a href="http://doc.qt.io/qt-5/qmetaobject.html#propertyCount">propertyCount</a>() and <a href="http://doc.qt.io/qt-5/qmetaobject.html#property">property</a>() provide information about a class&#39;s properties.</li>
+<li><a href="http://doc.qt.io/qt-5/qmetaobject.html#constructor">constructor</a>() and <a href="http://doc.qt.io/qt-5/qmetaobject.html#constructorCount">constructorCount</a>() provide information about a class&#39;s meta-constructors.</li>
+</ul>
+<p>The index functions <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfConstructor">indexOfConstructor</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfMethod">indexOfMethod</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfEnumerator">indexOfEnumerator</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfProperty">indexOfProperty</a>() map names of constructors, member functions, enumerators, or properties to indexes in the meta-object. For example, Qt uses <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfMethod">indexOfMethod</a>() internally when you connect a signal to a slot.</p>
+<p>Classes can also have a list of <i>name</i>--<i>value</i> pairs of additional class information, stored in <a href="http://doc.qt.io/qt-5/qmetaclassinfo.html">QMetaClassInfo</a> objects. The number of pairs is returned by <a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfoCount">classInfoCount</a>(), single pairs are returned by <a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfo">classInfo</a>(), and you can search for pairs with <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfClassInfo">indexOfClassInfo</a>().</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/meta_object/struct.MetaObject.html' title='qt_core::meta_object::MetaObject'>MetaObject</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-107760' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/meta_object.rs.html#132-674' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.activate' class='method'><code>fn <a href='#method.activate' class='fnname'>activate</a>&lt;Args&gt;(args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectActivateArgs.html' title='qt_core::meta_object::overloading::MetaObjectActivateArgs'>MetaObjectActivateArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::activate</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn activate((*mut ::object::Object, *const ::meta_object::MetaObject, libc::c_int, *mut *mut libc::c_void)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QMetaObject::activate(QObject* sender, const QMetaObject* arg2, int local_signal_index, void** argv)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn activate((*mut ::object::Object, libc::c_int, *mut *mut libc::c_void)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QMetaObject::activate(QObject* sender, int signal_index, void** argv)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn activate((*mut ::object::Object, libc::c_int, libc::c_int, *mut *mut libc::c_void)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QMetaObject::activate(QObject* sender, int signal_offset, int local_signal_index, void** argv)</code></span></p>
+</div><h4 id='method.cast' class='method'><code>fn <a href='#method.cast' class='fnname'>cast</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectCastArgs.html' title='qt_core::meta_object::overloading::MetaObjectCastArgs'>MetaObjectCastArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::cast</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn cast(&amp;self, *mut ::object::Object) -&gt; *mut ::object::Object</code><br>
+C++ method: <span style='color: green;'><code>QObject* QMetaObject::cast(QObject* obj) const</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn cast(&amp;self, *const ::object::Object) -&gt; *const ::object::Object</code><br>
+C++ method: <span style='color: green;'><code>const QObject* QMetaObject::cast(const QObject* obj) const</code></span></p>
+</div><h4 id='method.check_connect_args' class='method'><code>fn <a href='#method.check_connect_args' class='fnname'>check_connect_args</a>&lt;Args&gt;(args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectCheckConnectArgsArgs.html' title='qt_core::meta_object::overloading::MetaObjectCheckConnectArgsArgs'>MetaObjectCheckConnectArgsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::checkConnectArgs</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn check_connect_args((&amp;::meta_method::MetaMethod, &amp;::meta_method::MetaMethod)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QMetaObject::checkConnectArgs(const QMetaMethod&amp; signal, const QMetaMethod&amp; method)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#checkConnectArgs-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns <code>true</code> if the <i>signal</i> and <i>method</i> arguments are compatible; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn check_connect_args((*const libc::c_char, *const libc::c_char)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QMetaObject::checkConnectArgs(const char* signal, const char* method)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#checkConnectArgs">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the <i>signal</i> and <i>method</i> arguments are compatible; otherwise returns <code>false</code>.</p>
+<p>Both <i>signal</i> and <i>method</i> are expected to be normalized.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedSignature">normalizedSignature</a>().</p></div></p>
+</div><h4 id='method.class_info' class='method'><code>fn <a href='#method.class_info' class='fnname'>class_info</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectClassInfoArgs.html' title='qt_core::meta_object::overloading::MetaObjectClassInfoArgs'>MetaObjectClassInfoArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::classInfo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn class_info(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::meta_class_info::MetaClassInfo&gt;</code><br>2) <code>fn class_info(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::meta_class_info::MetaClassInfo</code><br>
+C++ method: <span style='color: green;'><code>QMetaClassInfo QMetaObject::classInfo(int index) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the meta-data for the item of class information with the given <i>index</i>.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="keyword">class</span> MyClass : <span class="keyword">public</span> <span class="type"><a href="http://doc.qt.io/qt-5/qobject.html">QObject</a></span>
+{
+&#32;   Q_OBJECT
+&#32;   Q_CLASSINFO(<span class="string">&quot;author&quot;</span><span class="operator">,</span> <span class="string">&quot;Sabrina Schweinsteiger&quot;</span>)
+&#32;   Q_CLASSINFO(<span class="string">&quot;url&quot;</span><span class="operator">,</span> <span class="string">&quot;<a href="http://doc.moosesoft.co.uk/1.0/">http://doc.moosesoft.co.uk/1.0/</a>&quot;</span>)</p>
+
+<p><span class="keyword">public</span>:
+&#32;   <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+};</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfoCount">classInfoCount</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfoOffset">classInfoOffset</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfClassInfo">indexOfClassInfo</a>().</p></div></p>
+</div><h4 id='method.class_info_count' class='method'><code>fn <a href='#method.class_info_count' class='fnname'>class_info_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::classInfoCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfoCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of items of class information in this class.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfo">classInfo</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfoOffset">classInfoOffset</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfClassInfo">indexOfClassInfo</a>().</p></div></p>
+</div><h4 id='method.class_info_offset' class='method'><code>fn <a href='#method.class_info_offset' class='fnname'>class_info_offset</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::classInfoOffset() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfoOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the class information offset for this class; i.e. the index position of this class&#39;s first class information item.</p>
+<p>If the class has no superclasses with class information, the offset is 0; otherwise the offset is the sum of all the class information items in the class&#39;s superclasses.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfo">classInfo</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfoCount">classInfoCount</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfClassInfo">indexOfClassInfo</a>().</p></div></p>
+</div><h4 id='method.class_name' class='method'><code>fn <a href='#method.class_name' class='fnname'>class_name</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const char* QMetaObject::className() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#className">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the class name.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#superClass">superClass</a>().</p></div></p>
+</div><h4 id='method.connect' class='method'><code>fn <a href='#method.connect' class='fnname'>connect</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectConnectArgs.html' title='qt_core::meta_object::overloading::MetaObjectConnectArgs'>MetaObjectConnectArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::connect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn connect((*const ::object::Object, libc::c_int, *const ::object::Object, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::meta_object::Connection&gt;</code><br>2) <code>fn connect((*const ::object::Object, libc::c_int, *const ::object::Object, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::meta_object::Connection&gt;</code><br>3) <code>fn connect((*const ::object::Object, libc::c_int, *const ::object::Object, libc::c_int, libc::c_int, *mut libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::meta_object::Connection&gt;</code><br>4) <code>fn connect((*const ::object::Object, libc::c_int, *const ::object::Object, libc::c_int, cpp_utils::AsStruct)) -&gt; ::meta_object::Connection</code><br>5) <code>fn connect((*const ::object::Object, libc::c_int, *const ::object::Object, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::meta_object::Connection</code><br>6) <code>fn connect((*const ::object::Object, libc::c_int, *const ::object::Object, libc::c_int, libc::c_int, *mut libc::c_int, cpp_utils::AsStruct)) -&gt; ::meta_object::Connection</code><br>
+C++ method: <span style='color: green;'><code>static QMetaObject::Connection QMetaObject::connect(const QObject* sender, int signal_index, const QObject* receiver, int method_index, int type = ?, int* types = ?)</code></span></p>
+</div><h4 id='method.connect_slots_by_name' class='method'><code>fn <a href='#method.connect_slots_by_name' class='fnname'>connect_slots_by_name</a>(o: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QMetaObject::connectSlotsByName(QObject* o)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#connectSlotsByName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Searches recursively for all child objects of the given <i>object</i>, and connects matching signals from them to slots of <i>object</i> that follow the following form:</p>
+<pre class="cpp"><span class="type">void</span> on_<span class="operator">&lt;</span>object name<span class="operator">&gt;</span>_<span class="operator">&lt;</span>signal name<span class="operator">&gt;</span>(<span class="operator">&lt;</span>signal parameters<span class="operator">&gt;</span>);</pre>
+<p>Let&#39;s assume our object has a child object of type <code>QPushButton</code> with the <a href="http://doc.qt.io/qt-5/qobject.html#objectName-prop">object name</a> <code>button1</code>. The slot to catch the button&#39;s <code>clicked()</code> signal would be:</p>
+<pre class="cpp"><span class="type">void</span> on_button1_clicked();</pre>
+<p>If <i>object</i> itself has a properly set object name, its own signals are also connected to its respective slots.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qobject.html#objectName-prop">QObject::setObjectName</a>().</p></div></p>
+</div><h4 id='method.constructor' class='method'><code>fn <a href='#method.constructor' class='fnname'>constructor</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectConstructorArgs.html' title='qt_core::meta_object::overloading::MetaObjectConstructorArgs'>MetaObjectConstructorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::constructor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn constructor(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::meta_method::MetaMethod&gt;</code><br>2) <code>fn constructor(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::meta_method::MetaMethod</code><br>
+C++ method: <span style='color: green;'><code>QMetaMethod QMetaObject::constructor(int index) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#constructor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the meta-data for the constructor with the given <i>index</i>.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#constructorCount">constructorCount</a>() and <a href="http://doc.qt.io/qt-5/qmetaobject.html#newInstance">newInstance</a>().</p></div></p>
+</div><h4 id='method.constructor_count' class='method'><code>fn <a href='#method.constructor_count' class='fnname'>constructor_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::constructorCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#constructorCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of constructors in this class.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#constructor">constructor</a>() and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfConstructor">indexOfConstructor</a>().</p></div></p>
+</div><h4 id='method.disconnect' class='method'><code>fn <a href='#method.disconnect' class='fnname'>disconnect</a>(sender: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>, signal_index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, receiver: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>, method_index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaObject::disconnect(const QObject* sender, int signal_index, const QObject* receiver, int method_index)</code></span></p>
+</div><h4 id='method.disconnect_one' class='method'><code>fn <a href='#method.disconnect_one' class='fnname'>disconnect_one</a>(sender: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>, signal_index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, receiver: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>, method_index: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QMetaObject::disconnectOne(const QObject* sender, int signal_index, const QObject* receiver, int method_index)</code></span></p>
+</div><h4 id='method.enumerator' class='method'><code>fn <a href='#method.enumerator' class='fnname'>enumerator</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectEnumeratorArgs.html' title='qt_core::meta_object::overloading::MetaObjectEnumeratorArgs'>MetaObjectEnumeratorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::enumerator</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn enumerator(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::meta_enum::MetaEnum&gt;</code><br>2) <code>fn enumerator(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::meta_enum::MetaEnum</code><br>
+C++ method: <span style='color: green;'><code>QMetaEnum QMetaObject::enumerator(int index) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#enumerator">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the meta-data for the enumerator with the given <i>index</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#enumeratorCount">enumeratorCount</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#enumeratorOffset">enumeratorOffset</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfEnumerator">indexOfEnumerator</a>().</p></div></p>
+</div><h4 id='method.enumerator_count' class='method'><code>fn <a href='#method.enumerator_count' class='fnname'>enumerator_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::enumeratorCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#enumeratorCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of enumerators in this class.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#enumerator">enumerator</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#enumeratorOffset">enumeratorOffset</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfEnumerator">indexOfEnumerator</a>().</p></div></p>
+</div><h4 id='method.enumerator_offset' class='method'><code>fn <a href='#method.enumerator_offset' class='fnname'>enumerator_offset</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::enumeratorOffset() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#enumeratorOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the enumerator offset for this class; i.e. the index position of this class&#39;s first enumerator.</p>
+<p>If the class has no superclasses with enumerators, the offset is 0; otherwise the offset is the sum of all the enumerators in the class&#39;s superclasses.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#enumerator">enumerator</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#enumeratorCount">enumeratorCount</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfEnumerator">indexOfEnumerator</a>().</p></div></p>
+</div><h4 id='method.index_of_class_info' class='method'><code>fn <a href='#method.index_of_class_info' class='fnname'>index_of_class_info</a>(&amp;self, name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::indexOfClassInfo(const char* name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfClassInfo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Finds class information item <i>name</i> and returns its index; otherwise returns -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfo">classInfo</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfoCount">classInfoCount</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#classInfoOffset">classInfoOffset</a>().</p></div></p>
+</div><h4 id='method.index_of_constructor' class='method'><code>fn <a href='#method.index_of_constructor' class='fnname'>index_of_constructor</a>(&amp;self, constructor: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::indexOfConstructor(const char* constructor) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfConstructor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Finds <i>constructor</i> and returns its index; otherwise returns -1.</p>
+<p>Note that the <i>constructor</i> has to be in normalized form, as returned by <a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedSignature">normalizedSignature</a>().</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#constructor">constructor</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#constructorCount">constructorCount</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedSignature">normalizedSignature</a>().</p></div></p>
+</div><h4 id='method.index_of_enumerator' class='method'><code>fn <a href='#method.index_of_enumerator' class='fnname'>index_of_enumerator</a>(&amp;self, name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::indexOfEnumerator(const char* name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfEnumerator">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Finds enumerator <i>name</i> and returns its index; otherwise returns -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#enumerator">enumerator</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#enumeratorCount">enumeratorCount</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#enumeratorOffset">enumeratorOffset</a>().</p></div></p>
+</div><h4 id='method.index_of_method' class='method'><code>fn <a href='#method.index_of_method' class='fnname'>index_of_method</a>(&amp;self, method: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::indexOfMethod(const char* method) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfMethod">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Finds <i>method</i> and returns its index; otherwise returns -1.</p>
+<p>Note that the <i>method</i> has to be in normalized form, as returned by <a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedSignature">normalizedSignature</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#method">method</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#methodCount">methodCount</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#methodOffset">methodOffset</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedSignature">normalizedSignature</a>().</p></div></p>
+</div><h4 id='method.index_of_property' class='method'><code>fn <a href='#method.index_of_property' class='fnname'>index_of_property</a>(&amp;self, name: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::indexOfProperty(const char* name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Finds property <i>name</i> and returns its index; otherwise returns -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#property">property</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#propertyCount">propertyCount</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#propertyOffset">propertyOffset</a>().</p></div></p>
+</div><h4 id='method.index_of_signal' class='method'><code>fn <a href='#method.index_of_signal' class='fnname'>index_of_signal</a>(&amp;self, signal: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::indexOfSignal(const char* signal) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfSignal">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Finds <i>signal</i> and returns its index; otherwise returns -1.</p>
+<p>This is the same as <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfMethod">indexOfMethod</a>(), except that it will return -1 if the method exists but isn&#39;t a signal.</p>
+<p>Note that the <i>signal</i> has to be in normalized form, as returned by <a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedSignature">normalizedSignature</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfMethod">indexOfMethod</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedSignature">normalizedSignature</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#method">method</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#methodCount">methodCount</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#methodOffset">methodOffset</a>().</p></div></p>
+</div><h4 id='method.index_of_slot' class='method'><code>fn <a href='#method.index_of_slot' class='fnname'>index_of_slot</a>(&amp;self, slot: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::indexOfSlot(const char* slot) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfSlot">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Finds <i>slot</i> and returns its index; otherwise returns -1.</p>
+<p>This is the same as <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfMethod">indexOfMethod</a>(), except that it will return -1 if the method exists but isn&#39;t a slot.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfMethod">indexOfMethod</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#method">method</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#methodCount">methodCount</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#methodOffset">methodOffset</a>().</p></div></p>
+</div><h4 id='method.invoke_method' class='method'><code>fn <a href='#method.invoke_method' class='fnname'>invoke_method</a>&lt;Args&gt;(args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectInvokeMethodArgs.html' title='qt_core::meta_object::overloading::MetaObjectInvokeMethodArgs'>MetaObjectInvokeMethodArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::invokeMethod</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char)) -&gt; bool</code><br>2) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>3) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>4) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>5) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>6) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>7) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>8) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>9) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>10) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>11) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QMetaObject::invokeMethod(QObject* obj, const char* member, QGenericArgument val0 = ?, QGenericArgument val1 = ?, QGenericArgument val2 = ?, QGenericArgument val3 = ?, QGenericArgument val4 = ?, QGenericArgument val5 = ?, QGenericArgument val6 = ?, QGenericArgument val7 = ?, QGenericArgument val8 = ?, QGenericArgument val9 = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#invokeMethod-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qmetaobject.html#invokeMethod">invokeMethod</a>().</p>
+<p>This overload invokes the member using the connection type <a href="http://doc.qt.io/qt-5/qt.html#ConnectionType-enum">Qt::AutoConnection</a> and ignores return values.</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument)) -&gt; bool</code><br>2) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>3) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>4) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>5) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>6) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>7) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>8) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>9) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>10) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>11) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QMetaObject::invokeMethod(QObject* obj, const char* member, QGenericReturnArgument ret, QGenericArgument val0 = ?, QGenericArgument val1 = ?, QGenericArgument val2 = ?, QGenericArgument val3 = ?, QGenericArgument val4 = ?, QGenericArgument val5 = ?, QGenericArgument val6 = ?, QGenericArgument val7 = ?, QGenericArgument val8 = ?, QGenericArgument val9 = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#invokeMethod-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qmetaobject.html#invokeMethod">invokeMethod</a>().</p>
+<p>This overload always invokes the member using the connection type <a href="http://doc.qt.io/qt-5/qt.html#ConnectionType-enum">Qt::AutoConnection</a>.</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument)) -&gt; bool</code><br>2) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>3) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>4) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>5) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>6) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>7) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>8) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>9) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>10) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>11) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_return_argument::GenericReturnArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QMetaObject::invokeMethod(QObject* obj, const char* member, Qt::ConnectionType arg3, QGenericReturnArgument ret, QGenericArgument val0 = ?, QGenericArgument val1 = ?, QGenericArgument val2 = ?, QGenericArgument val3 = ?, QGenericArgument val4 = ?, QGenericArgument val5 = ?, QGenericArgument val6 = ?, QGenericArgument val7 = ?, QGenericArgument val8 = ?, QGenericArgument val9 = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#invokeMethod">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Invokes the <i>member</i> (a signal or a slot name) on the object <i>obj</i>. Returns <code>true</code> if the member could be invoked. Returns <code>false</code> if there is no such member or the parameters did not match.</p>
+<p>The invocation can be either synchronous or asynchronous, depending on <i>type</i>:</p>
+<ul>
+<li>If <i>type</i> is <a href="http://doc.qt.io/qt-5/qt.html#ConnectionType-enum">Qt::DirectConnection</a>, the member will be invoked immediately.</li>
+<li>If <i>type</i> is <a href="http://doc.qt.io/qt-5/qt.html#ConnectionType-enum">Qt::QueuedConnection</a>, a <a href="http://doc.qt.io/qt-5/qevent.html">QEvent</a> will be sent and the member is invoked as soon as the application enters the main event loop.</li>
+<li>If <i>type</i> is <a href="http://doc.qt.io/qt-5/qt.html#ConnectionType-enum">Qt::BlockingQueuedConnection</a>, the method will be invoked in the same way as for <a href="http://doc.qt.io/qt-5/qt.html#ConnectionType-enum">Qt::QueuedConnection</a>, except that the current thread will block until the event is delivered. Using this connection type to communicate between objects in the same thread will lead to deadlocks.</li>
+<li>If <i>type</i> is <a href="http://doc.qt.io/qt-5/qt.html#ConnectionType-enum">Qt::AutoConnection</a>, the member is invoked synchronously if <i>obj</i> lives in the same thread as the caller; otherwise it will invoke the member asynchronously.</li>
+</ul>
+<p>The return value of the <i>member</i> function call is placed in <i>ret</i>. If the invocation is asynchronous, the return value cannot be evaluated. You can pass up to ten arguments (<i>val0</i>, <i>val1</i>, <i>val2</i>, <i>val3</i>, <i>val4</i>, <i>val5</i>, <i>val6</i>, <i>val7</i>, <i>val8</i>, and <i>val9</i>) to the <i>member</i> function.</p>
+<p><a href="http://doc.qt.io/qt-5/qgenericargument.html">QGenericArgument</a> and <a href="http://doc.qt.io/qt-5/qgenericreturnargument.html">QGenericReturnArgument</a> are internal helper classes. Because signals and slots can be dynamically invoked, you must enclose the arguments using the <a href="http://doc.qt.io/qt-5/qmetaobject.html#Q_ARG">Q_ARG</a>() and <a href="http://doc.qt.io/qt-5/qmetaobject.html#Q_RETURN_ARG">Q_RETURN_ARG</a>() macros. <a href="http://doc.qt.io/qt-5/qmetaobject.html#Q_ARG">Q_ARG</a>() takes a type name and a const reference of that type; <a href="http://doc.qt.io/qt-5/qmetaobject.html#Q_RETURN_ARG">Q_RETURN_ARG</a>() takes a type name and a non-const reference.</p>
+<p>You only need to pass the name of the signal or slot to this function, not the entire signature. For example, to asynchronously invoke the <a href="http://doc.qt.io/qt-5/qthread.html#quit">quit()</a> slot on a <a href="http://doc.qt.io/qt-5/qthread.html">QThread</a>, use the following code:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a></span><span class="operator">::</span>invokeMethod(thread<span class="operator">,</span> <span class="string">&quot;quit&quot;</span><span class="operator">,</span>
+&#32;                         <span class="type"><a href="http://doc.qt.io/qt-5/qt.html">Qt</a></span><span class="operator">::</span>QueuedConnection);</pre>
+<p>With asynchronous method invocations, the parameters must be of types that are known to Qt&#39;s meta-object system, because Qt needs to copy the arguments to store them in an event behind the scenes. If you try to use a queued connection and get the error message</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a></span><span class="operator">::</span>invokeMethod: Unable to handle unregistered datatype <span class="char">&#39;MyType&#39;</span></pre>
+<p>call <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>() to register the data type before you call invokeMethod().</p>
+<p>To synchronously invoke the <code>compute(QString, int, double)</code> slot on some arbitrary object <code>obj</code> retrieve its return value:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> retVal;
+<span class="type"><a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a></span><span class="operator">::</span>invokeMethod(obj<span class="operator">,</span> <span class="string">&quot;compute&quot;</span><span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qt.html">Qt</a></span><span class="operator">::</span>DirectConnection<span class="operator">,</span>
+&#32;                         Q_RETURN_ARG(<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">,</span> retVal)<span class="operator">,</span>
+&#32;                         Q_ARG(<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">,</span> <span class="string">&quot;sqrt&quot;</span>)<span class="operator">,</span>
+&#32;                         Q_ARG(<span class="type">int</span><span class="operator">,</span> <span class="number">42</span>)<span class="operator">,</span>
+&#32;                         Q_ARG(<span class="type">double</span><span class="operator">,</span> <span class="number">9.7</span>));</pre>
+<p>If the &quot;compute&quot; slot does not take exactly one <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>, one int and one double in the specified order, the call will fail.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#Q_ARG">Q_ARG</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#Q_RETURN_ARG">Q_RETURN_ARG</a>(), <a href="http://doc.qt.io/qt-5/qmetatype.html#qRegisterMetaType">qRegisterMetaType</a>(), and <a href="http://doc.qt.io/qt-5/qmetamethod.html#invoke">QMetaMethod::invoke</a>().</p></div></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType)) -&gt; bool</code><br>2) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>3) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>4) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>5) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>6) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>7) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>8) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>9) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>10) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>11) <code>fn invoke_method((*mut ::object::Object, *const libc::c_char, ::qt::ConnectionType, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QMetaObject::invokeMethod(QObject* obj, const char* member, Qt::ConnectionType type, QGenericArgument val0 = ?, QGenericArgument val1 = ?, QGenericArgument val2 = ?, QGenericArgument val3 = ?, QGenericArgument val4 = ?, QGenericArgument val5 = ?, QGenericArgument val6 = ?, QGenericArgument val7 = ?, QGenericArgument val8 = ?, QGenericArgument val9 = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#invokeMethod-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qmetaobject.html#invokeMethod">invokeMethod</a>().</p>
+<p>This overload can be used if the return value of the member is of no interest.</p></div></p>
+</div><h4 id='method.metacall' class='method'><code>fn <a href='#method.metacall' class='fnname'>metacall</a>(arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>, arg2: <a class='enum' href='../../qt_core/meta_object/enum.Call.html' title='qt_core::meta_object::Call'>Call</a>, arg3: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, arg4: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static int QMetaObject::metacall(QObject* arg1, QMetaObject::Call arg2, int arg3, void** arg4)</code></span></p>
+</div><h4 id='method.method' class='method'><code>fn <a href='#method.method' class='fnname'>method</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectMethodArgs.html' title='qt_core::meta_object::overloading::MetaObjectMethodArgs'>MetaObjectMethodArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::method</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn method(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::meta_method::MetaMethod&gt;</code><br>2) <code>fn method(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::meta_method::MetaMethod</code><br>
+C++ method: <span style='color: green;'><code>QMetaMethod QMetaObject::method(int index) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#method">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the meta-data for the method with the given <i>index</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#methodCount">methodCount</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#methodOffset">methodOffset</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfMethod">indexOfMethod</a>().</p></div></p>
+</div><h4 id='method.method_count' class='method'><code>fn <a href='#method.method_count' class='fnname'>method_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::methodCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#methodCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of methods in this class, including the number of methods provided by each base class. These include signals and slots as well as normal member functions.</p>
+<p>Use code like the following to obtain a <a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a> containing the methods specific to a given class:</p>
+<pre class="cpp"><span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a></span><span class="operator">*</span> metaObject <span class="operator">=</span> obj<span class="operator">-</span><span class="operator">&gt;</span>metaObject();
+<span class="type"><a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a></span> methods;
+<span class="keyword">for</span>(<span class="type">int</span> i <span class="operator">=</span> metaObject<span class="operator">-</span><span class="operator">&gt;</span>methodOffset(); i <span class="operator">&lt;</span> metaObject<span class="operator">-</span><span class="operator">&gt;</span>methodCount(); <span class="operator">+</span><span class="operator">+</span>i)
+&#32;   methods <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">::</span>fromLatin1(metaObject<span class="operator">-</span><span class="operator">&gt;</span>method(i)<span class="operator">.</span>methodSignature());</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#method">method</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#methodOffset">methodOffset</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfMethod">indexOfMethod</a>().</p></div></p>
+</div><h4 id='method.method_offset' class='method'><code>fn <a href='#method.method_offset' class='fnname'>method_offset</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::methodOffset() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#methodOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the method offset for this class; i.e. the index position of this class&#39;s first member function.</p>
+<p>The offset is the sum of all the methods in the class&#39;s superclasses (which is always positive since <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> has the deleteLater() slot and a destroyed() signal).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#method">method</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#methodCount">methodCount</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfMethod">indexOfMethod</a>().</p></div></p>
+</div><h4 id='method.new_instance' class='method'><code>fn <a href='#method.new_instance' class='fnname'>new_instance</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectNewInstanceArgs.html' title='qt_core::meta_object::overloading::MetaObjectNewInstanceArgs'>MetaObjectNewInstanceArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::newInstance</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new_instance(&amp;self, ()) -&gt; *mut ::object::Object</code><br>2) <code>fn new_instance(&amp;self, &amp;::generic_argument::GenericArgument) -&gt; *mut ::object::Object</code><br>3) <code>fn new_instance(&amp;self, (&amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; *mut ::object::Object</code><br>4) <code>fn new_instance(&amp;self, (&amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; *mut ::object::Object</code><br>5) <code>fn new_instance(&amp;self, (&amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; *mut ::object::Object</code><br>6) <code>fn new_instance(&amp;self, (&amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; *mut ::object::Object</code><br>7) <code>fn new_instance(&amp;self, (&amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; *mut ::object::Object</code><br>8) <code>fn new_instance(&amp;self, (&amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; *mut ::object::Object</code><br>9) <code>fn new_instance(&amp;self, (&amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; *mut ::object::Object</code><br>10) <code>fn new_instance(&amp;self, (&amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; *mut ::object::Object</code><br>11) <code>fn new_instance(&amp;self, (&amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument, &amp;::generic_argument::GenericArgument)) -&gt; *mut ::object::Object</code><br>
+C++ method: <span style='color: green;'><code>QObject* QMetaObject::newInstance(QGenericArgument val0 = ?, QGenericArgument val1 = ?, QGenericArgument val2 = ?, QGenericArgument val3 = ?, QGenericArgument val4 = ?, QGenericArgument val5 = ?, QGenericArgument val6 = ?, QGenericArgument val7 = ?, QGenericArgument val8 = ?, QGenericArgument val9 = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#newInstance">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Constructs a new instance of this class. You can pass up to ten arguments (<i>val0</i>, <i>val1</i>, <i>val2</i>, <i>val3</i>, <i>val4</i>, <i>val5</i>, <i>val6</i>, <i>val7</i>, <i>val8</i>, and <i>val9</i>) to the constructor. Returns the new object, or 0 if no suitable constructor is available.</p>
+<p>Note that only constructors that are declared with the <a href="http://doc.qt.io/qt-5/qobject.html#Q_INVOKABLE">Q_INVOKABLE</a> modifier are made available through the meta-object system.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#Q_ARG">Q_ARG</a>() and <a href="http://doc.qt.io/qt-5/qmetaobject.html#constructor">constructor</a>().</p></div></p>
+</div><h4 id='method.normalized_signature' class='method'><code>fn <a href='#method.normalized_signature' class='fnname'>normalized_signature</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectNormalizedSignatureArgs.html' title='qt_core::meta_object::overloading::MetaObjectNormalizedSignatureArgs'>MetaObjectNormalizedSignatureArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::normalizedSignature</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn normalized_signature((*const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn normalized_signature((*const libc::c_char, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>static QByteArray QMetaObject::normalizedSignature(const char* method)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedSignature">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Normalizes the signature of the given <i>method</i>.</p>
+<p>Qt uses normalized signatures to decide whether two given signals and slots are compatible. Normalization reduces whitespace to a minimum, moves &#39;const&#39; to the front where appropriate, removes &#39;const&#39; from value types and replaces const references with values.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#checkConnectArgs">checkConnectArgs</a>() and <a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedType">normalizedType</a>().</p></div></p>
+</div><h4 id='method.normalized_type' class='method'><code>fn <a href='#method.normalized_type' class='fnname'>normalized_type</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectNormalizedTypeArgs.html' title='qt_core::meta_object::overloading::MetaObjectNormalizedTypeArgs'>MetaObjectNormalizedTypeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::normalizedType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn normalized_type((*const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn normalized_type((*const libc::c_char, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>static QByteArray QMetaObject::normalizedType(const char* type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Normalizes a <i>type</i>.</p>
+<p>See <a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedSignature">QMetaObject::normalizedSignature</a>() for a description on how Qt normalizes.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a></span> normType <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a></span><span class="operator">::</span>normalizedType(<span class="string">&quot; int    const  <em>&quot;</span>);
+<span class="comment">// normType is now &quot;const int</em>&quot;</span></pre>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#normalizedSignature">normalizedSignature</a>().</p></div></p>
+</div><h4 id='method.property' class='method'><code>fn <a href='#method.property' class='fnname'>property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectPropertyArgs.html' title='qt_core::meta_object::overloading::MetaObjectPropertyArgs'>MetaObjectPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::property</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::meta_property::MetaProperty&gt;</code><br>2) <code>fn property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::meta_property::MetaProperty</code><br>
+C++ method: <span style='color: green;'><code>QMetaProperty QMetaObject::property(int index) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#property">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the meta-data for the property with the given <i>index</i>. If no such property exists, a null <a href="http://doc.qt.io/qt-5/qmetaproperty.html">QMetaProperty</a> is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#propertyCount">propertyCount</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#propertyOffset">propertyOffset</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfProperty">indexOfProperty</a>().</p></div></p>
+</div><h4 id='method.property_count' class='method'><code>fn <a href='#method.property_count' class='fnname'>property_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::propertyCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#propertyCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of properties in this class, including the number of properties provided by each base class.</p>
+<p>Use code like the following to obtain a <a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a> containing the properties specific to a given class:</p>
+<pre class="cpp"><span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qmetaobject.html">QMetaObject</a></span><span class="operator">*</span> metaObject <span class="operator">=</span> obj<span class="operator">-</span><span class="operator">&gt;</span>metaObject();
+<span class="type"><a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a></span> properties;
+<span class="keyword">for</span>(<span class="type">int</span> i <span class="operator">=</span> metaObject<span class="operator">-</span><span class="operator">&gt;</span>propertyOffset(); i <span class="operator">&lt;</span> metaObject<span class="operator">-</span><span class="operator">&gt;</span>propertyCount(); <span class="operator">+</span><span class="operator">+</span>i)
+&#32;   properties <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">::</span>fromLatin1(metaObject<span class="operator">-</span><span class="operator">&gt;</span>property(i)<span class="operator">.</span>name());</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#property">property</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#propertyOffset">propertyOffset</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfProperty">indexOfProperty</a>().</p></div></p>
+</div><h4 id='method.property_offset' class='method'><code>fn <a href='#method.property_offset' class='fnname'>property_offset</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::propertyOffset() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#propertyOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the property offset for this class; i.e. the index position of this class&#39;s first property.</p>
+<p>The offset is the sum of all the properties in the class&#39;s superclasses (which is always positive since <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> has the name() property).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#property">property</a>(), <a href="http://doc.qt.io/qt-5/qmetaobject.html#propertyCount">propertyCount</a>(), and <a href="http://doc.qt.io/qt-5/qmetaobject.html#indexOfProperty">indexOfProperty</a>().</p></div></p>
+</div><h4 id='method.static_metacall' class='method'><code>fn <a href='#method.static_metacall' class='fnname'>static_metacall</a>(&amp;self, arg1: <a class='enum' href='../../qt_core/meta_object/enum.Call.html' title='qt_core::meta_object::Call'>Call</a>, arg2: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, arg3: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QMetaObject::static_metacall(QMetaObject::Call arg1, int arg2, void** arg3) const</code></span></p>
+</div><h4 id='method.super_class' class='method'><code>fn <a href='#method.super_class' class='fnname'>super_class</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/meta_object/struct.MetaObject.html' title='qt_core::meta_object::MetaObject'>MetaObject</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QMetaObject* QMetaObject::superClass() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#superClass">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the meta-object of the superclass, or 0 if there is no such object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaobject.html#className">className</a>().</p></div></p>
+</div><h4 id='method.tr' class='method'><code>fn <a href='#method.tr' class='fnname'>tr</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectTrArgs.html' title='qt_core::meta_object::overloading::MetaObjectTrArgs'>MetaObjectTrArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::tr</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn tr(&amp;self, (*const libc::c_char, *const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn tr(&amp;self, (*const libc::c_char, *const libc::c_char, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn tr(&amp;self, (*const libc::c_char, *const libc::c_char, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn tr(&amp;self, (*const libc::c_char, *const libc::c_char, libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QMetaObject::tr(const char* s, const char* c, int n = ?) const</code></span></p>
+</div><h4 id='method.user_property' class='method'><code>fn <a href='#method.user_property' class='fnname'>user_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/meta_object/overloading/trait.MetaObjectUserPropertyArgs.html' title='qt_core::meta_object::overloading::MetaObjectUserPropertyArgs'>MetaObjectUserPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMetaObject::userProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn user_property(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::meta_property::MetaProperty&gt;</code><br>2) <code>fn user_property(&amp;self, cpp_utils::AsStruct) -&gt; ::meta_property::MetaProperty</code><br>
+C++ method: <span style='color: green;'><code>QMetaProperty QMetaObject::userProperty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmetaobject.html#userProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the property that has the <code>USER</code> flag set to true.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmetaproperty.html#isUser">QMetaProperty::isUser</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/meta_object/struct.MetaObject.html' title='qt_core::meta_object::MetaObject'>MetaObject</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-107758' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/meta_object.rs.html#126-130' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/meta_object/struct.MetaObject.html' title='qt_core::meta_object::MetaObject'>MetaObject</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/meta_object/struct.MetaObject.html' title='qt_core::meta_object::MetaObject'>MetaObject</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-107889' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/meta_object.rs.html#676-683' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QMetaObject::~QMetaObject()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/meta_object/struct.MetaObject.html' title='qt_core::meta_object::MetaObject'>MetaObject</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-107892' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/meta_object.rs.html#685-689' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

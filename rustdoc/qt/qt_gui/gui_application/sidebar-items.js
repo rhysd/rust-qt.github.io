@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["GuiApplication","C++ type: <span style='color: green;'>```QGuiApplication```</span>"]]});

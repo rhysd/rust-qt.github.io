@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AbstractState","C++ type: <span style='color: green;'>```QAbstractState```</span>"]]});

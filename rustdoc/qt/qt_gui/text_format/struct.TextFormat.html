@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TextFormat` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TextFormat">
+
+    <title>qt_gui::text_format::TextFormat - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>text_format</a></p><script>window.sidebarCurrent = {name: 'TextFormat', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>text_format</a>::<wbr><a class='struct' href=''>TextFormat</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-158451' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_format.rs.html#282-284' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TextFormat {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTextFormat</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtextformat.html">QTextFormat</a> class provides formatting information for a <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a>.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qtextformat.html">QTextFormat</a> is a generic class used for describing the format of parts of a <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a>. The derived classes <a href="http://doc.qt.io/qt-5/qtextcharformat.html">QTextCharFormat</a>, <a href="http://doc.qt.io/qt-5/qtextblockformat.html">QTextBlockFormat</a>, <a href="http://doc.qt.io/qt-5/qtextlistformat.html">QTextListFormat</a>, and <a href="http://doc.qt.io/qt-5/qtexttableformat.html">QTextTableFormat</a> are usually more useful, and describe the formatting that is applied to specific parts of the document.</p>
+<p>A format has a <code>FormatType</code> which specifies the kinds of text item it can format; e.g. a block of text, a list, a table, etc. A format also has various properties (some specific to particular format types), as described by the Property enum. Every property has a corresponding Property.</p>
+<p>The format type is given by <a href="http://doc.qt.io/qt-5/qtextformat.html#type">type</a>(), and the format can be tested with <a href="http://doc.qt.io/qt-5/qtextformat.html#isCharFormat">isCharFormat</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#isBlockFormat">isBlockFormat</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#isListFormat">isListFormat</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#isTableFormat">isTableFormat</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#isFrameFormat">isFrameFormat</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#isImageFormat">isImageFormat</a>(). If the type is determined, it can be retrieved with <a href="http://doc.qt.io/qt-5/qtextformat.html#toCharFormat">toCharFormat</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#toBlockFormat">toBlockFormat</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#toListFormat">toListFormat</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#toTableFormat">toTableFormat</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#toFrameFormat">toFrameFormat</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#toImageFormat">toImageFormat</a>().</p>
+<p>A format&#39;s properties can be set with the <a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>() functions, and retrieved with <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>() as appropriate. All the property IDs used in the format can be retrieved with allPropertyIds(). One format can be merged into another using <a href="http://doc.qt.io/qt-5/qtextformat.html#merge">merge</a>().</p>
+<p>A format&#39;s object index can be set with <a href="http://doc.qt.io/qt-5/qtextformat.html#setObjectIndex">setObjectIndex</a>(), and retrieved with <a href="http://doc.qt.io/qt-5/qtextformat.html#objectIndex">objectIndex</a>(). These methods can be used to associate the format with a <a href="http://doc.qt.io/qt-5/qtextobject.html">QTextObject</a>. It is used to represent lists, frames, and tables inside the document.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-158456' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_format.rs.html#292-853' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatAsQVariantArgs.html' title='qt_gui::text_format::overloading::TextFormatAsQVariantArgs'>TextFormatAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QTextFormat::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text format as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></p></div></p>
+</div><h4 id='method.background' class='method'><code>fn <a href='#method.background' class='fnname'>background</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatBackgroundArgs.html' title='qt_gui::text_format::overloading::TextFormatBackgroundArgs'>TextFormatBackgroundArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::background</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn background(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>2) <code>fn background(&amp;self, cpp_utils::AsStruct) -&gt; ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QTextFormat::background() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#background">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush used to paint the document&#39;s background.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setBackground">setBackground</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#clearBackground">clearBackground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#foreground">foreground</a>().</p></div></p>
+</div><h4 id='method.bool_property' class='method'><code>fn <a href='#method.bool_property' class='fnname'>bool_property</a>(&amp;self, property_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::boolProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property specified by <i>propertyId</i>. If the property isn&#39;t of QTextFormat::Bool type, false is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.brush_property' class='method'><code>fn <a href='#method.brush_property' class='fnname'>brush_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatBrushPropertyArgs.html' title='qt_gui::text_format::overloading::TextFormatBrushPropertyArgs'>TextFormatBrushPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::brushProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn brush_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>2) <code>fn brush_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QTextFormat::brushProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#brushProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>; if the property isn&#39;t of QVariant::Brush type, <a href="http://doc.qt.io/qt-5/qt.html#BrushStyle-enum">Qt::NoBrush</a> is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.clear_background' class='method'><code>fn <a href='#method.clear_background' class='fnname'>clear_background</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextFormat::clearBackground()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#clearBackground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the brush used to paint the document&#39;s background. The default brush will be used.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#background">background</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#setBackground">setBackground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#clearForeground">clearForeground</a>().</p></div></p>
+</div><h4 id='method.clear_foreground' class='method'><code>fn <a href='#method.clear_foreground' class='fnname'>clear_foreground</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextFormat::clearForeground()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#clearForeground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the brush used to paint the document&#39;s foreground. The default brush will be used.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#foreground">foreground</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#setForeground">setForeground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#clearBackground">clearBackground</a>().</p></div></p>
+</div><h4 id='method.clear_property' class='method'><code>fn <a href='#method.clear_property' class='fnname'>clear_property</a>(&amp;mut self, property_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextFormat::clearProperty(int propertyId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#clearProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the value of the property given by <i>propertyId</i></p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.color_property' class='method'><code>fn <a href='#method.color_property' class='fnname'>color_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatColorPropertyArgs.html' title='qt_gui::text_format::overloading::TextFormatColorPropertyArgs'>TextFormatColorPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::colorProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn color_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn color_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QTextFormat::colorProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>; if the property isn&#39;t of QVariant::Color type, an invalid color is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.double_property' class='method'><code>fn <a href='#method.double_property' class='fnname'>double_property</a>(&amp;self, property_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextFormat::doubleProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property specified by <i>propertyId</i>. If the property isn&#39;t of QVariant::Double or <a href="http://doc.qt.io/qt-5/qmetatype.html#Type-enum">QMetaType::Float</a> type, 0 is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.foreground' class='method'><code>fn <a href='#method.foreground' class='fnname'>foreground</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatForegroundArgs.html' title='qt_gui::text_format::overloading::TextFormatForegroundArgs'>TextFormatForegroundArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::foreground</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn foreground(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>2) <code>fn foreground(&amp;self, cpp_utils::AsStruct) -&gt; ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QTextFormat::foreground() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#foreground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush used to render foreground details, such as text, frame outlines, and table borders.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setForeground">setForeground</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#clearForeground">clearForeground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#background">background</a>().</p></div></p>
+</div><h4 id='method.has_property' class='method'><code>fn <a href='#method.has_property' class='fnname'>has_property</a>(&amp;self, property_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::hasProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#hasProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the text format has a property with the given <i>propertyId</i>; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#properties">properties</a>() and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.int_property' class='method'><code>fn <a href='#method.int_property' class='fnname'>int_property</a>(&amp;self, property_id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextFormat::intProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property specified by <i>propertyId</i>. If the property is not of QTextFormat::Integer type, 0 is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.is_block_format' class='method'><code>fn <a href='#method.is_block_format' class='fnname'>is_block_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::isBlockFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isBlockFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>BlockFormat</code>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_char_format' class='method'><code>fn <a href='#method.is_char_format' class='fnname'>is_char_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::isCharFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isCharFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>CharFormat</code>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_empty' class='method'><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::isEmpty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isEmpty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns true if the format does not store any properties; false otherwise.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#propertyCount">propertyCount</a>() and <a href="http://doc.qt.io/qt-5/qtextformat.html#properties">properties</a>().</p></div></p>
+</div><h4 id='method.is_frame_format' class='method'><code>fn <a href='#method.is_frame_format' class='fnname'>is_frame_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::isFrameFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isFrameFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>FrameFormat</code>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_image_format' class='method'><code>fn <a href='#method.is_image_format' class='fnname'>is_image_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::isImageFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isImageFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is an image format; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_list_format' class='method'><code>fn <a href='#method.is_list_format' class='fnname'>is_list_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::isListFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isListFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>ListFormat</code>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_table_cell_format' class='method'><code>fn <a href='#method.is_table_cell_format' class='fnname'>is_table_cell_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::isTableCellFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isTableCellFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>TableCellFormat</code>; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.is_table_format' class='method'><code>fn <a href='#method.is_table_format' class='fnname'>is_table_format</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::isTableFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isTableFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is a <code>TableFormat</code>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the format is valid (i.e. is not <a href="http://doc.qt.io/qt-5/qtextformat.html#FormatType-enum">InvalidFormat</a>); otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.layout_direction' class='method'><code>fn <a href='#method.layout_direction' class='fnname'>layout_direction</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.LayoutDirection.html' title='qt_core::qt::LayoutDirection'>LayoutDirection</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::LayoutDirection QTextFormat::layoutDirection() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#layoutDirection">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the document&#39;s layout direction.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setLayoutDirection">setLayoutDirection</a>().</p></div></p>
+</div><h4 id='method.length_property' class='method'><code>fn <a href='#method.length_property' class='fnname'>length_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatLengthPropertyArgs.html' title='qt_gui::text_format::overloading::TextFormatLengthPropertyArgs'>TextFormatLengthPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::lengthProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn length_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_length::TextLength&gt;</code><br>2) <code>fn length_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::text_length::TextLength</code><br>
+C++ method: <span style='color: green;'><code>QTextLength QTextFormat::lengthProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.length_vector_property' class='method'><code>fn <a href='#method.length_vector_property' class='fnname'>length_vector_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatLengthVectorPropertyArgs.html' title='qt_gui::text_format::overloading::TextFormatLengthVectorPropertyArgs'>TextFormatLengthVectorPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::lengthVectorProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn length_vector_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::vector::VectorTextLengthRef&gt;</code><br>2) <code>fn length_vector_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::vector::VectorTextLengthRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QTextLength&gt; QTextFormat::lengthVectorProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>. If the property isn&#39;t of QTextFormat::LengthVector type, an empty length vector is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.merge' class='method'><code>fn <a href='#method.merge' class='fnname'>merge</a>(&amp;mut self, other: &amp;<a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextFormat::merge(const QTextFormat&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#merge">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Merges the <i>other</i> format with this format; where there are conflicts the <i>other</i> format takes precedence.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatNewArgs.html' title='qt_gui::text_format::overloading::TextFormatNewArgs'>TextFormatNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::QTextFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::text_format::TextFormat</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_format::TextFormat&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextFormat::QTextFormat()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::text_format::TextFormat, cpp_utils::AsStruct)) -&gt; ::text_format::TextFormat</code><br>2) <code>fn new((&amp;::text_format::TextFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_format::TextFormat&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextFormat::QTextFormat(const QTextFormat&amp; rhs)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, cpp_utils::AsStruct)) -&gt; ::text_format::TextFormat</code><br>2) <code>fn new((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_format::TextFormat&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextFormat::QTextFormat(int type)</code></span></p>
+</div><h4 id='method.object_index' class='method'><code>fn <a href='#method.object_index' class='fnname'>object_index</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextFormat::objectIndex() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#objectIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index of the format object, or -1 if the format object is invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setObjectIndex">setObjectIndex</a>().</p></div></p>
+</div><h4 id='method.object_type' class='method'><code>fn <a href='#method.object_type' class='fnname'>object_type</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextFormat::objectType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#objectType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text format&#39;s object type.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#ObjectTypes-enum">ObjectTypes</a> and <a href="http://doc.qt.io/qt-5/qtextformat.html#setObjectType">setObjectType</a>().</p></div></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, rhs: &amp;'l1 <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat&amp; QTextFormat::operator=(const QTextFormat&amp; rhs)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the <i>other</i> text format to this text format, and returns a reference to this text format.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, rhs: &amp;<a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::operator==(const QTextFormat&amp; rhs) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is the same as the <i>other</i> text format.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, rhs: &amp;<a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextFormat::operator!=(const QTextFormat&amp; rhs) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this text format is different from the <i>other</i> text format.</p></div></p>
+</div><h4 id='method.pen_property' class='method'><code>fn <a href='#method.pen_property' class='fnname'>pen_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatPenPropertyArgs.html' title='qt_gui::text_format::overloading::TextFormatPenPropertyArgs'>TextFormatPenPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::penProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn pen_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pen::Pen&gt;</code><br>2) <code>fn pen_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::pen::Pen</code><br>
+C++ method: <span style='color: green;'><code>QPen QTextFormat::penProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#penProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>; if the property isn&#39;t of QVariant::Pen type, <a href="http://doc.qt.io/qt-5/qt.html#PenStyle-enum">Qt::NoPen</a> is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">stringProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.properties' class='method'><code>fn <a href='#method.properties' class='fnname'>properties</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatPropertiesArgs.html' title='qt_gui::text_format::overloading::TextFormatPropertiesArgs'>TextFormatPropertiesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::properties</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn properties(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::map::MapCIntVariantRef&gt;</code><br>2) <code>fn properties(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::map::MapCIntVariantRef</code><br>
+C++ method: <span style='color: green;'><code>QMap&lt;int, QVariant&gt; QTextFormat::properties() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#properties">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a map with all properties of this text format.</p></div></p>
+</div><h4 id='method.property' class='method'><code>fn <a href='#method.property' class='fnname'>property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatPropertyArgs.html' title='qt_gui::text_format::overloading::TextFormatPropertyArgs'>TextFormatPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::property</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QTextFormat::property(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#property">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the property specified by the given <i>propertyId</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>() and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.property_count' class='method'><code>fn <a href='#method.property_count' class='fnname'>property_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextFormat::propertyCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#propertyCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of properties stored in the format.</p>
+<p>This function was introduced in  Qt 4.3.</p></div></p>
+</div><h4 id='method.set_background' class='method'><code>fn <a href='#method.set_background' class='fnname'>set_background</a>(&amp;mut self, brush: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextFormat::setBackground(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setBackground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the brush use to paint the document&#39;s background to the <i>brush</i> specified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#background">background</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#clearBackground">clearBackground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#setForeground">setForeground</a>().</p></div></p>
+</div><h4 id='method.set_foreground' class='method'><code>fn <a href='#method.set_foreground' class='fnname'>set_foreground</a>(&amp;mut self, brush: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextFormat::setForeground(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setForeground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the foreground brush to the specified <i>brush</i>. The foreground brush is mostly used to render text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#foreground">foreground</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#clearForeground">clearForeground</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#setBackground">setBackground</a>().</p></div></p>
+</div><h4 id='method.set_layout_direction' class='method'><code>fn <a href='#method.set_layout_direction' class='fnname'>set_layout_direction</a>(&amp;mut self, direction: <a class='enum' href='../../qt_core/qt/enum.LayoutDirection.html' title='qt_core::qt::LayoutDirection'>LayoutDirection</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextFormat::setLayoutDirection(Qt::LayoutDirection direction)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setLayoutDirection">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the document&#39;s layout direction to the specified <i>direction</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#layoutDirection">layoutDirection</a>().</p></div></p>
+</div><h4 id='method.set_object_index' class='method'><code>fn <a href='#method.set_object_index' class='fnname'>set_object_index</a>(&amp;mut self, object: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextFormat::setObjectIndex(int object)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setObjectIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the format object&#39;s object <i>index</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#objectIndex">objectIndex</a>().</p></div></p>
+</div><h4 id='method.set_object_type' class='method'><code>fn <a href='#method.set_object_type' class='fnname'>set_object_type</a>(&amp;mut self, type_: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextFormat::setObjectType(int type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setObjectType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the text format&#39;s object type to <i>type</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#ObjectTypes-enum">ObjectTypes</a> and <a href="http://doc.qt.io/qt-5/qtextformat.html#objectType">objectType</a>().</p></div></p>
+</div><h4 id='method.set_property' class='method'><code>fn <a href='#method.set_property' class='fnname'>set_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatSetPropertyArgs.html' title='qt_gui::text_format::overloading::TextFormatSetPropertyArgs'>TextFormatSetPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::setProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_property(&amp;mut self, (libc::c_int, &amp;qt_core::variant::Variant)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextFormat::setProperty(int propertyId, const QVariant&amp; value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the property specified by the <i>propertyId</i> to the given <i>value</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#property">property</a>() and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_property(&amp;mut self, (libc::c_int, &amp;::vector::VectorTextLengthRef)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextFormat::setProperty(int propertyId, const QVector&lt;QTextLength&gt;&amp; lengths)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the value of the property given by <i>propertyId</i> to <i>value</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>() and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.string_property' class='method'><code>fn <a href='#method.string_property' class='fnname'>string_property</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatStringPropertyArgs.html' title='qt_gui::text_format::overloading::TextFormatStringPropertyArgs'>TextFormatStringPropertyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::stringProperty</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn string_property(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn string_property(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextFormat::stringProperty(int propertyId) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#stringProperty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the property given by <i>propertyId</i>; if the property isn&#39;t of QVariant::String type, an empty string is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#setProperty">setProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#boolProperty">boolProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#intProperty">intProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#doubleProperty">doubleProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#colorProperty">colorProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthProperty">lengthProperty</a>(), <a href="http://doc.qt.io/qt-5/qtextformat.html#lengthVectorProperty">lengthVectorProperty</a>(), and <a href="http://doc.qt.io/qt-5/qtextformat.html#Property-enum">Property</a>.</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextFormat::swap(QTextFormat&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this text format with <i>other</i>. This function is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.to_block_format' class='method'><code>fn <a href='#method.to_block_format' class='fnname'>to_block_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatToBlockFormatArgs.html' title='qt_gui::text_format::overloading::TextFormatToBlockFormatArgs'>TextFormatToBlockFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::toBlockFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_block_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_block_format::TextBlockFormat&gt;</code><br>2) <code>fn to_block_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_block_format::TextBlockFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextBlockFormat QTextFormat::toBlockFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toBlockFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a block format.</p></div></p>
+</div><h4 id='method.to_char_format' class='method'><code>fn <a href='#method.to_char_format' class='fnname'>to_char_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatToCharFormatArgs.html' title='qt_gui::text_format::overloading::TextFormatToCharFormatArgs'>TextFormatToCharFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::toCharFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_char_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_char_format::TextCharFormat&gt;</code><br>2) <code>fn to_char_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_char_format::TextCharFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextCharFormat QTextFormat::toCharFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toCharFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a character format.</p></div></p>
+</div><h4 id='method.to_frame_format' class='method'><code>fn <a href='#method.to_frame_format' class='fnname'>to_frame_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatToFrameFormatArgs.html' title='qt_gui::text_format::overloading::TextFormatToFrameFormatArgs'>TextFormatToFrameFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::toFrameFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_frame_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_frame_format::TextFrameFormat&gt;</code><br>2) <code>fn to_frame_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_frame_format::TextFrameFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextFrameFormat QTextFormat::toFrameFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toFrameFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a frame format.</p></div></p>
+</div><h4 id='method.to_image_format' class='method'><code>fn <a href='#method.to_image_format' class='fnname'>to_image_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatToImageFormatArgs.html' title='qt_gui::text_format::overloading::TextFormatToImageFormatArgs'>TextFormatToImageFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::toImageFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_image_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_image_format::TextImageFormat&gt;</code><br>2) <code>fn to_image_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_image_format::TextImageFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextImageFormat QTextFormat::toImageFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toImageFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as an image format.</p></div></p>
+</div><h4 id='method.to_list_format' class='method'><code>fn <a href='#method.to_list_format' class='fnname'>to_list_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatToListFormatArgs.html' title='qt_gui::text_format::overloading::TextFormatToListFormatArgs'>TextFormatToListFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::toListFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_list_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_list_format::TextListFormat&gt;</code><br>2) <code>fn to_list_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_list_format::TextListFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextListFormat QTextFormat::toListFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toListFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a list format.</p></div></p>
+</div><h4 id='method.to_table_cell_format' class='method'><code>fn <a href='#method.to_table_cell_format' class='fnname'>to_table_cell_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatToTableCellFormatArgs.html' title='qt_gui::text_format::overloading::TextFormatToTableCellFormatArgs'>TextFormatToTableCellFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::toTableCellFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_table_cell_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_table_cell_format::TextTableCellFormat&gt;</code><br>2) <code>fn to_table_cell_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_table_cell_format::TextTableCellFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextTableCellFormat QTextFormat::toTableCellFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toTableCellFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a table cell format.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.to_table_format' class='method'><code>fn <a href='#method.to_table_format' class='fnname'>to_table_format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_format/overloading/trait.TextFormatToTableFormatArgs.html' title='qt_gui::text_format::overloading::TextFormatToTableFormatArgs'>TextFormatToTableFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextFormat::toTableFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_table_format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_table_format::TextTableFormat&gt;</code><br>2) <code>fn to_table_format(&amp;self, cpp_utils::AsStruct) -&gt; ::text_table_format::TextTableFormat</code><br>
+C++ method: <span style='color: green;'><code>QTextTableFormat QTextFormat::toTableFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#toTableFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns this format as a table format.</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextFormat::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type of this format.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextformat.html#FormatType-enum">FormatType</a>.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-158454' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_format.rs.html#286-290' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-158635' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_format.rs.html#855-862' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QTextFormat::~QTextFormat()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextformat.html#dtor.QTextFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys this text format.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-158638' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_format.rs.html#864-868' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefAppendArgs.html' title='qt_gui::vector::overloading::VectorTextFormatRefAppendArgs'>VectorTextFormatRefAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-178507' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/vector.rs.html#18276-18284' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/vector/struct.VectorTextFormatRef.html' title='qt_gui::vector::VectorTextFormatRef'>VectorTextFormatRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefCountArgs.html' title='qt_gui::vector::overloading::VectorTextFormatRefCountArgs'>VectorTextFormatRefCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-178523' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/vector.rs.html#18297-18305' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/vector/struct.VectorTextFormatRef.html' title='qt_gui::vector::VectorTextFormatRef'>VectorTextFormatRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefFillArgs.html' title='qt_gui::vector::overloading::VectorTextFormatRefFillArgs'>VectorTextFormatRefFillArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-178534' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/vector.rs.html#18312-18323' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefFillArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/vector/struct.VectorTextFormatRef.html' title='qt_gui::vector::VectorTextFormatRef'>VectorTextFormatRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_gui/vector/struct.VectorTextFormatRef.html' title='qt_gui::vector::VectorTextFormatRef'>VectorTextFormatRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefIndexOfArgs.html' title='qt_gui::vector::overloading::VectorTextFormatRefIndexOfArgs'>VectorTextFormatRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-178554' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/vector.rs.html#18343-18351' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/vector/struct.VectorTextFormatRef.html' title='qt_gui::vector::VectorTextFormatRef'>VectorTextFormatRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefLastIndexOfArgs.html' title='qt_gui::vector::overloading::VectorTextFormatRefLastIndexOfArgs'>VectorTextFormatRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-178592' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/vector.rs.html#18395-18403' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/vector/struct.VectorTextFormatRef.html' title='qt_gui::vector::VectorTextFormatRef'>VectorTextFormatRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefOpAddAssignArgs.html' title='qt_gui::vector::overloading::VectorTextFormatRefOpAddAssignArgs'>VectorTextFormatRefOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-178735' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/vector.rs.html#18618-18629' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/vector/struct.VectorTextFormatRef.html' title='qt_gui::vector::VectorTextFormatRef'>VectorTextFormatRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_gui/vector/struct.VectorTextFormatRef.html' title='qt_gui::vector::VectorTextFormatRef'>VectorTextFormatRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefOpShlArgs.html' title='qt_gui::vector::overloading::VectorTextFormatRefOpShlArgs'>VectorTextFormatRefOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/text_format/struct.TextFormat.html' title='qt_gui::text_format::TextFormat'>TextFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-178754' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/vector.rs.html#18649-18661' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-6' class='method'><code>fn <a href='../../qt_gui/vector/overloading/trait.VectorTextFormatRefOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/vector/struct.VectorTextFormatRef.html' title='qt_gui::vector::VectorTextFormatRef'>VectorTextFormatRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_gui/vector/struct.VectorTextFormatRef.html' title='qt_gui::vector::VectorTextFormatRef'>VectorTextFormatRef</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

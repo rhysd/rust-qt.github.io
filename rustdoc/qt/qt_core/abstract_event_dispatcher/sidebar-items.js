@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AbstractEventDispatcher","C++ type: <span style='color: green;'>```QAbstractEventDispatcher```</span>"],["TimerInfo","C++ type: <span style='color: green;'>```QAbstractEventDispatcher::TimerInfo```</span>"]]});

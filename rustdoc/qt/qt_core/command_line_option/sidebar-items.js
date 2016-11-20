@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["swap","C++ method: <span style='color: green;'>```void swap(QCommandLineOption& value1, QCommandLineOption& value2)```</span>"]],"mod":[["overloading",""]],"struct":[["CommandLineOption","C++ type: <span style='color: green;'>```QCommandLineOption```</span>"]]});

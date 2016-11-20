@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["HashData","C++ type: <span style='color: green;'>```QHashData```</span>"],["Node","C++ type: <span style='color: green;'>```QHashData::Node```</span>"]]});

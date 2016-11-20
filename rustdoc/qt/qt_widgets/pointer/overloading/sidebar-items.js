@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["PointerAbstractItemViewRefNewArgs","This trait represents a set of arguments accepted by PointerAbstractItemViewRef::new method."],["PointerWidgetRefNewArgs","This trait represents a set of arguments accepted by PointerWidgetRef::new method."]]});

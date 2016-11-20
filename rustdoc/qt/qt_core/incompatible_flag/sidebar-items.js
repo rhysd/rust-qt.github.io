@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["IncompatibleFlag","C++ type: <span style='color: green;'>```QIncompatibleFlag```</span>"]]});

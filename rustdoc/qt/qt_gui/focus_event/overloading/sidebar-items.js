@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["FocusEventNewArgs","This trait represents a set of arguments accepted by FocusEvent::new method."],["FocusEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by FocusEvent::register_event_type method."]]});

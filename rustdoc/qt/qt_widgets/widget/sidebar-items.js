@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["RenderFlag","C++ type: <span style='color: green;'>```QWidget::RenderFlag```</span>"]],"fn":[["op_bit_or","C++ method: <span style='color: green;'>```operator|```</span>"]],"mod":[["overloading",""]],"struct":[["Widget","C++ type: <span style='color: green;'>```QWidget```</span>"]]});

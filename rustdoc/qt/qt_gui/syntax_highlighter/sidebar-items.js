@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["SyntaxHighlighter","C++ type: <span style='color: green;'>```QSyntaxHighlighter```</span>"]]});

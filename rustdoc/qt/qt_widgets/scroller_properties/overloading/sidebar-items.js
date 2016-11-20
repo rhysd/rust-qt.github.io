@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ScrollerPropertiesNewArgs","This trait represents a set of arguments accepted by ScrollerProperties::new method."],["ScrollerPropertiesScrollMetricArgs","This trait represents a set of arguments accepted by ScrollerProperties::scroll_metric method."]]});

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PaintEngine` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PaintEngine">
+
+    <title>qt_gui::paint_engine::PaintEngine - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>paint_engine</a></p><script>window.sidebarCurrent = {name: 'PaintEngine', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>paint_engine</a>::<wbr><a class='struct' href=''>PaintEngine</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-125165' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/paint_engine.rs.html#58-60' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PaintEngine {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPaintEngine</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> class provides an abstract definition of how <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> draws to a given device on a given platform.</p>
+<p>Qt provides several premade implementations of <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> for the different painter backends we support. The primary paint engine provided is the raster paint engine, which contains a software rasterizer which supports the full feature set on all supported platforms. This is the default for painting on <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a>-based classes in e.g. on Windows, X11 and Mac OS X, it is the backend for painting on <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> and it is used as a fallback for paint engines that do not support a certain capability. In addition we provide <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> implementations for <a href="http://doc.qt.io/qt-5/qpaintengine.html#Type-enum">OpenGL</a> (accessible through QGLWidget) and printing (which allows using <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> to draw on a QPrinter object).</p>
+<p>If one wants to use <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> to draw to a different backend, one must subclass <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> and reimplement all its virtual functions. The <a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> implementation is then made available by subclassing <a href="http://doc.qt.io/qt-5/qpaintdevice.html">QPaintDevice</a> and reimplementing the virtual function <a href="http://doc.qt.io/qt-5/qpaintdevice.html#paintEngine">QPaintDevice::paintEngine</a>().</p>
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html">QPaintEngine</a> is created and owned by the <a href="http://doc.qt.io/qt-5/qpaintdevice.html">QPaintDevice</a> that created it.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/paint_engine/struct.PaintEngine.html' title='qt_gui::paint_engine::PaintEngine'>PaintEngine</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-125170' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/paint_engine.rs.html#68-448' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.begin' class='method'><code>fn <a href='#method.begin' class='fnname'>begin</a>(&amp;mut self, pdev: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/paint_device/struct.PaintDevice.html' title='qt_gui::paint_device::PaintDevice'>PaintDevice</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual bool QPaintEngine::begin(QPaintDevice* pdev)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#begin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplement this function to initialise your paint engine when painting is to start on the paint device <i>pdev</i>. Return true if the initialization was successful; otherwise return false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintengine.html#end">end</a>() and <a href="http://doc.qt.io/qt-5/qpaintengine.html#isActive">isActive</a>().</p></div></p>
+</div><h4 id='method.clear_dirty' class='method'><code>fn <a href='#method.clear_dirty' class='fnname'>clear_dirty</a>(&amp;mut self, df: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/paint_engine/enum.DirtyFlag.html' title='qt_gui::paint_engine::DirtyFlag'>DirtyFlag</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPaintEngine::clearDirty(QFlags&lt;QPaintEngine::DirtyFlag&gt; df)</code></span></p>
+</div><h4 id='method.coordinate_offset' class='method'><code>fn <a href='#method.coordinate_offset' class='fnname'>coordinate_offset</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/paint_engine/overloading/trait.PaintEngineCoordinateOffsetArgs.html' title='qt_gui::paint_engine::overloading::PaintEngineCoordinateOffsetArgs'>PaintEngineCoordinateOffsetArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintEngine::coordinateOffset</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn coordinate_offset(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::point::Point&gt;</code><br>2) <code>fn coordinate_offset(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::point::Point</code><br>
+C++ method: <span style='color: green;'><code>virtual QPoint QPaintEngine::coordinateOffset() const</code></span></p>
+</div><h4 id='method.draw_ellipse' class='method'><code>fn <a href='#method.draw_ellipse' class='fnname'>draw_ellipse</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/paint_engine/overloading/trait.PaintEngineDrawEllipseArgs.html' title='qt_gui::paint_engine::overloading::PaintEngineDrawEllipseArgs'>PaintEngineDrawEllipseArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintEngine::drawEllipse</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn draw_ellipse(&amp;mut self, &amp;qt_core::rect::Rect) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawEllipse(const QRect&amp; r)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawEllipse-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The default implementation of this function calls the floating point version of this function</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn draw_ellipse(&amp;mut self, &amp;qt_core::rect_f::RectF) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawEllipse(const QRectF&amp; r)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawEllipse">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplement this function to draw the largest ellipse that can be contained within rectangle <i>rect</i>.</p>
+<p>The default implementation calls <a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPolygon">drawPolygon</a>().</p></div></p>
+</div><h4 id='method.draw_image' class='method'><code>fn <a href='#method.draw_image' class='fnname'>draw_image</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/paint_engine/overloading/trait.PaintEngineDrawImageArgs.html' title='qt_gui::paint_engine::overloading::PaintEngineDrawImageArgs'>PaintEngineDrawImageArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintEngine::drawImage</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn draw_image(&amp;mut self, (&amp;qt_core::rect_f::RectF, &amp;::image::Image, &amp;qt_core::rect_f::RectF)) -&gt; ()</code><br>2) <code>fn draw_image(&amp;mut self, (&amp;qt_core::rect_f::RectF, &amp;::image::Image, &amp;qt_core::rect_f::RectF, qt_core::flags::Flags&lt;qt_core::qt::ImageConversionFlag&gt;)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawImage(const QRectF&amp; r, const QImage&amp; pm, const QRectF&amp; sr, QFlags&lt;Qt::ImageConversionFlag&gt; flags = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplement this function to draw the part of the <i>image</i> specified by the <i>sr</i> rectangle in the given <i>rectangle</i> using the given conversion flags <i>flags</i>, to convert it to a pixmap.</p></div></p>
+</div><h4 id='method.draw_lines' class='method'><code>fn <a href='#method.draw_lines' class='fnname'>draw_lines</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/paint_engine/overloading/trait.PaintEngineDrawLinesArgs.html' title='qt_gui::paint_engine::overloading::PaintEngineDrawLinesArgs'>PaintEngineDrawLinesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintEngine::drawLines</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn draw_lines(&amp;mut self, (*const qt_core::line::Line, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawLines(const QLine* lines, int lineCount)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawLines-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The default implementation converts the first <i>lineCount</i> lines in <i>lines</i> to a <a href="http://doc.qt.io/qt-5/qlinef.html">QLineF</a> and calls the floating point version of this function.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn draw_lines(&amp;mut self, (*const qt_core::line_f::LineF, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawLines(const QLineF* lines, int lineCount)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawLines">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The default implementation splits the list of lines in <i>lines</i> into <i>lineCount</i> separate calls to <a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPath">drawPath</a>() or <a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPolygon">drawPolygon</a>() depending on the feature set of the paint engine.</p></div></p>
+</div><h4 id='method.draw_path' class='method'><code>fn <a href='#method.draw_path' class='fnname'>draw_path</a>(&amp;mut self, path: &amp;<a class='struct' href='../../qt_gui/painter_path/struct.PainterPath.html' title='qt_gui::painter_path::PainterPath'>PainterPath</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawPath(const QPainterPath&amp; path)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The default implementation ignores the <i>path</i> and does nothing.</p></div></p>
+</div><h4 id='method.draw_pixmap' class='method'><code>fn <a href='#method.draw_pixmap' class='fnname'>draw_pixmap</a>(&amp;mut self, r: &amp;<a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a>, pm: &amp;<a class='struct' href='../../qt_gui/pixmap/struct.Pixmap.html' title='qt_gui::pixmap::Pixmap'>Pixmap</a>, sr: &amp;<a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QPaintEngine::drawPixmap(const QRectF&amp; r, const QPixmap&amp; pm, const QRectF&amp; sr)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPixmap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplement this function to draw the part of the <i>pm</i> specified by the <i>sr</i> rectangle in the given <i>r</i>.</p></div></p>
+</div><h4 id='method.draw_points' class='method'><code>fn <a href='#method.draw_points' class='fnname'>draw_points</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/paint_engine/overloading/trait.PaintEngineDrawPointsArgs.html' title='qt_gui::paint_engine::overloading::PaintEngineDrawPointsArgs'>PaintEngineDrawPointsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintEngine::drawPoints</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn draw_points(&amp;mut self, (*const qt_core::point::Point, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawPoints(const QPoint* points, int pointCount)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPoints-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Draws the first <i>pointCount</i> points in the buffer <i>points</i></p>
+<p>The default implementation converts the first <i>pointCount</i> QPoints in <i>points</i> to QPointFs and calls the floating point version of <a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPoints">drawPoints</a>.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn draw_points(&amp;mut self, (*const qt_core::point_f::PointF, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawPoints(const QPointF* points, int pointCount)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPoints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Draws the first <i>pointCount</i> points in the buffer <i>points</i></p></div></p>
+</div><h4 id='method.draw_polygon' class='method'><code>fn <a href='#method.draw_polygon' class='fnname'>draw_polygon</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/paint_engine/overloading/trait.PaintEngineDrawPolygonArgs.html' title='qt_gui::paint_engine::overloading::PaintEngineDrawPolygonArgs'>PaintEngineDrawPolygonArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintEngine::drawPolygon</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn draw_polygon(&amp;mut self, (*const qt_core::point::Point, libc::c_int, ::paint_engine::PolygonDrawMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawPolygon(const QPoint* points, int pointCount, QPaintEngine::PolygonDrawMode mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPolygon-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Reimplement this virtual function to draw the polygon defined by the <i>pointCount</i> first points in <i>points</i>, using mode <i>mode</i>.</p>
+<p><b>Note: </b>At least one of the <a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPolygon">drawPolygon</a>() functions must be reimplemented.</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn draw_polygon(&amp;mut self, (*const qt_core::point_f::PointF, libc::c_int, ::paint_engine::PolygonDrawMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawPolygon(const QPointF* points, int pointCount, QPaintEngine::PolygonDrawMode mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPolygon">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplement this virtual function to draw the polygon defined by the <i>pointCount</i> first points in <i>points</i>, using mode <i>mode</i>.</p>
+<p><b>Note: </b>At least one of the drawPolygon() functions must be reimplemented.</p></div></p>
+</div><h4 id='method.draw_rects' class='method'><code>fn <a href='#method.draw_rects' class='fnname'>draw_rects</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/paint_engine/overloading/trait.PaintEngineDrawRectsArgs.html' title='qt_gui::paint_engine::overloading::PaintEngineDrawRectsArgs'>PaintEngineDrawRectsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintEngine::drawRects</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn draw_rects(&amp;mut self, (*const qt_core::rect::Rect, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawRects(const QRect* rects, int rectCount)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawRects-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The default implementation converts the first <i>rectCount</i> rectangles in the buffer <i>rects</i> to a <a href="http://doc.qt.io/qt-5/qrectf.html">QRectF</a> and calls the floating point version of this function.</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn draw_rects(&amp;mut self, (*const qt_core::rect_f::RectF, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawRects(const QRectF* rects, int rectCount)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawRects">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Draws the first <i>rectCount</i> rectangles in the buffer <i>rects</i>. The default implementation of this function calls <a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPath">drawPath</a>() or <a href="http://doc.qt.io/qt-5/qpaintengine.html#drawPolygon">drawPolygon</a>() depending on the feature set of the paint engine.</p></div></p>
+</div><h4 id='method.draw_text_item' class='method'><code>fn <a href='#method.draw_text_item' class='fnname'>draw_text_item</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>, text_item: &amp;<a class='struct' href='../../qt_gui/text_item/struct.TextItem.html' title='qt_gui::text_item::TextItem'>TextItem</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawTextItem(const QPointF&amp; p, const QTextItem&amp; textItem)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawTextItem">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function draws the text item <i>textItem</i> at position <i>p</i>. The default implementation of this function converts the text to a <a href="http://doc.qt.io/qt-5/qpainterpath.html">QPainterPath</a> and paints the resulting path.</p></div></p>
+</div><h4 id='method.draw_tiled_pixmap' class='method'><code>fn <a href='#method.draw_tiled_pixmap' class='fnname'>draw_tiled_pixmap</a>(&amp;mut self, r: &amp;<a class='struct' href='../../qt_core/rect_f/struct.RectF.html' title='qt_core::rect_f::RectF'>RectF</a>, pixmap: &amp;<a class='struct' href='../../qt_gui/pixmap/struct.Pixmap.html' title='qt_gui::pixmap::Pixmap'>Pixmap</a>, s: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QPaintEngine::drawTiledPixmap(const QRectF&amp; r, const QPixmap&amp; pixmap, const QPointF&amp; s)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#drawTiledPixmap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplement this function to draw the <i>pixmap</i> in the given <i>rect</i>, starting at the given <i>p</i>. The pixmap will be drawn repeatedly until the <i>rect</i> is filled.</p></div></p>
+</div><h4 id='method.end' class='method'><code>fn <a href='#method.end' class='fnname'>end</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual bool QPaintEngine::end()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#end">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplement this function to finish painting on the current paint device. Return true if painting was finished successfully; otherwise return false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintengine.html#begin">begin</a>() and <a href="http://doc.qt.io/qt-5/qpaintengine.html#isActive">isActive</a>().</p></div></p>
+</div><h4 id='method.fix_neg_rect' class='method'><code>fn <a href='#method.fix_neg_rect' class='fnname'>fix_neg_rect</a>(&amp;mut self, x: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, y: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, w: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, h: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPaintEngine::fix_neg_rect(int* x, int* y, int* w, int* h)</code></span></p>
+</div><h4 id='method.has_feature' class='method'><code>fn <a href='#method.has_feature' class='fnname'>has_feature</a>(&amp;self, feature: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/paint_engine/enum.PaintEngineFeature.html' title='qt_gui::paint_engine::PaintEngineFeature'>PaintEngineFeature</a>&gt;) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPaintEngine::hasFeature(QFlags&lt;QPaintEngine::PaintEngineFeature&gt; feature) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#hasFeature">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the paint engine supports the specified <i>feature</i>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_active' class='method'><code>fn <a href='#method.is_active' class='fnname'>is_active</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPaintEngine::isActive() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#isActive">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the paint engine is actively drawing; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintengine.html#setActive">setActive</a>().</p></div></p>
+</div><h4 id='method.is_extended' class='method'><code>fn <a href='#method.is_extended' class='fnname'>is_extended</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPaintEngine::isExtended() const</code></span></p>
+</div><h4 id='method.paint_device' class='method'><code>fn <a href='#method.paint_device' class='fnname'>paint_device</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/paint_device/struct.PaintDevice.html' title='qt_gui::paint_device::PaintDevice'>PaintDevice</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintDevice* QPaintEngine::paintDevice() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#paintDevice">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the device that this engine is painting on, if painting is active; otherwise returns 0.</p></div></p>
+</div><h4 id='method.painter' class='method'><code>fn <a href='#method.painter' class='fnname'>painter</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/painter/struct.Painter.html' title='qt_gui::painter::Painter'>Painter</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPainter* QPaintEngine::painter() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#painter">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the paint engine&#39;s painter.</p></div></p>
+</div><h4 id='method.set_active' class='method'><code>fn <a href='#method.set_active' class='fnname'>set_active</a>(&amp;mut self, new_state: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPaintEngine::setActive(bool newState)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#setActive">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the active state of the paint engine to <i>state</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintengine.html#isActive">isActive</a>().</p></div></p>
+</div><h4 id='method.set_dirty' class='method'><code>fn <a href='#method.set_dirty' class='fnname'>set_dirty</a>(&amp;mut self, df: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/paint_engine/enum.DirtyFlag.html' title='qt_gui::paint_engine::DirtyFlag'>DirtyFlag</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPaintEngine::setDirty(QFlags&lt;QPaintEngine::DirtyFlag&gt; df)</code></span></p>
+</div><h4 id='method.set_paint_device' class='method'><code>fn <a href='#method.set_paint_device' class='fnname'>set_paint_device</a>(&amp;mut self, device: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/paint_device/struct.PaintDevice.html' title='qt_gui::paint_device::PaintDevice'>PaintDevice</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPaintEngine::setPaintDevice(QPaintDevice* device)</code></span></p>
+</div><h4 id='method.set_system_clip' class='method'><code>fn <a href='#method.set_system_clip' class='fnname'>set_system_clip</a>(&amp;mut self, base_clip: &amp;<a class='struct' href='../../qt_gui/region/struct.Region.html' title='qt_gui::region::Region'>Region</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPaintEngine::setSystemClip(const QRegion&amp; baseClip)</code></span></p>
+</div><h4 id='method.set_system_rect' class='method'><code>fn <a href='#method.set_system_rect' class='fnname'>set_system_rect</a>(&amp;mut self, rect: &amp;<a class='struct' href='../../qt_core/rect/struct.Rect.html' title='qt_core::rect::Rect'>Rect</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPaintEngine::setSystemRect(const QRect&amp; rect)</code></span></p>
+</div><h4 id='method.sync_state' class='method'><code>fn <a href='#method.sync_state' class='fnname'>sync_state</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPaintEngine::syncState()</code></span></p>
+</div><h4 id='method.system_clip' class='method'><code>fn <a href='#method.system_clip' class='fnname'>system_clip</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/paint_engine/overloading/trait.PaintEngineSystemClipArgs.html' title='qt_gui::paint_engine::overloading::PaintEngineSystemClipArgs'>PaintEngineSystemClipArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintEngine::systemClip</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn system_clip(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::region::Region&gt;</code><br>2) <code>fn system_clip(&amp;self, cpp_utils::AsStruct) -&gt; ::region::Region</code><br>
+C++ method: <span style='color: green;'><code>QRegion QPaintEngine::systemClip() const</code></span></p>
+</div><h4 id='method.system_rect' class='method'><code>fn <a href='#method.system_rect' class='fnname'>system_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/paint_engine/overloading/trait.PaintEngineSystemRectArgs.html' title='qt_gui::paint_engine::overloading::PaintEngineSystemRectArgs'>PaintEngineSystemRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPaintEngine::systemRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn system_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect::Rect&gt;</code><br>2) <code>fn system_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect::Rect</code><br>
+C++ method: <span style='color: green;'><code>QRect QPaintEngine::systemRect() const</code></span></p>
+</div><h4 id='method.test_dirty' class='method'><code>fn <a href='#method.test_dirty' class='fnname'>test_dirty</a>(&amp;mut self, df: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/paint_engine/enum.DirtyFlag.html' title='qt_gui::paint_engine::DirtyFlag'>DirtyFlag</a>&gt;) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPaintEngine::testDirty(QFlags&lt;QPaintEngine::DirtyFlag&gt; df)</code></span></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/paint_engine/enum.Type.html' title='qt_gui::paint_engine::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual QPaintEngine::Type QPaintEngine::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplement this function to return the paint engine <a href="http://doc.qt.io/qt-5/qpaintengine.html#Type-enum">Type</a>.</p></div></p>
+</div><h4 id='method.update_state' class='method'><code>fn <a href='#method.update_state' class='fnname'>update_state</a>(&amp;mut self, state: &amp;<a class='struct' href='../../qt_gui/paint_engine_state/struct.PaintEngineState.html' title='qt_gui::paint_engine_state::PaintEngineState'>PaintEngineState</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QPaintEngine::updateState(const QPaintEngineState&amp; state)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#updateState">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplement this function to update the state of a paint engine.</p>
+<p>When implemented, this function is responsible for checking the paint engine&#39;s current <i>state</i> and update the properties that are changed. Use the <a href="http://doc.qt.io/qt-5/qpaintenginestate.html#statex">QPaintEngineState::state</a>() function to find out which properties that must be updated, then use the corresponding <a href="http://doc.qt.io/qt-5/qpaintenginestate.html#getfunction">get function</a> to retrieve the current values for the given properties.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpaintenginestate.html">QPaintEngineState</a>.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/paint_engine/struct.PaintEngine.html' title='qt_gui::paint_engine::PaintEngine'>PaintEngine</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-125168' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/paint_engine.rs.html#62-66' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/paint_engine/struct.PaintEngine.html' title='qt_gui::paint_engine::PaintEngine'>PaintEngine</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/paint_engine/struct.PaintEngine.html' title='qt_gui::paint_engine::PaintEngine'>PaintEngine</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-125283' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/paint_engine.rs.html#450-457' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QPaintEngine::~QPaintEngine()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpaintengine.html#dtor.QPaintEngine">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the paint engine.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/paint_engine/struct.PaintEngine.html' title='qt_gui::paint_engine::PaintEngine'>PaintEngine</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-125286' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/paint_engine.rs.html#459-463' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

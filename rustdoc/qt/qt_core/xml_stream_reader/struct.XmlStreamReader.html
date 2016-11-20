@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `XmlStreamReader` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, XmlStreamReader">
+
+    <title>qt_core::xml_stream_reader::XmlStreamReader - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>xml_stream_reader</a></p><script>window.sidebarCurrent = {name: 'XmlStreamReader', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>xml_stream_reader</a>::<wbr><a class='struct' href=''>XmlStreamReader</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-170928' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_reader.rs.html#89-91' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct XmlStreamReader {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QXmlStreamReader</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a> class provides a fast parser for reading well-formed XML via a simple streaming API.</p>
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a> is a faster and more convenient replacement for Qt&#39;s own SAX parser (see <a href="http://doc.qt.io/qt-5/qxmlsimplereader.html">QXmlSimpleReader</a>). In some cases it might also be a faster and more convenient alternative for use in applications that would otherwise use a DOM tree (see <a href="http://doc.qt.io/qt-5/qdomdocument.html">QDomDocument</a>). <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a> reads data either from a <a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a> (see <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#setDevice">setDevice</a>()), or from a raw <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> (see <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addData">addData</a>()).</p>
+<p>Qt provides <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> for writing XML.</p>
+<p>The basic concept of a stream reader is to report an XML document as a stream of tokens, similar to SAX. The main difference between <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a> and SAX is <i>how</i> these XML tokens are reported. With SAX, the application must provide handlers (callback functions) that receive so-called XML <i>events</i> from the parser at the parser&#39;s convenience. With <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a>, the application code itself drives the loop and pulls <i>tokens</i> from the reader, one after another, as it needs them. This is done by calling <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#readNext">readNext</a>(), where the reader reads from the input stream until it completes the next token, at which point it returns the <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>(). A set of convenient functions including <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isStartElement">isStartElement</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#text">text</a>() can then be used to examine the token to obtain information about what has been read. The big advantage of this <i>pulling</i> approach is the possibility to build recursive descent parsers with it, meaning you can split your XML parsing code easily into different methods or classes. This makes it easy to keep track of the application&#39;s own state when parsing XML.</p>
+<p>A typical loop with <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a> looks like this:</p>
+<pre class="cpp">  <span class="type"><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#QXmlStreamReader">QXmlStreamReader</a></span> xml;
+  <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+  <span class="keyword">while</span> (<span class="operator">!</span>xml<span class="operator">.</span>atEnd()) {
+&#32;       xml<span class="operator">.</span>readNext();
+&#32;       <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span> <span class="comment">// do processing</span>
+  }
+  <span class="keyword">if</span> (xml<span class="operator">.</span>hasError()) {
+&#32;       <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span> <span class="comment">// do error handling</span>
+  }</pre>
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a> is a well-formed XML 1.0 parser that does <i>not</i> include external parsed entities. As long as no error occurs, the application code can thus be assured that the data provided by the stream reader satisfies the W3C&#39;s criteria for well-formed XML. For example, you can be certain that all tags are indeed nested and closed properly, that references to internal entities have been replaced with the correct replacement text, and that attributes have been normalized or added according to the internal subset of the DTD.</p>
+<p>If an error occurs while parsing, <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#atEnd">atEnd</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#hasError">hasError</a>() return true, and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#error">error</a>() returns the error that occurred. The functions <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#errorString">errorString</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#lineNumber">lineNumber</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#columnNumber">columnNumber</a>(), and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#characterOffset">characterOffset</a>() are for constructing an appropriate error or warning message. To simplify application code, <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a> contains a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#raiseError">raiseError</a>() mechanism that lets you raise custom errors that trigger the same error handling described.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qtxml-streambookmarks-example.html">QXmlStream Bookmarks Example</a> illustrates how to use the recursive descent technique to read an XML bookmark file (XBEL) with a stream reader.</p>
+<a name="namespaces"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/xml_stream_reader/struct.XmlStreamReader.html' title='qt_core::xml_stream_reader::XmlStreamReader'>XmlStreamReader</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-170933' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_reader.rs.html#99-734' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.add_data' class='method'><code>fn <a href='#method.add_data' class='fnname'>add_data</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderAddDataArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderAddDataArgs'>XmlStreamReaderAddDataArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::addData</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn add_data(&amp;mut self, &amp;::byte_array::ByteArray) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamReader::addData(const QByteArray&amp; data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds more <i>data</i> for the reader to read. This function does nothing if the reader has a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#device">device</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#readNext">readNext</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#clear">clear</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn add_data(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamReader::addData(const QString&amp; data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addData-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds more <i>data</i> for the reader to read. This function does nothing if the reader has a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#device">device</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#readNext">readNext</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#clear">clear</a>().</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn add_data(&amp;mut self, *const libc::c_char) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamReader::addData(const char* data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addData-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds more <i>data</i> for the reader to read. This function does nothing if the reader has a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#device">device</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#readNext">readNext</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#clear">clear</a>().</p></div></p>
+</div><h4 id='method.add_extra_namespace_declaration' class='method'><code>fn <a href='#method.add_extra_namespace_declaration' class='fnname'>add_extra_namespace_declaration</a>(&amp;mut self, extra_namespace_declaraction: &amp;<a class='struct' href='../../qt_core/xml_stream_namespace_declaration/struct.XmlStreamNamespaceDeclaration.html' title='qt_core::xml_stream_namespace_declaration::XmlStreamNamespaceDeclaration'>XmlStreamNamespaceDeclaration</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamReader::addExtraNamespaceDeclaration(const QXmlStreamNamespaceDeclaration&amp; extraNamespaceDeclaraction)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addExtraNamespaceDeclaration">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds an <i>extraNamespaceDeclaration</i>. The declaration will be valid for children of the current element, or - should the function be called before any elements are read - for the entire XML document.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceDeclarations">namespaceDeclarations</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addExtraNamespaceDeclarations">addExtraNamespaceDeclarations</a>(), and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceProcessing-prop">setNamespaceProcessing</a>().</p></div></p>
+</div><h4 id='method.add_extra_namespace_declarations' class='method'><code>fn <a href='#method.add_extra_namespace_declarations' class='fnname'>add_extra_namespace_declarations</a>(&amp;mut self, extra_namespace_declaractions: &amp;<a class='struct' href='../../qt_core/vector/struct.VectorXmlStreamNamespaceDeclarationRef.html' title='qt_core::vector::VectorXmlStreamNamespaceDeclarationRef'>VectorXmlStreamNamespaceDeclarationRef</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamReader::addExtraNamespaceDeclarations(const QVector&lt;QXmlStreamNamespaceDeclaration&gt;&amp; extraNamespaceDeclaractions)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addExtraNamespaceDeclarations">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds a vector of declarations specified by <i>extraNamespaceDeclarations</i>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceDeclarations">namespaceDeclarations</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addExtraNamespaceDeclaration">addExtraNamespaceDeclaration</a>().</p></div></p>
+</div><h4 id='method.at_end' class='method'><code>fn <a href='#method.at_end' class='fnname'>at_end</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::atEnd() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#atEnd">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the reader has read until the end of the XML document, or if an <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#error">error</a>() has occurred and reading has been aborted. Otherwise, it returns <code>false</code>.</p>
+<p>When atEnd() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#hasError">hasError</a>() return true and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#error">error</a>() returns <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#Error-enum">PrematureEndOfDocumentError</a>, it means the XML has been well-formed so far, but a complete XML document has not been parsed. The next chunk of XML can be added with <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addData">addData</a>(), if the XML is being read from a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>, or by waiting for more data to arrive if the XML is being read from a <a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a>. Either way, atEnd() will return false once more data is available.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#hasError">hasError</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#error">error</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#device">device</a>(), and <a href="http://doc.qt.io/qt-5/qiodevice.html#atEnd">QIODevice::atEnd</a>().</p></div></p>
+</div><h4 id='method.attributes' class='method'><code>fn <a href='#method.attributes' class='fnname'>attributes</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderAttributesArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderAttributesArgs'>XmlStreamReaderAttributesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::attributes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn attributes(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::xml_stream_attributes::XmlStreamAttributes&gt;</code><br>2) <code>fn attributes(&amp;self, cpp_utils::AsStruct) -&gt; ::xml_stream_attributes::XmlStreamAttributes</code><br>
+C++ method: <span style='color: green;'><code>QXmlStreamAttributes QXmlStreamReader::attributes() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#attributes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the attributes of a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartElement</a>.</p></div></p>
+</div><h4 id='method.character_offset' class='method'><code>fn <a href='#method.character_offset' class='fnname'>character_offset</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QXmlStreamReader::characterOffset() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#characterOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current character offset, starting with 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#lineNumber">lineNumber</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#columnNumber">columnNumber</a>().</p></div></p>
+</div><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamReader::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes any <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#device">device</a>() or data from the reader and resets its internal state to the initial state.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addData">addData</a>().</p></div></p>
+</div><h4 id='method.column_number' class='method'><code>fn <a href='#method.column_number' class='fnname'>column_number</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QXmlStreamReader::columnNumber() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#columnNumber">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current column number, starting with 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#lineNumber">lineNumber</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#characterOffset">characterOffset</a>().</p></div></p>
+</div><h4 id='method.device' class='method'><code>fn <a href='#method.device' class='fnname'>device</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIODevice* QXmlStreamReader::device() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#device">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current device associated with the <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a>, or 0 if no device has been assigned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#setDevice">setDevice</a>().</p></div></p>
+</div><h4 id='method.document_encoding' class='method'><code>fn <a href='#method.document_encoding' class='fnname'>document_encoding</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderDocumentEncodingArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderDocumentEncodingArgs'>XmlStreamReaderDocumentEncodingArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::documentEncoding</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn document_encoding(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn document_encoding(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::documentEncoding() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#documentEncoding">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() is <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartDocument</a>, this function returns the encoding string as specified in the XML declaration. Otherwise an empty string is returned.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.document_version' class='method'><code>fn <a href='#method.document_version' class='fnname'>document_version</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderDocumentVersionArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderDocumentVersionArgs'>XmlStreamReaderDocumentVersionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::documentVersion</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn document_version(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn document_version(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::documentVersion() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#documentVersion">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() is <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartDocument</a>, this function returns the version string as specified in the XML declaration. Otherwise an empty string is returned.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.dtd_name' class='method'><code>fn <a href='#method.dtd_name' class='fnname'>dtd_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderDtdNameArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderDtdNameArgs'>XmlStreamReaderDtdNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::dtdName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn dtd_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn dtd_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::dtdName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#dtdName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() is <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">DTD</a>, this function returns the DTD&#39;s name. Otherwise an empty string is returned.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.dtd_public_id' class='method'><code>fn <a href='#method.dtd_public_id' class='fnname'>dtd_public_id</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderDtdPublicIdArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderDtdPublicIdArgs'>XmlStreamReaderDtdPublicIdArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::dtdPublicId</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn dtd_public_id(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn dtd_public_id(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::dtdPublicId() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#dtdPublicId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() is <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">DTD</a>, this function returns the DTD&#39;s public identifier. Otherwise an empty string is returned.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.dtd_system_id' class='method'><code>fn <a href='#method.dtd_system_id' class='fnname'>dtd_system_id</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderDtdSystemIdArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderDtdSystemIdArgs'>XmlStreamReaderDtdSystemIdArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::dtdSystemId</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn dtd_system_id(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn dtd_system_id(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::dtdSystemId() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#dtdSystemId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() is <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">DTD</a>, this function returns the DTD&#39;s system identifier. Otherwise an empty string is returned.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.entity_declarations' class='method'><code>fn <a href='#method.entity_declarations' class='fnname'>entity_declarations</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderEntityDeclarationsArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderEntityDeclarationsArgs'>XmlStreamReaderEntityDeclarationsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::entityDeclarations</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn entity_declarations(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::vector::VectorXmlStreamEntityDeclarationRef&gt;</code><br>2) <code>fn entity_declarations(&amp;self, cpp_utils::AsStruct) -&gt; ::vector::VectorXmlStreamEntityDeclarationRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QXmlStreamEntityDeclaration&gt; QXmlStreamReader::entityDeclarations() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#entityDeclarations">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() is <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">DTD</a>, this function returns the DTD&#39;s unparsed (external) entity declarations. Otherwise an empty vector is returned.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qxmlstreamentitydeclaration.html#QXmlStreamEntityDeclarations-typedef">QXmlStreamEntityDeclarations</a> class is defined to be a <a href="http://doc.qt.io/qt-5/qvector.html">QVector</a> of <a href="http://doc.qt.io/qt-5/qxmlstreamentitydeclaration.html">QXmlStreamEntityDeclaration</a>.</p></div></p>
+</div><h4 id='method.entity_resolver' class='method'><code>fn <a href='#method.entity_resolver' class='fnname'>entity_resolver</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/xml_stream_entity_resolver/struct.XmlStreamEntityResolver.html' title='qt_core::xml_stream_entity_resolver::XmlStreamEntityResolver'>XmlStreamEntityResolver</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamEntityResolver* QXmlStreamReader::entityResolver() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#entityResolver">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the entity resolver, or 0 if there is no entity resolver.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#setEntityResolver">setEntityResolver</a>().</p></div></p>
+</div><h4 id='method.error' class='method'><code>fn <a href='#method.error' class='fnname'>error</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/xml_stream_reader/enum.Error.html' title='qt_core::xml_stream_reader::Error'>Error</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::Error QXmlStreamReader::error() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#error">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type of the current error, or <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#Error-enum">NoError</a> if no error occurred.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#errorString">errorString</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#raiseError">raiseError</a>().</p></div></p>
+</div><h4 id='method.error_string' class='method'><code>fn <a href='#method.error_string' class='fnname'>error_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderErrorStringArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderErrorStringArgs'>XmlStreamReaderErrorStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::errorString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn error_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn error_string(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QXmlStreamReader::errorString() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#errorString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the error message that was set with <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#raiseError">raiseError</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#error">error</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#lineNumber">lineNumber</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#columnNumber">columnNumber</a>(), and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#characterOffset">characterOffset</a>().</p></div></p>
+</div><h4 id='method.has_error' class='method'><code>fn <a href='#method.has_error' class='fnname'>has_error</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::hasError() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#hasError">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if an error has occurred, otherwise <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#errorString">errorString</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#error">error</a>().</p></div></p>
+</div><h4 id='method.is_cdata' class='method'><code>fn <a href='#method.is_cdata' class='fnname'>is_cdata</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isCDATA() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isCDATA">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the reader reports characters that stem from a CDATA section; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isCharacters">isCharacters</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#text">text</a>().</p></div></p>
+</div><h4 id='method.is_characters' class='method'><code>fn <a href='#method.is_characters' class='fnname'>is_characters</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isCharacters() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isCharacters">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">Characters</a>; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isWhitespace">isWhitespace</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isCDATA">isCDATA</a>().</p></div></p>
+</div><h4 id='method.is_comment' class='method'><code>fn <a href='#method.is_comment' class='fnname'>is_comment</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isComment() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isComment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">Comment</a>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_dtd' class='method'><code>fn <a href='#method.is_dtd' class='fnname'>is_dtd</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isDTD() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isDTD">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">DTD</a>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_end_document' class='method'><code>fn <a href='#method.is_end_document' class='fnname'>is_end_document</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isEndDocument() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isEndDocument">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EndDocument</a>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_end_element' class='method'><code>fn <a href='#method.is_end_element' class='fnname'>is_end_element</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isEndElement() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isEndElement">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EndElement</a>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_entity_reference' class='method'><code>fn <a href='#method.is_entity_reference' class='fnname'>is_entity_reference</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isEntityReference() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isEntityReference">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EntityReference</a>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_processing_instruction' class='method'><code>fn <a href='#method.is_processing_instruction' class='fnname'>is_processing_instruction</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isProcessingInstruction() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isProcessingInstruction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">ProcessingInstruction</a>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_standalone_document' class='method'><code>fn <a href='#method.is_standalone_document' class='fnname'>is_standalone_document</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isStandaloneDocument() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isStandaloneDocument">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this document has been declared standalone in the XML declaration; otherwise returns <code>false</code>.</p>
+<p>If no XML declaration has been parsed, this function returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_start_document' class='method'><code>fn <a href='#method.is_start_document' class='fnname'>is_start_document</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isStartDocument() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isStartDocument">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartDocument</a>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_start_element' class='method'><code>fn <a href='#method.is_start_element' class='fnname'>is_start_element</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isStartElement() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isStartElement">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartElement</a>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_whitespace' class='method'><code>fn <a href='#method.is_whitespace' class='fnname'>is_whitespace</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::isWhitespace() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isWhitespace">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the reader reports characters that only consist of white-space; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isCharacters">isCharacters</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#text">text</a>().</p></div></p>
+</div><h4 id='method.line_number' class='method'><code>fn <a href='#method.line_number' class='fnname'>line_number</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QXmlStreamReader::lineNumber() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#lineNumber">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current line number, starting with 1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#columnNumber">columnNumber</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#characterOffset">characterOffset</a>().</p></div></p>
+</div><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderNameArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderNameArgs'>XmlStreamReaderNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn name(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::name() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#name">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the local name of a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartElement</a>, <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EndElement</a>, or an <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EntityReference</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceUri">namespaceUri</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#qualifiedName">qualifiedName</a>().</p></div></p>
+</div><h4 id='method.namespace_declarations' class='method'><code>fn <a href='#method.namespace_declarations' class='fnname'>namespace_declarations</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderNamespaceDeclarationsArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderNamespaceDeclarationsArgs'>XmlStreamReaderNamespaceDeclarationsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::namespaceDeclarations</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn namespace_declarations(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::vector::VectorXmlStreamNamespaceDeclarationRef&gt;</code><br>2) <code>fn namespace_declarations(&amp;self, cpp_utils::AsStruct) -&gt; ::vector::VectorXmlStreamNamespaceDeclarationRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QXmlStreamNamespaceDeclaration&gt; QXmlStreamReader::namespaceDeclarations() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceDeclarations">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() is <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartElement</a>, this function returns the element&#39;s namespace declarations. Otherwise an empty vector is returned.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qxmlstreamnamespacedeclaration.html#QXmlStreamNamespaceDeclarations-typedef">QXmlStreamNamespaceDeclarations</a> class is defined to be a <a href="http://doc.qt.io/qt-5/qvector.html">QVector</a> of <a href="http://doc.qt.io/qt-5/qxmlstreamnamespacedeclaration.html">QXmlStreamNamespaceDeclaration</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addExtraNamespaceDeclaration">addExtraNamespaceDeclaration</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addExtraNamespaceDeclarations">addExtraNamespaceDeclarations</a>().</p></div></p>
+</div><h4 id='method.namespace_processing' class='method'><code>fn <a href='#method.namespace_processing' class='fnname'>namespace_processing</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::namespaceProcessing() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceProcessing-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The namespace-processing flag of the stream reader</p>
+<p>This property controls whether or not the stream reader processes namespaces. If enabled, the reader processes namespaces, otherwise it does not.</p>
+<p>By default, namespace-processing is enabled.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>namespaceProcessing</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setNamespaceProcessing</b></span>(bool)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.namespace_uri' class='method'><code>fn <a href='#method.namespace_uri' class='fnname'>namespace_uri</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderNamespaceUriArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderNamespaceUriArgs'>XmlStreamReaderNamespaceUriArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::namespaceUri</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn namespace_uri(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn namespace_uri(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::namespaceUri() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceUri">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the namespaceUri of a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartElement</a> or <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EndElement</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#name">name</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#qualifiedName">qualifiedName</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderNewArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderNewArgs'>XmlStreamReaderNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::QXmlStreamReader</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::xml_stream_reader::XmlStreamReader</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::xml_stream_reader::XmlStreamReader&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QXmlStreamReader::QXmlStreamReader()</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::qiod_evice::QiodEvice, cpp_utils::AsStruct)) -&gt; ::xml_stream_reader::XmlStreamReader</code><br>2) <code>fn new((*mut ::qiod_evice::QiodEvice, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::xml_stream_reader::XmlStreamReader&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QXmlStreamReader::QXmlStreamReader(QIODevice* device)</code></span></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::xml_stream_reader::XmlStreamReader</code><br>2) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::xml_stream_reader::XmlStreamReader&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QXmlStreamReader::QXmlStreamReader(const QByteArray&amp; data)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::xml_stream_reader::XmlStreamReader</code><br>2) <code>fn new((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::xml_stream_reader::XmlStreamReader&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QXmlStreamReader::QXmlStreamReader(const QString&amp; data)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const libc::c_char, cpp_utils::AsStruct)) -&gt; ::xml_stream_reader::XmlStreamReader</code><br>2) <code>fn new((*const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::xml_stream_reader::XmlStreamReader&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QXmlStreamReader::QXmlStreamReader(const char* data)</code></span></p>
+</div><h4 id='method.notation_declarations' class='method'><code>fn <a href='#method.notation_declarations' class='fnname'>notation_declarations</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderNotationDeclarationsArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderNotationDeclarationsArgs'>XmlStreamReaderNotationDeclarationsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::notationDeclarations</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn notation_declarations(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::vector::VectorXmlStreamNotationDeclarationRef&gt;</code><br>2) <code>fn notation_declarations(&amp;self, cpp_utils::AsStruct) -&gt; ::vector::VectorXmlStreamNotationDeclarationRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QXmlStreamNotationDeclaration&gt; QXmlStreamReader::notationDeclarations() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#notationDeclarations">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() is <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">DTD</a>, this function returns the DTD&#39;s notation declarations. Otherwise an empty vector is returned.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qxmlstreamnotationdeclaration.html#QXmlStreamNotationDeclarations-typedef">QXmlStreamNotationDeclarations</a> class is defined to be a <a href="http://doc.qt.io/qt-5/qvector.html">QVector</a> of <a href="http://doc.qt.io/qt-5/qxmlstreamnotationdeclaration.html">QXmlStreamNotationDeclaration</a>.</p></div></p>
+</div><h4 id='method.prefix' class='method'><code>fn <a href='#method.prefix' class='fnname'>prefix</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderPrefixArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderPrefixArgs'>XmlStreamReaderPrefixArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::prefix</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn prefix(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn prefix(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::prefix() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#prefix">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the prefix of a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartElement</a> or <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EndElement</a>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#name">name</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#qualifiedName">qualifiedName</a>().</p></div></p>
+</div><h4 id='method.processing_instruction_data' class='method'><code>fn <a href='#method.processing_instruction_data' class='fnname'>processing_instruction_data</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderProcessingInstructionDataArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderProcessingInstructionDataArgs'>XmlStreamReaderProcessingInstructionDataArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::processingInstructionData</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn processing_instruction_data(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn processing_instruction_data(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::processingInstructionData() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#processingInstructionData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the data of a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">ProcessingInstruction</a>.</p></div></p>
+</div><h4 id='method.processing_instruction_target' class='method'><code>fn <a href='#method.processing_instruction_target' class='fnname'>processing_instruction_target</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderProcessingInstructionTargetArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderProcessingInstructionTargetArgs'>XmlStreamReaderProcessingInstructionTargetArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::processingInstructionTarget</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn processing_instruction_target(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn processing_instruction_target(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::processingInstructionTarget() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#processingInstructionTarget">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the target of a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">ProcessingInstruction</a>.</p></div></p>
+</div><h4 id='method.qualified_name' class='method'><code>fn <a href='#method.qualified_name' class='fnname'>qualified_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderQualifiedNameArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderQualifiedNameArgs'>XmlStreamReaderQualifiedNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::qualifiedName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn qualified_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn qualified_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::qualifiedName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#qualifiedName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the qualified name of a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartElement</a> or <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EndElement</a>;</p>
+<p>A qualified name is the raw name of an element in the XML data. It consists of the namespace prefix, followed by colon, followed by the element&#39;s local name. Since the namespace prefix is not unique (the same prefix can point to different namespaces and different prefixes can point to the same namespace), you shouldn&#39;t use qualifiedName(), but the resolved <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceUri">namespaceUri</a>() and the attribute&#39;s local <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#name">name</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#name">name</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#prefix">prefix</a>(), and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceUri">namespaceUri</a>().</p></div></p>
+</div><h4 id='method.raise_error' class='method'><code>fn <a href='#method.raise_error' class='fnname'>raise_error</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderRaiseErrorArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderRaiseErrorArgs'>XmlStreamReaderRaiseErrorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::raiseError</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn raise_error(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn raise_error(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamReader::raiseError(const QString&amp; message = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#raiseError">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Raises a custom error with an optional error <i>message</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#error">error</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#errorString">errorString</a>().</p></div></p>
+</div><h4 id='method.read_element_text' class='method'><code>fn <a href='#method.read_element_text' class='fnname'>read_element_text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderReadElementTextArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderReadElementTextArgs'>XmlStreamReaderReadElementTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::readElementText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn read_element_text(&amp;mut self, (::xml_stream_reader::ReadElementTextBehaviour, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn read_element_text(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn read_element_text(&amp;mut self, (::xml_stream_reader::ReadElementTextBehaviour, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn read_element_text(&amp;mut self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QXmlStreamReader::readElementText(QXmlStreamReader::ReadElementTextBehaviour behaviour = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#readElementText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Convenience function to be called in case a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartElement</a> was read. Reads until the corresponding <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EndElement</a> and returns all text in-between. In case of no error, the current token (see <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>()) after having called this function is <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EndElement</a>.</p>
+<p>The function concatenates <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#text">text</a>() when it reads either <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">Characters</a> or <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EntityReference</a> tokens, but skips <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">ProcessingInstruction</a> and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">Comment</a>. If the current token is not <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">StartElement</a>, an empty string is returned.</p>
+<p>The <i>behaviour</i> defines what happens in case anything else is read before reaching <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EndElement</a>. The function can include the text from child elements (useful for example for HTML), ignore child elements, or raise an <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#Error-enum">UnexpectedElementError</a> and return what was read so far (default).</p>
+<p>This function was introduced in  Qt 4.6.</p></div></p>
+</div><h4 id='method.read_next' class='method'><code>fn <a href='#method.read_next' class='fnname'>read_next</a>(&amp;mut self) -&gt; <a class='enum' href='../../qt_core/xml_stream_reader/enum.TokenType.html' title='qt_core::xml_stream_reader::TokenType'>TokenType</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::TokenType QXmlStreamReader::readNext()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#readNext">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads the next token and returns its type.</p>
+<p>With one exception, once an <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#error">error</a>() is reported by readNext(), further reading of the XML stream is not possible. Then <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#atEnd">atEnd</a>() returns <code>true</code>, <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#hasError">hasError</a>() returns <code>true</code>, and this function returns <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">QXmlStreamReader::Invalid</a>.</p>
+<p>The exception is when <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#error">error</a>() returns <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#Error-enum">PrematureEndOfDocumentError</a>. This error is reported when the end of an otherwise well-formed chunk of XML is reached, but the chunk doesn&#39;t represent a complete XML document. In that case, parsing <i>can</i> be resumed by calling <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#addData">addData</a>() to add the next chunk of XML, when the stream is being read from a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>, or by waiting for more data to arrive when the stream is being read from a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#device">device</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenString">tokenString</a>().</p></div></p>
+</div><h4 id='method.read_next_start_element' class='method'><code>fn <a href='#method.read_next_start_element' class='fnname'>read_next_start_element</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamReader::readNextStartElement()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#readNextStartElement">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads until the next start element within the current element. Returns <code>true</code> when a start element was reached. When the end element was reached, or when an error occurred, false is returned.</p>
+<p>The current element is the element matching the most recently parsed start element of which a matching end element has not yet been reached. When the parser has reached the end element, the current element becomes the parent element.</p>
+<p>This is a convenience function for when you&#39;re only concerned with parsing XML elements. The <a href="http://doc.qt.io/qt-5/qtxml-streambookmarks-example.html">QXmlStream Bookmarks Example</a> makes extensive use of this function.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#readNext">readNext</a>().</p></div></p>
+</div><h4 id='method.set_device' class='method'><code>fn <a href='#method.set_device' class='fnname'>set_device</a>(&amp;mut self, device: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamReader::setDevice(QIODevice* device)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#setDevice">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the current device to <i>device</i>. Setting the device resets the stream to its initial state.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#device">device</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#clear">clear</a>().</p></div></p>
+</div><h4 id='method.set_entity_resolver' class='method'><code>fn <a href='#method.set_entity_resolver' class='fnname'>set_entity_resolver</a>(&amp;mut self, resolver: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/xml_stream_entity_resolver/struct.XmlStreamEntityResolver.html' title='qt_core::xml_stream_entity_resolver::XmlStreamEntityResolver'>XmlStreamEntityResolver</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamReader::setEntityResolver(QXmlStreamEntityResolver* resolver)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#setEntityResolver">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Makes <i>resolver</i> the new <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#entityResolver">entityResolver</a>().</p>
+<p>The stream reader does <i>not</i> take ownership of the resolver. It&#39;s the callers responsibility to ensure that the resolver is valid during the entire life-time of the stream reader object, or until another resolver or 0 is set.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#entityResolver">entityResolver</a>().</p></div></p>
+</div><h4 id='method.set_namespace_processing' class='method'><code>fn <a href='#method.set_namespace_processing' class='fnname'>set_namespace_processing</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamReader::setNamespaceProcessing(bool arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#namespaceProcessing-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The namespace-processing flag of the stream reader</p>
+<p>This property controls whether or not the stream reader processes namespaces. If enabled, the reader processes namespaces, otherwise it does not.</p>
+<p>By default, namespace-processing is enabled.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>namespaceProcessing</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setNamespaceProcessing</b></span>(bool)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.skip_current_element' class='method'><code>fn <a href='#method.skip_current_element' class='fnname'>skip_current_element</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamReader::skipCurrentElement()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#skipCurrentElement">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads until the end of the current element, skipping any child nodes. This function is useful for skipping unknown elements.</p>
+<p>The current element is the element matching the most recently parsed start element of which a matching end element has not yet been reached. When the parser has reached the end element, the current element becomes the parent element.</p>
+<p>This function was introduced in  Qt 4.6.</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderTextArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderTextArgs'>XmlStreamReaderTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn text(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QXmlStreamReader::text() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text of <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">Characters</a>, <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">Comment</a>, <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">DTD</a>, or <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#TokenType-enum">EntityReference</a>.</p></div></p>
+</div><h4 id='method.token_string' class='method'><code>fn <a href='#method.token_string' class='fnname'>token_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_reader/overloading/trait.XmlStreamReaderTokenStringArgs.html' title='qt_core::xml_stream_reader::overloading::XmlStreamReaderTokenStringArgs'>XmlStreamReaderTokenStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::tokenString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn token_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn token_string(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QXmlStreamReader::tokenString() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the reader&#39;s current token as string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">tokenType</a>().</p></div></p>
+</div><h4 id='method.token_type' class='method'><code>fn <a href='#method.token_type' class='fnname'>token_type</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/xml_stream_reader/enum.TokenType.html' title='qt_core::xml_stream_reader::TokenType'>TokenType</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamReader::TokenType QXmlStreamReader::tokenType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type of the current token.</p>
+<p>The current token can also be queried with the convenience functions <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isStartDocument">isStartDocument</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isEndDocument">isEndDocument</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isStartElement">isStartElement</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isEndElement">isEndElement</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isCharacters">isCharacters</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isComment">isComment</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isDTD">isDTD</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isEntityReference">isEntityReference</a>(), and <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#isProcessingInstruction">isProcessingInstruction</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenString">tokenString</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/xml_stream_reader/struct.XmlStreamReader.html' title='qt_core::xml_stream_reader::XmlStreamReader'>XmlStreamReader</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-170931' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_reader.rs.html#93-97' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/xml_stream_reader/struct.XmlStreamReader.html' title='qt_core::xml_stream_reader::XmlStreamReader'>XmlStreamReader</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/xml_stream_reader/struct.XmlStreamReader.html' title='qt_core::xml_stream_reader::XmlStreamReader'>XmlStreamReader</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-171109' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_reader.rs.html#736-743' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QXmlStreamReader::~QXmlStreamReader()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#dtor.QXmlStreamReader">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructs the reader.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/xml_stream_reader/struct.XmlStreamReader.html' title='qt_core::xml_stream_reader::XmlStreamReader'>XmlStreamReader</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-171112' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_reader.rs.html#745-749' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

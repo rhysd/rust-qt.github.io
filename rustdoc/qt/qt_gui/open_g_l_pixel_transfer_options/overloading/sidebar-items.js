@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["OpenGLPixelTransferOptionsNewArgs","This trait represents a set of arguments accepted by OpenGLPixelTransferOptions::new method."]]});

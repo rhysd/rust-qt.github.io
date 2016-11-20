@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Latin1String` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Latin1String">
+
+    <title>qt_core::latin1_string::Latin1String - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>latin1_string</a></p><script>window.sidebarCurrent = {name: 'Latin1String', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>latin1_string</a>::<wbr><a class='struct' href=''>Latin1String</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-86421' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/latin1_string.rs.html#29-31' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Latin1String {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QLatin1String</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qlatin1string.html">QLatin1String</a> class provides a thin wrapper around an US-ASCII/Latin-1 encoded string literal.</p>
+<p>Many of <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>&#39;s member functions are overloaded to accept <code>const char *</code> instead of <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>. This includes the copy constructor, the assignment operator, the comparison operators, and various other functions such as <a href="http://doc.qt.io/qt-5/qstring.html#insert">insert()</a>, <a href="http://doc.qt.io/qt-5/qstring.html#replace">replace()</a>, and <a href="http://doc.qt.io/qt-5/qstring.html#indexOf">indexOf()</a>. These functions are usually optimized to avoid constructing a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> object for the <code>const char *</code> data. For example, assuming <code>str</code> is a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>,</p>
+<pre class="cpp"><span class="keyword">if</span> (str <span class="operator">=</span><span class="operator">=</span> <span class="string">&quot;auto&quot;</span> <span class="operator">|</span><span class="operator">|</span> str <span class="operator">=</span><span class="operator">=</span> <span class="string">&quot;extern&quot;</span>
+&#32;       <span class="operator">|</span><span class="operator">|</span> str <span class="operator">=</span><span class="operator">=</span> <span class="string">&quot;static&quot;</span> <span class="operator">|</span><span class="operator">|</span> str <span class="operator">=</span><span class="operator">=</span> <span class="string">&quot;register&quot;</span>) {
+&#32;   <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+}</pre>
+<p>is much faster than</p>
+<pre class="cpp"><span class="keyword">if</span> (str <span class="operator">=</span><span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;auto&quot;</span>) <span class="operator">|</span><span class="operator">|</span> str <span class="operator">=</span><span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;extern&quot;</span>)
+&#32;       <span class="operator">|</span><span class="operator">|</span> str <span class="operator">=</span><span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;static&quot;</span>) <span class="operator">|</span><span class="operator">|</span> str <span class="operator">=</span><span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span>(<span class="string">&quot;register&quot;</span>)) {
+&#32;   <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+}</pre>
+<p>because it doesn&#39;t construct four temporary <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> objects and make a deep copy of the character data.</p>
+<p>Applications that define <code>QT_NO_CAST_FROM_ASCII</code> (as explained in the <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> documentation) don&#39;t have access to <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>&#39;s <code>const char *</code> API. To provide an efficient way of specifying constant Latin-1 strings, Qt provides the <a href="http://doc.qt.io/qt-5/qlatin1string.html">QLatin1String</a>, which is just a very thin wrapper around a <code>const char <em></code>. Using <a href="http://doc.qt.io/qt-5/qlatin1string.html">QLatin1String</a>, the example code above becomes</p>
+<pre class="cpp"><span class="keyword">if</span> (str <span class="operator">=</span><span class="operator">=</span> QLatin1String(<span class="string">&quot;auto&quot;</span>)
+&#32;       <span class="operator">|</span><span class="operator">|</span> str <span class="operator">=</span><span class="operator">=</span> QLatin1String(<span class="string">&quot;extern&quot;</span>)
+&#32;       <span class="operator">|</span><span class="operator">|</span> str <span class="operator">=</span><span class="operator">=</span> QLatin1String(<span class="string">&quot;static&quot;</span>)
+&#32;       <span class="operator">|</span><span class="operator">|</span> str <span class="operator">=</span><span class="operator">=</span> QLatin1String(<span class="string">&quot;register&quot;</span>) {
+&#32;   <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+}</pre>
+<p>This is a bit longer to type, but it provides exactly the same benefits as the first version of the code, and is faster than converting the Latin-1 strings using <a href="http://doc.qt.io/qt-5/qstring.html#fromLatin1">QString::fromLatin1</a>().</p>
+<p>Thanks to the <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>(<a href="http://doc.qt.io/qt-5/qlatin1string.html">QLatin1String</a>) constructor, <a href="http://doc.qt.io/qt-5/qlatin1string.html">QLatin1String</a> can be used everywhere a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> is expected. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a></span> <span class="operator"></em></span>label <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qlabel.html">QLabel</a></span>(QLatin1String(<span class="string">&quot;MOD&quot;</span>)<span class="operator">,</span> <span class="keyword">this</span>);</pre></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-86426' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/latin1_string.rs.html#39-319' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.data' class='method'><code>fn <a href='#method.data' class='fnname'>data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const char* QLatin1String::data() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#data">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the Latin-1 string stored in this object.</p></div></p>
+</div><h4 id='method.latin1' class='method'><code>fn <a href='#method.latin1' class='fnname'>latin1</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const char* QLatin1String::latin1() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#latin1">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the Latin-1 string stored in this object.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/latin1_string/overloading/trait.Latin1StringNewArgs.html' title='qt_core::latin1_string::overloading::Latin1StringNewArgs'>Latin1StringNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLatin1String::QLatin1String</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::latin1_string::Latin1String</code><br>2) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::latin1_string::Latin1String&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QLatin1String::QLatin1String(const QByteArray&amp; s)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const libc::c_char, cpp_utils::AsStruct)) -&gt; ::latin1_string::Latin1String</code><br>2) <code>fn new((*const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::latin1_string::Latin1String&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QLatin1String::QLatin1String(const char* s)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*const libc::c_char, libc::c_int, cpp_utils::AsStruct)) -&gt; ::latin1_string::Latin1String</code><br>2) <code>fn new((*const libc::c_char, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::latin1_string::Latin1String&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QLatin1String::QLatin1String(const char* s, int sz)</code></span></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/latin1_string/overloading/trait.Latin1StringOpEqArgs.html' title='qt_core::latin1_string::overloading::Latin1StringOpEqArgs'>Latin1StringOpEqArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLatin1String::operator==</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_eq(&amp;self, &amp;::byte_array::ByteArray) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator==(const QByteArray&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-eq-eq-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The <i>other</i> byte array is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_eq(&amp;self, &amp;::string::String) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator==(const QString&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this string is equal to string <i>other</i>; otherwise returns <code>false</code>.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings with <a href="http://doc.qt.io/qt-5/qstring.html#localeAwareCompare">QString::localeAwareCompare</a>().</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_eq(&amp;self, *const libc::c_char) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator==(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-eq-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 4.3.</p></div></p>
+</div><h4 id='method.op_ge' class='method'><code>fn <a href='#method.op_ge' class='fnname'>op_ge</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/latin1_string/overloading/trait.Latin1StringOpGeArgs.html' title='qt_core::latin1_string::overloading::Latin1StringOpGeArgs'>Latin1StringOpGeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLatin1String::operator&gt;=</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_ge(&amp;self, &amp;::byte_array::ByteArray) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&gt;=(const QByteArray&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-gt-eq-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The <i>other</i> array is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_ge(&amp;self, &amp;::string::String) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&gt;=(const QString&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-gt-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this string is lexically greater than or equal to string <i>other</i>; otherwise returns <code>false</code>.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings with <a href="http://doc.qt.io/qt-5/qstring.html#localeAwareCompare">QString::localeAwareCompare</a>().</p></div></p>
+
+<h2 id='variant-3-2' class='section-header'><a href='#variant-3-2'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_ge(&amp;self, *const libc::c_char) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&gt;=(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-gt-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 4.3.</p></div></p>
+</div><h4 id='method.op_gt' class='method'><code>fn <a href='#method.op_gt' class='fnname'>op_gt</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/latin1_string/overloading/trait.Latin1StringOpGtArgs.html' title='qt_core::latin1_string::overloading::Latin1StringOpGtArgs'>Latin1StringOpGtArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLatin1String::operator&gt;</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_gt(&amp;self, &amp;::byte_array::ByteArray) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&gt;(const QByteArray&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-gt-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_gt(&amp;self, &amp;::string::String) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&gt;(const QString&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-gt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this string is lexically greater than string <i>other</i>; otherwise returns <code>false</code>.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings with <a href="http://doc.qt.io/qt-5/qstring.html#localeAwareCompare">QString::localeAwareCompare</a>().</p></div></p>
+
+<h2 id='variant-3-3' class='section-header'><a href='#variant-3-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_gt(&amp;self, *const libc::c_char) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&gt;(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-gt-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 4.3.</p></div></p>
+</div><h4 id='method.op_le' class='method'><code>fn <a href='#method.op_le' class='fnname'>op_le</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/latin1_string/overloading/trait.Latin1StringOpLeArgs.html' title='qt_core::latin1_string::overloading::Latin1StringOpLeArgs'>Latin1StringOpLeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLatin1String::operator&lt;=</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_le(&amp;self, &amp;::byte_array::ByteArray) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&lt;=(const QByteArray&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-lt-eq-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The <i>other</i> array is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_le(&amp;self, &amp;::string::String) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&lt;=(const QString&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-lt-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this string is lexically less than or equal to string <i>other</i>; otherwise returns <code>false</code>.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings with <a href="http://doc.qt.io/qt-5/qstring.html#localeAwareCompare">QString::localeAwareCompare</a>().</p></div></p>
+
+<h2 id='variant-3-4' class='section-header'><a href='#variant-3-4'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_le(&amp;self, *const libc::c_char) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&lt;=(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-lt-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 4.3.</p></div></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/latin1_string/overloading/trait.Latin1StringOpLtArgs.html' title='qt_core::latin1_string::overloading::Latin1StringOpLtArgs'>Latin1StringOpLtArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLatin1String::operator&lt;</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_lt(&amp;self, &amp;::byte_array::ByteArray) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&lt;(const QByteArray&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-lt-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_lt(&amp;self, &amp;::string::String) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&lt;(const QString&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this string is lexically less than the <i>other</i> string; otherwise returns <code>false</code>.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings using the <a href="http://doc.qt.io/qt-5/qstring.html#localeAwareCompare">QString::localeAwareCompare</a>() function.</p></div></p>
+
+<h2 id='variant-3-5' class='section-header'><a href='#variant-3-5'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_lt(&amp;self, *const libc::c_char) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator&lt;(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-lt-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 4.3.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/latin1_string/overloading/trait.Latin1StringOpNeqArgs.html' title='qt_core::latin1_string::overloading::Latin1StringOpNeqArgs'>Latin1StringOpNeqArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLatin1String::operator!=</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-6' class='section-header'><a href='#variant-1-6'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_neq(&amp;self, &amp;::byte_array::ByteArray) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator!=(const QByteArray&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-not-eq-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-not-eq">operator!=</a>().</p>
+<p>The <i>other</i> byte array is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+
+<h2 id='variant-2-6' class='section-header'><a href='#variant-2-6'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_neq(&amp;self, &amp;::string::String) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator!=(const QString&amp; s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this string is not equal to string <i>other</i>; otherwise returns <code>false</code>.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings with <a href="http://doc.qt.io/qt-5/qstring.html#localeAwareCompare">QString::localeAwareCompare</a>().</p></div></p>
+
+<h2 id='variant-3-6' class='section-header'><a href='#variant-3-6'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn op_neq(&amp;self, *const libc::c_char) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QLatin1String::operator!=(const char* s) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-not-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function overloads <a href="http://doc.qt.io/qt-5/qlatin1string.html#operator-not-eq">operator!=</a>().</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> using the <a href="http://doc.qt.io/qt-5/qstring.html#fromUtf8">QString::fromUtf8</a>() function.</p>
+<p>You can disable this operator by defining <code>QT_NO_CAST_FROM_ASCII</code> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="http://doc.qt.io/qt-5/qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in  Qt 4.3.</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QLatin1String::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlatin1string.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the Latin-1 string stored in this object.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/debug/overloading/trait.DebugOpShlArgs.html' title='qt_core::debug::overloading::DebugOpShlArgs'>DebugOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-67367' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/debug.rs.html#471-480' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/debug/overloading/trait.DebugOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/debug/struct.Debug.html' title='qt_core::debug::Debug'>Debug</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/debug/struct.Debug.html' title='qt_core::debug::Debug'>Debug</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='../../qt_core/hash/overloading/trait.HashArgs.html' title='qt_core::hash::overloading::HashArgs'>HashArgs</a> for &amp;'a <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-77765' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/hash.rs.html#1120-1125' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/hash/overloading/trait.HashArgs.html#tymethod.exec' class='fnname'>exec</a>(self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-86424' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/latin1_string.rs.html#33-37' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-86466' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/latin1_string.rs.html#321-328' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QLatin1String::~QLatin1String()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-86469' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/latin1_string.rs.html#330-334' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringAppendArgs.html' title='qt_core::string::overloading::StringAppendArgs'>StringAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-140371' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#4618-4627' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringCompareArgs.html' title='qt_core::string::overloading::StringCompareArgs'>StringCompareArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141350' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#6247-6255' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringCompareArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringContainsArgs.html' title='qt_core::string::overloading::StringContainsArgs'>StringContainsArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141462' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#6412-6420' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringContainsArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringEndsWithArgs.html' title='qt_core::string::overloading::StringEndsWithArgs'>StringEndsWithArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141605' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#6610-6618' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringEndsWithArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringIndexOfArgs.html' title='qt_core::string::overloading::StringIndexOfArgs'>StringIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141930' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#7112-7120' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-6' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringLastIndexOfArgs.html' title='qt_core::string::overloading::StringLastIndexOfArgs'>StringLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142104' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#7349-7357' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-7' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringOpAddAssignArgs.html' title='qt_core::string::overloading::StringOpAddAssignArgs'>StringOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142812' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8406-8416' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-8' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringOpAssignArgs.html' title='qt_core::string::overloading::StringOpAssignArgs'>StringOpAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142866' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8478-8487' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-9' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringOpAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringOpEqArgs.html' title='qt_core::string::overloading::StringOpEqArgs'>StringOpEqArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142912' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8538-8546' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-10' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringOpEqArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringOpGeArgs.html' title='qt_core::string::overloading::StringOpGeArgs'>StringOpGeArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142935' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8566-8574' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-11' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringOpGeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringOpGtArgs.html' title='qt_core::string::overloading::StringOpGtArgs'>StringOpGtArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142958' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8594-8602' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-12' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringOpGtArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringOpLeArgs.html' title='qt_core::string::overloading::StringOpLeArgs'>StringOpLeArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-143057' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8732-8740' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-13' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringOpLeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringOpLtArgs.html' title='qt_core::string::overloading::StringOpLtArgs'>StringOpLtArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-143080' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8760-8768' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-14' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringOpLtArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringOpNeqArgs.html' title='qt_core::string::overloading::StringOpNeqArgs'>StringOpNeqArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-143103' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8788-8796' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-15' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringOpNeqArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringPrependArgs.html' title='qt_core::string::overloading::StringPrependArgs'>StringPrependArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-143134' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8827-8836' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-16' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringPrependArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringStartsWithArgs.html' title='qt_core::string::overloading::StringStartsWithArgs'>StringStartsWithArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-144372' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#10606-10614' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-17' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringStartsWithArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefCompareArgs.html' title='qt_core::string_ref::overloading::StringRefCompareArgs'>StringRefCompareArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147450' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1175-1183' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-18' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefCompareArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefContainsArgs.html' title='qt_core::string_ref::overloading::StringRefContainsArgs'>StringRefContainsArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147549' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1311-1319' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-19' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefContainsArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefEndsWithArgs.html' title='qt_core::string_ref::overloading::StringRefEndsWithArgs'>StringRefEndsWithArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147655' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1453-1461' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-20' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefEndsWithArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefIndexOfArgs.html' title='qt_core::string_ref::overloading::StringRefIndexOfArgs'>StringRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147720' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1535-1543' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-21' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefLastIndexOfArgs.html' title='qt_core::string_ref::overloading::StringRefLastIndexOfArgs'>StringRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147809' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#1652-1660' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-22' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_ref/overloading/trait.StringRefStartsWithArgs.html' title='qt_core::string_ref::overloading::StringRefStartsWithArgs'>StringRefStartsWithArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-148195' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_ref.rs.html#2195-2203' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-23' class='method'><code>fn <a href='../../qt_core/string_ref/overloading/trait.StringRefStartsWithArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_ref/struct.StringRef.html' title='qt_core::string_ref::StringRef'>StringRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/text_stream/overloading/trait.TextStreamOpShlArgs.html' title='qt_core::text_stream::overloading::TextStreamOpShlArgs'>TextStreamOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-151944' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/text_stream.rs.html#1570-1580' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-24' class='method'><code>fn <a href='../../qt_core/text_stream/overloading/trait.TextStreamOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/text_stream/struct.TextStream.html' title='qt_core::text_stream::TextStream'>TextStream</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/text_stream/struct.TextStream.html' title='qt_core::text_stream::TextStream'>TextStream</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/xml_stream_attributes/overloading/trait.XmlStreamAttributesHasAttributeArgs.html' title='qt_core::xml_stream_attributes::overloading::XmlStreamAttributesHasAttributeArgs'>XmlStreamAttributesHasAttributeArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/latin1_string/struct.Latin1String.html' title='qt_core::latin1_string::Latin1String'>Latin1String</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-169946' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_attributes.rs.html#1035-1040' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-25' class='method'><code>fn <a href='../../qt_core/xml_stream_attributes/overloading/trait.XmlStreamAttributesHasAttributeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/xml_stream_attributes/struct.XmlStreamAttributes.html' title='qt_core::xml_stream_attributes::XmlStreamAttributes'>XmlStreamAttributes</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

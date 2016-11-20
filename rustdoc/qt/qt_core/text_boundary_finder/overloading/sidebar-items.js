@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["OpBitOrArgs","This trait represents a set of arguments accepted by op_bit_or method."],["TextBoundaryFinderNewArgs","This trait represents a set of arguments accepted by TextBoundaryFinder::new method."],["TextBoundaryFinderStringArgs","This trait represents a set of arguments accepted by TextBoundaryFinder::string method."]]});

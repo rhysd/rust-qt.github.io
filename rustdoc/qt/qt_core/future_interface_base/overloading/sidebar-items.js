@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["FutureInterfaceBaseNewArgs","This trait represents a set of arguments accepted by FutureInterfaceBase::new method."],["FutureInterfaceBaseProgressTextArgs","This trait represents a set of arguments accepted by FutureInterfaceBase::progress_text method."]]});

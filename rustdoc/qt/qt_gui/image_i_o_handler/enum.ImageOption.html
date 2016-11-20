@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ImageOption` enum in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ImageOption">
+
+    <title>qt_gui::image_i_o_handler::ImageOption - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>image_i_o_handler</a></p><script>window.sidebarCurrent = {name: 'ImageOption', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>image_i_o_handler</a>::<wbr><a class='enum' href=''>ImageOption</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-79337' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_i_o_handler.rs.html#241-282' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum ImageOption {
+    Size,
+    ClipRect,
+    Description,
+    ScaledClipRect,
+    ScaledSize,
+    CompressionRatio,
+    Gamma,
+    Quality,
+    Name,
+    SubType,
+    IncrementalReading,
+    Endianness,
+    Animation,
+    BackgroundColor,
+    ImageFormat,
+    SupportedSubTypes,
+    OptimizedWrite,
+    ProgressiveScanWrite,
+    ImageTransformation,
+    TransformedByDefault,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QImageIOHandler::ImageOption</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qimageiohandler.html#ImageOption-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum describes the different options supported by <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a>. Some options are used to query an image for properties, and others are used to toggle the way in which an image should be written.</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.Size' class='variant'><code>Size</code></span><div class='docblock'><p>The original size of an image. A handler that supports this option is expected to read the size of the image from the image metadata, and return this size from <a href="http://doc.qt.io/qt-5/qimageiohandler.html#option">option</a>() as a <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a>. (C++ enum variant: <span style='color: green;'><code>Size = 0</code></span>)</p>
+</div><span id='variant.ClipRect' class='variant'><code>ClipRect</code></span><div class='docblock'><p>The clip rect, or ROI (Region Of Interest). A handler that supports this option is expected to only read the provided <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a> area from the original image in <a href="http://doc.qt.io/qt-5/qimageiohandler.html#read">read</a>(), before any other transformation is applied. (C++ enum variant: <span style='color: green;'><code>ClipRect = 1</code></span>)</p>
+</div><span id='variant.Description' class='variant'><code>Description</code></span><div class='docblock'><p>The image description. Some image formats, such as GIF and PNG, allow embedding of text or comments into the image data (e.g., for storing copyright information). It&#39;s common that the text is stored in key-value pairs, but some formats store all text in one continuous block. <a href="http://doc.qt.io/qt-5/qimageiohandler.html">QImageIOHandler</a> returns the text as one <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>, where keys and values are separated by a &#39;:&#39;, and keys-value pairs are separated by two newlines (\n\n). For example, &quot;Title: Sunset\n\nAuthor: Jim Smith\nSarah Jones\n\n&quot;. Formats that store text in a single block can use &quot;Description&quot; as the key. (C++ enum variant: <span style='color: green;'><code>Description = 2</code></span>)</p>
+</div><span id='variant.ScaledClipRect' class='variant'><code>ScaledClipRect</code></span><div class='docblock'><p>The scaled clip rect (or ROI, Region Of Interest) of the image. A handler that supports this option is expected to apply the provided clip rect (a <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a>), after applying any scaling (ScaleSize) or regular clipping (ClipRect). If the handler does not support this option, <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will apply the scaled clip rect after the image has been read. (C++ enum variant: <span style='color: green;'><code>ScaledClipRect = 3</code></span>)</p>
+</div><span id='variant.ScaledSize' class='variant'><code>ScaledSize</code></span><div class='docblock'><p>The scaled size of the image. A handler that supports this option is expected to scale the image to the provided size (a <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a>), after applying any clip rect transformation (ClipRect). If the handler does not support this option, <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will perform the scaling after the image has been read. (C++ enum variant: <span style='color: green;'><code>ScaledSize = 4</code></span>)</p>
+</div><span id='variant.CompressionRatio' class='variant'><code>CompressionRatio</code></span><div class='docblock'><p>The compression ratio of the image data. A handler that supports this option is expected to set its compression rate depending on the value of this option (an int) when writing. (C++ enum variant: <span style='color: green;'><code>CompressionRatio = 5</code></span>)</p>
+</div><span id='variant.Gamma' class='variant'><code>Gamma</code></span><div class='docblock'><p>The gamma level of the image. A handler that supports this option is expected to set the image gamma level depending on the value of this option (a float) when writing. (C++ enum variant: <span style='color: green;'><code>Gamma = 6</code></span>)</p>
+</div><span id='variant.Quality' class='variant'><code>Quality</code></span><div class='docblock'><p>The quality level of the image. A handler that supports this option is expected to set the image quality level depending on the value of this option (an int) when writing. (C++ enum variant: <span style='color: green;'><code>Quality = 7</code></span>)</p>
+</div><span id='variant.Name' class='variant'><code>Name</code></span><div class='docblock'><p>The name of the image. A handler that supports this option is expected to read the name from the image metadata and return this as a <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>, or when writing an image it is expected to store the name in the image metadata. (C++ enum variant: <span style='color: green;'><code>Name = 8</code></span>)</p>
+</div><span id='variant.SubType' class='variant'><code>SubType</code></span><div class='docblock'><p>The subtype of the image. A handler that supports this option can use the subtype value to help when reading and writing images. For example, a PPM handler may have a subtype value of &quot;ppm&quot; or &quot;ppmraw&quot;. (C++ enum variant: <span style='color: green;'><code>SubType = 9</code></span>)</p>
+</div><span id='variant.IncrementalReading' class='variant'><code>IncrementalReading</code></span><div class='docblock'><p>A handler that supports this option is expected to read the image in several passes, as if it was an animation. <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a> will treat the image as an animation. (C++ enum variant: <span style='color: green;'><code>IncrementalReading = 10</code></span>)</p>
+</div><span id='variant.Endianness' class='variant'><code>Endianness</code></span><div class='docblock'><p>The endianness of the image. Certain image formats can be stored as BigEndian or LittleEndian. A handler that supports Endianness uses the value of this option to determine how the image should be stored. (C++ enum variant: <span style='color: green;'><code>Endianness = 11</code></span>)</p>
+</div><span id='variant.Animation' class='variant'><code>Animation</code></span><div class='docblock'><p>Image formats that support animation return true for this value in <a href="http://doc.qt.io/qt-5/qimageiohandler.html#supportsOption">supportsOption</a>(); otherwise, false is returned. (C++ enum variant: <span style='color: green;'><code>Animation = 12</code></span>)</p>
+</div><span id='variant.BackgroundColor' class='variant'><code>BackgroundColor</code></span><div class='docblock'><p>Certain image formats allow the background color to be specified. A handler that supports BackgroundColor initializes the background color to this option (a <a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a>) when reading an image. (C++ enum variant: <span style='color: green;'><code>BackgroundColor = 13</code></span>)</p>
+</div><span id='variant.ImageFormat' class='variant'><code>ImageFormat</code></span><div class='docblock'><p>The image&#39;s data format returned by the handler. This can be any of the formats listed in <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format</a>. (C++ enum variant: <span style='color: green;'><code>ImageFormat = 14</code></span>)</p>
+</div><span id='variant.SupportedSubTypes' class='variant'><code>SupportedSubTypes</code></span><div class='docblock'><p>Image formats that support different saving variants should return a list of supported variant names (<a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&lt;<a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>&gt;) in this option. (C++ enum variant: <span style='color: green;'><code>SupportedSubTypes = 15</code></span>)</p>
+</div><span id='variant.OptimizedWrite' class='variant'><code>OptimizedWrite</code></span><div class='docblock'><p>. A handler which supports this option is expected to turn on optimization flags when writing. (C++ enum variant: <span style='color: green;'><code>OptimizedWrite = 16</code></span>)</p>
+</div><span id='variant.ProgressiveScanWrite' class='variant'><code>ProgressiveScanWrite</code></span><div class='docblock'><p>. A handler which supports this option is expected to write the image as a progressive scan image. (C++ enum variant: <span style='color: green;'><code>ProgressiveScanWrite = 17</code></span>)</p>
+</div><span id='variant.ImageTransformation' class='variant'><code>ImageTransformation</code></span><div class='docblock'><p>. A handler which supports this option can read the transformation metadata of an image. A handler that supports this option should not apply the transformation itself. (C++ enum variant: <span style='color: green;'><code>ImageTransformation = 18</code></span>)</p>
+</div><span id='variant.TransformedByDefault' class='variant'><code>TransformedByDefault</code></span><div class='docblock'><p>. A handler that reports support for this feature will have image transformation metadata applied by default on read. (C++ enum variant: <span style='color: green;'><code>TransformedByDefault = 19</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_gui/image_i_o_handler/enum.ImageOption.html' title='qt_gui::image_i_o_handler::ImageOption'>ImageOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-79301' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_i_o_handler.rs.html#239' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/image_i_o_handler/enum.ImageOption.html' title='qt_gui::image_i_o_handler::ImageOption'>ImageOption</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_gui/image_i_o_handler/enum.ImageOption.html' title='qt_gui::image_i_o_handler::ImageOption'>ImageOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-79304' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_i_o_handler.rs.html#239' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_gui/image_i_o_handler/enum.ImageOption.html' title='qt_gui::image_i_o_handler::ImageOption'>ImageOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-79307' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_i_o_handler.rs.html#239' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_gui/image_i_o_handler/enum.ImageOption.html' title='qt_gui::image_i_o_handler::ImageOption'>ImageOption</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_gui/image_i_o_handler/enum.ImageOption.html' title='qt_gui::image_i_o_handler::ImageOption'>ImageOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-79313' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/image_i_o_handler.rs.html#239' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

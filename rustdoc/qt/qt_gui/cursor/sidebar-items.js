@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["op_shl","C++ method: <span style='color: green;'>```operator<<```</span>"],["op_shr","C++ method: <span style='color: green;'>```QDataStream& operator>>(QDataStream& inS, QCursor& cursor)```</span>"]],"mod":[["overloading",""]],"struct":[["Cursor","C++ type: <span style='color: green;'>```QCursor```</span>"]]});

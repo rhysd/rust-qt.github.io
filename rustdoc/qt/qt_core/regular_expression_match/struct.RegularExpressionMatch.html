@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RegularExpressionMatch` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RegularExpressionMatch">
+
+    <title>qt_core::regular_expression_match::RegularExpressionMatch - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>regular_expression_match</a></p><script>window.sidebarCurrent = {name: 'RegularExpressionMatch', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>regular_expression_match</a>::<wbr><a class='struct' href=''>RegularExpressionMatch</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-127899' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression_match.rs.html#21-23' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RegularExpressionMatch {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QRegularExpressionMatch</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> class provides the results of a matching a <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> against a string.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> object can be obtained by calling the <a href="http://doc.qt.io/qt-5/qregularexpression.html#match">QRegularExpression::match</a>() function, or as a single result of a global match from a <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a>.</p>
+<p>The success or the failure of a match attempt can be inspected by calling the <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#hasMatch">hasMatch</a>() function. <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> also reports a successful partial match through the <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#hasPartialMatch">hasPartialMatch</a>() function.</p>
+<p>In addition, <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> returns the substrings captured by the capturing groups in the pattern string. The implicit capturing group with index 0 captures the result of the whole match. The <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">captured</a>() function returns each substring captured, either by the capturing group&#39;s index or by its name:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a></span> re(<span class="string">&quot;(\d\d) (?&lt;name&gt;\w+)&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#QRegularExpressionMatch">QRegularExpressionMatch</a></span> match <span class="operator">=</span> re<span class="operator">.</span>match(<span class="string">&quot;23 Jordan&quot;</span>);
+<span class="keyword">if</span> (match<span class="operator">.</span>hasMatch()) {
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> number <span class="operator">=</span> match<span class="operator">.</span>captured(<span class="number">1</span>); <span class="comment">// first == &quot;23&quot;</span>
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> name <span class="operator">=</span> match<span class="operator">.</span>captured(<span class="string">&quot;name&quot;</span>); <span class="comment">// name == &quot;Jordan&quot;</span>
+}</pre>
+<p>For each captured substring it is possible to query its starting and ending offsets in the subject string by calling the <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">capturedStart</a>() and the <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">capturedEnd</a>() function, respectively. The length of each captured substring is available using the <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">capturedLength</a>() function.</p>
+<p>The convenience function <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedTexts">capturedTexts</a>() will return <i>all</i> the captured substrings at once (including the substring matched by the entire pattern) in the order they have been captured by captring groups; that is, <code>captured(i) == capturedTexts().at(i)</code>.</p>
+<p>You can retrieve the <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> object the subject string was matched against by calling the <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#regularExpression">regularExpression</a>() function; the match type and the match options are available as well by calling the <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#matchType">matchType</a>() and the <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#matchOptions">matchOptions</a>() respectively.</p>
+<p>Please refer to the <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> documentation for more information about the Qt regular expression classes.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/regular_expression_match/struct.RegularExpressionMatch.html' title='qt_core::regular_expression_match::RegularExpressionMatch'>RegularExpressionMatch</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127904' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression_match.rs.html#31-288' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.captured' class='method'><code>fn <a href='#method.captured' class='fnname'>captured</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match/overloading/trait.RegularExpressionMatchCapturedArgs.html' title='qt_core::regular_expression_match::overloading::RegularExpressionMatchCapturedArgs'>RegularExpressionMatchCapturedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatch::captured</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn captured(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn captured(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QRegularExpressionMatch::captured(const QString&amp; name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the substring captured by the capturing group named <i>name</i>. If the capturing group named <i>name</i> did not capture a string or doesn&#39;t exist, returns a null <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedRef">capturedRef</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">capturedStart</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">capturedEnd</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">capturedLength</a>(), and <a href="http://doc.qt.io/qt-5/qstring.html#isNull">QString::isNull</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn captured(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn captured(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn captured(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>4) <code>fn captured(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QRegularExpressionMatch::captured(int nth = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the substring captured by the <i>nth</i> capturing group. If the <i>nth</i> capturing group did not capture a string or doesn&#39;t exist, returns a null <a href="http://doc.qt.io/qt-5/qstring.html">QString</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedRef">capturedRef</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#lastCapturedIndex">lastCapturedIndex</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">capturedStart</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">capturedEnd</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">capturedLength</a>(), and <a href="http://doc.qt.io/qt-5/qstring.html#isNull">QString::isNull</a>().</p></div></p>
+</div><h4 id='method.captured_end' class='method'><code>fn <a href='#method.captured_end' class='fnname'>captured_end</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match/overloading/trait.RegularExpressionMatchCapturedEndArgs.html' title='qt_core::regular_expression_match::overloading::RegularExpressionMatchCapturedEndArgs'>RegularExpressionMatchCapturedEndArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatch::capturedEnd</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn captured_end(&amp;self, &amp;::string::String) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QRegularExpressionMatch::capturedEnd(const QString&amp; name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the offset inside the subject string immediately after the ending position of the substring captured by the capturing group named <i>name</i>. If the capturing group named <i>name</i> did not capture a string or doesn&#39;t exist, returns -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">capturedStart</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">capturedLength</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">captured</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn captured_end(&amp;self, ()) -&gt; libc::c_int</code><br>2) <code>fn captured_end(&amp;self, libc::c_int) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QRegularExpressionMatch::capturedEnd(int nth = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the offset inside the subject string immediately after the ending position of the substring captured by the <i>nth</i> capturing group. If the <i>nth</i> capturing group did not capture a string or doesn&#39;t exist, returns -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">capturedStart</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">capturedLength</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">captured</a>().</p></div></p>
+</div><h4 id='method.captured_length' class='method'><code>fn <a href='#method.captured_length' class='fnname'>captured_length</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match/overloading/trait.RegularExpressionMatchCapturedLengthArgs.html' title='qt_core::regular_expression_match::overloading::RegularExpressionMatchCapturedLengthArgs'>RegularExpressionMatchCapturedLengthArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatch::capturedLength</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn captured_length(&amp;self, &amp;::string::String) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QRegularExpressionMatch::capturedLength(const QString&amp; name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the offset inside the subject string corresponding to the starting position of the substring captured by the capturing group named <i>name</i>.</p>
+<p><b>Note: </b>This function returns 0 if the capturing group named <i>name</i> did not capture a string or doesn&#39;t exist.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">capturedStart</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">capturedEnd</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">captured</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn captured_length(&amp;self, ()) -&gt; libc::c_int</code><br>2) <code>fn captured_length(&amp;self, libc::c_int) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QRegularExpressionMatch::capturedLength(int nth = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the length of the substring captured by the <i>nth</i> capturing group.</p>
+<p><b>Note: </b>This function returns 0 if the <i>nth</i> capturing group did not capture a string or doesn&#39;t exist.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">capturedStart</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">capturedEnd</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">captured</a>().</p></div></p>
+</div><h4 id='method.captured_ref' class='method'><code>fn <a href='#method.captured_ref' class='fnname'>captured_ref</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match/overloading/trait.RegularExpressionMatchCapturedRefArgs.html' title='qt_core::regular_expression_match::overloading::RegularExpressionMatchCapturedRefArgs'>RegularExpressionMatchCapturedRefArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatch::capturedRef</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn captured_ref(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn captured_ref(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QRegularExpressionMatch::capturedRef(const QString&amp; name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedRef-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a reference to the string captured by the capturing group named <i>name</i>. If the capturing group named <i>name</i> did not capture a string or doesn&#39;t exist, returns a null <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">captured</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">capturedStart</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">capturedEnd</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">capturedLength</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#isNull">QStringRef::isNull</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn captured_ref(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>2) <code>fn captured_ref(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string_ref::StringRef&gt;</code><br>3) <code>fn captured_ref(&amp;self, cpp_utils::AsStruct) -&gt; ::string_ref::StringRef</code><br>4) <code>fn captured_ref(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::string_ref::StringRef</code><br>
+C++ method: <span style='color: green;'><code>QStringRef QRegularExpressionMatch::capturedRef(int nth = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedRef">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a reference to the substring captured by the <i>nth</i> capturing group. If the <i>nth</i> capturing group did not capture a string or doesn&#39;t exist, returns a null <a href="http://doc.qt.io/qt-5/qstringref.html">QStringRef</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">captured</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#lastCapturedIndex">lastCapturedIndex</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">capturedStart</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">capturedEnd</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">capturedLength</a>(), and <a href="http://doc.qt.io/qt-5/qstringref.html#isNull">QStringRef::isNull</a>().</p></div></p>
+</div><h4 id='method.captured_start' class='method'><code>fn <a href='#method.captured_start' class='fnname'>captured_start</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match/overloading/trait.RegularExpressionMatchCapturedStartArgs.html' title='qt_core::regular_expression_match::overloading::RegularExpressionMatchCapturedStartArgs'>RegularExpressionMatchCapturedStartArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatch::capturedStart</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn captured_start(&amp;self, &amp;::string::String) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QRegularExpressionMatch::capturedStart(const QString&amp; name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the offset inside the subject string corresponding to the starting position of the substring captured by the capturing group named <i>name</i>. If the capturing group named <i>name</i> did not capture a string or doesn&#39;t exist, returns -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">capturedEnd</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">capturedLength</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">captured</a>().</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn captured_start(&amp;self, ()) -&gt; libc::c_int</code><br>2) <code>fn captured_start(&amp;self, libc::c_int) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QRegularExpressionMatch::capturedStart(int nth = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the offset inside the subject string corresponding to the starting position of the substring captured by the <i>nth</i> capturing group. If the <i>nth</i> capturing group did not capture a string or doesn&#39;t exist, returns -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">capturedEnd</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">capturedLength</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">captured</a>().</p></div></p>
+</div><h4 id='method.captured_texts' class='method'><code>fn <a href='#method.captured_texts' class='fnname'>captured_texts</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match/overloading/trait.RegularExpressionMatchCapturedTextsArgs.html' title='qt_core::regular_expression_match::overloading::RegularExpressionMatchCapturedTextsArgs'>RegularExpressionMatchCapturedTextsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatch::capturedTexts</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn captured_texts(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_list::StringList&gt;</code><br>2) <code>fn captured_texts(&amp;self, cpp_utils::AsStruct) -&gt; ::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>QStringList QRegularExpressionMatch::capturedTexts() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedTexts">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of all strings captured by capturing groups, in the order the groups themselves appear in the pattern string.</p></div></p>
+</div><h4 id='method.has_match' class='method'><code>fn <a href='#method.has_match' class='fnname'>has_match</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRegularExpressionMatch::hasMatch() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#hasMatch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the regular expression matched against the subject string, or false otherwise.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#match">QRegularExpression::match</a>() and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#hasPartialMatch">hasPartialMatch</a>().</p></div></p>
+</div><h4 id='method.has_partial_match' class='method'><code>fn <a href='#method.has_partial_match' class='fnname'>has_partial_match</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRegularExpressionMatch::hasPartialMatch() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#hasPartialMatch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the regular expression partially matched against the subject string, or false otherwise.</p>
+<p><b>Note: </b>Only a match that explicitly used the one of the partial match types can yield a partial match. Still, if such a match succeeds totally, this function will return false, while <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#hasMatch">hasMatch</a>() will return true.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#match">QRegularExpression::match</a>(), <a href="http://doc.qt.io/qt-5/qregularexpression.html#MatchType-enum">QRegularExpression::MatchType</a>, and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#hasMatch">hasMatch</a>().</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRegularExpressionMatch::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the match object was obtained as a result from the <a href="http://doc.qt.io/qt-5/qregularexpression.html#match">QRegularExpression::match</a>() function invoked on a valid <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> object; returns <code>false</code> if the <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> was invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#match">QRegularExpression::match</a>() and <a href="http://doc.qt.io/qt-5/qregularexpression.html#isValid">QRegularExpression::isValid</a>().</p></div></p>
+</div><h4 id='method.last_captured_index' class='method'><code>fn <a href='#method.last_captured_index' class='fnname'>last_captured_index</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QRegularExpressionMatch::lastCapturedIndex() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#lastCapturedIndex">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index of the last capturing group that captured something, including the implicit capturing group 0. This can be used to extract all the substrings that were captured:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#QRegularExpressionMatch">QRegularExpressionMatch</a></span> match <span class="operator">=</span> re<span class="operator">.</span>match(string);
+<span class="keyword">for</span> (<span class="type">int</span> i <span class="operator">=</span> <span class="number">0</span>; i <span class="operator">&lt;</span><span class="operator">=</span> match<span class="operator">.</span>lastCapturedIndex(); <span class="operator">+</span><span class="operator">+</span>i) {
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> captured <span class="operator">=</span> match<span class="operator">.</span>captured(i);
+&#32;   <span class="comment">// ...</span>
+}</pre>
+<p>Note that some of the capturing groups with an index less than lastCapturedIndex() could have not matched, and therefore captured nothing.</p>
+<p>If the regular expression did not match, this function returns -1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">captured</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedStart">capturedStart</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedEnd">capturedEnd</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#capturedLength">capturedLength</a>().</p></div></p>
+</div><h4 id='method.match_options' class='method'><code>fn <a href='#method.match_options' class='fnname'>match_options</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/regular_expression/enum.MatchOption.html' title='qt_core::regular_expression::MatchOption'>MatchOption</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QRegularExpression::MatchOption&gt; QRegularExpressionMatch::matchOptions() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#matchOptions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the match options that were used to get this <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> object, that is, the match options that were passed to <a href="http://doc.qt.io/qt-5/qregularexpression.html#match">QRegularExpression::match</a>() or <a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">QRegularExpression::globalMatch</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#match">QRegularExpression::match</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#regularExpression">regularExpression</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#matchType">matchType</a>().</p></div></p>
+</div><h4 id='method.match_type' class='method'><code>fn <a href='#method.match_type' class='fnname'>match_type</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/regular_expression/enum.MatchType.html' title='qt_core::regular_expression::MatchType'>MatchType</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpression::MatchType QRegularExpressionMatch::matchType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#matchType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the match type that was used to get this <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> object, that is, the match type that was passed to <a href="http://doc.qt.io/qt-5/qregularexpression.html#match">QRegularExpression::match</a>() or <a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">QRegularExpression::globalMatch</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#match">QRegularExpression::match</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#regularExpression">regularExpression</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#matchOptions">matchOptions</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match/overloading/trait.RegularExpressionMatchNewArgs.html' title='qt_core::regular_expression_match::overloading::RegularExpressionMatchNewArgs'>RegularExpressionMatchNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatch::QRegularExpressionMatch</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRegularExpressionMatch::QRegularExpressionMatch()</code></span></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::regular_expression_match::RegularExpressionMatch, cpp_utils::AsStruct)) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>2) <code>fn new((&amp;::regular_expression_match::RegularExpressionMatch, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRegularExpressionMatch::QRegularExpressionMatch(const QRegularExpressionMatch&amp; match)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, match_: &amp;'l1 <a class='struct' href='../../qt_core/regular_expression_match/struct.RegularExpressionMatch.html' title='qt_core::regular_expression_match::RegularExpressionMatch'>RegularExpressionMatch</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/regular_expression_match/struct.RegularExpressionMatch.html' title='qt_core::regular_expression_match::RegularExpressionMatch'>RegularExpressionMatch</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatch&amp; QRegularExpressionMatch::operator=(const QRegularExpressionMatch&amp; match)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the match result <i>match</i> to this object, and returns a reference to the copy.</p></div></p>
+</div><h4 id='method.regular_expression' class='method'><code>fn <a href='#method.regular_expression' class='fnname'>regular_expression</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression_match/overloading/trait.RegularExpressionMatchRegularExpressionArgs.html' title='qt_core::regular_expression_match::overloading::RegularExpressionMatchRegularExpressionArgs'>RegularExpressionMatchRegularExpressionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpressionMatch::regularExpression</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn regular_expression(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::regular_expression::RegularExpression&gt;</code><br>2) <code>fn regular_expression(&amp;self, cpp_utils::AsStruct) -&gt; ::regular_expression::RegularExpression</code><br>
+C++ method: <span style='color: green;'><code>QRegularExpression QRegularExpressionMatch::regularExpression() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#regularExpression">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> object whose match() function returned this object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#match">QRegularExpression::match</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#matchType">matchType</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#matchOptions">matchOptions</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/regular_expression_match/struct.RegularExpressionMatch.html' title='qt_core::regular_expression_match::RegularExpressionMatch'>RegularExpressionMatch</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRegularExpressionMatch::swap(QRegularExpressionMatch&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps the match result <i>other</i> with this match result. This operation is very fast and never fails.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/regular_expression_match/struct.RegularExpressionMatch.html' title='qt_core::regular_expression_match::RegularExpressionMatch'>RegularExpressionMatch</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127902' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression_match.rs.html#25-29' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/regular_expression_match/struct.RegularExpressionMatch.html' title='qt_core::regular_expression_match::RegularExpressionMatch'>RegularExpressionMatch</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/regular_expression_match/struct.RegularExpressionMatch.html' title='qt_core::regular_expression_match::RegularExpressionMatch'>RegularExpressionMatch</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127965' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression_match.rs.html#290-297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QRegularExpressionMatch::~QRegularExpressionMatch()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#dtor.QRegularExpressionMatch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the match result.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/regular_expression_match/struct.RegularExpressionMatch.html' title='qt_core::regular_expression_match::RegularExpressionMatch'>RegularExpressionMatch</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127968' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression_match.rs.html#299-303' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

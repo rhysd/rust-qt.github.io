@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Call","C++ type: <span style='color: green;'>```QMetaObject::Call```</span>"]],"mod":[["overloading",""]],"struct":[["Connection","C++ type: <span style='color: green;'>```QMetaObject::Connection```</span>"],["MetaObject","C++ type: <span style='color: green;'>```QMetaObject```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["SplitterHandle","C++ type: <span style='color: green;'>```QSplitterHandle```</span>"]]});

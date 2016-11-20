@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ToolButtonPopupMode","C++ type: <span style='color: green;'>```QToolButton::ToolButtonPopupMode```</span>"]],"mod":[["overloading",""]],"struct":[["ToolButton","C++ type: <span style='color: green;'>```QToolButton```</span>"]]});

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `IconEngine` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, IconEngine">
+
+    <title>qt_gui::icon_engine::IconEngine - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>icon_engine</a></p><script>window.sidebarCurrent = {name: 'IconEngine', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>icon_engine</a>::<wbr><a class='struct' href=''>IconEngine</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-76521' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/icon_engine.rs.html#114-116' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct IconEngine {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QIconEngine</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qiconengine.html">QIconEngine</a> class provides an abstract base class for <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a> renderers.</p>
+<p>An icon engine provides the rendering functions for a <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a>. Each icon has a corresponding icon engine that is responsible for drawing the icon with a requested size, mode and state.</p>
+<p>The icon is rendered by the <a href="http://doc.qt.io/qt-5/qiconengine.html#paint">paint</a>() function, and the icon can additionally be obtained as a pixmap with the <a href="http://doc.qt.io/qt-5/qiconengine.html#pixmap">pixmap</a>() function (the default implementation simply uses <a href="http://doc.qt.io/qt-5/qiconengine.html#paint">paint</a>() to achieve this). The <a href="http://doc.qt.io/qt-5/qiconengine.html#addPixmap">addPixmap</a>() function can be used to add new pixmaps to the icon engine, and is used by <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a> to add specialized custom pixmaps.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qiconengine.html#paint">paint</a>(), <a href="http://doc.qt.io/qt-5/qiconengine.html#pixmap">pixmap</a>(), and <a href="http://doc.qt.io/qt-5/qiconengine.html#addPixmap">addPixmap</a>() functions are all virtual, and can therefore be reimplemented in subclasses of <a href="http://doc.qt.io/qt-5/qiconengine.html">QIconEngine</a>.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/icon_engine/struct.IconEngine.html' title='qt_gui::icon_engine::IconEngine'>IconEngine</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-76526' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/icon_engine.rs.html#124-275' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.actual_size' class='method'><code>fn <a href='#method.actual_size' class='fnname'>actual_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon_engine/overloading/trait.IconEngineActualSizeArgs.html' title='qt_gui::icon_engine::overloading::IconEngineActualSizeArgs'>IconEngineActualSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIconEngine::actualSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn actual_size(&amp;mut self, (&amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn actual_size(&amp;mut self, (&amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsStruct)) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>virtual QSize QIconEngine::actualSize(const QSize&amp; size, QIcon::Mode mode, QIcon::State state)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#actualSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the actual size of the icon the engine provides for the requested <i>size</i>, <i>mode</i> and <i>state</i>. The default implementation returns the given <i>size</i>.</p></div></p>
+</div><h4 id='method.add_file' class='method'><code>fn <a href='#method.add_file' class='fnname'>add_file</a>(&amp;mut self, file_name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>, size: &amp;<a class='struct' href='../../qt_core/size/struct.Size.html' title='qt_core::size::Size'>Size</a>, mode: <a class='enum' href='../../qt_gui/icon/enum.Mode.html' title='qt_gui::icon::Mode'>Mode</a>, state: <a class='enum' href='../../qt_gui/icon/enum.State.html' title='qt_gui::icon::State'>State</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QIconEngine::addFile(const QString&amp; fileName, const QSize&amp; size, QIcon::Mode mode, QIcon::State state)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#addFile">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Called by <a href="http://doc.qt.io/qt-5/qicon.html#addFile">QIcon::addFile</a>(). Adds a specialized pixmap from the file with the given <i>fileName</i>, <i>size</i>, <i>mode</i> and <i>state</i>. The default pixmap-based engine stores any supplied file names, and it loads the pixmaps on demand instead of using scaled pixmaps if the size of a pixmap matches the size of icon requested. Custom icon engines that implement scalable vector formats are free to ignores any extra files.</p></div></p>
+</div><h4 id='method.add_pixmap' class='method'><code>fn <a href='#method.add_pixmap' class='fnname'>add_pixmap</a>(&amp;mut self, pixmap: &amp;<a class='struct' href='../../qt_gui/pixmap/struct.Pixmap.html' title='qt_gui::pixmap::Pixmap'>Pixmap</a>, mode: <a class='enum' href='../../qt_gui/icon/enum.Mode.html' title='qt_gui::icon::Mode'>Mode</a>, state: <a class='enum' href='../../qt_gui/icon/enum.State.html' title='qt_gui::icon::State'>State</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QIconEngine::addPixmap(const QPixmap&amp; pixmap, QIcon::Mode mode, QIcon::State state)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#addPixmap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Called by <a href="http://doc.qt.io/qt-5/qicon.html#addPixmap">QIcon::addPixmap</a>(). Adds a specialized <i>pixmap</i> for the given <i>mode</i> and <i>state</i>. The default pixmap-based engine stores any supplied pixmaps, and it uses them instead of scaled pixmaps if the size of a pixmap matches the size of icon requested. Custom icon engines that implement scalable vector formats are free to ignores any extra pixmaps.</p></div></p>
+</div><h4 id='method.available_sizes' class='method'><code>fn <a href='#method.available_sizes' class='fnname'>available_sizes</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon_engine/overloading/trait.IconEngineAvailableSizesArgs.html' title='qt_gui::icon_engine::overloading::IconEngineAvailableSizesArgs'>IconEngineAvailableSizesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIconEngine::availableSizes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn available_sizes(&amp;self, (::icon::Mode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListSizeRef&gt;</code><br>2) <code>fn available_sizes(&amp;self, (::icon::Mode, ::icon::State, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListSizeRef&gt;</code><br>3) <code>fn available_sizes(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListSizeRef&gt;</code><br>4) <code>fn available_sizes(&amp;self, (::icon::Mode, cpp_utils::AsStruct)) -&gt; ::list::ListSizeRef</code><br>5) <code>fn available_sizes(&amp;self, (::icon::Mode, ::icon::State, cpp_utils::AsStruct)) -&gt; ::list::ListSizeRef</code><br>6) <code>fn available_sizes(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListSizeRef</code><br>
+C++ method: <span style='color: green;'><code>virtual QList&lt;QSize&gt; QIconEngine::availableSizes(QIcon::Mode mode = ?, QIcon::State state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#availableSizes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns sizes of all images that are contained in the engine for the specific <i>mode</i> and <i>state</i>.</p>
+<p><b>Note: </b>This is a helper method and the actual work is done by <a href="http://doc.qt.io/qt-5/qiconengine.html#virtual_hook">virtual_hook</a>() method, hence this method depends on icon engine support and may not work with all icon engines.</p><p>This function was introduced in  Qt 4.5.</p></div></p>
+</div><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/icon_engine/struct.IconEngine.html' title='qt_gui::icon_engine::IconEngine'>IconEngine</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual QIconEngine* QIconEngine::clone() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#clone">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reimplement this method to return a clone of this icon engine.</p></div></p>
+</div><h4 id='method.icon_name' class='method'><code>fn <a href='#method.icon_name' class='fnname'>icon_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon_engine/overloading/trait.IconEngineIconNameArgs.html' title='qt_gui::icon_engine::overloading::IconEngineIconNameArgs'>IconEngineIconNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIconEngine::iconName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn icon_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn icon_name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>virtual QString QIconEngine::iconName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#iconName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name used to create the engine, if available.</p>
+<p><b>Note: </b>This is a helper method and the actual work is done by <a href="http://doc.qt.io/qt-5/qiconengine.html#virtual_hook">virtual_hook</a>() method, hence this method depends on icon engine support and may not work with all icon engines.</p><p>This function was introduced in  Qt 4.7.</p></div></p>
+</div><h4 id='method.key' class='method'><code>fn <a href='#method.key' class='fnname'>key</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon_engine/overloading/trait.IconEngineKeyArgs.html' title='qt_gui::icon_engine::overloading::IconEngineKeyArgs'>IconEngineKeyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIconEngine::key</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn key(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn key(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>virtual QString QIconEngine::key() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#key">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a key that identifies this icon engine.</p></div></p>
+</div><h4 id='method.paint' class='method'><code>fn <a href='#method.paint' class='fnname'>paint</a>(&amp;mut self, painter: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/painter/struct.Painter.html' title='qt_gui::painter::Painter'>Painter</a>, rect: &amp;<a class='struct' href='../../qt_core/rect/struct.Rect.html' title='qt_core::rect::Rect'>Rect</a>, mode: <a class='enum' href='../../qt_gui/icon/enum.Mode.html' title='qt_gui::icon::Mode'>Mode</a>, state: <a class='enum' href='../../qt_gui/icon/enum.State.html' title='qt_gui::icon::State'>State</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QIconEngine::paint(QPainter* painter, const QRect&amp; rect, QIcon::Mode mode, QIcon::State state)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#paint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Uses the given <i>painter</i> to paint the icon with the required <i>mode</i> and <i>state</i> into the rectangle <i>rect</i>.</p></div></p>
+</div><h4 id='method.pixmap' class='method'><code>fn <a href='#method.pixmap' class='fnname'>pixmap</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon_engine/overloading/trait.IconEnginePixmapArgs.html' title='qt_gui::icon_engine::overloading::IconEnginePixmapArgs'>IconEnginePixmapArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIconEngine::pixmap</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn pixmap(&amp;mut self, (&amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn pixmap(&amp;mut self, (&amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>virtual QPixmap QIconEngine::pixmap(const QSize&amp; size, QIcon::Mode mode, QIcon::State state)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#pixmap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the icon as a pixmap with the required <i>size</i>, <i>mode</i>, and <i>state</i>. The default implementation creates a new pixmap and calls <a href="http://doc.qt.io/qt-5/qiconengine.html#paint">paint</a>() to fill it.</p></div></p>
+</div><h4 id='method.read' class='method'><code>fn <a href='#method.read' class='fnname'>read</a>(&amp;mut self, in_: &amp;mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual bool QIconEngine::read(QDataStream&amp; in)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#read">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads icon engine contents from the <a href="http://doc.qt.io/qt-5/qdatastream.html">QDataStream</a> <i>in</i>. Returns true if the contents were read; otherwise returns <code>false</code>.</p>
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html">QIconEngine</a>&#39;s default implementation always return false.</p></div></p>
+</div><h4 id='method.virtual_hook' class='method'><code>fn <a href='#method.virtual_hook' class='fnname'>virtual_hook</a>(&amp;mut self, id: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, data: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='enum' href='../../libc/enum.c_void.html' title='libc::c_void'>c_void</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QIconEngine::virtual_hook(int id, void* data)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#virtual_hook">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Additional method to allow extending <a href="http://doc.qt.io/qt-5/qiconengine.html">QIconEngine</a> without adding new virtual methods (and without breaking binary compatibility). The actual action and format of <i>data</i> depends on <i>id</i> argument which is in fact a constant from <a href="http://doc.qt.io/qt-5/qiconengine.html#IconEngineHook-enum">IconEngineHook</a> enum.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qiconengine.html#IconEngineHook-enum">IconEngineHook</a>.</p></div></p>
+</div><h4 id='method.write' class='method'><code>fn <a href='#method.write' class='fnname'>write</a>(&amp;self, out: &amp;mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual bool QIconEngine::write(QDataStream&amp; out) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#write">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the contents of this engine to the <a href="http://doc.qt.io/qt-5/qdatastream.html">QDataStream</a> <i>out</i>. Returns <code>true</code> if the contents were written; otherwise returns <code>false</code>.</p>
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html">QIconEngine</a>&#39;s default implementation always return false.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/icon_engine/struct.IconEngine.html' title='qt_gui::icon_engine::IconEngine'>IconEngine</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-76524' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/icon_engine.rs.html#118-122' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/icon_engine/struct.IconEngine.html' title='qt_gui::icon_engine::IconEngine'>IconEngine</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/icon_engine/struct.IconEngine.html' title='qt_gui::icon_engine::IconEngine'>IconEngine</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-76581' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/icon_engine.rs.html#277-284' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QIconEngine::~QIconEngine()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qiconengine.html#dtor.QIconEngine">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the icon engine.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/icon_engine/struct.IconEngine.html' title='qt_gui::icon_engine::IconEngine'>IconEngine</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-76584' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/icon_engine.rs.html#286-290' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

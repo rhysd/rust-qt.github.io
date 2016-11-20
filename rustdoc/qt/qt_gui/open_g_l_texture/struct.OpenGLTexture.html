@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `OpenGLTexture` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, OpenGLTexture">
+
+    <title>qt_gui::open_g_l_texture::OpenGLTexture - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>open_g_l_texture</a></p><script>window.sidebarCurrent = {name: 'OpenGLTexture', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>open_g_l_texture</a>::<wbr><a class='struct' href=''>OpenGLTexture</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-102817' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_texture.rs.html#231-233' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct OpenGLTexture {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QOpenGLTexture</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qopengltexture.html">QOpenGLTexture</a> class encapsulates an OpenGL texture object.</p>
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html">QOpenGLTexture</a> makes it easy to work with OpenGL textures and the myriad features and targets that they offer depending upon the capabilities of your OpenGL implementation.</p>
+<p>The typical usage pattern for <a href="http://doc.qt.io/qt-5/qopengltexture.html">QOpenGLTexture</a> is</p>
+<ul>
+<li>Instantiate the object specifying the texture target type</li>
+<li>Set properties that affect the storage requirements e.g. storage format, dimensions</li>
+<li>Allocate the server-side storage</li>
+<li>Optionally upload pixel data</li>
+<li>Optionally set any additional properties e.g. filtering and border options</li>
+<li>Render with texture or render to texture</li>
+</ul>
+<p>In the common case of simply using a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> as the source of texture pixel data most of the above steps are performed automatically.</p>
+<pre class="cpp"><span class="comment">// Prepare texture</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qopengltexture.html#QOpenGLTexture">QOpenGLTexture</a></span> <span class="operator">*</span>texture <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qopengltexture.html#QOpenGLTexture">QOpenGLTexture</a></span>(<span class="type"><a href="http://doc.qt.io/qt-5/qimage.html">QImage</a></span>(fileName)<span class="operator">.</span>mirrored());
+texture<span class="operator">-</span><span class="operator">&gt;</span><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinificationFilter">setMinificationFilter</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qopengltexture.html#QOpenGLTexture">QOpenGLTexture</a></span><span class="operator">::</span>LinearMipMapLinear);
+texture<span class="operator">-</span><span class="operator">&gt;</span><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMagnificationFilter">setMagnificationFilter</a>(<span class="type"><a href="http://doc.qt.io/qt-5/qopengltexture.html#QOpenGLTexture">QOpenGLTexture</a></span><span class="operator">::</span>Linear);
+<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+<span class="comment">// Render with texture</span>
+texture<span class="operator">-</span><span class="operator">&gt;</span><a href="http://doc.qt.io/qt-5/qopengltexture.html#bind">bind</a>();
+glDrawArrays(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>);</pre>
+<p>Note that the <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> is mirrored vertically to account for the fact that OpenGL and <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> use opposite directions for the y axis. Another option would be to transform your texture coordinates.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/open_g_l_texture/struct.OpenGLTexture.html' title='qt_gui::open_g_l_texture::OpenGLTexture'>OpenGLTexture</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-102822' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_texture.rs.html#241-1251' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.allocate_storage' class='method'><code>fn <a href='#method.allocate_storage' class='fnname'>allocate_storage</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureAllocateStorageArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureAllocateStorageArgs'>OpenGLTextureAllocateStorageArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::allocateStorage</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn allocate_storage(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::allocateStorage()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#allocateStorage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Allocates server-side storage for this texture object taking into account, the format, dimensions, mipmap levels, array layers and cubemap faces.</p>
+<p>Once storage has been allocated it is no longer possible to change these properties.</p>
+<p>If supported <a href="http://doc.qt.io/qt-5/qopengltexture.html">QOpenGLTexture</a> makes use of immutable texture storage.</p>
+<p>Once storage has been allocated for the texture then pixel data can be uploaded via one of the <a href="http://doc.qt.io/qt-5/qopengltexture.html#setData">setData</a>() overloads.</p>
+<p><b>Note: </b>If immutable texture storage is not available, then a default pixel format and pixel type will be used to create the mutable storage. You can use the other allocateStorage() overload to specify exactly the pixel format and the pixel type to use when allocating mutable storage; this is particulary useful under certain OpenGL ES implementations (notably, OpenGL ES 2), where the pixel format and the pixel type used at allocation time must perfectly match the format and the type passed to any subsequent <a href="http://doc.qt.io/qt-5/qopengltexture.html#setData">setData</a>() call.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">isStorageAllocated</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setData">setData</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn allocate_storage(&amp;mut self, (::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::allocateStorage(QOpenGLTexture::PixelFormat pixelFormat, QOpenGLTexture::PixelType pixelType)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#allocateStorage-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Allocates server-side storage for this texture object taking into account, the format, dimensions, mipmap levels, array layers and cubemap faces.</p>
+<p>Once storage has been allocated it is no longer possible to change these properties.</p>
+<p>If supported <a href="http://doc.qt.io/qt-5/qopengltexture.html">QOpenGLTexture</a> makes use of immutable texture storage. However, if immutable texture storage is not available, then the specified <i>pixelFormat</i> and <i>pixelType</i> will be used to allocate mutable storage; note that in certain OpenGL implementations (notably, OpenGL ES 2) they must perfectly match the format and the type passed to any subsequent <a href="http://doc.qt.io/qt-5/qopengltexture.html#setData">setData</a>() call.</p>
+<p>Once storage has been allocated for the texture then pixel data can be uploaded via one of the <a href="http://doc.qt.io/qt-5/qopengltexture.html#setData">setData</a>() overloads.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">isStorageAllocated</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setData">setData</a>().</p></div></p>
+</div><h4 id='method.bind' class='method'><code>fn <a href='#method.bind' class='fnname'>bind</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureBindArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureBindArgs'>OpenGLTextureBindArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::bind</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn bind(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::bind()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#bind">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Binds this texture to the currently active texture unit ready for rendering. Note that you do not need to bind <a href="http://doc.qt.io/qt-5/qopengltexture.html">QOpenGLTexture</a> objects in order to modify them as the implementation makes use of the EXT_direct_state_access extension where available and simulates it where it is not.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#release">release</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn bind(&amp;mut self, libc::c_uint) -&gt; ()</code><br>2) <code>fn bind(&amp;mut self, (libc::c_uint, ::open_g_l_texture::TextureUnitReset)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::bind(unsigned int unit, QOpenGLTexture::TextureUnitReset reset = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#bind-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Binds this texture to texture unit <i>unit</i> ready for rendering. Note that you do not need to bind <a href="http://doc.qt.io/qt-5/qopengltexture.html">QOpenGLTexture</a> objects in order to modify them as the implementation makes use of the EXT_direct_state_access extension where available and simulates it where it is not.</p>
+<p>If parameter <i>reset</i> is <code>true</code> then this function will restore the active unit to the texture unit that was active upon entry.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#release">release</a>().</p></div></p>
+</div><h4 id='method.border_color' class='method'><code>fn <a href='#method.border_color' class='fnname'>border_color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureBorderColorArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureBorderColorArgs'>OpenGLTextureBorderColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::borderColor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn border_color(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn border_color(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QOpenGLTexture::borderColor() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#borderColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the borderColor of this texture.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setBorderColor">setBorderColor</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn border_color(&amp;self, *mut libc::c_float) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::borderColor(float* border) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#borderColor-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the texture border color into the first four elements of the array pointed to by <i>border</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setBorderColor">setBorderColor</a>().</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn border_color(&amp;self, *mut libc::c_int) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::borderColor(int* border) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#borderColor-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the texture border color into the first four elements of the array pointed to by <i>border</i>.</p>
+<p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <code>fn border_color(&amp;self, *mut libc::c_uint) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::borderColor(unsigned int* border) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#borderColor-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the texture border color into the first four elements of the array pointed to by <i>border</i>.</p>
+<p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.bound_texture_id' class='method'><code>fn <a href='#method.bound_texture_id' class='fnname'>bound_texture_id</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureBoundTextureIdArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureBoundTextureIdArgs'>OpenGLTextureBoundTextureIdArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::boundTextureId</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn bound_texture_id(::open_g_l_texture::BindingTarget) -&gt; libc::c_uint</code><br>
+C++ method: <span style='color: green;'><code>static unsigned int QOpenGLTexture::boundTextureId(QOpenGLTexture::BindingTarget target)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#boundTextureId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qopengltexture.html#textureId">textureId</a> of the texture that is bound to the <i>target</i> of the currently active texture unit.</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn bound_texture_id((libc::c_uint, ::open_g_l_texture::BindingTarget)) -&gt; libc::c_uint</code><br>
+C++ method: <span style='color: green;'><code>static unsigned int QOpenGLTexture::boundTextureId(unsigned int unit, QOpenGLTexture::BindingTarget target)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#boundTextureId-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qopengltexture.html#textureId">textureId</a> of the texture that is bound to the <i>target</i> of the texture unit <i>unit</i>.</p></div></p>
+</div><h4 id='method.comparison_function' class='method'><code>fn <a href='#method.comparison_function' class='fnname'>comparison_function</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/open_g_l_texture/enum.ComparisonFunction.html' title='qt_gui::open_g_l_texture::ComparisonFunction'>ComparisonFunction</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::ComparisonFunction QOpenGLTexture::comparisonFunction() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#comparisonFunction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the texture comparison operator set on this texture. By default, a texture has a <a href="http://doc.qt.io/qt-5/qopengltexture.html#ComparisonFunction-enum">CompareLessEqual</a> comparison function.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setComparisonFunction">setComparisonFunction</a>().</p></div></p>
+</div><h4 id='method.comparison_mode' class='method'><code>fn <a href='#method.comparison_mode' class='fnname'>comparison_mode</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/open_g_l_texture/enum.ComparisonMode.html' title='qt_gui::open_g_l_texture::ComparisonMode'>ComparisonMode</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::ComparisonMode QOpenGLTexture::comparisonMode() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#comparisonMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the texture comparison mode set on this texture. By default, a texture has a <a href="http://doc.qt.io/qt-5/qopengltexture.html#ComparisonMode-enum">CompareNone</a> comparison mode (i.e. comparisons are disabled).</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setComparisonMode">setComparisonMode</a>().</p></div></p>
+</div><h4 id='method.create' class='method'><code>fn <a href='#method.create' class='fnname'>create</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLTexture::create()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#create">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates the underlying OpenGL texture object. This requires a current valid OpenGL context. If the texture object already exists, this function does nothing.</p>
+<p>Once the texture object is created you can obtain the object name from the <a href="http://doc.qt.io/qt-5/qopengltexture.html#textureId">textureId</a>() function. This may be useful if you wish to make some raw OpenGL calls related to this texture.</p>
+<p>Normally it should not be necessary to call this function directly as all functions that set properties of the texture object implicitly call create() on your behalf.</p>
+<p>Returns <code>true</code> if the creation succeeded, otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#destroy">destroy</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#isCreated">isCreated</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#textureId">textureId</a>().</p></div></p>
+</div><h4 id='method.create_texture_view' class='method'><code>fn <a href='#method.create_texture_view' class='fnname'>create_texture_view</a>(&amp;self, target: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.Target.html' title='qt_gui::open_g_l_texture::Target'>Target</a>, view_format: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.TextureFormat.html' title='qt_gui::open_g_l_texture::TextureFormat'>TextureFormat</a>, minimum_mipmap_level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, maximum_mipmap_level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, minimum_layer: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, maximum_layer: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/open_g_l_texture/struct.OpenGLTexture.html' title='qt_gui::open_g_l_texture::OpenGLTexture'>OpenGLTexture</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture* QOpenGLTexture::createTextureView(QOpenGLTexture::Target target, QOpenGLTexture::TextureFormat viewFormat, int minimumMipmapLevel, int maximumMipmapLevel, int minimumLayer, int maximumLayer) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#createTextureView">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Attempts to create a texture view onto this texture. A texture view is somewhat analogous to a view in SQL in that it presents a restricted or reinterpreted view of the original data. Texture views do not allocate any more server-side storage, insted relying on the storage buffer of the source texture.</p>
+<p>Texture views are only available when using immutable storage. For more information on texture views see <a href="http://www.opengl.org/wiki/Texture_Storage#Texture_views">http://www.opengl.org/wiki/Texture_Storage#Texture_views</a>.</p>
+<p>The <i>target</i> argument specifies the target to use for the view. Only some targets can be used depending upon the target of the original target. For e.g. a view onto a <a href="http://doc.qt.io/qt-5/qopengltexture.html#Target-enum">Target1DArray</a> texture can specify either <a href="http://doc.qt.io/qt-5/qopengltexture.html#Target-enum">Target1DArray</a> or <a href="http://doc.qt.io/qt-5/qopengltexture.html#Target-enum">Target1D</a> but for the latter the number of array layers specified with <i>minimumLayer</i> and <i>maximumLayer</i> must be exactly 1.</p>
+<p>Simpliar constraints apply for the <i>viewFormat</i>. See the above link and the specification for more details.</p>
+<p>The <i>minimumMipmapLevel</i>, <i>maximumMipmapLevel</i>, <i>minimumLayer</i>, and <i>maximumLayer</i> arguments serve to restrict the parts of the texture accessible by the texture view.</p>
+<p>If creation of the texture view fails this function will return 0. If the function succeeds it will return a pointer to a new <a href="http://doc.qt.io/qt-5/qopengltexture.html">QOpenGLTexture</a> object that will return <code>true</code> from its <a href="http://doc.qt.io/qt-5/qopengltexture.html#isTextureView">isTextureView</a>() function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#isTextureView">isTextureView</a>().</p></div></p>
+</div><h4 id='method.depth' class='method'><code>fn <a href='#method.depth' class='fnname'>depth</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLTexture::depth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#depth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the depth of a 3D texture.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#width">width</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#height">height</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setSize">setSize</a>().</p></div></p>
+</div><h4 id='method.depth_stencil_mode' class='method'><code>fn <a href='#method.depth_stencil_mode' class='fnname'>depth_stencil_mode</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/open_g_l_texture/enum.DepthStencilMode.html' title='qt_gui::open_g_l_texture::DepthStencilMode'>DepthStencilMode</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::DepthStencilMode QOpenGLTexture::depthStencilMode() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#depthStencilMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the depth stencil mode for textures using a combined depth/stencil format.</p>
+<p>This function was introduced in  Qt 5.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setDepthStencilMode">setDepthStencilMode</a>().</p></div></p>
+</div><h4 id='method.destroy' class='method'><code>fn <a href='#method.destroy' class='fnname'>destroy</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::destroy()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#destroy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the underlying OpenGL texture object. This requires a current valid OpenGL context.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#create">create</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#isCreated">isCreated</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#textureId">textureId</a>().</p></div></p>
+</div><h4 id='method.faces' class='method'><code>fn <a href='#method.faces' class='fnname'>faces</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLTexture::faces() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#faces">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of faces for this texture. For cubemap and cubemap array type targets this will be 6.</p>
+<p>For non-cubemap type targets this will return 1.</p></div></p>
+</div><h4 id='method.format' class='method'><code>fn <a href='#method.format' class='fnname'>format</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/open_g_l_texture/enum.TextureFormat.html' title='qt_gui::open_g_l_texture::TextureFormat'>TextureFormat</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::TextureFormat QOpenGLTexture::format() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#format">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the format of this texture object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setFormat">setFormat</a>().</p></div></p>
+</div><h4 id='method.generate_mip_maps' class='method'><code>fn <a href='#method.generate_mip_maps' class='fnname'>generate_mip_maps</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureGenerateMipMapsArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureGenerateMipMapsArgs'>OpenGLTextureGenerateMipMapsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::generateMipMaps</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn generate_mip_maps(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::generateMipMaps()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#generateMipMaps">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Generates mipmaps for this texture object from mipmap level 0. If you are using a texture target and filtering option that requires mipmaps and you have disabled automatic mipmap generation then you need to call this function or the overload to create the mipmap chain.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setAutoMipMapGenerationEnabled">setAutoMipMapGenerationEnabled</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipLevels">setMipLevels</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#mipLevels">mipLevels</a>().</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn generate_mip_maps(&amp;mut self, libc::c_int) -&gt; ()</code><br>2) <code>fn generate_mip_maps(&amp;mut self, (libc::c_int, bool)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::generateMipMaps(int baseLevel, bool resetBaseLevel = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#generateMipMaps-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Generates mipmaps for this texture object from mipmap level <i>baseLevel</i>. If you are using a texture target and filtering option that requires mipmaps and you have disabled automatic mipmap generation then you need to call this function or the overload to create the mipmap chain.</p>
+<p>The generation of mipmaps to above <i>baseLevel</i> is achieved by setting the mipmap base level to <i>baseLevel</i> and then generating the mipmap chain. If <i>resetBaseLevel</i> is <code>true</code>, then the baseLevel of the texture will be reset to its previous value.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setAutoMipMapGenerationEnabled">setAutoMipMapGenerationEnabled</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipLevels">setMipLevels</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#mipLevels">mipLevels</a>().</p></div></p>
+</div><h4 id='method.has_feature' class='method'><code>fn <a href='#method.has_feature' class='fnname'>has_feature</a>(feature: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.Feature.html' title='qt_gui::open_g_l_texture::Feature'>Feature</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QOpenGLTexture::hasFeature(QOpenGLTexture::Feature feature)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#hasFeature">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if your OpenGL implementation and version supports the texture feature <i>feature</i>.</p></div></p>
+</div><h4 id='method.height' class='method'><code>fn <a href='#method.height' class='fnname'>height</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLTexture::height() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#height">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the height of a 2D or 3D texture.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#width">width</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#depth">depth</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setSize">setSize</a>().</p></div></p>
+</div><h4 id='method.is_auto_mip_map_generation_enabled' class='method'><code>fn <a href='#method.is_auto_mip_map_generation_enabled' class='fnname'>is_auto_mip_map_generation_enabled</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLTexture::isAutoMipMapGenerationEnabled() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#isAutoMipMapGenerationEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether auto mipmap generation is enabled for this texture object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setAutoMipMapGenerationEnabled">setAutoMipMapGenerationEnabled</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#generateMipMaps">generateMipMaps</a>().</p></div></p>
+</div><h4 id='method.is_bound' class='method'><code>fn <a href='#method.is_bound' class='fnname'>is_bound</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLTexture::isBound() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#isBound">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this texture is bound to the corresponding target of the currently active texture unit.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#bind">bind</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#release">release</a>().</p></div></p>
+</div><h4 id='method.is_bound_mut' class='method'><code>fn <a href='#method.is_bound_mut' class='fnname'>is_bound_mut</a>(&amp;mut self, unit: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLTexture::isBound(unsigned int unit)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#isBound-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this texture is bound to the corresponding target of texture unit <i>unit</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#bind">bind</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#release">release</a>().</p></div></p>
+</div><h4 id='method.is_created' class='method'><code>fn <a href='#method.is_created' class='fnname'>is_created</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLTexture::isCreated() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#isCreated">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the underlying OpenGL texture object has been created.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#create">create</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#destroy">destroy</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#textureId">textureId</a>().</p></div></p>
+</div><h4 id='method.is_fixed_sample_positions' class='method'><code>fn <a href='#method.is_fixed_sample_positions' class='fnname'>is_fixed_sample_positions</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLTexture::isFixedSamplePositions() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#isFixedSamplePositions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether this texture uses a fixed pattern of multisample samples. If storage has not yet been allocated for this texture then this function returns the requested fixed sample position setting.</p>
+<p>For texture targets that do not support multisampling this will return <code>true</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setFixedSamplePositions">setFixedSamplePositions</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p></div></p>
+</div><h4 id='method.is_storage_allocated' class='method'><code>fn <a href='#method.is_storage_allocated' class='fnname'>is_storage_allocated</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLTexture::isStorageAllocated() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if server-side storage for this texture as been allocated.</p>
+<p>The texture format, dimensions, mipmap levels and array layers cannot be altered once storage ihas been allocated.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#allocateStorage">allocateStorage</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setSize">setSize</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipLevels">setMipLevels</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setLayers">setLayers</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setFormat">setFormat</a>().</p></div></p>
+</div><h4 id='method.is_texture_view' class='method'><code>fn <a href='#method.is_texture_view' class='fnname'>is_texture_view</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLTexture::isTextureView() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#isTextureView">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this texture object is actually a view onto another texture object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#createTextureView">createTextureView</a>().</p></div></p>
+</div><h4 id='method.layers' class='method'><code>fn <a href='#method.layers' class='fnname'>layers</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLTexture::layers() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#layers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of array layers for this texture. If storage has not yet been allocated for this texture then this function returns the requested number of array layers.</p>
+<p>For texture targets that do not support array layers this will return 1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setLayers">setLayers</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p></div></p>
+</div><h4 id='method.level_of_detail_range' class='method'><code>fn <a href='#method.level_of_detail_range' class='fnname'>level_of_detail_range</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureLevelOfDetailRangeArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureLevelOfDetailRangeArgs'>OpenGLTextureLevelOfDetailRangeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::levelOfDetailRange</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn level_of_detail_range(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pair::PairCFloatCFloat&gt;</code><br>2) <code>fn level_of_detail_range(&amp;self, cpp_utils::AsStruct) -&gt; ::pair::PairCFloatCFloat</code><br>
+C++ method: <span style='color: green;'><code>QPair&lt;float, float&gt; QOpenGLTexture::levelOfDetailRange() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#levelOfDetailRange">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the minimum and maximum level of detail parameters.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setLevelOfDetailRange">setLevelOfDetailRange</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#minimumLevelOfDetail">minimumLevelOfDetail</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#maximumLevelOfDetail">maximumLevelOfDetail</a>().</p></div></p>
+</div><h4 id='method.levelof_detail_bias' class='method'><code>fn <a href='#method.levelof_detail_bias' class='fnname'>levelof_detail_bias</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>float QOpenGLTexture::levelofDetailBias() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#levelofDetailBias">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the level of detail bias parameter.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setLevelofDetailBias">setLevelofDetailBias</a>().</p></div></p>
+</div><h4 id='method.magnification_filter' class='method'><code>fn <a href='#method.magnification_filter' class='fnname'>magnification_filter</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/open_g_l_texture/enum.Filter.html' title='qt_gui::open_g_l_texture::Filter'>Filter</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::Filter QOpenGLTexture::magnificationFilter() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#magnificationFilter">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the magnification filter.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMagnificationFilter">setMagnificationFilter</a>().</p></div></p>
+</div><h4 id='method.maximum_anisotropy' class='method'><code>fn <a href='#method.maximum_anisotropy' class='fnname'>maximum_anisotropy</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>float QOpenGLTexture::maximumAnisotropy() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#maximumAnisotropy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the maximum level of anisotropy to be accounted for when performing texture lookups. This requires the GL_EXT_texture_filter_anisotropic extension.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMaximumAnisotropy">setMaximumAnisotropy</a>().</p></div></p>
+</div><h4 id='method.maximum_level_of_detail' class='method'><code>fn <a href='#method.maximum_level_of_detail' class='fnname'>maximum_level_of_detail</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>float QOpenGLTexture::maximumLevelOfDetail() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#maximumLevelOfDetail">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the maximum level of detail parameter.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMaximumLevelOfDetail">setMaximumLevelOfDetail</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#minimumLevelOfDetail">minimumLevelOfDetail</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#levelOfDetailRange">levelOfDetailRange</a>().</p></div></p>
+</div><h4 id='method.maximum_mip_levels' class='method'><code>fn <a href='#method.maximum_mip_levels' class='fnname'>maximum_mip_levels</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLTexture::maximumMipLevels() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#maximumMipLevels">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the maximum number of mipmap levels that this texture can have given the current dimensions.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipLevels">setMipLevels</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#mipLevels">mipLevels</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setSize">setSize</a>().</p></div></p>
+</div><h4 id='method.min_mag_filters' class='method'><code>fn <a href='#method.min_mag_filters' class='fnname'>min_mag_filters</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureMinMagFiltersArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureMinMagFiltersArgs'>OpenGLTextureMinMagFiltersArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::minMagFilters</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn min_mag_filters(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pair::PairFilterFilter&gt;</code><br>2) <code>fn min_mag_filters(&amp;self, cpp_utils::AsStruct) -&gt; ::pair::PairFilterFilter</code><br>
+C++ method: <span style='color: green;'><code>QPair&lt;QOpenGLTexture::Filter, QOpenGLTexture::Filter&gt; QOpenGLTexture::minMagFilters() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#minMagFilters">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current minification and magnification filters.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinMagFilters">setMinMagFilters</a>().</p></div></p>
+</div><h4 id='method.minification_filter' class='method'><code>fn <a href='#method.minification_filter' class='fnname'>minification_filter</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/open_g_l_texture/enum.Filter.html' title='qt_gui::open_g_l_texture::Filter'>Filter</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::Filter QOpenGLTexture::minificationFilter() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#minificationFilter">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the minification filter.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinificationFilter">setMinificationFilter</a>().</p></div></p>
+</div><h4 id='method.minimum_level_of_detail' class='method'><code>fn <a href='#method.minimum_level_of_detail' class='fnname'>minimum_level_of_detail</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>float QOpenGLTexture::minimumLevelOfDetail() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#minimumLevelOfDetail">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the minimum level of detail parameter.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinimumLevelOfDetail">setMinimumLevelOfDetail</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#maximumLevelOfDetail">maximumLevelOfDetail</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#levelOfDetailRange">levelOfDetailRange</a>().</p></div></p>
+</div><h4 id='method.mip_base_level' class='method'><code>fn <a href='#method.mip_base_level' class='fnname'>mip_base_level</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLTexture::mipBaseLevel() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#mipBaseLevel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the mipmap base level used for all texture lookups with this texture. The default is 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipBaseLevel">setMipBaseLevel</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#mipMaxLevel">mipMaxLevel</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#mipLevelRange">mipLevelRange</a>().</p></div></p>
+</div><h4 id='method.mip_level_range' class='method'><code>fn <a href='#method.mip_level_range' class='fnname'>mip_level_range</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureMipLevelRangeArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureMipLevelRangeArgs'>OpenGLTextureMipLevelRangeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::mipLevelRange</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn mip_level_range(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pair::PairCIntCInt&gt;</code><br>2) <code>fn mip_level_range(&amp;self, cpp_utils::AsStruct) -&gt; ::pair::PairCIntCInt</code><br>
+C++ method: <span style='color: green;'><code>QPair&lt;int, int&gt; QOpenGLTexture::mipLevelRange() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#mipLevelRange">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the range of mipmap levels that can be used for texture lookups with this texture.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipLevelRange">setMipLevelRange</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#mipBaseLevel">mipBaseLevel</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#mipMaxLevel">mipMaxLevel</a>().</p></div></p>
+</div><h4 id='method.mip_levels' class='method'><code>fn <a href='#method.mip_levels' class='fnname'>mip_levels</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLTexture::mipLevels() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#mipLevels">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of mipmap levels for this texture. If storage has not yet been allocated for this texture it returns the requested number of mipmap levels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipLevels">setMipLevels</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#maximumMipLevels">maximumMipLevels</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p></div></p>
+</div><h4 id='method.mip_max_level' class='method'><code>fn <a href='#method.mip_max_level' class='fnname'>mip_max_level</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLTexture::mipMaxLevel() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#mipMaxLevel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the mipmap maximum level used for all texture lookups with this texture.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipMaxLevel">setMipMaxLevel</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#mipBaseLevel">mipBaseLevel</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#mipLevelRange">mipLevelRange</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureNewArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureNewArgs'>OpenGLTextureNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::QOpenGLTexture</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((::open_g_l_texture::Target, cpp_utils::AsStruct)) -&gt; ::open_g_l_texture::OpenGLTexture</code><br>2) <code>fn new((::open_g_l_texture::Target, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_texture::OpenGLTexture&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLTexture::QOpenGLTexture(QOpenGLTexture::Target target)</code></span></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::image::Image, cpp_utils::AsStruct)) -&gt; ::open_g_l_texture::OpenGLTexture</code><br>2) <code>fn new((&amp;::image::Image, ::open_g_l_texture::MipMapGeneration, cpp_utils::AsStruct)) -&gt; ::open_g_l_texture::OpenGLTexture</code><br>3) <code>fn new((&amp;::image::Image, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_texture::OpenGLTexture&gt;</code><br>4) <code>fn new((&amp;::image::Image, ::open_g_l_texture::MipMapGeneration, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_texture::OpenGLTexture&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLTexture::QOpenGLTexture(const QImage&amp; image, QOpenGLTexture::MipMapGeneration genMipMaps = ?)</code></span></p>
+</div><h4 id='method.release' class='method'><code>fn <a href='#method.release' class='fnname'>release</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureReleaseArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureReleaseArgs'>OpenGLTextureReleaseArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::release</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-6' class='section-header'><a href='#variant-1-6'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn release(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::release()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#release">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unbinds this texture from the currently active texture unit.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#bind">bind</a>().</p></div></p>
+
+<h2 id='variant-2-6' class='section-header'><a href='#variant-2-6'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn release(&amp;mut self, libc::c_uint) -&gt; ()</code><br>2) <code>fn release(&amp;mut self, (libc::c_uint, ::open_g_l_texture::TextureUnitReset)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::release(unsigned int unit, QOpenGLTexture::TextureUnitReset reset = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#release-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unbinds this texture from texture unit <i>unit</i>.</p>
+<p>If parameter <i>reset</i> is <code>true</code> then this function will restore the active unit to the texture unit that was active upon entry.</p></div></p>
+</div><h4 id='method.samples' class='method'><code>fn <a href='#method.samples' class='fnname'>samples</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLTexture::samples() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#samples">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of multisample sample points for this texture. If storage has not yet been allocated for this texture then this function returns the requested number of samples.</p>
+<p>For texture targets that do not support multisampling this will return 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setSamples">setSamples</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p></div></p>
+</div><h4 id='method.set_auto_mip_map_generation_enabled' class='method'><code>fn <a href='#method.set_auto_mip_map_generation_enabled' class='fnname'>set_auto_mip_map_generation_enabled</a>(&amp;mut self, enabled: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setAutoMipMapGenerationEnabled(bool enabled)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setAutoMipMapGenerationEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>enabled</i> is <code>true</code>, enables automatic mipmap generation for this texture object to occur whenever the level 0 mipmap data is set via <a href="http://doc.qt.io/qt-5/qopengltexture.html#setData">setData</a>().</p>
+<p>The automatic mipmap generation is enabled by default.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#isAutoMipMapGenerationEnabled">isAutoMipMapGenerationEnabled</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#generateMipMaps">generateMipMaps</a>().</p></div></p>
+</div><h4 id='method.set_border_color' class='method'><code>fn <a href='#method.set_border_color' class='fnname'>set_border_color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureSetBorderColorArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureSetBorderColorArgs'>OpenGLTextureSetBorderColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::setBorderColor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-7' class='section-header'><a href='#variant-1-7'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_border_color(&amp;mut self, &amp;::color::Color) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setBorderColor(QColor color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setBorderColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the border color of the texture to <i>color</i>.</p>
+<p><b>Note: </b>This function has no effect on Mac and Qt built for OpenGL ES 2.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#borderColor">borderColor</a>().</p></div></p>
+
+<h2 id='variant-2-7' class='section-header'><a href='#variant-2-7'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_border_color(&amp;mut self, (libc::c_float, libc::c_float, libc::c_float, libc::c_float)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setBorderColor(float r, float g, float b, float a)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setBorderColor-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the color red to <i>r</i>, green to <i>g</i>, blue to <i>b</i>, and <i>a</i> to the alpha value. </p><p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn set_border_color(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setBorderColor(int r, int g, int b, int a)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setBorderColor-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the color red to <i>r</i>, green to <i>g</i>, blue to <i>b</i>, and the alpha value to <i>a</i>. </p><p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-4-1' class='section-header'><a href='#variant-4-1'>Variant 4</a></h2>
+<p>Rust arguments: <code>fn set_border_color(&amp;mut self, (libc::c_uint, libc::c_uint, libc::c_uint, libc::c_uint)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setBorderColor(unsigned int r, unsigned int g, unsigned int b, unsigned int a)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setBorderColor-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the color red to <i>r</i>, green to <i>g</i>, blue to <i>b</i>, and the alpha value to <i>a</i>. </p><p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.set_comparison_function' class='method'><code>fn <a href='#method.set_comparison_function' class='fnname'>set_comparison_function</a>(&amp;mut self, function: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.ComparisonFunction.html' title='qt_gui::open_g_l_texture::ComparisonFunction'>ComparisonFunction</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setComparisonFunction(QOpenGLTexture::ComparisonFunction function)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setComparisonFunction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#comparisonFunction">comparisonFunction</a>().</p></div></p>
+</div><h4 id='method.set_comparison_mode' class='method'><code>fn <a href='#method.set_comparison_mode' class='fnname'>set_comparison_mode</a>(&amp;mut self, mode: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.ComparisonMode.html' title='qt_gui::open_g_l_texture::ComparisonMode'>ComparisonMode</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setComparisonMode(QOpenGLTexture::ComparisonMode mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setComparisonMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the texture comparison mode on this texture to <i>mode</i>. The texture comparison mode is used by shadow samplers when sampling a depth texture.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#comparisonMode">comparisonMode</a>().</p></div></p>
+</div><h4 id='method.set_compressed_data' class='method'><code>fn <a href='#method.set_compressed_data' class='fnname'>set_compressed_data</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureSetCompressedDataArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureSetCompressedDataArgs'>OpenGLTextureSetCompressedDataArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::setCompressedData</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-8' class='section-header'><a href='#variant-1-8'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, *const libc::c_void)) -&gt; ()</code><br>2) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, *const libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setCompressedData(int dataSize, const void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setCompressedData-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-2-8' class='section-header'><a href='#variant-2-8'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, *mut libc::c_void)) -&gt; ()</code><br>2) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, *mut libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setCompressedData(int dataSize, void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<h2 id='variant-3-2' class='section-header'><a href='#variant-3-2'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, *const libc::c_void)) -&gt; ()</code><br>2) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, *const libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setCompressedData(int mipLevel, int dataSize, const void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setCompressedData-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-4-2' class='section-header'><a href='#variant-4-2'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, *mut libc::c_void)) -&gt; ()</code><br>2) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, *mut libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setCompressedData(int mipLevel, int dataSize, void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::CubeMapFace, libc::c_int, *const libc::c_void)) -&gt; ()</code><br>2) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::CubeMapFace, libc::c_int, *const libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setCompressedData(int mipLevel, int layer, QOpenGLTexture::CubeMapFace cubeFace, int dataSize, const void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setCompressedData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Uploads compressed pixel <i>data</i> to <i>mipLevel</i>, array <i>layer</i>, and <i>cubeFace</i>. The pixel transfer can optionally be controlled with <i>options</i>. The <i>dataSize</i> argument should specify the size of the data pointed to by <i>data</i>.</p>
+<p>If not using a compressed <a href="http://doc.qt.io/qt-5/qopengltexture.html#format">format</a>() then you should use <a href="http://doc.qt.io/qt-5/qopengltexture.html#setData">setData</a>() instead of this function.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::CubeMapFace, libc::c_int, *mut libc::c_void)) -&gt; ()</code><br>2) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::CubeMapFace, libc::c_int, *mut libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setCompressedData(int mipLevel, int layer, QOpenGLTexture::CubeMapFace cubeFace, int dataSize, void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<h2 id='variant-7' class='section-header'><a href='#variant-7'>Variant 7</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, *const libc::c_void)) -&gt; ()</code><br>2) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, *const libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setCompressedData(int mipLevel, int layer, int dataSize, const void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setCompressedData-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-8' class='section-header'><a href='#variant-8'>Variant 8</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, *mut libc::c_void)) -&gt; ()</code><br>2) <code>fn set_compressed_data(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int, *mut libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setCompressedData(int mipLevel, int layer, int dataSize, void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+</div><h4 id='method.set_data' class='method'><code>fn <a href='#method.set_data' class='fnname'>set_data</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureSetDataArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureSetDataArgs'>OpenGLTextureSetDataArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::setData</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-9' class='section-header'><a href='#variant-1-9'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_data(&amp;mut self, (::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *const libc::c_void)) -&gt; ()</code><br>2) <code>fn set_data(&amp;mut self, (::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *const libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setData(QOpenGLTexture::PixelFormat sourceFormat, QOpenGLTexture::PixelType sourceType, const void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setData-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+
+<h2 id='variant-2-9' class='section-header'><a href='#variant-2-9'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_data(&amp;mut self, (::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *mut libc::c_void)) -&gt; ()</code><br>2) <code>fn set_data(&amp;mut self, (::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *mut libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setData(QOpenGLTexture::PixelFormat sourceFormat, QOpenGLTexture::PixelType sourceType, void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<h2 id='variant-3-3' class='section-header'><a href='#variant-3-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_data(&amp;mut self, &amp;::image::Image) -&gt; ()</code><br>2) <code>fn set_data(&amp;mut self, (&amp;::image::Image, ::open_g_l_texture::MipMapGeneration)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setData(const QImage&amp; image, QOpenGLTexture::MipMapGeneration genMipMaps = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setData-9">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This overload of <a href="http://doc.qt.io/qt-5/qopengltexture.html#setData">setData</a>() will allocate storage for you. The pixel data is contained in <i>image</i>. Mipmaps are generated by default. Set <i>genMipMaps</i> to <a href="http://doc.qt.io/qt-5/qopengltexture.html#MipMapGeneration-enum">DontGenerateMipMaps</a> to turn off mipmap generation.</p>
+<p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-4-3' class='section-header'><a href='#variant-4-3'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_data(&amp;mut self, (libc::c_int, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *const libc::c_void)) -&gt; ()</code><br>2) <code>fn set_data(&amp;mut self, (libc::c_int, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *const libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setData(int mipLevel, QOpenGLTexture::PixelFormat sourceFormat, QOpenGLTexture::PixelType sourceType, const void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setData-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+
+<h2 id='variant-5-1' class='section-header'><a href='#variant-5-1'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_data(&amp;mut self, (libc::c_int, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *mut libc::c_void)) -&gt; ()</code><br>2) <code>fn set_data(&amp;mut self, (libc::c_int, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *mut libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setData(int mipLevel, QOpenGLTexture::PixelFormat sourceFormat, QOpenGLTexture::PixelType sourceType, void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<h2 id='variant-6-1' class='section-header'><a href='#variant-6-1'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::CubeMapFace, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *const libc::c_void)) -&gt; ()</code><br>2) <code>fn set_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::CubeMapFace, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *const libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setData(int mipLevel, int layer, QOpenGLTexture::CubeMapFace cubeFace, QOpenGLTexture::PixelFormat sourceFormat, QOpenGLTexture::PixelType sourceType, const void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Uploads pixel <i>data</i> for this texture object <i>mipLevel</i>, array <i>layer</i>, and <i>cubeFace</i>. Storage must have been allocated before uploading pixel data. Some overloads of setData() will set appropriate dimensions, mipmap levels, and array layers and then allocate storage for you if they have enough information to do so. This will be noted in the function documentation.</p>
+<p>The structure of the pixel data pointed to by <i>data</i> is specified by <i>sourceFormat</i> and <i>sourceType</i>. The pixel data upload can optionally be controlled by <i>options</i>.</p>
+<p>If using a compressed <a href="http://doc.qt.io/qt-5/qopengltexture.html#format">format</a>() then you should use <a href="http://doc.qt.io/qt-5/qopengltexture.html#setCompressedData">setCompressedData</a>() instead of this function.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setCompressedData">setCompressedData</a>().</p></div></p>
+
+<h2 id='variant-7-1' class='section-header'><a href='#variant-7-1'>Variant 7</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::CubeMapFace, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *mut libc::c_void)) -&gt; ()</code><br>2) <code>fn set_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::CubeMapFace, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *mut libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setData(int mipLevel, int layer, QOpenGLTexture::CubeMapFace cubeFace, QOpenGLTexture::PixelFormat sourceFormat, QOpenGLTexture::PixelType sourceType, void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<h2 id='variant-8-1' class='section-header'><a href='#variant-8-1'>Variant 8</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *const libc::c_void)) -&gt; ()</code><br>2) <code>fn set_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *const libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setData(int mipLevel, int layer, QOpenGLTexture::PixelFormat sourceFormat, QOpenGLTexture::PixelType sourceType, const void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setData-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This function was introduced in  Qt 5.3.</p></div></p>
+
+<h2 id='variant-9' class='section-header'><a href='#variant-9'>Variant 9</a></h2>
+<p>Rust arguments: <br>1) <code>fn set_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *mut libc::c_void)) -&gt; ()</code><br>2) <code>fn set_data(&amp;mut self, (libc::c_int, libc::c_int, ::open_g_l_texture::PixelFormat, ::open_g_l_texture::PixelType, *mut libc::c_void, *const ::open_g_l_pixel_transfer_options::OpenGLPixelTransferOptions)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setData(int mipLevel, int layer, QOpenGLTexture::PixelFormat sourceFormat, QOpenGLTexture::PixelType sourceType, void* data, const QOpenGLPixelTransferOptions* options = ?)</code></span></p>
+</div><h4 id='method.set_depth_stencil_mode' class='method'><code>fn <a href='#method.set_depth_stencil_mode' class='fnname'>set_depth_stencil_mode</a>(&amp;mut self, mode: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.DepthStencilMode.html' title='qt_gui::open_g_l_texture::DepthStencilMode'>DepthStencilMode</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setDepthStencilMode(QOpenGLTexture::DepthStencilMode mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setDepthStencilMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If using a texture that has a combined depth/stencil format this function sets which component of the texture is accessed to <i>mode</i>.</p>
+<p>When the parameter is set to <a href="http://doc.qt.io/qt-5/qopengltexture.html#DepthStencilMode-enum">DepthMode</a>, then accessing it from the shader will access the depth component as a single float, as normal. But when the parameter is set to <a href="http://doc.qt.io/qt-5/qopengltexture.html#DepthStencilMode-enum">StencilMode</a>, the shader will access the stencil component.</p>
+<p><b>Note: </b>This function has no effect on Mac and Qt built for OpenGL ES 2.</p><p>This function was introduced in  Qt 5.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#depthStencilMode">depthStencilMode</a>().</p></div></p>
+</div><h4 id='method.set_fixed_sample_positions' class='method'><code>fn <a href='#method.set_fixed_sample_positions' class='fnname'>set_fixed_sample_positions</a>(&amp;mut self, fixed: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setFixedSamplePositions(bool fixed)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setFixedSamplePositions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets whether the sample positions and number of samples used with a multisample capable texture target to <i>fixed</i>. If set to <code>true</code> the sample positions and number of samples used are the same for all texels in the image and will not depend upon the image size or internal format. This function should be called before storage is allocated for the texture.</p>
+<p>For targets that do not support multisampling this function has no effect.</p>
+<p>The default value is <code>true</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#isFixedSamplePositions">isFixedSamplePositions</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p></div></p>
+</div><h4 id='method.set_format' class='method'><code>fn <a href='#method.set_format' class='fnname'>set_format</a>(&amp;mut self, format: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.TextureFormat.html' title='qt_gui::open_g_l_texture::TextureFormat'>TextureFormat</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setFormat(QOpenGLTexture::TextureFormat format)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the format of this texture object to <i>format</i>. This function must be called before texture storage is allocated.</p>
+<p>Note that all formats may not be supported. The exact set of supported formats is dependent upon your OpenGL implementation and version.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#format">format</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#allocateStorage">allocateStorage</a>().</p></div></p>
+</div><h4 id='method.set_layers' class='method'><code>fn <a href='#method.set_layers' class='fnname'>set_layers</a>(&amp;mut self, layers: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setLayers(int layers)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setLayers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the number of array <i>layers</i> to allocate storage for. This function should be called before storage is allocated for the texture.</p>
+<p>For targets that do not support array layers this function has no effect.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#layers">layers</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p></div></p>
+</div><h4 id='method.set_level_of_detail_range' class='method'><code>fn <a href='#method.set_level_of_detail_range' class='fnname'>set_level_of_detail_range</a>(&amp;mut self, min: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>, max: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setLevelOfDetailRange(float min, float max)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setLevelOfDetailRange">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the minimum level of detail parameters to <i>min</i> and the maximum level to <i>max</i>.</p>
+<p><b>Note: </b>This function has no effect on Qt built for OpenGL ES 2.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#levelOfDetailRange">levelOfDetailRange</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinimumLevelOfDetail">setMinimumLevelOfDetail</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMaximumLevelOfDetail">setMaximumLevelOfDetail</a>().</p></div></p>
+</div><h4 id='method.set_levelof_detail_bias' class='method'><code>fn <a href='#method.set_levelof_detail_bias' class='fnname'>set_levelof_detail_bias</a>(&amp;mut self, bias: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setLevelofDetailBias(float bias)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setLevelofDetailBias">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the level of detail bias to <i>bias</i>. Level of detail bias affects the point at which mipmapping levels change. Increasing values for level of detail bias makes the overall images blurrier or smoother. Decreasing values make the overall images sharper.</p>
+<p><b>Note: </b>This function has no effect on Qt built for OpenGL ES 2.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#levelofDetailBias">levelofDetailBias</a>().</p></div></p>
+</div><h4 id='method.set_magnification_filter' class='method'><code>fn <a href='#method.set_magnification_filter' class='fnname'>set_magnification_filter</a>(&amp;mut self, filter: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.Filter.html' title='qt_gui::open_g_l_texture::Filter'>Filter</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setMagnificationFilter(QOpenGLTexture::Filter filter)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMagnificationFilter">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the magnification filter to <i>filter</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#magnificationFilter">magnificationFilter</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinificationFilter">setMinificationFilter</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinMagFilters">setMinMagFilters</a>().</p></div></p>
+</div><h4 id='method.set_maximum_anisotropy' class='method'><code>fn <a href='#method.set_maximum_anisotropy' class='fnname'>set_maximum_anisotropy</a>(&amp;mut self, anisotropy: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setMaximumAnisotropy(float anisotropy)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMaximumAnisotropy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If your OpenGL implementation supports the GL_EXT_texture_filter_anisotropic extension this function sets the maximum anisotropy level to <i>anisotropy</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#maximumAnisotropy">maximumAnisotropy</a>().</p></div></p>
+</div><h4 id='method.set_maximum_level_of_detail' class='method'><code>fn <a href='#method.set_maximum_level_of_detail' class='fnname'>set_maximum_level_of_detail</a>(&amp;mut self, value: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setMaximumLevelOfDetail(float value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMaximumLevelOfDetail">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the maximum level of detail to <i>value</i>. This limits the selection of lowest resolution mipmap (highest mipmap level). The default value is 1000.</p>
+<p><b>Note: </b>This function has no effect on Qt built for OpenGL ES 2.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#maximumLevelOfDetail">maximumLevelOfDetail</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinimumLevelOfDetail">setMinimumLevelOfDetail</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setLevelOfDetailRange">setLevelOfDetailRange</a>().</p></div></p>
+</div><h4 id='method.set_min_mag_filters' class='method'><code>fn <a href='#method.set_min_mag_filters' class='fnname'>set_min_mag_filters</a>(&amp;mut self, minification_filter: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.Filter.html' title='qt_gui::open_g_l_texture::Filter'>Filter</a>, magnification_filter: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.Filter.html' title='qt_gui::open_g_l_texture::Filter'>Filter</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setMinMagFilters(QOpenGLTexture::Filter minificationFilter, QOpenGLTexture::Filter magnificationFilter)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinMagFilters">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the minification filter to <i>minificationFilter</i> and the magnification filter to <i>magnificationFilter</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#minMagFilters">minMagFilters</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinificationFilter">setMinificationFilter</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMagnificationFilter">setMagnificationFilter</a>().</p></div></p>
+</div><h4 id='method.set_minification_filter' class='method'><code>fn <a href='#method.set_minification_filter' class='fnname'>set_minification_filter</a>(&amp;mut self, filter: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.Filter.html' title='qt_gui::open_g_l_texture::Filter'>Filter</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setMinificationFilter(QOpenGLTexture::Filter filter)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinificationFilter">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the filter used for minification to <i>filter</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#minificationFilter">minificationFilter</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMagnificationFilter">setMagnificationFilter</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinMagFilters">setMinMagFilters</a>().</p></div></p>
+</div><h4 id='method.set_minimum_level_of_detail' class='method'><code>fn <a href='#method.set_minimum_level_of_detail' class='fnname'>set_minimum_level_of_detail</a>(&amp;mut self, value: <a class='type' href='../../libc/type.c_float.html' title='libc::c_float'>c_float</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setMinimumLevelOfDetail(float value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMinimumLevelOfDetail">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the minimum level of detail to <i>value</i>. This limits the selection of highest resolution mipmap (lowest mipmap level). The default value is -1000.</p>
+<p><b>Note: </b>This function has no effect on Qt built for OpenGL ES 2.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#minimumLevelOfDetail">minimumLevelOfDetail</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMaximumLevelOfDetail">setMaximumLevelOfDetail</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setLevelOfDetailRange">setLevelOfDetailRange</a>().</p></div></p>
+</div><h4 id='method.set_mip_base_level' class='method'><code>fn <a href='#method.set_mip_base_level' class='fnname'>set_mip_base_level</a>(&amp;mut self, base_level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setMipBaseLevel(int baseLevel)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipBaseLevel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the base mipmap level used for all texture lookups with this texture to <i>baseLevel</i>.</p>
+<p><b>Note: </b>This function has no effect on Qt built for OpenGL ES 2.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#mipBaseLevel">mipBaseLevel</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipMaxLevel">setMipMaxLevel</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipLevelRange">setMipLevelRange</a>().</p></div></p>
+</div><h4 id='method.set_mip_level_range' class='method'><code>fn <a href='#method.set_mip_level_range' class='fnname'>set_mip_level_range</a>(&amp;mut self, base_level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, max_level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setMipLevelRange(int baseLevel, int maxLevel)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipLevelRange">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the range of mipmap levels that can be used for texture lookups with this texture to range from <i>baseLevel</i> to <i>maxLevel</i>.</p>
+<p><b>Note: </b>This function has no effect on Qt built for OpenGL ES 2.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipBaseLevel">setMipBaseLevel</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipMaxLevel">setMipMaxLevel</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#mipLevelRange">mipLevelRange</a>().</p></div></p>
+</div><h4 id='method.set_mip_levels' class='method'><code>fn <a href='#method.set_mip_levels' class='fnname'>set_mip_levels</a>(&amp;mut self, levels: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setMipLevels(int levels)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipLevels">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>For texture targets that support mipmaps, this function sets the requested number of mipmap <i>levels</i> to allocate storage for. This function should be called before storage is allocated for the texture.</p>
+<p>If the texture target does not support mipmaps this function has no effect.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#mipLevels">mipLevels</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#maximumMipLevels">maximumMipLevels</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p></div></p>
+</div><h4 id='method.set_mip_max_level' class='method'><code>fn <a href='#method.set_mip_max_level' class='fnname'>set_mip_max_level</a>(&amp;mut self, max_level: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setMipMaxLevel(int maxLevel)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipMaxLevel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the maximum mipmap level used for all texture lookups with this texture to <i>maxLevel</i>.</p>
+<p><b>Note: </b>This function has no effect on Qt built for OpenGL ES 2.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#mipMaxLevel">mipMaxLevel</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipBaseLevel">setMipBaseLevel</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setMipLevelRange">setMipLevelRange</a>().</p></div></p>
+</div><h4 id='method.set_samples' class='method'><code>fn <a href='#method.set_samples' class='fnname'>set_samples</a>(&amp;mut self, samples: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLTexture::setSamples(int samples)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setSamples">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the number of <i>samples</i> to allocate storage for when rendering to a multisample capable texture target. This function should be called before storage is allocated for the texture.</p>
+<p>For targets that do not support multisampling this function has no effect.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#samples">samples</a>() and <a href="http://doc.qt.io/qt-5/qopengltexture.html#isStorageAllocated">isStorageAllocated</a>().</p></div></p>
+</div><h4 id='method.set_size' class='method'><code>fn <a href='#method.set_size' class='fnname'>set_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureSetSizeArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureSetSizeArgs'>OpenGLTextureSetSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::setSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_size(&amp;mut self, libc::c_int) -&gt; ()</code><br>2) <code>fn set_size(&amp;mut self, (libc::c_int, libc::c_int)) -&gt; ()</code><br>3) <code>fn set_size(&amp;mut self, (libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setSize(int width, int height = ?, int depth = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the dimensions of this texture object to <i>width</i>, <i>height</i>, and <i>depth</i>. The default for each dimension is 1. The maximum allowable texture size is dependent upon your OpenGL implementation. Allocating storage for a texture less than the maximum size can still fail if your system is low on resources.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#width">width</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#height">height</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#depth">depth</a>().</p></div></p>
+</div><h4 id='method.set_swizzle_mask' class='method'><code>fn <a href='#method.set_swizzle_mask' class='fnname'>set_swizzle_mask</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureSetSwizzleMaskArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureSetSwizzleMaskArgs'>OpenGLTextureSetSwizzleMaskArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::setSwizzleMask</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-10' class='section-header'><a href='#variant-1-10'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_swizzle_mask(&amp;mut self, (::open_g_l_texture::SwizzleComponent, ::open_g_l_texture::SwizzleValue)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setSwizzleMask(QOpenGLTexture::SwizzleComponent component, QOpenGLTexture::SwizzleValue value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setSwizzleMask">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>GLSL shaders are able to reorder the components of the vec4 returned by texture functions. It is also desirable to be able to control this reordering from CPU side code. This is made possible by swizzle masks since OpenGL 3.3.</p>
+<p>Each component of the texture can be mapped to one of the <a href="http://doc.qt.io/qt-5/qopengltexture.html#SwizzleValue-enum">SwizzleValue</a> options.</p>
+<p>This function maps <i>component</i> to the output <i>value</i>.</p>
+<p><b>Note: </b>This function has no effect on Mac and Qt built for OpenGL ES 2.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#swizzleMask">swizzleMask</a>().</p></div></p>
+
+<h2 id='variant-2-10' class='section-header'><a href='#variant-2-10'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_swizzle_mask(&amp;mut self, (::open_g_l_texture::SwizzleValue, ::open_g_l_texture::SwizzleValue, ::open_g_l_texture::SwizzleValue, ::open_g_l_texture::SwizzleValue)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setSwizzleMask(QOpenGLTexture::SwizzleValue r, QOpenGLTexture::SwizzleValue g, QOpenGLTexture::SwizzleValue b, QOpenGLTexture::SwizzleValue a)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setSwizzleMask-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Parameters <i>r</i>, <i>g</i>, <i>b</i>, and <i>a</i> are values used for setting the colors red, green, blue, and the alpha value. </p><p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.set_wrap_mode' class='method'><code>fn <a href='#method.set_wrap_mode' class='fnname'>set_wrap_mode</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_texture/overloading/trait.OpenGLTextureSetWrapModeArgs.html' title='qt_gui::open_g_l_texture::overloading::OpenGLTextureSetWrapModeArgs'>OpenGLTextureSetWrapModeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::setWrapMode</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-11' class='section-header'><a href='#variant-1-11'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_wrap_mode(&amp;mut self, (::open_g_l_texture::CoordinateDirection, ::open_g_l_texture::WrapMode)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setWrapMode(QOpenGLTexture::CoordinateDirection direction, QOpenGLTexture::WrapMode mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setWrapMode-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Holds the texture dimension <i>direction</i>. </p><p>This is an overloaded function.</p></div></p>
+
+<h2 id='variant-2-11' class='section-header'><a href='#variant-2-11'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_wrap_mode(&amp;mut self, ::open_g_l_texture::WrapMode) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QOpenGLTexture::setWrapMode(QOpenGLTexture::WrapMode mode)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#setWrapMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the wrap (or repeat mode) for all texture dimentions to <i>mode</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#wrapMode">wrapMode</a>().</p></div></p>
+</div><h4 id='method.swizzle_mask' class='method'><code>fn <a href='#method.swizzle_mask' class='fnname'>swizzle_mask</a>(&amp;self, component: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.SwizzleComponent.html' title='qt_gui::open_g_l_texture::SwizzleComponent'>SwizzleComponent</a>) -&gt; <a class='enum' href='../../qt_gui/open_g_l_texture/enum.SwizzleValue.html' title='qt_gui::open_g_l_texture::SwizzleValue'>SwizzleValue</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::SwizzleValue QOpenGLTexture::swizzleMask(QOpenGLTexture::SwizzleComponent component) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#swizzleMask">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the swizzle mask for texture <i>component</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setSwizzleMask">setSwizzleMask</a>().</p></div></p>
+</div><h4 id='method.target' class='method'><code>fn <a href='#method.target' class='fnname'>target</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/open_g_l_texture/enum.Target.html' title='qt_gui::open_g_l_texture::Target'>Target</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::Target QOpenGLTexture::target() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#target">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the binding target of this texture.</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.texture_id' class='method'><code>fn <a href='#method.texture_id' class='fnname'>texture_id</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QOpenGLTexture::textureId() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#textureId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the underlying OpenGL texture object or 0 if it has not yet been created.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#create">create</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#destroy">destroy</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#isCreated">isCreated</a>().</p></div></p>
+</div><h4 id='method.width' class='method'><code>fn <a href='#method.width' class='fnname'>width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLTexture::width() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#width">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of a 1D, 2D or 3D texture.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#height">height</a>(), <a href="http://doc.qt.io/qt-5/qopengltexture.html#depth">depth</a>(), and <a href="http://doc.qt.io/qt-5/qopengltexture.html#setSize">setSize</a>().</p></div></p>
+</div><h4 id='method.wrap_mode' class='method'><code>fn <a href='#method.wrap_mode' class='fnname'>wrap_mode</a>(&amp;self, direction: <a class='enum' href='../../qt_gui/open_g_l_texture/enum.CoordinateDirection.html' title='qt_gui::open_g_l_texture::CoordinateDirection'>CoordinateDirection</a>) -&gt; <a class='enum' href='../../qt_gui/open_g_l_texture/enum.WrapMode.html' title='qt_gui::open_g_l_texture::WrapMode'>WrapMode</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLTexture::WrapMode QOpenGLTexture::wrapMode(QOpenGLTexture::CoordinateDirection direction) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopengltexture.html#wrapMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the wrap mode for the texture dimension <i>direction</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopengltexture.html#setWrapMode">setWrapMode</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/open_g_l_texture/struct.OpenGLTexture.html' title='qt_gui::open_g_l_texture::OpenGLTexture'>OpenGLTexture</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-102820' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_texture.rs.html#235-239' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/open_g_l_texture/struct.OpenGLTexture.html' title='qt_gui::open_g_l_texture::OpenGLTexture'>OpenGLTexture</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/open_g_l_texture/struct.OpenGLTexture.html' title='qt_gui::open_g_l_texture::OpenGLTexture'>OpenGLTexture</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103041' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_texture.rs.html#1253-1260' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QOpenGLTexture::~QOpenGLTexture()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/open_g_l_texture/struct.OpenGLTexture.html' title='qt_gui::open_g_l_texture::OpenGLTexture'>OpenGLTexture</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-103044' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_texture.rs.html#1262-1266' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

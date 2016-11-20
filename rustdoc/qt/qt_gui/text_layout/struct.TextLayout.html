@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TextLayout` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TextLayout">
+
+    <title>qt_gui::text_layout::TextLayout - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>text_layout</a></p><script>window.sidebarCurrent = {name: 'TextLayout', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>text_layout</a>::<wbr><a class='struct' href=''>TextLayout</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-162383' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_layout.rs.html#134-136' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TextLayout {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTextLayout</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> class is used to lay out and render text.</p>
+<p>It offers many features expected from a modern text layout engine, including Unicode compliant rendering, line breaking and handling of cursor positioning. It can also produce and render device independent layout, something that is important for WYSIWYG applications.</p>
+<p>The class has a rather low level API and unless you intend to implement your own text rendering for some specialized widget, you probably won&#39;t need to use it directly.</p>
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> can be used with both plain and rich text.</p>
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> can be used to create a sequence of <a href="http://doc.qt.io/qt-5/qtextline.html">QTextLine</a> instances with given widths and can position them independently on the screen. Once the layout is done, these lines can be drawn on a paint device.</p>
+<p>The text to be laid out can be provided in the constructor or set with <a href="http://doc.qt.io/qt-5/qtextlayout.html#setText">setText</a>().</p>
+<p>The layout can be seen as a sequence of <a href="http://doc.qt.io/qt-5/qtextline.html">QTextLine</a> objects; use <a href="http://doc.qt.io/qt-5/qtextlayout.html#createLine">createLine</a>() to create a <a href="http://doc.qt.io/qt-5/qtextline.html">QTextLine</a> instance, and <a href="http://doc.qt.io/qt-5/qtextlayout.html#lineAt">lineAt</a>() or <a href="http://doc.qt.io/qt-5/qtextlayout.html#lineForTextPosition">lineForTextPosition</a>() to retrieve created lines.</p>
+<p>Here is a code snippet that demonstrates the layout phase:</p>
+<pre class="cpp"><span class="type">int</span> leading <span class="operator">=</span> fontMetrics<span class="operator">.</span>leading();
+<span class="type"><a href="http://doc.qt.io/qt-5/qtglobal.html#qreal-typedef">qreal</a></span> height <span class="operator">=</span> <span class="number">0</span>;
+textLayout<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qtextlayout.html#setCacheEnabled">setCacheEnabled</a>(<span class="keyword">true</span>);
+textLayout<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qtextlayout.html#beginLayout">beginLayout</a>();
+<span class="keyword">while</span> (<span class="number">1</span>) {
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qtextline.html">QTextLine</a></span> line <span class="operator">=</span> textLayout<span class="operator">.</span>createLine();
+&#32;   <span class="keyword">if</span> (<span class="operator">!</span>line<span class="operator">.</span>isValid())
+&#32;       <span class="keyword">break</span>;</p>
+
+<p>&#32;   line<span class="operator">.</span>setLineWidth(lineWidth);
+&#32;   height <span class="operator">+</span><span class="operator">=</span> leading;
+&#32;   line<span class="operator">.</span>setPosition(<span class="type"><a href="http://doc.qt.io/qt-5/qpointf.html">QPointF</a></span>(<span class="number">0</span><span class="operator">,</span> height));
+&#32;   height <span class="operator">+</span><span class="operator">=</span> line<span class="operator">.</span>height();
+}
+textLayout<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qtextlayout.html#endLayout">endLayout</a>();</pre>
+<p>The text can then be rendered by calling the layout&#39;s <a href="http://doc.qt.io/qt-5/qtextlayout.html#draw">draw</a>() function:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+textLayout<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qtextlayout.html#draw">draw</a>(<span class="operator">&amp;</span>painter<span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qpoint.html">QPoint</a></span>(<span class="number">0</span><span class="operator">,</span> <span class="number">0</span>));</pre>
+<p>For a given position in the text you can find a valid cursor position with <a href="http://doc.qt.io/qt-5/qtextlayout.html#isValidCursorPosition">isValidCursorPosition</a>(), <a href="http://doc.qt.io/qt-5/qtextlayout.html#nextCursorPosition">nextCursorPosition</a>(), and <a href="http://doc.qt.io/qt-5/qtextlayout.html#previousCursorPosition">previousCursorPosition</a>().</p>
+<p>The <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> itself can be positioned with <a href="http://doc.qt.io/qt-5/qtextlayout.html#setPosition">setPosition</a>(); it has a <a href="http://doc.qt.io/qt-5/qtextlayout.html#boundingRect">boundingRect</a>(), and a <a href="http://doc.qt.io/qt-5/qtextlayout.html#minimumWidth">minimumWidth</a>() and a <a href="http://doc.qt.io/qt-5/qtextlayout.html#maximumWidth">maximumWidth</a>().</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/text_layout/struct.TextLayout.html' title='qt_gui::text_layout::TextLayout'>TextLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-162388' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_layout.rs.html#144-608' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.additional_formats' class='method'><code>fn <a href='#method.additional_formats' class='fnname'>additional_formats</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutAdditionalFormatsArgs.html' title='qt_gui::text_layout::overloading::TextLayoutAdditionalFormatsArgs'>TextLayoutAdditionalFormatsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::additionalFormats</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn additional_formats(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListFormatRangeRef&gt;</code><br>2) <code>fn additional_formats(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListFormatRangeRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QTextLayout::FormatRange&gt; QTextLayout::additionalFormats() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#additionalFormats">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the list of additional formats supported by the text layout.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#setAdditionalFormats">setAdditionalFormats</a>() and <a href="http://doc.qt.io/qt-5/qtextlayout.html#clearAdditionalFormats">clearAdditionalFormats</a>().</p></div></p>
+</div><h4 id='method.begin_layout' class='method'><code>fn <a href='#method.begin_layout' class='fnname'>begin_layout</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::beginLayout()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#beginLayout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Begins the layout process.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#endLayout">endLayout</a>().</p></div></p>
+</div><h4 id='method.bounding_rect' class='method'><code>fn <a href='#method.bounding_rect' class='fnname'>bounding_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutBoundingRectArgs.html' title='qt_gui::text_layout::overloading::TextLayoutBoundingRectArgs'>TextLayoutBoundingRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::boundingRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn bounding_rect(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn bounding_rect(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QTextLayout::boundingRect() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#boundingRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The smallest rectangle that contains all the lines in the layout.</p></div></p>
+</div><h4 id='method.cache_enabled' class='method'><code>fn <a href='#method.cache_enabled' class='fnname'>cache_enabled</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextLayout::cacheEnabled() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#cacheEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the complete layout information is cached; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#setCacheEnabled">setCacheEnabled</a>().</p></div></p>
+</div><h4 id='method.clear_additional_formats' class='method'><code>fn <a href='#method.clear_additional_formats' class='fnname'>clear_additional_formats</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::clearAdditionalFormats()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#clearAdditionalFormats">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the list of additional formats supported by the text layout.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#additionalFormats">additionalFormats</a>() and <a href="http://doc.qt.io/qt-5/qtextlayout.html#setAdditionalFormats">setAdditionalFormats</a>().</p></div></p>
+</div><h4 id='method.clear_layout' class='method'><code>fn <a href='#method.clear_layout' class='fnname'>clear_layout</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::clearLayout()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#clearLayout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the line information in the layout. After having called this function, <a href="http://doc.qt.io/qt-5/qtextlayout.html#lineCount">lineCount</a>() returns 0.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.create_line' class='method'><code>fn <a href='#method.create_line' class='fnname'>create_line</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutCreateLineArgs.html' title='qt_gui::text_layout::overloading::TextLayoutCreateLineArgs'>TextLayoutCreateLineArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::createLine</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn create_line(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_line::TextLine&gt;</code><br>2) <code>fn create_line(&amp;mut self, cpp_utils::AsStruct) -&gt; ::text_line::TextLine</code><br>
+C++ method: <span style='color: green;'><code>QTextLine QTextLayout::createLine()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#createLine">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a new text line to be laid out if there is text to be inserted into the layout; otherwise returns an invalid text line.</p>
+<p>The text layout creates a new line object that starts after the last line in the layout, or at the beginning if the layout is empty. The layout maintains an internal cursor, and each line is filled with text from the cursor position onwards when the <a href="http://doc.qt.io/qt-5/qtextline.html#setLineWidth">QTextLine::setLineWidth</a>() function is called.</p>
+<p>Once <a href="http://doc.qt.io/qt-5/qtextline.html#setLineWidth">QTextLine::setLineWidth</a>() is called, a new line can be created and filled with text. Repeating this process will lay out the whole block of text contained in the <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a>. If there is no text left to be inserted into the layout, the <a href="http://doc.qt.io/qt-5/qtextline.html">QTextLine</a> returned will not be valid (isValid() will return false).</p></div></p>
+</div><h4 id='method.cursor_move_style' class='method'><code>fn <a href='#method.cursor_move_style' class='fnname'>cursor_move_style</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.CursorMoveStyle.html' title='qt_core::qt::CursorMoveStyle'>CursorMoveStyle</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::CursorMoveStyle QTextLayout::cursorMoveStyle() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#cursorMoveStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The cursor movement style of this <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a>. The default is <a href="http://doc.qt.io/qt-5/qt.html#CursorMoveStyle-enum">Qt::LogicalMoveStyle</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#setCursorMoveStyle">setCursorMoveStyle</a>().</p></div></p>
+</div><h4 id='method.draw' class='method'><code>fn <a href='#method.draw' class='fnname'>draw</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutDrawArgs.html' title='qt_gui::text_layout::overloading::TextLayoutDrawArgs'>TextLayoutDrawArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::draw</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn draw(&amp;self, (*mut ::painter::Painter, &amp;qt_core::point_f::PointF)) -&gt; ()</code><br>2) <code>fn draw(&amp;self, (*mut ::painter::Painter, &amp;qt_core::point_f::PointF, &amp;::vector::VectorFormatRangeRef)) -&gt; ()</code><br>3) <code>fn draw(&amp;self, (*mut ::painter::Painter, &amp;qt_core::point_f::PointF, &amp;::vector::VectorFormatRangeRef, &amp;qt_core::rect_f::RectF)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextLayout::draw(QPainter* p, const QPointF&amp; pos, const QVector&lt;QTextLayout::FormatRange&gt;&amp; selections = ?, const QRectF&amp; clip = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#draw">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Draws the whole layout on the painter <i>p</i> at the position specified by <i>pos</i>. The rendered layout includes the given <i>selections</i> and is clipped within the rectangle specified by <i>clip</i>.</p></div></p>
+</div><h4 id='method.draw_cursor' class='method'><code>fn <a href='#method.draw_cursor' class='fnname'>draw_cursor</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutDrawCursorArgs.html' title='qt_gui::text_layout::overloading::TextLayoutDrawCursorArgs'>TextLayoutDrawCursorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::drawCursor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn draw_cursor(&amp;self, (*mut ::painter::Painter, &amp;qt_core::point_f::PointF, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextLayout::drawCursor(QPainter* p, const QPointF&amp; pos, int cursorPosition) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#drawCursor-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Draws a text cursor with the current pen at the given <i>position</i> using the <i>painter</i> specified. The corresponding position within the text is specified by <i>cursorPosition</i>.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn draw_cursor(&amp;self, (*mut ::painter::Painter, &amp;qt_core::point_f::PointF, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QTextLayout::drawCursor(QPainter* p, const QPointF&amp; pos, int cursorPosition, int width) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#drawCursor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Draws a text cursor with the current pen and the specified <i>width</i> at the given <i>position</i> using the <i>painter</i> specified. The corresponding position within the text is specified by <i>cursorPosition</i>.</p></div></p>
+</div><h4 id='method.end_layout' class='method'><code>fn <a href='#method.end_layout' class='fnname'>end_layout</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::endLayout()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#endLayout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Ends the layout process.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#beginLayout">beginLayout</a>().</p></div></p>
+</div><h4 id='method.font' class='method'><code>fn <a href='#method.font' class='fnname'>font</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutFontArgs.html' title='qt_gui::text_layout::overloading::TextLayoutFontArgs'>TextLayoutFontArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::font</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn font(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>2) <code>fn font(&amp;self, cpp_utils::AsStruct) -&gt; ::font::Font</code><br>
+C++ method: <span style='color: green;'><code>QFont QTextLayout::font() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#font">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current font that is used for the layout, or a default font if none is set.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#setFont">setFont</a>().</p></div></p>
+</div><h4 id='method.glyph_runs' class='method'><code>fn <a href='#method.glyph_runs' class='fnname'>glyph_runs</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutGlyphRunsArgs.html' title='qt_gui::text_layout::overloading::TextLayoutGlyphRunsArgs'>TextLayoutGlyphRunsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::glyphRuns</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn glyph_runs(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListGlyphRunRef&gt;</code><br>2) <code>fn glyph_runs(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListGlyphRunRef&gt;</code><br>3) <code>fn glyph_runs(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListGlyphRunRef&gt;</code><br>4) <code>fn glyph_runs(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListGlyphRunRef</code><br>5) <code>fn glyph_runs(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListGlyphRunRef</code><br>6) <code>fn glyph_runs(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListGlyphRunRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QGlyphRun&gt; QTextLayout::glyphRuns(int from = ?, int length = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#glyphRuns">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the glyph indexes and positions for all glyphs corresponding to the <i>length</i> characters starting at the position <i>from</i> in this <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a>. This is an expensive function, and should not be called in a time sensitive context.</p>
+<p>If <i>from</i> is less than zero, then the glyph run will begin at the first character in the layout. If <i>length</i> is less than zero, it will span the entire string from the start position.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#draw">draw</a>() and <a href="http://doc.qt.io/qt-5/qpainter.html#drawGlyphRun">QPainter::drawGlyphRun</a>().</p></div></p>
+</div><h4 id='method.is_valid_cursor_position' class='method'><code>fn <a href='#method.is_valid_cursor_position' class='fnname'>is_valid_cursor_position</a>(&amp;self, pos: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTextLayout::isValidCursorPosition(int pos) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#isValidCursorPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>/ Returns <code>true</code> if position <i>pos</i> is a valid cursor position.</p>
+<p>In a Unicode context some positions in the text are not valid cursor positions, because the position is inside a Unicode surrogate or a grapheme cluster.</p>
+<p>A grapheme cluster is a sequence of two or more Unicode characters that form one indivisible entity on the screen. For example the latin character <code>Ä&#39; can be represented in Unicode by two characters,</code>A&#39; (0x41), and the combining diaresis (0x308). A text cursor can only validly be positioned before or after these two characters, never between them since that wouldn&#39;t make sense. In indic languages every syllable forms a grapheme cluster.</p></div></p>
+</div><h4 id='method.left_cursor_position' class='method'><code>fn <a href='#method.left_cursor_position' class='fnname'>left_cursor_position</a>(&amp;self, old_pos: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextLayout::leftCursorPosition(int oldPos) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#leftCursorPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the cursor position to the left of <i>oldPos</i>, next to it. It&#39;s dependent on the visual position of characters, after bi-directional reordering.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#rightCursorPosition">rightCursorPosition</a>() and <a href="http://doc.qt.io/qt-5/qtextlayout.html#previousCursorPosition">previousCursorPosition</a>().</p></div></p>
+</div><h4 id='method.line_at' class='method'><code>fn <a href='#method.line_at' class='fnname'>line_at</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutLineAtArgs.html' title='qt_gui::text_layout::overloading::TextLayoutLineAtArgs'>TextLayoutLineAtArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::lineAt</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn line_at(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_line::TextLine&gt;</code><br>2) <code>fn line_at(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::text_line::TextLine</code><br>
+C++ method: <span style='color: green;'><code>QTextLine QTextLayout::lineAt(int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#lineAt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <i>i</i>-th line of text in this text layout.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#lineCount">lineCount</a>() and <a href="http://doc.qt.io/qt-5/qtextlayout.html#lineForTextPosition">lineForTextPosition</a>().</p></div></p>
+</div><h4 id='method.line_count' class='method'><code>fn <a href='#method.line_count' class='fnname'>line_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextLayout::lineCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#lineCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of lines in this text layout.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#lineAt">lineAt</a>().</p></div></p>
+</div><h4 id='method.line_for_text_position' class='method'><code>fn <a href='#method.line_for_text_position' class='fnname'>line_for_text_position</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutLineForTextPositionArgs.html' title='qt_gui::text_layout::overloading::TextLayoutLineForTextPositionArgs'>TextLayoutLineForTextPositionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::lineForTextPosition</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn line_for_text_position(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_line::TextLine&gt;</code><br>2) <code>fn line_for_text_position(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::text_line::TextLine</code><br>
+C++ method: <span style='color: green;'><code>QTextLine QTextLayout::lineForTextPosition(int pos) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#lineForTextPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the line that contains the cursor position specified by <i>pos</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#isValidCursorPosition">isValidCursorPosition</a>() and <a href="http://doc.qt.io/qt-5/qtextlayout.html#lineAt">lineAt</a>().</p></div></p>
+</div><h4 id='method.maximum_width' class='method'><code>fn <a href='#method.maximum_width' class='fnname'>maximum_width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextLayout::maximumWidth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#maximumWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The maximum width the layout could expand to; this is essentially the width of the entire text.</p>
+<p><b>Warning:</b> This function only returns a valid value after the layout has been done.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#minimumWidth">minimumWidth</a>().</p></div></p>
+</div><h4 id='method.minimum_width' class='method'><code>fn <a href='#method.minimum_width' class='fnname'>minimum_width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTextLayout::minimumWidth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#minimumWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The minimum width the layout needs. This is the width of the layout&#39;s smallest non-breakable substring.</p>
+<p><b>Warning:</b> This function only returns a valid value after the layout has been done.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#maximumWidth">maximumWidth</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutNewArgs.html' title='qt_gui::text_layout::overloading::TextLayoutNewArgs'>TextLayoutNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::QTextLayout</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::text_layout::TextLayout</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_layout::TextLayout&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextLayout::QTextLayout()</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::text_layout::TextLayout</code><br>2) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_layout::TextLayout&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextLayout::QTextLayout(const QString&amp; text)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, &amp;::font::Font, cpp_utils::AsStruct)) -&gt; ::text_layout::TextLayout</code><br>2) <code>fn new((&amp;qt_core::string::String, &amp;::font::Font, *mut ::paint_device::PaintDevice, cpp_utils::AsStruct)) -&gt; ::text_layout::TextLayout</code><br>3) <code>fn new((&amp;qt_core::string::String, &amp;::font::Font, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_layout::TextLayout&gt;</code><br>4) <code>fn new((&amp;qt_core::string::String, &amp;::font::Font, *mut ::paint_device::PaintDevice, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_layout::TextLayout&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextLayout::QTextLayout(const QString&amp; text, const QFont&amp; font, QPaintDevice* paintdevice = ?)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::text_block::TextBlock, cpp_utils::AsStruct)) -&gt; ::text_layout::TextLayout</code><br>2) <code>fn new((&amp;::text_block::TextBlock, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::text_layout::TextLayout&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTextLayout::QTextLayout(const QTextBlock&amp; b)</code></span></p>
+</div><h4 id='method.next_cursor_position' class='method'><code>fn <a href='#method.next_cursor_position' class='fnname'>next_cursor_position</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutNextCursorPositionArgs.html' title='qt_gui::text_layout::overloading::TextLayoutNextCursorPositionArgs'>TextLayoutNextCursorPositionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::nextCursorPosition</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn next_cursor_position(&amp;self, libc::c_int) -&gt; libc::c_int</code><br>2) <code>fn next_cursor_position(&amp;self, (libc::c_int, ::text_layout::CursorMode)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QTextLayout::nextCursorPosition(int oldPos, QTextLayout::CursorMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#nextCursorPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the next valid cursor position after <i>oldPos</i> that respects the given cursor <i>mode</i>. Returns value of <i>oldPos</i>, if <i>oldPos</i> is not a valid cursor position.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#isValidCursorPosition">isValidCursorPosition</a>() and <a href="http://doc.qt.io/qt-5/qtextlayout.html#previousCursorPosition">previousCursorPosition</a>().</p></div></p>
+</div><h4 id='method.position' class='method'><code>fn <a href='#method.position' class='fnname'>position</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutPositionArgs.html' title='qt_gui::text_layout::overloading::TextLayoutPositionArgs'>TextLayoutPositionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::position</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn position(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::point_f::PointF&gt;</code><br>2) <code>fn position(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QTextLayout::position() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#position">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The global position of the layout. This is independent of the bounding rectangle and of the layout process.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#setPosition">setPosition</a>().</p></div></p>
+</div><h4 id='method.preedit_area_position' class='method'><code>fn <a href='#method.preedit_area_position' class='fnname'>preedit_area_position</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextLayout::preeditAreaPosition() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#preeditAreaPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position of the area in the text layout that will be processed before editing occurs.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#preeditAreaText">preeditAreaText</a>().</p></div></p>
+</div><h4 id='method.preedit_area_text' class='method'><code>fn <a href='#method.preedit_area_text' class='fnname'>preedit_area_text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutPreeditAreaTextArgs.html' title='qt_gui::text_layout::overloading::TextLayoutPreeditAreaTextArgs'>TextLayoutPreeditAreaTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::preeditAreaText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn preedit_area_text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn preedit_area_text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextLayout::preeditAreaText() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#preeditAreaText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text that is inserted in the layout before editing occurs.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#preeditAreaPosition">preeditAreaPosition</a>().</p></div></p>
+</div><h4 id='method.previous_cursor_position' class='method'><code>fn <a href='#method.previous_cursor_position' class='fnname'>previous_cursor_position</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutPreviousCursorPositionArgs.html' title='qt_gui::text_layout::overloading::TextLayoutPreviousCursorPositionArgs'>TextLayoutPreviousCursorPositionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::previousCursorPosition</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn previous_cursor_position(&amp;self, libc::c_int) -&gt; libc::c_int</code><br>2) <code>fn previous_cursor_position(&amp;self, (libc::c_int, ::text_layout::CursorMode)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QTextLayout::previousCursorPosition(int oldPos, QTextLayout::CursorMode mode = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#previousCursorPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the first valid cursor position before <i>oldPos</i> that respects the given cursor <i>mode</i>. Returns value of <i>oldPos</i>, if <i>oldPos</i> is not a valid cursor position.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#isValidCursorPosition">isValidCursorPosition</a>() and <a href="http://doc.qt.io/qt-5/qtextlayout.html#nextCursorPosition">nextCursorPosition</a>().</p></div></p>
+</div><h4 id='method.right_cursor_position' class='method'><code>fn <a href='#method.right_cursor_position' class='fnname'>right_cursor_position</a>(&amp;self, old_pos: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTextLayout::rightCursorPosition(int oldPos) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#rightCursorPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the cursor position to the right of <i>oldPos</i>, next to it. It&#39;s dependent on the visual position of characters, after bi-directional reordering.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#leftCursorPosition">leftCursorPosition</a>() and <a href="http://doc.qt.io/qt-5/qtextlayout.html#nextCursorPosition">nextCursorPosition</a>().</p></div></p>
+</div><h4 id='method.set_additional_formats' class='method'><code>fn <a href='#method.set_additional_formats' class='fnname'>set_additional_formats</a>(&amp;mut self, overrides: &amp;<a class='struct' href='../../qt_gui/list/struct.ListFormatRangeRef.html' title='qt_gui::list::ListFormatRangeRef'>ListFormatRangeRef</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::setAdditionalFormats(const QList&lt;QTextLayout::FormatRange&gt;&amp; overrides)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#setAdditionalFormats">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the additional formats supported by the text layout to <i>formatList</i>. The formats are applied with preedit area text in place.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#additionalFormats">additionalFormats</a>() and <a href="http://doc.qt.io/qt-5/qtextlayout.html#clearAdditionalFormats">clearAdditionalFormats</a>().</p></div></p>
+</div><h4 id='method.set_cache_enabled' class='method'><code>fn <a href='#method.set_cache_enabled' class='fnname'>set_cache_enabled</a>(&amp;mut self, enable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::setCacheEnabled(bool enable)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#setCacheEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Enables caching of the complete layout information if <i>enable</i> is true; otherwise disables layout caching. Usually <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> throws most of the layouting information away after a call to <a href="http://doc.qt.io/qt-5/qtextlayout.html#endLayout">endLayout</a>() to reduce memory consumption. If you however want to draw the laid out text directly afterwards enabling caching might speed up drawing significantly.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#cacheEnabled">cacheEnabled</a>().</p></div></p>
+</div><h4 id='method.set_cursor_move_style' class='method'><code>fn <a href='#method.set_cursor_move_style' class='fnname'>set_cursor_move_style</a>(&amp;mut self, style: <a class='enum' href='../../qt_core/qt/enum.CursorMoveStyle.html' title='qt_core::qt::CursorMoveStyle'>CursorMoveStyle</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::setCursorMoveStyle(Qt::CursorMoveStyle style)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#setCursorMoveStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the visual cursor movement style to the given <i>style</i>. If the <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> is backed by a document, you can ignore this and use the option in <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a>, this option is for widgets like <a href="http://doc.qt.io/qt-5/qlineedit.html">QLineEdit</a> or custom widgets without a <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a>. Default value is <a href="http://doc.qt.io/qt-5/qt.html#CursorMoveStyle-enum">Qt::LogicalMoveStyle</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#cursorMoveStyle">cursorMoveStyle</a>().</p></div></p>
+</div><h4 id='method.set_flags' class='method'><code>fn <a href='#method.set_flags' class='fnname'>set_flags</a>(&amp;mut self, flags: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::setFlags(int flags)</code></span></p>
+</div><h4 id='method.set_font' class='method'><code>fn <a href='#method.set_font' class='fnname'>set_font</a>(&amp;mut self, f: &amp;<a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::setFont(const QFont&amp; f)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#setFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the layout&#39;s font to the given <i>font</i>. The layout is invalidated and must be laid out again.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#font">font</a>().</p></div></p>
+</div><h4 id='method.set_position' class='method'><code>fn <a href='#method.set_position' class='fnname'>set_position</a>(&amp;mut self, p: &amp;<a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::setPosition(const QPointF&amp; p)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#setPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the text layout to point <i>p</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#position">position</a>().</p></div></p>
+</div><h4 id='method.set_preedit_area' class='method'><code>fn <a href='#method.set_preedit_area' class='fnname'>set_preedit_area</a>(&amp;mut self, position: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, text: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::setPreeditArea(int position, const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#setPreeditArea">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>position</i> and <i>text</i> of the area in the layout that is processed before editing occurs. The layout is invalidated and must be laid out again.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#preeditAreaPosition">preeditAreaPosition</a>() and <a href="http://doc.qt.io/qt-5/qtextlayout.html#preeditAreaText">preeditAreaText</a>().</p></div></p>
+</div><h4 id='method.set_raw_font' class='method'><code>fn <a href='#method.set_raw_font' class='fnname'>set_raw_font</a>(&amp;mut self, raw_font: &amp;<a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::setRawFont(const QRawFont&amp; rawFont)</code></span></p>
+</div><h4 id='method.set_text' class='method'><code>fn <a href='#method.set_text' class='fnname'>set_text</a>(&amp;mut self, string: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::setText(const QString&amp; string)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#setText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the layout&#39;s text to the given <i>string</i>. The layout is invalidated and must be laid out again.</p>
+<p>Notice that when using this <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> as part of a <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a> this method will have no effect.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#text">text</a>().</p></div></p>
+</div><h4 id='method.set_text_option' class='method'><code>fn <a href='#method.set_text_option' class='fnname'>set_text_option</a>(&amp;mut self, option: &amp;<a class='struct' href='../../qt_gui/text_option/struct.TextOption.html' title='qt_gui::text_option::TextOption'>TextOption</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTextLayout::setTextOption(const QTextOption&amp; option)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#setTextOption">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the text option structure that controls the layout process to the given <i>option</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#textOption">textOption</a>().</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/text_layout/overloading/trait.TextLayoutTextArgs.html' title='qt_gui::text_layout::overloading::TextLayoutTextArgs'>TextLayoutTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextLayout::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTextLayout::text() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the layout&#39;s text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#setText">setText</a>().</p></div></p>
+</div><h4 id='method.text_option' class='method'><code>fn <a href='#method.text_option' class='fnname'>text_option</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/text_option/struct.TextOption.html' title='qt_gui::text_option::TextOption'>TextOption</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QTextOption&amp; QTextLayout::textOption() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#textOption">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current text option used to control the layout process.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextlayout.html#setTextOption">setTextOption</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/text_layout/struct.TextLayout.html' title='qt_gui::text_layout::TextLayout'>TextLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-162386' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_layout.rs.html#138-142' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/text_layout/struct.TextLayout.html' title='qt_gui::text_layout::TextLayout'>TextLayout</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/text_layout/struct.TextLayout.html' title='qt_gui::text_layout::TextLayout'>TextLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-162526' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_layout.rs.html#610-617' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QTextLayout::~QTextLayout()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtextlayout.html#dtor.QTextLayout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructs the layout.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/text_layout/struct.TextLayout.html' title='qt_gui::text_layout::TextLayout'>TextLayout</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-162529' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_layout.rs.html#619-623' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

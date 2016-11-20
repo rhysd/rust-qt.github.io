@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["flag_location","C++ method: <span style='color: green;'>```const char* qFlagLocation(const char* method)```</span>"]],"mod":[["overloading",""]],"struct":[["GenericArgument","C++ type: <span style='color: green;'>```QGenericArgument```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["BasicTimerNewArgs","This trait represents a set of arguments accepted by BasicTimer::new method."],["BasicTimerStartArgs","This trait represents a set of arguments accepted by BasicTimer::start method."]]});

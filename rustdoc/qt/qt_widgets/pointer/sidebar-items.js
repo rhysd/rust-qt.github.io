@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["PointerAbstractItemViewRef","C++ type: <span style='color: green;'>```QPointer<QAbstractItemView>```</span>"],["PointerWidgetRef","C++ type: <span style='color: green;'>```QPointer<QWidget>```</span>"]]});

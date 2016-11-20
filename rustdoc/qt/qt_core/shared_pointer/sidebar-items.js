@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["SharedPointerObjectRef","C++ type: <span style='color: green;'>```QSharedPointer<QObject>```</span>"]]});

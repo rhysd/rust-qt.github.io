@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Icon` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Icon">
+
+    <title>qt_gui::icon::Icon - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>icon</a></p><script>window.sidebarCurrent = {name: 'Icon', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>icon</a>::<wbr><a class='struct' href=''>Icon</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-75539' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/icon.rs.html#17-19' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Icon {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QIcon</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a> class provides scalable icons in different modes and states.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a> can generate smaller, larger, active, and disabled pixmaps from the set of pixmaps it is given. Such pixmaps are used by Qt widgets to show an icon representing a particular action.</p>
+<p>The simplest use of <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a> is to create one from a <a href="http://doc.qt.io/qt-5/qpixmap.html">QPixmap</a> file or resource, and then use it, allowing Qt to work out all the required icon styles and sizes. For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qtoolbutton.html">QToolButton</a></span> <span class="operator">*</span>button <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qtoolbutton.html">QToolButton</a></span>;
+button<span class="operator">-</span><span class="operator">&gt;</span>setIcon(<span class="type"><a href="http://doc.qt.io/qt-5/qicon.html#QIcon">QIcon</a></span>(<span class="string">&quot;open.xpm&quot;</span>));</pre>
+<p>To undo a <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a>, simply set a null icon in its place:</p>
+<pre class="cpp">button<span class="operator">-</span><span class="operator">&gt;</span>setIcon(<span class="type"><a href="http://doc.qt.io/qt-5/qicon.html#QIcon">QIcon</a></span>());</pre>
+<p>Use the <a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">QImageReader::supportedImageFormats</a>() and <a href="http://doc.qt.io/qt-5/qimagewriter.html#supportedImageFormats">QImageWriter::supportedImageFormats</a>() functions to retrieve a complete list of the supported file formats.</p>
+<p>When you retrieve a pixmap using pixmap(<a href="http://doc.qt.io/qt-5/qsize.html">QSize</a>, Mode, State), and no pixmap for this given size, mode and state has been added with <a href="http://doc.qt.io/qt-5/qicon.html#addFile">addFile</a>() or <a href="http://doc.qt.io/qt-5/qicon.html#addPixmap">addPixmap</a>(), then <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a> will generate one on the fly. This pixmap generation happens in a QIconEngineV2. The default engine scales pixmaps down if required, but never up, and it uses the current style to calculate a disabled appearance. By using custom icon engines, you can customize every aspect of generated icons. With QIconEnginePluginV2 it is possible to register different icon engines for different file suffixes, making it possible for third parties to provide additional icon engines to those included with Qt.</p>
+<p><b>Note: </b>Since Qt 4.2, an icon engine that supports SVG is included.</p><a name="making-classes-that-use-qicon"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/icon/struct.Icon.html' title='qt_gui::icon::Icon'>Icon</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-75544' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/icon.rs.html#27-387' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.actual_size' class='method'><code>fn <a href='#method.actual_size' class='fnname'>actual_size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconActualSizeArgs.html' title='qt_gui::icon::overloading::IconActualSizeArgs'>IconActualSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::actualSize</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn actual_size(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn actual_size(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, ::icon::Mode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>3) <code>fn actual_size(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>4) <code>fn actual_size(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, cpp_utils::AsStruct)) -&gt; qt_core::size::Size</code><br>5) <code>fn actual_size(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, ::icon::Mode, cpp_utils::AsStruct)) -&gt; qt_core::size::Size</code><br>6) <code>fn actual_size(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsStruct)) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QIcon::actualSize(QWindow* window, const QSize&amp; size, QIcon::Mode mode = ?, QIcon::State state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#actualSize-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the actual size of the icon for the requested <i>window</i> <i>size</i>, <i>mode</i>, and <i>state</i>.</p>
+<p>The pixmap can be smaller than the requested size. The returned size is in device-independent pixels (This is relevant for high-dpi pixmaps.)</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#actualSize">actualSize</a>(), <a href="http://doc.qt.io/qt-5/qicon.html#pixmap">pixmap</a>(), and <a href="http://doc.qt.io/qt-5/qicon.html#paint">paint</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn actual_size(&amp;self, (&amp;qt_core::size::Size, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn actual_size(&amp;self, (&amp;qt_core::size::Size, ::icon::Mode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>3) <code>fn actual_size(&amp;self, (&amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>4) <code>fn actual_size(&amp;self, (&amp;qt_core::size::Size, cpp_utils::AsStruct)) -&gt; qt_core::size::Size</code><br>5) <code>fn actual_size(&amp;self, (&amp;qt_core::size::Size, ::icon::Mode, cpp_utils::AsStruct)) -&gt; qt_core::size::Size</code><br>6) <code>fn actual_size(&amp;self, (&amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsStruct)) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QIcon::actualSize(const QSize&amp; size, QIcon::Mode mode = ?, QIcon::State state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#actualSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the actual size of the icon for the requested <i>size</i>, <i>mode</i>, and <i>state</i>. The result might be smaller than requested, but never larger. The returned size is in device-independent pixels (This is relevant for high-dpi pixmaps.)</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#pixmap">pixmap</a>() and <a href="http://doc.qt.io/qt-5/qicon.html#paint">paint</a>().</p></div></p>
+</div><h4 id='method.add_file' class='method'><code>fn <a href='#method.add_file' class='fnname'>add_file</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconAddFileArgs.html' title='qt_gui::icon::overloading::IconAddFileArgs'>IconAddFileArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::addFile</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn add_file(&amp;mut self, &amp;qt_core::string::String) -&gt; ()</code><br>2) <code>fn add_file(&amp;mut self, (&amp;qt_core::string::String, &amp;qt_core::size::Size)) -&gt; ()</code><br>3) <code>fn add_file(&amp;mut self, (&amp;qt_core::string::String, &amp;qt_core::size::Size, ::icon::Mode)) -&gt; ()</code><br>4) <code>fn add_file(&amp;mut self, (&amp;qt_core::string::String, &amp;qt_core::size::Size, ::icon::Mode, ::icon::State)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QIcon::addFile(const QString&amp; fileName, const QSize&amp; size = ?, QIcon::Mode mode = ?, QIcon::State state = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#addFile">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds an image from the file with the given <i>fileName</i> to the icon, as a specialization for <i>size</i>, <i>mode</i> and <i>state</i>. The file will be loaded on demand. Note: custom icon engines are free to ignore additionally added pixmaps.</p>
+<p>If <i>fileName</i> contains a relative path (e.g. the filename only) the relevant file must be found relative to the runtime working directory.</p>
+<p>The file name can be either refer to an actual file on disk or to one of the application&#39;s embedded resources. See the <a href="http://doc.qt.io/qt-5/resources.html">Resource System</a> overview for details on how to embed images and other resource files in the application&#39;s executable.</p>
+<p>Use the <a href="http://doc.qt.io/qt-5/qimagereader.html#supportedImageFormats">QImageReader::supportedImageFormats</a>() and <a href="http://doc.qt.io/qt-5/qimagewriter.html#supportedImageFormats">QImageWriter::supportedImageFormats</a>() functions to retrieve a complete list of the supported file formats.</p>
+<p>If a high resolution version of the image exists (identified by the suffix <code>@2x</code> on the base name), it is automatically loaded and added with the <i>device pixel ratio</i> set to a value of 2. This can be disabled by setting the environment variable <code>QT_HIGHDPI_DISABLE_2X_IMAGE_LOADING</code> (see <a href="http://doc.qt.io/qt-5/qimagereader.html">QImageReader</a>).</p>
+<p><b>Note: </b>When you add a non-empty filename to a <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a>, the icon becomes non-null, even if the file doesn&#39;t exist or points to a corrupt file.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#addPixmap">addPixmap</a>() and <a href="http://doc.qt.io/qt-5/qpixmap.html#devicePixelRatio">QPixmap::devicePixelRatio</a>().</p></div></p>
+</div><h4 id='method.add_pixmap' class='method'><code>fn <a href='#method.add_pixmap' class='fnname'>add_pixmap</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconAddPixmapArgs.html' title='qt_gui::icon::overloading::IconAddPixmapArgs'>IconAddPixmapArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::addPixmap</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn add_pixmap(&amp;mut self, &amp;::pixmap::Pixmap) -&gt; ()</code><br>2) <code>fn add_pixmap(&amp;mut self, (&amp;::pixmap::Pixmap, ::icon::Mode)) -&gt; ()</code><br>3) <code>fn add_pixmap(&amp;mut self, (&amp;::pixmap::Pixmap, ::icon::Mode, ::icon::State)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QIcon::addPixmap(const QPixmap&amp; pixmap, QIcon::Mode mode = ?, QIcon::State state = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#addPixmap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds <i>pixmap</i> to the icon, as a specialization for <i>mode</i> and <i>state</i>.</p>
+<p>Custom icon engines are free to ignore additionally added pixmaps.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#addFile">addFile</a>().</p></div></p>
+</div><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconAsQVariantArgs.html' title='qt_gui::icon::overloading::IconAsQVariantArgs'>IconAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QIcon::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the icon as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>.</p></div></p>
+</div><h4 id='method.available_sizes' class='method'><code>fn <a href='#method.available_sizes' class='fnname'>available_sizes</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconAvailableSizesArgs.html' title='qt_gui::icon::overloading::IconAvailableSizesArgs'>IconAvailableSizesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::availableSizes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn available_sizes(&amp;self, (::icon::Mode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListSizeRef&gt;</code><br>2) <code>fn available_sizes(&amp;self, (::icon::Mode, ::icon::State, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListSizeRef&gt;</code><br>3) <code>fn available_sizes(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListSizeRef&gt;</code><br>4) <code>fn available_sizes(&amp;self, (::icon::Mode, cpp_utils::AsStruct)) -&gt; ::list::ListSizeRef</code><br>5) <code>fn available_sizes(&amp;self, (::icon::Mode, ::icon::State, cpp_utils::AsStruct)) -&gt; ::list::ListSizeRef</code><br>6) <code>fn available_sizes(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListSizeRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QSize&gt; QIcon::availableSizes(QIcon::Mode mode = ?, QIcon::State state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#availableSizes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of available icon sizes for the specified <i>mode</i> and <i>state</i>.</p>
+<p>This function was introduced in  Qt 4.5.</p></div></p>
+</div><h4 id='method.cache_key' class='method'><code>fn <a href='#method.cache_key' class='fnname'>cache_key</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QIcon::cacheKey() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#cacheKey">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a number that identifies the contents of this <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a> object. Distinct <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a> objects can have the same key if they refer to the same contents.</p>
+<p>The cacheKey() will change when the icon is altered via <a href="http://doc.qt.io/qt-5/qicon.html#addPixmap">addPixmap</a>() or <a href="http://doc.qt.io/qt-5/qicon.html#addFile">addFile</a>().</p>
+<p>Cache keys are mostly useful in conjunction with caching.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixmap.html#cacheKey">QPixmap::cacheKey</a>().</p></div></p>
+</div><h4 id='method.detach' class='method'><code>fn <a href='#method.detach' class='fnname'>detach</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QIcon::detach()</code></span></p>
+</div><h4 id='method.from_theme' class='method'><code>fn <a href='#method.from_theme' class='fnname'>from_theme</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconFromThemeArgs.html' title='qt_gui::icon::overloading::IconFromThemeArgs'>IconFromThemeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::fromTheme</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_theme((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::icon::Icon&gt;</code><br>2) <code>fn from_theme((&amp;qt_core::string::String, &amp;::icon::Icon, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::icon::Icon&gt;</code><br>3) <code>fn from_theme((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::icon::Icon</code><br>4) <code>fn from_theme((&amp;qt_core::string::String, &amp;::icon::Icon, cpp_utils::AsStruct)) -&gt; ::icon::Icon</code><br>
+C++ method: <span style='color: green;'><code>static QIcon QIcon::fromTheme(const QString&amp; name, const QIcon&amp; fallback = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#fromTheme">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qicon.html">QIcon</a> corresponding to <i>name</i> in the current icon theme. If no such icon is found in the current theme <i>fallback</i> is returned instead.</p>
+<p>The latest version of the freedesktop icon specification and naming specification can be obtained here:</p>
+<ul>
+<li><a href="http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html"><a href="http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html">http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html</a></a></li>
+<li><a href="http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html"><a href="http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html">http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html</a></a></li>
+</ul>
+<p>To fetch an icon from the current icon theme:</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qicon.html#QIcon">QIcon</a></span> undoicon <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qicon.html#QIcon">QIcon</a></span><span class="operator">::</span>fromTheme(<span class="string">&quot;edit-undo&quot;</span>);</pre>
+<p>Or if you want to provide a guaranteed fallback for platforms that do not support theme icons, you can use the second argument:</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qicon.html#QIcon">QIcon</a></span> undoicon <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qicon.html#QIcon">QIcon</a></span><span class="operator">::</span>fromTheme(<span class="string">&quot;edit-undo&quot;</span><span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qicon.html#QIcon">QIcon</a></span>(<span class="string">&quot;:/undo.png&quot;</span>));</pre>
+<p><b>Note: </b>By default, only X11 will support themed icons. In order to use themed icons on Mac and Windows, you will have to bundle a compliant theme in one of your <a href="http://doc.qt.io/qt-5/qicon.html#themeSearchPaths">themeSearchPaths</a>() and set the appropriate <a href="http://doc.qt.io/qt-5/qicon.html#themeName">themeName</a>().</p><p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#themeName">themeName</a>(), <a href="http://doc.qt.io/qt-5/qicon.html#setThemeName">setThemeName</a>(), and <a href="http://doc.qt.io/qt-5/qicon.html#themeSearchPaths">themeSearchPaths</a>().</p></div></p>
+</div><h4 id='method.has_theme_icon' class='method'><code>fn <a href='#method.has_theme_icon' class='fnname'>has_theme_icon</a>(name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QIcon::hasThemeIcon(const QString&amp; name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#hasThemeIcon">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if there is an icon available for <i>name</i> in the current icon theme, otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#themeSearchPaths">themeSearchPaths</a>(), <a href="http://doc.qt.io/qt-5/qicon.html#fromTheme">fromTheme</a>(), and <a href="http://doc.qt.io/qt-5/qicon.html#setThemeName">setThemeName</a>().</p></div></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QIcon::isDetached() const</code></span></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QIcon::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the icon is empty; otherwise returns <code>false</code>.</p>
+<p>An icon is empty if it has neither a pixmap nor a filename.</p>
+<p>Note: Even a non-null icon might not be able to create valid pixmaps, eg. if the file does not exist or cannot be read.</p></div></p>
+</div><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconNameArgs.html' title='qt_gui::icon::overloading::IconNameArgs'>IconNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QIcon::name() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#name">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name used to create the icon, if available.</p>
+<p>Depending on the way the icon was created, it may have an associated name. This is the case for icons created with <a href="http://doc.qt.io/qt-5/qicon.html#fromTheme">fromTheme</a>() or icons using a <a href="http://doc.qt.io/qt-5/qiconengine.html">QIconEngine</a> which supports the QIconEngineV2::IconNameHook.</p>
+<p>This function was introduced in  Qt 4.7.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#fromTheme">fromTheme</a>() and <a href="http://doc.qt.io/qt-5/qiconengine.html">QIconEngine</a>.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconNewArgs.html' title='qt_gui::icon::overloading::IconNewArgs'>IconNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::QIcon</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::icon::Icon</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::icon::Icon&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QIcon::QIcon()</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::icon_engine::IconEngine, cpp_utils::AsStruct)) -&gt; ::icon::Icon</code><br>2) <code>fn new((*mut ::icon_engine::IconEngine, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::icon::Icon&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QIcon::QIcon(QIconEngine* engine)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::icon::Icon, cpp_utils::AsStruct)) -&gt; ::icon::Icon</code><br>2) <code>fn new((&amp;::icon::Icon, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::icon::Icon&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QIcon::QIcon(const QIcon&amp; other)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::pixmap::Pixmap, cpp_utils::AsStruct)) -&gt; ::icon::Icon</code><br>2) <code>fn new((&amp;::pixmap::Pixmap, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::icon::Icon&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QIcon::QIcon(const QPixmap&amp; pixmap)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::icon::Icon</code><br>2) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::icon::Icon&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QIcon::QIcon(const QString&amp; fileName)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/icon/struct.Icon.html' title='qt_gui::icon::Icon'>Icon</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/icon/struct.Icon.html' title='qt_gui::icon::Icon'>Icon</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon&amp; QIcon::operator=(const QIcon&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the <i>other</i> icon to this icon and returns a reference to this icon.</p></div></p>
+</div><h4 id='method.paint' class='method'><code>fn <a href='#method.paint' class='fnname'>paint</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconPaintArgs.html' title='qt_gui::icon::overloading::IconPaintArgs'>IconPaintArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::paint</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn paint(&amp;self, (*mut ::painter::Painter, &amp;qt_core::rect::Rect)) -&gt; ()</code><br>2) <code>fn paint(&amp;self, (*mut ::painter::Painter, &amp;qt_core::rect::Rect, qt_core::flags::Flags&lt;qt_core::qt::AlignmentFlag&gt;)) -&gt; ()</code><br>3) <code>fn paint(&amp;self, (*mut ::painter::Painter, &amp;qt_core::rect::Rect, qt_core::flags::Flags&lt;qt_core::qt::AlignmentFlag&gt;, ::icon::Mode)) -&gt; ()</code><br>4) <code>fn paint(&amp;self, (*mut ::painter::Painter, &amp;qt_core::rect::Rect, qt_core::flags::Flags&lt;qt_core::qt::AlignmentFlag&gt;, ::icon::Mode, ::icon::State)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QIcon::paint(QPainter* painter, const QRect&amp; rect, QFlags&lt;Qt::AlignmentFlag&gt; alignment = ?, QIcon::Mode mode = ?, QIcon::State state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#paint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Uses the <i>painter</i> to paint the icon with specified <i>alignment</i>, required <i>mode</i>, and <i>state</i> into the rectangle <i>rect</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#actualSize">actualSize</a>() and <a href="http://doc.qt.io/qt-5/qicon.html#pixmap">pixmap</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn paint(&amp;self, (*mut ::painter::Painter, libc::c_int, libc::c_int, libc::c_int, libc::c_int)) -&gt; ()</code><br>2) <code>fn paint(&amp;self, (*mut ::painter::Painter, libc::c_int, libc::c_int, libc::c_int, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::AlignmentFlag&gt;)) -&gt; ()</code><br>3) <code>fn paint(&amp;self, (*mut ::painter::Painter, libc::c_int, libc::c_int, libc::c_int, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::AlignmentFlag&gt;, ::icon::Mode)) -&gt; ()</code><br>4) <code>fn paint(&amp;self, (*mut ::painter::Painter, libc::c_int, libc::c_int, libc::c_int, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::AlignmentFlag&gt;, ::icon::Mode, ::icon::State)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QIcon::paint(QPainter* painter, int x, int y, int w, int h, QFlags&lt;Qt::AlignmentFlag&gt; alignment = ?, QIcon::Mode mode = ?, QIcon::State state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#paint-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Paints the icon into the rectangle <a href="http://doc.qt.io/qt-5/qrect.html">QRect</a>(<i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>).</p></div></p>
+</div><h4 id='method.pixmap' class='method'><code>fn <a href='#method.pixmap' class='fnname'>pixmap</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconPixmapArgs.html' title='qt_gui::icon::overloading::IconPixmapArgs'>IconPixmapArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::pixmap</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn pixmap(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn pixmap(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, ::icon::Mode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn pixmap(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>4) <code>fn pixmap(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>5) <code>fn pixmap(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, ::icon::Mode, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>6) <code>fn pixmap(&amp;self, (*mut ::window::Window, &amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QIcon::pixmap(QWindow* window, const QSize&amp; size, QIcon::Mode mode = ?, QIcon::State state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#pixmap-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pixmap with the requested <i>window</i> <i>size</i>, <i>mode</i>, and <i>state</i>, generating one if necessary.</p>
+<p>The pixmap can be smaller than the requested size. If <i>window</i> is on a high-dpi display the pixmap can be larger. In that case it will have a devicePixelRatio larger than 1.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#actualSize">actualSize</a>() and <a href="http://doc.qt.io/qt-5/qicon.html#paint">paint</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn pixmap(&amp;self, (&amp;qt_core::size::Size, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn pixmap(&amp;self, (&amp;qt_core::size::Size, ::icon::Mode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn pixmap(&amp;self, (&amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>4) <code>fn pixmap(&amp;self, (&amp;qt_core::size::Size, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>5) <code>fn pixmap(&amp;self, (&amp;qt_core::size::Size, ::icon::Mode, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>6) <code>fn pixmap(&amp;self, (&amp;qt_core::size::Size, ::icon::Mode, ::icon::State, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QIcon::pixmap(const QSize&amp; size, QIcon::Mode mode = ?, QIcon::State state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#pixmap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a pixmap with the requested <i>size</i>, <i>mode</i>, and <i>state</i>, generating one if necessary. The pixmap might be smaller than requested, but never larger.</p>
+<p>Setting the <a href="http://doc.qt.io/qt-5/qt.html#ApplicationAttribute-enum">Qt::AA_UseHighDpiPixmaps</a> application attribute enables this function to return pixmaps that are larger than the requested size. Such images will have a devicePixelRatio larger than 1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#actualSize">actualSize</a>() and <a href="http://doc.qt.io/qt-5/qicon.html#paint">paint</a>().</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn pixmap(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn pixmap(&amp;self, (libc::c_int, ::icon::Mode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn pixmap(&amp;self, (libc::c_int, ::icon::Mode, ::icon::State, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>4) <code>fn pixmap(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>5) <code>fn pixmap(&amp;self, (libc::c_int, ::icon::Mode, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>6) <code>fn pixmap(&amp;self, (libc::c_int, ::icon::Mode, ::icon::State, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QIcon::pixmap(int extent, QIcon::Mode mode = ?, QIcon::State state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#pixmap-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns a pixmap of size <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a>(<i>extent</i>, <i>extent</i>). The pixmap might be smaller than requested, but never larger.</p>
+<p>Setting the <a href="http://doc.qt.io/qt-5/qt.html#ApplicationAttribute-enum">Qt::AA_UseHighDpiPixmaps</a> application attribute enables this function to return pixmaps that are larger than the requested size. Such images will have a devicePixelRatio larger than 1.</p></div></p>
+
+<h2 id='variant-4-1' class='section-header'><a href='#variant-4-1'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn pixmap(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>2) <code>fn pixmap(&amp;self, (libc::c_int, libc::c_int, ::icon::Mode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>3) <code>fn pixmap(&amp;self, (libc::c_int, libc::c_int, ::icon::Mode, ::icon::State, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixmap::Pixmap&gt;</code><br>4) <code>fn pixmap(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>5) <code>fn pixmap(&amp;self, (libc::c_int, libc::c_int, ::icon::Mode, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>6) <code>fn pixmap(&amp;self, (libc::c_int, libc::c_int, ::icon::Mode, ::icon::State, cpp_utils::AsStruct)) -&gt; ::pixmap::Pixmap</code><br>
+C++ method: <span style='color: green;'><code>QPixmap QIcon::pixmap(int w, int h, QIcon::Mode mode = ?, QIcon::State state = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#pixmap-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns a pixmap of size <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a>(<i>w</i>, <i>h</i>). The pixmap might be smaller than requested, but never larger.</p>
+<p>Setting the <a href="http://doc.qt.io/qt-5/qt.html#ApplicationAttribute-enum">Qt::AA_UseHighDpiPixmaps</a> application attribute enables this function to return pixmaps that are larger than the requested size. Such images will have a devicePixelRatio larger than 1.</p></div></p>
+</div><h4 id='method.set_theme_name' class='method'><code>fn <a href='#method.set_theme_name' class='fnname'>set_theme_name</a>(path: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QIcon::setThemeName(const QString&amp; path)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#setThemeName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the current icon theme to <i>name</i>.</p>
+<p>The <i>name</i> should correspond to a directory name in the themeSearchPath() containing an index.theme file describing it&#39;s contents.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#themeSearchPaths">themeSearchPaths</a>() and <a href="http://doc.qt.io/qt-5/qicon.html#themeName">themeName</a>().</p></div></p>
+</div><h4 id='method.set_theme_search_paths' class='method'><code>fn <a href='#method.set_theme_search_paths' class='fnname'>set_theme_search_paths</a>(searchpath: &amp;<a class='struct' href='../../qt_core/string_list/struct.StringList.html' title='qt_core::string_list::StringList'>StringList</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QIcon::setThemeSearchPaths(const QStringList&amp; searchpath)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#setThemeSearchPaths">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the search paths for icon themes to <i>paths</i>.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#themeSearchPaths">themeSearchPaths</a>(), <a href="http://doc.qt.io/qt-5/qicon.html#fromTheme">fromTheme</a>(), and <a href="http://doc.qt.io/qt-5/qicon.html#setThemeName">setThemeName</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/icon/struct.Icon.html' title='qt_gui::icon::Icon'>Icon</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QIcon::swap(QIcon&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps icon <i>other</i> with this icon. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.theme_name' class='method'><code>fn <a href='#method.theme_name' class='fnname'>theme_name</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconThemeNameArgs.html' title='qt_gui::icon::overloading::IconThemeNameArgs'>IconThemeNameArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::themeName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn theme_name(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn theme_name(cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QIcon::themeName()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#themeName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the current icon theme.</p>
+<p>On X11, the current icon theme depends on your desktop settings. On other platforms it is not set by default.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#setThemeName">setThemeName</a>(), <a href="http://doc.qt.io/qt-5/qicon.html#themeSearchPaths">themeSearchPaths</a>(), <a href="http://doc.qt.io/qt-5/qicon.html#fromTheme">fromTheme</a>(), and <a href="http://doc.qt.io/qt-5/qicon.html#hasThemeIcon">hasThemeIcon</a>().</p></div></p>
+</div><h4 id='method.theme_search_paths' class='method'><code>fn <a href='#method.theme_search_paths' class='fnname'>theme_search_paths</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/icon/overloading/trait.IconThemeSearchPathsArgs.html' title='qt_gui::icon::overloading::IconThemeSearchPathsArgs'>IconThemeSearchPathsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIcon::themeSearchPaths</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn theme_search_paths(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn theme_search_paths(cpp_utils::AsStruct) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>static QStringList QIcon::themeSearchPaths()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#themeSearchPaths">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the search paths for icon themes.</p>
+<p>The default value will depend on the platform:</p>
+<p>On X11, the search path will use the XDG_DATA_DIRS environment variable if available.</p>
+<p>By default all platforms will have the resource directory <code>:\icons</code> as a fallback. You can use &quot;rcc -project&quot; to generate a resource file from your icon theme.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qicon.html#setThemeSearchPaths">setThemeSearchPaths</a>(), <a href="http://doc.qt.io/qt-5/qicon.html#fromTheme">fromTheme</a>(), and <a href="http://doc.qt.io/qt-5/qicon.html#setThemeName">setThemeName</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/icon/struct.Icon.html' title='qt_gui::icon::Icon'>Icon</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-75542' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/icon.rs.html#21-25' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/icon/struct.Icon.html' title='qt_gui::icon::Icon'>Icon</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/icon/struct.Icon.html' title='qt_gui::icon::Icon'>Icon</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-75620' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/icon.rs.html#389-396' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QIcon::~QIcon()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qicon.html#dtor.QIcon">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the icon.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/icon/struct.Icon.html' title='qt_gui::icon::Icon'>Icon</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-75623' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/icon.rs.html#398-402' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

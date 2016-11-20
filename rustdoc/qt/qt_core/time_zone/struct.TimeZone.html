@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TimeZone` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TimeZone">
+
+    <title>qt_core::time_zone::TimeZone - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>time_zone</a></p><script>window.sidebarCurrent = {name: 'TimeZone', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>time_zone</a>::<wbr><a class='struct' href=''>TimeZone</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-154723' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/time_zone.rs.html#219-221' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TimeZone {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTimeZone</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtimezone.html">QTimeZone</a> class converts between between UTC and local time in a specific time zone.</p>
+<p>This class provides a stateless calculator for time zone conversions between UTC and the local time in a specific time zone. By default it uses the host system time zone data to perform these conversions.</p>
+<p>This class is primarily designed for use in <a href="http://doc.qt.io/qt-5/qdatetime.html">QDateTime</a>; most applications will not need to access this class directly and should instead use <a href="http://doc.qt.io/qt-5/qdatetime.html">QDateTime</a> with a <a href="http://doc.qt.io/qt-5/qt.html#TimeSpec-enum">Qt::TimeSpec</a> of <a href="http://doc.qt.io/qt-5/qt.html#TimeSpec-enum">Qt::TimeZone</a>.</p>
+<p><b>Note: </b>For consistency with <a href="http://doc.qt.io/qt-5/qdatetime.html">QDateTime</a>, <a href="http://doc.qt.io/qt-5/qtimezone.html">QTimeZone</a> does not account for leap seconds.</p><a name="iana-time-zone-ids"></a>
+<a name="iana-time-zone-ids"></a>
+<h4>IANA Time Zone IDs</h4>
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html">QTimeZone</a> uses the IANA time zone IDs as defined in the IANA Time Zone Database (<a href="http://www.iana.org/time-zones">http://www.iana.org/time-zones</a>). This is to ensure a standard ID across all supported platforms. Most platforms support the IANA IDs and the IANA Database natively, but for Windows a mapping is required to the native IDs. See below for more details.</p>
+<p>The IANA IDs can and do change on a regular basis, and can vary depending on how recently the host system data was updated. As such you cannot rely on any given ID existing on any host system. You must use <a href="http://doc.qt.io/qt-5/qtimezone.html#availableTimeZoneIds">availableTimeZoneIds</a>() to determine what IANA IDs are available.</p>
+<p>The IANA IDs and database are also know as the Olson IDs and database, named after their creator.</p>
+<a name="utc-offset-time-zones"></a>
+<h4>UTC Offset Time Zones</h4>
+<p>A default UTC time zone backend is provided which is always guaranteed to be available. This provides a set of generic Offset From UTC time zones in the range UTC-14:00 to UTC+14:00. These time zones can be created using either the standard ISO format names &quot;UTC+00:00&quot; as listed by <a href="http://doc.qt.io/qt-5/qtimezone.html#availableTimeZoneIds">availableTimeZoneIds</a>(), or using the number of offset seconds.</p>
+<a name="windows-time-zones"></a>
+<h4>Windows Time Zones</h4>
+<p>Windows native time zone support is severely limited compared to the standard IANA TZ Database. Windows time zones cover larger geographic areas and are thus less accurate in their conversions. They also do not support as much historic conversion data and so may only be accurate for the current year.</p>
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html">QTimeZone</a> uses a conversion table derived form the Unicode CLDR data to map between IANA IDs and Windows IDs. Depending on your version of Windows and Qt, this table may not be able to provide a valid conversion, in which &quot;UTC&quot; will be returned.</p>
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html">QTimeZone</a> provides a public API to use this conversion table. The Windows ID used is the Windows Registry Key for the time zone which is also the MS Exchange EWS ID as well, but is different to the Time Zone Name (TZID) and COD code used by MS Exchange in versions before 2007.</p>
+<a name="system-time-zone"></a>
+<h4>System Time Zone</h4>
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html">QTimeZone</a> does not support any concept of a system or default time zone. If you require a <a href="http://doc.qt.io/qt-5/qdatetime.html">QDateTime</a> that uses the current system time zone at any given moment then you should use a <a href="http://doc.qt.io/qt-5/qt.html#TimeSpec-enum">Qt::TimeSpec</a> of <a href="http://doc.qt.io/qt-5/qt.html#TimeSpec-enum">Qt::LocalTime</a>.</p>
+<p>The method <a href="http://doc.qt.io/qt-5/qtimezone.html#systemTimeZoneId">systemTimeZoneId</a>() returns the current system IANA time zone ID which on Unix-like systems will always be correct. On Windows this ID is translated from the Windows system ID using an internal translation table and the user&#39;s selected country. As a consequence there is a small chance any Windows install may have IDs not known by Qt, in which case &quot;UTC&quot; will be returned.</p>
+<p>Creating a new <a href="http://doc.qt.io/qt-5/qtimezone.html">QTimeZone</a> instance using the system time zone ID will only produce a fixed named copy of the time zone, it will not change if the system time zone changes.</p>
+<a name="time-zone-offsets"></a>
+<h4>Time Zone Offsets</h4>
+<p>The difference between UTC and the local time in a time zone is expressed as an offset in seconds from UTC, i.e. the number of seconds to add to UTC to obtain the local time. The total offset is comprised of two component parts, the standard time offset and the daylight time offset. The standard time offset is the number of seconds to add to UTC to obtain standard time in the time zone. The daylight time offset is the number of seconds to add to the standard time offset to obtain daylight time in the time zone.</p>
+<p>Note that the standard and daylight offsets for a time zone may change over time as countries have changed daylight time laws or even their standard time offset.</p>
+<a name="license"></a>
+<h4>License</h4>
+<p>This class includes data obtained from the CLDR data files under the terms of the Unicode license.</p>
+<div class="LegaleseLeft"><p>COPYRIGHT AND PERMISSION NOTICE</p>
+<p>Copyright © 1991-2012 Unicode, Inc. All rights reserved. Distributed under the Terms of Use in <a href="http://www.unicode.org/copyright.html">http://www.unicode.org/copyright.html</a>.</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of the Unicode data files and any associated documentation (the &quot;Data Files&quot;) or Unicode software and any associated documentation (the &quot;Software&quot;) to deal in the Data Files or Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, and/or sell copies of the Data Files or Software, and to permit persons to whom the Data Files or Software are furnished to do so, provided that (a) the above copyright notice(s) and this permission notice appear with all copies of the Data Files or Software, (b) both the above copyright notice(s) and this permission notice appear in associated documentation, and (c) there is clear notice in each modified Data File or in the Software as well as in the documentation associated with the Data File(s) or Software that the data or software has been modified.</p>
+</div></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/time_zone/struct.TimeZone.html' title='qt_core::time_zone::TimeZone'>TimeZone</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-154728' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/time_zone.rs.html#229-685' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.abbreviation' class='method'><code>fn <a href='#method.abbreviation' class='fnname'>abbreviation</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneAbbreviationArgs.html' title='qt_core::time_zone::overloading::TimeZoneAbbreviationArgs'>TimeZoneAbbreviationArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::abbreviation</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn abbreviation(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn abbreviation(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTimeZone::abbreviation(const QDateTime&amp; atDateTime) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#abbreviation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the time zone abbreviation at the given <i>atDateTime</i>. The abbreviation may change depending on daylight time or even historical events.</p>
+<p>Note that the abbreviation is not guaranteed to be unique to this time zone and should not be used in place of the ID or display name.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#displayName">displayName</a>().</p></div></p>
+</div><h4 id='method.available_time_zone_ids' class='method'><code>fn <a href='#method.available_time_zone_ids' class='fnname'>available_time_zone_ids</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneAvailableTimeZoneIdsArgs.html' title='qt_core::time_zone::overloading::TimeZoneAvailableTimeZoneIdsArgs'>TimeZoneAvailableTimeZoneIdsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::availableTimeZoneIds</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn available_time_zone_ids(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListByteArrayRef&gt;</code><br>2) <code>fn available_time_zone_ids(cpp_utils::AsStruct) -&gt; ::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QByteArray&gt; QTimeZone::availableTimeZoneIds()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#availableTimeZoneIds">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of all available IANA time zone IDs on this system.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#isTimeZoneIdAvailable">isTimeZoneIdAvailable</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn available_time_zone_ids((::locale::Country, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListByteArrayRef&gt;</code><br>2) <code>fn available_time_zone_ids((::locale::Country, cpp_utils::AsStruct)) -&gt; ::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QByteArray&gt; QTimeZone::availableTimeZoneIds(QLocale::Country country)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#availableTimeZoneIds-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of all available IANA time zone IDs for a given <i>country</i>.</p>
+<p>As a special case, a <i>country</i> of Qt::AnyCountry returns those time zones that do not have any country related to them, such as UTC. If you require a list of all time zone IDs for all countries then use the standard <a href="http://doc.qt.io/qt-5/qtimezone.html#availableTimeZoneIds">availableTimeZoneIds</a>() method.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#isTimeZoneIdAvailable">isTimeZoneIdAvailable</a>().</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn available_time_zone_ids((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListByteArrayRef&gt;</code><br>2) <code>fn available_time_zone_ids((libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QByteArray&gt; QTimeZone::availableTimeZoneIds(int offsetSeconds)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#availableTimeZoneIds-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of all available IANA time zone IDs with a given standard time offset of <i>offsetSeconds</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#isTimeZoneIdAvailable">isTimeZoneIdAvailable</a>().</p></div></p>
+</div><h4 id='method.comment' class='method'><code>fn <a href='#method.comment' class='fnname'>comment</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneCommentArgs.html' title='qt_core::time_zone::overloading::TimeZoneCommentArgs'>TimeZoneCommentArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::comment</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn comment(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn comment(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTimeZone::comment() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#comment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns any comment for the time zone.</p>
+<p>A comment may be provided by the host platform to assist users in choosing the correct time zone. Depending on the platform this may not be localized.</p></div></p>
+</div><h4 id='method.country' class='method'><code>fn <a href='#method.country' class='fnname'>country</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/locale/enum.Country.html' title='qt_core::locale::Country'>Country</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QLocale::Country QTimeZone::country() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#country">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the country for the time zone.</p></div></p>
+</div><h4 id='method.daylight_time_offset' class='method'><code>fn <a href='#method.daylight_time_offset' class='fnname'>daylight_time_offset</a>(&amp;self, at_date_time: &amp;<a class='struct' href='../../qt_core/date_time/struct.DateTime.html' title='qt_core::date_time::DateTime'>DateTime</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTimeZone::daylightTimeOffset(const QDateTime&amp; atDateTime) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#daylightTimeOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the daylight time offset at the given <i>atDateTime</i>, i.e. the number of seconds to add to the standard time offset to obtain the local daylight time.</p>
+<p>For example, for the time zone &quot;Europe/Berlin&quot; the daylight time offset is +3600 seconds. During standard time daylightTimeOffset() will return 0, and during daylight time it will return +3600.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#offsetFromUtc">offsetFromUtc</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#standardTimeOffset">standardTimeOffset</a>().</p></div></p>
+</div><h4 id='method.display_name' class='method'><code>fn <a href='#method.display_name' class='fnname'>display_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneDisplayNameArgs.html' title='qt_core::time_zone::overloading::TimeZoneDisplayNameArgs'>TimeZoneDisplayNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::displayName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn display_name(&amp;self, (::time_zone::TimeType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn display_name(&amp;self, (::time_zone::TimeType, ::time_zone::NameType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn display_name(&amp;self, (::time_zone::TimeType, ::time_zone::NameType, &amp;::locale::Locale, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>4) <code>fn display_name(&amp;self, (::time_zone::TimeType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>5) <code>fn display_name(&amp;self, (::time_zone::TimeType, ::time_zone::NameType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>6) <code>fn display_name(&amp;self, (::time_zone::TimeType, ::time_zone::NameType, &amp;::locale::Locale, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTimeZone::displayName(QTimeZone::TimeType timeType, QTimeZone::NameType nameType = ?, const QLocale&amp; locale = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#displayName-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the localized time zone display name for the given <i>timeType</i> and <i>nameType</i> in the given <i>locale</i>. The <i>nameType</i> and <i>locale</i> requested may not be supported on all platforms, in which case the best available option will be returned.</p>
+<p>If the <i>locale</i> is not provided then the application default locale will be used.</p>
+<p>Where the time zone display names have changed over time then the most recent names will be used.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#abbreviation">abbreviation</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn display_name(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn display_name(&amp;self, (&amp;::date_time::DateTime, ::time_zone::NameType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn display_name(&amp;self, (&amp;::date_time::DateTime, ::time_zone::NameType, &amp;::locale::Locale, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>4) <code>fn display_name(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>5) <code>fn display_name(&amp;self, (&amp;::date_time::DateTime, ::time_zone::NameType, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>6) <code>fn display_name(&amp;self, (&amp;::date_time::DateTime, ::time_zone::NameType, &amp;::locale::Locale, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTimeZone::displayName(const QDateTime&amp; atDateTime, QTimeZone::NameType nameType = ?, const QLocale&amp; locale = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#displayName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the localized time zone display name at the given <i>atDateTime</i> for the given <i>nameType</i> in the given <i>locale</i>. The <i>nameType</i> and <i>locale</i> requested may not be supported on all platforms, in which case the best available option will be returned.</p>
+<p>If the <i>locale</i> is not provided then the application default locale will be used.</p>
+<p>The display name may change depending on daylight time or historical events.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#abbreviation">abbreviation</a>().</p></div></p>
+</div><h4 id='method.has_daylight_time' class='method'><code>fn <a href='#method.has_daylight_time' class='fnname'>has_daylight_time</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTimeZone::hasDaylightTime() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#hasDaylightTime">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the time zone has observed daylight time at any time.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#isDaylightTime">isDaylightTime</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#daylightTimeOffset">daylightTimeOffset</a>().</p></div></p>
+</div><h4 id='method.has_transitions' class='method'><code>fn <a href='#method.has_transitions' class='fnname'>has_transitions</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTimeZone::hasTransitions() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#hasTransitions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the system backend supports obtaining transitions.</p></div></p>
+</div><h4 id='method.iana_id_to_windows_id' class='method'><code>fn <a href='#method.iana_id_to_windows_id' class='fnname'>iana_id_to_windows_id</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneIanaIdToWindowsIdArgs.html' title='qt_core::time_zone::overloading::TimeZoneIanaIdToWindowsIdArgs'>TimeZoneIanaIdToWindowsIdArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::ianaIdToWindowsId</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn iana_id_to_windows_id((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn iana_id_to_windows_id((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>static QByteArray QTimeZone::ianaIdToWindowsId(const QByteArray&amp; ianaId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#ianaIdToWindowsId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the Windows ID equivalent to the given <i>ianaId</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#windowsIdToDefaultIanaId">windowsIdToDefaultIanaId</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#windowsIdToIanaIds">windowsIdToIanaIds</a>().</p></div></p>
+</div><h4 id='method.id' class='method'><code>fn <a href='#method.id' class='fnname'>id</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneIdArgs.html' title='qt_core::time_zone::overloading::TimeZoneIdArgs'>TimeZoneIdArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::id</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn id(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn id(&amp;self, cpp_utils::AsStruct) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QTimeZone::id() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#id">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the IANA ID for the time zone.</p>
+<p>IANA IDs are used on all platforms. On Windows these are translated from the Windows ID into the closest IANA ID for the time zone and country.</p></div></p>
+</div><h4 id='method.is_daylight_time' class='method'><code>fn <a href='#method.is_daylight_time' class='fnname'>is_daylight_time</a>(&amp;self, at_date_time: &amp;<a class='struct' href='../../qt_core/date_time/struct.DateTime.html' title='qt_core::date_time::DateTime'>DateTime</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTimeZone::isDaylightTime(const QDateTime&amp; atDateTime) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#isDaylightTime">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the given <i>atDateTime</i> is in daylight time.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#hasDaylightTime">hasDaylightTime</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#daylightTimeOffset">daylightTimeOffset</a>().</p></div></p>
+</div><h4 id='method.is_time_zone_id_available' class='method'><code>fn <a href='#method.is_time_zone_id_available' class='fnname'>is_time_zone_id_available</a>(iana_id: &amp;<a class='struct' href='../../qt_core/byte_array/struct.ByteArray.html' title='qt_core::byte_array::ByteArray'>ByteArray</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QTimeZone::isTimeZoneIdAvailable(const QByteArray&amp; ianaId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#isTimeZoneIdAvailable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if a given time zone <i>ianaId</i> is available on this system.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#availableTimeZoneIds">availableTimeZoneIds</a>().</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTimeZone::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this time zone is valid.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneNewArgs.html' title='qt_core::time_zone::overloading::TimeZoneNewArgs'>TimeZoneNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::QTimeZone</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::time_zone::TimeZone</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::time_zone::TimeZone&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTimeZone::QTimeZone()</code></span></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::time_zone::TimeZone</code><br>2) <code>fn new((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time_zone::TimeZone&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTimeZone::QTimeZone(const QByteArray&amp; ianaId)</code></span></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::byte_array::ByteArray, libc::c_int, &amp;::string::String, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::time_zone::TimeZone</code><br>2) <code>fn new((&amp;::byte_array::ByteArray, libc::c_int, &amp;::string::String, &amp;::string::String, ::locale::Country, cpp_utils::AsStruct)) -&gt; ::time_zone::TimeZone</code><br>3) <code>fn new((&amp;::byte_array::ByteArray, libc::c_int, &amp;::string::String, &amp;::string::String, ::locale::Country, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::time_zone::TimeZone</code><br>4) <code>fn new((&amp;::byte_array::ByteArray, libc::c_int, &amp;::string::String, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time_zone::TimeZone&gt;</code><br>5) <code>fn new((&amp;::byte_array::ByteArray, libc::c_int, &amp;::string::String, &amp;::string::String, ::locale::Country, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time_zone::TimeZone&gt;</code><br>6) <code>fn new((&amp;::byte_array::ByteArray, libc::c_int, &amp;::string::String, &amp;::string::String, ::locale::Country, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time_zone::TimeZone&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTimeZone::QTimeZone(const QByteArray&amp; zoneId, int offsetSeconds, const QString&amp; name, const QString&amp; abbreviation, QLocale::Country country = ?, const QString&amp; comment = ?)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::time_zone::TimeZone, cpp_utils::AsStruct)) -&gt; ::time_zone::TimeZone</code><br>2) <code>fn new((&amp;::time_zone::TimeZone, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time_zone::TimeZone&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTimeZone::QTimeZone(const QTimeZone&amp; other)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, cpp_utils::AsStruct)) -&gt; ::time_zone::TimeZone</code><br>2) <code>fn new((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time_zone::TimeZone&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTimeZone::QTimeZone(int offsetSeconds)</code></span></p>
+</div><h4 id='method.next_transition' class='method'><code>fn <a href='#method.next_transition' class='fnname'>next_transition</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneNextTransitionArgs.html' title='qt_core::time_zone::overloading::TimeZoneNextTransitionArgs'>TimeZoneNextTransitionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::nextTransition</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn next_transition(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time_zone::OffsetData&gt;</code><br>2) <code>fn next_transition(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsStruct)) -&gt; ::time_zone::OffsetData</code><br>
+C++ method: <span style='color: green;'><code>QTimeZone::OffsetData QTimeZone::nextTransition(const QDateTime&amp; afterDateTime) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#nextTransition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the first time zone Transition after the given <i>afterDateTime</i>. This is most useful when you have a Transition time and wish to find the Transition after it.</p>
+<p>If there is no transition after the given <i>afterDateTime</i> then an invalid <a href="http://doc.qt.io/qt-5/qtimezone-offsetdata.html">OffsetData</a> will be returned with an invalid <a href="http://doc.qt.io/qt-5/qdatetime.html">QDateTime</a>.</p>
+<p>The given <i>afterDateTime</i> is exclusive.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#hasTransitions">hasTransitions</a>(), <a href="http://doc.qt.io/qt-5/qtimezone.html#previousTransition">previousTransition</a>(), and <a href="http://doc.qt.io/qt-5/qtimezone.html#transitions">transitions</a>().</p></div></p>
+</div><h4 id='method.offset_data' class='method'><code>fn <a href='#method.offset_data' class='fnname'>offset_data</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneOffsetDataArgs.html' title='qt_core::time_zone::overloading::TimeZoneOffsetDataArgs'>TimeZoneOffsetDataArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::offsetData</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn offset_data(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time_zone::OffsetData&gt;</code><br>2) <code>fn offset_data(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsStruct)) -&gt; ::time_zone::OffsetData</code><br>
+C++ method: <span style='color: green;'><code>QTimeZone::OffsetData QTimeZone::offsetData(const QDateTime&amp; forDateTime) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#offsetData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the effective offset details at the given <i>forDateTime</i>. This is the equivalent of calling <a href="http://doc.qt.io/qt-5/qtimezone.html#offsetFromUtc">offsetFromUtc</a>(), <a href="http://doc.qt.io/qt-5/qtimezone.html#abbreviation">abbreviation</a>(), etc individually but is more efficient.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#offsetFromUtc">offsetFromUtc</a>(), <a href="http://doc.qt.io/qt-5/qtimezone.html#standardTimeOffset">standardTimeOffset</a>(), <a href="http://doc.qt.io/qt-5/qtimezone.html#daylightTimeOffset">daylightTimeOffset</a>(), and <a href="http://doc.qt.io/qt-5/qtimezone.html#abbreviation">abbreviation</a>().</p></div></p>
+</div><h4 id='method.offset_from_utc' class='method'><code>fn <a href='#method.offset_from_utc' class='fnname'>offset_from_utc</a>(&amp;self, at_date_time: &amp;<a class='struct' href='../../qt_core/date_time/struct.DateTime.html' title='qt_core::date_time::DateTime'>DateTime</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTimeZone::offsetFromUtc(const QDateTime&amp; atDateTime) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#offsetFromUtc">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the total effective offset at the given <i>atDateTime</i>, i.e. the number of seconds to add to UTC to obtain the local time. This includes any daylight time offset that may be in effect, i.e. it is the sum of <a href="http://doc.qt.io/qt-5/qtimezone.html#standardTimeOffset">standardTimeOffset</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#daylightTimeOffset">daylightTimeOffset</a>() for the given datetime.</p>
+<p>For example, for the time zone &quot;Europe/Berlin&quot; the standard time offset is +3600 seconds and the daylight time offset is +3600 seconds. During standard time offsetFromUtc() will return +3600 (UTC+01:00), and during daylight time it will return +7200 (UTC+02:00).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#standardTimeOffset">standardTimeOffset</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#daylightTimeOffset">daylightTimeOffset</a>().</p></div></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_core/time_zone/struct.TimeZone.html' title='qt_core::time_zone::TimeZone'>TimeZone</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/time_zone/struct.TimeZone.html' title='qt_core::time_zone::TimeZone'>TimeZone</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone&amp; QTimeZone::operator=(const QTimeZone&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assignment operator, assign <i>other</i> to this.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/time_zone/struct.TimeZone.html' title='qt_core::time_zone::TimeZone'>TimeZone</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTimeZone::operator==(const QTimeZone&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this time zone is equal to the <i>other</i> time zone.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/time_zone/struct.TimeZone.html' title='qt_core::time_zone::TimeZone'>TimeZone</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTimeZone::operator!=(const QTimeZone&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this time zone is not equal to the <i>other</i> time zone.</p></div></p>
+</div><h4 id='method.previous_transition' class='method'><code>fn <a href='#method.previous_transition' class='fnname'>previous_transition</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZonePreviousTransitionArgs.html' title='qt_core::time_zone::overloading::TimeZonePreviousTransitionArgs'>TimeZonePreviousTransitionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::previousTransition</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn previous_transition(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::time_zone::OffsetData&gt;</code><br>2) <code>fn previous_transition(&amp;self, (&amp;::date_time::DateTime, cpp_utils::AsStruct)) -&gt; ::time_zone::OffsetData</code><br>
+C++ method: <span style='color: green;'><code>QTimeZone::OffsetData QTimeZone::previousTransition(const QDateTime&amp; beforeDateTime) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#previousTransition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the first time zone Transition before the given <i>beforeDateTime</i>. This is most useful when you have a Transition time and wish to find the Transition before it.</p>
+<p>If there is no transition before the given <i>beforeDateTime</i> then an invalid <a href="http://doc.qt.io/qt-5/qtimezone-offsetdata.html">OffsetData</a> will be returned with an invalid <a href="http://doc.qt.io/qt-5/qdatetime.html">QDateTime</a>.</p>
+<p>The given <i>beforeDateTime</i> is exclusive.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#hasTransitions">hasTransitions</a>(), <a href="http://doc.qt.io/qt-5/qtimezone.html#nextTransition">nextTransition</a>(), and <a href="http://doc.qt.io/qt-5/qtimezone.html#transitions">transitions</a>().</p></div></p>
+</div><h4 id='method.standard_time_offset' class='method'><code>fn <a href='#method.standard_time_offset' class='fnname'>standard_time_offset</a>(&amp;self, at_date_time: &amp;<a class='struct' href='../../qt_core/date_time/struct.DateTime.html' title='qt_core::date_time::DateTime'>DateTime</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTimeZone::standardTimeOffset(const QDateTime&amp; atDateTime) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#standardTimeOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the standard time offset at the given <i>atDateTime</i>, i.e. the number of seconds to add to UTC to obtain the local Standard Time. This excludes any daylight time offset that may be in effect.</p>
+<p>For example, for the time zone &quot;Europe/Berlin&quot; the standard time offset is +3600 seconds. During both standard and daylight time <a href="http://doc.qt.io/qt-5/qtimezone.html#offsetFromUtc">offsetFromUtc</a>() will return +3600 (UTC+01:00).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#offsetFromUtc">offsetFromUtc</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#daylightTimeOffset">daylightTimeOffset</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/time_zone/struct.TimeZone.html' title='qt_core::time_zone::TimeZone'>TimeZone</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTimeZone::swap(QTimeZone&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this time zone instance with <i>other</i>. This function is very fast and never fails.</p></div></p>
+</div><h4 id='method.system_time_zone' class='method'><code>fn <a href='#method.system_time_zone' class='fnname'>system_time_zone</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneSystemTimeZoneArgs.html' title='qt_core::time_zone::overloading::TimeZoneSystemTimeZoneArgs'>TimeZoneSystemTimeZoneArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::systemTimeZone</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn system_time_zone(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::time_zone::TimeZone&gt;</code><br>2) <code>fn system_time_zone(cpp_utils::AsStruct) -&gt; ::time_zone::TimeZone</code><br>
+C++ method: <span style='color: green;'><code>static QTimeZone QTimeZone::systemTimeZone()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#systemTimeZone">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qtimezone.html">QTimeZone</a> object that refers to the local system time, as specified by <a href="http://doc.qt.io/qt-5/qtimezone.html#systemTimeZoneId">systemTimeZoneId</a>().</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#utc">utc</a>().</p></div></p>
+</div><h4 id='method.system_time_zone_id' class='method'><code>fn <a href='#method.system_time_zone_id' class='fnname'>system_time_zone_id</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneSystemTimeZoneIdArgs.html' title='qt_core::time_zone::overloading::TimeZoneSystemTimeZoneIdArgs'>TimeZoneSystemTimeZoneIdArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::systemTimeZoneId</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn system_time_zone_id(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn system_time_zone_id(cpp_utils::AsStruct) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>static QByteArray QTimeZone::systemTimeZoneId()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#systemTimeZoneId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current system time zone IANA ID.</p>
+<p>On Windows this ID is translated from the Windows ID using an internal translation table and the user&#39;s selected country. As a consequence there is a small chance any Windows install may have IDs not known by Qt, in which case &quot;UTC&quot; will be returned.</p></div></p>
+</div><h4 id='method.transitions' class='method'><code>fn <a href='#method.transitions' class='fnname'>transitions</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneTransitionsArgs.html' title='qt_core::time_zone::overloading::TimeZoneTransitionsArgs'>TimeZoneTransitionsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::transitions</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn transitions(&amp;self, (&amp;::date_time::DateTime, &amp;::date_time::DateTime, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::vector::VectorOffsetDataRef&gt;</code><br>2) <code>fn transitions(&amp;self, (&amp;::date_time::DateTime, &amp;::date_time::DateTime, cpp_utils::AsStruct)) -&gt; ::vector::VectorOffsetDataRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QTimeZone::OffsetData&gt; QTimeZone::transitions(const QDateTime&amp; fromDateTime, const QDateTime&amp; toDateTime) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#transitions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of all time zone transitions between the given datetimes.</p>
+<p>The given <i>fromDateTime</i> and <i>toDateTime</i> are inclusive.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#hasTransitions">hasTransitions</a>(), <a href="http://doc.qt.io/qt-5/qtimezone.html#nextTransition">nextTransition</a>(), and <a href="http://doc.qt.io/qt-5/qtimezone.html#previousTransition">previousTransition</a>().</p></div></p>
+</div><h4 id='method.utc' class='method'><code>fn <a href='#method.utc' class='fnname'>utc</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneUtcArgs.html' title='qt_core::time_zone::overloading::TimeZoneUtcArgs'>TimeZoneUtcArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::utc</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn utc(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::time_zone::TimeZone&gt;</code><br>2) <code>fn utc(cpp_utils::AsStruct) -&gt; ::time_zone::TimeZone</code><br>
+C++ method: <span style='color: green;'><code>static QTimeZone QTimeZone::utc()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#utc">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qtimezone.html">QTimeZone</a> object that refers to UTC (Universal Time Coordinated).</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#systemTimeZone">systemTimeZone</a>().</p></div></p>
+</div><h4 id='method.windows_id_to_default_iana_id' class='method'><code>fn <a href='#method.windows_id_to_default_iana_id' class='fnname'>windows_id_to_default_iana_id</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneWindowsIdToDefaultIanaIdArgs.html' title='qt_core::time_zone::overloading::TimeZoneWindowsIdToDefaultIanaIdArgs'>TimeZoneWindowsIdToDefaultIanaIdArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::windowsIdToDefaultIanaId</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn windows_id_to_default_iana_id((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn windows_id_to_default_iana_id((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>static QByteArray QTimeZone::windowsIdToDefaultIanaId(const QByteArray&amp; windowsId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#windowsIdToDefaultIanaId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the default IANA ID for a given <i>windowsId</i>.</p>
+<p>Because a Windows ID can cover several IANA IDs in several different countries, this function returns the most frequently used IANA ID with no regard for the country and should thus be used with care. It is usually best to request the default for a specific country.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#ianaIdToWindowsId">ianaIdToWindowsId</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#windowsIdToIanaIds">windowsIdToIanaIds</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn windows_id_to_default_iana_id((&amp;::byte_array::ByteArray, ::locale::Country, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::byte_array::ByteArray&gt;</code><br>2) <code>fn windows_id_to_default_iana_id((&amp;::byte_array::ByteArray, ::locale::Country, cpp_utils::AsStruct)) -&gt; ::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>static QByteArray QTimeZone::windowsIdToDefaultIanaId(const QByteArray&amp; windowsId, QLocale::Country country)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#windowsIdToDefaultIanaId-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the default IANA ID for a given <i>windowsId</i> and <i>country</i>.</p>
+<p>Because a Windows ID can cover several IANA IDs within a given country, the most frequently used IANA ID in that country is returned.</p>
+<p>As a special case, <a href="http://doc.qt.io/qt-5/qlocale.html#Country-enum">QLocale::AnyCountry</a> returns the default of those IANA IDs that do not have any specific country.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#ianaIdToWindowsId">ianaIdToWindowsId</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#windowsIdToIanaIds">windowsIdToIanaIds</a>().</p></div></p>
+</div><h4 id='method.windows_id_to_iana_ids' class='method'><code>fn <a href='#method.windows_id_to_iana_ids' class='fnname'>windows_id_to_iana_ids</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/time_zone/overloading/trait.TimeZoneWindowsIdToIanaIdsArgs.html' title='qt_core::time_zone::overloading::TimeZoneWindowsIdToIanaIdsArgs'>TimeZoneWindowsIdToIanaIdsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTimeZone::windowsIdToIanaIds</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn windows_id_to_iana_ids((&amp;::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListByteArrayRef&gt;</code><br>2) <code>fn windows_id_to_iana_ids((&amp;::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QByteArray&gt; QTimeZone::windowsIdToIanaIds(const QByteArray&amp; windowsId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#windowsIdToIanaIds">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns all the IANA IDs for a given <i>windowsId</i>.</p>
+<p>The returned list is sorted alphabetically.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#ianaIdToWindowsId">ianaIdToWindowsId</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#windowsIdToDefaultIanaId">windowsIdToDefaultIanaId</a>().</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn windows_id_to_iana_ids((&amp;::byte_array::ByteArray, ::locale::Country, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListByteArrayRef&gt;</code><br>2) <code>fn windows_id_to_iana_ids((&amp;::byte_array::ByteArray, ::locale::Country, cpp_utils::AsStruct)) -&gt; ::list::ListByteArrayRef</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;QByteArray&gt; QTimeZone::windowsIdToIanaIds(const QByteArray&amp; windowsId, QLocale::Country country)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#windowsIdToIanaIds-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns all the IANA IDs for a given <i>windowsId</i> and <i>country</i>.</p>
+<p>As a special case <a href="http://doc.qt.io/qt-5/qlocale.html#Country-enum">QLocale::AnyCountry</a> returns those IANA IDs that do not have any specific country.</p>
+<p>The returned list is in order of frequency of usage, i.e. larger zones within a country are listed first.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtimezone.html#ianaIdToWindowsId">ianaIdToWindowsId</a>() and <a href="http://doc.qt.io/qt-5/qtimezone.html#windowsIdToDefaultIanaId">windowsIdToDefaultIanaId</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/time_zone/struct.TimeZone.html' title='qt_core::time_zone::TimeZone'>TimeZone</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-154726' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/time_zone.rs.html#223-227' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/time_zone/struct.TimeZone.html' title='qt_core::time_zone::TimeZone'>TimeZone</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/time_zone/struct.TimeZone.html' title='qt_core::time_zone::TimeZone'>TimeZone</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-154830' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/time_zone.rs.html#687-694' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QTimeZone::~QTimeZone()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtimezone.html#dtor.QTimeZone">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the time zone.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/time_zone/struct.TimeZone.html' title='qt_core::time_zone::TimeZone'>TimeZone</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-154833' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/time_zone.rs.html#696-700' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

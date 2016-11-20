@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ApplicationStateChangeEventNewArgs","This trait represents a set of arguments accepted by ApplicationStateChangeEvent::new method."],["ApplicationStateChangeEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by ApplicationStateChangeEvent::register_event_type method."]]});

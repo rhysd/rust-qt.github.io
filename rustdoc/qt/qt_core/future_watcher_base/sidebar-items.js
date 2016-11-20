@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["FutureWatcherBase","C++ type: <span style='color: green;'>```QFutureWatcherBase```</span>"]]});

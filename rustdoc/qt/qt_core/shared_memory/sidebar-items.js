@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["AccessMode","C++ type: <span style='color: green;'>```QSharedMemory::AccessMode```</span>"],["SharedMemoryError","C++ type: <span style='color: green;'>```QSharedMemory::SharedMemoryError```</span>"]],"mod":[["overloading",""]],"struct":[["SharedMemory","C++ type: <span style='color: green;'>```QSharedMemory```</span>"]]});

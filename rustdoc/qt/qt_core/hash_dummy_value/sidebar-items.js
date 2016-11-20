@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["HashDummyValue","C++ type: <span style='color: green;'>```QHashDummyValue```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ObjectCleanupHandler","C++ type: <span style='color: green;'>```QObjectCleanupHandler```</span>"]]});

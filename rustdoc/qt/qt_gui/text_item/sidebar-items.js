@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["RenderFlag","C++ type: <span style='color: green;'>```QTextItem::RenderFlag```</span>"]],"mod":[["overloading",""]],"struct":[["TextItem","C++ type: <span style='color: green;'>```QTextItem```</span>"]]});

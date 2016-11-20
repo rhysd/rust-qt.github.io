@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AbstractNativeEventFilter","C++ type: <span style='color: green;'>```QAbstractNativeEventFilter```</span>"]]});

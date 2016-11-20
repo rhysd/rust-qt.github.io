@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GestureEvent` struct in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GestureEvent">
+
+    <title>qt_widgets::gesture_event::GestureEvent - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>gesture_event</a></p><script>window.sidebarCurrent = {name: 'GestureEvent', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>gesture_event</a>::<wbr><a class='struct' href=''>GestureEvent</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-265083' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/gesture_event.rs.html#12-14' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct GestureEvent {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QGestureEvent</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qgestureevent.html">QGestureEvent</a> class provides the description of triggered gestures.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qgestureevent.html">QGestureEvent</a> class contains a list of gestures, which can be obtained using the <a href="http://doc.qt.io/qt-5/qgestureevent.html#gestures">gestures</a>() function.</p>
+<p>The gestures are either active or canceled. A list of those that are currently being executed can be obtained using the <a href="http://doc.qt.io/qt-5/qgestureevent.html#activeGestures">activeGestures</a>() function. A list of those which were previously active and have been canceled can be accessed using the <a href="http://doc.qt.io/qt-5/qgestureevent.html#canceledGestures">canceledGestures</a>() function. A gesture might be canceled if the current window loses focus, for example, or because of a timeout, or for other reasons.</p>
+<p>If the event handler does not accept the event by calling the generic <a href="http://doc.qt.io/qt-5/qevent.html#accept">QEvent::accept</a>() function, all individual <a href="http://doc.qt.io/qt-5/qgesture.html">QGesture</a> object that were not accepted and in the <a href="http://doc.qt.io/qt-5/qt.html#GestureState-enum">Qt::GestureStarted</a> state will be propagated up the parent widget chain until a widget accepts them individually, by calling <a href="http://doc.qt.io/qt-5/qgestureevent.html#accept">QGestureEvent::accept</a>() for each of them, or an event filter consumes the event.</p>
+<a name="further-reading"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_widgets/gesture_event/struct.GestureEvent.html' title='qt_widgets::gesture_event::GestureEvent'>GestureEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-265088' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/gesture_event.rs.html#22-298' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.accept' class='method'><code>fn <a href='#method.accept' class='fnname'>accept</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/gesture_event/overloading/trait.GestureEventAcceptArgs.html' title='qt_widgets::gesture_event::overloading::GestureEventAcceptArgs'>GestureEventAcceptArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGestureEvent::accept</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn accept(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGestureEvent::accept()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accept">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the accept flag of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(true).</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn accept(&amp;mut self, *mut ::gesture::Gesture) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGestureEvent::accept(QGesture* arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#accept">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the accept flag of the given <i>gesture</i> object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qgestureevent.html#setAccepted">setAccepted(gesture, true)</a>.</p>
+<p>Setting the accept flag indicates that the event receiver wants the gesture. Unwanted gestures may be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgestureevent.html#ignore">QGestureEvent::ignore</a>().</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn accept(&amp;mut self, qt_core::qt::GestureType) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGestureEvent::accept(Qt::GestureType arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#accept-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the accept flag of the given <i>gestureType</i>, the equivalent of calling <a href="http://doc.qt.io/qt-5/qgestureevent.html#setAccepted">setAccepted(gestureType, true)</a>.</p>
+<p>Setting the accept flag indicates that the event receiver wants the gesture. Unwanted gestures may be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgestureevent.html#ignore">QGestureEvent::ignore</a>().</p></div></p>
+</div><h4 id='method.active_gestures' class='method'><code>fn <a href='#method.active_gestures' class='fnname'>active_gestures</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/gesture_event/overloading/trait.GestureEventActiveGesturesArgs.html' title='qt_widgets::gesture_event::overloading::GestureEventActiveGesturesArgs'>GestureEventActiveGesturesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGestureEvent::activeGestures</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn active_gestures(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListGestureMutPtr&gt;</code><br>2) <code>fn active_gestures(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListGestureMutPtr</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QGesture*&gt; QGestureEvent::activeGestures() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#activeGestures">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of active (not canceled) gestures.</p></div></p>
+</div><h4 id='method.canceled_gestures' class='method'><code>fn <a href='#method.canceled_gestures' class='fnname'>canceled_gestures</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/gesture_event/overloading/trait.GestureEventCanceledGesturesArgs.html' title='qt_widgets::gesture_event::overloading::GestureEventCanceledGesturesArgs'>GestureEventCanceledGesturesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGestureEvent::canceledGestures</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn canceled_gestures(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListGestureMutPtr&gt;</code><br>2) <code>fn canceled_gestures(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListGestureMutPtr</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QGesture*&gt; QGestureEvent::canceledGestures() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#canceledGestures">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of canceled gestures.</p></div></p>
+</div><h4 id='method.gesture' class='method'><code>fn <a href='#method.gesture' class='fnname'>gesture</a>(&amp;self, type_: <a class='enum' href='../../qt_core/qt/enum.GestureType.html' title='qt_core::qt::GestureType'>GestureType</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/gesture/struct.Gesture.html' title='qt_widgets::gesture::Gesture'>Gesture</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGesture* QGestureEvent::gesture(Qt::GestureType type) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#gesture">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a gesture object by <i>type</i>.</p></div></p>
+</div><h4 id='method.gestures' class='method'><code>fn <a href='#method.gestures' class='fnname'>gestures</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/gesture_event/overloading/trait.GestureEventGesturesArgs.html' title='qt_widgets::gesture_event::overloading::GestureEventGesturesArgs'>GestureEventGesturesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGestureEvent::gestures</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn gestures(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListGestureMutPtr&gt;</code><br>2) <code>fn gestures(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListGestureMutPtr</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QGesture*&gt; QGestureEvent::gestures() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#gestures">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns all gestures that are delivered in the event.</p></div></p>
+</div><h4 id='method.ignore' class='method'><code>fn <a href='#method.ignore' class='fnname'>ignore</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/gesture_event/overloading/trait.GestureEventIgnoreArgs.html' title='qt_widgets::gesture_event::overloading::GestureEventIgnoreArgs'>GestureEventIgnoreArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGestureEvent::ignore</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn ignore(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGestureEvent::ignore()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#ignore">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the accept flag parameter of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(false).</p>
+<p>Clearing the accept parameter indicates that the event receiver does not want the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn ignore(&amp;mut self, *mut ::gesture::Gesture) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGestureEvent::ignore(QGesture* arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#ignore">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the accept flag parameter of the given <i>gesture</i> object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qgestureevent.html#setAccepted">setAccepted(gesture, false)</a>.</p>
+<p>Clearing the accept flag indicates that the event receiver does not want the gesture. Unwanted gestures may be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgestureevent.html#accept">QGestureEvent::accept</a>().</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn ignore(&amp;mut self, qt_core::qt::GestureType) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGestureEvent::ignore(Qt::GestureType arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#ignore-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the accept flag parameter of the given <i>gestureType</i>, the equivalent of calling <a href="http://doc.qt.io/qt-5/qgestureevent.html#setAccepted">setAccepted(gesture, false)</a>.</p>
+<p>Clearing the accept flag indicates that the event receiver does not want the gesture. Unwanted gestures may be propgated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgestureevent.html#accept">QGestureEvent::accept</a>().</p></div></p>
+</div><h4 id='method.is_accepted' class='method'><code>fn <a href='#method.is_accepted' class='fnname'>is_accepted</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_widgets/gesture_event/overloading/trait.GestureEventIsAcceptedArgs.html' title='qt_widgets::gesture_event::overloading::GestureEventIsAcceptedArgs'>GestureEventIsAcceptedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGestureEvent::isAccepted</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn is_accepted(&amp;self, ()) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QGestureEvent::isAccepted() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn is_accepted(&amp;self, *mut ::gesture::Gesture) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QGestureEvent::isAccepted(QGesture* arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#isAccepted">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the <i>gesture</i> is accepted; otherwise returns <code>false</code>.</p></div></p>
+
+<h2 id='variant-3-2' class='section-header'><a href='#variant-3-2'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn is_accepted(&amp;self, qt_core::qt::GestureType) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QGestureEvent::isAccepted(Qt::GestureType arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#isAccepted-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the gesture of type <i>gestureType</i> is accepted; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.map_to_graphics_scene' class='method'><code>fn <a href='#method.map_to_graphics_scene' class='fnname'>map_to_graphics_scene</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/gesture_event/overloading/trait.GestureEventMapToGraphicsSceneArgs.html' title='qt_widgets::gesture_event::overloading::GestureEventMapToGraphicsSceneArgs'>GestureEventMapToGraphicsSceneArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGestureEvent::mapToGraphicsScene</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn map_to_graphics_scene(&amp;self, (&amp;qt_core::point_f::PointF, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::point_f::PointF&gt;</code><br>2) <code>fn map_to_graphics_scene(&amp;self, (&amp;qt_core::point_f::PointF, cpp_utils::AsStruct)) -&gt; qt_core::point_f::PointF</code><br>
+C++ method: <span style='color: green;'><code>QPointF QGestureEvent::mapToGraphicsScene(const QPointF&amp; gesturePoint) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#mapToGraphicsScene">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the scene-local coordinates if the <i>gesturePoint</i> is inside a graphics view.</p>
+<p>This functional might be useful when the gesture event is delivered to a <a href="http://doc.qt.io/qt-5/qgraphicsobject.html">QGraphicsObject</a> to translate a point in screen coordinates to scene-local coordinates.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpointf.html#isNull">QPointF::isNull</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/gesture_event/overloading/trait.GestureEventNewArgs.html' title='qt_widgets::gesture_event::overloading::GestureEventNewArgs'>GestureEventNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGestureEvent::QGestureEvent</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((&amp;::list::ListGestureMutPtr, cpp_utils::AsStruct)) -&gt; ::gesture_event::GestureEvent</code><br>2) <code>fn new((&amp;::list::ListGestureMutPtr, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::gesture_event::GestureEvent&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QGestureEvent::QGestureEvent(const QList&lt;QGesture*&gt;&amp; gestures)</code></span></p>
+</div><h4 id='method.register_event_type' class='method'><code>fn <a href='#method.register_event_type' class='fnname'>register_event_type</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_widgets/gesture_event/overloading/trait.GestureEventRegisterEventTypeArgs.html' title='qt_widgets::gesture_event::overloading::GestureEventRegisterEventTypeArgs'>GestureEventRegisterEventTypeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGestureEvent::registerEventType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn register_event_type(libc::c_int) -&gt; libc::c_int</code><br>2) <code>fn register_event_type(()) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QGestureEvent::registerEventType(int hint = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#registerEventType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Registers and returns a custom event type. The <i>hint</i> provided will be used if it is available, otherwise it will return a value between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a> that has not yet been registered. The <i>hint</i> is ignored if its value is not between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a>.</p>
+<p>Returns -1 if all available values are already taken or the program is shutting down.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.set_accepted' class='method'><code>fn <a href='#method.set_accepted' class='fnname'>set_accepted</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/gesture_event/overloading/trait.GestureEventSetAcceptedArgs.html' title='qt_widgets::gesture_event::overloading::GestureEventSetAcceptedArgs'>GestureEventSetAcceptedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QGestureEvent::setAccepted</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_accepted(&amp;mut self, (*mut ::gesture::Gesture, bool)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGestureEvent::setAccepted(QGesture* arg1, bool arg2)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#setAccepted">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the accept flag of the given <i>gesture</i> object to the specified <i>value</i>.</p>
+<p>Setting the accept flag indicates that the event receiver wants the <i>gesture</i>. Unwanted gestures may be propagated to the parent widget.</p>
+<p>By default, gestures in events of type <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::Gesture</a> are accepted, and gestures in <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::GestureOverride</a> events are ignored.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qgestureevent.html#accept">accept</a>(gesture), and cleared with <a href="http://doc.qt.io/qt-5/qgestureevent.html#ignore">ignore</a>(gesture).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgestureevent.html#isAccepted">isAccepted</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_accepted(&amp;mut self, (qt_core::qt::GestureType, bool)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGestureEvent::setAccepted(Qt::GestureType arg1, bool arg2)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#setAccepted-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the accept flag of the given <i>gestureType</i> object to the specified <i>value</i>.</p>
+<p>Setting the accept flag indicates that the event receiver wants to receive gestures of the specified type, <i>gestureType</i>. Unwanted gestures may be propagated to the parent widget.</p>
+<p>By default, gestures in events of type <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::Gesture</a> are accepted, and gestures in <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::GestureOverride</a> events are ignored.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qgestureevent.html#accept">accept</a>(gestureType), and cleared with <a href="http://doc.qt.io/qt-5/qgestureevent.html#ignore">ignore</a>(gestureType).</p></div></p>
+
+<h2 id='variant-3-3' class='section-header'><a href='#variant-3-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn set_accepted(&amp;mut self, bool) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QGestureEvent::setAccepted(bool accepted)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.set_widget' class='method'><code>fn <a href='#method.set_widget' class='fnname'>set_widget</a>(&amp;mut self, widget: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/widget/struct.Widget.html' title='qt_widgets::widget::Widget'>Widget</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QGestureEvent::setWidget(QWidget* widget)</code></span></p>
+</div><h4 id='method.spontaneous' class='method'><code>fn <a href='#method.spontaneous' class='fnname'>spontaneous</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QGestureEvent::spontaneous() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#spontaneous">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the event originated outside the application (a system event); otherwise returns <code>false</code>.</p>
+<p>The return value of this function is not defined for paint events.</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/event/enum.Type.html' title='qt_core::event::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QEvent::Type QGestureEvent::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the event type.</p></div></p>
+</div><h4 id='method.widget' class='method'><code>fn <a href='#method.widget' class='fnname'>widget</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/widget/struct.Widget.html' title='qt_widgets::widget::Widget'>Widget</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWidget* QGestureEvent::widget() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#widget">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the widget on which the event occurred.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_widgets/gesture_event/struct.GestureEvent.html' title='qt_widgets::gesture_event::GestureEvent'>GestureEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-265086' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/gesture_event.rs.html#16-20' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_widgets/gesture_event/struct.GestureEvent.html' title='qt_widgets::gesture_event::GestureEvent'>GestureEvent</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_widgets/gesture_event/struct.GestureEvent.html' title='qt_widgets::gesture_event::GestureEvent'>GestureEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-265147' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/gesture_event.rs.html#300-307' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QGestureEvent::~QGestureEvent()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgestureevent.html#dtor.QGestureEvent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys <a href="http://doc.qt.io/qt-5/qgestureevent.html">QGestureEvent</a>.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_widgets/gesture_event/struct.GestureEvent.html' title='qt_widgets::gesture_event::GestureEvent'>GestureEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-265150' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/gesture_event.rs.html#309-313' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

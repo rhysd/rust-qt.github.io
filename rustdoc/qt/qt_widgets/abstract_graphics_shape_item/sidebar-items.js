@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AbstractGraphicsShapeItem","C++ type: <span style='color: green;'>```QAbstractGraphicsShapeItem```</span>"]]});

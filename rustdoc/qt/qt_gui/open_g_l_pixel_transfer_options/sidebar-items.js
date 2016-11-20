@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["swap","C++ method: <span style='color: green;'>```void swap(QOpenGLPixelTransferOptions& value1, QOpenGLPixelTransferOptions& value2)```</span>"]],"mod":[["overloading",""]],"struct":[["OpenGLPixelTransferOptions","C++ type: <span style='color: green;'>```QOpenGLPixelTransferOptions```</span>"]]});

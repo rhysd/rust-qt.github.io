@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ItemSelection` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ItemSelection">
+
+    <title>qt_core::item_selection::ItemSelection - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>item_selection</a></p><script>window.sidebarCurrent = {name: 'ItemSelection', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>item_selection</a>::<wbr><a class='struct' href=''>ItemSelection</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-80833' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/item_selection.rs.html#18-20' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ItemSelection {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QItemSelection</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qitemselection.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qitemselection.html">QItemSelection</a> class manages information about selected items in a model.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qitemselection.html">QItemSelection</a> describes the items in a model that have been selected by the user. A <a href="http://doc.qt.io/qt-5/qitemselection.html">QItemSelection</a> is basically a list of selection ranges, see <a href="http://doc.qt.io/qt-5/qitemselectionrange.html">QItemSelectionRange</a>. It provides functions for creating and manipulating selections, and selecting a range of items from a model.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qitemselection.html">QItemSelection</a> class is one of the <a href="http://doc.qt.io/qt-5/model-view-programming.html#model-view-classes">Model/View Classes</a> and is part of Qt&#39;s <a href="http://doc.qt.io/qt-5/model-view-programming.html">model/view framework</a>.</p>
+<p>An item selection can be constructed and initialized to contain a range of items from an existing model. The following example constructs a selection that contains a range of items from the given <code>model</code>, beginning at the <code>topLeft</code>, and ending at the <code>bottomRight</code>.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qitemselection.html#QItemSelection">QItemSelection</a></span> <span class="operator"><em></span>selection <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qitemselection.html#QItemSelection">QItemSelection</a></span>(topLeft<span class="operator">,</span> bottomRight);</pre>
+<p>An empty item selection can be constructed, and later populated as required. So, if the model is going to be unavailable when we construct the item selection, we can rewrite the above code in the following way:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qitemselection.html#QItemSelection">QItemSelection</a></span> <span class="operator"></em></span>selection <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qitemselection.html#QItemSelection">QItemSelection</a></span>();
+<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+selection<span class="operator">-</span><span class="operator">&gt;</span><a href="http://doc.qt.io/qt-5/qitemselection.html#select">select</a>(topLeft<span class="operator">,</span> bottomRight);</pre>
+<p><a href="http://doc.qt.io/qt-5/qitemselection.html">QItemSelection</a> saves memory, and avoids unnecessary work, by working with selection ranges rather than recording the model item index for each item in the selection. Generally, an instance of this class will contain a list of non-overlapping selection ranges.</p>
+<p>Use <a href="http://doc.qt.io/qt-5/qitemselection.html#merge">merge</a>() to merge one item selection into another without making overlapping ranges. Use <a href="http://doc.qt.io/qt-5/qitemselection.html#split">split</a>() to split one selection range into smaller ranges based on a another selection range.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/item_selection/struct.ItemSelection.html' title='qt_core::item_selection::ItemSelection'>ItemSelection</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-80838' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/item_selection.rs.html#28-806' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.append' class='method'><code>fn <a href='#method.append' class='fnname'>append</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionAppendArgs.html' title='qt_core::item_selection::overloading::ItemSelectionAppendArgs'>ItemSelectionAppendArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::append</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn append(&amp;mut self, &amp;::item_selection_range::ItemSelectionRange) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QItemSelection::append(const QItemSelectionRange&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#append">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts <i>value</i> at the end of the list.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list<span class="operator">.</span>append(<span class="string">&quot;one&quot;</span>);
+list<span class="operator">.</span>append(<span class="string">&quot;two&quot;</span>);
+list<span class="operator">.</span>append(<span class="string">&quot;three&quot;</span>);
+<span class="comment">// list: [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]</span></pre>
+<p>This is the same as list.insert(<a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>(), <i>value</i>).</p>
+<p>If this list is not shared, this operation is typically very fast (amortized <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>), because <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> preallocates extra space on both sides of its internal buffer to allow for fast growth at both ends of the list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-lt-lt">operator&lt;&lt;</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#prepend">prepend</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#insert">insert</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn append(&amp;mut self, &amp;::list::ListItemSelectionRangeRef) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QItemSelection::append(const QList&lt;QItemSelectionRange&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#append-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Appends the items of the <i>value</i> list to this list.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-lt-lt">operator&lt;&lt;</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#operator-2b-eq">operator+=</a>().</p></div></p>
+</div><h4 id='method.at' class='method'><code>fn <a href='#method.at' class='fnname'>at</a>&lt;'l0&gt;(&amp;'l0 self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QItemSelectionRange&amp; QItemSelection::at(int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#at">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item at index position <i>i</i> in the list. <i>i</i> must be a valid index position in the list (i.e., 0 &lt;= <i>i</i> &lt; <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>()).</p>
+<p>This function is very fast (<a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#value">value</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#operator-5b-5d">operator[]</a>().</p></div></p>
+</div><h4 id='method.back' class='method'><code>fn <a href='#method.back' class='fnname'>back</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QItemSelectionRange&amp; QItemSelection::back() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#back-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.back_mut' class='method'><code>fn <a href='#method.back_mut' class='fnname'>back_mut</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelectionRange&amp; QItemSelection::back()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#back">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#last">last</a>(). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p></div></p>
+</div><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes all items from the list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeAll">removeAll</a>().</p></div></p>
+</div><h4 id='method.contains' class='method'><code>fn <a href='#method.contains' class='fnname'>contains</a>(&amp;self, index: &amp;<a class='struct' href='../../qt_core/model_index/struct.ModelIndex.html' title='qt_core::model_index::ModelIndex'>ModelIndex</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QItemSelection::contains(const QModelIndex&amp; index) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qitemselection.html#contains">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the selection contains the given <i>index</i>; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.count' class='method'><code>fn <a href='#method.count' class='fnname'>count</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionCountArgs.html' title='qt_core::item_selection::overloading::ItemSelectionCountArgs'>ItemSelectionCountArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::count</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn count(&amp;self, ()) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QItemSelection::count() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#count-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of items in the list. This is effectively the same as <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn count(&amp;self, &amp;::item_selection_range::ItemSelectionRange) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QItemSelection::count(const QItemSelectionRange&amp; t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#count">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of occurrences of <i>value</i> in the list.</p>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#contains">contains</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#indexOf">indexOf</a>().</p></div></p>
+</div><h4 id='method.detach' class='method'><code>fn <a href='#method.detach' class='fnname'>detach</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::detach()</code></span></p>
+</div><h4 id='method.detach_shared' class='method'><code>fn <a href='#method.detach_shared' class='fnname'>detach_shared</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::detachShared()</code></span></p>
+</div><h4 id='method.empty' class='method'><code>fn <a href='#method.empty' class='fnname'>empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QItemSelection::empty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#empty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() and returns <code>true</code> if the list is empty.</p></div></p>
+</div><h4 id='method.ends_with' class='method'><code>fn <a href='#method.ends_with' class='fnname'>ends_with</a>(&amp;self, t: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QItemSelection::endsWith(const QItemSelectionRange&amp; t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#endsWith">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this list is not empty and its last item is equal to <i>value</i>; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#contains">contains</a>().</p></div></p>
+</div><h4 id='method.first' class='method'><code>fn <a href='#method.first' class='fnname'>first</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QItemSelectionRange&amp; QItemSelection::first() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#first-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.first_mut' class='method'><code>fn <a href='#method.first_mut' class='fnname'>first_mut</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelectionRange&amp; QItemSelection::first()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#first">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a reference to the first item in the list. The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#last">last</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>().</p></div></p>
+</div><h4 id='method.front' class='method'><code>fn <a href='#method.front' class='fnname'>front</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QItemSelectionRange&amp; QItemSelection::front() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#front-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.front_mut' class='method'><code>fn <a href='#method.front_mut' class='fnname'>front_mut</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelectionRange&amp; QItemSelection::front()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#front">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#first">first</a>(). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p></div></p>
+</div><h4 id='method.index_of' class='method'><code>fn <a href='#method.index_of' class='fnname'>index_of</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionIndexOfArgs.html' title='qt_core::item_selection::overloading::ItemSelectionIndexOfArgs'>ItemSelectionIndexOfArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::indexOf</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn index_of(&amp;self, &amp;::item_selection_range::ItemSelectionRange) -&gt; libc::c_int</code><br>2) <code>fn index_of(&amp;self, (&amp;::item_selection_range::ItemSelectionRange, libc::c_int)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QItemSelection::indexOf(const QItemSelectionRange&amp; t, int from = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#indexOf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index position of the first occurrence of <i>value</i> in the list, searching forward from index position <i>from</i>. Returns -1 if no item matched.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;C&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span>;
+list<span class="operator">.</span>indexOf(<span class="string">&quot;B&quot;</span>);          <span class="comment">// returns 1</span>
+list<span class="operator">.</span>indexOf(<span class="string">&quot;B&quot;</span><span class="operator">,</span> <span class="number">1</span>);       <span class="comment">// returns 1</span>
+list<span class="operator">.</span>indexOf(<span class="string">&quot;B&quot;</span><span class="operator">,</span> <span class="number">2</span>);       <span class="comment">// returns 3</span>
+list<span class="operator">.</span>indexOf(<span class="string">&quot;X&quot;</span>);          <span class="comment">// returns -1</span></pre>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> uses 0-based indexes, just like C++ arrays. Negative indexes are not supported with the exception of the value mentioned above.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#lastIndexOf">lastIndexOf</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#contains">contains</a>().</p></div></p>
+</div><h4 id='method.indexes' class='method'><code>fn <a href='#method.indexes' class='fnname'>indexes</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionIndexesArgs.html' title='qt_core::item_selection::overloading::ItemSelectionIndexesArgs'>ItemSelectionIndexesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::indexes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn indexes(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListModelIndexRef&gt;</code><br>2) <code>fn indexes(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListModelIndexRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QModelIndex&gt; QItemSelection::indexes() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qitemselection.html#indexes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of model indexes that correspond to the selected items.</p></div></p>
+</div><h4 id='method.insert' class='method'><code>fn <a href='#method.insert' class='fnname'>insert</a>(&amp;mut self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, t: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::insert(int i, const QItemSelectionRange&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#insert">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts <i>value</i> at index position <i>i</i> in the list. If <i>i</i> is 0, the value is prepended to the list. If <i>i</i> is <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>(), the value is appended to the list.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;alpha&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;beta&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;delta&quot;</span>;
+list<span class="operator">.</span>insert(<span class="number">2</span><span class="operator">,</span> <span class="string">&quot;gamma&quot;</span>);
+<span class="comment">// list: [&quot;alpha&quot;, &quot;beta&quot;, &quot;gamma&quot;, &quot;delta&quot;]</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#prepend">prepend</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#replace">replace</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>().</p></div></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QItemSelection::isDetached() const</code></span></p>
+</div><h4 id='method.is_empty' class='method'><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QItemSelection::isEmpty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the list contains no items; otherwise returns false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>().</p></div></p>
+</div><h4 id='method.is_shared_with' class='method'><code>fn <a href='#method.is_shared_with' class='fnname'>is_shared_with</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/list/struct.ListItemSelectionRangeRef.html' title='qt_core::list::ListItemSelectionRangeRef'>ListItemSelectionRangeRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QItemSelection::isSharedWith(const QList&lt;QItemSelectionRange&gt;&amp; other) const</code></span></p>
+</div><h4 id='method.last' class='method'><code>fn <a href='#method.last' class='fnname'>last</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QItemSelectionRange&amp; QItemSelection::last() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#last-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.last_index_of' class='method'><code>fn <a href='#method.last_index_of' class='fnname'>last_index_of</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionLastIndexOfArgs.html' title='qt_core::item_selection::overloading::ItemSelectionLastIndexOfArgs'>ItemSelectionLastIndexOfArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::lastIndexOf</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn last_index_of(&amp;self, &amp;::item_selection_range::ItemSelectionRange) -&gt; libc::c_int</code><br>2) <code>fn last_index_of(&amp;self, (&amp;::item_selection_range::ItemSelectionRange, libc::c_int)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QItemSelection::lastIndexOf(const QItemSelectionRange&amp; t, int from = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#lastIndexOf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index position of the last occurrence of <i>value</i> in the list, searching backward from index position <i>from</i>. If <i>from</i> is -1 (the default), the search starts at the last item. Returns -1 if no item matched.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;C&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span>;
+list<span class="operator">.</span>lastIndexOf(<span class="string">&quot;B&quot;</span>);      <span class="comment">// returns 3</span>
+list<span class="operator">.</span>lastIndexOf(<span class="string">&quot;B&quot;</span><span class="operator">,</span> <span class="number">3</span>);   <span class="comment">// returns 3</span>
+list<span class="operator">.</span>lastIndexOf(<span class="string">&quot;B&quot;</span><span class="operator">,</span> <span class="number">2</span>);   <span class="comment">// returns 1</span>
+list<span class="operator">.</span>lastIndexOf(<span class="string">&quot;X&quot;</span>);      <span class="comment">// returns -1</span></pre>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> uses 0-based indexes, just like C++ arrays. Negative indexes are not supported with the exception of the value mentioned above.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#indexOf">indexOf</a>().</p></div></p>
+</div><h4 id='method.last_mut' class='method'><code>fn <a href='#method.last_mut' class='fnname'>last_mut</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelectionRange&amp; QItemSelection::last()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#last">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a reference to the last item in the list. The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#first">first</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>().</p></div></p>
+</div><h4 id='method.length' class='method'><code>fn <a href='#method.length' class='fnname'>length</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QItemSelection::length() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#length">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is identical to <a href="http://doc.qt.io/qt-5/qlist.html#count">count</a>().</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#count">count</a>().</p></div></p>
+</div><h4 id='method.merge' class='method'><code>fn <a href='#method.merge' class='fnname'>merge</a>(&amp;mut self, other: &amp;<a class='struct' href='../../qt_core/item_selection/struct.ItemSelection.html' title='qt_core::item_selection::ItemSelection'>ItemSelection</a>, command: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/item_selection_model/enum.SelectionFlag.html' title='qt_core::item_selection_model::SelectionFlag'>SelectionFlag</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::merge(const QItemSelection&amp; other, QFlags&lt;QItemSelectionModel::SelectionFlag&gt; command)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qitemselection.html#merge">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Merges the <i>other</i> selection with this <a href="http://doc.qt.io/qt-5/qitemselection.html">QItemSelection</a> using the <i>command</i> given. This method guarantees that no ranges are overlapping.</p>
+<p>Note that only <a href="http://doc.qt.io/qt-5/qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::Select</a>, <a href="http://doc.qt.io/qt-5/qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::Deselect</a>, and <a href="http://doc.qt.io/qt-5/qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::Toggle</a> are supported.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qitemselection.html#split">split</a>().</p></div></p>
+</div><h4 id='method.mid' class='method'><code>fn <a href='#method.mid' class='fnname'>mid</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionMidArgs.html' title='qt_core::item_selection::overloading::ItemSelectionMidArgs'>ItemSelectionMidArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::mid</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn mid(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListItemSelectionRangeRef&gt;</code><br>2) <code>fn mid(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListItemSelectionRangeRef&gt;</code><br>3) <code>fn mid(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListItemSelectionRangeRef</code><br>4) <code>fn mid(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListItemSelectionRangeRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QItemSelectionRange&gt; QItemSelection::mid(int pos, int length = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#mid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a sub-list which includes elements from this list, starting at position <i>pos</i>. If <i>length</i> is -1 (the default), all elements from <i>pos</i> are included; otherwise <i>length</i> elements (or all remaining elements if there are less than <i>length</i> elements) are included.</p></div></p>
+</div><h4 id='method.move_' class='method'><code>fn <a href='#method.move_' class='fnname'>move_</a>(&amp;mut self, from: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, to: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::move(int from, int to)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#move">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the item at index position <i>from</i> to index position <i>to</i>.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;C&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;D&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;E&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;F&quot;</span>;
+list<span class="operator">.</span>move(<span class="number">1</span><span class="operator">,</span> <span class="number">4</span>);
+<span class="comment">// list: [&quot;A&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;B&quot;, &quot;F&quot;]</span></pre>
+<p>This is the same as insert(<i>to</i>, <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(<i>from</i>)).This function assumes that both <i>from</i> and <i>to</i> are at least 0 but less than <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>(). To avoid failure, test that both <i>from</i> and <i>to</i> are at least 0 and less than <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#swap">swap</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#insert">insert</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionNewArgs.html' title='qt_core::item_selection::overloading::ItemSelectionNewArgs'>ItemSelectionNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::QItemSelection</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::item_selection::ItemSelection</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::item_selection::ItemSelection&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QItemSelection::QItemSelection()</code></span></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::model_index::ModelIndex, &amp;::model_index::ModelIndex, cpp_utils::AsStruct)) -&gt; ::item_selection::ItemSelection</code><br>2) <code>fn new((&amp;::model_index::ModelIndex, &amp;::model_index::ModelIndex, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::item_selection::ItemSelection&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QItemSelection::QItemSelection(const QModelIndex&amp; topLeft, const QModelIndex&amp; bottomRight)</code></span></p>
+</div><h4 id='method.op_add' class='method'><code>fn <a href='#method.op_add' class='fnname'>op_add</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionOpAddArgs.html' title='qt_core::item_selection::overloading::ItemSelectionOpAddArgs'>ItemSelectionOpAddArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::operator+</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_add(&amp;self, (&amp;::list::ListItemSelectionRangeRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListItemSelectionRangeRef&gt;</code><br>2) <code>fn op_add(&amp;self, (&amp;::list::ListItemSelectionRangeRef, cpp_utils::AsStruct)) -&gt; ::list::ListItemSelectionRangeRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QItemSelectionRange&gt; QItemSelection::operator+(const QList&lt;QItemSelectionRange&gt;&amp; l) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list that contains all the items in this list followed by all the items in the <i>other</i> list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b-eq">operator+=</a>().</p></div></p>
+</div><h4 id='method.op_add_assign' class='method'><code>fn <a href='#method.op_add_assign' class='fnname'>op_add_assign</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListItemSelectionRangeRef.html' title='qt_core::list::ListItemSelectionRangeRef'>ListItemSelectionRangeRef</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionOpAddAssignArgs.html' title='qt_core::item_selection::overloading::ItemSelectionOpAddAssignArgs'>ItemSelectionOpAddAssignArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::operator+=</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_add_assign(&amp;mut self, &amp;&#39;l1 ::item_selection_range::ItemSelectionRange) -&gt; &amp;&#39;l0 mut ::list::ListItemSelectionRangeRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QItemSelectionRange&gt;&amp; QItemSelection::operator+=(const QItemSelectionRange&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Appends <i>value</i> to the list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#operator-lt-lt">operator&lt;&lt;</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_add_assign(&amp;mut self, &amp;&#39;l1 ::list::ListItemSelectionRangeRef) -&gt; &amp;&#39;l0 mut ::list::ListItemSelectionRangeRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QItemSelectionRange&gt;&amp; QItemSelection::operator+=(const QList&lt;QItemSelectionRange&gt;&amp; l)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Appends the items of the <i>other</i> list to this list and returns a reference to this list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b">operator+</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>().</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, l: &amp;<a class='struct' href='../../qt_core/list/struct.ListItemSelectionRangeRef.html' title='qt_core::list::ListItemSelectionRangeRef'>ListItemSelectionRangeRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QItemSelection::operator==(const QList&lt;QItemSelectionRange&gt;&amp; l) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <i>other</i> is equal to this list; otherwise returns false.</p>
+<p>Two lists are considered equal if they contain the same values in the same order.</p>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-not-eq">operator!=</a>().</p></div></p>
+</div><h4 id='method.op_index' class='method'><code>fn <a href='#method.op_index' class='fnname'>op_index</a>&lt;'l0&gt;(&amp;'l0 self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QItemSelectionRange&amp; QItemSelection::operator[](int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-5b-5d-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Same as <a href="http://doc.qt.io/qt-5/qlist.html#at">at</a>(). This function runs in <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>.</p></div></p>
+</div><h4 id='method.op_index_mut' class='method'><code>fn <a href='#method.op_index_mut' class='fnname'>op_index_mut</a>&lt;'l0&gt;(&amp;'l0 mut self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelectionRange&amp; QItemSelection::operator[](int i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-5b-5d">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item at index position <i>i</i> as a modifiable reference. <i>i</i> must be a valid index position in the list (i.e., 0 &lt;= <i>i</i> &lt; <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>()).</p>
+<p>If this function is called on a list that is currently being shared, it will trigger a copy of all elements. Otherwise, this function runs in <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>. If you do not want to modify the list you should use <a href="http://doc.qt.io/qt-5/qlist.html#at">QList::at</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#at">at</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#value">value</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, l: &amp;<a class='struct' href='../../qt_core/list/struct.ListItemSelectionRangeRef.html' title='qt_core::list::ListItemSelectionRangeRef'>ListItemSelectionRangeRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QItemSelection::operator!=(const QList&lt;QItemSelectionRange&gt;&amp; l) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <i>other</i> is not equal to this list; otherwise returns <code>false</code>.</p>
+<p>Two lists are considered equal if they contain the same values in the same order.</p>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.op_shl' class='method'><code>fn <a href='#method.op_shl' class='fnname'>op_shl</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListItemSelectionRangeRef.html' title='qt_core::list::ListItemSelectionRangeRef'>ListItemSelectionRangeRef</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionOpShlArgs.html' title='qt_core::item_selection::overloading::ItemSelectionOpShlArgs'>ItemSelectionOpShlArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::operator&lt;&lt;</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, &amp;&#39;l1 ::item_selection_range::ItemSelectionRange) -&gt; &amp;&#39;l0 mut ::list::ListItemSelectionRangeRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QItemSelectionRange&gt;&amp; QItemSelection::operator&lt;&lt;(const QItemSelectionRange&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-lt-lt-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Appends <i>value</i> to the list.</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, &amp;&#39;l1 ::list::ListItemSelectionRangeRef) -&gt; &amp;&#39;l0 mut ::list::ListItemSelectionRangeRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QItemSelectionRange&gt;&amp; QItemSelection::operator&lt;&lt;(const QList&lt;QItemSelectionRange&gt;&amp; l)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-lt-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Appends the items of the <i>other</i> list to this list and returns a reference to this list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b-eq">operator+=</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>().</p></div></p>
+</div><h4 id='method.pop_back' class='method'><code>fn <a href='#method.pop_back' class='fnname'>pop_back</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::pop_back()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#pop_back">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#removeLast">removeLast</a>(). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p></div></p>
+</div><h4 id='method.pop_front' class='method'><code>fn <a href='#method.pop_front' class='fnname'>pop_front</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::pop_front()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#pop_front">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">removeFirst</a>(). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p></div></p>
+</div><h4 id='method.prepend' class='method'><code>fn <a href='#method.prepend' class='fnname'>prepend</a>(&amp;mut self, t: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::prepend(const QItemSelectionRange&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#prepend">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts <i>value</i> at the beginning of the list.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list<span class="operator">.</span>prepend(<span class="string">&quot;one&quot;</span>);
+list<span class="operator">.</span>prepend(<span class="string">&quot;two&quot;</span>);
+list<span class="operator">.</span>prepend(<span class="string">&quot;three&quot;</span>);
+<span class="comment">// list: [&quot;three&quot;, &quot;two&quot;, &quot;one&quot;]</span></pre>
+<p>This is the same as list.insert(0, <i>value</i>).</p>
+<p>If this list is not shared, this operation is typically very fast (amortized <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>), because <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> preallocates extra space on both sides of its internal buffer to allow for fast growth at both ends of the list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#insert">insert</a>().</p></div></p>
+</div><h4 id='method.push_back' class='method'><code>fn <a href='#method.push_back' class='fnname'>push_back</a>(&amp;mut self, t: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::push_back(const QItemSelectionRange&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#push_back">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>(<i>value</i>).</p></div></p>
+</div><h4 id='method.push_front' class='method'><code>fn <a href='#method.push_front' class='fnname'>push_front</a>(&amp;mut self, t: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::push_front(const QItemSelectionRange&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#push_front">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#prepend">prepend</a>(<i>value</i>).</p></div></p>
+</div><h4 id='method.remove_all' class='method'><code>fn <a href='#method.remove_all' class='fnname'>remove_all</a>(&amp;mut self, t: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QItemSelection::removeAll(const QItemSelectionRange&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#removeAll">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes all occurrences of <i>value</i> in the list and returns the number of entries removed.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;sun&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;cloud&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;sun&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;rain&quot;</span>;
+list<span class="operator">.</span>removeAll(<span class="string">&quot;sun&quot;</span>);
+<span class="comment">// list: [&quot;cloud&quot;, &quot;rain&quot;]</span></pre>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeOne">removeOne</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#replace">replace</a>().</p></div></p>
+</div><h4 id='method.remove_at' class='method'><code>fn <a href='#method.remove_at' class='fnname'>remove_at</a>(&amp;mut self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::removeAt(int i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#removeAt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the item at index position <i>i</i>. <i>i</i> must be a valid index position in the list (i.e., 0 &lt;= <i>i</i> &lt; <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>()).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">removeFirst</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#removeLast">removeLast</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#removeOne">removeOne</a>().</p></div></p>
+</div><h4 id='method.remove_first' class='method'><code>fn <a href='#method.remove_first' class='fnname'>remove_first</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::removeFirst()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the first item in the list. Calling this function is equivalent to calling <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(0). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#takeFirst">takeFirst</a>().</p></div></p>
+</div><h4 id='method.remove_last' class='method'><code>fn <a href='#method.remove_last' class='fnname'>remove_last</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::removeLast()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#removeLast">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the last item in the list. Calling this function is equivalent to calling <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(<a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>() - 1). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#takeLast">takeLast</a>().</p></div></p>
+</div><h4 id='method.remove_one' class='method'><code>fn <a href='#method.remove_one' class='fnname'>remove_one</a>(&amp;mut self, t: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QItemSelection::removeOne(const QItemSelectionRange&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#removeOne">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the first occurrence of <i>value</i> in the list and returns true on success; otherwise returns <code>false</code>.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;sun&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;cloud&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;sun&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;rain&quot;</span>;
+list<span class="operator">.</span>removeOne(<span class="string">&quot;sun&quot;</span>);
+<span class="comment">// list: [&quot;cloud&quot;, ,&quot;sun&quot;, &quot;rain&quot;]</span></pre>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeAll">removeAll</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#replace">replace</a>().</p></div></p>
+</div><h4 id='method.replace' class='method'><code>fn <a href='#method.replace' class='fnname'>replace</a>(&amp;mut self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, t: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::replace(int i, const QItemSelectionRange&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#replace">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Replaces the item at index position <i>i</i> with <i>value</i>. <i>i</i> must be a valid index position in the list (i.e., 0 &lt;= <i>i</i> &lt; <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>()).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-5b-5d">operator[]</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>().</p></div></p>
+</div><h4 id='method.reserve' class='method'><code>fn <a href='#method.reserve' class='fnname'>reserve</a>(&amp;mut self, size: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::reserve(int size)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#reserve">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reserve space for <i>alloc</i> elements.</p>
+<p>If <i>alloc</i> is smaller than the current size of the list, nothing will happen.</p>
+<p>Use this function to avoid repetetive reallocation of <a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&#39;s internal data if you can predict how many elements will be appended. Note that the reservation applies only to the internal pointer array.</p>
+<p>This function was introduced in  Qt 4.7.</p></div></p>
+</div><h4 id='method.select' class='method'><code>fn <a href='#method.select' class='fnname'>select</a>(&amp;mut self, top_left: &amp;<a class='struct' href='../../qt_core/model_index/struct.ModelIndex.html' title='qt_core::model_index::ModelIndex'>ModelIndex</a>, bottom_right: &amp;<a class='struct' href='../../qt_core/model_index/struct.ModelIndex.html' title='qt_core::model_index::ModelIndex'>ModelIndex</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::select(const QModelIndex&amp; topLeft, const QModelIndex&amp; bottomRight)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qitemselection.html#select">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Adds the items in the range that extends from the top-left model item, specified by the <i>topLeft</i> index, to the bottom-right item, specified by <i>bottomRight</i> to the list.</p>
+<p><b>Note: </b><i>topLeft</i> and <i>bottomRight</i> must have the same parent.</p></div></p>
+</div><h4 id='method.set_sharable' class='method'><code>fn <a href='#method.set_sharable' class='fnname'>set_sharable</a>(&amp;mut self, sharable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QItemSelection::setSharable(bool sharable)</code></span></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QItemSelection::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of items in the list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#count">count</a>().</p></div></p>
+</div><h4 id='method.split' class='method'><code>fn <a href='#method.split' class='fnname'>split</a>(range: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>, other: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>, result: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/item_selection/struct.ItemSelection.html' title='qt_core::item_selection::ItemSelection'>ItemSelection</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QItemSelection::split(const QItemSelectionRange&amp; range, const QItemSelectionRange&amp; other, QItemSelection* result)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qitemselection.html#split">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Splits the selection <i>range</i> using the selection <i>other</i> range. Removes all items in <i>other</i> from <i>range</i> and puts the result in <i>result</i>. This can be compared with the semantics of the <i>subtract</i> operation of a set.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qitemselection.html#merge">merge</a>().</p></div></p>
+</div><h4 id='method.starts_with' class='method'><code>fn <a href='#method.starts_with' class='fnname'>starts_with</a>(&amp;self, t: &amp;<a class='struct' href='../../qt_core/item_selection_range/struct.ItemSelectionRange.html' title='qt_core::item_selection_range::ItemSelectionRange'>ItemSelectionRange</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QItemSelection::startsWith(const QItemSelectionRange&amp; t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#startsWith">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this list is not empty and its first item is equal to <i>value</i>; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#contains">contains</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionSwapArgs.html' title='qt_core::item_selection::overloading::ItemSelectionSwapArgs'>ItemSelectionSwapArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::swap</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn swap(&amp;mut self, &amp;mut ::list::ListItemSelectionRangeRef) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QItemSelection::swap(QList&lt;QItemSelectionRange&gt;&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps list <i>other</i> with this list. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn swap(&amp;mut self, (libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QItemSelection::swap(int i, int j)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#swap-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Exchange the item at index position <i>i</i> with the item at index position <i>j</i>. This function assumes that both <i>i</i> and <i>j</i> are at least 0 but less than <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>(). To avoid failure, test that both <i>i</i> and <i>j</i> are at least 0 and less than <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>().</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;C&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;D&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;E&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;F&quot;</span>;
+list<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlist.html#swap">swap</a>(<span class="number">1</span><span class="operator">,</span> <span class="number">4</span>);
+<span class="comment">// list: [&quot;A&quot;, &quot;E&quot;, &quot;C&quot;, &quot;D&quot;, &quot;B&quot;, &quot;F&quot;]</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#move">move</a>().</p></div></p>
+</div><h4 id='method.take_at' class='method'><code>fn <a href='#method.take_at' class='fnname'>take_at</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionTakeAtArgs.html' title='qt_core::item_selection::overloading::ItemSelectionTakeAtArgs'>ItemSelectionTakeAtArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::takeAt</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn take_at(&amp;mut self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::item_selection_range::ItemSelectionRange&gt;</code><br>2) <code>fn take_at(&amp;mut self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::item_selection_range::ItemSelectionRange</code><br>
+C++ method: <span style='color: green;'><code>QItemSelectionRange QItemSelection::takeAt(int i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#takeAt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the item at index position <i>i</i> and returns it. <i>i</i> must be a valid index position in the list (i.e., 0 &lt;= <i>i</i> &lt; <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>()).</p>
+<p>If you don&#39;t use the return value, <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>() is more efficient.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeFirst">takeFirst</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#takeLast">takeLast</a>().</p></div></p>
+</div><h4 id='method.take_first' class='method'><code>fn <a href='#method.take_first' class='fnname'>take_first</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionTakeFirstArgs.html' title='qt_core::item_selection::overloading::ItemSelectionTakeFirstArgs'>ItemSelectionTakeFirstArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::takeFirst</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn take_first(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::item_selection_range::ItemSelectionRange&gt;</code><br>2) <code>fn take_first(&amp;mut self, cpp_utils::AsStruct) -&gt; ::item_selection_range::ItemSelectionRange</code><br>
+C++ method: <span style='color: green;'><code>QItemSelectionRange QItemSelection::takeFirst()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#takeFirst">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the first item in the list and returns it. This is the same as <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(0). This function assumes the list is not empty. To avoid failure, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p>If this list is not shared, this operation takes <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>.</p>
+<p>If you don&#39;t use the return value, <a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">removeFirst</a>() is more efficient.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#takeLast">takeLast</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">removeFirst</a>().</p></div></p>
+</div><h4 id='method.take_last' class='method'><code>fn <a href='#method.take_last' class='fnname'>take_last</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionTakeLastArgs.html' title='qt_core::item_selection::overloading::ItemSelectionTakeLastArgs'>ItemSelectionTakeLastArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::takeLast</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn take_last(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::item_selection_range::ItemSelectionRange&gt;</code><br>2) <code>fn take_last(&amp;mut self, cpp_utils::AsStruct) -&gt; ::item_selection_range::ItemSelectionRange</code><br>
+C++ method: <span style='color: green;'><code>QItemSelectionRange QItemSelection::takeLast()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#takeLast">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the last item in the list and returns it. This is the same as <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(<a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>() - 1). This function assumes the list is not empty. To avoid failure, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p>If this list is not shared, this operation takes <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>.</p>
+<p>If you don&#39;t use the return value, <a href="http://doc.qt.io/qt-5/qlist.html#removeLast">removeLast</a>() is more efficient.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#takeFirst">takeFirst</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#removeLast">removeLast</a>().</p></div></p>
+</div><h4 id='method.value' class='method'><code>fn <a href='#method.value' class='fnname'>value</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/item_selection/overloading/trait.ItemSelectionValueArgs.html' title='qt_core::item_selection::overloading::ItemSelectionValueArgs'>ItemSelectionValueArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QItemSelection::value</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-6' class='section-header'><a href='#variant-1-6'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn value(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::item_selection_range::ItemSelectionRange&gt;</code><br>2) <code>fn value(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::item_selection_range::ItemSelectionRange</code><br>
+C++ method: <span style='color: green;'><code>QItemSelectionRange QItemSelection::value(int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#value">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value at index position <i>i</i> in the list.</p>
+<p>If the index <i>i</i> is out of bounds, the function returns a <a href="http://doc.qt.io/qt-5/containers.html#default-constructed-value">default-constructed value</a>. If you are certain that the index is going to be within bounds, you can use <a href="http://doc.qt.io/qt-5/qlist.html#at">at</a>() instead, which is slightly faster.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#at">at</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#operator-5b-5d">operator[]</a>().</p></div></p>
+
+<h2 id='variant-2-6' class='section-header'><a href='#variant-2-6'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn value(&amp;self, (libc::c_int, &amp;::item_selection_range::ItemSelectionRange, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::item_selection_range::ItemSelectionRange&gt;</code><br>2) <code>fn value(&amp;self, (libc::c_int, &amp;::item_selection_range::ItemSelectionRange, cpp_utils::AsStruct)) -&gt; ::item_selection_range::ItemSelectionRange</code><br>
+C++ method: <span style='color: green;'><code>QItemSelectionRange QItemSelection::value(int i, const QItemSelectionRange&amp; defaultValue) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#value-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>If the index <i>i</i> is out of bounds, the function returns <i>defaultValue</i>.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/item_selection/struct.ItemSelection.html' title='qt_core::item_selection::ItemSelection'>ItemSelection</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-80836' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/item_selection.rs.html#22-26' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/item_selection/struct.ItemSelection.html' title='qt_core::item_selection::ItemSelection'>ItemSelection</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/item_selection/struct.ItemSelection.html' title='qt_core::item_selection::ItemSelection'>ItemSelection</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-81049' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/item_selection.rs.html#808-815' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QItemSelection::~QItemSelection()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/item_selection/struct.ItemSelection.html' title='qt_core::item_selection::ItemSelection'>ItemSelection</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-81052' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/item_selection.rs.html#817-821' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

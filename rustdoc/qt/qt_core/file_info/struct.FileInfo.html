@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FileInfo` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FileInfo">
+
+    <title>qt_core::file_info::FileInfo - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>file_info</a></p><script>window.sidebarCurrent = {name: 'FileInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>file_info</a>::<wbr><a class='struct' href=''>FileInfo</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-73771' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/file_info.rs.html#49-51' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct FileInfo {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QFileInfo</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> class provides system-independent file information.</p>
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> provides information about a file&#39;s name and position (path) in the file system, its access rights and whether it is a directory or symbolic link, etc. The file&#39;s size and last modified/read times are also available. <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> can also be used to obtain information about a Qt <a href="http://doc.qt.io/qt-5/resources.html#resource-system">resource</a>.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> can point to a file with either a relative or an absolute file path. Absolute file paths begin with the directory separator &quot;/&quot; (or with a drive specification on Windows). Relative file names begin with a directory name or a file name and specify a path relative to the current working directory. An example of an absolute path is the string &quot;/tmp/quartz&quot;. A relative path might look like &quot;src/fatlib&quot;. You can use the function <a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>() to check whether a <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> is using a relative or an absolute file path. You can call the function <a href="http://doc.qt.io/qt-5/qfileinfo.html#makeAbsolute">makeAbsolute</a>() to convert a relative <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a>&#39;s path to an absolute path.</p>
+<p>The file that the <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> works on is set in the constructor or later with <a href="http://doc.qt.io/qt-5/qfileinfo.html#setFile">setFile</a>(). Use <a href="http://doc.qt.io/qt-5/qfileinfo.html#exists">exists</a>() to see if the file exists and <a href="http://doc.qt.io/qt-5/qfileinfo.html#size">size</a>() to get its size.</p>
+<p>The file&#39;s type is obtained with <a href="http://doc.qt.io/qt-5/qfileinfo.html#isFile">isFile</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isDir">isDir</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isSymLink">isSymLink</a>(). The <a href="http://doc.qt.io/qt-5/qfileinfo.html#symLinkTarget">symLinkTarget</a>() function provides the name of the file the symlink points to.</p>
+<p>On Unix (including OS X and iOS), the symlink has the same <a href="http://doc.qt.io/qt-5/qfileinfo.html#size">size</a>() has the file it points to, because Unix handles symlinks transparently; similarly, opening a symlink using <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a> effectively opens the link&#39;s target. For example:</p>
+<pre class="cpp"><span class="preprocessor">#ifdef Q_OS_UNIX</span></p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> info1(<span class="string">&quot;/home/bob/bin/untabify&quot;</span>);
+info1<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#isSymLink">isSymLink</a>();          <span class="comment">// returns true</span>
+info1<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteFilePath">absoluteFilePath</a>();   <span class="comment">// returns &quot;/home/bob/bin/untabify&quot;</span>
+info1<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#size">size</a>();               <span class="comment">// returns 56201</span>
+info1<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#symLinkTarget">symLinkTarget</a>();      <span class="comment">// returns &quot;/opt/pretty++/bin/untabify&quot;</span></p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> info2(info1<span class="operator">.</span>symLinkTarget());
+info2<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#isSymLink">isSymLink</a>();          <span class="comment">// returns false</span>
+info2<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteFilePath">absoluteFilePath</a>();   <span class="comment">// returns &quot;/opt/pretty++/bin/untabify&quot;</span>
+info2<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#size">size</a>();               <span class="comment">// returns 56201</span></p>
+
+<p><span class="preprocessor">#endif</span></pre>
+<p>On Windows, symlinks (shortcuts) are <code>.lnk</code> files. The reported <a href="http://doc.qt.io/qt-5/qfileinfo.html#size">size</a>() is that of the symlink (not the link&#39;s target), and opening a symlink using <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a> opens the <code>.lnk</code> file. For example:</p>
+<pre class="cpp"><span class="preprocessor">#ifdef Q_OS_WIN</span></p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> info1(<span class="string">&quot;C:\Documents and Settings\Bob\untabify.lnk&quot;</span>);
+info1<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#isSymLink">isSymLink</a>();          <span class="comment">// returns true</span>
+info1<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteFilePath">absoluteFilePath</a>();   <span class="comment">// returns &quot;C:/Documents and Settings/Bob/untabify.lnk&quot;</span>
+info1<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#size">size</a>();               <span class="comment">// returns 743</span>
+info1<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#symLinkTarget">symLinkTarget</a>();      <span class="comment">// returns &quot;C:/Pretty++/untabify&quot;</span></p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> info2(info1<span class="operator">.</span>symLinkTarget());
+info2<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#isSymLink">isSymLink</a>();          <span class="comment">// returns false</span>
+info2<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteFilePath">absoluteFilePath</a>();   <span class="comment">// returns &quot;C:/Pretty++/untabify&quot;</span>
+info2<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#size">size</a>();               <span class="comment">// returns 63942</span></p>
+
+<p><span class="preprocessor">#endif</span></pre>
+<p>Elements of the file&#39;s name can be extracted with <a href="http://doc.qt.io/qt-5/qfileinfo.html#path">path</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">fileName</a>(). The <a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">fileName</a>()&#39;s parts can be extracted with <a href="http://doc.qt.io/qt-5/qfileinfo.html#baseName">baseName</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#suffix">suffix</a>() or <a href="http://doc.qt.io/qt-5/qfileinfo.html#completeSuffix">completeSuffix</a>(). <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> objects to directories created by Qt classes will not have a trailing file separator. If you wish to use trailing separators in your own file info objects, just append one to the file name given to the constructors or <a href="http://doc.qt.io/qt-5/qfileinfo.html#setFile">setFile</a>().</p>
+<p>The file&#39;s dates are returned by <a href="http://doc.qt.io/qt-5/qfileinfo.html#created">created</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#lastModified">lastModified</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#lastRead">lastRead</a>(). Information about the file&#39;s access permissions is obtained with <a href="http://doc.qt.io/qt-5/qfileinfo.html#isReadable">isReadable</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isWritable">isWritable</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isExecutable">isExecutable</a>(). The file&#39;s ownership is available from <a href="http://doc.qt.io/qt-5/qfileinfo.html#owner">owner</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#ownerId">ownerId</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#group">group</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#groupId">groupId</a>(). You can examine a file&#39;s permissions and ownership in a single statement using the <a href="http://doc.qt.io/qt-5/qfileinfo.html#permission">permission</a>() function.</p>
+<p><b>Note: </b>On NTFS file systems, ownership and permissions checking is disabled by default for performance reasons. To enable it, include the following line:</p><pre class="cpp"><span class="keyword">extern</span> Q_CORE_EXPORT <span class="type">int</span> qt_ntfs_permission_lookup;</pre>
+<p>Permission checking is then turned on and off by incrementing and decrementing <code>qt_ntfs_permission_lookup</code> by 1.</p>
+<pre class="cpp">qt_ntfs_permission_lookup<span class="operator">+</span><span class="operator">+</span>; <span class="comment">// turn checking on</span>
+qt_ntfs_permission_lookup<span class="operator">-</span><span class="operator">-</span>; <span class="comment">// turn it off again</span></pre>
+<a name="performance-issues"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-73776' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/file_info.rs.html#59-754' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.absolute_dir' class='method'><code>fn <a href='#method.absolute_dir' class='fnname'>absolute_dir</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoAbsoluteDirArgs.html' title='qt_core::file_info::overloading::FileInfoAbsoluteDirArgs'>FileInfoAbsoluteDirArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::absoluteDir</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn absolute_dir(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::dir::Dir&gt;</code><br>2) <code>fn absolute_dir(&amp;self, cpp_utils::AsStruct) -&gt; ::dir::Dir</code><br>
+C++ method: <span style='color: green;'><code>QDir QFileInfo::absoluteDir() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteDir">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the file&#39;s absolute path as a <a href="http://doc.qt.io/qt-5/qdir.html">QDir</a> object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#dir">dir</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">fileName</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>().</p></div></p>
+</div><h4 id='method.absolute_file_path' class='method'><code>fn <a href='#method.absolute_file_path' class='fnname'>absolute_file_path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoAbsoluteFilePathArgs.html' title='qt_core::file_info::overloading::FileInfoAbsoluteFilePathArgs'>FileInfoAbsoluteFilePathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::absoluteFilePath</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn absolute_file_path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn absolute_file_path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::absoluteFilePath() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteFilePath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an absolute path including the file name.</p>
+<p>The absolute path name consists of the full path and the file name. On Unix this will always begin with the root, &#39;/&#39;, directory. On Windows this will always begin &#39;D:/&#39; where D is a drive letter, except for network shares that are not mapped to a drive letter, in which case the path will begin &#39;//sharename/&#39;. <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> will uppercase drive letters. Note that <a href="http://doc.qt.io/qt-5/qdir.html">QDir</a> does not do this. The code snippet below shows this.</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fi(<span class="string">&quot;c:/temp/foo&quot;</span>); <span class="operator">=</span><span class="operator">&gt;</span> fi<span class="operator">.</span>absoluteFilePath() <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&quot;C:/temp/foo&quot;</span></pre>
+<p>This function returns the same as <a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>(), unless <a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>() is true. In contrast to <a href="http://doc.qt.io/qt-5/qfileinfo.html#canonicalFilePath">canonicalFilePath</a>(), symbolic links or redundant &quot;.&quot; or &quot;..&quot; elements are not necessarily removed.</p>
+<p><b>Warning:</b> If <a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>() is empty the behavior of this function is undefined.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#canonicalFilePath">canonicalFilePath</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>().</p></div></p>
+</div><h4 id='method.absolute_path' class='method'><code>fn <a href='#method.absolute_path' class='fnname'>absolute_path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoAbsolutePathArgs.html' title='qt_core::file_info::overloading::FileInfoAbsolutePathArgs'>FileInfoAbsolutePathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::absolutePath</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn absolute_path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn absolute_path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::absolutePath() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#absolutePath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a file&#39;s path absolute path. This doesn&#39;t include the file name.</p>
+<p>On Unix the absolute path will always begin with the root, &#39;/&#39;, directory. On Windows this will always begin &#39;D:/&#39; where D is a drive letter, except for network shares that are not mapped to a drive letter, in which case the path will begin &#39;//sharename/&#39;.</p>
+<p>In contrast to <a href="http://doc.qt.io/qt-5/qfileinfo.html#canonicalPath">canonicalPath</a>() symbolic links or redundant &quot;.&quot; or &quot;..&quot; elements are not necessarily removed.</p>
+<p><b>Warning:</b> If <a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>() is empty the behavior of this function is undefined.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteFilePath">absoluteFilePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#path">path</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#canonicalPath">canonicalPath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">fileName</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>().</p></div></p>
+</div><h4 id='method.base_name' class='method'><code>fn <a href='#method.base_name' class='fnname'>base_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoBaseNameArgs.html' title='qt_core::file_info::overloading::FileInfoBaseNameArgs'>FileInfoBaseNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::baseName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn base_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn base_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::baseName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#baseName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the base name of the file without the path.</p>
+<p>The base name consists of all characters in the file up to (but not including) the <i>first</i> &#39;.&#39; character.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fi(<span class="string">&quot;/tmp/archive.tar.gz&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> base <span class="operator">=</span> fi<span class="operator">.</span>baseName();  <span class="comment">// base = &quot;archive&quot;</span></pre>
+<p>The base name of a file is computed equally on all platforms, independent of file naming conventions (e.g., &quot;.bashrc&quot; on Unix has an empty base name, and the suffix is &quot;bashrc&quot;).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">fileName</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#suffix">suffix</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#completeSuffix">completeSuffix</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#completeBaseName">completeBaseName</a>().</p></div></p>
+</div><h4 id='method.bundle_name' class='method'><code>fn <a href='#method.bundle_name' class='fnname'>bundle_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoBundleNameArgs.html' title='qt_core::file_info::overloading::FileInfoBundleNameArgs'>FileInfoBundleNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::bundleName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn bundle_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn bundle_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::bundleName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#bundleName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the bundle.</p>
+<p>On OS X and iOS this returns the proper localized name for a bundle if the path <a href="http://doc.qt.io/qt-5/qfileinfo.html#isBundle">isBundle</a>(). On all other platforms an empty <a href="http://doc.qt.io/qt-5/qstring.html">QString</a> is returned.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fi(<span class="string">&quot;/Applications/Safari.app&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> bundle <span class="operator">=</span> fi<span class="operator">.</span>bundleName();                <span class="comment">// name = &quot;Safari&quot;</span></pre>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isBundle">isBundle</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#baseName">baseName</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#suffix">suffix</a>().</p></div></p>
+</div><h4 id='method.caching' class='method'><code>fn <a href='#method.caching' class='fnname'>caching</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::caching() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#caching">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if caching is enabled; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#setCaching">setCaching</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#refresh">refresh</a>().</p></div></p>
+</div><h4 id='method.canonical_file_path' class='method'><code>fn <a href='#method.canonical_file_path' class='fnname'>canonical_file_path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoCanonicalFilePathArgs.html' title='qt_core::file_info::overloading::FileInfoCanonicalFilePathArgs'>FileInfoCanonicalFilePathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::canonicalFilePath</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn canonical_file_path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn canonical_file_path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::canonicalFilePath() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#canonicalFilePath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the canonical path including the file name, i.e. an absolute path without symbolic links or redundant &quot;.&quot; or &quot;..&quot; elements.</p>
+<p>If the file does not exist, canonicalFilePath() returns an empty string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteFilePath">absoluteFilePath</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#dir">dir</a>().</p></div></p>
+</div><h4 id='method.canonical_path' class='method'><code>fn <a href='#method.canonical_path' class='fnname'>canonical_path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoCanonicalPathArgs.html' title='qt_core::file_info::overloading::FileInfoCanonicalPathArgs'>FileInfoCanonicalPathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::canonicalPath</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn canonical_path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn canonical_path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::canonicalPath() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#canonicalPath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the file&#39;s path canonical path (excluding the file name), i.e. an absolute path without symbolic links or redundant &quot;.&quot; or &quot;..&quot; elements.</p>
+<p>If the file does not exist, canonicalPath() returns an empty string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#path">path</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#absolutePath">absolutePath</a>().</p></div></p>
+</div><h4 id='method.complete_base_name' class='method'><code>fn <a href='#method.complete_base_name' class='fnname'>complete_base_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoCompleteBaseNameArgs.html' title='qt_core::file_info::overloading::FileInfoCompleteBaseNameArgs'>FileInfoCompleteBaseNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::completeBaseName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn complete_base_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn complete_base_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::completeBaseName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#completeBaseName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the complete base name of the file without the path.</p>
+<p>The complete base name consists of all characters in the file up to (but not including) the <i>last</i> &#39;.&#39; character.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fi(<span class="string">&quot;/tmp/archive.tar.gz&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> base <span class="operator">=</span> fi<span class="operator">.</span>completeBaseName();  <span class="comment">// base = &quot;archive.tar&quot;</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">fileName</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#suffix">suffix</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#completeSuffix">completeSuffix</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#baseName">baseName</a>().</p></div></p>
+</div><h4 id='method.complete_suffix' class='method'><code>fn <a href='#method.complete_suffix' class='fnname'>complete_suffix</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoCompleteSuffixArgs.html' title='qt_core::file_info::overloading::FileInfoCompleteSuffixArgs'>FileInfoCompleteSuffixArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::completeSuffix</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn complete_suffix(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn complete_suffix(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::completeSuffix() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#completeSuffix">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the complete suffix of the file.</p>
+<p>The complete suffix consists of all characters in the file after (but not including) the first &#39;.&#39;.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fi(<span class="string">&quot;/tmp/archive.tar.gz&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> ext <span class="operator">=</span> fi<span class="operator">.</span>completeSuffix();  <span class="comment">// ext = &quot;tar.gz&quot;</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">fileName</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#suffix">suffix</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#baseName">baseName</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#completeBaseName">completeBaseName</a>().</p></div></p>
+</div><h4 id='method.created' class='method'><code>fn <a href='#method.created' class='fnname'>created</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoCreatedArgs.html' title='qt_core::file_info::overloading::FileInfoCreatedArgs'>FileInfoCreatedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::created</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn created(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::date_time::DateTime&gt;</code><br>2) <code>fn created(&amp;self, cpp_utils::AsStruct) -&gt; ::date_time::DateTime</code><br>
+C++ method: <span style='color: green;'><code>QDateTime QFileInfo::created() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#created">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the date and time when the file was created.</p>
+<p>On most Unix systems, this function returns the time of the last status change. A status change occurs when the file is created, but it also occurs whenever the user writes or sets inode information (for example, changing the file permissions).</p>
+<p>If neither creation time nor &quot;last status change&quot; time are not available, returns the same as <a href="http://doc.qt.io/qt-5/qfileinfo.html#lastModified">lastModified</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#lastModified">lastModified</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#lastRead">lastRead</a>().</p></div></p>
+</div><h4 id='method.dir' class='method'><code>fn <a href='#method.dir' class='fnname'>dir</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoDirArgs.html' title='qt_core::file_info::overloading::FileInfoDirArgs'>FileInfoDirArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::dir</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn dir(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::dir::Dir&gt;</code><br>2) <code>fn dir(&amp;self, cpp_utils::AsStruct) -&gt; ::dir::Dir</code><br>
+C++ method: <span style='color: green;'><code>QDir QFileInfo::dir() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#dir">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the path of the object&#39;s parent directory as a <a href="http://doc.qt.io/qt-5/qdir.html">QDir</a> object.</p>
+<p><b>Note:</b> The <a href="http://doc.qt.io/qt-5/qdir.html">QDir</a> returned always corresponds to the object&#39;s parent directory, even if the <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> represents a directory.</p>
+<p>For each of the following, dir() returns a <a href="http://doc.qt.io/qt-5/qdir.html">QDir</a> for <code>&quot;~/examples/191697&quot;</code>.</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fileInfo1(<span class="string">&quot;~/examples/191697/.&quot;</span>);
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fileInfo2(<span class="string">&quot;~/examples/191697/..&quot;</span>);
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fileInfo3(<span class="string">&quot;~/examples/191697/main.cpp&quot;</span>);</pre>
+<p>For each of the following, dir() returns a <a href="http://doc.qt.io/qt-5/qdir.html">QDir</a> for <code>&quot;.&quot;</code>.</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fileInfo4(<span class="string">&quot;.&quot;</span>);
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fileInfo5(<span class="string">&quot;..&quot;</span>);
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fileInfo6(<span class="string">&quot;main.cpp&quot;</span>);</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#absolutePath">absolutePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">fileName</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteDir">absoluteDir</a>().</p></div></p>
+</div><h4 id='method.exists' class='method'><code>fn <a href='#method.exists' class='fnname'>exists</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::exists() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#exists">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the file exists; otherwise returns <code>false</code>.</p>
+<p><b>Note: </b>If the file is a symlink that points to a non-existing file, false is returned.</p></div></p>
+</div><h4 id='method.exists_static' class='method'><code>fn <a href='#method.exists_static' class='fnname'>exists_static</a>(file: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QFileInfo::exists(const QString&amp; file)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#exists-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the <i>file</i> exists; otherwise returns <code>false</code>.</p>
+<p><b>Note: </b>If <i>file</i> is a symlink that points to a non-existing file, false is returned.</p><p><b>Note: </b>Using this function is faster than using <code>QFileInfo(file).exists()</code> for file system access.</p><p>This function was introduced in  Qt 5.2.</p></div></p>
+</div><h4 id='method.file_name' class='method'><code>fn <a href='#method.file_name' class='fnname'>file_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoFileNameArgs.html' title='qt_core::file_info::overloading::FileInfoFileNameArgs'>FileInfoFileNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::fileName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn file_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn file_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::fileName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the file, excluding the path.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fi(<span class="string">&quot;/tmp/archive.tar.gz&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> name <span class="operator">=</span> fi<span class="operator">.</span>fileName();                <span class="comment">// name = &quot;archive.tar.gz&quot;</span></pre>
+<p>Note that, if this <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> object is given a path ending in a slash, the name of the file is considered empty.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#baseName">baseName</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#suffix">suffix</a>().</p></div></p>
+</div><h4 id='method.file_path' class='method'><code>fn <a href='#method.file_path' class='fnname'>file_path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoFilePathArgs.html' title='qt_core::file_info::overloading::FileInfoFilePathArgs'>FileInfoFilePathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::filePath</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn file_path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn file_path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::filePath() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the file name, including the path (which may be absolute or relative).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteFilePath">absoluteFilePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#canonicalFilePath">canonicalFilePath</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>().</p></div></p>
+</div><h4 id='method.group' class='method'><code>fn <a href='#method.group' class='fnname'>group</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoGroupArgs.html' title='qt_core::file_info::overloading::FileInfoGroupArgs'>FileInfoGroupArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::group</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn group(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn group(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::group() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#group">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the group of the file. On Windows, on systems where files do not have groups, or if an error occurs, an empty string is returned.</p>
+<p>This function can be time consuming under Unix (in the order of milliseconds).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#groupId">groupId</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#owner">owner</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#ownerId">ownerId</a>().</p></div></p>
+</div><h4 id='method.group_id' class='method'><code>fn <a href='#method.group_id' class='fnname'>group_id</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QFileInfo::groupId() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#groupId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the id of the group the file belongs to.</p>
+<p>On Windows and on systems where files do not have groups this function always returns (uint) -2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#group">group</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#owner">owner</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#ownerId">ownerId</a>().</p></div></p>
+</div><h4 id='method.is_absolute' class='method'><code>fn <a href='#method.is_absolute' class='fnname'>is_absolute</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isAbsolute() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isAbsolute">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the file path name is absolute, otherwise returns false if the path is relative.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>().</p></div></p>
+</div><h4 id='method.is_bundle' class='method'><code>fn <a href='#method.is_bundle' class='fnname'>is_bundle</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isBundle() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isBundle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this object points to a bundle or to a symbolic link to a bundle on OS X and iOS; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isDir">isDir</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isSymLink">isSymLink</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isFile">isFile</a>().</p></div></p>
+</div><h4 id='method.is_dir' class='method'><code>fn <a href='#method.is_dir' class='fnname'>is_dir</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isDir() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isDir">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this object points to a directory or to a symbolic link to a directory; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isFile">isFile</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isSymLink">isSymLink</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isBundle">isBundle</a>().</p></div></p>
+</div><h4 id='method.is_executable' class='method'><code>fn <a href='#method.is_executable' class='fnname'>is_executable</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isExecutable() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isExecutable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the file is executable; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isReadable">isReadable</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isWritable">isWritable</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#permission">permission</a>().</p></div></p>
+</div><h4 id='method.is_file' class='method'><code>fn <a href='#method.is_file' class='fnname'>is_file</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isFile() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isFile">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this object points to a file or to a symbolic link to a file. Returns <code>false</code> if the object points to something which isn&#39;t a file, such as a directory.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isDir">isDir</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isSymLink">isSymLink</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isBundle">isBundle</a>().</p></div></p>
+</div><h4 id='method.is_hidden' class='method'><code>fn <a href='#method.is_hidden' class='fnname'>is_hidden</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isHidden() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isHidden">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this is a `hidden&#39; file; otherwise returns <code>false</code>.</p>
+<p><b>Note:</b> This function returns <code>true</code> for the special entries &quot;.&quot; and &quot;..&quot; on Unix, even though <a href="http://doc.qt.io/qt-5/qdir.html#entryList">QDir::entryList</a> threats them as shown.</p></div></p>
+</div><h4 id='method.is_native_path' class='method'><code>fn <a href='#method.is_native_path' class='fnname'>is_native_path</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isNativePath() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isNativePath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the file path can be used directly with native APIs. Returns <code>false</code> if the file is otherwise supported by a virtual file system inside Qt, such as <a href="http://doc.qt.io/qt-5/resources.html">the Qt Resource System</a>.</p>
+<p><b>Note:</b> Native paths may still require conversion of path separators and character encoding, depending on platform and input requirements of the native API.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdir.html#toNativeSeparators">QDir::toNativeSeparators</a>(), <a href="http://doc.qt.io/qt-5/qfile.html#encodeName">QFile::encodeName</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#absoluteFilePath">absoluteFilePath</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#canonicalFilePath">canonicalFilePath</a>().</p></div></p>
+</div><h4 id='method.is_readable' class='method'><code>fn <a href='#method.is_readable' class='fnname'>is_readable</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isReadable() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isReadable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the user can read the file; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isWritable">isWritable</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isExecutable">isExecutable</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#permission">permission</a>().</p></div></p>
+</div><h4 id='method.is_relative' class='method'><code>fn <a href='#method.is_relative' class='fnname'>is_relative</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isRelative() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the file path name is relative, otherwise returns false if the path is absolute (e.g. under Unix a path is absolute if it begins with a &quot;/&quot;).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isAbsolute">isAbsolute</a>().</p></div></p>
+</div><h4 id='method.is_root' class='method'><code>fn <a href='#method.is_root' class='fnname'>is_root</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isRoot() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isRoot">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the object points to a directory or to a symbolic link to a directory, and that directory is the root directory; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.is_sym_link' class='method'><code>fn <a href='#method.is_sym_link' class='fnname'>is_sym_link</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isSymLink() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isSymLink">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this object points to a symbolic link (or to a shortcut on Windows); otherwise returns <code>false</code>.</p>
+<p>On Unix (including OS X and iOS), opening a symlink effectively opens the <a href="http://doc.qt.io/qt-5/qfileinfo.html#symLinkTarget">link&#39;s target</a>. On Windows, it opens the <code>.lnk</code> file itself.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> info(fileName);
+<span class="keyword">if</span> (info<span class="operator">.</span>isSymLink())
+&#32;   fileName <span class="operator">=</span> info<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfileinfo.html#symLinkTarget">symLinkTarget</a>();</pre>
+<p><b>Note: </b>If the symlink points to a non existing file, <a href="http://doc.qt.io/qt-5/qfileinfo.html#exists">exists</a>() returns false.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isFile">isFile</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isDir">isDir</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#symLinkTarget">symLinkTarget</a>().</p></div></p>
+</div><h4 id='method.is_writable' class='method'><code>fn <a href='#method.is_writable' class='fnname'>is_writable</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::isWritable() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#isWritable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the user can write to the file; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isReadable">isReadable</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isExecutable">isExecutable</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#permission">permission</a>().</p></div></p>
+</div><h4 id='method.last_modified' class='method'><code>fn <a href='#method.last_modified' class='fnname'>last_modified</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoLastModifiedArgs.html' title='qt_core::file_info::overloading::FileInfoLastModifiedArgs'>FileInfoLastModifiedArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::lastModified</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn last_modified(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::date_time::DateTime&gt;</code><br>2) <code>fn last_modified(&amp;self, cpp_utils::AsStruct) -&gt; ::date_time::DateTime</code><br>
+C++ method: <span style='color: green;'><code>QDateTime QFileInfo::lastModified() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#lastModified">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the date and time when the file was last modified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#created">created</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#lastRead">lastRead</a>().</p></div></p>
+</div><h4 id='method.last_read' class='method'><code>fn <a href='#method.last_read' class='fnname'>last_read</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoLastReadArgs.html' title='qt_core::file_info::overloading::FileInfoLastReadArgs'>FileInfoLastReadArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::lastRead</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn last_read(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::date_time::DateTime&gt;</code><br>2) <code>fn last_read(&amp;self, cpp_utils::AsStruct) -&gt; ::date_time::DateTime</code><br>
+C++ method: <span style='color: green;'><code>QDateTime QFileInfo::lastRead() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#lastRead">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the date and time when the file was last read (accessed).</p>
+<p>On platforms where this information is not available, returns the same as <a href="http://doc.qt.io/qt-5/qfileinfo.html#lastModified">lastModified</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#created">created</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#lastModified">lastModified</a>().</p></div></p>
+</div><h4 id='method.make_absolute' class='method'><code>fn <a href='#method.make_absolute' class='fnname'>make_absolute</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::makeAbsolute()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#makeAbsolute">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the file&#39;s path to an absolute path if it is not already in that form. Returns <code>true</code> to indicate that the path was converted; otherwise returns <code>false</code> to indicate that the path was already absolute.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoNewArgs.html' title='qt_core::file_info::overloading::FileInfoNewArgs'>FileInfoNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::QFileInfo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::file_info::FileInfo</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::file_info::FileInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFileInfo::QFileInfo()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::dir::Dir, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::file_info::FileInfo</code><br>2) <code>fn new((&amp;::dir::Dir, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::file_info::FileInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFileInfo::QFileInfo(const QDir&amp; dir, const QString&amp; file)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::file::File, cpp_utils::AsStruct)) -&gt; ::file_info::FileInfo</code><br>2) <code>fn new((&amp;::file::File, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::file_info::FileInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFileInfo::QFileInfo(const QFile&amp; file)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::file_info::FileInfo, cpp_utils::AsStruct)) -&gt; ::file_info::FileInfo</code><br>2) <code>fn new((&amp;::file_info::FileInfo, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::file_info::FileInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFileInfo::QFileInfo(const QFileInfo&amp; fileinfo)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::file_info::FileInfo</code><br>2) <code>fn new((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::file_info::FileInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFileInfo::QFileInfo(const QString&amp; file)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, fileinfo: &amp;'l1 <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo&amp; QFileInfo::operator=(const QFileInfo&amp; fileinfo)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Makes a copy of the given <i>fileinfo</i> and assigns it to this <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a>.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, fileinfo: &amp;<a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::operator==(const QFileInfo&amp; fileinfo) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> object refers to a file in the same location as <i>fileinfo</i>; otherwise returns <code>false</code>.</p>
+<p>Note that the result of comparing two empty <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> objects, containing no file references (file paths that do not exist or are empty), is undefined.</p>
+<p><b>Warning:</b> This will not compare two different symbolic links pointing to the same file.</p>
+<p><b>Warning:</b> Long and short file names that refer to the same file on Windows are treated as if they referred to different files.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#operator-not-eq">operator!=</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, fileinfo: &amp;<a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::operator!=(const QFileInfo&amp; fileinfo) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> object refers to a different file than the one specified by <i>fileinfo</i>; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.owner' class='method'><code>fn <a href='#method.owner' class='fnname'>owner</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoOwnerArgs.html' title='qt_core::file_info::overloading::FileInfoOwnerArgs'>FileInfoOwnerArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::owner</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn owner(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn owner(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::owner() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#owner">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the owner of the file. On systems where files do not have owners, or if an error occurs, an empty string is returned.</p>
+<p>This function can be time consuming under Unix (in the order of milliseconds).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#ownerId">ownerId</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#group">group</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#groupId">groupId</a>().</p></div></p>
+</div><h4 id='method.owner_id' class='method'><code>fn <a href='#method.owner_id' class='fnname'>owner_id</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QFileInfo::ownerId() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#ownerId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the id of the owner of the file.</p>
+<p>On Windows and on systems where files do not have owners this function returns ((uint) -2).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#owner">owner</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#group">group</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#groupId">groupId</a>().</p></div></p>
+</div><h4 id='method.path' class='method'><code>fn <a href='#method.path' class='fnname'>path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoPathArgs.html' title='qt_core::file_info::overloading::FileInfoPathArgs'>FileInfoPathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::path</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::path() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#path">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the file&#39;s path. This doesn&#39;t include the file name.</p>
+<p>Note that, if this <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> object is given a path ending in a slash, the name of the file is considered empty and this function will return the entire path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#filePath">filePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#absolutePath">absolutePath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#canonicalPath">canonicalPath</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#dir">dir</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">fileName</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>().</p></div></p>
+</div><h4 id='method.permission' class='method'><code>fn <a href='#method.permission' class='fnname'>permission</a>(&amp;self, permissions: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/file_device/enum.Permission.html' title='qt_core::file_device::Permission'>Permission</a>&gt;) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFileInfo::permission(QFlags&lt;QFileDevice::Permission&gt; permissions) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#permission">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Tests for file permissions. The <i>permissions</i> argument can be several flags of type <a href="http://doc.qt.io/qt-5/qfiledevice.html#Permission-enum">QFile::Permissions</a> OR-ed together to check for permission combinations.</p>
+<p>On systems where files do not have permissions this function always returns <code>true</code>.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fi(<span class="string">&quot;/tmp/archive.tar.gz&quot;</span>);
+<span class="keyword">if</span> (fi<span class="operator">.</span>permission(<span class="type"><a href="http://doc.qt.io/qt-5/qfile.html">QFile</a></span><span class="operator">::</span>WriteUser <span class="operator">|</span> <span class="type"><a href="http://doc.qt.io/qt-5/qfile.html">QFile</a></span><span class="operator">::</span>ReadGroup))
+&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;I can change the file; my group can read the file&quot;</span>);
+<span class="keyword">if</span> (fi<span class="operator">.</span>permission(<span class="type"><a href="http://doc.qt.io/qt-5/qfile.html">QFile</a></span><span class="operator">::</span>WriteGroup <span class="operator">|</span> <span class="type"><a href="http://doc.qt.io/qt-5/qfile.html">QFile</a></span><span class="operator">::</span>WriteOther))
+&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qWarning">qWarning</a>(<span class="string">&quot;The group or others can change the file&quot;</span>);</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isReadable">isReadable</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isWritable">isWritable</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isExecutable">isExecutable</a>().</p></div></p>
+</div><h4 id='method.permissions' class='method'><code>fn <a href='#method.permissions' class='fnname'>permissions</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/file_device/enum.Permission.html' title='qt_core::file_device::Permission'>Permission</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QFileDevice::Permission&gt; QFileInfo::permissions() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#permissions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the complete OR-ed together combination of <a href="http://doc.qt.io/qt-5/qfiledevice.html#Permission-enum">QFile::Permissions</a> for the file.</p></div></p>
+</div><h4 id='method.read_link' class='method'><code>fn <a href='#method.read_link' class='fnname'>read_link</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoReadLinkArgs.html' title='qt_core::file_info::overloading::FileInfoReadLinkArgs'>FileInfoReadLinkArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::readLink</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn read_link(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn read_link(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::readLink() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo-obsolete.html#readLink">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use <a href="http://doc.qt.io/qt-5/qfileinfo.html#symLinkTarget">symLinkTarget</a>() instead.</p></div></p>
+</div><h4 id='method.refresh' class='method'><code>fn <a href='#method.refresh' class='fnname'>refresh</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFileInfo::refresh()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#refresh">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Refreshes the information about the file, i.e. reads in information from the file system the next time a cached property is fetched.</p>
+<p><b>Note: </b>On Windows CE, there might be a delay for the file system driver to detect changes on the file.</p></div></p>
+</div><h4 id='method.set_caching' class='method'><code>fn <a href='#method.set_caching' class='fnname'>set_caching</a>(&amp;mut self, on: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFileInfo::setCaching(bool on)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#setCaching">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>enable</i> is true, enables caching of file information. If <i>enable</i> is false caching is disabled.</p>
+<p>When caching is enabled, <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> reads the file information from the file system the first time it&#39;s needed, but generally not later.</p>
+<p>Caching is enabled by default.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#refresh">refresh</a>() and <a href="http://doc.qt.io/qt-5/qfileinfo.html#caching">caching</a>().</p></div></p>
+</div><h4 id='method.set_file' class='method'><code>fn <a href='#method.set_file' class='fnname'>set_file</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoSetFileArgs.html' title='qt_core::file_info::overloading::FileInfoSetFileArgs'>FileInfoSetFileArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::setFile</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_file(&amp;mut self, (&amp;::dir::Dir, &amp;::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QFileInfo::setFile(const QDir&amp; dir, const QString&amp; file)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#setFile-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the file that the <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> provides information about to <i>file</i> in directory <i>dir</i>.</p>
+<p>If <i>file</i> includes a relative path, the <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> will also have a relative path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_file(&amp;mut self, &amp;::file::File) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QFileInfo::setFile(const QFile&amp; file)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#setFile-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the file that the <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> provides information about to <i>file</i>.</p>
+<p>If <i>file</i> includes a relative path, the <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> will also have a relative path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>().</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn set_file(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QFileInfo::setFile(const QString&amp; file)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#setFile">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the file that the <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> provides information about to <i>file</i>.</p>
+<p>The <i>file</i> can also include an absolute or relative file path. Absolute paths begin with the directory separator (e.g. &quot;/&quot; under Unix) or a drive specification (under Windows). Relative file names begin with a directory name or a file name and specify a path relative to the current directory.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> absolute <span class="operator">=</span> <span class="string">&quot;/local/bin&quot;</span>;
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> relative <span class="operator">=</span> <span class="string">&quot;local/bin&quot;</span>;
+<span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> absFile(absolute);
+<span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> relFile(relative);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qdir.html">QDir</a></span><span class="operator">::</span>setCurrent(<span class="type"><a href="http://doc.qt.io/qt-5/qdir.html">QDir</a></span><span class="operator">::</span>rootPath());
+<span class="comment">// absFile and relFile now point to the same file</span></p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qdir.html">QDir</a></span><span class="operator">::</span>setCurrent(<span class="string">&quot;/tmp&quot;</span>);
+<span class="comment">// absFile now points to &quot;/local/bin&quot;,</span>
+<span class="comment">// while relFile points to &quot;/tmp/local/bin&quot;</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#isFile">isFile</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isRelative">isRelative</a>(), <a href="http://doc.qt.io/qt-5/qdir.html#setCurrent">QDir::setCurrent</a>(), and <a href="http://doc.qt.io/qt-5/qdir.html#isRelativePath">QDir::isRelativePath</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QFileInfo::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the file size in bytes. If the file does not exist or cannot be fetched, 0 is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#exists">exists</a>().</p></div></p>
+</div><h4 id='method.suffix' class='method'><code>fn <a href='#method.suffix' class='fnname'>suffix</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoSuffixArgs.html' title='qt_core::file_info::overloading::FileInfoSuffixArgs'>FileInfoSuffixArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::suffix</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn suffix(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn suffix(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::suffix() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#suffix">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the suffix of the file.</p>
+<p>The suffix consists of all characters in the file after (but not including) the last &#39;.&#39;.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfileinfo.html#QFileInfo">QFileInfo</a></span> fi(<span class="string">&quot;/tmp/archive.tar.gz&quot;</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> ext <span class="operator">=</span> fi<span class="operator">.</span>suffix();  <span class="comment">// ext = &quot;gz&quot;</span></pre>
+<p>The suffix of a file is computed equally on all platforms, independent of file naming conventions (e.g., &quot;.bashrc&quot; on Unix has an empty base name, and the suffix is &quot;bashrc&quot;).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#fileName">fileName</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#completeSuffix">completeSuffix</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#baseName">baseName</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#completeBaseName">completeBaseName</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFileInfo::swap(QFileInfo&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this file info with <i>other</i>. This function is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.sym_link_target' class='method'><code>fn <a href='#method.sym_link_target' class='fnname'>sym_link_target</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/file_info/overloading/trait.FileInfoSymLinkTargetArgs.html' title='qt_core::file_info::overloading::FileInfoSymLinkTargetArgs'>FileInfoSymLinkTargetArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFileInfo::symLinkTarget</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn sym_link_target(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn sym_link_target(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFileInfo::symLinkTarget() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#symLinkTarget">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the absolute path to the file or directory a symlink (or shortcut on Windows) points to, or a an empty string if the object isn&#39;t a symbolic link.</p>
+<p>This name may not represent an existing file; it is only a string. <a href="http://doc.qt.io/qt-5/qfileinfo.html#exists">QFileInfo::exists</a>() returns <code>true</code> if the symlink points to an existing file.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfileinfo.html#exists">exists</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isSymLink">isSymLink</a>(), <a href="http://doc.qt.io/qt-5/qfileinfo.html#isDir">isDir</a>(), and <a href="http://doc.qt.io/qt-5/qfileinfo.html#isFile">isFile</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-73774' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/file_info.rs.html#53-57' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-73954' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/file_info.rs.html#756-763' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QFileInfo::~QFileInfo()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfileinfo.html#dtor.QFileInfo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> and frees its resources.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-73957' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/file_info.rs.html#765-769' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListFileInfoRefAppendArgs.html' title='qt_core::list::overloading::ListFileInfoRefAppendArgs'>ListFileInfoRefAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95114' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#19446-19454' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListFileInfoRefAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListFileInfoRef.html' title='qt_core::list::ListFileInfoRef'>ListFileInfoRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListFileInfoRefCountArgs.html' title='qt_core::list::overloading::ListFileInfoRefCountArgs'>ListFileInfoRefCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95136' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#19474-19482' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListFileInfoRefCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListFileInfoRef.html' title='qt_core::list::ListFileInfoRef'>ListFileInfoRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListFileInfoRefIndexOfArgs.html' title='qt_core::list::overloading::ListFileInfoRefIndexOfArgs'>ListFileInfoRefIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95147' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#19487-19495' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListFileInfoRefIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListFileInfoRef.html' title='qt_core::list::ListFileInfoRef'>ListFileInfoRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListFileInfoRefLastIndexOfArgs.html' title='qt_core::list::overloading::ListFileInfoRefLastIndexOfArgs'>ListFileInfoRefLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95165' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#19511-19519' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListFileInfoRefLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/list/struct.ListFileInfoRef.html' title='qt_core::list::ListFileInfoRef'>ListFileInfoRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListFileInfoRefOpAddAssignArgs.html' title='qt_core::list::overloading::ListFileInfoRefOpAddAssignArgs'>ListFileInfoRefOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95280' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#19688-19698' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListFileInfoRefOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListFileInfoRef.html' title='qt_core::list::ListFileInfoRef'>ListFileInfoRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListFileInfoRef.html' title='qt_core::list::ListFileInfoRef'>ListFileInfoRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/list/overloading/trait.ListFileInfoRefOpShlArgs.html' title='qt_core::list::overloading::ListFileInfoRefOpShlArgs'>ListFileInfoRefOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/file_info/struct.FileInfo.html' title='qt_core::file_info::FileInfo'>FileInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-95299' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/list.rs.html#19713-19722' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_core/list/overloading/trait.ListFileInfoRefOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListFileInfoRef.html' title='qt_core::list::ListFileInfoRef'>ListFileInfoRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/list/struct.ListFileInfoRef.html' title='qt_core::list::ListFileInfoRef'>ListFileInfoRef</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

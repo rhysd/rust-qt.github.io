@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PixelFormat` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PixelFormat">
+
+    <title>qt_gui::pixel_format::PixelFormat - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>pixel_format</a></p><script>window.sidebarCurrent = {name: 'PixelFormat', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>pixel_format</a>::<wbr><a class='struct' href=''>PixelFormat</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-133429' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixel_format.rs.html#89-91' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct PixelFormat {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPixelFormat</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p><a href="http://doc.qt.io/qt-5/qpixelformat.html">QPixelFormat</a> is a class for describing different pixel layouts in graphics buffers</p>
+<p>In Qt there is a often a need to represent the layout of the pixels in a graphics buffer. Internally <a href="http://doc.qt.io/qt-5/qpixelformat.html">QPixelFormat</a> stores everything in a 64 bit datastructure. This gives performance but also some limitations.</p>
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html">QPixelFormat</a> can describe 5 color channels and 1 alpha channel, each can use 6 bits to describe the size of the color channel.</p>
+<p>The position of the alpha channel is described with a separate enum. This is to make it possible to describe <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> formats like ARGB32, and also describe typical OpenGL formats like RBGA8888.</p>
+<p>How pixels are suppose to be read is determined by the <a href="http://doc.qt.io/qt-5/qpixelformat.html#TypeInterpretation-enum">TypeInterpretation</a> enum. It describes if color values are suppose to be read byte per byte, or if a pixel is suppose to be read as a complete int and then masked.</p>
+<p>There is no support for describing YUV&#39;s macro pixels. Instead a list of YUV formats has been made. When a <a href="http://doc.qt.io/qt-5/qpixelformat.html">QPixelFormat</a> is describing a YUV format, the <a href="http://doc.qt.io/qt-5/qpixelformat.html#bitsPerPixel">bitsPerPixel</a> value has been deduced by the YUV Layout enum. Also, the color channels should all be set to zero except the fifth color channel that should store the <a href="http://doc.qt.io/qt-5/qpixelformat.html#bitsPerPixel">bitsPerPixel</a> value.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/pixel_format/struct.PixelFormat.html' title='qt_gui::pixel_format::PixelFormat'>PixelFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-133434' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixel_format.rs.html#99-278' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.alpha_position' class='method'><code>fn <a href='#method.alpha_position' class='fnname'>alpha_position</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/pixel_format/enum.AlphaPosition.html' title='qt_gui::pixel_format::AlphaPosition'>AlphaPosition</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixelFormat::AlphaPosition QPixelFormat::alphaPosition() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#alphaPosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for alphaPosition.</p></div></p>
+</div><h4 id='method.alpha_size' class='method'><code>fn <a href='#method.alpha_size' class='fnname'>alpha_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::alphaSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#alphaSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the alpha channel size.</p></div></p>
+</div><h4 id='method.alpha_usage' class='method'><code>fn <a href='#method.alpha_usage' class='fnname'>alpha_usage</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/pixel_format/enum.AlphaUsage.html' title='qt_gui::pixel_format::AlphaUsage'>AlphaUsage</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixelFormat::AlphaUsage QPixelFormat::alphaUsage() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#alphaUsage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for alphaUsage.</p></div></p>
+</div><h4 id='method.bits_per_pixel' class='method'><code>fn <a href='#method.bits_per_pixel' class='fnname'>bits_per_pixel</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::bitsPerPixel() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#bitsPerPixel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the bits used per pixel. This function returns the sum of the color channels + the size of the alpha channel.</p></div></p>
+</div><h4 id='method.black_size' class='method'><code>fn <a href='#method.black_size' class='fnname'>black_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::blackSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#blackSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the black/key color channel.</p></div></p>
+</div><h4 id='method.blue_size' class='method'><code>fn <a href='#method.blue_size' class='fnname'>blue_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::blueSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#blueSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the size of the blue color channel.</p></div></p>
+</div><h4 id='method.brightness_size' class='method'><code>fn <a href='#method.brightness_size' class='fnname'>brightness_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::brightnessSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#brightnessSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the brightness channel size.</p></div></p>
+</div><h4 id='method.byte_order' class='method'><code>fn <a href='#method.byte_order' class='fnname'>byte_order</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/pixel_format/enum.ByteOrder.html' title='qt_gui::pixel_format::ByteOrder'>ByteOrder</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixelFormat::ByteOrder QPixelFormat::byteOrder() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#byteOrder">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The byte order is almost always set the the byte order of the current system. However, it can be useful to describe some YUV formats. This function should never return <a href="http://doc.qt.io/qt-5/qpixelformat.html#ByteOrder-enum">QPixelFormat::CurrentSystemEndian</a> as this value is translated to a endian value in the constructor.</p></div></p>
+</div><h4 id='method.channel_count' class='method'><code>fn <a href='#method.channel_count' class='fnname'>channel_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::channelCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#channelCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for getting the channelCount. Channel Count is deduced by color channels with a size &gt; 0 and if the size of the alpha channel is &gt; 0.</p></div></p>
+</div><h4 id='method.color_model' class='method'><code>fn <a href='#method.color_model' class='fnname'>color_model</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/pixel_format/enum.ColorModel.html' title='qt_gui::pixel_format::ColorModel'>ColorModel</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixelFormat::ColorModel QPixelFormat::colorModel() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#colorModel">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for getting the colorModel.</p></div></p>
+</div><h4 id='method.cyan_size' class='method'><code>fn <a href='#method.cyan_size' class='fnname'>cyan_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::cyanSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#cyanSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the cyan color channel.</p></div></p>
+</div><h4 id='method.green_size' class='method'><code>fn <a href='#method.green_size' class='fnname'>green_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::greenSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#greenSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the size of the green color channel.</p></div></p>
+</div><h4 id='method.hue_size' class='method'><code>fn <a href='#method.hue_size' class='fnname'>hue_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::hueSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#hueSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the hue channel size.</p></div></p>
+</div><h4 id='method.lightness_size' class='method'><code>fn <a href='#method.lightness_size' class='fnname'>lightness_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::lightnessSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#lightnessSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the lightness channel size.</p></div></p>
+</div><h4 id='method.magenta_size' class='method'><code>fn <a href='#method.magenta_size' class='fnname'>magenta_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::magentaSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#magentaSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the megenta color channel.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/pixel_format/overloading/trait.PixelFormatNewArgs.html' title='qt_gui::pixel_format::overloading::PixelFormatNewArgs'>PixelFormatNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixelFormat::QPixelFormat</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::pixel_format::PixelFormat</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pixel_format::PixelFormat&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPixelFormat::QPixelFormat()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((::pixel_format::ColorModel, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, ::pixel_format::AlphaUsage, ::pixel_format::AlphaPosition, ::pixel_format::AlphaPremultiplied, ::pixel_format::TypeInterpretation, cpp_utils::AsStruct)) -&gt; ::pixel_format::PixelFormat</code><br>2) <code>fn new((::pixel_format::ColorModel, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, ::pixel_format::AlphaUsage, ::pixel_format::AlphaPosition, ::pixel_format::AlphaPremultiplied, ::pixel_format::TypeInterpretation, ::pixel_format::ByteOrder, cpp_utils::AsStruct)) -&gt; ::pixel_format::PixelFormat</code><br>3) <code>fn new((::pixel_format::ColorModel, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, ::pixel_format::AlphaUsage, ::pixel_format::AlphaPosition, ::pixel_format::AlphaPremultiplied, ::pixel_format::TypeInterpretation, ::pixel_format::ByteOrder, libc::c_uchar, cpp_utils::AsStruct)) -&gt; ::pixel_format::PixelFormat</code><br>4) <code>fn new((::pixel_format::ColorModel, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, ::pixel_format::AlphaUsage, ::pixel_format::AlphaPosition, ::pixel_format::AlphaPremultiplied, ::pixel_format::TypeInterpretation, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixel_format::PixelFormat&gt;</code><br>5) <code>fn new((::pixel_format::ColorModel, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, ::pixel_format::AlphaUsage, ::pixel_format::AlphaPosition, ::pixel_format::AlphaPremultiplied, ::pixel_format::TypeInterpretation, ::pixel_format::ByteOrder, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixel_format::PixelFormat&gt;</code><br>6) <code>fn new((::pixel_format::ColorModel, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, libc::c_uchar, ::pixel_format::AlphaUsage, ::pixel_format::AlphaPosition, ::pixel_format::AlphaPremultiplied, ::pixel_format::TypeInterpretation, ::pixel_format::ByteOrder, libc::c_uchar, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pixel_format::PixelFormat&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPixelFormat::QPixelFormat(QPixelFormat::ColorModel colorModel, unsigned char firstSize, unsigned char secondSize, unsigned char thirdSize, unsigned char fourthSize, unsigned char fifthSize, unsigned char alphaSize, QPixelFormat::AlphaUsage alphaUsage, QPixelFormat::AlphaPosition alphaPosition, QPixelFormat::AlphaPremultiplied premultiplied, QPixelFormat::TypeInterpretation typeInterpretation, QPixelFormat::ByteOrder byteOrder = ?, unsigned char subEnum = ?)</code></span></p>
+</div><h4 id='method.premultiplied' class='method'><code>fn <a href='#method.premultiplied' class='fnname'>premultiplied</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/pixel_format/enum.AlphaPremultiplied.html' title='qt_gui::pixel_format::AlphaPremultiplied'>AlphaPremultiplied</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixelFormat::AlphaPremultiplied QPixelFormat::premultiplied() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#premultiplied">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the <a href="http://doc.qt.io/qt-5/qpixelformat.html#AlphaPremultiplied-enum">AlphaPremultiplied</a> enum. This indicates if the alpha channel is multiplied in to the color channels.</p></div></p>
+</div><h4 id='method.red_size' class='method'><code>fn <a href='#method.red_size' class='fnname'>red_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::redSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#redSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the size of the red color channel.</p></div></p>
+</div><h4 id='method.saturation_size' class='method'><code>fn <a href='#method.saturation_size' class='fnname'>saturation_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::saturationSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#saturationSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the saturation channel size.</p></div></p>
+</div><h4 id='method.sub_enum' class='method'><code>fn <a href='#method.sub_enum' class='fnname'>sub_enum</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::subEnum() const</code></span></p>
+</div><h4 id='method.type_interpretation' class='method'><code>fn <a href='#method.type_interpretation' class='fnname'>type_interpretation</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/pixel_format/enum.TypeInterpretation.html' title='qt_gui::pixel_format::TypeInterpretation'>TypeInterpretation</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixelFormat::TypeInterpretation QPixelFormat::typeInterpretation() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#typeInterpretation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the type representation of a color channel or a pixel.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpixelformat.html#TypeInterpretation-enum">TypeInterpretation</a>.</p></div></p>
+</div><h4 id='method.yellow_size' class='method'><code>fn <a href='#method.yellow_size' class='fnname'>yellow_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned char QPixelFormat::yellowSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#yellowSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the yellow color channel.</p></div></p>
+</div><h4 id='method.yuv_layout' class='method'><code>fn <a href='#method.yuv_layout' class='fnname'>yuv_layout</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/pixel_format/enum.YuvlAyout.html' title='qt_gui::pixel_format::YuvlAyout'>YuvlAyout</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPixelFormat::YUVLayout QPixelFormat::yuvLayout() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpixelformat.html#yuvLayout">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Accessor function for the <a href="http://doc.qt.io/qt-5/qpixelformat.html#YUVLayout-enum">YUVLayout</a>. It is difficult to describe the color channels of a YUV pixel format since YUV color model uses macro pixels. Instead the layout of the pixels are stored as an enum.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/pixel_format/struct.PixelFormat.html' title='qt_gui::pixel_format::PixelFormat'>PixelFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-133432' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixel_format.rs.html#93-97' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/pixel_format/struct.PixelFormat.html' title='qt_gui::pixel_format::PixelFormat'>PixelFormat</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/pixel_format/struct.PixelFormat.html' title='qt_gui::pixel_format::PixelFormat'>PixelFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-133482' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixel_format.rs.html#280-287' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QPixelFormat::~QPixelFormat()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/pixel_format/struct.PixelFormat.html' title='qt_gui::pixel_format::PixelFormat'>PixelFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-133485' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pixel_format.rs.html#289-293' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

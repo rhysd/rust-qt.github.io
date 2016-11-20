@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["MutexLocker","C++ type: <span style='color: green;'>```QMutexLocker```</span>"]]});

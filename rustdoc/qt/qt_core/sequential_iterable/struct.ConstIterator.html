@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ConstIterator` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ConstIterator">
+
+    <title>qt_core::sequential_iterable::ConstIterator - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>sequential_iterable</a></p><script>window.sidebarCurrent = {name: 'ConstIterator', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>sequential_iterable</a>::<wbr><a class='struct' href=''>ConstIterator</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-130292' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/sequential_iterable.rs.html#32-34' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ConstIterator {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QSequentialIterable::const_iterator</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qsequentialiterable-const-iterator.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qsequentialiterable-const-iterator.html">QSequentialIterable::const_iterator</a> allows iteration over a container in a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qsequentialiterable-const-iterator.html">QSequentialIterable::const_iterator</a> can only be created by a <a href="http://doc.qt.io/qt-5/qsequentialiterable.html">QSequentialIterable</a> instance, and can be used in a way similar to other stl-style iterators.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html">QList</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> intList;
+intList<span class="operator">.</span>push_back(<span class="number">7</span>);
+intList<span class="operator">.</span>push_back(<span class="number">11</span>);
+intList<span class="operator">.</span>push_back(<span class="number">42</span>);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></span> variant <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></span><span class="operator">::</span>fromValue(intList);
+<span class="keyword">if</span> (variant<span class="operator">.</span>canConvert<span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariantList-typedef">QVariantList</a></span><span class="operator">&gt;</span>()) {
+&#32;   <span class="type">QSequentialIterable</span> iterable <span class="operator">=</span> variant<span class="operator">.</span>value<span class="operator">&lt;</span><span class="type">QSequentialIterable</span><span class="operator">&gt;</span>();
+&#32;   <span class="comment">// Can use foreach:</span>
+&#32;   foreach (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></span> <span class="operator">&amp;</span>v<span class="operator">,</span> iterable) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+&#32;   }
+&#32;   <span class="comment">// Can use C++11 range-for:</span>
+&#32;   <span class="keyword">for</span> (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></span> <span class="operator">&amp;</span>v : iterable) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+&#32;   }
+&#32;   <span class="comment">// Can use iterators:</span>
+&#32;   <span class="type">QSequentialIterable</span><span class="operator">::</span>const_iterator it <span class="operator">=</span> iterable<span class="operator">.</span>begin();
+&#32;   <span class="keyword">const</span> <span class="type">QSequentialIterable</span><span class="operator">::</span>const_iterator end <span class="operator">=</span> iterable<span class="operator">.</span>end();
+&#32;   <span class="keyword">for</span> ( ; it <span class="operator">!</span><span class="operator">=</span> end; <span class="operator">+</span><span class="operator">+</span>it) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="operator">*</span>it;
+&#32;   }
+}</pre></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130297' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/sequential_iterable.rs.html#42-188' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/sequential_iterable/overloading/trait.ConstIteratorNewArgs.html' title='qt_core::sequential_iterable::overloading::ConstIteratorNewArgs'>ConstIteratorNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator::const_iterator</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((&amp;::sequential_iterable::ConstIterator, cpp_utils::AsStruct)) -&gt; ::sequential_iterable::ConstIterator</code><br>2) <code>fn new((&amp;::sequential_iterable::ConstIterator, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::sequential_iterable::ConstIterator&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QSequentialIterable::const_iterator::const_iterator(const QSequentialIterable::const_iterator&amp; other)</code></span></p>
+</div><h4 id='method.op_add' class='method'><code>fn <a href='#method.op_add' class='fnname'>op_add</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/sequential_iterable/overloading/trait.ConstIteratorOpAddArgs.html' title='qt_core::sequential_iterable::overloading::ConstIteratorOpAddArgs'>ConstIteratorOpAddArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator::operator+</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_add(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::sequential_iterable::ConstIterator&gt;</code><br>2) <code>fn op_add(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::sequential_iterable::ConstIterator</code><br>
+C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator QSequentialIterable::const_iterator::operator+(int j) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-2b">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an iterator to the item at <i>j</i> positions forward from this iterator.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-">operator-</a>() and <a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-2b-eq">operator+=</a>().</p></div></p>
+</div><h4 id='method.op_add_assign' class='method'><code>fn <a href='#method.op_add_assign' class='fnname'>op_add_assign</a>&lt;'l0&gt;(&amp;'l0 mut self, j: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator&amp; QSequentialIterable::const_iterator::operator+=(int j)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-2b-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Advances the iterator by <i>j</i> items.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator--eq">operator-=</a>() and <a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-2b">operator+</a>().</p></div></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator&amp; QSequentialIterable::const_iterator::operator=(const QSequentialIterable::const_iterator&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns <i>other</i> to this.</p></div></p>
+</div><h4 id='method.op_dec' class='method'><code>fn <a href='#method.op_dec' class='fnname'>op_dec</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator&amp; QSequentialIterable::const_iterator::operator--()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator--">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The prefix -- operator (<code>--it</code>) makes the preceding item current and returns an iterator to the new current item.</p>
+<p>Calling this function on <a href="http://doc.qt.io/qt-5/qassociativeiterable.html#begin">QAssociativeIterable::begin</a>() leads to undefined results.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-2b-2b">operator++</a>().</p></div></p>
+</div><h4 id='method.op_dec_postfix' class='method'><code>fn <a href='#method.op_dec_postfix' class='fnname'>op_dec_postfix</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/sequential_iterable/overloading/trait.ConstIteratorOpDecPostfixArgs.html' title='qt_core::sequential_iterable::overloading::ConstIteratorOpDecPostfixArgs'>ConstIteratorOpDecPostfixArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator::operator--</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_dec_postfix(&amp;mut self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::sequential_iterable::ConstIterator&gt;</code><br>2) <code>fn op_dec_postfix(&amp;mut self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::sequential_iterable::ConstIterator</code><br>
+C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator QSequentialIterable::const_iterator::operator--(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator---2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The postfix -- operator (<code>it--</code>) makes the preceding item current and returns an iterator to the previously current item.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, o: &amp;<a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QSequentialIterable::const_iterator::operator==(const QSequentialIterable::const_iterator&amp; o) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <i>other</i> points to the same item as this iterator; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-not-eq">operator!=</a>().</p></div></p>
+</div><h4 id='method.op_inc' class='method'><code>fn <a href='#method.op_inc' class='fnname'>op_inc</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator&amp; QSequentialIterable::const_iterator::operator++()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-2b-2b">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The prefix ++ operator (<code>++it</code>) advances the iterator to the next item in the container and returns an iterator to the new current item.</p>
+<p>Calling this function on <a href="http://doc.qt.io/qt-5/qassociativeiterable.html#end">QAssociativeIterable::end</a>() leads to undefined results.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator--">operator--</a>().</p></div></p>
+</div><h4 id='method.op_inc_postfix' class='method'><code>fn <a href='#method.op_inc_postfix' class='fnname'>op_inc_postfix</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/sequential_iterable/overloading/trait.ConstIteratorOpIncPostfixArgs.html' title='qt_core::sequential_iterable::overloading::ConstIteratorOpIncPostfixArgs'>ConstIteratorOpIncPostfixArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator::operator++</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_inc_postfix(&amp;mut self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::sequential_iterable::ConstIterator&gt;</code><br>2) <code>fn op_inc_postfix(&amp;mut self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::sequential_iterable::ConstIterator</code><br>
+C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator QSequentialIterable::const_iterator::operator++(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-2b-2b-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>The postfix ++ operator (<code>it++</code>) advances the iterator to the next item in the container and returns an iterator to the previously current item.</p></div></p>
+</div><h4 id='method.op_indirection' class='method'><code>fn <a href='#method.op_indirection' class='fnname'>op_indirection</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/sequential_iterable/overloading/trait.ConstIteratorOpIndirectionArgs.html' title='qt_core::sequential_iterable::overloading::ConstIteratorOpIndirectionArgs'>ConstIteratorOpIndirectionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator::operator*</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_indirection(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>2) <code>fn op_indirection(&amp;self, cpp_utils::AsStruct) -&gt; ::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>const QVariant QSequentialIterable::const_iterator::operator*() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-2a">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current value, converted to a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, o: &amp;<a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QSequentialIterable::const_iterator::operator!=(const QSequentialIterable::const_iterator&amp; o) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <i>other</i> points to a different item than this iterator; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.op_sub' class='method'><code>fn <a href='#method.op_sub' class='fnname'>op_sub</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/sequential_iterable/overloading/trait.ConstIteratorOpSubArgs.html' title='qt_core::sequential_iterable::overloading::ConstIteratorOpSubArgs'>ConstIteratorOpSubArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator::operator-</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_sub(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::sequential_iterable::ConstIterator&gt;</code><br>2) <code>fn op_sub(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::sequential_iterable::ConstIterator</code><br>
+C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator QSequentialIterable::const_iterator::operator-(int j) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an iterator to the item at <i>j</i> positions backward from this iterator.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-2b">operator+</a>() and <a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator--eq">operator-=</a>().</p></div></p>
+</div><h4 id='method.op_sub_assign' class='method'><code>fn <a href='#method.op_sub_assign' class='fnname'>op_sub_assign</a>&lt;'l0&gt;(&amp;'l0 mut self, j: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QSequentialIterable::const_iterator&amp; QSequentialIterable::const_iterator::operator-=(int j)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator--eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Makes the iterator go back by <i>j</i> items.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-2b-eq">operator+=</a>() and <a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#operator-">operator-</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130295' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/sequential_iterable.rs.html#36-40' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130356' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/sequential_iterable.rs.html#190-199' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QSequentialIterable::const_iterator::~const_iterator()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html#dtor.const_iterator">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html">QAssociativeIterable::const_iterator</a>.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/sequential_iterable/struct.ConstIterator.html' title='qt_core::sequential_iterable::ConstIterator'>ConstIterator</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130359' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/sequential_iterable.rs.html#201-205' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

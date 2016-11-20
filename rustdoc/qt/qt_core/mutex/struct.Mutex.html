@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Mutex` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Mutex">
+
+    <title>qt_core::mutex::Mutex - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>mutex</a></p><script>window.sidebarCurrent = {name: 'Mutex', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>mutex</a>::<wbr><a class='struct' href=''>Mutex</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-111383' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/mutex.rs.html#65-67' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Mutex {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QMutex</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmutex.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qmutex.html">QMutex</a> class provides access serialization between threads.</p>
+<p>The purpose of a <a href="http://doc.qt.io/qt-5/qmutex.html">QMutex</a> is to protect an object, data structure or section of code so that only one thread can access it at a time (this is similar to the Java <code>synchronized</code> keyword). It is usually best to use a mutex with a <a href="http://doc.qt.io/qt-5/qmutexlocker.html">QMutexLocker</a> since this makes it easy to ensure that locking and unlocking are performed consistently.</p>
+<p>For example, say there is a method that prints a message to the user on two lines:</p>
+<pre class="cpp"><span class="type">int</span> number <span class="operator">=</span> <span class="number">6</span>;</p>
+
+<p><span class="type">void</span> method1()
+{
+&#32;   number <span class="operator">*</span><span class="operator">=</span> <span class="number">5</span>;
+&#32;   number <span class="operator">/</span><span class="operator">=</span> <span class="number">4</span>;
+}</p>
+
+<p><span class="type">void</span> method2()
+{
+&#32;   number <span class="operator"><em></span><span class="operator">=</span> <span class="number">3</span>;
+&#32;   number <span class="operator">/</span><span class="operator">=</span> <span class="number">2</span>;
+}</pre>
+<p>If these two methods are called in succession, the following happens:</p>
+<pre class="cpp"><span class="comment">// method1()</span>
+number <span class="operator"></em></span><span class="operator">=</span> <span class="number">5</span>;        <span class="comment">// number is now 30</span>
+number <span class="operator">/</span><span class="operator">=</span> <span class="number">4</span>;        <span class="comment">// number is now 7</span></p>
+
+<p><span class="comment">// method2()</span>
+number <span class="operator"><em></span><span class="operator">=</span> <span class="number">3</span>;        <span class="comment">// number is now 21</span>
+number <span class="operator">/</span><span class="operator">=</span> <span class="number">2</span>;        <span class="comment">// number is now 10</span></pre>
+<p>If these two methods are called simultaneously from two threads then the following sequence could result:</p>
+<pre class="cpp"><span class="comment">// Thread 1 calls method1()</span>
+number <span class="operator"></em></span><span class="operator">=</span> <span class="number">5</span>;        <span class="comment">// number is now 30</span></p>
+
+<p><span class="comment">// Thread 2 calls method2().</span>
+<span class="comment">//</span>
+<span class="comment">// Most likely Thread 1 has been put to sleep by the operating</span>
+<span class="comment">// system to allow Thread 2 to run.</span>
+number <span class="operator">*</span><span class="operator">=</span> <span class="number">3</span>;        <span class="comment">// number is now 90</span>
+number <span class="operator">/</span><span class="operator">=</span> <span class="number">2</span>;        <span class="comment">// number is now 45</span></p>
+
+<p><span class="comment">// Thread 1 finishes executing.</span>
+number <span class="operator">/</span><span class="operator">=</span> <span class="number">4</span>;        <span class="comment">// number is now 11, instead of 10</span></pre>
+<p>If we add a mutex, we should get the result we want:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qmutex.html#QMutex">QMutex</a></span> mutex;
+<span class="type">int</span> number <span class="operator">=</span> <span class="number">6</span>;</p>
+
+<p><span class="type">void</span> method1()
+{
+&#32;   mutex<span class="operator">.</span>lock();
+&#32;   number <span class="operator">*</span><span class="operator">=</span> <span class="number">5</span>;
+&#32;   number <span class="operator">/</span><span class="operator">=</span> <span class="number">4</span>;
+&#32;   mutex<span class="operator">.</span>unlock();
+}</p>
+
+<p><span class="type">void</span> method2()
+{
+&#32;   mutex<span class="operator">.</span>lock();
+&#32;   number <span class="operator">*</span><span class="operator">=</span> <span class="number">3</span>;
+&#32;   number <span class="operator">/</span><span class="operator">=</span> <span class="number">2</span>;
+&#32;   mutex<span class="operator">.</span>unlock();
+}</pre>
+<p>Then only one thread can modify <code>number</code> at any given time and the result is correct. This is a trivial example, of course, but applies to any other case where things need to happen in a particular sequence.</p>
+<p>When you call <a href="http://doc.qt.io/qt-5/qmutex.html#lock">lock</a>() in a thread, other threads that try to call <a href="http://doc.qt.io/qt-5/qmutex.html#lock">lock</a>() in the same place will block until the thread that got the lock calls <a href="http://doc.qt.io/qt-5/qmutex.html#unlock">unlock</a>(). A non-blocking alternative to <a href="http://doc.qt.io/qt-5/qmutex.html#lock">lock</a>() is <a href="http://doc.qt.io/qt-5/qmutex.html#tryLock">tryLock</a>().</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/mutex/struct.Mutex.html' title='qt_core::mutex::Mutex'>Mutex</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-111388' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/mutex.rs.html#75-129' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_recursive' class='method'><code>fn <a href='#method.is_recursive' class='fnname'>is_recursive</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QMutex::isRecursive()</code></span></p>
+</div><h4 id='method.lock' class='method'><code>fn <a href='#method.lock' class='fnname'>lock</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QMutex::lock()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmutex.html#lock">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Locks the mutex. If another thread has locked the mutex then this call will block until that thread has unlocked it.</p>
+<p>Calling this function multiple times on the same mutex from the same thread is allowed if this mutex is a <a href="http://doc.qt.io/qt-5/qmutex.html#RecursionMode-enum">recursive mutex</a>. If this mutex is a <a href="http://doc.qt.io/qt-5/qmutex.html#RecursionMode-enum">non-recursive mutex</a>, this function will <i>dead-lock</i> when the mutex is locked recursively.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmutex.html#unlock">unlock</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/mutex/overloading/trait.MutexNewArgs.html' title='qt_core::mutex::overloading::MutexNewArgs'>MutexNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMutex::QMutex</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((::mutex::RecursionMode, cpp_utils::AsStruct)) -&gt; ::mutex::Mutex</code><br>2) <code>fn new(cpp_utils::AsStruct) -&gt; ::mutex::Mutex</code><br>3) <code>fn new((::mutex::RecursionMode, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::mutex::Mutex&gt;</code><br>4) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::mutex::Mutex&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QMutex::QMutex(QMutex::RecursionMode mode = ?)</code></span></p>
+</div><h4 id='method.try_lock' class='method'><code>fn <a href='#method.try_lock' class='fnname'>try_lock</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/mutex/overloading/trait.MutexTryLockArgs.html' title='qt_core::mutex::overloading::MutexTryLockArgs'>MutexTryLockArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QMutex::tryLock</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn try_lock(&amp;mut self, ()) -&gt; bool</code><br>2) <code>fn try_lock(&amp;mut self, libc::c_int) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QMutex::tryLock(int timeout = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmutex.html#tryLock">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Attempts to lock the mutex. This function returns <code>true</code> if the lock was obtained; otherwise it returns <code>false</code>. If another thread has locked the mutex, this function will wait for at most <i>timeout</i> milliseconds for the mutex to become available.</p>
+<p>Note: Passing a negative number as the <i>timeout</i> is equivalent to calling <a href="http://doc.qt.io/qt-5/qmutex.html#lock">lock</a>(), i.e. this function will wait forever until mutex can be locked if <i>timeout</i> is negative.</p>
+<p>If the lock was obtained, the mutex must be unlocked with <a href="http://doc.qt.io/qt-5/qmutex.html#unlock">unlock</a>() before another thread can successfully lock it.</p>
+<p>Calling this function multiple times on the same mutex from the same thread is allowed if this mutex is a <a href="http://doc.qt.io/qt-5/qmutex.html#RecursionMode-enum">recursive mutex</a>. If this mutex is a <a href="http://doc.qt.io/qt-5/qmutex.html#RecursionMode-enum">non-recursive mutex</a>, this function will <i>always</i> return false when attempting to lock the mutex recursively.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmutex.html#lock">lock</a>() and <a href="http://doc.qt.io/qt-5/qmutex.html#unlock">unlock</a>().</p></div></p>
+</div><h4 id='method.unlock' class='method'><code>fn <a href='#method.unlock' class='fnname'>unlock</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QMutex::unlock()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qmutex.html#unlock">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unlocks the mutex. Attempting to unlock a mutex in a different thread to the one that locked it results in an error. Unlocking a mutex that is not locked results in undefined behavior.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmutex.html#lock">lock</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/mutex/struct.Mutex.html' title='qt_core::mutex::Mutex'>Mutex</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-111386' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/mutex.rs.html#69-73' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/mutex/struct.Mutex.html' title='qt_core::mutex::Mutex'>Mutex</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/mutex/struct.Mutex.html' title='qt_core::mutex::Mutex'>Mutex</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-111403' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/mutex.rs.html#131-138' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QMutex::~QMutex()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/mutex/struct.Mutex.html' title='qt_core::mutex::Mutex'>Mutex</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-111406' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/mutex.rs.html#140-144' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

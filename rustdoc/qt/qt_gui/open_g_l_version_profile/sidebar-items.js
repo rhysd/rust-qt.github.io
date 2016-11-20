@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["OpenGLVersionProfile","C++ type: <span style='color: green;'>```QOpenGLVersionProfile```</span>"]]});

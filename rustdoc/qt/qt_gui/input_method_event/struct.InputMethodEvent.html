@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `InputMethodEvent` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, InputMethodEvent">
+
+    <title>qt_gui::input_method_event::InputMethodEvent - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>input_method_event</a></p><script>window.sidebarCurrent = {name: 'InputMethodEvent', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>input_method_event</a>::<wbr><a class='struct' href=''>InputMethodEvent</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-81968' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/input_method_event.rs.html#170-172' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct InputMethodEvent {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QInputMethodEvent</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputmethodevent.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qinputmethodevent.html">QInputMethodEvent</a> class provides parameters for input method events.</p>
+<p>Input method events are sent to widgets when an input method is used to enter text into a widget. Input methods are widely used to enter text for languages with non-Latin alphabets.</p>
+<p>Note that when creating custom text editing widgets, the <a href="http://doc.qt.io/qt-5/qt.html#WidgetAttribute-enum">Qt::WA_InputMethodEnabled</a> window attribute must be set explicitly (using the <a href="http://doc.qt.io/qt-5/qwidget.html#setAttribute">QWidget::setAttribute</a>() function) in order to receive input method events.</p>
+<p>The events are of interest to authors of keyboard entry widgets who want to be able to correctly handle languages with complex character input. Text input in such languages is usually a three step process:</p>
+<ol class="1">
+<li><b>Starting to Compose</b><p>When the user presses the first key on a keyboard, an input context is created. This input context will contain a string of the typed characters.</p>
+</li>
+<li><b>Composing</b><p>With every new key pressed, the input method will try to create a matching string for the text typed so far called preedit string. While the input context is active, the user can only move the cursor inside the string belonging to this input context.</p>
+</li>
+<li><b>Completing</b><p>At some point, the user will activate a user interface component (perhaps using a particular key) where they can choose from a number of strings matching the text they have typed so far. The user can either confirm their choice cancel the input; in either case the input context will be closed.</p>
+</li>
+</ol>
+<p><a href="http://doc.qt.io/qt-5/qinputmethodevent.html">QInputMethodEvent</a> models these three stages, and transfers the information needed to correctly render the intermediate result. A <a href="http://doc.qt.io/qt-5/qinputmethodevent.html">QInputMethodEvent</a> has two main parameters: <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#preeditString">preeditString</a>() and <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#commitString">commitString</a>(). The <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#preeditString">preeditString</a>() parameter gives the currently active preedit string. The <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#commitString">commitString</a>() parameter gives a text that should get added to (or replace parts of) the text of the editor widget. It usually is a result of the input operations and has to be inserted to the widgets text directly before the preedit string.</p>
+<p>If the <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#commitString">commitString</a>() should replace parts of the of the text in the editor, <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementLength">replacementLength</a>() will contain the number of characters to be replaced. <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementStart">replacementStart</a>() contains the position at which characters are to be replaced relative from the start of the preedit string.</p>
+<p>A number of attributes control the visual appearance of the preedit string (the visual appearance of text outside the preedit string is controlled by the widget only). The <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#AttributeType-enum">AttributeType</a> enum describes the different attributes that can be set.</p>
+<p>A class implementing <a href="http://doc.qt.io/qt-5/qwidget.html#inputMethodEvent">QWidget::inputMethodEvent</a>() or <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#inputMethodEvent">QGraphicsItem::inputMethodEvent</a>() should at least understand and honor the <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#AttributeType-enum">TextFormat</a> and <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#AttributeType-enum">Cursor</a> attributes.</p>
+<p>Since input methods need to be able to query certain properties from the widget or graphics item, subclasses must also implement <a href="http://doc.qt.io/qt-5/qwidget.html#inputMethodQuery">QWidget::inputMethodQuery</a>() and <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#inputMethodQuery">QGraphicsItem::inputMethodQuery</a>(), respectively.</p>
+<p>When receiving an input method event, the text widget has to performs the following steps:</p>
+<ol class="1">
+<li>If the widget has selected text, the selected text should get removed.</li>
+<li>Remove the text starting at <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementStart">replacementStart</a>() with length <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementLength">replacementLength</a>() and replace it by the <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#commitString">commitString</a>(). If <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementLength">replacementLength</a>() is 0, <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementStart">replacementStart</a>() gives the insertion position for the <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#commitString">commitString</a>().<p>When doing replacement the area of the preedit string is ignored, thus a replacement starting at -1 with a length of 2 will remove the last character before the preedit string and the first character afterwards, and insert the commit string directly before the preedit string.</p>
+<p>If the widget implements undo/redo, this operation gets added to the undo stack.</p>
+</li>
+<li>If there is no current preedit string, insert the <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#preeditString">preeditString</a>() at the current cursor position; otherwise replace the previous <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#preeditString">preeditString</a> with the one received from this event.<p>If the widget implements undo/redo, the <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#preeditString">preeditString</a>() should not influence the undo/redo stack in any way.</p>
+<p>The widget should examine the list of attributes to apply to the preedit string. It has to understand at least the <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#AttributeType-enum">TextFormat</a> and Cursor attributes and render them as specified.</p>
+</li>
+</ol></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/input_method_event/struct.InputMethodEvent.html' title='qt_gui::input_method_event::InputMethodEvent'>InputMethodEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-81973' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/input_method_event.rs.html#180-355' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.accept' class='method'><code>fn <a href='#method.accept' class='fnname'>accept</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QInputMethodEvent::accept()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accept">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the accept flag of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(true).</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p></div></p>
+</div><h4 id='method.attributes' class='method'><code>fn <a href='#method.attributes' class='fnname'>attributes</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_gui/list/struct.ListAttributeRef.html' title='qt_gui::list::ListAttributeRef'>ListAttributeRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QList&lt;QInputMethodEvent::Attribute&gt;&amp; QInputMethodEvent::attributes() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#attributes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the list of attributes passed to the <a href="http://doc.qt.io/qt-5/qinputmethodevent.html">QInputMethodEvent</a> constructor. The attributes control the visual appearance of the preedit string (the visual appearance of text outside the preedit string is controlled by the widget only).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#preeditString">preeditString</a>() and <a href="http://doc.qt.io/qt-5/qinputmethodevent-attribute.html">Attribute</a>.</p></div></p>
+</div><h4 id='method.commit_string' class='method'><code>fn <a href='#method.commit_string' class='fnname'>commit_string</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QString&amp; QInputMethodEvent::commitString() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#commitString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text that should get added to (or replace parts of) the text of the editor widget. It usually is a result of the input operations and has to be inserted to the widgets text directly before the preedit string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#setCommitString">setCommitString</a>(), <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#preeditString">preeditString</a>(), <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementStart">replacementStart</a>(), and <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementLength">replacementLength</a>().</p></div></p>
+</div><h4 id='method.ignore' class='method'><code>fn <a href='#method.ignore' class='fnname'>ignore</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QInputMethodEvent::ignore()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#ignore">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the accept flag parameter of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(false).</p>
+<p>Clearing the accept parameter indicates that the event receiver does not want the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>().</p></div></p>
+</div><h4 id='method.is_accepted' class='method'><code>fn <a href='#method.is_accepted' class='fnname'>is_accepted</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QInputMethodEvent::isAccepted() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/input_method_event/overloading/trait.InputMethodEventNewArgs.html' title='qt_gui::input_method_event::overloading::InputMethodEventNewArgs'>InputMethodEventNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QInputMethodEvent::QInputMethodEvent</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::input_method_event::InputMethodEvent</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::input_method_event::InputMethodEvent&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QInputMethodEvent::QInputMethodEvent()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::input_method_event::InputMethodEvent, cpp_utils::AsStruct)) -&gt; ::input_method_event::InputMethodEvent</code><br>2) <code>fn new((&amp;::input_method_event::InputMethodEvent, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::input_method_event::InputMethodEvent&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QInputMethodEvent::QInputMethodEvent(const QInputMethodEvent&amp; other)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, &amp;::list::ListAttributeRef, cpp_utils::AsStruct)) -&gt; ::input_method_event::InputMethodEvent</code><br>2) <code>fn new((&amp;qt_core::string::String, &amp;::list::ListAttributeRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::input_method_event::InputMethodEvent&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QInputMethodEvent::QInputMethodEvent(const QString&amp; preeditText, const QList&lt;QInputMethodEvent::Attribute&gt;&amp; attributes)</code></span></p>
+</div><h4 id='method.preedit_string' class='method'><code>fn <a href='#method.preedit_string' class='fnname'>preedit_string</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QString&amp; QInputMethodEvent::preeditString() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#preeditString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the preedit text, i.e. the text before the user started editing it.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#commitString">commitString</a>() and <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#attributes">attributes</a>().</p></div></p>
+</div><h4 id='method.register_event_type' class='method'><code>fn <a href='#method.register_event_type' class='fnname'>register_event_type</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/input_method_event/overloading/trait.InputMethodEventRegisterEventTypeArgs.html' title='qt_gui::input_method_event::overloading::InputMethodEventRegisterEventTypeArgs'>InputMethodEventRegisterEventTypeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QInputMethodEvent::registerEventType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn register_event_type(libc::c_int) -&gt; libc::c_int</code><br>2) <code>fn register_event_type(()) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QInputMethodEvent::registerEventType(int hint = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#registerEventType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Registers and returns a custom event type. The <i>hint</i> provided will be used if it is available, otherwise it will return a value between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a> that has not yet been registered. The <i>hint</i> is ignored if its value is not between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a>.</p>
+<p>Returns -1 if all available values are already taken or the program is shutting down.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.replacement_length' class='method'><code>fn <a href='#method.replacement_length' class='fnname'>replacement_length</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QInputMethodEvent::replacementLength() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementLength">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of characters to be replaced in the preedit string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementStart">replacementStart</a>() and <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#setCommitString">setCommitString</a>().</p></div></p>
+</div><h4 id='method.replacement_start' class='method'><code>fn <a href='#method.replacement_start' class='fnname'>replacement_start</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QInputMethodEvent::replacementStart() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementStart">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position at which characters are to be replaced relative from the start of the preedit string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementLength">replacementLength</a>() and <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#setCommitString">setCommitString</a>().</p></div></p>
+</div><h4 id='method.set_accepted' class='method'><code>fn <a href='#method.set_accepted' class='fnname'>set_accepted</a>(&amp;mut self, accepted: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QInputMethodEvent::setAccepted(bool accepted)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.set_commit_string' class='method'><code>fn <a href='#method.set_commit_string' class='fnname'>set_commit_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/input_method_event/overloading/trait.InputMethodEventSetCommitStringArgs.html' title='qt_gui::input_method_event::overloading::InputMethodEventSetCommitStringArgs'>InputMethodEventSetCommitStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QInputMethodEvent::setCommitString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_commit_string(&amp;mut self, &amp;qt_core::string::String) -&gt; ()</code><br>2) <code>fn set_commit_string(&amp;mut self, (&amp;qt_core::string::String, libc::c_int)) -&gt; ()</code><br>3) <code>fn set_commit_string(&amp;mut self, (&amp;qt_core::string::String, libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QInputMethodEvent::setCommitString(const QString&amp; commitString, int replaceFrom = ?, int replaceLength = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#setCommitString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the commit string to <i>commitString</i>.</p>
+<p>The commit string is the text that should get added to (or replace parts of) the text of the editor widget. It usually is a result of the input operations and has to be inserted to the widgets text directly before the preedit string.</p>
+<p>If the commit string should replace parts of the of the text in the editor, <i>replaceLength</i> specifies the number of characters to be replaced. <i>replaceFrom</i> specifies the position at which characters are to be replaced relative from the start of the preedit string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qinputmethodevent.html#commitString">commitString</a>(), <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementStart">replacementStart</a>(), and <a href="http://doc.qt.io/qt-5/qinputmethodevent.html#replacementLength">replacementLength</a>().</p></div></p>
+</div><h4 id='method.spontaneous' class='method'><code>fn <a href='#method.spontaneous' class='fnname'>spontaneous</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QInputMethodEvent::spontaneous() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#spontaneous">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the event originated outside the application (a system event); otherwise returns <code>false</code>.</p>
+<p>The return value of this function is not defined for paint events.</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/event/enum.Type.html' title='qt_core::event::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QEvent::Type QInputMethodEvent::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the event type.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/input_method_event/struct.InputMethodEvent.html' title='qt_gui::input_method_event::InputMethodEvent'>InputMethodEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-81971' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/input_method_event.rs.html#174-178' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/input_method_event/struct.InputMethodEvent.html' title='qt_gui::input_method_event::InputMethodEvent'>InputMethodEvent</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/input_method_event/struct.InputMethodEvent.html' title='qt_gui::input_method_event::InputMethodEvent'>InputMethodEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-82014' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/input_method_event.rs.html#357-364' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QInputMethodEvent::~QInputMethodEvent()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/input_method_event/struct.InputMethodEvent.html' title='qt_gui::input_method_event::InputMethodEvent'>InputMethodEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-82017' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/input_method_event.rs.html#366-370' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

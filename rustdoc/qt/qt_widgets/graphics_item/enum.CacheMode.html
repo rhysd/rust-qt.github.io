@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CacheMode` enum in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CacheMode">
+
+    <title>qt_widgets::graphics_item::CacheMode - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>graphics_item</a></p><script>window.sidebarCurrent = {name: 'CacheMode', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>graphics_item</a>::<wbr><a class='enum' href=''>CacheMode</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-272090' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#12-19' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum CacheMode {
+    No,
+    ItemCoordinate,
+    DeviceCoordinate,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QGraphicsItem::CacheMode</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgraphicsitem.html#CacheMode-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum describes <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a>&#39;s cache modes. Caching is used to speed up rendering by allocating and rendering to an off-screen pixel buffer, which can be reused when the item requires redrawing. For some paint devices, the cache is stored directly in graphics memory, which makes rendering very quick.</p></p>
+
+<p>This enum was introduced or modified in  Qt 4.4.</p>
+
+<p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setCacheMode">QGraphicsItem::setCacheMode</a>().</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.No' class='variant'><code>No</code></span><div class='docblock'><p>The default; all item caching is disabled. <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#paint">QGraphicsItem::paint</a>() is called every time the item needs redrawing. (C++ enum variant: <span style='color: green;'><code>NoCache = 0</code></span>)</p>
+</div><span id='variant.ItemCoordinate' class='variant'><code>ItemCoordinate</code></span><div class='docblock'><p>Caching is enabled for the item&#39;s logical (local) coordinate system. <a href="http://doc.qt.io/qt-5/qgraphicsitem.html">QGraphicsItem</a> creates an off-screen pixel buffer with a configurable size / resolution that you can pass to <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setCacheMode">QGraphicsItem::setCacheMode</a>(). Rendering quality will typically degrade, depending on the resolution of the cache and the item transformation. The first time the item is redrawn, it will render itself into the cache, and the cache is then reused for every subsequent expose. The cache is also reused as the item is transformed. To adjust the resolution of the cache, you can call <a href="http://doc.qt.io/qt-5/qgraphicsitem.html#setCacheMode">setCacheMode</a>() again. (C++ enum variant: <span style='color: green;'><code>ItemCoordinateCache = 1</code></span>)</p>
+</div><span id='variant.DeviceCoordinate' class='variant'><code>DeviceCoordinate</code></span><div class='docblock'><p>Caching is enabled at the paint device level, in device coordinates. This mode is for items that can move, but are not rotated, scaled or sheared. If the item is transformed directly or indirectly, the cache will be regenerated automatically. Unlike ItemCoordinateCacheMode, DeviceCoordinateCache always renders at maximum quality. (C++ enum variant: <span style='color: green;'><code>DeviceCoordinateCache = 2</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/abstract_graphics_shape_item/overloading/trait.AbstractGraphicsShapeItemSetCacheModeArgs.html' title='qt_widgets::abstract_graphics_shape_item::overloading::AbstractGraphicsShapeItemSetCacheModeArgs'>AbstractGraphicsShapeItemSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-154411' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/abstract_graphics_shape_item.rs.html#4543-4548' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_widgets/abstract_graphics_shape_item/overloading/trait.AbstractGraphicsShapeItemSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/abstract_graphics_shape_item/struct.AbstractGraphicsShapeItem.html' title='qt_widgets::abstract_graphics_shape_item::AbstractGraphicsShapeItem'>AbstractGraphicsShapeItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_ellipse_item/overloading/trait.GraphicsEllipseItemSetCacheModeArgs.html' title='qt_widgets::graphics_ellipse_item::overloading::GraphicsEllipseItemSetCacheModeArgs'>GraphicsEllipseItemSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-271153' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_ellipse_item.rs.html#4746-4751' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_widgets/graphics_ellipse_item/overloading/trait.GraphicsEllipseItemSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_ellipse_item/struct.GraphicsEllipseItem.html' title='qt_widgets::graphics_ellipse_item::GraphicsEllipseItem'>GraphicsEllipseItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_item/overloading/trait.GraphicsItemSetCacheModeArgs.html' title='qt_widgets::graphics_item::overloading::GraphicsItemSetCacheModeArgs'>GraphicsItemSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-274360' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#4578-4585' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_widgets/graphics_item/overloading/trait.GraphicsItemSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_item/struct.GraphicsItem.html' title='qt_widgets::graphics_item::GraphicsItem'>GraphicsItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272071' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#10' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272074' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#10' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272077' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#10' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-272083' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item.rs.html#10' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_item_group/overloading/trait.GraphicsItemGroupSetCacheModeArgs.html' title='qt_widgets::graphics_item_group::overloading::GraphicsItemGroupSetCacheModeArgs'>GraphicsItemGroupSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-277504' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_item_group.rs.html#4397-4402' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_widgets/graphics_item_group/overloading/trait.GraphicsItemGroupSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_item_group/struct.GraphicsItemGroup.html' title='qt_widgets::graphics_item_group::GraphicsItemGroup'>GraphicsItemGroup</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_line_item/overloading/trait.GraphicsLineItemSetCacheModeArgs.html' title='qt_widgets::graphics_line_item::overloading::GraphicsLineItemSetCacheModeArgs'>GraphicsLineItemSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-280663' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_line_item.rs.html#4572-4577' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_widgets/graphics_line_item/overloading/trait.GraphicsLineItemSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_line_item/struct.GraphicsLineItem.html' title='qt_widgets::graphics_line_item::GraphicsLineItem'>GraphicsLineItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_object/overloading/trait.GraphicsObjectSetCacheModeArgs.html' title='qt_widgets::graphics_object::overloading::GraphicsObjectSetCacheModeArgs'>GraphicsObjectSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-283976' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_object.rs.html#5585-5593' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_widgets/graphics_object/overloading/trait.GraphicsObjectSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_object/struct.GraphicsObject.html' title='qt_widgets::graphics_object::GraphicsObject'>GraphicsObject</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_path_item/overloading/trait.GraphicsPathItemSetCacheModeArgs.html' title='qt_widgets::graphics_path_item::overloading::GraphicsPathItemSetCacheModeArgs'>GraphicsPathItemSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-287031' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_path_item.rs.html#4539-4544' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-6' class='method'><code>fn <a href='../../qt_widgets/graphics_path_item/overloading/trait.GraphicsPathItemSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_path_item/struct.GraphicsPathItem.html' title='qt_widgets::graphics_path_item::GraphicsPathItem'>GraphicsPathItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_pixmap_item/overloading/trait.GraphicsPixmapItemSetCacheModeArgs.html' title='qt_widgets::graphics_pixmap_item::overloading::GraphicsPixmapItemSetCacheModeArgs'>GraphicsPixmapItemSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-289418' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_pixmap_item.rs.html#4601-4606' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-7' class='method'><code>fn <a href='../../qt_widgets/graphics_pixmap_item/overloading/trait.GraphicsPixmapItemSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_pixmap_item/struct.GraphicsPixmapItem.html' title='qt_widgets::graphics_pixmap_item::GraphicsPixmapItem'>GraphicsPixmapItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_polygon_item/overloading/trait.GraphicsPolygonItemSetCacheModeArgs.html' title='qt_widgets::graphics_polygon_item::overloading::GraphicsPolygonItemSetCacheModeArgs'>GraphicsPolygonItemSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-291838' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_polygon_item.rs.html#4631-4636' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-8' class='method'><code>fn <a href='../../qt_widgets/graphics_polygon_item/overloading/trait.GraphicsPolygonItemSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_polygon_item/struct.GraphicsPolygonItem.html' title='qt_widgets::graphics_polygon_item::GraphicsPolygonItem'>GraphicsPolygonItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_proxy_widget/overloading/trait.GraphicsProxyWidgetSetCacheModeArgs.html' title='qt_widgets::graphics_proxy_widget::overloading::GraphicsProxyWidgetSetCacheModeArgs'>GraphicsProxyWidgetSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-295135' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_proxy_widget.rs.html#7284-7289' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-9' class='method'><code>fn <a href='../../qt_widgets/graphics_proxy_widget/overloading/trait.GraphicsProxyWidgetSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_proxy_widget/struct.GraphicsProxyWidget.html' title='qt_widgets::graphics_proxy_widget::GraphicsProxyWidget'>GraphicsProxyWidget</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_rect_item/overloading/trait.GraphicsRectItemSetCacheModeArgs.html' title='qt_widgets::graphics_rect_item::overloading::GraphicsRectItemSetCacheModeArgs'>GraphicsRectItemSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-297868' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_rect_item.rs.html#4626-4631' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-10' class='method'><code>fn <a href='../../qt_widgets/graphics_rect_item/overloading/trait.GraphicsRectItemSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_rect_item/struct.GraphicsRectItem.html' title='qt_widgets::graphics_rect_item::GraphicsRectItem'>GraphicsRectItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_simple_text_item/overloading/trait.GraphicsSimpleTextItemSetCacheModeArgs.html' title='qt_widgets::graphics_simple_text_item::overloading::GraphicsSimpleTextItemSetCacheModeArgs'>GraphicsSimpleTextItemSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-305058' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_simple_text_item.rs.html#4596-4601' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-11' class='method'><code>fn <a href='../../qt_widgets/graphics_simple_text_item/overloading/trait.GraphicsSimpleTextItemSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_simple_text_item/struct.GraphicsSimpleTextItem.html' title='qt_widgets::graphics_simple_text_item::GraphicsSimpleTextItem'>GraphicsSimpleTextItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_text_item/overloading/trait.GraphicsTextItemSetCacheModeArgs.html' title='qt_widgets::graphics_text_item::overloading::GraphicsTextItemSetCacheModeArgs'>GraphicsTextItemSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-307929' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_text_item.rs.html#5997-6002' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-12' class='method'><code>fn <a href='../../qt_widgets/graphics_text_item/overloading/trait.GraphicsTextItemSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_text_item/struct.GraphicsTextItem.html' title='qt_widgets::graphics_text_item::GraphicsTextItem'>GraphicsTextItem</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/graphics_widget/overloading/trait.GraphicsWidgetSetCacheModeArgs.html' title='qt_widgets::graphics_widget::overloading::GraphicsWidgetSetCacheModeArgs'>GraphicsWidgetSetCacheModeArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_widgets/graphics_item/enum.CacheMode.html' title='qt_widgets::graphics_item::CacheMode'>CacheMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-315903' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/graphics_widget.rs.html#7252-7260' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-13' class='method'><code>fn <a href='../../qt_widgets/graphics_widget/overloading/trait.GraphicsWidgetSetCacheModeArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/graphics_widget/struct.GraphicsWidget.html' title='qt_widgets::graphics_widget::GraphicsWidget'>GraphicsWidget</a>)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

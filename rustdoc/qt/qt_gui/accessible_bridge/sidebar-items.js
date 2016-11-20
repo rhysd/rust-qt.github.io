@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AccessibleBridge","C++ type: <span style='color: green;'>```QAccessibleBridge```</span>"]]});

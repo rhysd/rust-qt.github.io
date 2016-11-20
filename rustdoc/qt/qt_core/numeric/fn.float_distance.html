@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `float_distance` fn in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, float_distance">
+
+    <title>qt_core::numeric::float_distance - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>numeric</a></p><script>window.sidebarCurrent = {name: 'float_distance', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content fn">
+<h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>numeric</a>::<wbr><a class='fn' href=''>float_distance</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-111581' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/numeric.rs.html#36-40' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn float_distance&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/numeric/overloading/trait.FloatDistanceArgs.html' title='qt_core::numeric::overloading::FloatDistanceArgs'>FloatDistanceArgs</a></span></pre><div class='docblock'><p>C++ method: <span style='color: green;'><code>qFloatDistance</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn float_distance((libc::c_float, libc::c_float)) -&gt; u32</code><br>
+C++ method: <span style='color: green;'><code>quint32 qFloatDistance(float a, float b)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtglobal.html#qFloatDistance">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of representable floating-point numbers between <i>a</i> and <i>b</i>.</p>
+<p>This function provides an alternative way of doing approximated comparisons of floating-point numbers similar to <a href="http://doc.qt.io/qt-5/qtglobal.html#qFuzzyCompare">qFuzzyCompare</a>(). However, it returns the distance between two numbers, which gives the caller a possibility to choose the accepted error. Errors are relative, so for instance the distance between 1.0E-5 and 1.00001E-5 will give 110, while the distance between 1.0E36 and 1.00001E36 will give 127.</p>
+<p>This function is useful if a floating point comparison requires a certain precision. Therefore, if <i>a</i> and <i>b</i> are equal it will return 0. The maximum value it will return for 32-bit floating point numbers is 4,278,190,078. This is the distance between <code>-FLT_MAX</code> and <code>+FLT_MAX</code>.</p>
+<p>The function does not give meaningful results if any of the arguments are <code>Infinite</code> or <code>NaN</code>. You can check for this by calling <a href="http://doc.qt.io/qt-5/qtglobal.html#qIsFinite">qIsFinite</a>().</p>
+<p>The return value can be considered as the &quot;error&quot;, so if you for instance want to compare two 32-bit floating point numbers and all you need is an approximated 24-bit precision, you can use this function like this:</p>
+<pre class="cpp"><span class="keyword">if</span> (qFloatDistance(a<span class="operator">,</span> b) <span class="operator">&lt;</span> (<span class="number">1</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="number">7</span>)) {   <span class="comment">// The last 7 bits are not</span>
+&#32;                                       <span class="comment">// significant</span>
+&#32;   <span class="comment">// precise enough</span>
+}</pre>
+<p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtglobal.html#qFuzzyCompare">qFuzzyCompare</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn float_distance((libc::c_double, libc::c_double)) -&gt; u64</code><br>
+C++ method: <span style='color: green;'><code>quint64 qFloatDistance(double a, double b)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtglobal.html#qFloatDistance-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of representable floating-point numbers between <i>a</i> and <i>b</i>.</p>
+<p>This function serves the same purpose as <code>qFloatDistance(float, float)</code>, but returns the distance between two <code>double</code> numbers. Since the range is larger than for two <code>float</code> numbers (<code>[-DBL_MAX,DBL_MAX]</code>), the return type is quint64.</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtglobal.html#qFuzzyCompare">qFuzzyCompare</a>().</p></div></p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

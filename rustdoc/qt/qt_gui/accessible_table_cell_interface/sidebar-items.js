@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AccessibleTableCellInterface","C++ type: <span style='color: green;'>```QAccessibleTableCellInterface```</span>"]]});

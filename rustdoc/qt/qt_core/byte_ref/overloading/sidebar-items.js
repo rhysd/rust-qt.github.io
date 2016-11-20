@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ByteRefOpAssignArgs","This trait represents a set of arguments accepted by ByteRef::op_assign method."]]});

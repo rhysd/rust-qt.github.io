@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `StaticText` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, StaticText">
+
+    <title>qt_gui::static_text::StaticText - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>static_text</a></p><script>window.sidebarCurrent = {name: 'StaticText', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>static_text</a>::<wbr><a class='struct' href=''>StaticText</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-150307' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/static_text.rs.html#45-47' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct StaticText {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QStaticText</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> class enables optimized drawing of text when the text and its layout is updated rarely.</p>
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> provides a way to cache layout data for a block of text so that it can be drawn more efficiently than by using <a href="http://doc.qt.io/qt-5/qpainter.html#drawText">QPainter::drawText</a>() in which the layout information is recalculated with every call.</p>
+<p>The class primarily provides an optimization for cases where the text, its font and the transformations on the painter are static over several paint events. If the text or its layout is changed for every iteration, <a href="http://doc.qt.io/qt-5/qpainter.html#drawText">QPainter::drawText</a>() is the more efficient alternative, since the static text&#39;s layout would have to be recalculated to take the new state into consideration.</p>
+<p>Translating the painter will not cause the layout of the text to be recalculated, but will cause a very small performance impact on drawStaticText(). Altering any other parts of the painter&#39;s transformation or the painter&#39;s font will cause the layout of the static text to be recalculated. This should be avoided as often as possible to maximize the performance benefit of using <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>.</p>
+<p>In addition, only affine transformations are supported by drawStaticText(). Calling drawStaticText() on a projected painter will perform slightly worse than using the regular drawText() call, so this should be avoided.</p>
+<pre class="cpp"><span class="keyword">class</span> MyWidget: <span class="keyword">public</span> <span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a></span>
+{
+<span class="keyword">public</span>:
+&#32;   MyWidget(<span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a></span> <span class="operator">*</span>parent <span class="operator">=</span> <span class="number">0</span>) : <span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a></span>(parent)<span class="operator">,</span> m_staticText(<span class="string">&quot;This is static text&quot;</span>)</p>
+
+<p><span class="keyword">protected</span>:
+&#32;   <span class="type">void</span> paintEvent(<span class="type"><a href="http://doc.qt.io/qt-5/qpaintevent.html">QPaintEvent</a></span> <span class="operator">*</span>)
+&#32;   {
+&#32;       <span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+&#32;       painter<span class="operator">.</span>drawStaticText(<span class="number">0</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> m_staticText);
+&#32;   }</p>
+
+<p><span class="keyword">private</span>:
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qstatictext.html#QStaticText">QStaticText</a></span> m_staticText;
+};</pre>
+<p>The <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> class can be used to mimic the behavior of <a href="http://doc.qt.io/qt-5/qpainter.html#drawText">QPainter::drawText</a>() to a specific point with no boundaries, and also when <a href="http://doc.qt.io/qt-5/qpainter.html#drawText">QPainter::drawText</a>() is called with a bounding rectangle.</p>
+<p>If a bounding rectangle is not required, create a <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> object without setting a preferred text width. The text will then occupy a single line.</p>
+<p>If you set a text width on the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> object, this will bound the text. The text will be formatted so that no line exceeds the given width. The text width set for <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> will not automatically be used for clipping. To achieve clipping in addition to line breaks, use <a href="http://doc.qt.io/qt-5/qpainter.html#setClipRect">QPainter::setClipRect</a>(). The position of the text is decided by the argument passed to <a href="http://doc.qt.io/qt-5/qpainter.html#drawStaticText">QPainter::drawStaticText</a>() and can change from call to call with a minimal impact on performance.</p>
+<p>For extra convenience, it is possible to apply formatting to the text using the HTML subset supported by <a href="http://doc.qt.io/qt-5/qtextdocument.html">QTextDocument</a>. <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> will attempt to guess the format of the input text using <a href="http://doc.qt.io/qt-5/qt.html#mightBeRichText">Qt::mightBeRichText</a>(), and interpret it as rich text if this function returns <code>true</code>. To force <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> to display its contents as either plain text or rich text, use the function <a href="http://doc.qt.io/qt-5/qstatictext.html#setTextFormat">QStaticText::setTextFormat</a>() and pass in, respectively, <a href="http://doc.qt.io/qt-5/qt.html#TextFormat-enum">Qt::PlainText</a> and <a href="http://doc.qt.io/qt-5/qt.html#TextFormat-enum">Qt::RichText</a>.</p>
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> can only represent text, so only HTML tags which alter the layout or appearance of the text will be respected. Adding an image to the input HTML, for instance, will cause the image to be included as part of the layout, affecting the positions of the text glyphs, but it will not be displayed. The result will be an empty area the size of the image in the output. Similarly, using tables will cause the text to be laid out in table format, but the borders will not be drawn.</p>
+<p>If it&#39;s the first time the static text is drawn, or if the static text, or the painter&#39;s font has been altered since the last time it was drawn, the text&#39;s layout has to be recalculated. On some paint engines, changing the matrix of the painter will also cause the layout to be recalculated. In particular, this will happen for any engine except for the OpenGL2 paint engine. Recalculating the layout will impose an overhead on the <a href="http://doc.qt.io/qt-5/qpainter.html#drawStaticText">QPainter::drawStaticText</a>() call where it occurs. To avoid this overhead in the paint event, you can call <a href="http://doc.qt.io/qt-5/qstatictext.html#prepare">prepare</a>() ahead of time to ensure that the layout is calculated.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/static_text/struct.StaticText.html' title='qt_gui::static_text::StaticText'>StaticText</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-150312' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/static_text.rs.html#55-261' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/static_text/overloading/trait.StaticTextNewArgs.html' title='qt_gui::static_text::overloading::StaticTextNewArgs'>StaticTextNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStaticText::QStaticText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::static_text::StaticText</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::static_text::StaticText&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStaticText::QStaticText()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::static_text::StaticText, cpp_utils::AsStruct)) -&gt; ::static_text::StaticText</code><br>2) <code>fn new((&amp;::static_text::StaticText, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::static_text::StaticText&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStaticText::QStaticText(const QStaticText&amp; other)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::static_text::StaticText</code><br>2) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::static_text::StaticText&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStaticText::QStaticText(const QString&amp; text)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, arg1: &amp;'l1 <a class='struct' href='../../qt_gui/static_text/struct.StaticText.html' title='qt_gui::static_text::StaticText'>StaticText</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/static_text/struct.StaticText.html' title='qt_gui::static_text::StaticText'>StaticText</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStaticText&amp; QStaticText::operator=(const QStaticText&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns <i>other</i> to this <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_gui/static_text/struct.StaticText.html' title='qt_gui::static_text::StaticText'>StaticText</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStaticText::operator==(const QStaticText&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares <i>other</i> to this <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>. Returns <code>true</code> if the texts, fonts and text widths are equal.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_gui/static_text/struct.StaticText.html' title='qt_gui::static_text::StaticText'>StaticText</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStaticText::operator!=(const QStaticText&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Compares <i>other</i> to this <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>. Returns <code>true</code> if the texts, fonts or maximum sizes are different.</p></div></p>
+</div><h4 id='method.performance_hint' class='method'><code>fn <a href='#method.performance_hint' class='fnname'>performance_hint</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/static_text/enum.PerformanceHint.html' title='qt_gui::static_text::PerformanceHint'>PerformanceHint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStaticText::PerformanceHint QStaticText::performanceHint() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#performanceHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns which performance hint is set for the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#setPerformanceHint">setPerformanceHint</a>().</p></div></p>
+</div><h4 id='method.prepare' class='method'><code>fn <a href='#method.prepare' class='fnname'>prepare</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/static_text/overloading/trait.StaticTextPrepareArgs.html' title='qt_gui::static_text::overloading::StaticTextPrepareArgs'>StaticTextPrepareArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStaticText::prepare</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn prepare(&amp;mut self, &amp;::transform::Transform) -&gt; ()</code><br>2) <code>fn prepare(&amp;mut self, (&amp;::transform::Transform, &amp;::font::Font)) -&gt; ()</code><br>3) <code>fn prepare(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QStaticText::prepare(const QTransform&amp; matrix = ?, const QFont&amp; font = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#prepare">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Prepares the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> object for being painted with the given <i>matrix</i> and the given <i>font</i> to avoid overhead when the actual drawStaticText() call is made.</p>
+<p>When drawStaticText() is called, the layout of the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> will be recalculated if any part of the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> object has changed since the last time it was drawn. It will also be recalculated if the painter&#39;s font is not the same as when the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> was last drawn, or, on any other paint engine than the OpenGL2 engine, if the painter&#39;s matrix has been altered since the static text was last drawn.</p>
+<p>To avoid the overhead of creating the layout the first time you draw the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> after making changes, you can use the prepare() function and pass in the <i>matrix</i> and <i>font</i> you expect to use when drawing the text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainter.html#setFont">QPainter::setFont</a>() and <a href="http://doc.qt.io/qt-5/qpainter-obsolete.html#setMatrix">QPainter::setMatrix</a>().</p></div></p>
+</div><h4 id='method.set_performance_hint' class='method'><code>fn <a href='#method.set_performance_hint' class='fnname'>set_performance_hint</a>(&amp;mut self, performance_hint: <a class='enum' href='../../qt_gui/static_text/enum.PerformanceHint.html' title='qt_gui::static_text::PerformanceHint'>PerformanceHint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStaticText::setPerformanceHint(QStaticText::PerformanceHint performanceHint)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#setPerformanceHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the performance hint of the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> according to the <i>performanceHint</i> provided. The <i>performanceHint</i> is used to customize how much caching is done internally to improve performance.</p>
+<p>The default is <a href="http://doc.qt.io/qt-5/qstatictext.html#PerformanceHint-enum">QStaticText::ModerateCaching</a>.</p>
+<p><b>Note: </b>This function will cause the layout of the text to require recalculation.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#performanceHint">performanceHint</a>().</p></div></p>
+</div><h4 id='method.set_text' class='method'><code>fn <a href='#method.set_text' class='fnname'>set_text</a>(&amp;mut self, text: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStaticText::setText(const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#setText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the text of the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> to <i>text</i>.</p>
+<p><b>Note: </b>This function will cause the layout of the text to require recalculation.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#text">text</a>().</p></div></p>
+</div><h4 id='method.set_text_format' class='method'><code>fn <a href='#method.set_text_format' class='fnname'>set_text_format</a>(&amp;mut self, text_format: <a class='enum' href='../../qt_core/qt/enum.TextFormat.html' title='qt_core::qt::TextFormat'>TextFormat</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStaticText::setTextFormat(Qt::TextFormat textFormat)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#setTextFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the text format of the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> to <i>textFormat</i>. If <i>textFormat</i> is set to <a href="http://doc.qt.io/qt-5/qt.html#TextFormat-enum">Qt::AutoText</a> (the default), the format of the text will try to be determined using the function <a href="http://doc.qt.io/qt-5/qt.html#mightBeRichText">Qt::mightBeRichText</a>(). If the text format is <a href="http://doc.qt.io/qt-5/qt.html#TextFormat-enum">Qt::PlainText</a>, then the text will be displayed as is, whereas it will be interpreted as HTML if the format is <a href="http://doc.qt.io/qt-5/qt.html#TextFormat-enum">Qt::RichText</a>. HTML tags that alter the font of the text, its color, or its layout are supported by <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>.</p>
+<p><b>Note: </b>This function will cause the layout of the text to require recalculation.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#textFormat">textFormat</a>(), <a href="http://doc.qt.io/qt-5/qstatictext.html#setText">setText</a>(), and <a href="http://doc.qt.io/qt-5/qstatictext.html#text">text</a>().</p></div></p>
+</div><h4 id='method.set_text_option' class='method'><code>fn <a href='#method.set_text_option' class='fnname'>set_text_option</a>(&amp;mut self, text_option: &amp;<a class='struct' href='../../qt_gui/text_option/struct.TextOption.html' title='qt_gui::text_option::TextOption'>TextOption</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStaticText::setTextOption(const QTextOption&amp; textOption)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#setTextOption">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the text option structure that controls the layout process to the given <i>textOption</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#textOption">textOption</a>().</p></div></p>
+</div><h4 id='method.set_text_width' class='method'><code>fn <a href='#method.set_text_width' class='fnname'>set_text_width</a>(&amp;mut self, text_width: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStaticText::setTextWidth(double textWidth)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#setTextWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the preferred width for this <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>. If the text is wider than the specified width, it will be broken into multiple lines and grow vertically. If the text cannot be split into multiple lines, it will be larger than the specified <i>textWidth</i>.</p>
+<p>Setting the preferred text width to a negative number will cause the text to be unbounded.</p>
+<p>Use <a href="http://doc.qt.io/qt-5/qstatictext.html#size">size</a>() to get the actual size of the text.</p>
+<p><b>Note: </b>This function will cause the layout of the text to require recalculation.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#textWidth">textWidth</a>() and <a href="http://doc.qt.io/qt-5/qstatictext.html#size">size</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/static_text/overloading/trait.StaticTextSizeArgs.html' title='qt_gui::static_text::overloading::StaticTextSizeArgs'>StaticTextSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStaticText::size</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size_f::SizeF&gt;</code><br>2) <code>fn size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size_f::SizeF</code><br>
+C++ method: <span style='color: green;'><code>QSizeF QStaticText::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the bounding rect for this <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#textWidth">textWidth</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/static_text/struct.StaticText.html' title='qt_gui::static_text::StaticText'>StaticText</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStaticText::swap(QStaticText&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this static text instance with <i>other</i>. This function is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/static_text/overloading/trait.StaticTextTextArgs.html' title='qt_gui::static_text::overloading::StaticTextTextArgs'>StaticTextTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStaticText::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStaticText::text() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text of the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#setText">setText</a>().</p></div></p>
+</div><h4 id='method.text_format' class='method'><code>fn <a href='#method.text_format' class='fnname'>text_format</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.TextFormat.html' title='qt_core::qt::TextFormat'>TextFormat</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::TextFormat QStaticText::textFormat() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#textFormat">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text format of the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#setTextFormat">setTextFormat</a>(), <a href="http://doc.qt.io/qt-5/qstatictext.html#setText">setText</a>(), and <a href="http://doc.qt.io/qt-5/qstatictext.html#text">text</a>().</p></div></p>
+</div><h4 id='method.text_option' class='method'><code>fn <a href='#method.text_option' class='fnname'>text_option</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/static_text/overloading/trait.StaticTextTextOptionArgs.html' title='qt_gui::static_text::overloading::StaticTextTextOptionArgs'>StaticTextTextOptionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStaticText::textOption</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text_option(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::text_option::TextOption&gt;</code><br>2) <code>fn text_option(&amp;self, cpp_utils::AsStruct) -&gt; ::text_option::TextOption</code><br>
+C++ method: <span style='color: green;'><code>QTextOption QStaticText::textOption() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#textOption">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current text option used to control the layout process.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#setTextOption">setTextOption</a>().</p></div></p>
+</div><h4 id='method.text_width' class='method'><code>fn <a href='#method.text_width' class='fnname'>text_width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QStaticText::textWidth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#textWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the preferred width for this <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstatictext.html#setTextWidth">setTextWidth</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/static_text/struct.StaticText.html' title='qt_gui::static_text::StaticText'>StaticText</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-150310' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/static_text.rs.html#49-53' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/static_text/struct.StaticText.html' title='qt_gui::static_text::StaticText'>StaticText</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/static_text/struct.StaticText.html' title='qt_gui::static_text::StaticText'>StaticText</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-150372' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/static_text.rs.html#263-270' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QStaticText::~QStaticText()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstatictext.html#dtor.QStaticText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a>.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/static_text/struct.StaticText.html' title='qt_gui::static_text::StaticText'>StaticText</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-150375' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/static_text.rs.html#272-276' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

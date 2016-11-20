@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Color","C++ type: <span style='color: green;'>```QMapNodeBase::Color```</span>"]],"struct":[["MapNodeBase","C++ type: <span style='color: green;'>```QMapNodeBase```</span>"]]});

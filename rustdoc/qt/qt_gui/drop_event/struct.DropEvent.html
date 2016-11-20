@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DropEvent` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DropEvent">
+
+    <title>qt_gui::drop_event::DropEvent - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>drop_event</a></p><script>window.sidebarCurrent = {name: 'DropEvent', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>drop_event</a>::<wbr><a class='struct' href=''>DropEvent</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-69816' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/drop_event.rs.html#12-14' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct DropEvent {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QDropEvent</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qdropevent.html">QDropEvent</a> class provides an event which is sent when a drag and drop action is completed.</p>
+<p>When a widget <a href="http://doc.qt.io/qt-5/qwidget.html#acceptDrops-prop">accepts drop events</a>, it will receive this event if it has accepted the most recent <a href="http://doc.qt.io/qt-5/qdragenterevent.html">QDragEnterEvent</a> or <a href="http://doc.qt.io/qt-5/qdragmoveevent.html">QDragMoveEvent</a> sent to it.</p>
+<p>The drop event contains a proposed action, available from <a href="http://doc.qt.io/qt-5/qdropevent.html#proposedAction">proposedAction</a>(), for the widget to either accept or ignore. If the action can be handled by the widget, you should call the <a href="http://doc.qt.io/qt-5/qdropevent.html#acceptProposedAction">acceptProposedAction</a>() function. Since the proposed action can be a combination of <a href="http://doc.qt.io/qt-5/qt.html#DropAction-enum">Qt::DropAction</a> values, it may be useful to either select one of these values as a default action or ask the user to select their preferred action.</p>
+<p>If the proposed drop action is not suitable, perhaps because your custom widget does not support that action, you can replace it with any of the <a href="http://doc.qt.io/qt-5/qdropevent.html#possibleActions">possible drop actions</a> by calling <a href="http://doc.qt.io/qt-5/qdropevent.html#setDropAction">setDropAction</a>() with your preferred action. If you set a value that is not present in the bitwise OR combination of values returned by <a href="http://doc.qt.io/qt-5/qdropevent.html#possibleActions">possibleActions</a>(), the default copy action will be used. Once a replacement drop action has been set, call <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>() instead of <a href="http://doc.qt.io/qt-5/qdropevent.html#acceptProposedAction">acceptProposedAction</a>() to complete the drop operation.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qdropevent.html#mimeData">mimeData</a>() function provides the data dropped on the widget in a <a href="http://doc.qt.io/qt-5/qmimedata.html">QMimeData</a> object. This contains information about the MIME type of the data in addition to the data itself.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/drop_event/struct.DropEvent.html' title='qt_gui::drop_event::DropEvent'>DropEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69821' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/drop_event.rs.html#22-208' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.accept' class='method'><code>fn <a href='#method.accept' class='fnname'>accept</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDropEvent::accept()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accept">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the accept flag of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(true).</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p></div></p>
+</div><h4 id='method.accept_proposed_action' class='method'><code>fn <a href='#method.accept_proposed_action' class='fnname'>accept_proposed_action</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDropEvent::acceptProposedAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#acceptProposedAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the drop action to be the proposed action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdropevent.html#setDropAction">setDropAction</a>(), <a href="http://doc.qt.io/qt-5/qdropevent.html#proposedAction">proposedAction</a>(), and <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>().</p></div></p>
+</div><h4 id='method.drop_action' class='method'><code>fn <a href='#method.drop_action' class='fnname'>drop_action</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.DropAction.html' title='qt_core::qt::DropAction'>DropAction</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::DropAction QDropEvent::dropAction() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#dropAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the action to be performed on the data by the target. This may be different from the action supplied in <a href="http://doc.qt.io/qt-5/qdropevent.html#proposedAction">proposedAction</a>() if you have called <a href="http://doc.qt.io/qt-5/qdropevent.html#setDropAction">setDropAction</a>() to explicitly choose a drop action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdropevent.html#setDropAction">setDropAction</a>().</p></div></p>
+</div><h4 id='method.ignore' class='method'><code>fn <a href='#method.ignore' class='fnname'>ignore</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDropEvent::ignore()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#ignore">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the accept flag parameter of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(false).</p>
+<p>Clearing the accept parameter indicates that the event receiver does not want the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>().</p></div></p>
+</div><h4 id='method.is_accepted' class='method'><code>fn <a href='#method.is_accepted' class='fnname'>is_accepted</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDropEvent::isAccepted() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.keyboard_modifiers' class='method'><code>fn <a href='#method.keyboard_modifiers' class='fnname'>keyboard_modifiers</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.KeyboardModifier.html' title='qt_core::qt::KeyboardModifier'>KeyboardModifier</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::KeyboardModifier&gt; QDropEvent::keyboardModifiers() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#keyboardModifiers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the modifier keys that are pressed.</p></div></p>
+</div><h4 id='method.mime_data' class='method'><code>fn <a href='#method.mime_data' class='fnname'>mime_data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/mime_data/struct.MimeData.html' title='qt_core::mime_data::MimeData'>MimeData</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QMimeData* QDropEvent::mimeData() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#mimeData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the data that was dropped on the widget and its associated MIME type information.</p></div></p>
+</div><h4 id='method.mouse_buttons' class='method'><code>fn <a href='#method.mouse_buttons' class='fnname'>mouse_buttons</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.MouseButton.html' title='qt_core::qt::MouseButton'>MouseButton</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::MouseButton&gt; QDropEvent::mouseButtons() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#mouseButtons">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the mouse buttons that are pressed..</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/drop_event/overloading/trait.DropEventNewArgs.html' title='qt_gui::drop_event::overloading::DropEventNewArgs'>DropEventNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDropEvent::QDropEvent</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::point_f::PointF, qt_core::flags::Flags&lt;qt_core::qt::DropAction&gt;, *const qt_core::mime_data::MimeData, qt_core::flags::Flags&lt;qt_core::qt::MouseButton&gt;, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, cpp_utils::AsStruct)) -&gt; ::drop_event::DropEvent</code><br>2) <code>fn new((&amp;qt_core::point_f::PointF, qt_core::flags::Flags&lt;qt_core::qt::DropAction&gt;, *const qt_core::mime_data::MimeData, qt_core::flags::Flags&lt;qt_core::qt::MouseButton&gt;, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, qt_core::event::Type, cpp_utils::AsStruct)) -&gt; ::drop_event::DropEvent</code><br>3) <code>fn new((&amp;qt_core::point_f::PointF, qt_core::flags::Flags&lt;qt_core::qt::DropAction&gt;, *const qt_core::mime_data::MimeData, qt_core::flags::Flags&lt;qt_core::qt::MouseButton&gt;, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::drop_event::DropEvent&gt;</code><br>4) <code>fn new((&amp;qt_core::point_f::PointF, qt_core::flags::Flags&lt;qt_core::qt::DropAction&gt;, *const qt_core::mime_data::MimeData, qt_core::flags::Flags&lt;qt_core::qt::MouseButton&gt;, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, qt_core::event::Type, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::drop_event::DropEvent&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QDropEvent::QDropEvent(const QPointF&amp; pos, QFlags&lt;Qt::DropAction&gt; actions, const QMimeData* data, QFlags&lt;Qt::MouseButton&gt; buttons, QFlags&lt;Qt::KeyboardModifier&gt; modifiers, QEvent::Type type = ?)</code></span></p>
+</div><h4 id='method.pos' class='method'><code>fn <a href='#method.pos' class='fnname'>pos</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/drop_event/overloading/trait.DropEventPosArgs.html' title='qt_gui::drop_event::overloading::DropEventPosArgs'>DropEventPosArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDropEvent::pos</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn pos(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::point::Point&gt;</code><br>2) <code>fn pos(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint QDropEvent::pos() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#pos">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position where the drop was made.</p></div></p>
+</div><h4 id='method.pos_f' class='method'><code>fn <a href='#method.pos_f' class='fnname'>pos_f</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPointF&amp; QDropEvent::posF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#posF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position where the drop was made.</p></div></p>
+</div><h4 id='method.possible_actions' class='method'><code>fn <a href='#method.possible_actions' class='fnname'>possible_actions</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.DropAction.html' title='qt_core::qt::DropAction'>DropAction</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::DropAction&gt; QDropEvent::possibleActions() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#possibleActions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns an OR-combination of possible drop actions.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdropevent.html#dropAction">dropAction</a>().</p></div></p>
+</div><h4 id='method.proposed_action' class='method'><code>fn <a href='#method.proposed_action' class='fnname'>proposed_action</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.DropAction.html' title='qt_core::qt::DropAction'>DropAction</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::DropAction QDropEvent::proposedAction() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#proposedAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the proposed drop action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdropevent.html#dropAction">dropAction</a>().</p></div></p>
+</div><h4 id='method.register_event_type' class='method'><code>fn <a href='#method.register_event_type' class='fnname'>register_event_type</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/drop_event/overloading/trait.DropEventRegisterEventTypeArgs.html' title='qt_gui::drop_event::overloading::DropEventRegisterEventTypeArgs'>DropEventRegisterEventTypeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QDropEvent::registerEventType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn register_event_type(libc::c_int) -&gt; libc::c_int</code><br>2) <code>fn register_event_type(()) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QDropEvent::registerEventType(int hint = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#registerEventType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Registers and returns a custom event type. The <i>hint</i> provided will be used if it is available, otherwise it will return a value between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a> that has not yet been registered. The <i>hint</i> is ignored if its value is not between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a>.</p>
+<p>Returns -1 if all available values are already taken or the program is shutting down.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.set_accepted' class='method'><code>fn <a href='#method.set_accepted' class='fnname'>set_accepted</a>(&amp;mut self, accepted: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDropEvent::setAccepted(bool accepted)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.set_drop_action' class='method'><code>fn <a href='#method.set_drop_action' class='fnname'>set_drop_action</a>(&amp;mut self, action: <a class='enum' href='../../qt_core/qt/enum.DropAction.html' title='qt_core::qt::DropAction'>DropAction</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QDropEvent::setDropAction(Qt::DropAction action)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#setDropAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>action</i> to be performed on the data by the target. Use this to override the <a href="http://doc.qt.io/qt-5/qdropevent.html#proposedAction">proposed action</a> with one of the <a href="http://doc.qt.io/qt-5/qdropevent.html#possibleActions">possible actions</a>.</p>
+<p>If you set a drop action that is not one of the possible actions, the drag and drop operation will default to a copy operation.</p>
+<p>Once you have supplied a replacement drop action, call <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>() instead of <a href="http://doc.qt.io/qt-5/qdropevent.html#acceptProposedAction">acceptProposedAction</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdropevent.html#dropAction">dropAction</a>().</p></div></p>
+</div><h4 id='method.source' class='method'><code>fn <a href='#method.source' class='fnname'>source</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QObject* QDropEvent::source() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdropevent.html#source">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the source of the drag operation is a widget in this application, this function returns that source; otherwise it returns 0. The source of the operation is the first parameter to the <a href="http://doc.qt.io/qt-5/qdrag.html">QDrag</a> object used instantiate the drag.</p>
+<p>This is useful if your widget needs special behavior when dragging to itself.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdrag.html#QDrag">QDrag::QDrag</a>().</p></div></p>
+</div><h4 id='method.spontaneous' class='method'><code>fn <a href='#method.spontaneous' class='fnname'>spontaneous</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QDropEvent::spontaneous() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#spontaneous">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the event originated outside the application (a system event); otherwise returns <code>false</code>.</p>
+<p>The return value of this function is not defined for paint events.</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/event/enum.Type.html' title='qt_core::event::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QEvent::Type QDropEvent::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the event type.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/drop_event/struct.DropEvent.html' title='qt_gui::drop_event::DropEvent'>DropEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69819' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/drop_event.rs.html#16-20' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/drop_event/struct.DropEvent.html' title='qt_gui::drop_event::DropEvent'>DropEvent</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/drop_event/struct.DropEvent.html' title='qt_gui::drop_event::DropEvent'>DropEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69872' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/drop_event.rs.html#210-217' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QDropEvent::~QDropEvent()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/drop_event/struct.DropEvent.html' title='qt_gui::drop_event::DropEvent'>DropEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-69875' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/drop_event.rs.html#219-223' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

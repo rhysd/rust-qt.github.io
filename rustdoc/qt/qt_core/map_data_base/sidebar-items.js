@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["MapDataBase","C++ type: <span style='color: green;'>```QMapDataBase```</span>"]]});

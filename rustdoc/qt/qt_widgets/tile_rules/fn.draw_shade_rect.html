@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `draw_shade_rect` fn in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, draw_shade_rect">
+
+    <title>qt_widgets::tile_rules::draw_shade_rect - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>tile_rules</a></p><script>window.sidebarCurrent = {name: 'draw_shade_rect', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content fn">
+<h1 class='fqn'><span class='in-band'>Function <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>tile_rules</a>::<wbr><a class='fn' href=''>draw_shade_rect</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-472667' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/tile_rules.rs.html#262-266' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn draw_shade_rect&lt;Args&gt;(args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/tile_rules/overloading/trait.DrawShadeRectArgs.html' title='qt_widgets::tile_rules::overloading::DrawShadeRectArgs'>DrawShadeRectArgs</a></span></pre><div class='docblock'><p>C++ method: <span style='color: green;'><code>qDrawShadeRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn draw_shade_rect((*mut qt_gui::painter::Painter, &amp;qt_core::rect::Rect, &amp;qt_gui::palette::Palette)) -&gt; ()</code><br>2) <code>fn draw_shade_rect((*mut qt_gui::painter::Painter, &amp;qt_core::rect::Rect, &amp;qt_gui::palette::Palette, bool)) -&gt; ()</code><br>3) <code>fn draw_shade_rect((*mut qt_gui::painter::Painter, &amp;qt_core::rect::Rect, &amp;qt_gui::palette::Palette, bool, libc::c_int)) -&gt; ()</code><br>4) <code>fn draw_shade_rect((*mut qt_gui::painter::Painter, &amp;qt_core::rect::Rect, &amp;qt_gui::palette::Palette, bool, libc::c_int, libc::c_int)) -&gt; ()</code><br>5) <code>fn draw_shade_rect((*mut qt_gui::painter::Painter, &amp;qt_core::rect::Rect, &amp;qt_gui::palette::Palette, bool, libc::c_int, libc::c_int, *const qt_gui::brush::Brush)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void qDrawShadeRect(QPainter* p, const QRect&amp; r, const QPalette&amp; pal, bool sunken = ?, int lineWidth = ?, int midLineWidth = ?, const QBrush* fill = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdrawutil-h.html#qDrawShadeRect-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Draws the shaded rectangle specified by <i>rect</i> using the given <i>painter</i>.</p>
+<p>The provide <i>palette</i> specifies the shading colors (<a href="http://doc.qt.io/qt-5/qpalette.html#light">light</a>, <a href="http://doc.qt.io/qt-5/qpalette.html#dark">dark</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#mid">middle</a> colors. The given <i>lineWidth</i> specifies the line width for each of the lines; it is not the total line width. The <i>midLineWidth</i> specifies the width of a middle line drawn in the <a href="http://doc.qt.io/qt-5/qpalette.html#mid">QPalette::mid</a>() color. The rectangle&#39;s interior is filled with the <i>fill</i> brush unless <i>fill</i> is 0.</p>
+<p>The rectangle appears sunken if <i>sunken</i> is true, otherwise raised.</p>
+<p><b>Warning:</b> This function does not look at <a href="http://doc.qt.io/qt-5/qwidget.html#style">QWidget::style</a>() or <a href="http://doc.qt.io/qt-5/qapplication.html#style">QApplication::style</a>(). Use the drawing functions in <a href="http://doc.qt.io/qt-5/qstyle.html">QStyle</a> to make widgets that follow the current GUI style.</p>
+<p>Alternatively you can use a <a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a> widget and apply the <a href="http://doc.qt.io/qt-5/qframe.html#setFrameStyle">QFrame::setFrameStyle</a>() function to display a shaded rectangle:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a></span> frame:
+frame<span class="operator">.</span>setFrameStyle(<span class="type"><a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a></span><span class="operator">::</span>Box <span class="operator">|</span> <span class="type"><a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a></span><span class="operator">::</span>Raised);</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdrawutil-h.html#qDrawShadeLine">qDrawShadeLine</a>(), <a href="http://doc.qt.io/qt-5/qdrawutil-h.html#qDrawShadePanel">qDrawShadePanel</a>(), <a href="http://doc.qt.io/qt-5/qdrawutil-h.html#qDrawPlainRect">qDrawPlainRect</a>(), and <a href="http://doc.qt.io/qt-5/qstyle.html">QStyle</a>.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn draw_shade_rect((*mut qt_gui::painter::Painter, libc::c_int, libc::c_int, libc::c_int, libc::c_int, &amp;qt_gui::palette::Palette)) -&gt; ()</code><br>2) <code>fn draw_shade_rect((*mut qt_gui::painter::Painter, libc::c_int, libc::c_int, libc::c_int, libc::c_int, &amp;qt_gui::palette::Palette, bool)) -&gt; ()</code><br>3) <code>fn draw_shade_rect((*mut qt_gui::painter::Painter, libc::c_int, libc::c_int, libc::c_int, libc::c_int, &amp;qt_gui::palette::Palette, bool, libc::c_int)) -&gt; ()</code><br>4) <code>fn draw_shade_rect((*mut qt_gui::painter::Painter, libc::c_int, libc::c_int, libc::c_int, libc::c_int, &amp;qt_gui::palette::Palette, bool, libc::c_int, libc::c_int)) -&gt; ()</code><br>5) <code>fn draw_shade_rect((*mut qt_gui::painter::Painter, libc::c_int, libc::c_int, libc::c_int, libc::c_int, &amp;qt_gui::palette::Palette, bool, libc::c_int, libc::c_int, *const qt_gui::brush::Brush)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void qDrawShadeRect(QPainter* p, int x, int y, int w, int h, const QPalette&amp; pal, bool sunken = ?, int lineWidth = ?, int midLineWidth = ?, const QBrush* fill = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdrawutil-h.html#qDrawShadeRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Draws the shaded rectangle beginning at (<i>x</i>, <i>y</i>) with the given <i>width</i> and <i>height</i> using the provided <i>painter</i>.</p>
+<p>The provide <i>palette</i> specifies the shading colors (<a href="http://doc.qt.io/qt-5/qpalette.html#light">light</a>, <a href="http://doc.qt.io/qt-5/qpalette.html#dark">dark</a> and <a href="http://doc.qt.io/qt-5/qpalette.html#mid">middle</a> colors. The given <i>lineWidth</i> specifies the line width for each of the lines; it is not the total line width. The <i>midLineWidth</i> specifies the width of a middle line drawn in the <a href="http://doc.qt.io/qt-5/qpalette.html#mid">QPalette::mid</a>() color. The rectangle&#39;s interior is filled with the <i>fill</i> brush unless <i>fill</i> is 0.</p>
+<p>The rectangle appears sunken if <i>sunken</i> is true, otherwise raised.</p>
+<p><b>Warning:</b> This function does not look at <a href="http://doc.qt.io/qt-5/qwidget.html#style">QWidget::style</a>() or <a href="http://doc.qt.io/qt-5/qapplication.html#style">QApplication::style</a>(). Use the drawing functions in <a href="http://doc.qt.io/qt-5/qstyle.html">QStyle</a> to make widgets that follow the current GUI style.</p>
+<p>Alternatively you can use a <a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a> widget and apply the <a href="http://doc.qt.io/qt-5/qframe.html#setFrameStyle">QFrame::setFrameStyle</a>() function to display a shaded rectangle:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a></span> frame:
+frame<span class="operator">.</span>setFrameStyle(<span class="type"><a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a></span><span class="operator">::</span>Box <span class="operator">|</span> <span class="type"><a href="http://doc.qt.io/qt-5/qframe.html">QFrame</a></span><span class="operator">::</span>Raised);</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdrawutil-h.html#qDrawShadeLine">qDrawShadeLine</a>(), <a href="http://doc.qt.io/qt-5/qdrawutil-h.html#qDrawShadePanel">qDrawShadePanel</a>(), <a href="http://doc.qt.io/qt-5/qdrawutil-h.html#qDrawPlainRect">qDrawPlainRect</a>(), and <a href="http://doc.qt.io/qt-5/qstyle.html">QStyle</a>.</p></div></p>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

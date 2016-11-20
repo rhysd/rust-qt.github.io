@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["TemporaryDir","C++ type: <span style='color: green;'>```QTemporaryDir```</span>"]]});

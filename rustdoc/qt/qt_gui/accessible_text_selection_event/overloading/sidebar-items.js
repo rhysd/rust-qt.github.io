@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["AccessibleTextSelectionEventNewArgs","This trait represents a set of arguments accepted by AccessibleTextSelectionEvent::new method."]]});

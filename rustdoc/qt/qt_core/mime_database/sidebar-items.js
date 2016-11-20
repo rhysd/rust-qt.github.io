@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["MatchMode","C++ type: <span style='color: green;'>```QMimeDatabase::MatchMode```</span>"]],"mod":[["overloading",""]],"struct":[["MimeDatabase","C++ type: <span style='color: green;'>```QMimeDatabase```</span>"]]});

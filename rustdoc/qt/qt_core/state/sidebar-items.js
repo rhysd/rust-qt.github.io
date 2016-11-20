@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ChildMode","C++ type: <span style='color: green;'>```QState::ChildMode```</span>"],["RestorePolicy","C++ type: <span style='color: green;'>```QState::RestorePolicy```</span>"]],"mod":[["overloading",""]],"struct":[["State","C++ type: <span style='color: green;'>```QState```</span>"]]});

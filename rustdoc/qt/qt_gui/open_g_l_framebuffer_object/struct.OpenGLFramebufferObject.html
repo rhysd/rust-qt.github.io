@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `OpenGLFramebufferObject` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, OpenGLFramebufferObject">
+
+    <title>qt_gui::open_g_l_framebuffer_object::OpenGLFramebufferObject - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>open_g_l_framebuffer_object</a></p><script>window.sidebarCurrent = {name: 'OpenGLFramebufferObject', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>open_g_l_framebuffer_object</a>::<wbr><a class='struct' href=''>OpenGLFramebufferObject</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-98708' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_framebuffer_object.rs.html#30-32' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct OpenGLFramebufferObject {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QOpenGLFramebufferObject</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html">QOpenGLFramebufferObject</a> class encapsulates an OpenGL framebuffer object.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html">QOpenGLFramebufferObject</a> class encapsulates an OpenGL framebuffer object, defined by the <code>GL_EXT_framebuffer_object</code> extension. It provides a rendering surface that can be painted on with a <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> with the help of <a href="http://doc.qt.io/qt-5/qopenglpaintdevice.html">QOpenGLPaintDevice</a>, or rendered to using native OpenGL calls. This surface can be bound and used as a regular texture in your own OpenGL drawing code. By default, the <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html">QOpenGLFramebufferObject</a> class generates a 2D OpenGL texture (using the <code>GL_TEXTURE_2D</code> target), which is used as the internal rendering target.</p>
+<p><b>It is important to have a current OpenGL context when creating a <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html">QOpenGLFramebufferObject</a>, otherwise initialization will fail.</b></p>
+<p>Create the QOpenGLFrameBufferObject instance with the <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#Attachment-enum">CombinedDepthStencil</a> attachment if you want <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> to render correctly. Note that you need to create a <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html">QOpenGLFramebufferObject</a> with more than one sample per pixel for primitives to be antialiased when drawing using a <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a>. To create a multisample framebuffer object you should use one of the constructors that take a <a href="http://doc.qt.io/qt-5/qopenglframebufferobjectformat.html">QOpenGLFramebufferObjectFormat</a> parameter, and set the <a href="http://doc.qt.io/qt-5/qopenglframebufferobjectformat.html#samples">QOpenGLFramebufferObjectFormat::samples</a>() property to a non-zero value.</p>
+<p>For multisample framebuffer objects a color render buffer is created, otherwise a texture with the specified texture target is created. The color render buffer or texture will have the specified internal format, and will be bound to the <code>GL_COLOR_ATTACHMENT0</code> attachment in the framebuffer object.</p>
+<p>If you want to use a framebuffer object with multisampling enabled as a texture, you first need to copy from it to a regular framebuffer object using QOpenGLContext::blitFramebuffer().</p>
+<p>It is possible to draw into a <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html">QOpenGLFramebufferObject</a> using <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> and <a href="http://doc.qt.io/qt-5/qopenglpaintdevice.html">QOpenGLPaintDevice</a> in a separate thread.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/open_g_l_framebuffer_object/struct.OpenGLFramebufferObject.html' title='qt_gui::open_g_l_framebuffer_object::OpenGLFramebufferObject'>OpenGLFramebufferObject</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98713' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_framebuffer_object.rs.html#40-298' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.attachment' class='method'><code>fn <a href='#method.attachment' class='fnname'>attachment</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/open_g_l_framebuffer_object/enum.Attachment.html' title='qt_gui::open_g_l_framebuffer_object::Attachment'>Attachment</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLFramebufferObject::Attachment QOpenGLFramebufferObject::attachment() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#attachment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the status of the depth and stencil buffers attached to this framebuffer object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#setAttachment">setAttachment</a>().</p></div></p>
+</div><h4 id='method.bind' class='method'><code>fn <a href='#method.bind' class='fnname'>bind</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLFramebufferObject::bind()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#bind">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Switches rendering from the default, windowing system provided framebuffer to this framebuffer object. Returns <code>true</code> upon success, false otherwise.</p>
+<p><b>Note: </b>If <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#takeTexture">takeTexture</a>() was called, a new texture is created and associated with the framebuffer object. This is potentially expensive and changes the context state (the currently bound texture).</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#release">release</a>().</p></div></p>
+</div><h4 id='method.bind_default' class='method'><code>fn <a href='#method.bind_default' class='fnname'>bind_default</a>() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QOpenGLFramebufferObject::bindDefault()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#bindDefault">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Switches rendering back to the default, windowing system provided framebuffer. Returns <code>true</code> upon success, false otherwise.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#bind">bind</a>() and <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#release">release</a>().</p></div></p>
+</div><h4 id='method.blit_framebuffer' class='method'><code>fn <a href='#method.blit_framebuffer' class='fnname'>blit_framebuffer</a>&lt;Args&gt;(args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_framebuffer_object/overloading/trait.OpenGLFramebufferObjectBlitFramebufferArgs.html' title='qt_gui::open_g_l_framebuffer_object::overloading::OpenGLFramebufferObjectBlitFramebufferArgs'>OpenGLFramebufferObjectBlitFramebufferArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLFramebufferObject::blitFramebuffer</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn blit_framebuffer((*mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, *mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject)) -&gt; ()</code><br>2) <code>fn blit_framebuffer((*mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, *mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, libc::c_uint)) -&gt; ()</code><br>3) <code>fn blit_framebuffer((*mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, *mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, libc::c_uint, libc::c_uint)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QOpenGLFramebufferObject::blitFramebuffer(QOpenGLFramebufferObject* target, QOpenGLFramebufferObject* source, unsigned int buffers = ?, unsigned int filter = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#blitFramebuffer-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Convenience overload to blit between two framebuffer objects.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn blit_framebuffer((*mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, &amp;qt_core::rect::Rect, *mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, &amp;qt_core::rect::Rect)) -&gt; ()</code><br>2) <code>fn blit_framebuffer((*mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, &amp;qt_core::rect::Rect, *mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, &amp;qt_core::rect::Rect, libc::c_uint)) -&gt; ()</code><br>3) <code>fn blit_framebuffer((*mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, &amp;qt_core::rect::Rect, *mut ::open_g_l_framebuffer_object::OpenGLFramebufferObject, &amp;qt_core::rect::Rect, libc::c_uint, libc::c_uint)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QOpenGLFramebufferObject::blitFramebuffer(QOpenGLFramebufferObject* target, const QRect&amp; targetRect, QOpenGLFramebufferObject* source, const QRect&amp; sourceRect, unsigned int buffers = ?, unsigned int filter = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#blitFramebuffer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Blits from the <i>sourceRect</i> rectangle in the <i>source</i> framebuffer object to the <i>targetRect</i> rectangle in the <i>target</i> framebuffer object.</p>
+<p>If <i>source</i> or <i>target</i> is 0, the default framebuffer will be used instead of a framebuffer object as source or target respectively.</p>
+<p>This function will have no effect unless <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#hasOpenGLFramebufferBlit">hasOpenGLFramebufferBlit</a>() returns true.</p>
+<p>The <i>buffers</i> parameter should be a mask consisting of any combination of <code>GL_COLOR_BUFFER_BIT</code>, <code>GL_DEPTH_BUFFER_BIT</code>, and <code>GL_STENCIL_BUFFER_BIT</code>. Any buffer type that is not present both in the source and target buffers is ignored.</p>
+<p>The <i>sourceRect</i> and <i>targetRect</i> rectangles may have different sizes; in this case <i>buffers</i> should not contain <code>GL_DEPTH_BUFFER_BIT</code> or <code>GL_STENCIL_BUFFER_BIT</code>. The <i>filter</i> parameter should be set to <code>GL_LINEAR</code> or <code>GL_NEAREST</code>, and specifies whether linear or nearest interpolation should be used when scaling is performed.</p>
+<p>If <i>source</i> equals <i>target</i> a copy is performed within the same buffer. Results are undefined if the source and target rectangles overlap and have different sizes. The sizes must also be the same if any of the framebuffer objects are multisample framebuffers.</p>
+<p><b>Note: </b>The scissor test will restrict the blit area if enabled.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#hasOpenGLFramebufferBlit">hasOpenGLFramebufferBlit</a>().</p></div></p>
+</div><h4 id='method.format' class='method'><code>fn <a href='#method.format' class='fnname'>format</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_framebuffer_object/overloading/trait.OpenGLFramebufferObjectFormatArgs.html' title='qt_gui::open_g_l_framebuffer_object::overloading::OpenGLFramebufferObjectFormatArgs'>OpenGLFramebufferObjectFormatArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLFramebufferObject::format</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn format(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object_format::OpenGLFramebufferObjectFormat&gt;</code><br>2) <code>fn format(&amp;self, cpp_utils::AsStruct) -&gt; ::open_g_l_framebuffer_object_format::OpenGLFramebufferObjectFormat</code><br>
+C++ method: <span style='color: green;'><code>QOpenGLFramebufferObjectFormat QOpenGLFramebufferObject::format() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#format">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the format of this framebuffer object.</p></div></p>
+</div><h4 id='method.handle' class='method'><code>fn <a href='#method.handle' class='fnname'>handle</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QOpenGLFramebufferObject::handle() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#handle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the OpenGL framebuffer object handle for this framebuffer object (returned by the <code>glGenFrameBuffersEXT()</code> function). This handle can be used to attach new images or buffers to the framebuffer. The user is responsible for cleaning up and destroying these objects.</p></div></p>
+</div><h4 id='method.has_opengl_framebuffer_blit' class='method'><code>fn <a href='#method.has_opengl_framebuffer_blit' class='fnname'>has_opengl_framebuffer_blit</a>() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QOpenGLFramebufferObject::hasOpenGLFramebufferBlit()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#hasOpenGLFramebufferBlit">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the OpenGL <code>GL_EXT_framebuffer_blit</code> extension is present on this system; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#blitFramebuffer">blitFramebuffer</a>().</p></div></p>
+</div><h4 id='method.has_opengl_framebuffer_objects' class='method'><code>fn <a href='#method.has_opengl_framebuffer_objects' class='fnname'>has_opengl_framebuffer_objects</a>() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QOpenGLFramebufferObject::hasOpenGLFramebufferObjects()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#hasOpenGLFramebufferObjects">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the OpenGL <code>GL_EXT_framebuffer_object</code> extension is present on this system; otherwise returns <code>false</code>.</p></div></p>
+</div><h4 id='method.height' class='method'><code>fn <a href='#method.height' class='fnname'>height</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLFramebufferObject::height() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#height">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the height of the framebuffer object attachments.</p></div></p>
+</div><h4 id='method.is_bound' class='method'><code>fn <a href='#method.is_bound' class='fnname'>is_bound</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLFramebufferObject::isBound() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#isBound">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the framebuffer object is currently bound to the current context, otherwise false is returned.</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLFramebufferObject::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the framebuffer object is valid.</p>
+<p>The framebuffer can become invalid if the initialization process fails, the user attaches an invalid buffer to the framebuffer object, or a non-power of two width/height is specified as the texture size if the texture target is <code>GL_TEXTURE_2D</code>. The non-power of two limitation does not apply if the OpenGL version is 2.0 or higher, or if the GL_ARB_texture_non_power_of_two extension is present.</p>
+<p>The framebuffer can also become invalid if the <a href="http://doc.qt.io/qt-5/qopenglcontext.html">QOpenGLContext</a> that the framebuffer was created within is destroyed and there are no other shared contexts that can take over ownership of the framebuffer.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_framebuffer_object/overloading/trait.OpenGLFramebufferObjectNewArgs.html' title='qt_gui::open_g_l_framebuffer_object::overloading::OpenGLFramebufferObjectNewArgs'>OpenGLFramebufferObjectNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLFramebufferObject::QOpenGLFramebufferObject</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::size::Size, ::open_g_l_framebuffer_object::Attachment, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>2) <code>fn new((&amp;qt_core::size::Size, ::open_g_l_framebuffer_object::Attachment, libc::c_uint, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>3) <code>fn new((&amp;qt_core::size::Size, ::open_g_l_framebuffer_object::Attachment, libc::c_uint, libc::c_uint, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>4) <code>fn new((&amp;qt_core::size::Size, ::open_g_l_framebuffer_object::Attachment, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>5) <code>fn new((&amp;qt_core::size::Size, ::open_g_l_framebuffer_object::Attachment, libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>6) <code>fn new((&amp;qt_core::size::Size, ::open_g_l_framebuffer_object::Attachment, libc::c_uint, libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLFramebufferObject::QOpenGLFramebufferObject(const QSize&amp; size, QOpenGLFramebufferObject::Attachment attachment, unsigned int target = ?, unsigned int internal_format = ?)</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::size::Size, &amp;::open_g_l_framebuffer_object_format::OpenGLFramebufferObjectFormat, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>2) <code>fn new((&amp;qt_core::size::Size, &amp;::open_g_l_framebuffer_object_format::OpenGLFramebufferObjectFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLFramebufferObject::QOpenGLFramebufferObject(const QSize&amp; size, const QOpenGLFramebufferObjectFormat&amp; format)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::size::Size, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>2) <code>fn new((&amp;qt_core::size::Size, libc::c_uint, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>3) <code>fn new((&amp;qt_core::size::Size, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>4) <code>fn new((&amp;qt_core::size::Size, libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLFramebufferObject::QOpenGLFramebufferObject(const QSize&amp; size, unsigned int target = ?)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, libc::c_int, ::open_g_l_framebuffer_object::Attachment, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>2) <code>fn new((libc::c_int, libc::c_int, ::open_g_l_framebuffer_object::Attachment, libc::c_uint, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>3) <code>fn new((libc::c_int, libc::c_int, ::open_g_l_framebuffer_object::Attachment, libc::c_uint, libc::c_uint, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>4) <code>fn new((libc::c_int, libc::c_int, ::open_g_l_framebuffer_object::Attachment, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>5) <code>fn new((libc::c_int, libc::c_int, ::open_g_l_framebuffer_object::Attachment, libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>6) <code>fn new((libc::c_int, libc::c_int, ::open_g_l_framebuffer_object::Attachment, libc::c_uint, libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLFramebufferObject::QOpenGLFramebufferObject(int width, int height, QOpenGLFramebufferObject::Attachment attachment, unsigned int target = ?, unsigned int internal_format = ?)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, libc::c_int, &amp;::open_g_l_framebuffer_object_format::OpenGLFramebufferObjectFormat, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>2) <code>fn new((libc::c_int, libc::c_int, &amp;::open_g_l_framebuffer_object_format::OpenGLFramebufferObjectFormat, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLFramebufferObject::QOpenGLFramebufferObject(int width, int height, const QOpenGLFramebufferObjectFormat&amp; format)</code></span></p>
+
+<h2 id='variant-6' class='section-header'><a href='#variant-6'>Variant 6</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>2) <code>fn new((libc::c_int, libc::c_int, libc::c_uint, cpp_utils::AsStruct)) -&gt; ::open_g_l_framebuffer_object::OpenGLFramebufferObject</code><br>3) <code>fn new((libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>4) <code>fn new((libc::c_int, libc::c_int, libc::c_uint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::open_g_l_framebuffer_object::OpenGLFramebufferObject&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QOpenGLFramebufferObject::QOpenGLFramebufferObject(int width, int height, unsigned int target = ?)</code></span></p>
+</div><h4 id='method.release' class='method'><code>fn <a href='#method.release' class='fnname'>release</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QOpenGLFramebufferObject::release()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#release">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Switches rendering back to the default, windowing system provided framebuffer. Returns <code>true</code> upon success, false otherwise.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#bind">bind</a>().</p></div></p>
+</div><h4 id='method.set_attachment' class='method'><code>fn <a href='#method.set_attachment' class='fnname'>set_attachment</a>(&amp;mut self, attachment: <a class='enum' href='../../qt_gui/open_g_l_framebuffer_object/enum.Attachment.html' title='qt_gui::open_g_l_framebuffer_object::Attachment'>Attachment</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QOpenGLFramebufferObject::setAttachment(QOpenGLFramebufferObject::Attachment attachment)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#setAttachment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the attachments of the framebuffer object to <i>attachment</i>.</p>
+<p>This can be used to free or reattach the depth and stencil buffer attachments as needed.</p>
+<p><b>Note: </b>This function alters the current framebuffer binding.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#attachment">attachment</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_framebuffer_object/overloading/trait.OpenGLFramebufferObjectSizeArgs.html' title='qt_gui::open_g_l_framebuffer_object::overloading::OpenGLFramebufferObjectSizeArgs'>OpenGLFramebufferObjectSizeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLFramebufferObject::size</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QOpenGLFramebufferObject::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the texture attached to this framebuffer object.</p></div></p>
+</div><h4 id='method.take_texture' class='method'><code>fn <a href='#method.take_texture' class='fnname'>take_texture</a>(&amp;mut self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QOpenGLFramebufferObject::takeTexture()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#takeTexture">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the texture id for the texture attached to this framebuffer object. The ownership of the texture is transferred to the caller.</p>
+<p>If the framebuffer object is currently bound, an implicit <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#release">release</a>() will be done. During the next call to <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#bind">bind</a>() a new texture will be created.</p>
+<p>If a multisample framebuffer object is used, then there is no texture and the return value from this function will be invalid. Similarly, incomplete framebuffer objects will also return 0.</p>
+<p>This function was introduced in  Qt 5.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#texture">texture</a>(), <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#bind">bind</a>(), and <a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#release">release</a>().</p></div></p>
+</div><h4 id='method.texture' class='method'><code>fn <a href='#method.texture' class='fnname'>texture</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned int QOpenGLFramebufferObject::texture() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#texture">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the texture id for the texture attached as the default rendering target in this framebuffer object. This texture id can be bound as a normal texture in your own OpenGL code.</p>
+<p>If a multisample framebuffer object is used then the value returned from this function will be invalid.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#takeTexture">takeTexture</a>().</p></div></p>
+</div><h4 id='method.to_image' class='method'><code>fn <a href='#method.to_image' class='fnname'>to_image</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/open_g_l_framebuffer_object/overloading/trait.OpenGLFramebufferObjectToImageArgs.html' title='qt_gui::open_g_l_framebuffer_object::overloading::OpenGLFramebufferObjectToImageArgs'>OpenGLFramebufferObjectToImageArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QOpenGLFramebufferObject::toImage</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_image(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn to_image(&amp;self, cpp_utils::AsStruct) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QOpenGLFramebufferObject::toImage() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#toImage-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns the contents of this framebuffer object as a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>. This method flips the image from OpenGL coordinates to raster coordinates.</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn to_image(&amp;self, (bool, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn to_image(&amp;self, (bool, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QOpenGLFramebufferObject::toImage(bool flipped) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#toImage">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the contents of this framebuffer object as a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>.</p>
+<p>If <i>flipped</i> is true the image is flipped from OpenGL coordinates to raster coordinates. If used together with <a href="http://doc.qt.io/qt-5/qopenglpaintdevice.html">QOpenGLPaintDevice</a>, <i>flipped</i> should be the opposite of the value of <a href="http://doc.qt.io/qt-5/qopenglpaintdevice.html#paintFlipped">QOpenGLPaintDevice::paintFlipped</a>().</p>
+<p>The returned image has a format of premultiplied ARGB32 or RGB32. The latter is used only when internalTextureFormat() is set to <code>GL_RGB</code>.</p>
+<p>If the rendering in the framebuffer was not done with premultiplied alpha in mind, create a wrapper <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a> with a non-premultiplied format. This is necessary before performing operations like <a href="http://doc.qt.io/qt-5/qimage.html#save">QImage::save</a>() because otherwise the image data would get unpremultiplied, even though it was not premultiplied in the first place. To create such a wrapper without performing a copy of the pixel data, do the following:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qimage.html">QImage</a></span> fboImage(fbo<span class="operator">.</span>toImage());
+<span class="type"><a href="http://doc.qt.io/qt-5/qimage.html">QImage</a></span> image(fboImage<span class="operator">.</span>constBits()<span class="operator">,</span> fboImage<span class="operator">.</span>width()<span class="operator">,</span> fboImage<span class="operator">.</span>height()<span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qimage.html">QImage</a></span><span class="operator">::</span>Format_ARGB32);</pre>
+<p>Since Qt 5.2 the function will fall back to premultiplied RGBA8888 or RGBx8888 when reading to (A)RGB32 is not supported. Since 5.4 an A2BGR30 image is returned if the internal format is RGB10_A2.</p>
+<p>For multisampled framebuffer objects the samples are resolved using the <code>GL_EXT_framebuffer_blit</code> extension. If the extension is not available, the contents of the returned image is undefined.</p>
+<p>For singlesampled framebuffers the contents is retrieved via <code>glReadPixels</code>. This is a potentially expensive and inefficient operation. Therefore it is recommended that this function is used as seldom as possible.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qopenglpaintdevice.html#paintFlipped">QOpenGLPaintDevice::paintFlipped</a>().</p></div></p>
+</div><h4 id='method.width' class='method'><code>fn <a href='#method.width' class='fnname'>width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QOpenGLFramebufferObject::width() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#width">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the framebuffer object attachments.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/open_g_l_framebuffer_object/struct.OpenGLFramebufferObject.html' title='qt_gui::open_g_l_framebuffer_object::OpenGLFramebufferObject'>OpenGLFramebufferObject</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98711' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_framebuffer_object.rs.html#34-38' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/open_g_l_framebuffer_object/struct.OpenGLFramebufferObject.html' title='qt_gui::open_g_l_framebuffer_object::OpenGLFramebufferObject'>OpenGLFramebufferObject</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/open_g_l_framebuffer_object/struct.OpenGLFramebufferObject.html' title='qt_gui::open_g_l_framebuffer_object::OpenGLFramebufferObject'>OpenGLFramebufferObject</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98761' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_framebuffer_object.rs.html#300-307' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QOpenGLFramebufferObject::~QOpenGLFramebufferObject()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qopenglframebufferobject.html#dtor.QOpenGLFramebufferObject">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the framebuffer object and frees any allocated resources.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/open_g_l_framebuffer_object/struct.OpenGLFramebufferObject.html' title='qt_gui::open_g_l_framebuffer_object::OpenGLFramebufferObject'>OpenGLFramebufferObject</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-98764' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/open_g_l_framebuffer_object.rs.html#309-313' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["AccessibleTableCellInterfaceColumnHeaderCellsArgs","This trait represents a set of arguments accepted by AccessibleTableCellInterface::column_header_cells method."],["AccessibleTableCellInterfaceRowHeaderCellsArgs","This trait represents a set of arguments accepted by AccessibleTableCellInterface::row_header_cells method."]]});

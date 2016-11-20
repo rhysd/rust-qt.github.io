@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AccessibleActionInterface` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AccessibleActionInterface">
+
+    <title>qt_gui::accessible_action_interface::AccessibleActionInterface - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>accessible_action_interface</a></p><script>window.sidebarCurrent = {name: 'AccessibleActionInterface', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>accessible_action_interface</a>::<wbr><a class='struct' href=''>AccessibleActionInterface</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-59444' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible_action_interface.rs.html#24-26' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AccessibleActionInterface {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QAccessibleActionInterface</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html">QAccessibleActionInterface</a> class implements support for invocable actions in the interface.</p>
+<p>Accessible objects should implement the action interface if they support user interaction. Usually this interface is implemented by classes that also implement <a href="http://doc.qt.io/qt-5/qaccessibleinterface.html">QAccessibleInterface</a>.</p>
+<p>The supported actions should use the predefined actions offered in this class unless they do not fit a predefined action. In that case a custom action can be added.</p>
+<p>When subclassing <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html">QAccessibleActionInterface</a> you need to provide a list of <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a> which is the primary means to discover the available actions. Action names are never localized. In order to present actions to the user there are two functions that need to return localized versions of the name and give a description of the action. For the predefined action names use <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">QAccessibleActionInterface::localizedActionName</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionDescription">QAccessibleActionInterface::localizedActionDescription</a>() to return their localized counterparts.</p>
+<p>In general you should use one of the predefined action names, unless describing an action that does not fit these:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Action name</th><th>Description</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#toggleAction">toggleAction</a>()</td><td>toggles the item (checkbox, radio button, switch, ...)</td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#decreaseAction">decreaseAction</a>()</td><td>decrease the value of the accessible (e.g. spinbox)</td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#increaseAction">increaseAction</a>()</td><td>increase the value of the accessible (e.g. spinbox)</td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#pressAction">pressAction</a>()</td><td>press or click or activate the accessible (should correspont to clicking the object with the mouse)</td></tr>
+<tr valign="top" class="odd"><td><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#setFocusAction">setFocusAction</a>()</td><td>set the focus to this accessible</td></tr>
+<tr valign="top" class="even"><td><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#showMenuAction">showMenuAction</a>()</td><td>show a context menu, corresponds to right-clicks</td></tr>
+</tbody></table></div>
+<p>In order to invoke the action, <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#doAction">doAction</a>() is called with an action name.</p>
+<p>Most widgets will simply implement <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#pressAction">pressAction</a>(). This is what happens when the widget is activated by being clicked, space pressed or similar.</p>
+<p><a href="http://www.linux-foundation.org/en/Accessibility/IAccessible2">IAccessible2 Specification</a></p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/accessible_action_interface/struct.AccessibleActionInterface.html' title='qt_gui::accessible_action_interface::AccessibleActionInterface'>AccessibleActionInterface</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-59449' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible_action_interface.rs.html#34-269' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.action_names' class='method'><code>fn <a href='#method.action_names' class='fnname'>action_names</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceActionNamesArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceActionNamesArgs'>AccessibleActionInterfaceActionNamesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::actionNames</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn action_names(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn action_names(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>pure virtual QStringList QAccessibleActionInterface::actionNames() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the list of actions supported by this accessible object. The actions returned should be in preferred order, i.e. the action that the user most likely wants to trigger should be returned first, while the least likely action should be returned last.</p>
+<p>The list does only contain actions that can be invoked. It won&#39;t return disabled actions, or actions associated with disabled UI controls.</p>
+<p>The list can be empty.</p>
+<p>Note that this list is not localized. For a localized representation re-implement <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionDescription">localizedActionDescription</a>()</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#doAction">doAction</a>(), <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>(), and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionDescription">localizedActionDescription</a>().</p></div></p>
+</div><h4 id='method.decrease_action' class='method'><code>fn <a href='#method.decrease_action' class='fnname'>decrease_action</a>() -&gt; &amp;'static <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static const QString&amp; QAccessibleActionInterface::decreaseAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#decreaseAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the decrease default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.do_action' class='method'><code>fn <a href='#method.do_action' class='fnname'>do_action</a>(&amp;mut self, action_name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual void QAccessibleActionInterface::doAction(const QString&amp; actionName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#doAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Invokes the action specified by <i>actionName</i>. Note that <i>actionName</i> is the non-localized name as returned by <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() This function is usually implemented by calling the same functions that other user interaction, such as clicking the object, would trigger.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>().</p></div></p>
+</div><h4 id='method.increase_action' class='method'><code>fn <a href='#method.increase_action' class='fnname'>increase_action</a>() -&gt; &amp;'static <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static const QString&amp; QAccessibleActionInterface::increaseAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#increaseAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the increase default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.key_bindings_for_action' class='method'><code>fn <a href='#method.key_bindings_for_action' class='fnname'>key_bindings_for_action</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceKeyBindingsForActionArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceKeyBindingsForActionArgs'>AccessibleActionInterfaceKeyBindingsForActionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::keyBindingsForAction</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn key_bindings_for_action(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn key_bindings_for_action(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>pure virtual QStringList QAccessibleActionInterface::keyBindingsForAction(const QString&amp; actionName) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#keyBindingsForAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of the keyboard shortcuts available for invoking the action named <i>actionName</i>.</p>
+<p>This is important to let users learn alternative ways of using the application by emphasizing the keyboard.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>().</p></div></p>
+</div><h4 id='method.localized_action_description' class='method'><code>fn <a href='#method.localized_action_description' class='fnname'>localized_action_description</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceLocalizedActionDescriptionArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceLocalizedActionDescriptionArgs'>AccessibleActionInterfaceLocalizedActionDescriptionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::localizedActionDescription</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn localized_action_description(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn localized_action_description(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>virtual QString QAccessibleActionInterface::localizedActionDescription(const QString&amp; name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionDescription">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized action description of the action <i>actionName</i>.</p>
+<p>When using one of the default names, you can call this function in <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html">QAccessibleActionInterface</a> to get the localized string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.localized_action_name' class='method'><code>fn <a href='#method.localized_action_name' class='fnname'>localized_action_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceLocalizedActionNameArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceLocalizedActionNameArgs'>AccessibleActionInterfaceLocalizedActionNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::localizedActionName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn localized_action_name(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn localized_action_name(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>virtual QString QAccessibleActionInterface::localizedActionName(const QString&amp; name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a localized action name of <i>actionName</i>.</p>
+<p>For custom actions this function has to be re-implemented. When using one of the default names, you can call this function in <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html">QAccessibleActionInterface</a> to get the localized string.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionDescription">localizedActionDescription</a>().</p></div></p>
+</div><h4 id='method.next_page_action' class='method'><code>fn <a href='#method.next_page_action' class='fnname'>next_page_action</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceNextPageActionArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceNextPageActionArgs'>AccessibleActionInterfaceNextPageActionArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::nextPageAction</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn next_page_action(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn next_page_action(cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QAccessibleActionInterface::nextPageAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#nextPageAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the next page default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.press_action' class='method'><code>fn <a href='#method.press_action' class='fnname'>press_action</a>() -&gt; &amp;'static <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static const QString&amp; QAccessibleActionInterface::pressAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#pressAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the press default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.previous_page_action' class='method'><code>fn <a href='#method.previous_page_action' class='fnname'>previous_page_action</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfacePreviousPageActionArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfacePreviousPageActionArgs'>AccessibleActionInterfacePreviousPageActionArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::previousPageAction</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn previous_page_action(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn previous_page_action(cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QAccessibleActionInterface::previousPageAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#previousPageAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the previous page default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.scroll_down_action' class='method'><code>fn <a href='#method.scroll_down_action' class='fnname'>scroll_down_action</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceScrollDownActionArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceScrollDownActionArgs'>AccessibleActionInterfaceScrollDownActionArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::scrollDownAction</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scroll_down_action(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn scroll_down_action(cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QAccessibleActionInterface::scrollDownAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#scrollDownAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the scroll down default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.scroll_left_action' class='method'><code>fn <a href='#method.scroll_left_action' class='fnname'>scroll_left_action</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceScrollLeftActionArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceScrollLeftActionArgs'>AccessibleActionInterfaceScrollLeftActionArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::scrollLeftAction</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scroll_left_action(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn scroll_left_action(cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QAccessibleActionInterface::scrollLeftAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#scrollLeftAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the scroll left default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.scroll_right_action' class='method'><code>fn <a href='#method.scroll_right_action' class='fnname'>scroll_right_action</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceScrollRightActionArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceScrollRightActionArgs'>AccessibleActionInterfaceScrollRightActionArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::scrollRightAction</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scroll_right_action(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn scroll_right_action(cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QAccessibleActionInterface::scrollRightAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#scrollRightAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the scroll right default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.scroll_up_action' class='method'><code>fn <a href='#method.scroll_up_action' class='fnname'>scroll_up_action</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceScrollUpActionArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceScrollUpActionArgs'>AccessibleActionInterfaceScrollUpActionArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::scrollUpAction</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn scroll_up_action(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn scroll_up_action(cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QAccessibleActionInterface::scrollUpAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#scrollUpAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the scroll up default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.set_focus_action' class='method'><code>fn <a href='#method.set_focus_action' class='fnname'>set_focus_action</a>() -&gt; &amp;'static <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static const QString&amp; QAccessibleActionInterface::setFocusAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#setFocusAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the set focus default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.show_menu_action' class='method'><code>fn <a href='#method.show_menu_action' class='fnname'>show_menu_action</a>() -&gt; &amp;'static <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static const QString&amp; QAccessibleActionInterface::showMenuAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#showMenuAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the show menu default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.toggle_action' class='method'><code>fn <a href='#method.toggle_action' class='fnname'>toggle_action</a>() -&gt; &amp;'static <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static const QString&amp; QAccessibleActionInterface::toggleAction()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#toggleAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the toggle default action.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#actionNames">actionNames</a>() and <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#localizedActionName">localizedActionName</a>().</p></div></p>
+</div><h4 id='method.tr' class='method'><code>fn <a href='#method.tr' class='fnname'>tr</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceTrArgs.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceTrArgs'>AccessibleActionInterfaceTrArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::tr</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn tr((*const libc::c_char, *const libc::c_char, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn tr((*const libc::c_char, *const libc::c_char, libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QAccessibleActionInterface::tr(const char* sourceText, const char* disambiguation, int n)</code></span></p>
+</div><h4 id='method.tr_utf8' class='method'><code>fn <a href='#method.tr_utf8' class='fnname'>tr_utf8</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible_action_interface/overloading/trait.AccessibleActionInterfaceTrUtf8Args.html' title='qt_gui::accessible_action_interface::overloading::AccessibleActionInterfaceTrUtf8Args'>AccessibleActionInterfaceTrUtf8Args</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessibleActionInterface::trUtf8</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn tr_utf8((*const libc::c_char, *const libc::c_char, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn tr_utf8((*const libc::c_char, *const libc::c_char, libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QAccessibleActionInterface::trUtf8(const char* sourceText, const char* disambiguation, int n)</code></span></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/accessible_action_interface/struct.AccessibleActionInterface.html' title='qt_gui::accessible_action_interface::AccessibleActionInterface'>AccessibleActionInterface</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-59447' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible_action_interface.rs.html#28-32' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/accessible_action_interface/struct.AccessibleActionInterface.html' title='qt_gui::accessible_action_interface::AccessibleActionInterface'>AccessibleActionInterface</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/accessible_action_interface/struct.AccessibleActionInterface.html' title='qt_gui::accessible_action_interface::AccessibleActionInterface'>AccessibleActionInterface</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-59509' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible_action_interface.rs.html#271-278' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QAccessibleActionInterface::~QAccessibleActionInterface()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html#dtor.QAccessibleActionInterface">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qaccessibleactioninterface.html">QAccessibleActionInterface</a>.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/accessible_action_interface/struct.AccessibleActionInterface.html' title='qt_gui::accessible_action_interface::AccessibleActionInterface'>AccessibleActionInterface</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-59512' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible_action_interface.rs.html#280-284' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

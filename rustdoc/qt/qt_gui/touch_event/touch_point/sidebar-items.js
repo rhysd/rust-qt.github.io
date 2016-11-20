@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["InfoFlag","C++ type: <span style='color: green;'>```QTouchEvent::TouchPoint::InfoFlag```</span>"]]});

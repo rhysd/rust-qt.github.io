@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `StandardLocation` enum in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, StandardLocation">
+
+    <title>qt_core::standard_paths::StandardLocation - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>standard_paths</a></p><script>window.sidebarCurrent = {name: 'StandardLocation', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>standard_paths</a>::<wbr><a class='enum' href=''>StandardLocation</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-137176' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/standard_paths.rs.html#109-152' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum StandardLocation {
+    Desktop,
+    Documents,
+    Fonts,
+    Applications,
+    Music,
+    Movies,
+    Pictures,
+    Temp,
+    Home,
+    Data,
+    Cache,
+    GenericData,
+    Runtime,
+    Config,
+    Download,
+    GenericCache,
+    GenericConfig,
+    AppData,
+    AppConfig,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QStandardPaths::StandardLocation</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandardpaths.html#StandardLocation-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum describes the different locations that can be queried using methods such as <a href="http://doc.qt.io/qt-5/qstandardpaths.html#writableLocation">QStandardPaths::writableLocation</a>, <a href="http://doc.qt.io/qt-5/qstandardpaths.html#standardLocations">QStandardPaths::standardLocations</a>, and <a href="http://doc.qt.io/qt-5/qstandardpaths.html#displayName">QStandardPaths::displayName</a>.</p>
+<p>Some of the values in this enum represent a user configuration. Such enum values will return the same paths in different applications, so they could be used to share data with other applications. Other values are specific to this application. Each enum value in the table below describes whether it&#39;s application-specific or generic.</p>
+<p>Application-specific directories should be assumed to be unreachable by other applications. Therefore, files placed there might not be readable by other applications, even if run by the same user. On the other hand, generic directories should be assumed to be accessible by all applications run by this user, but should still be assumed to be unreachable by applications by other users.</p>
+<p>Data interchange with other users is out of the scope of <a href="http://doc.qt.io/qt-5/qstandardpaths.html">QStandardPaths</a>.</p></p>
+
+<p>The following table gives examples of paths on different operating systems. The first path is the writable path (unless noted). Other, additional paths, if any, represent non-writable locations.</p>
+
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Path type</th><th>OS X</th><th>Windows</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td>DesktopLocation</td><td>"~/Desktop"</td><td>"C:/Users/&lt;USER&gt;/Desktop"</td></tr>
+<tr valign="top" class="even"><td>DocumentsLocation</td><td>"~/Documents"</td><td>"C:/Users/&lt;USER&gt;/Documents"</td></tr>
+<tr valign="top" class="odd"><td>FontsLocation</td><td>"/System/Library/Fonts" (not writable)</td><td>"C:/Windows/Fonts" (not writable)</td></tr>
+<tr valign="top" class="even"><td>ApplicationsLocation</td><td>"/Applications" (not writable)</td><td>"C:/Users/&lt;USER&gt;/AppData/Roaming/Microsoft/Windows/Start Menu/Programs"</td></tr>
+<tr valign="top" class="odd"><td>MusicLocation</td><td>"~/Music"</td><td>"C:/Users/&lt;USER&gt;/Music"</td></tr>
+<tr valign="top" class="even"><td>MoviesLocation</td><td>"~/Movies"</td><td>"C:/Users/&lt;USER&gt;/Videos"</td></tr>
+<tr valign="top" class="odd"><td>PicturesLocation</td><td>"~/Pictures"</td><td>"C:/Users/&lt;USER&gt;/Pictures"</td></tr>
+<tr valign="top" class="even"><td>TempLocation</td><td>randomly generated by the OS</td><td>"C:/Users/&lt;USER&gt;/AppData/Local/Temp"</td></tr>
+<tr valign="top" class="odd"><td>HomeLocation</td><td>"~"</td><td>"C:/Users/&lt;USER&gt;"</td></tr>
+<tr valign="top" class="even"><td>DataLocation</td><td>"~/Library/Application Support/&lt;APPNAME&gt;", "/Library/Application Support/&lt;APPNAME&gt;". "&lt;APPDIR&gt;/../Resources"</td><td>"C:/Users/&lt;USER&gt;/AppData/Local/&lt;APPNAME&gt;", "C:/ProgramData/&lt;APPNAME&gt;", "&lt;APPDIR&gt;", "&lt;APPDIR&gt;/data"</td></tr>
+<tr valign="top" class="odd"><td>CacheLocation</td><td>"~/Library/Caches/&lt;APPNAME&gt;", "/Library/Caches/&lt;APPNAME&gt;"</td><td>"C:/Users/&lt;USER&gt;/AppData/Local/&lt;APPNAME&gt;/cache"</td></tr>
+<tr valign="top" class="even"><td>GenericDataLocation</td><td>"~/Library/Application Support", "/Library/Application Support"</td><td>"C:/Users/&lt;USER&gt;/AppData/Local", "C:/ProgramData"</td></tr>
+<tr valign="top" class="odd"><td>RuntimeLocation</td><td>"~/Library/Application Support"</td><td>"C:/Users/&lt;USER&gt;"</td></tr>
+<tr valign="top" class="even"><td>ConfigLocation</td><td>"~/Library/Preferences"</td><td>"C:/Users/&lt;USER&gt;/AppData/Local/&lt;APPNAME&gt;", "C:/ProgramData/&lt;APPNAME&gt;"</td></tr>
+<tr valign="top" class="odd"><td>GenericConfigLocation</td><td>"~/Library/Preferences"</td><td>"C:/Users/&lt;USER&gt;/AppData/Local", "C:/ProgramData"</td></tr>
+<tr valign="top" class="even"><td>DownloadLocation</td><td>"~/Downloads"</td><td>"C:/Users/&lt;USER&gt;/Documents"</td></tr>
+<tr valign="top" class="odd"><td>GenericCacheLocation</td><td>"~/Library/Caches", "/Library/Caches"</td><td>"C:/Users/&lt;USER&gt;/AppData/Local/cache"</td></tr>
+<tr valign="top" class="even"><td>AppDataLocation</td><td>"~/Library/Application Support/&lt;APPNAME&gt;", "/Library/Application Support/&lt;APPNAME&gt;". "&lt;APPDIR&gt;/../Resources"</td><td>"C:/Users/&lt;USER&gt;/AppData/Roaming/&lt;APPNAME&gt;", "C:/ProgramData/&lt;APPNAME&gt;", "&lt;APPDIR&gt;", "&lt;APPDIR&gt;/data"</td></tr>
+<tr valign="top" class="odd"><td>AppLocalDataLocation</td><td>"~/Library/Application Support/&lt;APPNAME&gt;", "/Library/Application Support/&lt;APPNAME&gt;". "&lt;APPDIR&gt;/../Resources"</td><td>"C:/Users/&lt;USER&gt;/AppData/Local/&lt;APPNAME&gt;", "C:/ProgramData/&lt;APPNAME&gt;", "&lt;APPDIR&gt;", "&lt;APPDIR&gt;/data"</td></tr>
+<tr valign="top" class="even"><td>AppConfigLocation</td><td>"~/Library/Preferences/&lt;APPNAME&gt;"</td><td>"C:/Users/&lt;USER&gt;/AppData/Local/&lt;APPNAME&gt;", "C:/ProgramData/&lt;APPNAME&gt;"</td></tr>
+</tbody></table></div>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Path type</th><th>Blackberry</th><th>Linux</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td>DesktopLocation</td><td>"&lt;APPROOT&gt;/data"</td><td>"~/Desktop"</td></tr>
+<tr valign="top" class="even"><td>DocumentsLocation</td><td>"&lt;APPROOT&gt;/shared/documents"</td><td>"~/Documents"</td></tr>
+<tr valign="top" class="odd"><td>FontsLocation</td><td>"/base/usr/fonts" (not writable)</td><td>"~/.fonts"</td></tr>
+<tr valign="top" class="even"><td>ApplicationsLocation</td><td>not supported (directory not readable)</td><td>"~/.local/share/applications", "/usr/local/share/applications", "/usr/share/applications"</td></tr>
+<tr valign="top" class="odd"><td>MusicLocation</td><td>"&lt;APPROOT&gt;/shared/music"</td><td>"~/Music"</td></tr>
+<tr valign="top" class="even"><td>MoviesLocation</td><td>"&lt;APPROOT&gt;/shared/videos"</td><td>"~/Videos"</td></tr>
+<tr valign="top" class="odd"><td>PicturesLocation</td><td>"&lt;APPROOT&gt;/shared/photos"</td><td>"~/Pictures"</td></tr>
+<tr valign="top" class="even"><td>TempLocation</td><td>"/var/tmp"</td><td>"/tmp"</td></tr>
+<tr valign="top" class="odd"><td>HomeLocation</td><td>"&lt;APPROOT&gt;/data"</td><td>"~"</td></tr>
+<tr valign="top" class="even"><td>DataLocation</td><td>"&lt;APPROOT&gt;/data", "&lt;APPROOT&gt;/app/native/assets"</td><td>"~/.local/share/&lt;APPNAME&gt;", "/usr/local/share/&lt;APPNAME&gt;", "/usr/share/&lt;APPNAME&gt;"</td></tr>
+<tr valign="top" class="odd"><td>CacheLocation</td><td>"&lt;APPROOT&gt;/data/Cache"</td><td>"~/.cache/&lt;APPNAME&gt;"</td></tr>
+<tr valign="top" class="even"><td>GenericDataLocation</td><td>"&lt;APPROOT&gt;/shared/misc"</td><td>"~/.local/share", "/usr/local/share", "/usr/share"</td></tr>
+<tr valign="top" class="odd"><td>RuntimeLocation</td><td>"/var/tmp"</td><td>"/run/user/&lt;USER&gt;"</td></tr>
+<tr valign="top" class="even"><td>ConfigLocation</td><td>"&lt;APPROOT&gt;/data/Settings"</td><td>"~/.config", "/etc/xdg"</td></tr>
+<tr valign="top" class="odd"><td>GenericConfigLocation</td><td>"&lt;APPROOT&gt;/data/Settings"</td><td>"~/.config", "/etc/xdg"</td></tr>
+<tr valign="top" class="even"><td>DownloadLocation</td><td>"&lt;APPROOT&gt;/shared/downloads"</td><td>"~/Downloads"</td></tr>
+<tr valign="top" class="odd"><td>GenericCacheLocation</td><td>"&lt;APPROOT&gt;/data/Cache" (there is no shared cache)</td><td>"~/.cache"</td></tr>
+<tr valign="top" class="even"><td>AppDataLocation</td><td>"&lt;APPROOT&gt;/data", "&lt;APPROOT&gt;/app/native/assets"</td><td>"~/.local/share/&lt;APPNAME&gt;", "/usr/local/share/&lt;APPNAME&gt;", "/usr/share/&lt;APPNAME&gt;"</td></tr>
+<tr valign="top" class="odd"><td>AppLocalDataLocation</td><td>"&lt;APPROOT&gt;/data", "&lt;APPROOT&gt;/app/native/assets"</td><td>"~/.local/share/&lt;APPNAME&gt;", "/usr/local/share/&lt;APPNAME&gt;", "/usr/share/&lt;APPNAME&gt;"</td></tr>
+<tr valign="top" class="even"><td>AppConfigLocation</td><td>"&lt;APPROOT&gt;/data/Settings"</td><td>"~/.config/&lt;APPNAME&gt;", "/etc/xdg/&lt;APPNAME&gt;"</td></tr>
+</tbody></table></div>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th>Path type</th><th>Android</th><th>iOS</th></tr></thead>
+<tbody><tr valign="top" class="odd"><td>DesktopLocation</td><td>"&lt;APPROOT&gt;/files"</td><td>"&lt;APPROOT&gt;/&lt;APPDIR&gt;" (not writable)</td></tr>
+<tr valign="top" class="even"><td>DocumentsLocation</td><td>"&lt;USER&gt;/Documents", "&lt;USER&gt;/&lt;APPNAME&gt;/Documents"</td><td>"&lt;APPROOT&gt;/Documents"</td></tr>
+<tr valign="top" class="odd"><td>FontsLocation</td><td>"/system/fonts" (not writable)</td><td>"&lt;APPROOT&gt;/Documents/.fonts"</td></tr>
+<tr valign="top" class="even"><td>ApplicationsLocation</td><td>not supported (directory not readable)</td><td>not supported</td></tr>
+<tr valign="top" class="odd"><td>MusicLocation</td><td>"&lt;USER&gt;/Music", "&lt;USER&gt;/&lt;APPNAME&gt;/Music"</td><td>"&lt;APPROOT&gt;/Documents/Music"</td></tr>
+<tr valign="top" class="even"><td>MoviesLocation</td><td>"&lt;USER&gt;/Movies", "&lt;USER&gt;/&lt;APPNAME&gt;/Movies"</td><td>"&lt;APPROOT&gt;/Documents/Movies"</td></tr>
+<tr valign="top" class="odd"><td>PicturesLocation</td><td>"&lt;USER&gt;/Pictures", "&lt;USER&gt;/&lt;APPNAME&gt;/Pictures"</td><td>"&lt;APPROOT&gt;/Documents/Pictures", "assets-library://"</td></tr>
+<tr valign="top" class="even"><td>TempLocation</td><td>"&lt;APPROOT&gt;/cache"</td><td>"&lt;APPROOT&gt;/tmp"</td></tr>
+<tr valign="top" class="odd"><td>HomeLocation</td><td>"&lt;APPROOT&gt;/files"</td><td>"&lt;APPROOT&gt;/&lt;APPDIR&gt;" (not writable)</td></tr>
+<tr valign="top" class="even"><td>DataLocation</td><td>"&lt;APPROOT&gt;/files", "&lt;USER&gt;/&lt;APPNAME&gt;/files"</td><td>"&lt;APPROOT&gt;/Library/Application Support"</td></tr>
+<tr valign="top" class="odd"><td>CacheLocation</td><td>"&lt;APPROOT&gt;/cache", "&lt;USER&gt;/&lt;APPNAME&gt;/cache"</td><td>"&lt;APPROOT&gt;/Library/Caches"</td></tr>
+<tr valign="top" class="even"><td>GenericDataLocation</td><td>"&lt;USER&gt;"</td><td>"&lt;APPROOT&gt;/Documents"</td></tr>
+<tr valign="top" class="odd"><td>RuntimeLocation</td><td>"&lt;APPROOT&gt;/cache"</td><td>not supported</td></tr>
+<tr valign="top" class="even"><td>ConfigLocation</td><td>"&lt;APPROOT&gt;/files/settings"</td><td>"&lt;APPROOT&gt;/Documents"</td></tr>
+<tr valign="top" class="odd"><td>GenericConfigLocation</td><td>"&lt;APPROOT&gt;/files/settings" (there is no shared settings)</td><td>"&lt;APPROOT&gt;/Documents"</td></tr>
+<tr valign="top" class="even"><td>DownloadLocation</td><td>"&lt;USER&gt;/Downloads", "&lt;USER&gt;/&lt;APPNAME&gt;/Downloads"</td><td>"&lt;APPROOT&gt;/Documents/Download"</td></tr>
+<tr valign="top" class="odd"><td>GenericCacheLocation</td><td>"&lt;APPROOT&gt;/cache" (there is no shared cache)</td><td>"&lt;APPROOT&gt;/Library/Caches"</td></tr>
+<tr valign="top" class="even"><td>AppDataLocation</td><td>"&lt;APPROOT&gt;/files", "&lt;USER&gt;/&lt;APPNAME&gt;/files"</td><td>"&lt;APPROOT&gt;/Library/Application Support"</td></tr>
+<tr valign="top" class="odd"><td>AppConfigLocation</td><td>"&lt;APPROOT&gt;/files/settings"</td><td>"&lt;APPROOT&gt;/Documents"</td></tr>
+<tr valign="top" class="even"><td>AppLocalDataLocation</td><td>"&lt;APPROOT&gt;/files", "&lt;USER&gt;/&lt;APPNAME&gt;/files"</td><td>"&lt;APPROOT&gt;/Library/Application Support"</td></tr>
+</tbody></table></div>
+<p>In the table above, <code>&lt;APPNAME&gt;</code> is usually the organization name, the application name, or both, or a unique name generated at packaging. Similarly, &lt;APPROOT&gt; is the location where this application is installed (often a sandbox). &lt;APPDIR&gt; is the directory containing the application executable.</p>
+<p>The paths above should not be relied upon, as they may change according to OS configuration, locale, or they may change in future Qt versions.</p>
+<p><b>Note: </b>On Android, applications with open files on the external storage (&lt;USER&gt; locations), will be killed if the external storage is unmounted.</p><p><b>Note: </b>On iOS, if you do pass <code>QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).last()</code> as argument to <a href="http://doc.qt.io/qt-5/qfiledialog.html#setDirectory">QFileDialog::setDirectory</a>(), a native image picker dialog will be used for accessing the user's photo album. The filename returned can be loaded using <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a> and related APIs. This feature was added in Qt 5.5.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandardpaths.html#writableLocation">writableLocation</a>(), <a href="http://doc.qt.io/qt-5/qstandardpaths.html#standardLocations">standardLocations</a>(), <a href="http://doc.qt.io/qt-5/qstandardpaths.html#displayName">displayName</a>(), <a href="http://doc.qt.io/qt-5/qstandardpaths.html#locate">locate</a>(), and <a href="http://doc.qt.io/qt-5/qstandardpaths.html#locateAll">locateAll</a>().</p></div>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.Desktop' class='variant'><code>Desktop</code></span><div class='docblock'><p>Returns the user&#39;s desktop directory. This is a generic value. On systems with no concept of a desktop. (C++ enum variant: <span style='color: green;'><code>DesktopLocation = 0</code></span>)</p>
+</div><span id='variant.Documents' class='variant'><code>Documents</code></span><div class='docblock'><p>Returns the directory containing user document files. This is a generic value. The returned path is never empty. (C++ enum variant: <span style='color: green;'><code>DocumentsLocation = 1</code></span>)</p>
+</div><span id='variant.Fonts' class='variant'><code>Fonts</code></span><div class='docblock'><p>Returns the directory containing user&#39;s fonts. This is a generic value. Note that installing fonts may require additional, platform-specific operations. (C++ enum variant: <span style='color: green;'><code>FontsLocation = 2</code></span>)</p>
+</div><span id='variant.Applications' class='variant'><code>Applications</code></span><div class='docblock'><p>Returns the directory containing the user applications (either executables, application bundles, or shortcuts to them). This is a generic value. Note that installing applications may require additional, platform-specific operations. Files, folders or shortcuts in this directory are platform-specific. (C++ enum variant: <span style='color: green;'><code>ApplicationsLocation = 3</code></span>)</p>
+</div><span id='variant.Music' class='variant'><code>Music</code></span><div class='docblock'><p>Returns the directory containing the user&#39;s music or other audio files. This is a generic value. If no directory specific for music files exists, a sensible fallback for storing user documents is returned. (C++ enum variant: <span style='color: green;'><code>MusicLocation = 4</code></span>)</p>
+</div><span id='variant.Movies' class='variant'><code>Movies</code></span><div class='docblock'><p>Returns the directory containing the user&#39;s movies and videos. This is a generic value. If no directory specific for movie files exists, a sensible fallback for storing user documents is returned. (C++ enum variant: <span style='color: green;'><code>MoviesLocation = 5</code></span>)</p>
+</div><span id='variant.Pictures' class='variant'><code>Pictures</code></span><div class='docblock'><p>Returns the directory containing the user&#39;s pictures or photos. This is a generic value. If no directory specific for picture files exists, a sensible fallback for storing user documents is returned. (C++ enum variant: <span style='color: green;'><code>PicturesLocation = 6</code></span>)</p>
+</div><span id='variant.Temp' class='variant'><code>Temp</code></span><div class='docblock'><p>Returns a directory where temporary files can be stored. The returned value might be application-specific, shared among other applications for this user, or even system-wide. The returned path is never empty. (C++ enum variant: <span style='color: green;'><code>TempLocation = 7</code></span>)</p>
+</div><span id='variant.Home' class='variant'><code>Home</code></span><div class='docblock'><p>Returns the user&#39;s home directory (the same as <a href="http://doc.qt.io/qt-5/qdir.html#homePath">QDir::homePath</a>()). On Unix systems, this is equal to the HOME environment variable. This value might be generic or application-specific, but the returned path is never empty. (C++ enum variant: <span style='color: green;'><code>HomeLocation = 8</code></span>)</p>
+</div><span id='variant.Data' class='variant'><code>Data</code></span><div class='docblock'><p>This variant corresponds to multiple C++ enum variants with the same value:</p>
+
+<ul>
+<li><span style='color: green;'><code>DataLocation = 9</code></span>: Returns the same value as AppLocalDataLocation. This enumeration value is deprecated. Using AppDataLocation is preferable since on Windows, the roaming path is recommended.</li>
+<li><span style='color: green;'><code>AppLocalDataLocation = 9</code></span>: Returns the local settings path on the Windows operating system. On all other platforms, it returns the same value as AppDataLocation. This enum value was added in Qt 5.4.</li>
+</ul>
+</div><span id='variant.Cache' class='variant'><code>Cache</code></span><div class='docblock'><p>Returns a directory location where user-specific non-essential (cached) data should be written. This is an application-specific directory. The returned path is never empty. (C++ enum variant: <span style='color: green;'><code>CacheLocation = 10</code></span>)</p>
+</div><span id='variant.GenericData' class='variant'><code>GenericData</code></span><div class='docblock'><p>Returns a directory location where persistent data shared across applications can be stored. This is a generic value. The returned path is never empty. (C++ enum variant: <span style='color: green;'><code>GenericDataLocation = 11</code></span>)</p>
+</div><span id='variant.Runtime' class='variant'><code>Runtime</code></span><div class='docblock'><p>Returns a directory location where runtime communication files should be written, like Unix local sockets. This is a generic value. The returned path may be empty on some systems. (C++ enum variant: <span style='color: green;'><code>RuntimeLocation = 12</code></span>)</p>
+</div><span id='variant.Config' class='variant'><code>Config</code></span><div class='docblock'><p>Returns a directory location where user-specific configuration files should be written. This may be either a generic value or application-specific, and the returned path is never empty. (C++ enum variant: <span style='color: green;'><code>ConfigLocation = 13</code></span>)</p>
+</div><span id='variant.Download' class='variant'><code>Download</code></span><div class='docblock'><p>Returns a directory for user&#39;s downloaded files. This is a generic value. If no directory specific for downloads exists, a sensible fallback for storing user documents is returned. (C++ enum variant: <span style='color: green;'><code>DownloadLocation = 14</code></span>)</p>
+</div><span id='variant.GenericCache' class='variant'><code>GenericCache</code></span><div class='docblock'><p>Returns a directory location where user-specific non-essential (cached) data, shared across applications, should be written. This is a generic value. Note that the returned path may be empty if the system has no concept of shared cache. (C++ enum variant: <span style='color: green;'><code>GenericCacheLocation = 15</code></span>)</p>
+</div><span id='variant.GenericConfig' class='variant'><code>GenericConfig</code></span><div class='docblock'><p>Returns a directory location where user-specific configuration files shared between multiple applications should be written. This is a generic value and the returned path is never empty. (C++ enum variant: <span style='color: green;'><code>GenericConfigLocation = 16</code></span>)</p>
+</div><span id='variant.AppData' class='variant'><code>AppData</code></span><div class='docblock'><p>Returns a directory location where persistent application data can be stored. This is an application-specific directory. To obtain a path to store data to be shared with other applications, use QStandardPaths::GenericDataLocation. The returned path is never empty. On the Windows operating system, this returns the roaming path. This enum value was added in Qt 5.4. (C++ enum variant: <span style='color: green;'><code>AppDataLocation = 17</code></span>)</p>
+</div><span id='variant.AppConfig' class='variant'><code>AppConfig</code></span><div class='docblock'><p>Returns a directory location where user-specific configuration files should be written. This is an application-specific directory, and the returned path is never empty. This enum value was added in Qt 5.5. (C++ enum variant: <span style='color: green;'><code>AppConfigLocation = 18</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_core/standard_paths/enum.StandardLocation.html' title='qt_core::standard_paths::StandardLocation'>StandardLocation</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-137141' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/standard_paths.rs.html#107' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/standard_paths/enum.StandardLocation.html' title='qt_core::standard_paths::StandardLocation'>StandardLocation</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_core/standard_paths/enum.StandardLocation.html' title='qt_core::standard_paths::StandardLocation'>StandardLocation</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-137144' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/standard_paths.rs.html#107' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_core/standard_paths/enum.StandardLocation.html' title='qt_core::standard_paths::StandardLocation'>StandardLocation</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-137147' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/standard_paths.rs.html#107' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_core/standard_paths/enum.StandardLocation.html' title='qt_core::standard_paths::StandardLocation'>StandardLocation</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_core/standard_paths/enum.StandardLocation.html' title='qt_core::standard_paths::StandardLocation'>StandardLocation</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-137153' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/standard_paths.rs.html#107' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

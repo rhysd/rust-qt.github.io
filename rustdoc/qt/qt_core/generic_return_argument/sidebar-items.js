@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["GenericReturnArgument","C++ type: <span style='color: green;'>```QGenericReturnArgument```</span>"]]});

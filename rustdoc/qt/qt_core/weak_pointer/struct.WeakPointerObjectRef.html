@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `WeakPointerObjectRef` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, WeakPointerObjectRef">
+
+    <title>qt_core::weak_pointer::WeakPointerObjectRef - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>weak_pointer</a></p><script>window.sidebarCurrent = {name: 'WeakPointerObjectRef', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>weak_pointer</a>::<wbr><a class='struct' href=''>WeakPointerObjectRef</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-169119' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/weak_pointer.rs.html#6-8' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct WeakPointerObjectRef {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QWeakPointer&lt;QObject&gt;</code></span></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/weak_pointer/struct.WeakPointerObjectRef.html' title='qt_core::weak_pointer::WeakPointerObjectRef'>WeakPointerObjectRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-169124' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/weak_pointer.rs.html#16-173' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QWeakPointer&lt;QObject&gt;::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qweakpointer.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears this <a href="http://doc.qt.io/qt-5/qweakpointer.html">QWeakPointer</a> object, dropping the reference that it may have had to the pointer.</p></div></p>
+</div><h4 id='method.data' class='method'><code>fn <a href='#method.data' class='fnname'>data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QObject* QWeakPointer&lt;QObject&gt;::data() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qweakpointer.html#data">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value of the pointer being tracked by this <a href="http://doc.qt.io/qt-5/qweakpointer.html">QWeakPointer</a>, <b>without</b> ensuring that it cannot get deleted. To have that guarantee, use <a href="http://doc.qt.io/qt-5/qweakpointer.html#toStrongRef">toStrongRef</a>(), which returns a <a href="http://doc.qt.io/qt-5/qsharedpointer.html">QSharedPointer</a> object. If this function can determine that the pointer has already been deleted, it returns 0.</p>
+<p>It is ok to obtain the value of the pointer and using that value itself, like for example in debugging statements:</p>
+<pre class="cpp"><a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>(<span class="string">&quot;Tracking %p&quot;</span><span class="operator">,</span> weakref<span class="operator">.</span>data());</pre>
+<p>However, dereferencing the pointer is only allowed if you can guarantee by external means that the pointer does not get deleted. For example, if you can be certain that no other thread can delete it, nor the functions that you may call.</p>
+<p>If that is the case, then the following code is valid:</p>
+<pre class="cpp"><span class="comment">// this pointer cannot be used in another thread</span>
+<span class="comment">// so other threads cannot delete it</span>
+<span class="type"><a href="http://doc.qt.io/qt-5/qweakpointer.html#QWeakPointer">QWeakPointer</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> weakref <span class="operator">=</span> obtainReference();</p>
+
+<p>Object <span class="operator">*</span>obj <span class="operator">=</span> weakref<span class="operator">.</span>data();
+<span class="keyword">if</span> (obj) {
+&#32;   <span class="comment">// if the pointer wasn&#39;t deleted yet, we know it can&#39;t get</span>
+&#32;   <span class="comment">// deleted by our own code here nor the functions we call</span>
+&#32;   otherFunction(obj);
+}</pre>
+<p>Use this function with care.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qweakpointer.html#isNull">isNull</a>() and <a href="http://doc.qt.io/qt-5/qweakpointer.html#toStrongRef">toStrongRef</a>().</p></div></p>
+</div><h4 id='method.is_null' class='method'><code>fn <a href='#method.is_null' class='fnname'>is_null</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QWeakPointer&lt;QObject&gt;::isNull() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qweakpointer.html#isNull">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this object is holding a reference to a null pointer.</p>
+<p>Note that, due to the nature of weak references, the pointer that <a href="http://doc.qt.io/qt-5/qweakpointer.html">QWeakPointer</a> references can become null at any moment, so the value returned from this function can change from false to true from one call to the next.</p></div></p>
+</div><h4 id='method.lock' class='method'><code>fn <a href='#method.lock' class='fnname'>lock</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/weak_pointer/overloading/trait.WeakPointerObjectRefLockArgs.html' title='qt_core::weak_pointer::overloading::WeakPointerObjectRefLockArgs'>WeakPointerObjectRefLockArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWeakPointer&lt;QObject&gt;::lock</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn lock(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::shared_pointer::SharedPointerObjectRef&gt;</code><br>2) <code>fn lock(&amp;self, cpp_utils::AsStruct) -&gt; ::shared_pointer::SharedPointerObjectRef</code><br>
+C++ method: <span style='color: green;'><code>QSharedPointer&lt;QObject&gt; QWeakPointer&lt;QObject&gt;::lock() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qweakpointer.html#lock">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Same as <a href="http://doc.qt.io/qt-5/qweakpointer.html#toStrongRef">toStrongRef</a>().</p>
+<p>This function is provided for API compatibility with std::weak_ptr.</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/weak_pointer/overloading/trait.WeakPointerObjectRefNewArgs.html' title='qt_core::weak_pointer::overloading::WeakPointerObjectRefNewArgs'>WeakPointerObjectRefNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWeakPointer&lt;QObject&gt;::QWeakPointer</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::weak_pointer::WeakPointerObjectRef</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::weak_pointer::WeakPointerObjectRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QWeakPointer&lt;QObject&gt;::QWeakPointer()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::shared_pointer::SharedPointerObjectRef, cpp_utils::AsStruct)) -&gt; ::weak_pointer::WeakPointerObjectRef</code><br>2) <code>fn new((&amp;::shared_pointer::SharedPointerObjectRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::weak_pointer::WeakPointerObjectRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QWeakPointer&lt;QObject&gt;::QWeakPointer(const QSharedPointer&lt;QObject&gt;&amp; o)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::weak_pointer::WeakPointerObjectRef, cpp_utils::AsStruct)) -&gt; ::weak_pointer::WeakPointerObjectRef</code><br>2) <code>fn new((&amp;::weak_pointer::WeakPointerObjectRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::weak_pointer::WeakPointerObjectRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QWeakPointer&lt;QObject&gt;::QWeakPointer(const QWeakPointer&lt;QObject&gt;&amp; o)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/weak_pointer/struct.WeakPointerObjectRef.html' title='qt_core::weak_pointer::WeakPointerObjectRef'>WeakPointerObjectRef</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/weak_pointer/overloading/trait.WeakPointerObjectRefOpAssignArgs.html' title='qt_core::weak_pointer::overloading::WeakPointerObjectRefOpAssignArgs'>WeakPointerObjectRefOpAssignArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWeakPointer&lt;QObject&gt;::operator=</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_assign(&amp;mut self, &amp;&#39;l1 ::shared_pointer::SharedPointerObjectRef) -&gt; &amp;&#39;l0 mut ::weak_pointer::WeakPointerObjectRef</code><br>
+C++ method: <span style='color: green;'><code>QWeakPointer&lt;QObject&gt;&amp; QWeakPointer&lt;QObject&gt;::operator=(const QSharedPointer&lt;QObject&gt;&amp; o)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qweakpointer.html#operator-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Makes this object share <i>other</i>&#39;s pointer. The current pointer reference is discarded but is not deleted.</p>
+<p>If <code>T</code> is a derived type of the template parameter of this class, <a href="http://doc.qt.io/qt-5/qweakpointer.html">QWeakPointer</a> will perform an automatic cast. Otherwise, you will get a compiler error.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_assign(&amp;mut self, &amp;&#39;l1 ::weak_pointer::WeakPointerObjectRef) -&gt; &amp;&#39;l0 mut ::weak_pointer::WeakPointerObjectRef</code><br>
+C++ method: <span style='color: green;'><code>QWeakPointer&lt;QObject&gt;&amp; QWeakPointer&lt;QObject&gt;::operator=(const QWeakPointer&lt;QObject&gt;&amp; o)</code></span></p>
+</div><h4 id='method.op_not' class='method'><code>fn <a href='#method.op_not' class='fnname'>op_not</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QWeakPointer&lt;QObject&gt;::operator!() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qweakpointer.html#operator-not">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this object is null. This function is suitable for use in <code>if-constructs</code>, like:</p>
+<pre class="cpp"><span class="keyword">if</span> (<span class="operator">!</span>weakref) { <span class="operator">.</span><span class="operator">.</span><span class="operator">.</span> }</pre>
+<p>Note that, due to the nature of weak references, the pointer that <a href="http://doc.qt.io/qt-5/qweakpointer.html">QWeakPointer</a> references can become null at any moment, so the value returned from this function can change from false to true from one call to the next.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qweakpointer.html#isNull">isNull</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/weak_pointer/struct.WeakPointerObjectRef.html' title='qt_core::weak_pointer::WeakPointerObjectRef'>WeakPointerObjectRef</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QWeakPointer&lt;QObject&gt;::swap(QWeakPointer&lt;QObject&gt;&amp; other)</code></span></p>
+
+<p>Warning: no exact match found in C++ documentation.Below is the <a href="http://doc.qt.io/qt-5/qweakpointer.html#swap">C++ documentation</a> for <code>void QWeakPointer::swap(QWeakPointer<T> &amp; other)</code>: <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this weak pointer instance with <i>other</i>. This function is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.4.</p></div></p>
+</div><h4 id='method.to_strong_ref' class='method'><code>fn <a href='#method.to_strong_ref' class='fnname'>to_strong_ref</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/weak_pointer/overloading/trait.WeakPointerObjectRefToStrongRefArgs.html' title='qt_core::weak_pointer::overloading::WeakPointerObjectRefToStrongRefArgs'>WeakPointerObjectRefToStrongRefArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWeakPointer&lt;QObject&gt;::toStrongRef</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_strong_ref(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::shared_pointer::SharedPointerObjectRef&gt;</code><br>2) <code>fn to_strong_ref(&amp;self, cpp_utils::AsStruct) -&gt; ::shared_pointer::SharedPointerObjectRef</code><br>
+C++ method: <span style='color: green;'><code>QSharedPointer&lt;QObject&gt; QWeakPointer&lt;QObject&gt;::toStrongRef() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qweakpointer.html#toStrongRef">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Promotes this weak reference to a strong one and returns a <a href="http://doc.qt.io/qt-5/qsharedpointer.html">QSharedPointer</a> object holding that reference. When promoting to <a href="http://doc.qt.io/qt-5/qsharedpointer.html">QSharedPointer</a>, this function verifies if the object has been deleted already or not. If it hasn&#39;t, this function increases the reference count to the shared object, thus ensuring that it will not get deleted.</p>
+<p>Since this function can fail to obtain a valid strong reference to the shared object, you should always verify if the conversion succeeded, by calling <a href="http://doc.qt.io/qt-5/qsharedpointer.html#isNull">QSharedPointer::isNull</a>() on the returned object.</p>
+<p>For example, the following code promotes a <a href="http://doc.qt.io/qt-5/qweakpointer.html">QWeakPointer</a> that was held to a strong reference and, if it succeeded, it prints the value of the integer that was held:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qweakpointer.html#QWeakPointer">QWeakPointer</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> weakref;</p>
+
+<p><span class="comment">// ...</span></p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qsharedpointer.html">QSharedPointer</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> strong <span class="operator">=</span> weakref<span class="operator">.</span>toStrongRef();
+<span class="keyword">if</span> (strong)
+&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;The value is:&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="operator">*</span>strong;
+<span class="keyword">else</span>
+&#32;   <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;The value has already been deleted&quot;</span>;</pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qsharedpointer.html#QSharedPointer">QSharedPointer::QSharedPointer</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/weak_pointer/overloading/trait.WeakPointerObjectRefOpAssignArgs.html' title='qt_core::weak_pointer::overloading::WeakPointerObjectRefOpAssignArgs'>WeakPointerObjectRefOpAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/weak_pointer/struct.WeakPointerObjectRef.html' title='qt_core::weak_pointer::WeakPointerObjectRef'>WeakPointerObjectRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-169235' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/weak_pointer.rs.html#303-311' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/weak_pointer/overloading/trait.WeakPointerObjectRefOpAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/weak_pointer/struct.WeakPointerObjectRef.html' title='qt_core::weak_pointer::WeakPointerObjectRef'>WeakPointerObjectRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/weak_pointer/struct.WeakPointerObjectRef.html' title='qt_core::weak_pointer::WeakPointerObjectRef'>WeakPointerObjectRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/weak_pointer/struct.WeakPointerObjectRef.html' title='qt_core::weak_pointer::WeakPointerObjectRef'>WeakPointerObjectRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-169122' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/weak_pointer.rs.html#10-14' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/weak_pointer/struct.WeakPointerObjectRef.html' title='qt_core::weak_pointer::WeakPointerObjectRef'>WeakPointerObjectRef</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/weak_pointer/struct.WeakPointerObjectRef.html' title='qt_core::weak_pointer::WeakPointerObjectRef'>WeakPointerObjectRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-169154' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/weak_pointer.rs.html#175-182' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QWeakPointer&lt;QObject&gt;::~QWeakPointer()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qweakpointer.html#dtor.QWeakPointer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys this <a href="http://doc.qt.io/qt-5/qweakpointer.html">QWeakPointer</a> object. The pointer referenced by this object will not be deleted.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/weak_pointer/struct.WeakPointerObjectRef.html' title='qt_core::weak_pointer::WeakPointerObjectRef'>WeakPointerObjectRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-169157' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/weak_pointer.rs.html#184-188' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

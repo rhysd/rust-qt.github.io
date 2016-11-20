@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["Iterator","C++ type: <span style='color: green;'>```QTextFrame::iterator```</span>"],["TextFrame","C++ type: <span style='color: green;'>```QTextFrame```</span>"]]});

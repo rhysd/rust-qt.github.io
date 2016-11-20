@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AbstractConcatenable","C++ type: <span style='color: green;'>```QAbstractConcatenable```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Roles","C++ type: <span style='color: green;'>```QFileSystemModel::Roles```</span>"]],"mod":[["overloading",""]],"struct":[["FileSystemModel","C++ type: <span style='color: green;'>```QFileSystemModel```</span>"]]});

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Filter` enum in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Filter">
+
+    <title>qt_core::dir::Filter - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>dir</a></p><script>window.sidebarCurrent = {name: 'Filter', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>dir</a>::<wbr><a class='enum' href=''>Filter</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-67876' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir.rs.html#945-986' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Filter {
+    NoFilter,
+    Dirs,
+    Files,
+    Drives,
+    AllEntries,
+    NoSymLinks,
+    TypeMask,
+    Readable,
+    Writable,
+    Executable,
+    PermissionMask,
+    Modified,
+    Hidden,
+    System,
+    AccessMask,
+    AllDirs,
+    CaseSensitive,
+    NoDot,
+    NoDotDot,
+    NoDotAndDotDot,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QDir::Filter</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qdir.html#Filter-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum describes the filtering options available to <a href="http://doc.qt.io/qt-5/qdir.html">QDir</a>; e.g. for <a href="http://doc.qt.io/qt-5/qdir.html#entryList">entryList</a>() and <a href="http://doc.qt.io/qt-5/qdir.html#entryInfoList">entryInfoList</a>(). The filter value is specified by combining values from the following list using the bitwise OR operator:</p></p>
+
+<p>Functions that use Filter enum values to filter lists of files and directories will include symbolic links to files and directories unless you set the NoSymLinks value.</p>
+
+<p>A default constructed <a href="http://doc.qt.io/qt-5/qdir.html">QDir</a> will not filter out files based on their permissions, so <a href="http://doc.qt.io/qt-5/qdir.html#entryList">entryList</a>() and <a href="http://doc.qt.io/qt-5/qdir.html#entryInfoList">entryInfoList</a>() will return all files that are readable, writable, executable, or any combination of the three. This makes the default easy to write, and at the same time useful.</p>
+
+<p>For example, setting the <code>Readable</code>, <code>Writable</code>, and <code>Files</code> flags allows all files to be listed for which the application has read access, write access or both. If the <code>Dirs</code> and <code>Drives</code> flags are also included in this combination then all drives, directories, all files that the application can read, write, or execute, and symlinks to such files/directories can be listed.</p>
+
+<p>To retrieve the permissons for a directory, use the <a href="http://doc.qt.io/qt-5/qdir.html#entryInfoList">entryInfoList</a>() function to get the associated <a href="http://doc.qt.io/qt-5/qfileinfo.html">QFileInfo</a> objects and then use the QFileInfo::permissons() to obtain the permissions and ownership for each file.</p>
+
+<p><p>The Filters type is a typedef for <a href="http://doc.qt.io/qt-5/qflags.html">QFlags</a>&lt;Filter&gt;. It stores an OR combination of Filter values.</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.NoFilter' class='variant'><code>NoFilter</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>NoFilter = -1</code></span></p>
+</div><span id='variant.Dirs' class='variant'><code>Dirs</code></span><div class='docblock'><p>List directories that match the filters. (C++ enum variant: <span style='color: green;'><code>Dirs = 1</code></span>)</p>
+</div><span id='variant.Files' class='variant'><code>Files</code></span><div class='docblock'><p>List files. (C++ enum variant: <span style='color: green;'><code>Files = 2</code></span>)</p>
+</div><span id='variant.Drives' class='variant'><code>Drives</code></span><div class='docblock'><p>List disk drives (ignored under Unix). (C++ enum variant: <span style='color: green;'><code>Drives = 4</code></span>)</p>
+</div><span id='variant.AllEntries' class='variant'><code>AllEntries</code></span><div class='docblock'><p>List directories, files, drives and symlinks (this does not list broken symlinks unless you specify System). (C++ enum variant: <span style='color: green;'><code>AllEntries = 7</code></span>)</p>
+</div><span id='variant.NoSymLinks' class='variant'><code>NoSymLinks</code></span><div class='docblock'><p>Do not list symbolic links (ignored by operating systems that don&#39;t support symbolic links). (C++ enum variant: <span style='color: green;'><code>NoSymLinks = 8</code></span>)</p>
+</div><span id='variant.TypeMask' class='variant'><code>TypeMask</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>TypeMask = 15</code></span></p>
+</div><span id='variant.Readable' class='variant'><code>Readable</code></span><div class='docblock'><p>List files for which the application has read access. The Readable value needs to be combined with Dirs or Files. (C++ enum variant: <span style='color: green;'><code>Readable = 16</code></span>)</p>
+</div><span id='variant.Writable' class='variant'><code>Writable</code></span><div class='docblock'><p>List files for which the application has write access. The Writable value needs to be combined with Dirs or Files. (C++ enum variant: <span style='color: green;'><code>Writable = 32</code></span>)</p>
+</div><span id='variant.Executable' class='variant'><code>Executable</code></span><div class='docblock'><p>List files for which the application has execute access. The Executable value needs to be combined with Dirs or Files. (C++ enum variant: <span style='color: green;'><code>Executable = 64</code></span>)</p>
+</div><span id='variant.PermissionMask' class='variant'><code>PermissionMask</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>PermissionMask = 112</code></span></p>
+</div><span id='variant.Modified' class='variant'><code>Modified</code></span><div class='docblock'><p>Only list files that have been modified (ignored on Unix). (C++ enum variant: <span style='color: green;'><code>Modified = 128</code></span>)</p>
+</div><span id='variant.Hidden' class='variant'><code>Hidden</code></span><div class='docblock'><p>List hidden files (on Unix, files starting with a &quot;.&quot;). (C++ enum variant: <span style='color: green;'><code>Hidden = 256</code></span>)</p>
+</div><span id='variant.System' class='variant'><code>System</code></span><div class='docblock'><p>List system files (on Unix, FIFOs, sockets and device files are included; on Windows, <code>.lnk</code> files are included) (C++ enum variant: <span style='color: green;'><code>System = 512</code></span>)</p>
+</div><span id='variant.AccessMask' class='variant'><code>AccessMask</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>AccessMask = 1008</code></span></p>
+</div><span id='variant.AllDirs' class='variant'><code>AllDirs</code></span><div class='docblock'><p>List all directories; i.e. don&#39;t apply the filters to directory names. (C++ enum variant: <span style='color: green;'><code>AllDirs = 1024</code></span>)</p>
+</div><span id='variant.CaseSensitive' class='variant'><code>CaseSensitive</code></span><div class='docblock'><p>The filter should be case sensitive. (C++ enum variant: <span style='color: green;'><code>CaseSensitive = 2048</code></span>)</p>
+</div><span id='variant.NoDot' class='variant'><code>NoDot</code></span><div class='docblock'><p>Do not list the special entry &quot;.&quot;. (C++ enum variant: <span style='color: green;'><code>NoDot = 8192</code></span>)</p>
+</div><span id='variant.NoDotDot' class='variant'><code>NoDotDot</code></span><div class='docblock'><p>Do not list the special entry &quot;..&quot;. (C++ enum variant: <span style='color: green;'><code>NoDotDot = 16384</code></span>)</p>
+</div><span id='variant.NoDotAndDotDot' class='variant'><code>NoDotAndDotDot</code></span><div class='docblock'><p>Do not list the special entries &quot;.&quot; and &quot;..&quot;. (C++ enum variant: <span style='color: green;'><code>NoDotAndDotDot = 24576</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_core/dir/enum.Filter.html' title='qt_core::dir::Filter'>Filter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-67840' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir.rs.html#943' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/dir/enum.Filter.html' title='qt_core::dir::Filter'>Filter</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_core/dir/enum.Filter.html' title='qt_core::dir::Filter'>Filter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-67843' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir.rs.html#943' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_core/dir/enum.Filter.html' title='qt_core::dir::Filter'>Filter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-67846' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir.rs.html#943' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_core/dir/enum.Filter.html' title='qt_core::dir::Filter'>Filter</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_core/dir/enum.Filter.html' title='qt_core::dir::Filter'>Filter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-67852' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir.rs.html#943' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/flags/trait.FlaggableEnum.html' title='qt_core::flags::FlaggableEnum'>FlaggableEnum</a> for <a class='enum' href='../../qt_core/dir/enum.Filter.html' title='qt_core::dir::Filter'>Filter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-67917' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/dir.rs.html#988-995' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_flag_value' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.to_flag_value' class='fnname'>to_flag_value</a>(self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<h4 id='method.enum_name' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.enum_name' class='fnname'>enum_name</a>() -&gt; &amp;'static <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AssociativeIterable` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AssociativeIterable">
+
+    <title>qt_core::associative_iterable::AssociativeIterable - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>associative_iterable</a></p><script>window.sidebarCurrent = {name: 'AssociativeIterable', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>associative_iterable</a>::<wbr><a class='struct' href=''>AssociativeIterable</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-56658' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/associative_iterable.rs.html#35-37' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct AssociativeIterable {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QAssociativeIterable</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qassociativeiterable.html">QAssociativeIterable</a> class is an iterable interface for an associative container in a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>.</p>
+<p>This class allows several methods of accessing the elements of an associative container held within a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>. An instance of <a href="http://doc.qt.io/qt-5/qassociativeiterable.html">QAssociativeIterable</a> can be extracted from a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> if it can be converted to a <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantHash-typedef">QVariantHash</a> or <a href="http://doc.qt.io/qt-5/qvariant.html#QVariantMap-typedef">QVariantMap</a>.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qhash.html">QHash</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> mapping;
+mapping<span class="operator">.</span>insert(<span class="number">7</span><span class="operator">,</span> <span class="string">&quot;Seven&quot;</span>);
+mapping<span class="operator">.</span>insert(<span class="number">11</span><span class="operator">,</span> <span class="string">&quot;Eleven&quot;</span>);
+mapping<span class="operator">.</span>insert(<span class="number">42</span><span class="operator">,</span> <span class="string">&quot;Forty-two&quot;</span>);</p>
+
+<p><span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></span> variant <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></span><span class="operator">::</span>fromValue(mapping);
+<span class="keyword">if</span> (variant<span class="operator">.</span>canConvert<span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html#QVariantHash-typedef">QVariantHash</a></span><span class="operator">&gt;</span>()) {
+&#32;   <span class="type">QAssociativeIterable</span> iterable <span class="operator">=</span> variant<span class="operator">.</span>value<span class="operator">&lt;</span><span class="type">QAssociativeIterable</span><span class="operator">&gt;</span>();
+&#32;   <span class="comment">// Can use foreach over the values:</span>
+&#32;   foreach (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></span> <span class="operator">&amp;</span>v<span class="operator">,</span> iterable) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+&#32;   }
+&#32;   <span class="comment">// Can use C++11 range-for over the values:</span>
+&#32;   <span class="keyword">for</span> (<span class="keyword">const</span> <span class="type"><a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></span> <span class="operator">&amp;</span>v : iterable) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> v;
+&#32;   }
+&#32;   <span class="comment">// Can use iterators:</span>
+&#32;   <span class="type">QAssociativeIterable</span><span class="operator">::</span>const_iterator it <span class="operator">=</span> iterable<span class="operator">.</span>begin();
+&#32;   <span class="keyword">const</span> <span class="type">QAssociativeIterable</span><span class="operator">::</span>const_iterator end <span class="operator">=</span> iterable<span class="operator">.</span>end();
+&#32;   <span class="keyword">for</span> ( ; it <span class="operator">!</span><span class="operator">=</span> end; <span class="operator">+</span><span class="operator">+</span>it) {
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="operator">*</span>it; <span class="comment">// The current value</span>
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> it<span class="operator">.</span>key();
+&#32;       <a href="http://doc.qt.io/qt-5/qtglobal.html#qDebug">qDebug</a>() <span class="operator">&lt;</span><span class="operator">&lt;</span> it<span class="operator">.</span>value();
+&#32;   }
+}</pre>
+<p>The container itself is not copied before iterating over it.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/associative_iterable/struct.AssociativeIterable.html' title='qt_core::associative_iterable::AssociativeIterable'>AssociativeIterable</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-56663' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/associative_iterable.rs.html#45-112' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.begin' class='method'><code>fn <a href='#method.begin' class='fnname'>begin</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/associative_iterable/overloading/trait.AssociativeIterableBeginArgs.html' title='qt_core::associative_iterable::overloading::AssociativeIterableBeginArgs'>AssociativeIterableBeginArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAssociativeIterable::begin</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn begin(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::associative_iterable::ConstIterator&gt;</code><br>2) <code>fn begin(&amp;self, cpp_utils::AsStruct) -&gt; ::associative_iterable::ConstIterator</code><br>
+C++ method: <span style='color: green;'><code>QAssociativeIterable::const_iterator QAssociativeIterable::begin() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable.html#begin">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html">QAssociativeIterable::const_iterator</a> for the beginning of the container. This can be used in stl-style iteration.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable.html#end">end</a>().</p></div></p>
+</div><h4 id='method.end' class='method'><code>fn <a href='#method.end' class='fnname'>end</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/associative_iterable/overloading/trait.AssociativeIterableEndArgs.html' title='qt_core::associative_iterable::overloading::AssociativeIterableEndArgs'>AssociativeIterableEndArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAssociativeIterable::end</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn end(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::associative_iterable::ConstIterator&gt;</code><br>2) <code>fn end(&amp;self, cpp_utils::AsStruct) -&gt; ::associative_iterable::ConstIterator</code><br>
+C++ method: <span style='color: green;'><code>QAssociativeIterable::const_iterator QAssociativeIterable::end() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable.html#end">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html">QAssociativeIterable::const_iterator</a> for the end of the container. This can be used in stl-style iteration.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable.html#begin">begin</a>().</p></div></p>
+</div><h4 id='method.find' class='method'><code>fn <a href='#method.find' class='fnname'>find</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/associative_iterable/overloading/trait.AssociativeIterableFindArgs.html' title='qt_core::associative_iterable::overloading::AssociativeIterableFindArgs'>AssociativeIterableFindArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAssociativeIterable::find</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn find(&amp;self, (&amp;::variant::Variant, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::associative_iterable::ConstIterator&gt;</code><br>2) <code>fn find(&amp;self, (&amp;::variant::Variant, cpp_utils::AsStruct)) -&gt; ::associative_iterable::ConstIterator</code><br>
+C++ method: <span style='color: green;'><code>QAssociativeIterable::const_iterator QAssociativeIterable::find(const QVariant&amp; key) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable.html#find">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a <a href="http://doc.qt.io/qt-5/qassociativeiterable-const-iterator.html">QAssociativeIterable::const_iterator</a> for the given key <i>key</i> in the container, if the types are convertible.</p>
+<p>If the key is not found, returns <a href="http://doc.qt.io/qt-5/qassociativeiterable.html#end">end</a>().</p>
+<p>This can be used in stl-style iteration.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable.html#begin">begin</a>(), <a href="http://doc.qt.io/qt-5/qassociativeiterable.html#end">end</a>(), and <a href="http://doc.qt.io/qt-5/qassociativeiterable.html#value">value</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QAssociativeIterable::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of elements in the container.</p></div></p>
+</div><h4 id='method.value' class='method'><code>fn <a href='#method.value' class='fnname'>value</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/associative_iterable/overloading/trait.AssociativeIterableValueArgs.html' title='qt_core::associative_iterable::overloading::AssociativeIterableValueArgs'>AssociativeIterableValueArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAssociativeIterable::value</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn value(&amp;self, (&amp;::variant::Variant, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::variant::Variant&gt;</code><br>2) <code>fn value(&amp;self, (&amp;::variant::Variant, cpp_utils::AsStruct)) -&gt; ::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QAssociativeIterable::value(const QVariant&amp; key) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qassociativeiterable.html#value">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value for the given <i>key</i> in the container, if the types are convertible.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qassociativeiterable.html#find">find</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/associative_iterable/struct.AssociativeIterable.html' title='qt_core::associative_iterable::AssociativeIterable'>AssociativeIterable</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-56661' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/associative_iterable.rs.html#39-43' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/associative_iterable/struct.AssociativeIterable.html' title='qt_core::associative_iterable::AssociativeIterable'>AssociativeIterable</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/associative_iterable/struct.AssociativeIterable.html' title='qt_core::associative_iterable::AssociativeIterable'>AssociativeIterable</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-56686' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/associative_iterable.rs.html#114-123' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QAssociativeIterable::~QAssociativeIterable()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/associative_iterable/struct.AssociativeIterable.html' title='qt_core::associative_iterable::AssociativeIterable'>AssociativeIterable</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-56689' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/associative_iterable.rs.html#125-129' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

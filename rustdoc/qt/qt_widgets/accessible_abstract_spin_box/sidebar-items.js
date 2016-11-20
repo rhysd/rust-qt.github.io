@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AccessibleAbstractSpinBox","C++ type: <span style='color: green;'>```QAccessibleAbstractSpinBox```</span>"]]});

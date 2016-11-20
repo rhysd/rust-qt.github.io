@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["TextLengthAsQVariantArgs","This trait represents a set of arguments accepted by TextLength::as_q_variant method."],["TextLengthNewArgs","This trait represents a set of arguments accepted by TextLength::new method."]]});

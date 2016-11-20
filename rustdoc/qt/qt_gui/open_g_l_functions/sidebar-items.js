@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["OpenGLFeature","C++ type: <span style='color: green;'>```QOpenGLFunctions::OpenGLFeature```</span>"]],"fn":[["op_bit_or","C++ method: <span style='color: green;'>```operator|```</span>"]],"mod":[["overloading",""]],"struct":[["OpenGLFunctions","C++ type: <span style='color: green;'>```QOpenGLFunctions```</span>"]]});

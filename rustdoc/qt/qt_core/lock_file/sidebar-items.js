@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["LockError","C++ type: <span style='color: green;'>```QLockFile::LockError```</span>"]],"mod":[["overloading",""]],"struct":[["LockFile","C++ type: <span style='color: green;'>```QLockFile```</span>"]]});

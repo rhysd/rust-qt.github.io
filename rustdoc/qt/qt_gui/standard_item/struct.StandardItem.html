@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `StandardItem` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, StandardItem">
+
+    <title>qt_gui::standard_item::StandardItem - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>standard_item</a></p><script>window.sidebarCurrent = {name: 'StandardItem', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>standard_item</a>::<wbr><a class='struct' href=''>StandardItem</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-147685' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/standard_item.rs.html#32-34' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct StandardItem {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QStandardItem</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qstandarditem.html">QStandardItem</a> class provides an item for use with the <a href="http://doc.qt.io/qt-5/qstandarditemmodel.html">QStandardItemModel</a> class.</p>
+<p>Items usually contain text, icons, or checkboxes.</p>
+<p>Each item can have its own background brush which is set with the <a href="http://doc.qt.io/qt-5/qstandarditem.html#setBackground">setBackground</a>() function. The current background brush can be found with <a href="http://doc.qt.io/qt-5/qstandarditem.html#background">background</a>(). The text label for each item can be rendered with its own font and brush. These are specified with the <a href="http://doc.qt.io/qt-5/qstandarditem.html#setFont">setFont</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setForeground">setForeground</a>() functions, and read with <a href="http://doc.qt.io/qt-5/qstandarditem.html#font">font</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#foreground">foreground</a>().</p>
+<p>By default, items are enabled, editable, selectable, checkable, and can be used both as the source of a drag and drop operation and as a drop target. Each item&#39;s flags can be changed by calling <a href="http://doc.qt.io/qt-5/qstandarditem.html#setFlags">setFlags</a>(). Checkable items can be checked and unchecked with the <a href="http://doc.qt.io/qt-5/qstandarditem.html#setCheckState">setCheckState</a>() function. The corresponding <a href="http://doc.qt.io/qt-5/qstandarditem.html#checkState">checkState</a>() function indicates whether the item is currently checked.</p>
+<p>You can store application-specific data in an item by calling <a href="http://doc.qt.io/qt-5/qstandarditem.html#setData">setData</a>().</p>
+<p>Each item can have a two-dimensional table of child items. This makes it possible to build hierarchies of items. The typical hierarchy is the tree, in which case the child table is a table with a single column (a list).</p>
+<p>The dimensions of the child table can be set with <a href="http://doc.qt.io/qt-5/qstandarditem.html#setRowCount">setRowCount</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setColumnCount">setColumnCount</a>(). Items can be positioned in the child table with <a href="http://doc.qt.io/qt-5/qstandarditem.html#setChild">setChild</a>(). Get a pointer to a child item with <a href="http://doc.qt.io/qt-5/qstandarditem.html#child">child</a>(). New rows and columns of children can also be inserted with <a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRow">insertRow</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#insertColumn">insertColumn</a>(), or appended with <a href="http://doc.qt.io/qt-5/qstandarditem.html#appendRow">appendRow</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#appendColumn">appendColumn</a>(). When using the append and insert functions, the dimensions of the child table will grow as needed.</p>
+<p>An existing row of children can be removed with <a href="http://doc.qt.io/qt-5/qstandarditem.html#removeRow">removeRow</a>() or <a href="http://doc.qt.io/qt-5/qstandarditem.html#takeRow">takeRow</a>(); correspondingly, a column can be removed with <a href="http://doc.qt.io/qt-5/qstandarditem.html#removeColumn">removeColumn</a>() or <a href="http://doc.qt.io/qt-5/qstandarditem.html#takeColumn">takeColumn</a>().</p>
+<p>An item&#39;s children can be sorted by calling <a href="http://doc.qt.io/qt-5/qstandarditem.html#sortChildren">sortChildren</a>().</p>
+<a name="subclassing"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/standard_item/struct.StandardItem.html' title='qt_gui::standard_item::StandardItem'>StandardItem</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147690' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/standard_item.rs.html#42-968' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.accessible_description' class='method'><code>fn <a href='#method.accessible_description' class='fnname'>accessible_description</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemAccessibleDescriptionArgs.html' title='qt_gui::standard_item::overloading::StandardItemAccessibleDescriptionArgs'>StandardItemAccessibleDescriptionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::accessibleDescription</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn accessible_description(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn accessible_description(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStandardItem::accessibleDescription() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#accessibleDescription">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s accessible description.</p>
+<p>The accessible description is used by assistive technologies (i.e. for users who cannot use conventional means of interaction).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setAccessibleDescription">setAccessibleDescription</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#accessibleText">accessibleText</a>().</p></div></p>
+</div><h4 id='method.accessible_text' class='method'><code>fn <a href='#method.accessible_text' class='fnname'>accessible_text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemAccessibleTextArgs.html' title='qt_gui::standard_item::overloading::StandardItemAccessibleTextArgs'>StandardItemAccessibleTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::accessibleText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn accessible_text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn accessible_text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStandardItem::accessibleText() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#accessibleText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s accessible text.</p>
+<p>The accessible text is used by assistive technologies (i.e. for users who cannot use conventional means of interaction).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setAccessibleText">setAccessibleText</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#accessibleDescription">accessibleDescription</a>().</p></div></p>
+</div><h4 id='method.append_column' class='method'><code>fn <a href='#method.append_column' class='fnname'>append_column</a>(&amp;mut self, items: &amp;<a class='struct' href='../../qt_gui/list/struct.ListStandardItemMutPtr.html' title='qt_gui::list::ListStandardItemMutPtr'>ListStandardItemMutPtr</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::appendColumn(const QList&lt;QStandardItem*&gt;&amp; items)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#appendColumn">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Appends a column containing <i>items</i>. If necessary, the row count is increased to the size of <i>items</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertColumn">insertColumn</a>().</p></div></p>
+</div><h4 id='method.append_row' class='method'><code>fn <a href='#method.append_row' class='fnname'>append_row</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemAppendRowArgs.html' title='qt_gui::standard_item::overloading::StandardItemAppendRowArgs'>StandardItemAppendRowArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::appendRow</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn append_row(&amp;mut self, *mut ::standard_item::StandardItem) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QStandardItem::appendRow(QStandardItem* item)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#appendRow-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Appends a row containing <i>item</i>.</p>
+<p>When building a list or a tree that has only one column, this function provides a convenient way to append a single new item.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn append_row(&amp;mut self, &amp;::list::ListStandardItemMutPtr) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QStandardItem::appendRow(const QList&lt;QStandardItem*&gt;&amp; items)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#appendRow">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Appends a row containing <i>items</i>. If necessary, the column count is increased to the size of <i>items</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRow">insertRow</a>().</p></div></p>
+</div><h4 id='method.append_rows' class='method'><code>fn <a href='#method.append_rows' class='fnname'>append_rows</a>(&amp;mut self, items: &amp;<a class='struct' href='../../qt_gui/list/struct.ListStandardItemMutPtr.html' title='qt_gui::list::ListStandardItemMutPtr'>ListStandardItemMutPtr</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::appendRows(const QList&lt;QStandardItem*&gt;&amp; items)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#appendRows">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Appends rows containing <i>items</i>. The column count will not change.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRow">insertRow</a>().</p></div></p>
+</div><h4 id='method.background' class='method'><code>fn <a href='#method.background' class='fnname'>background</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemBackgroundArgs.html' title='qt_gui::standard_item::overloading::StandardItemBackgroundArgs'>StandardItemBackgroundArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::background</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn background(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>2) <code>fn background(&amp;self, cpp_utils::AsStruct) -&gt; ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QStandardItem::background() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#background">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush used to render the item&#39;s background.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#foreground">foreground</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setBackground">setBackground</a>().</p></div></p>
+</div><h4 id='method.check_state' class='method'><code>fn <a href='#method.check_state' class='fnname'>check_state</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.CheckState.html' title='qt_core::qt::CheckState'>CheckState</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::CheckState QStandardItem::checkState() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#checkState">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the checked state of the item.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setCheckState">setCheckState</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#isCheckable">isCheckable</a>().</p></div></p>
+</div><h4 id='method.child' class='method'><code>fn <a href='#method.child' class='fnname'>child</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/standard_item/struct.StandardItem.html' title='qt_gui::standard_item::StandardItem'>StandardItem</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemChildArgs.html' title='qt_gui::standard_item::overloading::StandardItemChildArgs'>StandardItemChildArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::child</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn child(&amp;self, libc::c_int) -&gt; *mut ::standard_item::StandardItem</code><br>2) <code>fn child(&amp;self, (libc::c_int, libc::c_int)) -&gt; *mut ::standard_item::StandardItem</code><br>
+C++ method: <span style='color: green;'><code>QStandardItem* QStandardItem::child(int row, int column = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#child">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the child item at (<i>row</i>, <i>column</i>) if one has been set; otherwise returns 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setChild">setChild</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#takeChild">takeChild</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#parent">parent</a>().</p></div></p>
+</div><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/standard_item/struct.StandardItem.html' title='qt_gui::standard_item::StandardItem'>StandardItem</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual QStandardItem* QStandardItem::clone() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#clone">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a copy of this item. The item&#39;s children are not copied.</p>
+<p>When subclassing <a href="http://doc.qt.io/qt-5/qstandarditem.html">QStandardItem</a>, you can reimplement this function to provide <a href="http://doc.qt.io/qt-5/qstandarditemmodel.html">QStandardItemModel</a> with a factory that it can use to create new items on demand.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditemmodel.html#setItemPrototype">QStandardItemModel::setItemPrototype</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#operator-eq">operator=</a>().</p></div></p>
+</div><h4 id='method.column' class='method'><code>fn <a href='#method.column' class='fnname'>column</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QStandardItem::column() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#column">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the column where the item is located in its parent&#39;s child table, or -1 if the item has no parent.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#row">row</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#parent">parent</a>().</p></div></p>
+</div><h4 id='method.column_count' class='method'><code>fn <a href='#method.column_count' class='fnname'>column_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QStandardItem::columnCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#columnCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of child item columns that the item has.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setColumnCount">setColumnCount</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#rowCount">rowCount</a>().</p></div></p>
+</div><h4 id='method.data' class='method'><code>fn <a href='#method.data' class='fnname'>data</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemDataArgs.html' title='qt_gui::standard_item::overloading::StandardItemDataArgs'>StandardItemDataArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::data</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn data(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn data(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>3) <code>fn data(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>4) <code>fn data(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>virtual QVariant QStandardItem::data(int role = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#data">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s data for the given <i>role</i>, or an invalid <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a> if there is no data for the role.</p>
+<p><b>Note: </b>The default implementation treats <a href="http://doc.qt.io/qt-5/qt.html#ItemDataRole-enum">Qt::EditRole</a> and <a href="http://doc.qt.io/qt-5/qt.html#ItemDataRole-enum">Qt::DisplayRole</a> as referring to the same data.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setData">setData</a>().</p></div></p>
+</div><h4 id='method.flags' class='method'><code>fn <a href='#method.flags' class='fnname'>flags</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.ItemFlag.html' title='qt_core::qt::ItemFlag'>ItemFlag</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::ItemFlag&gt; QStandardItem::flags() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#flags">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item flags for the item.</p>
+<p>The item flags determine how the user can interact with the item.</p>
+<p>By default, items are enabled, editable, selectable, checkable, and can be used both as the source of a drag and drop operation and as a drop target.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setFlags">setFlags</a>().</p></div></p>
+</div><h4 id='method.font' class='method'><code>fn <a href='#method.font' class='fnname'>font</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemFontArgs.html' title='qt_gui::standard_item::overloading::StandardItemFontArgs'>StandardItemFontArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::font</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn font(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>2) <code>fn font(&amp;self, cpp_utils::AsStruct) -&gt; ::font::Font</code><br>
+C++ method: <span style='color: green;'><code>QFont QStandardItem::font() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#font">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the font used to render the item&#39;s text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setFont">setFont</a>().</p></div></p>
+</div><h4 id='method.foreground' class='method'><code>fn <a href='#method.foreground' class='fnname'>foreground</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemForegroundArgs.html' title='qt_gui::standard_item::overloading::StandardItemForegroundArgs'>StandardItemForegroundArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::foreground</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn foreground(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>2) <code>fn foreground(&amp;self, cpp_utils::AsStruct) -&gt; ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QStandardItem::foreground() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#foreground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush used to render the item&#39;s foreground (e.g. text).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setForeground">setForeground</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#background">background</a>().</p></div></p>
+</div><h4 id='method.has_children' class='method'><code>fn <a href='#method.has_children' class='fnname'>has_children</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStandardItem::hasChildren() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#hasChildren">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this item has any children; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#rowCount">rowCount</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#columnCount">columnCount</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#child">child</a>().</p></div></p>
+</div><h4 id='method.icon' class='method'><code>fn <a href='#method.icon' class='fnname'>icon</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemIconArgs.html' title='qt_gui::standard_item::overloading::StandardItemIconArgs'>StandardItemIconArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::icon</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn icon(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::icon::Icon&gt;</code><br>2) <code>fn icon(&amp;self, cpp_utils::AsStruct) -&gt; ::icon::Icon</code><br>
+C++ method: <span style='color: green;'><code>QIcon QStandardItem::icon() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#icon">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s icon.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setIcon">setIcon</a>() and <a href="http://doc.qt.io/qt-5/qabstractitemview.html#iconSize-prop">iconSize</a>.</p></div></p>
+</div><h4 id='method.index' class='method'><code>fn <a href='#method.index' class='fnname'>index</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemIndexArgs.html' title='qt_gui::standard_item::overloading::StandardItemIndexArgs'>StandardItemIndexArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::index</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn index(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::model_index::ModelIndex&gt;</code><br>2) <code>fn index(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::model_index::ModelIndex</code><br>
+C++ method: <span style='color: green;'><code>QModelIndex QStandardItem::index() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#index">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qmodelindex.html">QModelIndex</a> associated with this item.</p>
+<p>When you need to invoke item functionality in a <a href="http://doc.qt.io/qt-5/qmodelindex.html">QModelIndex</a>-based API (e.g. <a href="http://doc.qt.io/qt-5/qabstractitemview.html">QAbstractItemView</a>), you can call this function to obtain an index that corresponds to the item&#39;s location in the model.</p>
+<p>If the item is not associated with a model, an invalid <a href="http://doc.qt.io/qt-5/qmodelindex.html">QModelIndex</a> is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#model">model</a>() and <a href="http://doc.qt.io/qt-5/qstandarditemmodel.html#itemFromIndex">QStandardItemModel::itemFromIndex</a>().</p></div></p>
+</div><h4 id='method.insert_column' class='method'><code>fn <a href='#method.insert_column' class='fnname'>insert_column</a>(&amp;mut self, column: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, items: &amp;<a class='struct' href='../../qt_gui/list/struct.ListStandardItemMutPtr.html' title='qt_gui::list::ListStandardItemMutPtr'>ListStandardItemMutPtr</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::insertColumn(int column, const QList&lt;QStandardItem*&gt;&amp; items)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertColumn">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts a column at <i>column</i> containing <i>items</i>. If necessary, the row count is increased to the size of <i>items</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertColumns">insertColumns</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRow">insertRow</a>().</p></div></p>
+</div><h4 id='method.insert_columns' class='method'><code>fn <a href='#method.insert_columns' class='fnname'>insert_columns</a>(&amp;mut self, column: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::insertColumns(int column, int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertColumns">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts <i>count</i> columns of child items at column <i>column</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertColumn">insertColumn</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRows">insertRows</a>().</p></div></p>
+</div><h4 id='method.insert_row' class='method'><code>fn <a href='#method.insert_row' class='fnname'>insert_row</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemInsertRowArgs.html' title='qt_gui::standard_item::overloading::StandardItemInsertRowArgs'>StandardItemInsertRowArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::insertRow</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn insert_row(&amp;mut self, (libc::c_int, *mut ::standard_item::StandardItem)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QStandardItem::insertRow(int row, QStandardItem* item)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRow-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Inserts a row at <i>row</i> containing <i>item</i>.</p>
+<p>When building a list or a tree that has only one column, this function provides a convenient way to insert a single new item.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn insert_row(&amp;mut self, (libc::c_int, &amp;::list::ListStandardItemMutPtr)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QStandardItem::insertRow(int row, const QList&lt;QStandardItem*&gt;&amp; items)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRow">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts a row at <i>row</i> containing <i>items</i>. If necessary, the column count is increased to the size of <i>items</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRows">insertRows</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#insertColumn">insertColumn</a>().</p></div></p>
+</div><h4 id='method.insert_rows' class='method'><code>fn <a href='#method.insert_rows' class='fnname'>insert_rows</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemInsertRowsArgs.html' title='qt_gui::standard_item::overloading::StandardItemInsertRowsArgs'>StandardItemInsertRowsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::insertRows</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn insert_rows(&amp;mut self, (libc::c_int, &amp;::list::ListStandardItemMutPtr)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QStandardItem::insertRows(int row, const QList&lt;QStandardItem*&gt;&amp; items)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRows">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts <i>items</i> at <i>row</i>. The column count won&#39;t be changed.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRow">insertRow</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#insertColumn">insertColumn</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn insert_rows(&amp;mut self, (libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QStandardItem::insertRows(int row, int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRows-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts <i>count</i> rows of child items at row <i>row</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRow">insertRow</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#insertColumns">insertColumns</a>().</p></div></p>
+</div><h4 id='method.is_checkable' class='method'><code>fn <a href='#method.is_checkable' class='fnname'>is_checkable</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStandardItem::isCheckable() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#isCheckable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether the item is user-checkable.</p>
+<p>The default value is false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setCheckable">setCheckable</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#checkState">checkState</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#isTristate">isTristate</a>().</p></div></p>
+</div><h4 id='method.is_drag_enabled' class='method'><code>fn <a href='#method.is_drag_enabled' class='fnname'>is_drag_enabled</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStandardItem::isDragEnabled() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#isDragEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether the item is drag enabled. An item that is drag enabled can be dragged by the user.</p>
+<p>The default value is true.</p>
+<p>Note that item dragging must be enabled in the view for dragging to work; see <a href="http://doc.qt.io/qt-5/qabstractitemview.html#dragEnabled-prop">QAbstractItemView::dragEnabled</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setDragEnabled">setDragEnabled</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#isDropEnabled">isDropEnabled</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#flags">flags</a>().</p></div></p>
+</div><h4 id='method.is_drop_enabled' class='method'><code>fn <a href='#method.is_drop_enabled' class='fnname'>is_drop_enabled</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStandardItem::isDropEnabled() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#isDropEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether the item is drop enabled. When an item is drop enabled, it can be used as a drop target.</p>
+<p>The default value is true.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setDropEnabled">setDropEnabled</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#isDragEnabled">isDragEnabled</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#flags">flags</a>().</p></div></p>
+</div><h4 id='method.is_editable' class='method'><code>fn <a href='#method.is_editable' class='fnname'>is_editable</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStandardItem::isEditable() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#isEditable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether the item can be edited by the user.</p>
+<p>When an item is editable (and enabled), the user can edit the item by invoking one of the view&#39;s edit triggers; see <a href="http://doc.qt.io/qt-5/qabstractitemview.html#editTriggers-prop">QAbstractItemView::editTriggers</a>.</p>
+<p>The default value is true.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setEditable">setEditable</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#flags">flags</a>().</p></div></p>
+</div><h4 id='method.is_enabled' class='method'><code>fn <a href='#method.is_enabled' class='fnname'>is_enabled</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStandardItem::isEnabled() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#isEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether the item is enabled.</p>
+<p>When an item is enabled, the user can interact with it. The possible types of interaction are specified by the other item flags, such as <a href="http://doc.qt.io/qt-5/qstandarditem.html#isEditable">isEditable</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#isSelectable">isSelectable</a>().</p>
+<p>The default value is true.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setEnabled">setEnabled</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#flags">flags</a>().</p></div></p>
+</div><h4 id='method.is_selectable' class='method'><code>fn <a href='#method.is_selectable' class='fnname'>is_selectable</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStandardItem::isSelectable() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#isSelectable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether the item is selectable by the user.</p>
+<p>The default value is true.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setSelectable">setSelectable</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#flags">flags</a>().</p></div></p>
+</div><h4 id='method.is_tristate' class='method'><code>fn <a href='#method.is_tristate' class='fnname'>is_tristate</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QStandardItem::isTristate() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#isTristate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns whether the item is tristate; that is, if it&#39;s checkable with three separate states.</p>
+<p>The default value is false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setTristate">setTristate</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#isCheckable">isCheckable</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#checkState">checkState</a>().</p></div></p>
+</div><h4 id='method.model' class='method'><code>fn <a href='#method.model' class='fnname'>model</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/standard_item_model/struct.StandardItemModel.html' title='qt_gui::standard_item_model::StandardItemModel'>StandardItemModel</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItemModel* QStandardItem::model() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#model">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qstandarditemmodel.html">QStandardItemModel</a> that this item belongs to.</p>
+<p>If the item is not a child of another item that belongs to the model, this function returns 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#index">index</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemNewArgs.html' title='qt_gui::standard_item::overloading::StandardItemNewArgs'>StandardItemNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::QStandardItem</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::standard_item::StandardItem</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::standard_item::StandardItem&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStandardItem::QStandardItem()</code></span></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::icon::Icon, &amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::standard_item::StandardItem</code><br>2) <code>fn new((&amp;::icon::Icon, &amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::standard_item::StandardItem&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStandardItem::QStandardItem(const QIcon&amp; icon, const QString&amp; text)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::standard_item::StandardItem</code><br>2) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::standard_item::StandardItem&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStandardItem::QStandardItem(const QString&amp; text)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((libc::c_int, cpp_utils::AsStruct)) -&gt; ::standard_item::StandardItem</code><br>2) <code>fn new((libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::standard_item::StandardItem</code><br>3) <code>fn new((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::standard_item::StandardItem&gt;</code><br>4) <code>fn new((libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::standard_item::StandardItem&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QStandardItem::QStandardItem(int rows, int columns = ?)</code></span></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/standard_item/struct.StandardItem.html' title='qt_gui::standard_item::StandardItem'>StandardItem</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual bool QStandardItem::operator&lt;(const QStandardItem&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#operator-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this item is less than <i>other</i>; otherwise returns <code>false</code>.</p>
+<p>The default implementation uses the data for the item&#39;s sort role (see <a href="http://doc.qt.io/qt-5/qstandarditemmodel.html#sortRole-prop">QStandardItemModel::sortRole</a>) to perform the comparison if the item belongs to a model; otherwise, the data for the item&#39;s <a href="http://doc.qt.io/qt-5/qt.html#ItemDataRole-enum">Qt::DisplayRole</a> (<a href="http://doc.qt.io/qt-5/qstandarditem.html#text">text</a>()) is used to perform the comparison.</p>
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#sortChildren">sortChildren</a>() and <a href="http://doc.qt.io/qt-5/qstandarditemmodel.html#sort">QStandardItemModel::sort</a>() use this function when sorting items. If you want custom sorting, you can subclass <a href="http://doc.qt.io/qt-5/qstandarditem.html">QStandardItem</a> and reimplement this function.</p></div></p>
+</div><h4 id='method.parent' class='method'><code>fn <a href='#method.parent' class='fnname'>parent</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/standard_item/struct.StandardItem.html' title='qt_gui::standard_item::StandardItem'>StandardItem</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem* QStandardItem::parent() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#parent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s parent item, or 0 if the item has no parent.</p>
+<p><b>Note: </b>For toplevel items parent() returns 0. To receive toplevel item&#39;s parent use <a href="http://doc.qt.io/qt-5/qstandarditemmodel.html#invisibleRootItem">QStandardItemModel::invisibleRootItem</a>() instead.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#child">child</a>() and <a href="http://doc.qt.io/qt-5/qstandarditemmodel.html#invisibleRootItem">QStandardItemModel::invisibleRootItem</a>().</p></div></p>
+</div><h4 id='method.read' class='method'><code>fn <a href='#method.read' class='fnname'>read</a>(&amp;mut self, in_: &amp;mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QStandardItem::read(QDataStream&amp; in)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#read">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads the item from stream <i>in</i>. Only the data and flags of the item are read, not the child items.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#write">write</a>().</p></div></p>
+</div><h4 id='method.remove_column' class='method'><code>fn <a href='#method.remove_column' class='fnname'>remove_column</a>(&amp;mut self, column: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::removeColumn(int column)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#removeColumn">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the given <i>column</i>. The items that were in the column are deleted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#takeColumn">takeColumn</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#removeColumns">removeColumns</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#removeRow">removeRow</a>().</p></div></p>
+</div><h4 id='method.remove_columns' class='method'><code>fn <a href='#method.remove_columns' class='fnname'>remove_columns</a>(&amp;mut self, column: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::removeColumns(int column, int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#removeColumns">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes <i>count</i> columns at column <i>column</i>. The items that were in those columns are deleted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#removeColumn">removeColumn</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#removeRows">removeRows</a>().</p></div></p>
+</div><h4 id='method.remove_row' class='method'><code>fn <a href='#method.remove_row' class='fnname'>remove_row</a>(&amp;mut self, row: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::removeRow(int row)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#removeRow">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the given <i>row</i>. The items that were in the row are deleted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#takeRow">takeRow</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#removeRows">removeRows</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#removeColumn">removeColumn</a>().</p></div></p>
+</div><h4 id='method.remove_rows' class='method'><code>fn <a href='#method.remove_rows' class='fnname'>remove_rows</a>(&amp;mut self, row: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, count: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::removeRows(int row, int count)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#removeRows">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes <i>count</i> rows at row <i>row</i>. The items that were in those rows are deleted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#removeRow">removeRow</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#removeColumn">removeColumn</a>().</p></div></p>
+</div><h4 id='method.row' class='method'><code>fn <a href='#method.row' class='fnname'>row</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QStandardItem::row() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#row">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the row where the item is located in its parent&#39;s child table, or -1 if the item has no parent.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#column">column</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#parent">parent</a>().</p></div></p>
+</div><h4 id='method.row_count' class='method'><code>fn <a href='#method.row_count' class='fnname'>row_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QStandardItem::rowCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#rowCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of child item rows that the item has.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setRowCount">setRowCount</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#columnCount">columnCount</a>().</p></div></p>
+</div><h4 id='method.set_accessible_description' class='method'><code>fn <a href='#method.set_accessible_description' class='fnname'>set_accessible_description</a>(&amp;mut self, accessible_description: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setAccessibleDescription(const QString&amp; accessibleDescription)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setAccessibleDescription">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s accessible description to the string specified by <i>accessibleDescription</i>.</p>
+<p>The accessible description is used by assistive technologies (i.e. for users who cannot use conventional means of interaction).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#accessibleDescription">accessibleDescription</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setAccessibleText">setAccessibleText</a>().</p></div></p>
+</div><h4 id='method.set_accessible_text' class='method'><code>fn <a href='#method.set_accessible_text' class='fnname'>set_accessible_text</a>(&amp;mut self, accessible_text: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setAccessibleText(const QString&amp; accessibleText)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setAccessibleText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s accessible text to the string specified by <i>accessibleText</i>.</p>
+<p>The accessible text is used by assistive technologies (i.e. for users who cannot use conventional means of interaction).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#accessibleText">accessibleText</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setAccessibleDescription">setAccessibleDescription</a>().</p></div></p>
+</div><h4 id='method.set_background' class='method'><code>fn <a href='#method.set_background' class='fnname'>set_background</a>(&amp;mut self, brush: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setBackground(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setBackground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s background brush to the specified <i>brush</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#background">background</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setForeground">setForeground</a>().</p></div></p>
+</div><h4 id='method.set_check_state' class='method'><code>fn <a href='#method.set_check_state' class='fnname'>set_check_state</a>(&amp;mut self, check_state: <a class='enum' href='../../qt_core/qt/enum.CheckState.html' title='qt_core::qt::CheckState'>CheckState</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setCheckState(Qt::CheckState checkState)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setCheckState">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the check state of the item to be <i>state</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#checkState">checkState</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setCheckable">setCheckable</a>().</p></div></p>
+</div><h4 id='method.set_checkable' class='method'><code>fn <a href='#method.set_checkable' class='fnname'>set_checkable</a>(&amp;mut self, checkable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setCheckable(bool checkable)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setCheckable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets whether the item is user-checkable. If <i>checkable</i> is true, the item can be checked by the user; otherwise, the user cannot check the item.</p>
+<p>The item delegate will render a checkable item with a check box next to the item&#39;s text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#isCheckable">isCheckable</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#setCheckState">setCheckState</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setTristate">setTristate</a>().</p></div></p>
+</div><h4 id='method.set_child' class='method'><code>fn <a href='#method.set_child' class='fnname'>set_child</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemSetChildArgs.html' title='qt_gui::standard_item::overloading::StandardItemSetChildArgs'>StandardItemSetChildArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::setChild</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_child(&amp;mut self, (libc::c_int, *mut ::standard_item::StandardItem)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QStandardItem::setChild(int row, QStandardItem* item)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setChild-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Sets the child at <i>row</i> to <i>item</i>.</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_child(&amp;mut self, (libc::c_int, libc::c_int, *mut ::standard_item::StandardItem)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QStandardItem::setChild(int row, int column, QStandardItem* item)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setChild">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the child item at (<i>row</i>, <i>column</i>) to <i>item</i>. This item (the parent item) takes ownership of <i>item</i>. If necessary, the row count and column count are increased to fit the item.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#child">child</a>().</p></div></p>
+</div><h4 id='method.set_column_count' class='method'><code>fn <a href='#method.set_column_count' class='fnname'>set_column_count</a>(&amp;mut self, columns: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setColumnCount(int columns)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setColumnCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the number of child item columns to <i>columns</i>. If this is less than <a href="http://doc.qt.io/qt-5/qstandarditem.html#columnCount">columnCount</a>(), the data in the unwanted columns is discarded.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#columnCount">columnCount</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setRowCount">setRowCount</a>().</p></div></p>
+</div><h4 id='method.set_data' class='method'><code>fn <a href='#method.set_data' class='fnname'>set_data</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemSetDataArgs.html' title='qt_gui::standard_item::overloading::StandardItemSetDataArgs'>StandardItemSetDataArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::setData</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_data(&amp;mut self, &amp;qt_core::variant::Variant) -&gt; ()</code><br>2) <code>fn set_data(&amp;mut self, (&amp;qt_core::variant::Variant, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>virtual void QStandardItem::setData(const QVariant&amp; value, int role = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s data for the given <i>role</i> to the specified <i>value</i>.</p>
+<p>If you subclass <a href="http://doc.qt.io/qt-5/qstandarditem.html">QStandardItem</a> and reimplement this function, your reimplementation should call <a href="http://doc.qt.io/qt-5/qstandarditem.html#emitDataChanged">emitDataChanged</a>() if you do not call the base implementation of setData(). This will ensure that e.g. views using the model are notified of the changes.</p>
+<p><b>Note: </b>The default implementation treats <a href="http://doc.qt.io/qt-5/qt.html#ItemDataRole-enum">Qt::EditRole</a> and <a href="http://doc.qt.io/qt-5/qt.html#ItemDataRole-enum">Qt::DisplayRole</a> as referring to the same data.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qt.html#ItemDataRole-enum">Qt::ItemDataRole</a>, <a href="http://doc.qt.io/qt-5/qstandarditem.html#data">data</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setFlags">setFlags</a>().</p></div></p>
+</div><h4 id='method.set_drag_enabled' class='method'><code>fn <a href='#method.set_drag_enabled' class='fnname'>set_drag_enabled</a>(&amp;mut self, drag_enabled: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setDragEnabled(bool dragEnabled)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setDragEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets whether the item is drag enabled. If <i>dragEnabled</i> is true, the item can be dragged by the user; otherwise, the user cannot drag the item.</p>
+<p>Note that you also need to ensure that item dragging is enabled in the view; see <a href="http://doc.qt.io/qt-5/qabstractitemview.html#dragEnabled-prop">QAbstractItemView::dragEnabled</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#isDragEnabled">isDragEnabled</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#setDropEnabled">setDropEnabled</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setFlags">setFlags</a>().</p></div></p>
+</div><h4 id='method.set_drop_enabled' class='method'><code>fn <a href='#method.set_drop_enabled' class='fnname'>set_drop_enabled</a>(&amp;mut self, drop_enabled: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setDropEnabled(bool dropEnabled)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setDropEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets whether the item is drop enabled. If <i>dropEnabled</i> is true, the item can be used as a drop target; otherwise, it cannot.</p>
+<p>Note that you also need to ensure that drops are enabled in the view; see <a href="http://doc.qt.io/qt-5/qwidget.html#acceptDrops-prop">QWidget::acceptDrops</a>(); and that the model supports the desired drop actions; see <a href="http://doc.qt.io/qt-5/qabstractitemmodel.html#supportedDropActions">QAbstractItemModel::supportedDropActions</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#isDropEnabled">isDropEnabled</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#setDragEnabled">setDragEnabled</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setFlags">setFlags</a>().</p></div></p>
+</div><h4 id='method.set_editable' class='method'><code>fn <a href='#method.set_editable' class='fnname'>set_editable</a>(&amp;mut self, editable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setEditable(bool editable)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setEditable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets whether the item is editable. If <i>editable</i> is true, the item can be edited by the user; otherwise, the user cannot edit the item.</p>
+<p>How the user can edit items in a view is determined by the view&#39;s edit triggers; see <a href="http://doc.qt.io/qt-5/qabstractitemview.html#editTriggers-prop">QAbstractItemView::editTriggers</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#isEditable">isEditable</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setFlags">setFlags</a>().</p></div></p>
+</div><h4 id='method.set_enabled' class='method'><code>fn <a href='#method.set_enabled' class='fnname'>set_enabled</a>(&amp;mut self, enabled: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setEnabled(bool enabled)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setEnabled">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets whether the item is enabled. If <i>enabled</i> is true, the item is enabled, meaning that the user can interact with the item; if <i>enabled</i> is false, the user cannot interact with the item.</p>
+<p>This flag takes precedence over the other item flags; e.g. if an item is not enabled, it cannot be selected by the user, even if the <a href="http://doc.qt.io/qt-5/qt.html#ItemFlag-enum">Qt::ItemIsSelectable</a> flag has been set.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#isEnabled">isEnabled</a>(), <a href="http://doc.qt.io/qt-5/qt.html#ItemFlag-enum">Qt::ItemIsEnabled</a>, and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setFlags">setFlags</a>().</p></div></p>
+</div><h4 id='method.set_flags' class='method'><code>fn <a href='#method.set_flags' class='fnname'>set_flags</a>(&amp;mut self, flags: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.ItemFlag.html' title='qt_core::qt::ItemFlag'>ItemFlag</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setFlags(QFlags&lt;Qt::ItemFlag&gt; flags)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setFlags">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item flags for the item to <i>flags</i>.</p>
+<p>The item flags determine how the user can interact with the item. This is often used to disable an item.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#flags">flags</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setData">setData</a>().</p></div></p>
+</div><h4 id='method.set_font' class='method'><code>fn <a href='#method.set_font' class='fnname'>set_font</a>(&amp;mut self, font: &amp;<a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setFont(const QFont&amp; font)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the font used to display the item&#39;s text to the given <i>font</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#font">font</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#setText">setText</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setForeground">setForeground</a>().</p></div></p>
+</div><h4 id='method.set_foreground' class='method'><code>fn <a href='#method.set_foreground' class='fnname'>set_foreground</a>(&amp;mut self, brush: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setForeground(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setForeground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the brush used to display the item&#39;s foreground (e.g. text) to the given <i>brush</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#foreground">foreground</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#setBackground">setBackground</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setFont">setFont</a>().</p></div></p>
+</div><h4 id='method.set_icon' class='method'><code>fn <a href='#method.set_icon' class='fnname'>set_icon</a>(&amp;mut self, icon: &amp;<a class='struct' href='../../qt_gui/icon/struct.Icon.html' title='qt_gui::icon::Icon'>Icon</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setIcon(const QIcon&amp; icon)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setIcon">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s icon to the <i>icon</i> specified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#icon">icon</a>().</p></div></p>
+</div><h4 id='method.set_row_count' class='method'><code>fn <a href='#method.set_row_count' class='fnname'>set_row_count</a>(&amp;mut self, rows: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setRowCount(int rows)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setRowCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the number of child item rows to <i>rows</i>. If this is less than <a href="http://doc.qt.io/qt-5/qstandarditem.html#rowCount">rowCount</a>(), the data in the unwanted rows is discarded.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#rowCount">rowCount</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setColumnCount">setColumnCount</a>().</p></div></p>
+</div><h4 id='method.set_selectable' class='method'><code>fn <a href='#method.set_selectable' class='fnname'>set_selectable</a>(&amp;mut self, selectable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setSelectable(bool selectable)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setSelectable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets whether the item is selectable. If <i>selectable</i> is true, the item can be selected by the user; otherwise, the user cannot select the item.</p>
+<p>You can control the selection behavior and mode by manipulating their view properties; see <a href="http://doc.qt.io/qt-5/qabstractitemview.html#selectionMode-prop">QAbstractItemView::selectionMode</a> and <a href="http://doc.qt.io/qt-5/qabstractitemview.html#selectionBehavior-prop">QAbstractItemView::selectionBehavior</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#isSelectable">isSelectable</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setFlags">setFlags</a>().</p></div></p>
+</div><h4 id='method.set_size_hint' class='method'><code>fn <a href='#method.set_size_hint' class='fnname'>set_size_hint</a>(&amp;mut self, size_hint: &amp;<a class='struct' href='../../qt_core/size/struct.Size.html' title='qt_core::size::Size'>Size</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setSizeHint(const QSize&amp; sizeHint)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setSizeHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the size hint for the item to be <i>size</i>. If no size hint is set, the item delegate will compute the size hint based on the item data.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#sizeHint">sizeHint</a>().</p></div></p>
+</div><h4 id='method.set_status_tip' class='method'><code>fn <a href='#method.set_status_tip' class='fnname'>set_status_tip</a>(&amp;mut self, status_tip: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setStatusTip(const QString&amp; statusTip)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setStatusTip">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s status tip to the string specified by <i>statusTip</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#statusTip">statusTip</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#setToolTip">setToolTip</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setWhatsThis">setWhatsThis</a>().</p></div></p>
+</div><h4 id='method.set_text' class='method'><code>fn <a href='#method.set_text' class='fnname'>set_text</a>(&amp;mut self, text: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setText(const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s text to the <i>text</i> specified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#text">text</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#setFont">setFont</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setForeground">setForeground</a>().</p></div></p>
+</div><h4 id='method.set_text_alignment' class='method'><code>fn <a href='#method.set_text_alignment' class='fnname'>set_text_alignment</a>(&amp;mut self, text_alignment: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.AlignmentFlag.html' title='qt_core::qt::AlignmentFlag'>AlignmentFlag</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setTextAlignment(QFlags&lt;Qt::AlignmentFlag&gt; textAlignment)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setTextAlignment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the text alignment for the item&#39;s text to the <i>alignment</i> specified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#textAlignment">textAlignment</a>().</p></div></p>
+</div><h4 id='method.set_tool_tip' class='method'><code>fn <a href='#method.set_tool_tip' class='fnname'>set_tool_tip</a>(&amp;mut self, tool_tip: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setToolTip(const QString&amp; toolTip)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setToolTip">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s tooltip to the string specified by <i>toolTip</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#toolTip">toolTip</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#setStatusTip">setStatusTip</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setWhatsThis">setWhatsThis</a>().</p></div></p>
+</div><h4 id='method.set_tristate' class='method'><code>fn <a href='#method.set_tristate' class='fnname'>set_tristate</a>(&amp;mut self, tristate: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setTristate(bool tristate)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setTristate">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets whether the item is tristate. If <i>tristate</i> is true, the item is checkable with three separate states; otherwise, the item is checkable with two states. (Note that this also requires that the item is checkable; see <a href="http://doc.qt.io/qt-5/qstandarditem.html#isCheckable">isCheckable</a>().)</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#isTristate">isTristate</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#setCheckable">setCheckable</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setCheckState">setCheckState</a>().</p></div></p>
+</div><h4 id='method.set_whats_this' class='method'><code>fn <a href='#method.set_whats_this' class='fnname'>set_whats_this</a>(&amp;mut self, whats_this: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QStandardItem::setWhatsThis(const QString&amp; whatsThis)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#setWhatsThis">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s &quot;What&#39;s This?&quot; help to the string specified by <i>whatsThis</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#whatsThis">whatsThis</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#setStatusTip">setStatusTip</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#setToolTip">setToolTip</a>().</p></div></p>
+</div><h4 id='method.size_hint' class='method'><code>fn <a href='#method.size_hint' class='fnname'>size_hint</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemSizeHintArgs.html' title='qt_gui::standard_item::overloading::StandardItemSizeHintArgs'>StandardItemSizeHintArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::sizeHint</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size_hint(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size_hint(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QStandardItem::sizeHint() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#sizeHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size hint set for the item, or an invalid <a href="http://doc.qt.io/qt-5/qsize.html">QSize</a> if no size hint has been set.</p>
+<p>If no size hint has been set, the item delegate will compute the size hint based on the item data.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setSizeHint">setSizeHint</a>().</p></div></p>
+</div><h4 id='method.sort_children' class='method'><code>fn <a href='#method.sort_children' class='fnname'>sort_children</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemSortChildrenArgs.html' title='qt_gui::standard_item::overloading::StandardItemSortChildrenArgs'>StandardItemSortChildrenArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::sortChildren</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn sort_children(&amp;mut self, libc::c_int) -&gt; ()</code><br>2) <code>fn sort_children(&amp;mut self, (libc::c_int, qt_core::qt::SortOrder)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QStandardItem::sortChildren(int column, Qt::SortOrder order = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#sortChildren">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sorts the children of the item using the given <i>order</i>, by the values in the given <i>column</i>.</p>
+<p><b>Note: </b>This function is recursive, therefore it sorts the children of the item, its grandchildren, etc.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#operator-lt">operator&lt;</a>().</p></div></p>
+</div><h4 id='method.status_tip' class='method'><code>fn <a href='#method.status_tip' class='fnname'>status_tip</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemStatusTipArgs.html' title='qt_gui::standard_item::overloading::StandardItemStatusTipArgs'>StandardItemStatusTipArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::statusTip</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn status_tip(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn status_tip(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStandardItem::statusTip() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#statusTip">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s status tip.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setStatusTip">setStatusTip</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#toolTip">toolTip</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#whatsThis">whatsThis</a>().</p></div></p>
+</div><h4 id='method.take_child' class='method'><code>fn <a href='#method.take_child' class='fnname'>take_child</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/standard_item/struct.StandardItem.html' title='qt_gui::standard_item::StandardItem'>StandardItem</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemTakeChildArgs.html' title='qt_gui::standard_item::overloading::StandardItemTakeChildArgs'>StandardItemTakeChildArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::takeChild</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn take_child(&amp;mut self, libc::c_int) -&gt; *mut ::standard_item::StandardItem</code><br>2) <code>fn take_child(&amp;mut self, (libc::c_int, libc::c_int)) -&gt; *mut ::standard_item::StandardItem</code><br>
+C++ method: <span style='color: green;'><code>QStandardItem* QStandardItem::takeChild(int row, int column = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#takeChild">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the child item at (<i>row</i>, <i>column</i>) without deleting it, and returns a pointer to the item. If there was no child at the given location, then this function returns 0.</p>
+<p>Note that this function, unlike <a href="http://doc.qt.io/qt-5/qstandarditem.html#takeRow">takeRow</a>() and <a href="http://doc.qt.io/qt-5/qstandarditem.html#takeColumn">takeColumn</a>(), does not affect the dimensions of the child table.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#child">child</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#takeRow">takeRow</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#takeColumn">takeColumn</a>().</p></div></p>
+</div><h4 id='method.take_column' class='method'><code>fn <a href='#method.take_column' class='fnname'>take_column</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemTakeColumnArgs.html' title='qt_gui::standard_item::overloading::StandardItemTakeColumnArgs'>StandardItemTakeColumnArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::takeColumn</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn take_column(&amp;mut self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListStandardItemMutPtr&gt;</code><br>2) <code>fn take_column(&amp;mut self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListStandardItemMutPtr</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QStandardItem*&gt; QStandardItem::takeColumn(int column)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#takeColumn">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes <i>column</i> without deleting the column items, and returns a list of pointers to the removed items. For items in the column that have not been set, the corresponding pointers in the list will be 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#removeColumn">removeColumn</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#insertColumn">insertColumn</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#takeRow">takeRow</a>().</p></div></p>
+</div><h4 id='method.take_row' class='method'><code>fn <a href='#method.take_row' class='fnname'>take_row</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemTakeRowArgs.html' title='qt_gui::standard_item::overloading::StandardItemTakeRowArgs'>StandardItemTakeRowArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::takeRow</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn take_row(&amp;mut self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListStandardItemMutPtr&gt;</code><br>2) <code>fn take_row(&amp;mut self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListStandardItemMutPtr</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QStandardItem*&gt; QStandardItem::takeRow(int row)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#takeRow">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes <i>row</i> without deleting the row items, and returns a list of pointers to the removed items. For items in the row that have not been set, the corresponding pointers in the list will be 0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#removeRow">removeRow</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#insertRow">insertRow</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#takeColumn">takeColumn</a>().</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemTextArgs.html' title='qt_gui::standard_item::overloading::StandardItemTextArgs'>StandardItemTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStandardItem::text() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s text. This is the text that&#39;s presented to the user in a view.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setText">setText</a>().</p></div></p>
+</div><h4 id='method.text_alignment' class='method'><code>fn <a href='#method.text_alignment' class='fnname'>text_alignment</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.AlignmentFlag.html' title='qt_core::qt::AlignmentFlag'>AlignmentFlag</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::AlignmentFlag&gt; QStandardItem::textAlignment() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#textAlignment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text alignment for the item&#39;s text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setTextAlignment">setTextAlignment</a>().</p></div></p>
+</div><h4 id='method.tool_tip' class='method'><code>fn <a href='#method.tool_tip' class='fnname'>tool_tip</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemToolTipArgs.html' title='qt_gui::standard_item::overloading::StandardItemToolTipArgs'>StandardItemToolTipArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::toolTip</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn tool_tip(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn tool_tip(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStandardItem::toolTip() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#toolTip">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s tooltip.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setToolTip">setToolTip</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#statusTip">statusTip</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#whatsThis">whatsThis</a>().</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual int QStandardItem::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type of this item. The type is used to distinguish custom items from the base class. When subclassing <a href="http://doc.qt.io/qt-5/qstandarditem.html">QStandardItem</a>, you should reimplement this function and return a new value greater than or equal to <a href="http://doc.qt.io/qt-5/qstandarditem.html#ItemType-enum">UserType</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#ItemType-enum">QStandardItem::Type</a>.</p></div></p>
+</div><h4 id='method.whats_this' class='method'><code>fn <a href='#method.whats_this' class='fnname'>whats_this</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/standard_item/overloading/trait.StandardItemWhatsThisArgs.html' title='qt_gui::standard_item::overloading::StandardItemWhatsThisArgs'>StandardItemWhatsThisArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QStandardItem::whatsThis</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn whats_this(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn whats_this(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QStandardItem::whatsThis() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#whatsThis">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s &quot;What&#39;s This?&quot; help.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#setWhatsThis">setWhatsThis</a>(), <a href="http://doc.qt.io/qt-5/qstandarditem.html#toolTip">toolTip</a>(), and <a href="http://doc.qt.io/qt-5/qstandarditem.html#statusTip">statusTip</a>().</p></div></p>
+</div><h4 id='method.write' class='method'><code>fn <a href='#method.write' class='fnname'>write</a>(&amp;self, out: &amp;mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QStandardItem::write(QDataStream&amp; out) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#write">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the item to stream <i>out</i>. Only the data and flags of the item are written, not the child items.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qstandarditem.html#read">read</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/standard_item/struct.StandardItem.html' title='qt_gui::standard_item::StandardItem'>StandardItem</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147688' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/standard_item.rs.html#36-40' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/standard_item/struct.StandardItem.html' title='qt_gui::standard_item::StandardItem'>StandardItem</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/standard_item/struct.StandardItem.html' title='qt_gui::standard_item::StandardItem'>StandardItem</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147955' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/standard_item.rs.html#970-977' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QStandardItem::~QStandardItem()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qstandarditem.html#dtor.QStandardItem">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructs the item. This causes the item&#39;s children to be destructed as well.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/standard_item/struct.StandardItem.html' title='qt_gui::standard_item::StandardItem'>StandardItem</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-147958' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/standard_item.rs.html#979-983' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

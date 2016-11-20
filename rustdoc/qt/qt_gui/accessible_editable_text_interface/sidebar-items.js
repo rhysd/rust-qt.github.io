@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AccessibleEditableTextInterface","C++ type: <span style='color: green;'>```QAccessibleEditableTextInterface```</span>"]]});

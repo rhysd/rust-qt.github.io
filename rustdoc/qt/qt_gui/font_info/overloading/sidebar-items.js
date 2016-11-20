@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["FontInfoFamilyArgs","This trait represents a set of arguments accepted by FontInfo::family method."],["FontInfoNewArgs","This trait represents a set of arguments accepted by FontInfo::new method."],["FontInfoStyleNameArgs","This trait represents a set of arguments accepted by FontInfo::style_name method."]]});

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TouchDevice` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TouchDevice">
+
+    <title>qt_gui::touch_device::TouchDevice - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>touch_device</a></p><script>window.sidebarCurrent = {name: 'TouchDevice', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>touch_device</a>::<wbr><a class='struct' href=''>TouchDevice</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-168620' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/touch_device.rs.html#54-56' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TouchDevice {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTouchDevice</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtouchdevice.html">QTouchDevice</a> class describes the device from which touch events originate.</p>
+<p>Each <a href="http://doc.qt.io/qt-5/qtouchevent.html">QTouchEvent</a> contains a <a href="http://doc.qt.io/qt-5/qtouchdevice.html">QTouchDevice</a> pointer to allow accessing device-specific properties like type and capabilities. It is the responsibility of the platform or generic plug-ins to register the available touch devices via QWindowSystemInterface before generating any touch events. Applications do not need to instantiate this class, they should just access the global instances pointed to by <a href="http://doc.qt.io/qt-5/qtouchevent.html#device">QTouchEvent::device</a>().</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/touch_device/struct.TouchDevice.html' title='qt_gui::touch_device::TouchDevice'>TouchDevice</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-168625' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/touch_device.rs.html#64-170' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.capabilities' class='method'><code>fn <a href='#method.capabilities' class='fnname'>capabilities</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/touch_device/enum.CapabilityFlag.html' title='qt_gui::touch_device::CapabilityFlag'>CapabilityFlag</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QTouchDevice::CapabilityFlag&gt; QTouchDevice::capabilities() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html#capabilities">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the touch device capabilities.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtouchdevice.html#setCapabilities">setCapabilities</a>().</p></div></p>
+</div><h4 id='method.devices' class='method'><code>fn <a href='#method.devices' class='fnname'>devices</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/touch_device/overloading/trait.TouchDeviceDevicesArgs.html' title='qt_gui::touch_device::overloading::TouchDeviceDevicesArgs'>TouchDeviceDevicesArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTouchDevice::devices</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn devices(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListTouchDevicePtr&gt;</code><br>2) <code>fn devices(cpp_utils::AsStruct) -&gt; ::list::ListTouchDevicePtr</code><br>
+C++ method: <span style='color: green;'><code>static QList&lt;const QTouchDevice*&gt; QTouchDevice::devices()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html#devices">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of all registered devices.</p>
+<p><b>Note: </b>The returned list cannot be used to add new devices. Use <a href="http://doc.qt.io/qt-5/qwindowsysteminterface.html#registerTouchDevice">QWindowSystemInterface::registerTouchDevice</a>() instead.</p></div></p>
+</div><h4 id='method.maximum_touch_points' class='method'><code>fn <a href='#method.maximum_touch_points' class='fnname'>maximum_touch_points</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTouchDevice::maximumTouchPoints() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html#maximumTouchPoints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the maximum number of simultaneous touch points (fingers) that can be detected.</p>
+<p>This function was introduced in  Qt 5.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtouchdevice.html#setMaximumTouchPoints">setMaximumTouchPoints</a>().</p></div></p>
+</div><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/touch_device/overloading/trait.TouchDeviceNameArgs.html' title='qt_gui::touch_device::overloading::TouchDeviceNameArgs'>TouchDeviceNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTouchDevice::name</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTouchDevice::name() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html#name">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the touch device name.</p>
+<p>This string may often be empty. It is however useful for systems that have more than one touch input device because there it can be used to differentiate between the devices (i.e. to tell from which device a <a href="http://doc.qt.io/qt-5/qtouchevent.html">QTouchEvent</a> originates from).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtouchdevice.html#setName">setName</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/touch_device/overloading/trait.TouchDeviceNewArgs.html' title='qt_gui::touch_device::overloading::TouchDeviceNewArgs'>TouchDeviceNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTouchDevice::QTouchDevice</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::touch_device::TouchDevice</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::touch_device::TouchDevice&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTouchDevice::QTouchDevice()</code></span></p>
+</div><h4 id='method.set_capabilities' class='method'><code>fn <a href='#method.set_capabilities' class='fnname'>set_capabilities</a>(&amp;mut self, caps: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_gui/touch_device/enum.CapabilityFlag.html' title='qt_gui::touch_device::CapabilityFlag'>CapabilityFlag</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTouchDevice::setCapabilities(QFlags&lt;QTouchDevice::CapabilityFlag&gt; caps)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html#setCapabilities">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the capabilities <i>caps</i> supported by the device and its driver.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtouchdevice.html#capabilities">capabilities</a>().</p></div></p>
+</div><h4 id='method.set_maximum_touch_points' class='method'><code>fn <a href='#method.set_maximum_touch_points' class='fnname'>set_maximum_touch_points</a>(&amp;mut self, max: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTouchDevice::setMaximumTouchPoints(int max)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html#setMaximumTouchPoints">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the maximum number of simultaneous touchpoints <i>max</i> supported by the device and its driver.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtouchdevice.html#maximumTouchPoints">maximumTouchPoints</a>().</p></div></p>
+</div><h4 id='method.set_name' class='method'><code>fn <a href='#method.set_name' class='fnname'>set_name</a>(&amp;mut self, name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTouchDevice::setName(const QString&amp; name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html#setName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>name</i> (a unique identifier) for the device. In most systems it is enough to leave this unset and keep the default empty name. This identifier becomes important when having multiple touch devices and a need to differentiate between them.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtouchdevice.html#name">name</a>().</p></div></p>
+</div><h4 id='method.set_type' class='method'><code>fn <a href='#method.set_type' class='fnname'>set_type</a>(&amp;mut self, dev_type: <a class='enum' href='../../qt_gui/touch_device/enum.DeviceType.html' title='qt_gui::touch_device::DeviceType'>DeviceType</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTouchDevice::setType(QTouchDevice::DeviceType devType)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html#setType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the device type <i>devType</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtouchdevice.html#type">type</a>().</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/touch_device/enum.DeviceType.html' title='qt_gui::touch_device::DeviceType'>DeviceType</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTouchDevice::DeviceType QTouchDevice::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the touch device type.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtouchdevice.html#setType">setType</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/touch_device/struct.TouchDevice.html' title='qt_gui::touch_device::TouchDevice'>TouchDevice</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-168623' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/touch_device.rs.html#58-62' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/touch_device/struct.TouchDevice.html' title='qt_gui::touch_device::TouchDevice'>TouchDevice</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/touch_device/struct.TouchDevice.html' title='qt_gui::touch_device::TouchDevice'>TouchDevice</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-168656' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/touch_device.rs.html#172-179' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QTouchDevice::~QTouchDevice()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtouchdevice.html#dtor.QTouchDevice">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys a touch device instance.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/touch_device/struct.TouchDevice.html' title='qt_gui::touch_device::TouchDevice'>TouchDevice</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-168659' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/touch_device.rs.html#181-185' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

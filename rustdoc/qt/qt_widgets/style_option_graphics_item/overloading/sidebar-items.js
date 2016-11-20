@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["StyleOptionGraphicsItemNewArgs","This trait represents a set of arguments accepted by StyleOptionGraphicsItem::new method."]]});

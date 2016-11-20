@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ScrollPrepareEvent","C++ type: <span style='color: green;'>```QScrollPrepareEvent```</span>"]]});

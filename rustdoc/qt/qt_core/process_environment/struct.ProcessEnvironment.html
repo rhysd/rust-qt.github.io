@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ProcessEnvironment` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ProcessEnvironment">
+
+    <title>qt_core::process_environment::ProcessEnvironment - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>process_environment</a></p><script>window.sidebarCurrent = {name: 'ProcessEnvironment', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>process_environment</a>::<wbr><a class='struct' href=''>ProcessEnvironment</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-116800' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/process_environment.rs.html#13-15' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ProcessEnvironment {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QProcessEnvironment</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> class holds the environment variables that can be passed to a program.</p>
+<p>A process&#39;s environment is composed of a set of key=value pairs known as environment variables. The <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> class wraps that concept and allows easy manipulation of those variables. It&#39;s meant to be used along with <a href="http://doc.qt.io/qt-5/qprocess.html">QProcess</a>, to set the environment for child processes. It cannot be used to change the current process&#39;s environment.</p>
+<p>The environment of the calling process can be obtained using <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#systemEnvironment">QProcessEnvironment::systemEnvironment</a>().</p>
+<p>On Unix systems, the variable names are case-sensitive. Note that the Unix environment allows both variable names and contents to contain arbitrary binary data (except for the NUL character). <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> will preserve such variables, but does not support manipulating variables whose names or values are not encodable by the current locale settings (see <a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForLocale">QTextCodec::codecForLocale</a>).</p>
+<p>On Windows, the variable names are case-insensitive, but case-preserving. <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> behaves accordingly.</p>
+<p>On Windows CE, the concept of environment does not exist. This class will keep the values set for compatibility with other platforms, but the values set will have no effect on the processes being created.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-116805' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/process_environment.rs.html#23-221' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QProcessEnvironment::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes all key=value pairs from this <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object, making it empty.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#isEmpty">isEmpty</a>() and <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#systemEnvironment">systemEnvironment</a>().</p></div></p>
+</div><h4 id='method.contains' class='method'><code>fn <a href='#method.contains' class='fnname'>contains</a>(&amp;self, name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QProcessEnvironment::contains(const QString&amp; name) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#contains">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the environment variable of name <i>name</i> is found in this <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#insert">insert</a>() and <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#value">value</a>().</p></div></p>
+</div><h4 id='method.insert' class='method'><code>fn <a href='#method.insert' class='fnname'>insert</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/process_environment/overloading/trait.ProcessEnvironmentInsertArgs.html' title='qt_core::process_environment::overloading::ProcessEnvironmentInsertArgs'>ProcessEnvironmentInsertArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QProcessEnvironment::insert</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn insert(&amp;mut self, &amp;::process_environment::ProcessEnvironment) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QProcessEnvironment::insert(const QProcessEnvironment&amp; e)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#insert-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Inserts the contents of <i>e</i> in this <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object. Variables in this object that also exist in <i>e</i> will be overwritten.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn insert(&amp;mut self, (&amp;::string::String, &amp;::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QProcessEnvironment::insert(const QString&amp; name, const QString&amp; value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#insert">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts the environment variable of name <i>name</i> and contents <i>value</i> into this <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object. If that variable already existed, it is replaced by the new value.</p>
+<p>On most systems, inserting a variable with no contents will have the same effect for applications as if the variable had not been set at all. However, to guarantee that there are no incompatibilities, to remove a variable, please use the <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#remove">remove</a>() function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#contains">contains</a>(), <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#remove">remove</a>(), and <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#value">value</a>().</p></div></p>
+</div><h4 id='method.is_empty' class='method'><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QProcessEnvironment::isEmpty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#isEmpty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object is empty: that is there are no key=value pairs set.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#clear">clear</a>(), <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#systemEnvironment">systemEnvironment</a>(), and <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#insert">insert</a>().</p></div></p>
+</div><h4 id='method.keys' class='method'><code>fn <a href='#method.keys' class='fnname'>keys</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/process_environment/overloading/trait.ProcessEnvironmentKeysArgs.html' title='qt_core::process_environment::overloading::ProcessEnvironmentKeysArgs'>ProcessEnvironmentKeysArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QProcessEnvironment::keys</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn keys(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_list::StringList&gt;</code><br>2) <code>fn keys(&amp;self, cpp_utils::AsStruct) -&gt; ::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>QStringList QProcessEnvironment::keys() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#keys">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list containing all the variable names in this <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/process_environment/overloading/trait.ProcessEnvironmentNewArgs.html' title='qt_core::process_environment::overloading::ProcessEnvironmentNewArgs'>ProcessEnvironmentNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QProcessEnvironment::QProcessEnvironment</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::process_environment::ProcessEnvironment</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::process_environment::ProcessEnvironment&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QProcessEnvironment::QProcessEnvironment()</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::process_environment::ProcessEnvironment, cpp_utils::AsStruct)) -&gt; ::process_environment::ProcessEnvironment</code><br>2) <code>fn new((&amp;::process_environment::ProcessEnvironment, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::process_environment::ProcessEnvironment&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QProcessEnvironment::QProcessEnvironment(const QProcessEnvironment&amp; other)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QProcessEnvironment&amp; QProcessEnvironment::operator=(const QProcessEnvironment&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Copies the contents of the <i>other</i> <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object into this one.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QProcessEnvironment::operator==(const QProcessEnvironment&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this and the <i>other</i> <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> objects are equal.</p>
+<p>Two <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> objects are considered equal if they have the same set of key=value pairs. The comparison of keys is done case-sensitive on platforms where the environment is case-sensitive.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#operator-not-eq">operator!=</a>() and <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#contains">contains</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QProcessEnvironment::operator!=(const QProcessEnvironment&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this and the <i>other</i> <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> objects are different.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.remove' class='method'><code>fn <a href='#method.remove' class='fnname'>remove</a>(&amp;mut self, name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QProcessEnvironment::remove(const QString&amp; name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#remove">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the environment variable identified by <i>name</i> from this <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object. If that variable did not exist before, nothing happens.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#contains">contains</a>(), <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#insert">insert</a>(), and <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#value">value</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QProcessEnvironment::swap(QProcessEnvironment&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this process environment instance with <i>other</i>. This function is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.system_environment' class='method'><code>fn <a href='#method.system_environment' class='fnname'>system_environment</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/process_environment/overloading/trait.ProcessEnvironmentSystemEnvironmentArgs.html' title='qt_core::process_environment::overloading::ProcessEnvironmentSystemEnvironmentArgs'>ProcessEnvironmentSystemEnvironmentArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QProcessEnvironment::systemEnvironment</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn system_environment(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::process_environment::ProcessEnvironment&gt;</code><br>2) <code>fn system_environment(cpp_utils::AsStruct) -&gt; ::process_environment::ProcessEnvironment</code><br>
+C++ method: <span style='color: green;'><code>static QProcessEnvironment QProcessEnvironment::systemEnvironment()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#systemEnvironment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The systemEnvironment function returns the environment of the calling process.</p>
+<p>It is returned as a <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a>. This function does not cache the system environment. Therefore, it&#39;s possible to obtain an updated version of the environment if low-level C library functions like <code>setenv</code> ot <code>putenv</code> have been called.</p>
+<p>However, note that repeated calls to this function will recreate the <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object, which is a non-trivial operation.</p>
+<p>This function was introduced in  Qt 4.6.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qprocess.html#systemEnvironment">QProcess::systemEnvironment</a>().</p></div></p>
+</div><h4 id='method.to_string_list' class='method'><code>fn <a href='#method.to_string_list' class='fnname'>to_string_list</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/process_environment/overloading/trait.ProcessEnvironmentToStringListArgs.html' title='qt_core::process_environment::overloading::ProcessEnvironmentToStringListArgs'>ProcessEnvironmentToStringListArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QProcessEnvironment::toStringList</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_string_list(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_list::StringList&gt;</code><br>2) <code>fn to_string_list(&amp;self, cpp_utils::AsStruct) -&gt; ::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>QStringList QProcessEnvironment::toStringList() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#toStringList">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts this <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object into a list of strings, one for each environment variable that is set. The environment variable&#39;s name and its value are separated by an equal character (&#39;=&#39;).</p>
+<p>The <a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a> contents returned by this function are suitable for presentation. Use with the QProcess::setEnvironment function is not recommended due to potential encoding problems under Unix, and worse performance.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#systemEnvironment">systemEnvironment</a>(), <a href="http://doc.qt.io/qt-5/qprocess.html#systemEnvironment">QProcess::systemEnvironment</a>(), <a href="http://doc.qt.io/qt-5/qprocess-obsolete.html#environment">QProcess::environment</a>(), and <a href="http://doc.qt.io/qt-5/qprocess-obsolete.html#setEnvironment">QProcess::setEnvironment</a>().</p></div></p>
+</div><h4 id='method.value' class='method'><code>fn <a href='#method.value' class='fnname'>value</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/process_environment/overloading/trait.ProcessEnvironmentValueArgs.html' title='qt_core::process_environment::overloading::ProcessEnvironmentValueArgs'>ProcessEnvironmentValueArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QProcessEnvironment::value</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn value(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn value(&amp;self, (&amp;::string::String, &amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>3) <code>fn value(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>4) <code>fn value(&amp;self, (&amp;::string::String, &amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QProcessEnvironment::value(const QString&amp; name, const QString&amp; defaultValue = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#value">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Searches this <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object for a variable identified by <i>name</i> and returns its value. If the variable is not found in this object, then <i>defaultValue</i> is returned instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#contains">contains</a>(), <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#insert">insert</a>(), and <a href="http://doc.qt.io/qt-5/qprocessenvironment.html#remove">remove</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/process_environment/overloading/trait.ProcessEnvironmentInsertArgs.html' title='qt_core::process_environment::overloading::ProcessEnvironmentInsertArgs'>ProcessEnvironmentInsertArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-116869' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/process_environment.rs.html#246-254' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/process_environment/overloading/trait.ProcessEnvironmentInsertArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-116803' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/process_environment.rs.html#17-21' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-116857' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/process_environment.rs.html#223-230' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QProcessEnvironment::~QProcessEnvironment()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qprocessenvironment.html#dtor.QProcessEnvironment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Frees the resources associated with this <a href="http://doc.qt.io/qt-5/qprocessenvironment.html">QProcessEnvironment</a> object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/process_environment/struct.ProcessEnvironment.html' title='qt_core::process_environment::ProcessEnvironment'>ProcessEnvironment</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-116860' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/process_environment.rs.html#232-236' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

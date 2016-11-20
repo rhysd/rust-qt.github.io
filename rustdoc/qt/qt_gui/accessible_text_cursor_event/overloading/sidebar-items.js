@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["AccessibleTextCursorEventNewArgs","This trait represents a set of arguments accepted by AccessibleTextCursorEvent::new method."]]});

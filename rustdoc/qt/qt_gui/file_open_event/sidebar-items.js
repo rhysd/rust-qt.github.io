@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["FileOpenEvent","C++ type: <span style='color: green;'>```QFileOpenEvent```</span>"]]});

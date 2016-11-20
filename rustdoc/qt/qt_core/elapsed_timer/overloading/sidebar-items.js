@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ElapsedTimerNewArgs","This trait represents a set of arguments accepted by ElapsedTimer::new method."]]});

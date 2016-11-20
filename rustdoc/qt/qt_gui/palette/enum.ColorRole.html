@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ColorRole` enum in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ColorRole">
+
+    <title>qt_gui::palette::ColorRole - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>palette</a></p><script>window.sidebarCurrent = {name: 'ColorRole', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>palette</a>::<wbr><a class='enum' href=''>ColorRole</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-130694' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#46-97' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum ColorRole {
+    WindowText,
+    Button,
+    Light,
+    Midlight,
+    Dark,
+    Mid,
+    Text,
+    BrightText,
+    ButtonText,
+    Base,
+    Window,
+    Shadow,
+    Highlight,
+    HighlightedText,
+    Link,
+    LinkVisited,
+    AlternateBase,
+    NoRole,
+    ToolTipBase,
+    ToolTipText,
+    NColorRoles,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPalette::ColorRole</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpalette.html#ColorRole-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/palette.png" alt="Color Roles"></img></p><p>The ColorRole enum defines the different symbolic color roles used in current GUIs.</p>
+<p>The central roles are:</p></p>
+
+<p>There are some color roles used mostly for 3D bevel and shadow effects. All of these are normally derived from <code>Window</code>, and used in ways that depend on that relationship. For example, buttons depend on it to make the bevels look attractive, and Motif scroll bars depend on <code>Mid</code> to be slightly different from <code>Window</code>.</p>
+
+<p>Selected (marked) items have two roles:</p>
+
+<p>There are two color roles related to hyperlinks:</p>
+
+<p>Note that we do not use the <code>Link</code> and <code>LinkVisited</code> roles when rendering rich text in Qt, and that we recommend that you use CSS and the <a href="http://doc.qt.io/qt-5/qtextdocument.html#defaultStyleSheet-prop">QTextDocument::setDefaultStyleSheet</a>() function to alter the appearance of links. For example:</p>
+
+<p><pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qtextbrowser.html">QTextBrowser</a></span> browser;
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qcolor.html">QColor</a></span> linkColor(<span class="type">Qt</span><span class="operator">::</span>red);
+&#32;   <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> sheet <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">::</span>fromLatin1(<span class="string">&quot;a { text-decoration: underline; color: %1 }&quot;</span>)<span class="operator">.</span>arg(linkColor<span class="operator">.</span>name());
+&#32;   browser<span class="operator">.</span>document()<span class="operator">-</span><span class="operator">&gt;</span>setDefaultStyleSheet(sheet);</pre></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.WindowText' class='variant'><code>WindowText</code></span><div class='docblock'><p>This variant corresponds to multiple C++ enum variants with the same value:</p>
+
+<ul>
+<li><span style='color: green;'><code>WindowText = 0</code></span>: A general foreground color.</li>
+<li><span style='color: green;'><code>Foreground = 0</code></span>: This value is obsolete. Use WindowText instead.</li>
+</ul>
+</div><span id='variant.Button' class='variant'><code>Button</code></span><div class='docblock'><p>The general button background color. This background can be different from <code>Window</code> as some styles require a different background color for buttons. (C++ enum variant: <span style='color: green;'><code>Button = 1</code></span>)</p>
+</div><span id='variant.Light' class='variant'><code>Light</code></span><div class='docblock'><p>Lighter than <code>Button</code> color. (C++ enum variant: <span style='color: green;'><code>Light = 2</code></span>)</p>
+</div><span id='variant.Midlight' class='variant'><code>Midlight</code></span><div class='docblock'><p>Between <code>Button</code> and <code>Light</code>. (C++ enum variant: <span style='color: green;'><code>Midlight = 3</code></span>)</p>
+</div><span id='variant.Dark' class='variant'><code>Dark</code></span><div class='docblock'><p>Darker than <code>Button</code>. (C++ enum variant: <span style='color: green;'><code>Dark = 4</code></span>)</p>
+</div><span id='variant.Mid' class='variant'><code>Mid</code></span><div class='docblock'><p>Between <code>Button</code> and <code>Dark</code>. (C++ enum variant: <span style='color: green;'><code>Mid = 5</code></span>)</p>
+</div><span id='variant.Text' class='variant'><code>Text</code></span><div class='docblock'><p>The foreground color used with <code>Base</code>. This is usually the same as the <code>WindowText</code>, in which case it must provide good contrast with <code>Window</code> and <code>Base</code>. (C++ enum variant: <span style='color: green;'><code>Text = 6</code></span>)</p>
+</div><span id='variant.BrightText' class='variant'><code>BrightText</code></span><div class='docblock'><p>A text color that is very different from <code>WindowText</code>, and contrasts well with e.g. <code>Dark</code>. Typically used for text that needs to be drawn where <code>Text</code> or <code>WindowText</code> would give poor contrast, such as on pressed push buttons. Note that text colors can be used for things other than just words; text colors are <i>usually</i> used for text, but it&#39;s quite common to use the text color roles for lines, icons, etc. (C++ enum variant: <span style='color: green;'><code>BrightText = 7</code></span>)</p>
+</div><span id='variant.ButtonText' class='variant'><code>ButtonText</code></span><div class='docblock'><p>A foreground color used with the <code>Button</code> color. (C++ enum variant: <span style='color: green;'><code>ButtonText = 8</code></span>)</p>
+</div><span id='variant.Base' class='variant'><code>Base</code></span><div class='docblock'><p>Used mostly as the background color for text entry widgets, but can also be used for other painting - such as the background of combobox drop down lists and toolbar handles. It is usually white or another light color. (C++ enum variant: <span style='color: green;'><code>Base = 9</code></span>)</p>
+</div><span id='variant.Window' class='variant'><code>Window</code></span><div class='docblock'><p>This variant corresponds to multiple C++ enum variants with the same value:</p>
+
+<ul>
+<li><span style='color: green;'><code>Window = 10</code></span>: A general background color.</li>
+<li><span style='color: green;'><code>Background = 10</code></span>: This value is obsolete. Use Window instead.</li>
+</ul>
+</div><span id='variant.Shadow' class='variant'><code>Shadow</code></span><div class='docblock'><p>A very dark color. By default, the shadow color is <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::black</a>. (C++ enum variant: <span style='color: green;'><code>Shadow = 11</code></span>)</p>
+</div><span id='variant.Highlight' class='variant'><code>Highlight</code></span><div class='docblock'><p>A color to indicate a selected item or the current item. By default, the highlight color is <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::darkBlue</a>. (C++ enum variant: <span style='color: green;'><code>Highlight = 12</code></span>)</p>
+</div><span id='variant.HighlightedText' class='variant'><code>HighlightedText</code></span><div class='docblock'><p>A text color that contrasts with <code>Highlight</code>. By default, the highlighted text color is <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::white</a>. (C++ enum variant: <span style='color: green;'><code>HighlightedText = 13</code></span>)</p>
+</div><span id='variant.Link' class='variant'><code>Link</code></span><div class='docblock'><p>A text color used for unvisited hyperlinks. By default, the link color is <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::blue</a>. (C++ enum variant: <span style='color: green;'><code>Link = 14</code></span>)</p>
+</div><span id='variant.LinkVisited' class='variant'><code>LinkVisited</code></span><div class='docblock'><p>A text color used for already visited hyperlinks. By default, the linkvisited color is <a href="http://doc.qt.io/qt-5/qt.html#GlobalColor-enum">Qt::magenta</a>. (C++ enum variant: <span style='color: green;'><code>LinkVisited = 15</code></span>)</p>
+</div><span id='variant.AlternateBase' class='variant'><code>AlternateBase</code></span><div class='docblock'><p>Used as the alternate background color in views with alternating row colors (see <a href="http://doc.qt.io/qt-5/qabstractitemview.html#alternatingRowColors-prop">QAbstractItemView::setAlternatingRowColors</a>()). (C++ enum variant: <span style='color: green;'><code>AlternateBase = 16</code></span>)</p>
+</div><span id='variant.NoRole' class='variant'><code>NoRole</code></span><div class='docblock'><p>No role; this special role is often used to indicate that a role has not been assigned. (C++ enum variant: <span style='color: green;'><code>NoRole = 17</code></span>)</p>
+</div><span id='variant.ToolTipBase' class='variant'><code>ToolTipBase</code></span><div class='docblock'><p>Used as the background color for <a href="http://doc.qt.io/qt-5/qtooltip.html">QToolTip</a> and <a href="http://doc.qt.io/qt-5/qwhatsthis.html">QWhatsThis</a>. Tool tips use the Inactive color group of <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a>, because tool tips are not active windows. (C++ enum variant: <span style='color: green;'><code>ToolTipBase = 18</code></span>)</p>
+</div><span id='variant.ToolTipText' class='variant'><code>ToolTipText</code></span><div class='docblock'><p>Used as the foreground color for <a href="http://doc.qt.io/qt-5/qtooltip.html">QToolTip</a> and <a href="http://doc.qt.io/qt-5/qwhatsthis.html">QWhatsThis</a>. Tool tips use the Inactive color group of <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a>, because tool tips are not active windows. (C++ enum variant: <span style='color: green;'><code>ToolTipText = 19</code></span>)</p>
+</div><span id='variant.NColorRoles' class='variant'><code>NColorRoles</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>NColorRoles = 20</code></span></p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/palette/overloading/trait.PaletteBrushArgs.html' title='qt_gui::palette::overloading::PaletteBrushArgs'>PaletteBrushArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_gui/palette/enum.ColorRole.html' title='qt_gui::palette::ColorRole'>ColorRole</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130980' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#791-797' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/palette/overloading/trait.PaletteBrushArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a>) -&gt; &amp;'largs <a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/palette/overloading/trait.PaletteColorArgs.html' title='qt_gui::palette::overloading::PaletteColorArgs'>PaletteColorArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_gui/palette/enum.ColorRole.html' title='qt_gui::palette::ColorRole'>ColorRole</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-131000' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#811-817' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_gui/palette/overloading/trait.PaletteColorArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a>) -&gt; &amp;'largs <a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_gui/palette/enum.ColorRole.html' title='qt_gui::palette::ColorRole'>ColorRole</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130657' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#44' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/palette/enum.ColorRole.html' title='qt_gui::palette::ColorRole'>ColorRole</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_gui/palette/enum.ColorRole.html' title='qt_gui::palette::ColorRole'>ColorRole</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130660' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#44' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_gui/palette/enum.ColorRole.html' title='qt_gui::palette::ColorRole'>ColorRole</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130663' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#44' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_gui/palette/enum.ColorRole.html' title='qt_gui::palette::ColorRole'>ColorRole</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_gui/palette/enum.ColorRole.html' title='qt_gui::palette::ColorRole'>ColorRole</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-130669' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/palette.rs.html#44' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

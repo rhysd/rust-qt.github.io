@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["TextItemFontArgs","This trait represents a set of arguments accepted by TextItem::font method."],["TextItemTextArgs","This trait represents a set of arguments accepted by TextItem::text method."]]});

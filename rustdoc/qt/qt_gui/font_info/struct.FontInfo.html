@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FontInfo` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FontInfo">
+
+    <title>qt_gui::font_info::FontInfo - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>font_info</a></p><script>window.sidebarCurrent = {name: 'FontInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>font_info</a>::<wbr><a class='struct' href=''>FontInfo</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-72055' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font_info.rs.html#17-19' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct FontInfo {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QFontInfo</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> class provides general information about fonts.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> class provides the same access functions as <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a>, e.g. <a href="http://doc.qt.io/qt-5/qfontinfo.html#family">family</a>(), <a href="http://doc.qt.io/qt-5/qfontinfo.html#pointSize">pointSize</a>(), <a href="http://doc.qt.io/qt-5/qfontinfo.html#italic">italic</a>(), <a href="http://doc.qt.io/qt-5/qfontinfo.html#weight">weight</a>(), <a href="http://doc.qt.io/qt-5/qfontinfo.html#fixedPitch">fixedPitch</a>(), <a href="http://doc.qt.io/qt-5/qfontinfo.html#styleHint">styleHint</a>() etc. But whilst the <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> access functions return the values that were set, a <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> object returns the values that apply to the font that will actually be used to draw the text.</p>
+<p>For example, when the program asks for a 25pt Courier font on a machine that has a non-scalable 24pt Courier font, <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> will (normally) use the 24pt Courier for rendering. In this case, <a href="http://doc.qt.io/qt-5/qfont.html#pointSize">QFont::pointSize</a>() returns 25 and <a href="http://doc.qt.io/qt-5/qfontinfo.html#pointSize">QFontInfo::pointSize</a>() returns 24.</p>
+<p>There are three ways to create a <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> object.</p>
+<ol class="1">
+<li>Calling the <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> constructor with a <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> creates a font info object for a screen-compatible font, i.e. the font cannot be a printer font. If the font is changed later, the font info object is <i>not</i> updated.<p>(Note: If you use a printer font the values returned may be inaccurate. Printer fonts are not always accessible so the nearest screen font is used if a printer font is supplied.)</p>
+</li>
+<li><a href="http://doc.qt.io/qt-5/qwidget.html#fontInfo">QWidget::fontInfo</a>() returns the font info for a widget&#39;s font. This is equivalent to calling <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>(widget-&gt;font()). If the widget&#39;s font is changed later, the font info object is <i>not</i> updated.</li>
+<li><a href="http://doc.qt.io/qt-5/qpainter.html#fontInfo">QPainter::fontInfo</a>() returns the font info for a painter&#39;s current font. If the painter&#39;s font is changed later, the font info object is <i>not</i> updated.</li>
+</ol></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/font_info/struct.FontInfo.html' title='qt_gui::font_info::FontInfo'>FontInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-72060' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font_info.rs.html#27-213' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.bold' class='method'><code>fn <a href='#method.bold' class='fnname'>bold</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontInfo::bold() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#bold">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qfontinfo.html#weight">weight</a>() would return a value greater than <a href="http://doc.qt.io/qt-5/qfont.html#Weight-enum">QFont::Normal</a>; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontinfo.html#weight">weight</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#bold">QFont::bold</a>().</p></div></p>
+</div><h4 id='method.exact_match' class='method'><code>fn <a href='#method.exact_match' class='fnname'>exact_match</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontInfo::exactMatch() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#exactMatch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the matched window system font is exactly the same as the one specified by the font; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#exactMatch">QFont::exactMatch</a>().</p></div></p>
+</div><h4 id='method.family' class='method'><code>fn <a href='#method.family' class='fnname'>family</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_info/overloading/trait.FontInfoFamilyArgs.html' title='qt_gui::font_info::overloading::FontInfoFamilyArgs'>FontInfoFamilyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontInfo::family</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn family(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn family(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFontInfo::family() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#family">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the family name of the matched window system font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#family">QFont::family</a>().</p></div></p>
+</div><h4 id='method.fixed_pitch' class='method'><code>fn <a href='#method.fixed_pitch' class='fnname'>fixed_pitch</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontInfo::fixedPitch() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#fixedPitch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the fixed pitch value of the matched window system font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#fixedPitch">QFont::fixedPitch</a>().</p></div></p>
+</div><h4 id='method.italic' class='method'><code>fn <a href='#method.italic' class='fnname'>italic</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontInfo::italic() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#italic">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the italic value of the matched window system font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#italic">QFont::italic</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_info/overloading/trait.FontInfoNewArgs.html' title='qt_gui::font_info::overloading::FontInfoNewArgs'>FontInfoNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontInfo::QFontInfo</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::font::Font, cpp_utils::AsStruct)) -&gt; ::font_info::FontInfo</code><br>2) <code>fn new((&amp;::font::Font, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font_info::FontInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFontInfo::QFontInfo(const QFont&amp; arg1)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::font_info::FontInfo, cpp_utils::AsStruct)) -&gt; ::font_info::FontInfo</code><br>2) <code>fn new((&amp;::font_info::FontInfo, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font_info::FontInfo&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFontInfo::QFontInfo(const QFontInfo&amp; arg1)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, arg1: &amp;'l1 <a class='struct' href='../../qt_gui/font_info/struct.FontInfo.html' title='qt_gui::font_info::FontInfo'>FontInfo</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/font_info/struct.FontInfo.html' title='qt_gui::font_info::FontInfo'>FontInfo</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontInfo&amp; QFontInfo::operator=(const QFontInfo&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the font info in <i>fi</i>.</p></div></p>
+</div><h4 id='method.overline' class='method'><code>fn <a href='#method.overline' class='fnname'>overline</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontInfo::overline() const</code></span></p>
+</div><h4 id='method.pixel_size' class='method'><code>fn <a href='#method.pixel_size' class='fnname'>pixel_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QFontInfo::pixelSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#pixelSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pixel size of the matched window system font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#pointSize">QFont::pointSize</a>().</p></div></p>
+</div><h4 id='method.point_size' class='method'><code>fn <a href='#method.point_size' class='fnname'>point_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QFontInfo::pointSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#pointSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the point size of the matched window system font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontinfo.html#pointSizeF">pointSizeF</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#pointSize">QFont::pointSize</a>().</p></div></p>
+</div><h4 id='method.point_size_f' class='method'><code>fn <a href='#method.point_size_f' class='fnname'>point_size_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QFontInfo::pointSizeF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#pointSizeF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the point size of the matched window system font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#pointSizeF">QFont::pointSizeF</a>().</p></div></p>
+</div><h4 id='method.raw_mode' class='method'><code>fn <a href='#method.raw_mode' class='fnname'>raw_mode</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontInfo::rawMode() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo-obsolete.html#rawMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the font is a raw mode font; otherwise returns false.</p>
+<p>If it is a raw mode font, all other functions in <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> will return the same values set in the <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a>, regardless of the font actually used.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont-obsolete.html#rawMode">QFont::rawMode</a>().</p></div></p>
+</div><h4 id='method.strike_out' class='method'><code>fn <a href='#method.strike_out' class='fnname'>strike_out</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontInfo::strikeOut() const</code></span></p>
+</div><h4 id='method.style' class='method'><code>fn <a href='#method.style' class='fnname'>style</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/font/enum.Style.html' title='qt_gui::font::Style'>Style</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::Style QFontInfo::style() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#style">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the style value of the matched window system font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#style">QFont::style</a>().</p></div></p>
+</div><h4 id='method.style_hint' class='method'><code>fn <a href='#method.style_hint' class='fnname'>style_hint</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/font/enum.StyleHint.html' title='qt_gui::font::StyleHint'>StyleHint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::StyleHint QFontInfo::styleHint() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#styleHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the style of the matched window system font.</p>
+<p>Currently only returns the style hint set in <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#styleHint">QFont::styleHint</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#StyleHint-enum">QFont::StyleHint</a>.</p></div></p>
+</div><h4 id='method.style_name' class='method'><code>fn <a href='#method.style_name' class='fnname'>style_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font_info/overloading/trait.FontInfoStyleNameArgs.html' title='qt_gui::font_info::overloading::FontInfoStyleNameArgs'>FontInfoStyleNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFontInfo::styleName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn style_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn style_name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFontInfo::styleName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#styleName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the style name of the matched window system font on systems that support it.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#styleName">QFont::styleName</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/font_info/struct.FontInfo.html' title='qt_gui::font_info::FontInfo'>FontInfo</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFontInfo::swap(QFontInfo&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this font info instance with <i>other</i>. This function is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.underline' class='method'><code>fn <a href='#method.underline' class='fnname'>underline</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFontInfo::underline() const</code></span></p>
+</div><h4 id='method.weight' class='method'><code>fn <a href='#method.weight' class='fnname'>weight</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QFontInfo::weight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#weight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the weight of the matched window system font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#weight">QFont::weight</a>() and <a href="http://doc.qt.io/qt-5/qfontinfo.html#bold">bold</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/font_info/struct.FontInfo.html' title='qt_gui::font_info::FontInfo'>FontInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-72058' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font_info.rs.html#21-25' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/font_info/struct.FontInfo.html' title='qt_gui::font_info::FontInfo'>FontInfo</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/font_info/struct.FontInfo.html' title='qt_gui::font_info::FontInfo'>FontInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-72111' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font_info.rs.html#215-222' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QFontInfo::~QFontInfo()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfontinfo.html#dtor.QFontInfo">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the font info object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/font_info/struct.FontInfo.html' title='qt_gui::font_info::FontInfo'>FontInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-72114' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font_info.rs.html#224-228' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

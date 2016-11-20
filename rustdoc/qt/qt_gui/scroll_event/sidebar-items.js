@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ScrollState","C++ type: <span style='color: green;'>```QScrollEvent::ScrollState```</span>"]],"mod":[["overloading",""]],"struct":[["ScrollEvent","C++ type: <span style='color: green;'>```QScrollEvent```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["pixel_format_create_yuv","C++ method: <span style='color: green;'>```QtPrivate::QPixelFormat_createYUV```</span>"]],"mod":[["overloading",""]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ScreenOrientationChangeEvent","C++ type: <span style='color: green;'>```QScreenOrientationChangeEvent```</span>"]]});

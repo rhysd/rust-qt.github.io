@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["WindowStateChangeEventNewArgs","This trait represents a set of arguments accepted by WindowStateChangeEvent::new method."],["WindowStateChangeEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by WindowStateChangeEvent::register_event_type method."]]});

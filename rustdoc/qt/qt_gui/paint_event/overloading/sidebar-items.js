@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["PaintEventNewArgs","This trait represents a set of arguments accepted by PaintEvent::new method."],["PaintEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by PaintEvent::register_event_type method."]]});

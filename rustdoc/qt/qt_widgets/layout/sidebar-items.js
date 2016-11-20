@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["SizeConstraint","C++ type: <span style='color: green;'>```QLayout::SizeConstraint```</span>"]],"mod":[["overloading",""]],"struct":[["Layout","C++ type: <span style='color: green;'>```QLayout```</span>"]]});

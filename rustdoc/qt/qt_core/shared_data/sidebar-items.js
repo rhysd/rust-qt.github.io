@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["SharedData","C++ type: <span style='color: green;'>```QSharedData```</span>"]]});

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TableWidgetItem` struct in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TableWidgetItem">
+
+    <title>qt_widgets::table_widget_item::TableWidgetItem - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>table_widget_item</a></p><script>window.sidebarCurrent = {name: 'TableWidgetItem', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>table_widget_item</a>::<wbr><a class='struct' href=''>TableWidgetItem</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-463482' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/table_widget_item.rs.html#32-34' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TableWidgetItem {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTableWidgetItem</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html">QTableWidgetItem</a> class provides an item for use with the <a href="http://doc.qt.io/qt-5/qtablewidget.html">QTableWidget</a> class.</p>
+<p>Table items are used to hold pieces of information for table widgets. Items usually contain text, icons, or checkboxes</p>
+<p>The <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html">QTableWidgetItem</a> class is a convenience class that replaces the <code>QTableItem</code> class in Qt 3. It provides an item for use with the <a href="http://doc.qt.io/qt-5/qtablewidget.html">QTableWidget</a> class.</p>
+<p>Top-level items are constructed without a parent then inserted at the position specified by a pair of row and column numbers:</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#QTableWidgetItem">QTableWidgetItem</a></span> <span class="operator">*</span>newItem <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#QTableWidgetItem">QTableWidgetItem</a></span>(tr(<span class="string">&quot;%1&quot;</span>)<span class="operator">.</span>arg(
+&#32;       pow(row<span class="operator">,</span> column<span class="operator">+</span><span class="number">1</span>)));
+&#32;   tableWidget<span class="operator">-</span><span class="operator">&gt;</span>setItem(row<span class="operator">,</span> column<span class="operator">,</span> newItem);</pre>
+<p>Each item can have its own background brush which is set with the <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setBackground">setBackground</a>() function. The current background brush can be found with <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#background">background</a>(). The text label for each item can be rendered with its own font and brush. These are specified with the <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setFont">setFont</a>() and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setForeground">setForeground</a>() functions, and read with <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#font">font</a>() and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#foreground">foreground</a>().</p>
+<p>By default, items are enabled, editable, selectable, checkable, and can be used both as the source of a drag and drop operation and as a drop target. Each item&#39;s flags can be changed by calling <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setFlags">setFlags</a>() with the appropriate value (see <a href="http://doc.qt.io/qt-5/qt.html#ItemFlag-enum">Qt::ItemFlags</a>). Checkable items can be checked and unchecked with the <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setCheckState">setCheckState</a>() function. The corresponding <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#checkState">checkState</a>() function indicates whether the item is currently checked.</p>
+<a name="subclassing"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_widgets/table_widget_item/struct.TableWidgetItem.html' title='qt_widgets::table_widget_item::TableWidgetItem'>TableWidgetItem</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-463487' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/table_widget_item.rs.html#42-552' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.background' class='method'><code>fn <a href='#method.background' class='fnname'>background</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemBackgroundArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemBackgroundArgs'>TableWidgetItemBackgroundArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::background</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn background(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_gui::brush::Brush&gt;</code><br>2) <code>fn background(&amp;self, cpp_utils::AsStruct) -&gt; qt_gui::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QTableWidgetItem::background() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#background">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush used to render the item&#39;s background.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setBackground">setBackground</a>() and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#foreground">foreground</a>().</p></div></p>
+</div><h4 id='method.background_color' class='method'><code>fn <a href='#method.background_color' class='fnname'>background_color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemBackgroundColorArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemBackgroundColorArgs'>TableWidgetItemBackgroundColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::backgroundColor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn background_color(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_gui::color::Color&gt;</code><br>2) <code>fn background_color(&amp;self, cpp_utils::AsStruct) -&gt; qt_gui::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QTableWidgetItem::backgroundColor() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem-obsolete.html#backgroundColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is deprecated. Use <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#background">background</a>() instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem-obsolete.html#setBackgroundColor">setBackgroundColor</a>().</p></div></p>
+</div><h4 id='method.check_state' class='method'><code>fn <a href='#method.check_state' class='fnname'>check_state</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.CheckState.html' title='qt_core::qt::CheckState'>CheckState</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::CheckState QTableWidgetItem::checkState() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#checkState">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the checked state of the table item.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setCheckState">setCheckState</a>() and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#flags">flags</a>().</p></div></p>
+</div><h4 id='method.clone' class='method'><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/table_widget_item/struct.TableWidgetItem.html' title='qt_widgets::table_widget_item::TableWidgetItem'>TableWidgetItem</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual QTableWidgetItem* QTableWidgetItem::clone() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#clone">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Creates a copy of the item.</p></div></p>
+</div><h4 id='method.column' class='method'><code>fn <a href='#method.column' class='fnname'>column</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTableWidgetItem::column() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#column">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the column of the item in the table. If the item is not in a table, this function will return -1.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#row">row</a>().</p></div></p>
+</div><h4 id='method.data' class='method'><code>fn <a href='#method.data' class='fnname'>data</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemDataArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemDataArgs'>TableWidgetItemDataArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::data</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn data(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn data(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>virtual QVariant QTableWidgetItem::data(int role) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#data">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s data for the given <i>role</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setData">setData</a>().</p></div></p>
+</div><h4 id='method.flags' class='method'><code>fn <a href='#method.flags' class='fnname'>flags</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.ItemFlag.html' title='qt_core::qt::ItemFlag'>ItemFlag</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::ItemFlag&gt; QTableWidgetItem::flags() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#flags">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the flags used to describe the item. These determine whether the item can be checked, edited, and selected.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setFlags">setFlags</a>().</p></div></p>
+</div><h4 id='method.font' class='method'><code>fn <a href='#method.font' class='fnname'>font</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemFontArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemFontArgs'>TableWidgetItemFontArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::font</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn font(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_gui::font::Font&gt;</code><br>2) <code>fn font(&amp;self, cpp_utils::AsStruct) -&gt; qt_gui::font::Font</code><br>
+C++ method: <span style='color: green;'><code>QFont QTableWidgetItem::font() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#font">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the font used to render the item&#39;s text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setFont">setFont</a>().</p></div></p>
+</div><h4 id='method.foreground' class='method'><code>fn <a href='#method.foreground' class='fnname'>foreground</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemForegroundArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemForegroundArgs'>TableWidgetItemForegroundArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::foreground</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn foreground(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_gui::brush::Brush&gt;</code><br>2) <code>fn foreground(&amp;self, cpp_utils::AsStruct) -&gt; qt_gui::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QTableWidgetItem::foreground() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#foreground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush used to render the item&#39;s foreground (e.g. text).</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setForeground">setForeground</a>() and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#background">background</a>().</p></div></p>
+</div><h4 id='method.icon' class='method'><code>fn <a href='#method.icon' class='fnname'>icon</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemIconArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemIconArgs'>TableWidgetItemIconArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::icon</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn icon(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_gui::icon::Icon&gt;</code><br>2) <code>fn icon(&amp;self, cpp_utils::AsStruct) -&gt; qt_gui::icon::Icon</code><br>
+C++ method: <span style='color: green;'><code>QIcon QTableWidgetItem::icon() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#icon">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s icon.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setIcon">setIcon</a>() and <a href="http://doc.qt.io/qt-5/qabstractitemview.html#iconSize-prop">iconSize</a>.</p></div></p>
+</div><h4 id='method.is_selected' class='method'><code>fn <a href='#method.is_selected' class='fnname'>is_selected</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTableWidgetItem::isSelected() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#isSelected">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the item is selected, otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setSelected">setSelected</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemNewArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemNewArgs'>TableWidgetItemNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::QTableWidgetItem</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_gui::icon::Icon, &amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::table_widget_item::TableWidgetItem</code><br>2) <code>fn new((&amp;qt_gui::icon::Icon, &amp;qt_core::string::String, libc::c_int, cpp_utils::AsStruct)) -&gt; ::table_widget_item::TableWidgetItem</code><br>3) <code>fn new((&amp;qt_gui::icon::Icon, &amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::table_widget_item::TableWidgetItem&gt;</code><br>4) <code>fn new((&amp;qt_gui::icon::Icon, &amp;qt_core::string::String, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::table_widget_item::TableWidgetItem&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTableWidgetItem::QTableWidgetItem(const QIcon&amp; icon, const QString&amp; text, int type = ?)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::table_widget_item::TableWidgetItem</code><br>2) <code>fn new((&amp;qt_core::string::String, libc::c_int, cpp_utils::AsStruct)) -&gt; ::table_widget_item::TableWidgetItem</code><br>3) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::table_widget_item::TableWidgetItem&gt;</code><br>4) <code>fn new((&amp;qt_core::string::String, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::table_widget_item::TableWidgetItem&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTableWidgetItem::QTableWidgetItem(const QString&amp; text, int type = ?)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::table_widget_item::TableWidgetItem, cpp_utils::AsStruct)) -&gt; ::table_widget_item::TableWidgetItem</code><br>2) <code>fn new((&amp;::table_widget_item::TableWidgetItem, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::table_widget_item::TableWidgetItem&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTableWidgetItem::QTableWidgetItem(const QTableWidgetItem&amp; other)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::table_widget_item::TableWidgetItem</code><br>2) <code>fn new((libc::c_int, cpp_utils::AsStruct)) -&gt; ::table_widget_item::TableWidgetItem</code><br>3) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::table_widget_item::TableWidgetItem&gt;</code><br>4) <code>fn new((libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::table_widget_item::TableWidgetItem&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTableWidgetItem::QTableWidgetItem(int type = ?)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_widgets/table_widget_item/struct.TableWidgetItem.html' title='qt_widgets::table_widget_item::TableWidgetItem'>TableWidgetItem</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_widgets/table_widget_item/struct.TableWidgetItem.html' title='qt_widgets::table_widget_item::TableWidgetItem'>TableWidgetItem</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem&amp; QTableWidgetItem::operator=(const QTableWidgetItem&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns <i>other</i>&#39;s data and flags to this item. Note that <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#type">type</a>() and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#tableWidget">tableWidget</a>() are not copied.</p>
+<p>This function is useful when reimplementing <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#clone">clone</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#data">data</a>() and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#flags">flags</a>().</p></div></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_widgets/table_widget_item/struct.TableWidgetItem.html' title='qt_widgets::table_widget_item::TableWidgetItem'>TableWidgetItem</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual bool QTableWidgetItem::operator&lt;(const QTableWidgetItem&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#operator-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the item is less than the <i>other</i> item; otherwise returns false.</p></div></p>
+</div><h4 id='method.read' class='method'><code>fn <a href='#method.read' class='fnname'>read</a>(&amp;mut self, in_: &amp;mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QTableWidgetItem::read(QDataStream&amp; in)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#read">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reads the item from stream <i>in</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#write">write</a>().</p></div></p>
+</div><h4 id='method.row' class='method'><code>fn <a href='#method.row' class='fnname'>row</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTableWidgetItem::row() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#row">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the row of the item in the table. If the item is not in a table, this function will return -1.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#column">column</a>().</p></div></p>
+</div><h4 id='method.set_background' class='method'><code>fn <a href='#method.set_background' class='fnname'>set_background</a>(&amp;mut self, brush: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setBackground(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setBackground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s background brush to the specified <i>brush</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#background">background</a>() and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setForeground">setForeground</a>().</p></div></p>
+</div><h4 id='method.set_background_color' class='method'><code>fn <a href='#method.set_background_color' class='fnname'>set_background_color</a>(&amp;mut self, color: &amp;<a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setBackgroundColor(const QColor&amp; color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem-obsolete.html#setBackgroundColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is deprecated. Use <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setBackground">setBackground</a>() instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem-obsolete.html#backgroundColor">backgroundColor</a>().</p></div></p>
+</div><h4 id='method.set_check_state' class='method'><code>fn <a href='#method.set_check_state' class='fnname'>set_check_state</a>(&amp;mut self, state: <a class='enum' href='../../qt_core/qt/enum.CheckState.html' title='qt_core::qt::CheckState'>CheckState</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setCheckState(Qt::CheckState state)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setCheckState">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the check state of the table item to be <i>state</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#checkState">checkState</a>().</p></div></p>
+</div><h4 id='method.set_data' class='method'><code>fn <a href='#method.set_data' class='fnname'>set_data</a>(&amp;mut self, role: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, value: &amp;<a class='struct' href='../../qt_core/variant/struct.Variant.html' title='qt_core::variant::Variant'>Variant</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QTableWidgetItem::setData(int role, const QVariant&amp; value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s data for the given <i>role</i> to the specified <i>value</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qt.html#ItemDataRole-enum">Qt::ItemDataRole</a> and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#data">data</a>().</p></div></p>
+</div><h4 id='method.set_flags' class='method'><code>fn <a href='#method.set_flags' class='fnname'>set_flags</a>(&amp;mut self, flags: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.ItemFlag.html' title='qt_core::qt::ItemFlag'>ItemFlag</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setFlags(QFlags&lt;Qt::ItemFlag&gt; flags)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setFlags">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the flags for the item to the given <i>flags</i>. These determine whether the item can be selected or modified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#flags">flags</a>().</p></div></p>
+</div><h4 id='method.set_font' class='method'><code>fn <a href='#method.set_font' class='fnname'>set_font</a>(&amp;mut self, font: &amp;<a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setFont(const QFont&amp; font)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the font used to display the item&#39;s text to the given <i>font</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#font">font</a>(), <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setText">setText</a>(), and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setForeground">setForeground</a>().</p></div></p>
+</div><h4 id='method.set_foreground' class='method'><code>fn <a href='#method.set_foreground' class='fnname'>set_foreground</a>(&amp;mut self, brush: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setForeground(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setForeground">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s foreground brush to the specified <i>brush</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#foreground">foreground</a>() and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setBackground">setBackground</a>().</p></div></p>
+</div><h4 id='method.set_icon' class='method'><code>fn <a href='#method.set_icon' class='fnname'>set_icon</a>(&amp;mut self, icon: &amp;<a class='struct' href='../../qt_gui/icon/struct.Icon.html' title='qt_gui::icon::Icon'>Icon</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setIcon(const QIcon&amp; icon)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setIcon">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s icon to the <i>icon</i> specified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#icon">icon</a>(), <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setText">setText</a>(), and <a href="http://doc.qt.io/qt-5/qabstractitemview.html#iconSize-prop">iconSize</a>.</p></div></p>
+</div><h4 id='method.set_selected' class='method'><code>fn <a href='#method.set_selected' class='fnname'>set_selected</a>(&amp;mut self, select: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setSelected(bool select)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setSelected">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the selected state of the item to <i>select</i>.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#isSelected">isSelected</a>().</p></div></p>
+</div><h4 id='method.set_size_hint' class='method'><code>fn <a href='#method.set_size_hint' class='fnname'>set_size_hint</a>(&amp;mut self, size: &amp;<a class='struct' href='../../qt_core/size/struct.Size.html' title='qt_core::size::Size'>Size</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setSizeHint(const QSize&amp; size)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setSizeHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the size hint for the table item to be <i>size</i>. If no size hint is set, the item delegate will compute the size hint based on the item data.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#sizeHint">sizeHint</a>().</p></div></p>
+</div><h4 id='method.set_status_tip' class='method'><code>fn <a href='#method.set_status_tip' class='fnname'>set_status_tip</a>(&amp;mut self, status_tip: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setStatusTip(const QString&amp; statusTip)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setStatusTip">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the status tip for the table item to the text specified by <i>statusTip</i>. <a href="http://doc.qt.io/qt-5/qtablewidget.html">QTableWidget</a> mouse tracking needs to be enabled for this feature to work.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#statusTip">statusTip</a>(), <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setToolTip">setToolTip</a>(), and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setWhatsThis">setWhatsThis</a>().</p></div></p>
+</div><h4 id='method.set_text' class='method'><code>fn <a href='#method.set_text' class='fnname'>set_text</a>(&amp;mut self, text: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setText(const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s text to the <i>text</i> specified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#text">text</a>(), <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setFont">setFont</a>(), and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setForeground">setForeground</a>().</p></div></p>
+</div><h4 id='method.set_text_alignment' class='method'><code>fn <a href='#method.set_text_alignment' class='fnname'>set_text_alignment</a>(&amp;mut self, alignment: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setTextAlignment(int alignment)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setTextAlignment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the text alignment for the item&#39;s text to the <i>alignment</i> specified.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#textAlignment">textAlignment</a>() and <a href="http://doc.qt.io/qt-5/qt.html#AlignmentFlag-enum">Qt::Alignment</a>.</p></div></p>
+</div><h4 id='method.set_text_color' class='method'><code>fn <a href='#method.set_text_color' class='fnname'>set_text_color</a>(&amp;mut self, color: &amp;<a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setTextColor(const QColor&amp; color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem-obsolete.html#setTextColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is deprecated. Use <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setForeground">setForeground</a>() instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem-obsolete.html#textColor">textColor</a>().</p></div></p>
+</div><h4 id='method.set_tool_tip' class='method'><code>fn <a href='#method.set_tool_tip' class='fnname'>set_tool_tip</a>(&amp;mut self, tool_tip: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setToolTip(const QString&amp; toolTip)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setToolTip">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s tooltip to the string specified by <i>toolTip</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#toolTip">toolTip</a>(), <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setStatusTip">setStatusTip</a>(), and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setWhatsThis">setWhatsThis</a>().</p></div></p>
+</div><h4 id='method.set_whats_this' class='method'><code>fn <a href='#method.set_whats_this' class='fnname'>set_whats_this</a>(&amp;mut self, whats_this: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTableWidgetItem::setWhatsThis(const QString&amp; whatsThis)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setWhatsThis">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the item&#39;s &quot;What&#39;s This?&quot; help to the string specified by <i>whatsThis</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#whatsThis">whatsThis</a>(), <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setStatusTip">setStatusTip</a>(), and <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setToolTip">setToolTip</a>().</p></div></p>
+</div><h4 id='method.size_hint' class='method'><code>fn <a href='#method.size_hint' class='fnname'>size_hint</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemSizeHintArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemSizeHintArgs'>TableWidgetItemSizeHintArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::sizeHint</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn size_hint(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::size::Size&gt;</code><br>2) <code>fn size_hint(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::size::Size</code><br>
+C++ method: <span style='color: green;'><code>QSize QTableWidgetItem::sizeHint() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#sizeHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size hint set for the table item.</p>
+<p>This function was introduced in  Qt 4.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setSizeHint">setSizeHint</a>().</p></div></p>
+</div><h4 id='method.status_tip' class='method'><code>fn <a href='#method.status_tip' class='fnname'>status_tip</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemStatusTipArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemStatusTipArgs'>TableWidgetItemStatusTipArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::statusTip</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn status_tip(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn status_tip(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTableWidgetItem::statusTip() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#statusTip">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s status tip.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setStatusTip">setStatusTip</a>().</p></div></p>
+</div><h4 id='method.table_widget' class='method'><code>fn <a href='#method.table_widget' class='fnname'>table_widget</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/table_widget/struct.TableWidget.html' title='qt_widgets::table_widget::TableWidget'>TableWidget</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidget* QTableWidgetItem::tableWidget() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#tableWidget">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the table widget that contains the item.</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemTextArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemTextArgs'>TableWidgetItemTextArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTableWidgetItem::text() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setText">setText</a>().</p></div></p>
+</div><h4 id='method.text_alignment' class='method'><code>fn <a href='#method.text_alignment' class='fnname'>text_alignment</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTableWidgetItem::textAlignment() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#textAlignment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the text alignment for the item&#39;s text.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setTextAlignment">setTextAlignment</a>() and <a href="http://doc.qt.io/qt-5/qt.html#AlignmentFlag-enum">Qt::Alignment</a>.</p></div></p>
+</div><h4 id='method.text_color' class='method'><code>fn <a href='#method.text_color' class='fnname'>text_color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemTextColorArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemTextColorArgs'>TableWidgetItemTextColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::textColor</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text_color(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_gui::color::Color&gt;</code><br>2) <code>fn text_color(&amp;self, cpp_utils::AsStruct) -&gt; qt_gui::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QTableWidgetItem::textColor() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem-obsolete.html#textColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is deprecated. Use <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#foreground">foreground</a>() instead.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem-obsolete.html#setTextColor">setTextColor</a>().</p></div></p>
+</div><h4 id='method.tool_tip' class='method'><code>fn <a href='#method.tool_tip' class='fnname'>tool_tip</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemToolTipArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemToolTipArgs'>TableWidgetItemToolTipArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::toolTip</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn tool_tip(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn tool_tip(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTableWidgetItem::toolTip() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#toolTip">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s tooltip.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setToolTip">setToolTip</a>().</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTableWidgetItem::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type passed to the <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html">QTableWidgetItem</a> constructor.</p></div></p>
+</div><h4 id='method.whats_this' class='method'><code>fn <a href='#method.whats_this' class='fnname'>whats_this</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/table_widget_item/overloading/trait.TableWidgetItemWhatsThisArgs.html' title='qt_widgets::table_widget_item::overloading::TableWidgetItemWhatsThisArgs'>TableWidgetItemWhatsThisArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTableWidgetItem::whatsThis</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn whats_this(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn whats_this(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QTableWidgetItem::whatsThis() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#whatsThis">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item&#39;s &quot;What&#39;s This?&quot; help.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setWhatsThis">setWhatsThis</a>().</p></div></p>
+</div><h4 id='method.write' class='method'><code>fn <a href='#method.write' class='fnname'>write</a>(&amp;self, out: &amp;mut <a class='struct' href='../../qt_core/data_stream/struct.DataStream.html' title='qt_core::data_stream::DataStream'>DataStream</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QTableWidgetItem::write(QDataStream&amp; out) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#write">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the item to stream <i>out</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#read">read</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_widgets/table_widget_item/struct.TableWidgetItem.html' title='qt_widgets::table_widget_item::TableWidgetItem'>TableWidgetItem</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-463485' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/table_widget_item.rs.html#36-40' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_widgets/table_widget_item/struct.TableWidgetItem.html' title='qt_widgets::table_widget_item::TableWidgetItem'>TableWidgetItem</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_widgets/table_widget_item/struct.TableWidgetItem.html' title='qt_widgets::table_widget_item::TableWidgetItem'>TableWidgetItem</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-463634' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/table_widget_item.rs.html#554-561' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QTableWidgetItem::~QTableWidgetItem()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#dtor.QTableWidgetItem">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the table item.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_widgets/table_widget_item/struct.TableWidgetItem.html' title='qt_widgets::table_widget_item::TableWidgetItem'>TableWidgetItem</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-463637' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/table_widget_item.rs.html#563-567' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

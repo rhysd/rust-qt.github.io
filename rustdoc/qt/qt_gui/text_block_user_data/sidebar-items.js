@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TextBlockUserData","C++ type: <span style='color: green;'>```QTextBlockUserData```</span>"]]});

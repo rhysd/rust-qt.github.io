@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["JsonValueRefPtrNewArgs","This trait represents a set of arguments accepted by JsonValueRefPtr::new method."]]});

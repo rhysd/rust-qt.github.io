@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ApplicationAttribute` enum in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ApplicationAttribute">
+
+    <title>qt_core::qt::ApplicationAttribute - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>qt</a></p><script>window.sidebarCurrent = {name: 'ApplicationAttribute', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>qt</a>::<wbr><a class='enum' href=''>ApplicationAttribute</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-118773' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#102-143' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum ApplicationAttribute {
+    AAImmediateWidgetCreation,
+    AAMSWindowsUseDirect3DByDefault,
+    AADontShowIconsInMenus,
+    AANativeWindows,
+    AADontCreateNativeWidgetSiblings,
+    AAMacPluginApplication,
+    AADontUseNativeMenuBar,
+    AAMacDontSwapCtrlAndMeta,
+    AAUse96Dpi,
+    AAX11InitThreads,
+    AASynthesizeTouchForUnhandledMouseEvents,
+    AASynthesizeMouseForUnhandledTouchEvents,
+    AAUseHighDpiPixmaps,
+    AAForceRasterWidgets,
+    AAUseDesktopOpenGL,
+    AAUseOpenGLES,
+    AAUseSoftwareOpenGL,
+    AAShareOpenGLContexts,
+    AASetPalette,
+    AAAttributeCount,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>Qt::ApplicationAttribute</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qt.html#ApplicationAttribute-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This enum describes attributes that change the behavior of application-wide features. These are enabled and disabled using <a href="http://doc.qt.io/qt-5/qcoreapplication.html#setAttribute">QCoreApplication::setAttribute</a>(), and can be tested for with <a href="http://doc.qt.io/qt-5/qcoreapplication.html#testAttribute">QCoreApplication::testAttribute</a>().</p></p>
+
+<p>After setting this attribute, application code that uses pixmap sizes in layout geometry calculations should typically divide by <a href="http://doc.qt.io/qt-5/qpixmap.html#devicePixelRatio">devicePixelRatio()</a> to get device-independent layout geometry.</p>
+
+<p>The following values are obsolete:</p>
+
+<p><a name="application-state"></a></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.AAImmediateWidgetCreation' class='variant'><code>AAImmediateWidgetCreation</code></span><div class='docblock'><p>This attribute is no longer fully supported in Qt 5. It ensures that widgets are created as soon as they are constructed. By default, resources for widgets are allocated on demand to improve efficiency and minimize resource usage. Setting or clearing this attribute affects widgets constructed after the change. Setting it tells Qt to create toplevel windows immediately. Therefore, if it is important to minimize resource consumption, do not set this attribute. (C++ enum variant: <span style='color: green;'><code>AA_ImmediateWidgetCreation = 0</code></span>)</p>
+</div><span id='variant.AAMSWindowsUseDirect3DByDefault' class='variant'><code>AAMSWindowsUseDirect3DByDefault</code></span><div class='docblock'><p>This value is obsolete and has no effect. (C++ enum variant: <span style='color: green;'><code>AA_MSWindowsUseDirect3DByDefault = 1</code></span>)</p>
+</div><span id='variant.AADontShowIconsInMenus' class='variant'><code>AADontShowIconsInMenus</code></span><div class='docblock'><p>Actions with the Icon property won&#39;t be shown in any menus unless specifically set by the <a href="http://doc.qt.io/qt-5/qaction.html#iconVisibleInMenu-prop">QAction::iconVisibleInMenu</a> property. Menus that are currently open or menus already created in the native OS X menubar <i>may not</i> pick up a change in this attribute. Changes in the <a href="http://doc.qt.io/qt-5/qaction.html#iconVisibleInMenu-prop">QAction::iconVisibleInMenu</a> property will always be picked up. (C++ enum variant: <span style='color: green;'><code>AA_DontShowIconsInMenus = 2</code></span>)</p>
+</div><span id='variant.AANativeWindows' class='variant'><code>AANativeWindows</code></span><div class='docblock'><p>Ensures that widgets have native windows. (C++ enum variant: <span style='color: green;'><code>AA_NativeWindows = 3</code></span>)</p>
+</div><span id='variant.AADontCreateNativeWidgetSiblings' class='variant'><code>AADontCreateNativeWidgetSiblings</code></span><div class='docblock'><p>Ensures that siblings of native widgets stay non-native unless specifically set by the <a href="http://doc.qt.io/qt-5/qt.html#WidgetAttribute-enum">Qt::WA_NativeWindow</a> attribute. (C++ enum variant: <span style='color: green;'><code>AA_DontCreateNativeWidgetSiblings = 4</code></span>)</p>
+</div><span id='variant.AAMacPluginApplication' class='variant'><code>AAMacPluginApplication</code></span><div class='docblock'><p>Stops the Qt mac application from doing specific initializations that do not necessarily make sense when using Qt to author a plugin. This includes avoiding loading our nib for the main menu and not taking possession of the native menu bar. When setting this attribute to true will also set the AA_DontUseNativeMenuBar attribute to true. It also disables native event filters. (C++ enum variant: <span style='color: green;'><code>AA_MacPluginApplication = 5</code></span>)</p>
+</div><span id='variant.AADontUseNativeMenuBar' class='variant'><code>AADontUseNativeMenuBar</code></span><div class='docblock'><p>All menubars created while this attribute is set to true won&#39;t be used as a native menubar (e.g, the menubar at the top of the main screen on OS X or at the bottom in Windows CE). (C++ enum variant: <span style='color: green;'><code>AA_DontUseNativeMenuBar = 6</code></span>)</p>
+</div><span id='variant.AAMacDontSwapCtrlAndMeta' class='variant'><code>AAMacDontSwapCtrlAndMeta</code></span><div class='docblock'><p>On OS X by default, Qt swaps the Control and Meta (Command) keys (i.e., whenever Control is pressed, Qt sends Meta, and whenever Meta is pressed Control is sent). When this attribute is true, Qt will not do the flip. <a href="http://doc.qt.io/qt-5/qkeysequence.html#StandardKey-enum">QKeySequence::StandardKey</a> will also flip accordingly (i.e., <a href="http://doc.qt.io/qt-5/qkeysequence.html#StandardKey-enum">QKeySequence::Copy</a> will be Command+C on the keyboard regardless of the value set, though what is output for <a href="http://doc.qt.io/qt-5/qkeysequence.html#toString">QKeySequence::toString</a>(<a href="http://doc.qt.io/qt-5/qkeysequence.html#SequenceFormat-enum">QKeySequence::PortableText</a>) will be different). (C++ enum variant: <span style='color: green;'><code>AA_MacDontSwapCtrlAndMeta = 7</code></span>)</p>
+</div><span id='variant.AAUse96Dpi' class='variant'><code>AAUse96Dpi</code></span><div class='docblock'><p>Assume the screen has a resolution of 96 DPI rather than using the OS-provided resolution. This will cause font rendering to be consistent in pixels-per-point across devices rather than defining 1 point as 1/72 inch. (C++ enum variant: <span style='color: green;'><code>AA_Use96Dpi = 8</code></span>)</p>
+</div><span id='variant.AAX11InitThreads' class='variant'><code>AAX11InitThreads</code></span><div class='docblock'><p>Calls <code>XInitThreads()</code> as part of the <a href="http://doc.qt.io/qt-5/qapplication.html">QApplication</a> construction in order to make Xlib calls thread-safe. This attribute must be set before <a href="http://doc.qt.io/qt-5/qapplication.html">QApplication</a> is constructed. (C++ enum variant: <span style='color: green;'><code>AA_X11InitThreads = 10</code></span>)</p>
+</div><span id='variant.AASynthesizeTouchForUnhandledMouseEvents' class='variant'><code>AASynthesizeTouchForUnhandledMouseEvents</code></span><div class='docblock'><p>All mouse events that are not accepted by the application will be translated to touch events instead. (C++ enum variant: <span style='color: green;'><code>AA_SynthesizeTouchForUnhandledMouseEvents = 11</code></span>)</p>
+</div><span id='variant.AASynthesizeMouseForUnhandledTouchEvents' class='variant'><code>AASynthesizeMouseForUnhandledTouchEvents</code></span><div class='docblock'><p>All touch events that are not accepted by the application will be translated to left button mouse events instead. This attribute is enabled by default. (C++ enum variant: <span style='color: green;'><code>AA_SynthesizeMouseForUnhandledTouchEvents = 12</code></span>)</p>
+</div><span id='variant.AAUseHighDpiPixmaps' class='variant'><code>AAUseHighDpiPixmaps</code></span><div class='docblock'><p>Make <a href="http://doc.qt.io/qt-5/qicon.html#pixmap">QIcon::pixmap</a>() generate high-dpi pixmaps that can be larger than the requested size. Such pixmaps will have <a href="http://doc.qt.io/qt-5/qpixmap.html#devicePixelRatio">devicePixelRatio()</a> set to a value higher than 1. (C++ enum variant: <span style='color: green;'><code>AA_UseHighDpiPixmaps = 13</code></span>)</p>
+</div><span id='variant.AAForceRasterWidgets' class='variant'><code>AAForceRasterWidgets</code></span><div class='docblock'><p>Make top-level widgets use pure raster surfaces, and do not support non-native GL-based child widgets. (C++ enum variant: <span style='color: green;'><code>AA_ForceRasterWidgets = 14</code></span>)</p>
+</div><span id='variant.AAUseDesktopOpenGL' class='variant'><code>AAUseDesktopOpenGL</code></span><div class='docblock'><p>Forces the usage of desktop OpenGL (for example, <i>opengl32.dll</i> or <i>libGL.so</i>) on platforms that use dynamic loading of the OpenGL implementation. This value has been added in Qt 5.3. (C++ enum variant: <span style='color: green;'><code>AA_UseDesktopOpenGL = 15</code></span>)</p>
+</div><span id='variant.AAUseOpenGLES' class='variant'><code>AAUseOpenGLES</code></span><div class='docblock'><p>Forces the usage of OpenGL ES 2.0 or higher on platforms that use dynamic loading of the OpenGL implementation. This value has been added in Qt 5.3. (C++ enum variant: <span style='color: green;'><code>AA_UseOpenGLES = 16</code></span>)</p>
+</div><span id='variant.AAUseSoftwareOpenGL' class='variant'><code>AAUseSoftwareOpenGL</code></span><div class='docblock'><p>Forces the usage of a software based OpenGL implementation on platforms that use dynamic loading of the OpenGL implementation. This will typically be a patched build of <a href="http://www.mesa3d.org/llvmpipe.html">Mesa llvmpipe</a>, providing OpenGL 2.1. The value may have no effect if no such OpenGL implementation is available. The default name of this library is <code>opengl32sw.dll</code> and can be overridden by setting the environment variable <i>QT_OPENGL_DLL</i>. See the platform-specific pages, for instance <a href="http://doc.qt.io/qt-5/windows-support.html">Qt for Windows</a>, for more information. This value has been added in Qt 5.4. (C++ enum variant: <span style='color: green;'><code>AA_UseSoftwareOpenGL = 17</code></span>)</p>
+</div><span id='variant.AAShareOpenGLContexts' class='variant'><code>AAShareOpenGLContexts</code></span><div class='docblock'><p>Enables resource sharing between the OpenGL contexts used by classes like <a href="http://doc.qt.io/qt-5/qopenglwidget.html">QOpenGLWidget</a> and <a href="http://doc.qt.io/qt-5/qquickwidget.html">QQuickWidget</a>. This allows sharing OpenGL resources, like textures, between <a href="http://doc.qt.io/qt-5/qopenglwidget.html">QOpenGLWidget</a> instances that belong to different top-level windows. This value has been added in Qt 5.4. (C++ enum variant: <span style='color: green;'><code>AA_ShareOpenGLContexts = 18</code></span>)</p>
+</div><span id='variant.AASetPalette' class='variant'><code>AASetPalette</code></span><div class='docblock'><p>Indicates whether a palette was explicitly set on the <a href="http://doc.qt.io/qt-5/qapplication.html">QApplication</a>/<a href="http://doc.qt.io/qt-5/qguiapplication.html">QGuiApplication</a>. This value has been added in Qt 5.5. (C++ enum variant: <span style='color: green;'><code>AA_SetPalette = 19</code></span>)</p>
+</div><span id='variant.AAAttributeCount' class='variant'><code>AAAttributeCount</code></span><div class='docblock'><p>C++ enum variant: <span style='color: green;'><code>AA_AttributeCount = 20</code></span></p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/core_application/overloading/trait.CoreApplicationSetAttributeArgs.html' title='qt_core::core_application::overloading::CoreApplicationSetAttributeArgs'>CoreApplicationSetAttributeArgs</a> for <a class='enum' href='../../qt_core/qt/enum.ApplicationAttribute.html' title='qt_core::qt::ApplicationAttribute'>ApplicationAttribute</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-65028' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/core_application.rs.html#2217-2222' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/core_application/overloading/trait.CoreApplicationSetAttributeArgs.html#tymethod.exec' class='fnname'>exec</a>(self)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/qt/overloading/trait.QtGetEnumMetaObjectArgs.html' title='qt_core::qt::overloading::QtGetEnumMetaObjectArgs'>QtGetEnumMetaObjectArgs</a> for <a class='enum' href='../../qt_core/qt/enum.ApplicationAttribute.html' title='qt_core::qt::ApplicationAttribute'>ApplicationAttribute</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-124108' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#5935-5940' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/qt/overloading/trait.QtGetEnumMetaObjectArgs.html#tymethod.exec' class='fnname'>exec</a>(self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/meta_object/struct.MetaObject.html' title='qt_core::meta_object::MetaObject'>MetaObject</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/qt/overloading/trait.QtGetEnumNameArgs.html' title='qt_core::qt::overloading::QtGetEnumNameArgs'>QtGetEnumNameArgs</a> for <a class='enum' href='../../qt_core/qt/enum.ApplicationAttribute.html' title='qt_core::qt::ApplicationAttribute'>ApplicationAttribute</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-124427' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#6413-6418' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/qt/overloading/trait.QtGetEnumNameArgs.html#tymethod.exec' class='fnname'>exec</a>(self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html' title='libc::unix::notbsd::linux::other::b64::x86_64::c_char'>c_char</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_core/qt/enum.ApplicationAttribute.html' title='qt_core::qt::ApplicationAttribute'>ApplicationAttribute</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-118737' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#100' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.ApplicationAttribute.html' title='qt_core::qt::ApplicationAttribute'>ApplicationAttribute</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_core/qt/enum.ApplicationAttribute.html' title='qt_core::qt::ApplicationAttribute'>ApplicationAttribute</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-118740' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#100' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_core/qt/enum.ApplicationAttribute.html' title='qt_core::qt::ApplicationAttribute'>ApplicationAttribute</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-118743' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#100' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_core/qt/enum.ApplicationAttribute.html' title='qt_core::qt::ApplicationAttribute'>ApplicationAttribute</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_core/qt/enum.ApplicationAttribute.html' title='qt_core::qt::ApplicationAttribute'>ApplicationAttribute</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-118749' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/qt.rs.html#100' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

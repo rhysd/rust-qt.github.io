@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AccessibleCalendarWidget","C++ type: <span style='color: green;'>```QAccessibleCalendarWidget```</span>"]]});

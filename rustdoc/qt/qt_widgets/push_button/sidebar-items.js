@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["PushButton","C++ type: <span style='color: green;'>```QPushButton```</span>"]]});

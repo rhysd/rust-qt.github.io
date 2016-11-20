@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GestureRecognizer` struct in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GestureRecognizer">
+
+    <title>qt_widgets::gesture_recognizer::GestureRecognizer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>gesture_recognizer</a></p><script>window.sidebarCurrent = {name: 'GestureRecognizer', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>gesture_recognizer</a>::<wbr><a class='struct' href=''>GestureRecognizer</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-265357' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/gesture_recognizer.rs.html#12-14' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct GestureRecognizer {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QGestureRecognizer</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgesturerecognizer.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qgesturerecognizer.html">QGestureRecognizer</a> class provides the infrastructure for gesture recognition.</p>
+<p>Gesture recognizers are responsible for creating and managing <a href="http://doc.qt.io/qt-5/qgesture.html">QGesture</a> objects and monitoring input events sent to <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> and <a href="http://doc.qt.io/qt-5/qgraphicsobject.html">QGraphicsObject</a> subclasses. <a href="http://doc.qt.io/qt-5/qgesturerecognizer.html">QGestureRecognizer</a> is the base class for implementing custom gestures.</p>
+<p>Developers that only need to provide gesture recognition for standard gestures do not need to use this class directly. Instances will be created behind the scenes by the framework.</p>
+<p>For an overview of gesture handling in Qt and information on using gestures in your applications, see the <a href="http://doc.qt.io/qt-5/gestures-overview.html">Gestures in Widgets and Graphics View</a> document.</p>
+<a name="recognizing-gestures"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_widgets/gesture_recognizer/struct.GestureRecognizer.html' title='qt_widgets::gesture_recognizer::GestureRecognizer'>GestureRecognizer</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-265362' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/gesture_recognizer.rs.html#22-79' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.create' class='method'><code>fn <a href='#method.create' class='fnname'>create</a>(&amp;mut self, target: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/gesture/struct.Gesture.html' title='qt_widgets::gesture::Gesture'>Gesture</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual QGesture* QGestureRecognizer::create(QObject* target)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgesturerecognizer.html#create">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is called by Qt to create a new <a href="http://doc.qt.io/qt-5/qgesture.html">QGesture</a> object for the given <i>target</i> (<a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> or <a href="http://doc.qt.io/qt-5/qgraphicsobject.html">QGraphicsObject</a>).</p>
+<p>Reimplement this function to create a custom <a href="http://doc.qt.io/qt-5/qgesture.html">QGesture</a>-derived gesture object if necessary.</p>
+<p>The application takes ownership of the created gesture object.</p></div></p>
+</div><h4 id='method.recognize' class='method'><code>fn <a href='#method.recognize' class='fnname'>recognize</a>(&amp;mut self, state: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/gesture/struct.Gesture.html' title='qt_widgets::gesture::Gesture'>Gesture</a>, watched: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>, event: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/event/struct.Event.html' title='qt_core::event::Event'>Event</a>) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_widgets/gesture_recognizer/enum.ResultFlag.html' title='qt_widgets::gesture_recognizer::ResultFlag'>ResultFlag</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>pure virtual QFlags&lt;QGestureRecognizer::ResultFlag&gt; QGestureRecognizer::recognize(QGesture* state, QObject* watched, QEvent* event)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgesturerecognizer.html#recognize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Handles the given <i>event</i> for the <i>watched</i> object, updating the state of the <i>gesture</i> object as required, and returns a suitable result for the current recognition step.</p>
+<p>This function is called by the framework to allow the recognizer to filter input events dispatched to <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> or <a href="http://doc.qt.io/qt-5/qgraphicsobject.html">QGraphicsObject</a> instances that it is monitoring.</p>
+<p>The result reflects how much of the gesture has been recognized. The state of the <i>gesture</i> object is set depending on the result.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgesturerecognizer.html#ResultFlag-enum">QGestureRecognizer::Result</a>.</p></div></p>
+</div><h4 id='method.register_recognizer' class='method'><code>fn <a href='#method.register_recognizer' class='fnname'>register_recognizer</a>(recognizer: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/gesture_recognizer/struct.GestureRecognizer.html' title='qt_widgets::gesture_recognizer::GestureRecognizer'>GestureRecognizer</a>) -&gt; <a class='enum' href='../../qt_core/qt/enum.GestureType.html' title='qt_core::qt::GestureType'>GestureType</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static Qt::GestureType QGestureRecognizer::registerRecognizer(QGestureRecognizer* recognizer)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgesturerecognizer.html#registerRecognizer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Registers the given <i>recognizer</i> in the gesture framework and returns a gesture ID for it.</p>
+<p>The application takes ownership of the <i>recognizer</i> and returns the gesture type ID associated with it. For gesture recognizers which handle custom <a href="http://doc.qt.io/qt-5/qgesture.html">QGesture</a> objects (i.e., those which return <a href="http://doc.qt.io/qt-5/qt.html#GestureType-enum">Qt::CustomGesture</a> in a <a href="http://doc.qt.io/qt-5/qgesture.html#gestureType-prop">QGesture::gestureType</a>() function) the return value is a generated gesture ID with the <a href="http://doc.qt.io/qt-5/qt.html#GestureType-enum">Qt::CustomGesture</a> flag set.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgesturerecognizer.html#unregisterRecognizer">unregisterRecognizer</a>(), <a href="http://doc.qt.io/qt-5/qgesturerecognizer.html#create">QGestureRecognizer::create</a>(), and <a href="http://doc.qt.io/qt-5/qgesture.html">QGesture</a>.</p></div></p>
+</div><h4 id='method.reset' class='method'><code>fn <a href='#method.reset' class='fnname'>reset</a>(&amp;mut self, state: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/gesture/struct.Gesture.html' title='qt_widgets::gesture::Gesture'>Gesture</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual void QGestureRecognizer::reset(QGesture* state)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgesturerecognizer.html#reset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is called by the framework to reset a given <i>gesture</i>.</p>
+<p>Reimplement this function to implement additional requirements for custom <a href="http://doc.qt.io/qt-5/qgesture.html">QGesture</a> objects. This may be necessary if you implement a custom <a href="http://doc.qt.io/qt-5/qgesture.html">QGesture</a> whose properties need special handling when the gesture is reset.</p></div></p>
+</div><h4 id='method.unregister_recognizer' class='method'><code>fn <a href='#method.unregister_recognizer' class='fnname'>unregister_recognizer</a>(type_: <a class='enum' href='../../qt_core/qt/enum.GestureType.html' title='qt_core::qt::GestureType'>GestureType</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QGestureRecognizer::unregisterRecognizer(Qt::GestureType type)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgesturerecognizer.html#unregisterRecognizer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unregisters all gesture recognizers of the specified <i>type</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qgesturerecognizer.html#registerRecognizer">registerRecognizer</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_widgets/gesture_recognizer/struct.GestureRecognizer.html' title='qt_widgets::gesture_recognizer::GestureRecognizer'>GestureRecognizer</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-265360' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/gesture_recognizer.rs.html#16-20' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_widgets/gesture_recognizer/struct.GestureRecognizer.html' title='qt_widgets::gesture_recognizer::GestureRecognizer'>GestureRecognizer</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_widgets/gesture_recognizer/struct.GestureRecognizer.html' title='qt_widgets::gesture_recognizer::GestureRecognizer'>GestureRecognizer</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-265379' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/gesture_recognizer.rs.html#81-88' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QGestureRecognizer::~QGestureRecognizer()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qgesturerecognizer.html#dtor.QGestureRecognizer">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the gesture recognizer.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_widgets/gesture_recognizer/struct.GestureRecognizer.html' title='qt_widgets::gesture_recognizer::GestureRecognizer'>GestureRecognizer</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-265382' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/gesture_recognizer.rs.html#90-94' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

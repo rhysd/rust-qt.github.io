@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["AbstractProxyModel","C++ type: <span style='color: green;'>```QAbstractProxyModel```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["State","C++ type: <span style='color: green;'>```QFutureInterfaceBase::State```</span>"]],"mod":[["overloading",""]],"struct":[["FutureInterfaceBase","C++ type: <span style='color: green;'>```QFutureInterfaceBase```</span>"]]});

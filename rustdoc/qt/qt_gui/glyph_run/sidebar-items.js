@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["GlyphRunFlag","C++ type: <span style='color: green;'>```QGlyphRun::GlyphRunFlag```</span>"]],"fn":[["swap","C++ method: <span style='color: green;'>```void swap(QGlyphRun& value1, QGlyphRun& value2)```</span>"]],"mod":[["overloading",""]],"struct":[["GlyphRun","C++ type: <span style='color: green;'>```QGlyphRun```</span>"]]});

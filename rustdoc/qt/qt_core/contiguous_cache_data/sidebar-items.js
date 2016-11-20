@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ContiguousCacheData","C++ type: <span style='color: green;'>```QContiguousCacheData```</span>"]]});

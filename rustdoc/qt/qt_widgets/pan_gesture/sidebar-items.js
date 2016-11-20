@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["PanGesture","C++ type: <span style='color: green;'>```QPanGesture```</span>"]]});

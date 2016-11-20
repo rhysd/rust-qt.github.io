@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ToolTip` struct in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ToolTip">
+
+    <title>qt_widgets::tool_tip::ToolTip - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>tool_tip</a></p><script>window.sidebarCurrent = {name: 'ToolTip', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>tool_tip</a>::<wbr><a class='struct' href=''>ToolTip</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-485283' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/tool_tip.rs.html#16-18' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ToolTip {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QToolTip</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtooltip.html">QToolTip</a> class provides tool tips (balloon help) for any widget.</p>
+<p>The tip is a short piece of text reminding the user of the widget&#39;s function. It is drawn immediately below the given position in a distinctive black-on-yellow color combination. The tip can be any <a href="http://doc.qt.io/qt-5/qtextedit.html">rich text</a> formatted string.</p>
+<p>Rich text displayed in a tool tip is implicitly word-wrapped unless specified differently with <code>&lt;p style=&#39;white-space:pre&#39;&gt;</code>.</p>
+<p>The simplest and most common way to set a widget&#39;s tool tip is by calling its <a href="http://doc.qt.io/qt-5/qwidget.html#toolTip-prop">QWidget::setToolTip</a>() function.</p>
+<p>It is also possible to show different tool tips for different regions of a widget, by using a <a href="http://doc.qt.io/qt-5/qhelpevent.html">QHelpEvent</a> of type <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::ToolTip</a>. Intercept the help event in your widget&#39;s <a href="http://doc.qt.io/qt-5/qwidget.html#event">event()</a> function and call <a href="http://doc.qt.io/qt-5/qtooltip.html#showText">QToolTip::showText</a>() with the text you want to display. The <a href="http://doc.qt.io/qt-5/qtwidgets-widgets-tooltips-example.html">Tooltips</a> example illustrates this technique.</p>
+<p>If you are calling <a href="http://doc.qt.io/qt-5/qtooltip.html#hideText">QToolTip::hideText</a>(), or <a href="http://doc.qt.io/qt-5/qtooltip.html#showText">QToolTip::showText</a>() with an empty string, as a result of a <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">ToolTip</a>-event you should also call <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore()</a> on the event, to signal that you don&#39;t want to start any tooltip specific modes.</p>
+<p>Note that, if you want to show tooltips in an item view, the model/view architecture provides functionality to set an item&#39;s tool tip; e.g., the <a href="http://doc.qt.io/qt-5/qtablewidgetitem.html#setToolTip">QTableWidgetItem::setToolTip</a>() function. However, if you want to provide custom tool tips in an item view, you must intercept the help event in the <a href="http://doc.qt.io/qt-5/qabstractitemview.html#viewportEvent">QAbstractItemView::viewportEvent</a>() function and handle it yourself.</p>
+<p>The default tool tip color and font can be customized with <a href="http://doc.qt.io/qt-5/qtooltip.html#setPalette">setPalette</a>() and <a href="http://doc.qt.io/qt-5/qtooltip.html#setFont">setFont</a>(). When a tooltip is currently on display, <a href="http://doc.qt.io/qt-5/qtooltip.html#isVisible">isVisible</a>() returns <code>true</code> and <a href="http://doc.qt.io/qt-5/qtooltip.html#text">text</a>() the currently visible text.</p>
+<p><b>Note: </b>Tool tips use the inactive color group of <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a>, because tool tips are not active windows.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_widgets/tool_tip/struct.ToolTip.html' title='qt_widgets::tool_tip::ToolTip'>ToolTip</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-485288' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/tool_tip.rs.html#26-143' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.font' class='method'><code>fn <a href='#method.font' class='fnname'>font</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/tool_tip/overloading/trait.ToolTipFontArgs.html' title='qt_widgets::tool_tip::overloading::ToolTipFontArgs'>ToolTipFontArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QToolTip::font</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn font(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_gui::font::Font&gt;</code><br>2) <code>fn font(cpp_utils::AsStruct) -&gt; qt_gui::font::Font</code><br>
+C++ method: <span style='color: green;'><code>static QFont QToolTip::font()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html#font">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the font used to render tooltips.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtooltip.html#setFont">setFont</a>().</p></div></p>
+</div><h4 id='method.hide_text' class='method'><code>fn <a href='#method.hide_text' class='fnname'>hide_text</a>()</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QToolTip::hideText()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html#hideText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Hides the tool tip. This is the same as calling <a href="http://doc.qt.io/qt-5/qtooltip.html#showText">showText</a>() with an empty string.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtooltip.html#showText">showText</a>().</p></div></p>
+</div><h4 id='method.is_visible' class='method'><code>fn <a href='#method.is_visible' class='fnname'>is_visible</a>() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QToolTip::isVisible()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html#isVisible">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this tooltip is currently shown.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtooltip.html#showText">showText</a>().</p></div></p>
+</div><h4 id='method.palette' class='method'><code>fn <a href='#method.palette' class='fnname'>palette</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/tool_tip/overloading/trait.ToolTipPaletteArgs.html' title='qt_widgets::tool_tip::overloading::ToolTipPaletteArgs'>ToolTipPaletteArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QToolTip::palette</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn palette(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_gui::palette::Palette&gt;</code><br>2) <code>fn palette(cpp_utils::AsStruct) -&gt; qt_gui::palette::Palette</code><br>
+C++ method: <span style='color: green;'><code>static QPalette QToolTip::palette()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html#palette">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the palette used to render tooltips.</p>
+<p><b>Note: </b>Tool tips use the inactive color group of <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a>, because tool tips are not active windows.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qtooltip.html#setPalette">setPalette</a>().</p></div></p>
+</div><h4 id='method.set_font' class='method'><code>fn <a href='#method.set_font' class='fnname'>set_font</a>(arg1: &amp;<a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QToolTip::setFont(const QFont&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html#setFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>font</i> used to render tooltips.</p>
+<p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtooltip.html#font">font</a>().</p></div></p>
+</div><h4 id='method.set_palette' class='method'><code>fn <a href='#method.set_palette' class='fnname'>set_palette</a>(arg1: &amp;<a class='struct' href='../../qt_gui/palette/struct.Palette.html' title='qt_gui::palette::Palette'>Palette</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QToolTip::setPalette(const QPalette&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html#setPalette">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <i>palette</i> used to render tooltips.</p>
+<p><b>Note: </b>Tool tips use the inactive color group of <a href="http://doc.qt.io/qt-5/qpalette.html">QPalette</a>, because tool tips are not active windows.</p><p>This function was introduced in  Qt 4.2.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtooltip.html#palette">palette</a>().</p></div></p>
+</div><h4 id='method.show_text' class='method'><code>fn <a href='#method.show_text' class='fnname'>show_text</a>&lt;Args&gt;(args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/tool_tip/overloading/trait.ToolTipShowTextArgs.html' title='qt_widgets::tool_tip::overloading::ToolTipShowTextArgs'>ToolTipShowTextArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QToolTip::showText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn show_text((&amp;qt_core::point::Point, &amp;qt_core::string::String)) -&gt; ()</code><br>2) <code>fn show_text((&amp;qt_core::point::Point, &amp;qt_core::string::String, *mut ::widget::Widget)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QToolTip::showText(const QPoint&amp; pos, const QString&amp; text, QWidget* w = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html#showText-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This is analogous to calling <a href="http://doc.qt.io/qt-5/qtooltip.html#showText">QToolTip::showText</a>(<i>pos</i>, <i>text</i>, <i>w</i>, QRect())</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn show_text((&amp;qt_core::point::Point, &amp;qt_core::string::String, *mut ::widget::Widget, &amp;qt_core::rect::Rect)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QToolTip::showText(const QPoint&amp; pos, const QString&amp; text, QWidget* w, const QRect&amp; rect)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html#showText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Shows <i>text</i> as a tool tip, with the global position <i>pos</i> as the point of interest. The tool tip will be shown with a platform specific offset from this point of interest.</p>
+<p>If you specify a non-empty rect the tip will be hidden as soon as you move your cursor out of this area.</p>
+<p>The <i>rect</i> is in the coordinates of the widget you specify with <i>w</i>. If the <i>rect</i> is not empty you must specify a widget. Otherwise this argument can be 0 but it is used to determine the appropriate screen on multi-head systems.</p>
+<p>If <i>text</i> is empty the tool tip is hidden. If the text is the same as the currently shown tooltip, the tip will <i>not</i> move. You can force moving by first hiding the tip with an empty text, and then showing the new tip at the new position.</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn show_text((&amp;qt_core::point::Point, &amp;qt_core::string::String, *mut ::widget::Widget, &amp;qt_core::rect::Rect, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QToolTip::showText(const QPoint&amp; pos, const QString&amp; text, QWidget* w, const QRect&amp; rect, int msecShowTime)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html#showText-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>This is similar to <a href="http://doc.qt.io/qt-5/qtooltip.html#showText">QToolTip::showText</a>(<i>pos</i>, <i>text</i>, <i>w</i>, <i>rect</i>) but with an extra parameter <i>msecDisplayTime</i> that specifies how long the tool tip will be displayed, in milliseconds.</p>
+<p>This function was introduced in  Qt 5.2.</p></div></p>
+</div><h4 id='method.text' class='method'><code>fn <a href='#method.text' class='fnname'>text</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/tool_tip/overloading/trait.ToolTipTextArgs.html' title='qt_widgets::tool_tip::overloading::ToolTipTextArgs'>ToolTipTextArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QToolTip::text</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn text(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn text(cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QToolTip::text()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtooltip.html#text">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the tooltip text, if a tooltip is visible, or an empty string if a tooltip is not visible.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_widgets/tool_tip/struct.ToolTip.html' title='qt_widgets::tool_tip::ToolTip'>ToolTip</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-485286' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/tool_tip.rs.html#20-24' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_widgets/tool_tip/struct.ToolTip.html' title='qt_widgets::tool_tip::ToolTip'>ToolTip</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_widgets/tool_tip/struct.ToolTip.html' title='qt_widgets::tool_tip::ToolTip'>ToolTip</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-485307' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/tool_tip.rs.html#145-152' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QToolTip::~QToolTip()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_widgets/tool_tip/struct.ToolTip.html' title='qt_widgets::tool_tip::ToolTip'>ToolTip</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-485310' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/tool_tip.rs.html#154-158' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["CollatorSortKey","C++ type: <span style='color: green;'>```QCollatorSortKey```</span>"]]});

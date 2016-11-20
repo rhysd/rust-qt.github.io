@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Pen` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Pen">
+
+    <title>qt_gui::pen::Pen - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>pen</a></p><script>window.sidebarCurrent = {name: 'Pen', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>pen</a>::<wbr><a class='struct' href=''>Pen</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-131932' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pen.rs.html#30-32' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Pen {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPen</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qpen.html">QPen</a> class defines how a <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> should draw lines and outlines of shapes.</p>
+<p>A pen has a <a href="http://doc.qt.io/qt-5/qpen.html#style">style</a>(), <a href="http://doc.qt.io/qt-5/qpen.html#width">width</a>(), <a href="http://doc.qt.io/qt-5/qpen.html#brush">brush</a>(), <a href="http://doc.qt.io/qt-5/qpen.html#capStyle">capStyle</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#joinStyle">joinStyle</a>().</p>
+<p>The pen style defines the line type. The brush is used to fill strokes generated with the pen. Use the <a href="http://doc.qt.io/qt-5/qbrush.html">QBrush</a> class to specify fill styles. The cap style determines the line end caps that can be drawn using <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a>, while the join style describes how joins between two lines are drawn. The pen width can be specified in both integer (<a href="http://doc.qt.io/qt-5/qpen.html#width">width</a>()) and floating point (<a href="http://doc.qt.io/qt-5/qpen.html#widthF">widthF</a>()) precision. A line width of zero indicates a cosmetic pen. This means that the pen width is always drawn one pixel wide, independent of the <a href="http://doc.qt.io/qt-5/qpainter.html#coordinate-transformations">transformation</a> set on the painter.</p>
+<p>The various settings can easily be modified using the corresponding <a href="http://doc.qt.io/qt-5/qpen.html#setStyle">setStyle</a>(), <a href="http://doc.qt.io/qt-5/qpen.html#setWidth">setWidth</a>(), <a href="http://doc.qt.io/qt-5/qpen.html#setBrush">setBrush</a>(), <a href="http://doc.qt.io/qt-5/qpen.html#setCapStyle">setCapStyle</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#setJoinStyle">setJoinStyle</a>() functions (note that the painter&#39;s pen must be reset when altering the pen&#39;s properties).</p>
+<p>For example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qpen.html#QPen">QPen</a></span> pen(<span class="type">Qt</span><span class="operator">::</span>green<span class="operator">,</span> <span class="number">3</span><span class="operator">,</span> <span class="type">Qt</span><span class="operator">::</span>DashDotLine<span class="operator">,</span> <span class="type">Qt</span><span class="operator">::</span>RoundCap<span class="operator">,</span> <span class="type">Qt</span><span class="operator">::</span>RoundJoin);
+painter<span class="operator">.</span>setPen(pen);</pre>
+<p>which is equivalent to</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a></span> painter(<span class="keyword">this</span>);
+<span class="type"><a href="http://doc.qt.io/qt-5/qpen.html#QPen">QPen</a></span> pen;  <span class="comment">// creates a default pen</span></p>
+
+<p>pen<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qpen.html#setStyle">setStyle</a>(<span class="type">Qt</span><span class="operator">::</span>DashDotLine);
+pen<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qpen.html#setWidth">setWidth</a>(<span class="number">3</span>);
+pen<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qpen.html#setBrush">setBrush</a>(<span class="type">Qt</span><span class="operator">::</span>green);
+pen<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qpen.html#setCapStyle">setCapStyle</a>(<span class="type">Qt</span><span class="operator">::</span>RoundCap);
+pen<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qpen.html#setJoinStyle">setJoinStyle</a>(<span class="type">Qt</span><span class="operator">::</span>RoundJoin);</p>
+
+<p>painter<span class="operator">.</span>setPen(pen);</pre>
+<p>The default pen is a solid black brush with 1 width, square cap style (<a href="http://doc.qt.io/qt-5/qt.html#PenCapStyle-enum">Qt::SquareCap</a>), and bevel join style (<a href="http://doc.qt.io/qt-5/qt.html#PenJoinStyle-enum">Qt::BevelJoin</a>).</p>
+<p>In addition <a href="http://doc.qt.io/qt-5/qpen.html">QPen</a> provides the <a href="http://doc.qt.io/qt-5/qpen.html#color">color</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#setColor">setColor</a>() convenience functions to extract and set the color of the pen&#39;s brush, respectively. Pens may also be compared and streamed.</p>
+<p>For more information about painting in general, see the <a href="http://doc.qt.io/qt-5/paintsystem.html">Paint System</a> documentation.</p>
+<a name="pen-style"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-131937' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pen.rs.html#40-368' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/pen/overloading/trait.PenAsQVariantArgs.html' title='qt_gui::pen::overloading::PenAsQVariantArgs'>PenAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPen::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QPen::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pen as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a>.</p></div></p>
+</div><h4 id='method.brush' class='method'><code>fn <a href='#method.brush' class='fnname'>brush</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/pen/overloading/trait.PenBrushArgs.html' title='qt_gui::pen::overloading::PenBrushArgs'>PenBrushArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPen::brush</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn brush(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::brush::Brush&gt;</code><br>2) <code>fn brush(&amp;self, cpp_utils::AsStruct) -&gt; ::brush::Brush</code><br>
+C++ method: <span style='color: green;'><code>QBrush QPen::brush() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#brush">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the brush used to fill strokes generated with this pen.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setBrush">setBrush</a>().</p></div></p>
+</div><h4 id='method.cap_style' class='method'><code>fn <a href='#method.cap_style' class='fnname'>cap_style</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.PenCapStyle.html' title='qt_core::qt::PenCapStyle'>PenCapStyle</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::PenCapStyle QPen::capStyle() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#capStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pen&#39;s cap style.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setCapStyle">setCapStyle</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#cap-style">Cap Style</a>.</p></div></p>
+</div><h4 id='method.color' class='method'><code>fn <a href='#method.color' class='fnname'>color</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/pen/overloading/trait.PenColorArgs.html' title='qt_gui::pen::overloading::PenColorArgs'>PenColorArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPen::color</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn color(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::color::Color&gt;</code><br>2) <code>fn color(&amp;self, cpp_utils::AsStruct) -&gt; ::color::Color</code><br>
+C++ method: <span style='color: green;'><code>QColor QPen::color() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#color">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the color of this pen&#39;s brush.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#brush">brush</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#setColor">setColor</a>().</p></div></p>
+</div><h4 id='method.dash_offset' class='method'><code>fn <a href='#method.dash_offset' class='fnname'>dash_offset</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QPen::dashOffset() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#dashOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the dash offset for the pen.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setDashOffset">setDashOffset</a>().</p></div></p>
+</div><h4 id='method.dash_pattern' class='method'><code>fn <a href='#method.dash_pattern' class='fnname'>dash_pattern</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/pen/overloading/trait.PenDashPatternArgs.html' title='qt_gui::pen::overloading::PenDashPatternArgs'>PenDashPatternArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPen::dashPattern</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn dash_pattern(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::vector::VectorCDouble&gt;</code><br>2) <code>fn dash_pattern(&amp;self, cpp_utils::AsStruct) -&gt; ::vector::VectorCDouble</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;double&gt; QPen::dashPattern() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#dashPattern">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the dash pattern of this pen.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setDashPattern">setDashPattern</a>(), <a href="http://doc.qt.io/qt-5/qpen.html#style">style</a>(), and <a href="http://doc.qt.io/qt-5/qpen.html#isSolid">isSolid</a>().</p></div></p>
+</div><h4 id='method.is_cosmetic' class='method'><code>fn <a href='#method.is_cosmetic' class='fnname'>is_cosmetic</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPen::isCosmetic() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#isCosmetic">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the pen is cosmetic; otherwise returns <code>false</code>.</p>
+<p>Cosmetic pens are used to draw strokes that have a constant width regardless of any transformations applied to the <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> they are used with. Drawing a shape with a cosmetic pen ensures that its outline will have the same thickness at different scale factors.</p>
+<p>A zero width pen is cosmetic by default.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setCosmetic">setCosmetic</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#widthF">widthF</a>().</p></div></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPen::isDetached()</code></span></p>
+</div><h4 id='method.is_solid' class='method'><code>fn <a href='#method.is_solid' class='fnname'>is_solid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPen::isSolid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#isSolid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the pen has a solid fill, otherwise false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#style">style</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#dashPattern">dashPattern</a>().</p></div></p>
+</div><h4 id='method.join_style' class='method'><code>fn <a href='#method.join_style' class='fnname'>join_style</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.PenJoinStyle.html' title='qt_core::qt::PenJoinStyle'>PenJoinStyle</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::PenJoinStyle QPen::joinStyle() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#joinStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pen&#39;s join style.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setJoinStyle">setJoinStyle</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#join-style">Join Style</a>.</p></div></p>
+</div><h4 id='method.miter_limit' class='method'><code>fn <a href='#method.miter_limit' class='fnname'>miter_limit</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QPen::miterLimit() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#miterLimit">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the miter limit of the pen. The miter limit is only relevant when the join style is set to <a href="http://doc.qt.io/qt-5/qt.html#PenJoinStyle-enum">Qt::MiterJoin</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setMiterLimit">setMiterLimit</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#join-style">Join Style</a>.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/pen/overloading/trait.PenNewArgs.html' title='qt_gui::pen::overloading::PenNewArgs'>PenNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPen::QPen</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::pen::Pen</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pen::Pen&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPen::QPen()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::qt::PenStyle, cpp_utils::AsStruct)) -&gt; ::pen::Pen</code><br>2) <code>fn new((qt_core::qt::PenStyle, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pen::Pen&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPen::QPen(Qt::PenStyle arg1)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::brush::Brush, libc::c_double, cpp_utils::AsStruct)) -&gt; ::pen::Pen</code><br>2) <code>fn new((&amp;::brush::Brush, libc::c_double, qt_core::qt::PenStyle, cpp_utils::AsStruct)) -&gt; ::pen::Pen</code><br>3) <code>fn new((&amp;::brush::Brush, libc::c_double, qt_core::qt::PenStyle, qt_core::qt::PenCapStyle, cpp_utils::AsStruct)) -&gt; ::pen::Pen</code><br>4) <code>fn new((&amp;::brush::Brush, libc::c_double, qt_core::qt::PenStyle, qt_core::qt::PenCapStyle, qt_core::qt::PenJoinStyle, cpp_utils::AsStruct)) -&gt; ::pen::Pen</code><br>5) <code>fn new((&amp;::brush::Brush, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pen::Pen&gt;</code><br>6) <code>fn new((&amp;::brush::Brush, libc::c_double, qt_core::qt::PenStyle, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pen::Pen&gt;</code><br>7) <code>fn new((&amp;::brush::Brush, libc::c_double, qt_core::qt::PenStyle, qt_core::qt::PenCapStyle, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pen::Pen&gt;</code><br>8) <code>fn new((&amp;::brush::Brush, libc::c_double, qt_core::qt::PenStyle, qt_core::qt::PenCapStyle, qt_core::qt::PenJoinStyle, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pen::Pen&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPen::QPen(const QBrush&amp; brush, double width, Qt::PenStyle s = ?, Qt::PenCapStyle c = ?, Qt::PenJoinStyle j = ?)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::color::Color, cpp_utils::AsStruct)) -&gt; ::pen::Pen</code><br>2) <code>fn new((&amp;::color::Color, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pen::Pen&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPen::QPen(const QColor&amp; color)</code></span></p>
+
+<h2 id='variant-5' class='section-header'><a href='#variant-5'>Variant 5</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::pen::Pen, cpp_utils::AsStruct)) -&gt; ::pen::Pen</code><br>2) <code>fn new((&amp;::pen::Pen, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pen::Pen&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QPen::QPen(const QPen&amp; pen)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, pen: &amp;'l1 <a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPen&amp; QPen::operator=(const QPen&amp; pen)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the given <i>pen</i> to this pen and returns a reference to this pen.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, p: &amp;<a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPen::operator==(const QPen&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the pen is equal to the given <i>pen</i>; otherwise false. Two pens are equal if they have equal styles, widths and colors.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#operator-not-eq">operator!=</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, p: &amp;<a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QPen::operator!=(const QPen&amp; p) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the pen is different from the given <i>pen</i>; otherwise false. Two pens are different if they have different styles, widths or colors.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.set_brush' class='method'><code>fn <a href='#method.set_brush' class='fnname'>set_brush</a>(&amp;mut self, brush: &amp;<a class='struct' href='../../qt_gui/brush/struct.Brush.html' title='qt_gui::brush::Brush'>Brush</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setBrush(const QBrush&amp; brush)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setBrush">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the brush used to fill strokes generated with this pen to the given <i>brush</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#brush">brush</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#setColor">setColor</a>().</p></div></p>
+</div><h4 id='method.set_cap_style' class='method'><code>fn <a href='#method.set_cap_style' class='fnname'>set_cap_style</a>(&amp;mut self, pcs: <a class='enum' href='../../qt_core/qt/enum.PenCapStyle.html' title='qt_core::qt::PenCapStyle'>PenCapStyle</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setCapStyle(Qt::PenCapStyle pcs)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setCapStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the pen&#39;s cap style to the given <i>style</i>. The default value is <a href="http://doc.qt.io/qt-5/qt.html#PenCapStyle-enum">Qt::SquareCap</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#capStyle">capStyle</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#cap-style">Cap Style</a>.</p></div></p>
+</div><h4 id='method.set_color' class='method'><code>fn <a href='#method.set_color' class='fnname'>set_color</a>(&amp;mut self, color: &amp;<a class='struct' href='../../qt_gui/color/struct.Color.html' title='qt_gui::color::Color'>Color</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setColor(const QColor&amp; color)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setColor">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the color of this pen&#39;s brush to the given <i>color</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setBrush">setBrush</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#color">color</a>().</p></div></p>
+</div><h4 id='method.set_cosmetic' class='method'><code>fn <a href='#method.set_cosmetic' class='fnname'>set_cosmetic</a>(&amp;mut self, cosmetic: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setCosmetic(bool cosmetic)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setCosmetic">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets this pen to cosmetic or non-cosmetic, depending on the value of <i>cosmetic</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#isCosmetic">isCosmetic</a>().</p></div></p>
+</div><h4 id='method.set_dash_offset' class='method'><code>fn <a href='#method.set_dash_offset' class='fnname'>set_dash_offset</a>(&amp;mut self, doffset: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setDashOffset(double doffset)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setDashOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the dash offset (the starting point on the dash pattern) for this pen to the <i>offset</i> specified. The offset is measured in terms of the units used to specify the dash pattern.</p>
+<div class="table"><table class="generic">
+ <tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qpen-dashpattern.png" alt=""></img></td><td>For example, a pattern where each stroke is four units long, followed by a gap of two units, will begin with the stroke when drawn as a line.<p>However, if the dash offset is set to 4.0, any line drawn will begin with the gap. Values of the offset up to 4.0 will cause part of the stroke to be drawn first, and values of the offset between 4.0 and 6.0 will cause the line to begin with part of the gap.</p>
+</td></tr>
+</tbody></table></div>
+<p><b>Note: </b>This implicitly converts the style of the pen to <a href="http://doc.qt.io/qt-5/qt.html#PenStyle-enum">Qt::CustomDashLine</a>.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#dashOffset">dashOffset</a>().</p></div></p>
+</div><h4 id='method.set_dash_pattern' class='method'><code>fn <a href='#method.set_dash_pattern' class='fnname'>set_dash_pattern</a>(&amp;mut self, pattern: &amp;<a class='struct' href='../../qt_gui/vector/struct.VectorCDouble.html' title='qt_gui::vector::VectorCDouble'>VectorCDouble</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setDashPattern(const QVector&lt;double&gt;&amp; pattern)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setDashPattern">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the dash pattern for this pen to the given <i>pattern</i>. This implicitly converts the style of the pen to <a href="http://doc.qt.io/qt-5/qt.html#PenStyle-enum">Qt::CustomDashLine</a>.</p>
+<p>The pattern must be specified as an even number of positive entries where the entries 1, 3, 5... are the dashes and 2, 4, 6... are the spaces. For example:</p>
+<div class="table"><table class="generic" width="100%">
+ <tbody><tr valign="top" class="odd"><td><img src="http://doc.qt.io/qt-5/images/qpen-custom.png" alt=""></img></td><td><pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qpen.html#QPen">QPen</a></span> pen;
+<span class="type"><a href="http://doc.qt.io/qt-5/qvector.html">QVector</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qtglobal.html#qreal-typedef">qreal</a></span><span class="operator">&gt;</span> dashes;
+<span class="type"><a href="http://doc.qt.io/qt-5/qtglobal.html#qreal-typedef">qreal</a></span> space <span class="operator">=</span> <span class="number">4</span>;
+dashes <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="number">1</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> space <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="number">3</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> space <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="number">9</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> space
+&#32;          <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="number">27</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> space <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="number">9</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> space;
+pen<span class="operator">.</span>setDashPattern(dashes);</pre>
+</td></tr>
+</tbody></table></div>
+<p>The dash pattern is specified in units of the pens width; e.g. a dash of length 5 in width 10 is 50 pixels long. Note that a pen with zero width is equivalent to a cosmetic pen with a width of 1 pixel.</p>
+<p>Each dash is also subject to cap styles so a dash of 1 with square cap set will extend 0.5 pixels out in each direction resulting in a total width of 2.</p>
+<p>Note that the default cap style is <a href="http://doc.qt.io/qt-5/qt.html#PenCapStyle-enum">Qt::SquareCap</a>, meaning that a square line end covers the end point and extends beyond it by half the line width.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setStyle">setStyle</a>(), <a href="http://doc.qt.io/qt-5/qpen.html#dashPattern">dashPattern</a>(), <a href="http://doc.qt.io/qt-5/qpen.html#setCapStyle">setCapStyle</a>(), and <a href="http://doc.qt.io/qt-5/qpen.html#setCosmetic">setCosmetic</a>().</p></div></p>
+</div><h4 id='method.set_join_style' class='method'><code>fn <a href='#method.set_join_style' class='fnname'>set_join_style</a>(&amp;mut self, pcs: <a class='enum' href='../../qt_core/qt/enum.PenJoinStyle.html' title='qt_core::qt::PenJoinStyle'>PenJoinStyle</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setJoinStyle(Qt::PenJoinStyle pcs)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setJoinStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the pen&#39;s join style to the given <i>style</i>. The default value is <a href="http://doc.qt.io/qt-5/qt.html#PenJoinStyle-enum">Qt::BevelJoin</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#joinStyle">joinStyle</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#join-style">Join Style</a>.</p></div></p>
+</div><h4 id='method.set_miter_limit' class='method'><code>fn <a href='#method.set_miter_limit' class='fnname'>set_miter_limit</a>(&amp;mut self, limit: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setMiterLimit(double limit)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setMiterLimit">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the miter limit of this pen to the given <i>limit</i>.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qpen-miterlimit.png" alt=""></img></p><p>The miter limit describes how far a miter join can extend from the join point. This is used to reduce artifacts between line joins where the lines are close to parallel.</p>
+<p>This value does only have effect when the pen style is set to <a href="http://doc.qt.io/qt-5/qt.html#PenJoinStyle-enum">Qt::MiterJoin</a>. The value is specified in units of the pen&#39;s width, e.g. a miter limit of 5 in width 10 is 50 pixels long. The default miter limit is 2, i.e. twice the pen width in pixels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#miterLimit">miterLimit</a>(), <a href="http://doc.qt.io/qt-5/qpen.html#setJoinStyle">setJoinStyle</a>(), and <a href="http://doc.qt.io/qt-5/qpen.html#join-style">Join Style</a>.</p></div></p>
+</div><h4 id='method.set_style' class='method'><code>fn <a href='#method.set_style' class='fnname'>set_style</a>(&amp;mut self, arg1: <a class='enum' href='../../qt_core/qt/enum.PenStyle.html' title='qt_core::qt::PenStyle'>PenStyle</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setStyle(Qt::PenStyle arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the pen style to the given <i>style</i>.</p>
+<p>See the <a href="http://doc.qt.io/qt-5/qt.html#PenStyle-enum">Qt::PenStyle</a> documentation for a list of the available styles. Since Qt 4.1 it is also possible to specify a custom dash pattern using the <a href="http://doc.qt.io/qt-5/qpen.html#setDashPattern">setDashPattern</a>() function which implicitly converts the style of the pen to <a href="http://doc.qt.io/qt-5/qt.html#PenStyle-enum">Qt::CustomDashLine</a>.</p>
+<p><b>Note: </b>This function resets the dash offset to zero.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#style">style</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#pen-style">Pen Style</a>.</p></div></p>
+</div><h4 id='method.set_width' class='method'><code>fn <a href='#method.set_width' class='fnname'>set_width</a>(&amp;mut self, width: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setWidth(int width)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the pen width to the given <i>width</i> in pixels with integer precision.</p>
+<p>A line width of zero indicates a cosmetic pen. This means that the pen width is always drawn one pixel wide, independent of the <a href="http://doc.qt.io/qt-5/qpainter.html#coordinate-transformations">transformation</a> set on the painter.</p>
+<p>Setting a pen width with a negative value is not supported.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setWidthF">setWidthF</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#width">width</a>().</p></div></p>
+</div><h4 id='method.set_width_f' class='method'><code>fn <a href='#method.set_width_f' class='fnname'>set_width_f</a>(&amp;mut self, width: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::setWidthF(double width)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#setWidthF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the pen width to the given <i>width</i> in pixels with floating point precision.</p>
+<p>A line width of zero indicates a cosmetic pen. This means that the pen width is always drawn one pixel wide, independent of the <a href="http://doc.qt.io/qt-5/qpainter.html#coordinate-transformations">transformation</a> on the painter.</p>
+<p>Setting a pen width with a negative value is not supported.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setWidth">setWidth</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#widthF">widthF</a>().</p></div></p>
+</div><h4 id='method.style' class='method'><code>fn <a href='#method.style' class='fnname'>style</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.PenStyle.html' title='qt_core::qt::PenStyle'>PenStyle</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::PenStyle QPen::style() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#style">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pen style.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setStyle">setStyle</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#pen-style">Pen Style</a>.</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QPen::swap(QPen&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps pen <i>other</i> with this pen. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+</div><h4 id='method.width' class='method'><code>fn <a href='#method.width' class='fnname'>width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QPen::width() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#width">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pen width with integer precision.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setWidth">setWidth</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#widthF">widthF</a>().</p></div></p>
+</div><h4 id='method.width_f' class='method'><code>fn <a href='#method.width_f' class='fnname'>width_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QPen::widthF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#widthF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pen width with floating point precision.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qpen.html#setWidthF">setWidthF</a>() and <a href="http://doc.qt.io/qt-5/qpen.html#width">width</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/painter/overloading/trait.PainterSetPenArgs.html' title='qt_gui::painter::overloading::PainterSetPenArgs'>PainterSetPenArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128557' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#5578-5586' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/painter/overloading/trait.PainterSetPenArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/painter/struct.Painter.html' title='qt_gui::painter::Painter'>Painter</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-131935' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pen.rs.html#34-38' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-132029' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pen.rs.html#370-377' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QPen::~QPen()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpen.html#dtor.QPen">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the pen.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/pen/struct.Pen.html' title='qt_gui::pen::Pen'>Pen</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-132032' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/pen.rs.html#379-383' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

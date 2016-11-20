@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["TextTableCellFormat","C++ type: <span style='color: green;'>```QTextTableCellFormat```</span>"]]});

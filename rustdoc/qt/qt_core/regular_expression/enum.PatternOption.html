@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PatternOption` enum in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PatternOption">
+
+    <title>qt_core::regular_expression::PatternOption - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>regular_expression</a></p><script>window.sidebarCurrent = {name: 'PatternOption', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>regular_expression</a>::<wbr><a class='enum' href=''>PatternOption</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-127188' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#50-71' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum PatternOption {
+    NoPattern,
+    CaseInsensitive,
+    DotMatchesEverything,
+    Multiline,
+    ExtendedPatternSyntax,
+    InvertedGreediness,
+    DontCapture,
+    UseUnicodeProperties,
+    OptimizeOnFirstUsage,
+    DontAutomaticallyOptimize,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QRegularExpression::PatternOption</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#PatternOption-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The PatternOption enum defines modifiers to the way the pattern string should be interpreted, and therefore the way the pattern matches against a subject string.</p></p>
+
+<p><p>The PatternOptions type is a typedef for <a href="http://doc.qt.io/qt-5/qflags.html">QFlags</a>&lt;PatternOption&gt;. It stores an OR combination of PatternOption values.</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.NoPattern' class='variant'><code>NoPattern</code></span><div class='docblock'><p>No pattern options are set. (C++ enum variant: <span style='color: green;'><code>NoPatternOption = 0</code></span>)</p>
+</div><span id='variant.CaseInsensitive' class='variant'><code>CaseInsensitive</code></span><div class='docblock'><p>The pattern should match against the subject string in a case insensitive way. This option corresponds to the /i modifier in Perl regular expressions. (C++ enum variant: <span style='color: green;'><code>CaseInsensitiveOption = 1</code></span>)</p>
+</div><span id='variant.DotMatchesEverything' class='variant'><code>DotMatchesEverything</code></span><div class='docblock'><p>The dot metacharacter (<code>.</code>) in the pattern string is allowed to match any character in the subject string, including newlines (normally, the dot does not match newlines). This option corresponds to the <code>/s</code> modifier in Perl regular expressions. (C++ enum variant: <span style='color: green;'><code>DotMatchesEverythingOption = 2</code></span>)</p>
+</div><span id='variant.Multiline' class='variant'><code>Multiline</code></span><div class='docblock'><p>The caret (<code><sup></code>)</sup> and the dollar (<code>$</code>) metacharacters in the pattern string are allowed to match, respectively, immediately after and immediately before any newline in the subject string, as well as at the very beginning and at the very end of the subject string. This option corresponds to the <code>/m</code> modifier in Perl regular expressions. (C++ enum variant: <span style='color: green;'><code>MultilineOption = 4</code></span>)</p>
+</div><span id='variant.ExtendedPatternSyntax' class='variant'><code>ExtendedPatternSyntax</code></span><div class='docblock'><p>Any whitespace in the pattern string which is not escaped and outside a character class is ignored. Moreover, an unescaped sharp (<b>#</b>) outside a character class causes all the following characters, until the first newline (included), to be ignored. This can be used to increase the readability of a pattern string as well as put comments inside regular expressions; this is particulary useful if the pattern string is loaded from a file or written by the user, because in C++ code it is always possible to use the rules for string literals to put comments outside the pattern string. This option corresponds to the <code>/x</code> modifier in Perl regular expressions. (C++ enum variant: <span style='color: green;'><code>ExtendedPatternSyntaxOption = 8</code></span>)</p>
+</div><span id='variant.InvertedGreediness' class='variant'><code>InvertedGreediness</code></span><div class='docblock'><p>The greediness of the quantifiers is inverted: <code><em></code>, <code>+</code>, <code>?</code>, <code>{m,n}</code>, etc. become lazy, while their lazy versions (<code></em>?</code>, <code>+?</code>, <code>??</code>, <code>{m,n}?</code>, etc.) become greedy. There is no equivalent for this option in Perl regular expressions. (C++ enum variant: <span style='color: green;'><code>InvertedGreedinessOption = 16</code></span>)</p>
+</div><span id='variant.DontCapture' class='variant'><code>DontCapture</code></span><div class='docblock'><p>The non-named capturing groups do not capture substrings; named capturing groups still work as intended, as well as the implicit capturing group number 0 corresponding to the entire match. There is no equivalent for this option in Perl regular expressions. (C++ enum variant: <span style='color: green;'><code>DontCaptureOption = 32</code></span>)</p>
+</div><span id='variant.UseUnicodeProperties' class='variant'><code>UseUnicodeProperties</code></span><div class='docblock'><p>The meaning of the <code>\w</code>, <code>\d</code>, etc., character classes, as well as the meaning of their counterparts (<code>\W</code>, <code>\D</code>, etc.), is changed from matching ASCII characters only to matching any character with the corresponding Unicode property. For instance, <code>\d</code> is changed to match any character with the Unicode Nd (decimal digit) property; <code>\w</code> to match any character with either the Unicode L (letter) or N (digit) property, plus underscore, and so on. This option corresponds to the <code>/u</code> modifier in Perl regular expressions. (C++ enum variant: <span style='color: green;'><code>UseUnicodePropertiesOption = 64</code></span>)</p>
+</div><span id='variant.OptimizeOnFirstUsage' class='variant'><code>OptimizeOnFirstUsage</code></span><div class='docblock'><p>The regular expression will be optimized (and possibly JIT-compiled) on its first usage, instead of after a certain (undefined) number of usages. See also <a href="http://doc.qt.io/qt-5/qregularexpression.html#optimize">optimize()</a>. This enum value has been introduced in Qt 5.4. (C++ enum variant: <span style='color: green;'><code>OptimizeOnFirstUsageOption = 128</code></span>)</p>
+</div><span id='variant.DontAutomaticallyOptimize' class='variant'><code>DontAutomaticallyOptimize</code></span><div class='docblock'><p>Regular expressions are automatically optimized after a certain number of usages; setting this option prevents such optimizations, therefore avoiding possible unpredictable spikes in CPU and memory usage. If both this option and the <code>OptimizeOnFirstUsageOption</code> option are set, then this option takes precedence. Note: this option will still let the regular expression to be optimized by manually calling <a href="http://doc.qt.io/qt-5/qregularexpression.html#optimize">optimize()</a>. This enum value has been introduced in Qt 5.4. (C++ enum variant: <span style='color: green;'><code>DontAutomaticallyOptimizeOption = 256</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_core/regular_expression/enum.PatternOption.html' title='qt_core::regular_expression::PatternOption'>PatternOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127162' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#48' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/regular_expression/enum.PatternOption.html' title='qt_core::regular_expression::PatternOption'>PatternOption</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_core/regular_expression/enum.PatternOption.html' title='qt_core::regular_expression::PatternOption'>PatternOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127165' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#48' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_core/regular_expression/enum.PatternOption.html' title='qt_core::regular_expression::PatternOption'>PatternOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127168' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#48' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_core/regular_expression/enum.PatternOption.html' title='qt_core::regular_expression::PatternOption'>PatternOption</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_core/regular_expression/enum.PatternOption.html' title='qt_core::regular_expression::PatternOption'>PatternOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127174' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#48' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/flags/trait.FlaggableEnum.html' title='qt_core::flags::FlaggableEnum'>FlaggableEnum</a> for <a class='enum' href='../../qt_core/regular_expression/enum.PatternOption.html' title='qt_core::regular_expression::PatternOption'>PatternOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127209' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#73-80' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_flag_value' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.to_flag_value' class='fnname'>to_flag_value</a>(self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<h4 id='method.enum_name' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.enum_name' class='fnname'>enum_name</a>() -&gt; &amp;'static <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

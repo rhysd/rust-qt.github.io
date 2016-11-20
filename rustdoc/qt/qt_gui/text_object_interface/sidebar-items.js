@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["TextObjectInterface","C++ type: <span style='color: green;'>```QTextObjectInterface```</span>"]]});

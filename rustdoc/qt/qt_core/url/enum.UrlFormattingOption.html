@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `UrlFormattingOption` enum in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, UrlFormattingOption">
+
+    <title>qt_core::url::UrlFormattingOption - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>url</a></p><script>window.sidebarCurrent = {name: 'UrlFormattingOption', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>url</a>::<wbr><a class='enum' href=''>UrlFormattingOption</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-157038' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#1055-1082' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum UrlFormattingOption {
+    None,
+    RemoveScheme,
+    RemovePassword,
+    RemoveUserInfo,
+    RemovePort,
+    RemoveAuthority,
+    RemovePath,
+    RemoveQuery,
+    RemoveFragment,
+    PreferLocalFile,
+    StripTrailingSlash,
+    RemoveFilename,
+    NormalizePathSegments,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QUrl::UrlFormattingOption</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qurl.html#UrlFormattingOption-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The formatting options define how the URL is formatted when written out as text.</p></p>
+
+<p>Note that the case folding rules in <a href="http://www.rfc-editor.org/rfc/rfc3491.txt">Nameprep</a>, which <a href="http://doc.qt.io/qt-5/qurl.html">QUrl</a> conforms to, require host names to always be converted to lower case, regardless of the Qt::FormattingOptions used.</p>
+
+<p>The options from <a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::ComponentFormattingOptions</a> are also possible.</p>
+
+<p>The FormattingOptions type is a typedef for <a href="http://doc.qt.io/qt-5/qflags.html">QFlags</a>&lt;UrlFormattingOption&gt;. It stores an OR combination of UrlFormattingOption values.</p>
+
+<p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qurl.html#ComponentFormattingOption-enum">QUrl::ComponentFormattingOptions</a>.</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.None' class='variant'><code>None</code></span><div class='docblock'><p>The format of the URL is unchanged. (C++ enum variant: <span style='color: green;'><code>None = 0</code></span>)</p>
+</div><span id='variant.RemoveScheme' class='variant'><code>RemoveScheme</code></span><div class='docblock'><p>The scheme is removed from the URL. (C++ enum variant: <span style='color: green;'><code>RemoveScheme = 1</code></span>)</p>
+</div><span id='variant.RemovePassword' class='variant'><code>RemovePassword</code></span><div class='docblock'><p>Any password in the URL is removed. (C++ enum variant: <span style='color: green;'><code>RemovePassword = 2</code></span>)</p>
+</div><span id='variant.RemoveUserInfo' class='variant'><code>RemoveUserInfo</code></span><div class='docblock'><p>Any user information in the URL is removed. (C++ enum variant: <span style='color: green;'><code>RemoveUserInfo = 6</code></span>)</p>
+</div><span id='variant.RemovePort' class='variant'><code>RemovePort</code></span><div class='docblock'><p>Any specified port is removed from the URL. (C++ enum variant: <span style='color: green;'><code>RemovePort = 8</code></span>)</p>
+</div><span id='variant.RemoveAuthority' class='variant'><code>RemoveAuthority</code></span><div class='docblock'><p>&nbsp; (C++ enum variant: <span style='color: green;'><code>RemoveAuthority = 30</code></span>)</p>
+</div><span id='variant.RemovePath' class='variant'><code>RemovePath</code></span><div class='docblock'><p>The URL&#39;s path is removed, leaving only the scheme, host address, and port (if present). (C++ enum variant: <span style='color: green;'><code>RemovePath = 32</code></span>)</p>
+</div><span id='variant.RemoveQuery' class='variant'><code>RemoveQuery</code></span><div class='docblock'><p>The query part of the URL (following a &#39;?&#39; character) is removed. (C++ enum variant: <span style='color: green;'><code>RemoveQuery = 64</code></span>)</p>
+</div><span id='variant.RemoveFragment' class='variant'><code>RemoveFragment</code></span><div class='docblock'><p>&nbsp; (C++ enum variant: <span style='color: green;'><code>RemoveFragment = 128</code></span>)</p>
+</div><span id='variant.PreferLocalFile' class='variant'><code>PreferLocalFile</code></span><div class='docblock'><p>If the URL is a local file according to <a href="http://doc.qt.io/qt-5/qurl.html#isLocalFile">isLocalFile</a>() and contains no query or fragment, a local file path is returned. (C++ enum variant: <span style='color: green;'><code>PreferLocalFile = 512</code></span>)</p>
+</div><span id='variant.StripTrailingSlash' class='variant'><code>StripTrailingSlash</code></span><div class='docblock'><p>The trailing slash is removed if one is present. (C++ enum variant: <span style='color: green;'><code>StripTrailingSlash = 1024</code></span>)</p>
+</div><span id='variant.RemoveFilename' class='variant'><code>RemoveFilename</code></span><div class='docblock'><p>The filename (i.e. everything after the last &#39;/&#39; in the path) is removed. The trailing &#39;/&#39; is kept, unless StripTrailingSlash is set. Only valid if RemovePath is not set. (C++ enum variant: <span style='color: green;'><code>RemoveFilename = 2048</code></span>)</p>
+</div><span id='variant.NormalizePathSegments' class='variant'><code>NormalizePathSegments</code></span><div class='docblock'><p>Modifies the path to remove redundant directory separators, and to resolve &quot;.&quot;s and &quot;..&quot;s (as far as possible). (C++ enum variant: <span style='color: green;'><code>NormalizePathSegments = 4096</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_core/url/enum.UrlFormattingOption.html' title='qt_core::url::UrlFormattingOption'>UrlFormattingOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-157009' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#1053' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/url/enum.UrlFormattingOption.html' title='qt_core::url::UrlFormattingOption'>UrlFormattingOption</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_core/url/enum.UrlFormattingOption.html' title='qt_core::url::UrlFormattingOption'>UrlFormattingOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-157012' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#1053' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_core/url/enum.UrlFormattingOption.html' title='qt_core::url::UrlFormattingOption'>UrlFormattingOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-157015' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#1053' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_core/url/enum.UrlFormattingOption.html' title='qt_core::url::UrlFormattingOption'>UrlFormattingOption</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_core/url/enum.UrlFormattingOption.html' title='qt_core::url::UrlFormattingOption'>UrlFormattingOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-157021' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#1053' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../qt_core/flags/trait.FlaggableEnum.html' title='qt_core::flags::FlaggableEnum'>FlaggableEnum</a> for <a class='enum' href='../../qt_core/url/enum.UrlFormattingOption.html' title='qt_core::url::UrlFormattingOption'>UrlFormattingOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-157065' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url.rs.html#1084-1091' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.to_flag_value' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.to_flag_value' class='fnname'>to_flag_value</a>(self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<h4 id='method.enum_name' class='method'><code>fn <a href='../../qt_core/flags/trait.FlaggableEnum.html#tymethod.enum_name' class='fnname'>enum_name</a>() -&gt; &amp;'static <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/url_two_flags/overloading/trait.UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionOpBitOrAssignArgs.html' title='qt_core::url_two_flags::overloading::UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionOpBitOrAssignArgs'>UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionOpBitOrAssignArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_core/url/enum.UrlFormattingOption.html' title='qt_core::url::UrlFormattingOption'>UrlFormattingOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-159209' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url_two_flags.rs.html#627-634' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/url_two_flags/overloading/trait.UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionOpBitOrAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/url_two_flags/struct.UrlTwoFlagsUrlFormattingOptionComponentFormattingOption.html' title='qt_core::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption'>UrlTwoFlagsUrlFormattingOptionComponentFormattingOption</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/url_two_flags/struct.UrlTwoFlagsUrlFormattingOptionComponentFormattingOption.html' title='qt_core::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption'>UrlTwoFlagsUrlFormattingOptionComponentFormattingOption</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/url_two_flags/overloading/trait.UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionOpBitXorAssignArgs.html' title='qt_core::url_two_flags::overloading::UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionOpBitXorAssignArgs'>UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionOpBitXorAssignArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_core/url/enum.UrlFormattingOption.html' title='qt_core::url::UrlFormattingOption'>UrlFormattingOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-159289' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url_two_flags.rs.html#720-727' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/url_two_flags/overloading/trait.UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionOpBitXorAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/url_two_flags/struct.UrlTwoFlagsUrlFormattingOptionComponentFormattingOption.html' title='qt_core::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption'>UrlTwoFlagsUrlFormattingOptionComponentFormattingOption</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/url_two_flags/struct.UrlTwoFlagsUrlFormattingOptionComponentFormattingOption.html' title='qt_core::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption'>UrlTwoFlagsUrlFormattingOptionComponentFormattingOption</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/url_two_flags/overloading/trait.UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionTestFlagArgs.html' title='qt_core::url_two_flags::overloading::UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionTestFlagArgs'>UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionTestFlagArgs</a>&lt;'largs&gt; for <a class='enum' href='../../qt_core/url/enum.UrlFormattingOption.html' title='qt_core::url::UrlFormattingOption'>UrlFormattingOption</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-159307' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/url_two_flags.rs.html#742-748' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/url_two_flags/overloading/trait.UrlTwoFlagsUrlFormattingOptionComponentFormattingOptionTestFlagArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/url_two_flags/struct.UrlTwoFlagsUrlFormattingOptionComponentFormattingOption.html' title='qt_core::url_two_flags::UrlTwoFlagsUrlFormattingOptionComponentFormattingOption'>UrlTwoFlagsUrlFormattingOptionComponentFormattingOption</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

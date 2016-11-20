@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["ReadLockerNewArgs","This trait represents a set of arguments accepted by ReadLocker::new method."]]});

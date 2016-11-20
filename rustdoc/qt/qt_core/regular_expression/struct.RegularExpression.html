@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RegularExpression` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RegularExpression">
+
+    <title>qt_core::regular_expression::RegularExpression - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>regular_expression</a></p><script>window.sidebarCurrent = {name: 'RegularExpression', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>regular_expression</a>::<wbr><a class='struct' href=''>RegularExpression</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-127213' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#101-103' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RegularExpression {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QRegularExpression</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> class provides pattern matching using regular expressions.</p>
+<p>Regular expressions, or <i>regexps</i>, are a very powerful tool to handle strings and texts. This is useful in many contexts, e.g.,</p>
+<div class="table"><table class="generic">
+ <tbody><tr valign="top" class="odd"><td>Validation</td><td>A regexp can test whether a substring meets some criteria, e.g. is an integer or contains no whitespace.</td></tr>
+<tr valign="top" class="even"><td>Searching</td><td>A regexp provides more powerful pattern matching than simple substring matching, e.g., match one of the words <i>mail</i>, <i>letter</i> or <i>correspondence</i>, but none of the words <i>email</i>, <i>mailman</i>, <i>mailer</i>, <i>letterbox</i>, etc.</td></tr>
+<tr valign="top" class="odd"><td>Search and Replace</td><td>A regexp can replace all occurrences of a substring with a different substring, e.g., replace all occurrences of <i>&amp;</i> with <i>&amp;amp;</i> except where the <i>&amp;</i> is already followed by an <i>amp;</i>.</td></tr>
+<tr valign="top" class="even"><td>String Splitting</td><td>A regexp can be used to identify where a string should be split apart, e.g. splitting tab-delimited strings.</td></tr>
+</tbody></table></div>
+<p>This document is by no means a complete reference to pattern matching using regular expressions, and the following parts will require the reader to have some basic knowledge about Perl-like regular expressions and their pattern syntax.</p>
+<p>Good references about regular expressions include:</p>
+<ul>
+<li><i>Mastering Regular Expressions</i> (Third Edition) by Jeffrey E. F. Friedl, ISBN 0-596-52812-4;</li>
+<li>the <a href="http://pcre.org/pcre.txt">pcrepattern</a>(3) man page, describing the pattern syntax supported by PCRE (the reference implementation of Perl-compatible regular expressions);</li>
+<li>the <a href="http://perldoc.perl.org/perlre.html">Perl&#39;s regular expression documentation</a> and the <a href="http://perldoc.perl.org/perlretut.html">Perl&#39;s regular expression tutorial</a>.</li>
+</ul>
+<a name="introduction"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127218' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#111-387' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.capture_count' class='method'><code>fn <a href='#method.capture_count' class='fnname'>capture_count</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QRegularExpression::captureCount() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#captureCount">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of capturing groups inside the pattern string, or -1 if the regular expression is not valid.</p>
+<p><b>Note: </b>The implicit capturing group 0 is <i>not</i> included in the returned number.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#isValid">isValid</a>().</p></div></p>
+</div><h4 id='method.error_string' class='method'><code>fn <a href='#method.error_string' class='fnname'>error_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression/overloading/trait.RegularExpressionErrorStringArgs.html' title='qt_core::regular_expression::overloading::RegularExpressionErrorStringArgs'>RegularExpressionErrorStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpression::errorString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn error_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn error_string(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QRegularExpression::errorString() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#errorString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a textual description of the error found when checking the validity of the regular expression, or &quot;no error&quot; if no error was found.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#isValid">isValid</a>() and <a href="http://doc.qt.io/qt-5/qregularexpression.html#patternErrorOffset">patternErrorOffset</a>().</p></div></p>
+</div><h4 id='method.escape' class='method'><code>fn <a href='#method.escape' class='fnname'>escape</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression/overloading/trait.RegularExpressionEscapeArgs.html' title='qt_core::regular_expression::overloading::RegularExpressionEscapeArgs'>RegularExpressionEscapeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpression::escape</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn escape((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn escape((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QRegularExpression::escape(const QString&amp; str)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#escape">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Escapes all characters of <i>str</i> so that they no longer have any special meaning when used as a regular expression pattern string, and returns the escaped string. For instance:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> escaped <span class="operator">=</span> <span class="type"><a href="http://doc.qt.io/qt-5/qregularexpression.html#QRegularExpression">QRegularExpression</a></span><span class="operator">::</span>escape(<span class="string">&quot;a(x) = f(x) + g(x)&quot;</span>);
+<span class="comment">// escaped == &quot;a\(x\)\ \=\ f\(x\)\ \+\ g\(x\)&quot;</span></pre>
+<p>This is very convenient in order to build patterns from arbitrary strings:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> pattern <span class="operator">=</span> <span class="string">&quot;(&quot;</span> <span class="operator">+</span> <span class="type"><a href="http://doc.qt.io/qt-5/qregularexpression.html#QRegularExpression">QRegularExpression</a></span><span class="operator">::</span>escape(name) <span class="operator">+</span>
+&#32;                 <span class="string">&quot;|&quot;</span> <span class="operator">+</span> <span class="type"><a href="http://doc.qt.io/qt-5/qregularexpression.html#QRegularExpression">QRegularExpression</a></span><span class="operator">::</span>escape(nickname) <span class="operator">+</span> <span class="string">&quot;)&quot;</span>;
+<span class="type"><a href="http://doc.qt.io/qt-5/qregularexpression.html#QRegularExpression">QRegularExpression</a></span> re(pattern);</pre>
+<p><b>Note: </b>This function implements Perl&#39;s quotemeta algorithm and escapes with a backslash all characters in <i>str</i>, except for the characters in the <code>[A-Z]</code>, <code>[a-z]</code> and <code>[0-9]</code> ranges, as well as the underscore (<code>_</code>) character. The only difference with Perl is that a literal NUL inside <i>str</i> is escaped with the sequence <code>&quot;\0&quot;</code> (backslash + <code>&#39;0&#39;</code>), instead of <code>&quot;\\0&quot;</code> (backslash + <code>NUL</code>).</p></div></p>
+</div><h4 id='method.global_match' class='method'><code>fn <a href='#method.global_match' class='fnname'>global_match</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression/overloading/trait.RegularExpressionGlobalMatchArgs.html' title='qt_core::regular_expression::overloading::RegularExpressionGlobalMatchArgs'>RegularExpressionGlobalMatchArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpression::globalMatch</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn global_match(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match_iterator::RegularExpressionMatchIterator&gt;</code><br>2) <code>fn global_match(&amp;self, (&amp;::string::String, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match_iterator::RegularExpressionMatchIterator&gt;</code><br>3) <code>fn global_match(&amp;self, (&amp;::string::String, libc::c_int, ::regular_expression::MatchType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match_iterator::RegularExpressionMatchIterator&gt;</code><br>4) <code>fn global_match(&amp;self, (&amp;::string::String, libc::c_int, ::regular_expression::MatchType, ::flags::Flags&lt;::regular_expression::MatchOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match_iterator::RegularExpressionMatchIterator&gt;</code><br>5) <code>fn global_match(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::regular_expression_match_iterator::RegularExpressionMatchIterator</code><br>6) <code>fn global_match(&amp;self, (&amp;::string::String, libc::c_int, cpp_utils::AsStruct)) -&gt; ::regular_expression_match_iterator::RegularExpressionMatchIterator</code><br>7) <code>fn global_match(&amp;self, (&amp;::string::String, libc::c_int, ::regular_expression::MatchType, cpp_utils::AsStruct)) -&gt; ::regular_expression_match_iterator::RegularExpressionMatchIterator</code><br>8) <code>fn global_match(&amp;self, (&amp;::string::String, libc::c_int, ::regular_expression::MatchType, ::flags::Flags&lt;::regular_expression::MatchOption&gt;, cpp_utils::AsStruct)) -&gt; ::regular_expression_match_iterator::RegularExpressionMatchIterator</code><br>
+C++ method: <span style='color: green;'><code>QRegularExpressionMatchIterator QRegularExpression::globalMatch(const QString&amp; subject, int offset = ?, QRegularExpression::MatchType matchType = ?, QFlags&lt;QRegularExpression::MatchOption&gt; matchOptions = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Attempts to perform a global match of the regular expression against the given <i>subject</i> string, starting at the position <i>offset</i> inside the subject, using a match of type <i>matchType</i> and honoring the given <i>matchOptions</i>.</p>
+<p>The returned <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> is positioned before the first match result (if any).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> and <a href="http://doc.qt.io/qt-5/qregularexpression.html#global-matching">global matching</a>.</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn global_match(&amp;self, (&amp;::string_ref::StringRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match_iterator::RegularExpressionMatchIterator&gt;</code><br>2) <code>fn global_match(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match_iterator::RegularExpressionMatchIterator&gt;</code><br>3) <code>fn global_match(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, ::regular_expression::MatchType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match_iterator::RegularExpressionMatchIterator&gt;</code><br>4) <code>fn global_match(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, ::regular_expression::MatchType, ::flags::Flags&lt;::regular_expression::MatchOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match_iterator::RegularExpressionMatchIterator&gt;</code><br>5) <code>fn global_match(&amp;self, (&amp;::string_ref::StringRef, cpp_utils::AsStruct)) -&gt; ::regular_expression_match_iterator::RegularExpressionMatchIterator</code><br>6) <code>fn global_match(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, cpp_utils::AsStruct)) -&gt; ::regular_expression_match_iterator::RegularExpressionMatchIterator</code><br>7) <code>fn global_match(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, ::regular_expression::MatchType, cpp_utils::AsStruct)) -&gt; ::regular_expression_match_iterator::RegularExpressionMatchIterator</code><br>8) <code>fn global_match(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, ::regular_expression::MatchType, ::flags::Flags&lt;::regular_expression::MatchOption&gt;, cpp_utils::AsStruct)) -&gt; ::regular_expression_match_iterator::RegularExpressionMatchIterator</code><br>
+C++ method: <span style='color: green;'><code>QRegularExpressionMatchIterator QRegularExpression::globalMatch(const QStringRef&amp; subjectRef, int offset = ?, QRegularExpression::MatchType matchType = ?, QFlags&lt;QRegularExpression::MatchOption&gt; matchOptions = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#globalMatch-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Attempts to perform a global match of the regular expression against the given <i>subjectRef</i> string reference, starting at the position <i>offset</i> inside the subject, using a match of type <i>matchType</i> and honoring the given <i>matchOptions</i>.</p>
+<p>The returned <a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> is positioned before the first match result (if any).</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatchiterator.html">QRegularExpressionMatchIterator</a> and <a href="http://doc.qt.io/qt-5/qregularexpression.html#global-matching">global matching</a>.</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRegularExpression::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the regular expression is a valid regular expression (that is, it contains no syntax errors, etc.), or false otherwise. Use <a href="http://doc.qt.io/qt-5/qregularexpression.html#errorString">errorString</a>() to obtain a textual description of the error.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#errorString">errorString</a>() and <a href="http://doc.qt.io/qt-5/qregularexpression.html#patternErrorOffset">patternErrorOffset</a>().</p></div></p>
+</div><h4 id='method.match_' class='method'><code>fn <a href='#method.match_' class='fnname'>match_</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression/overloading/trait.RegularExpressionMatchArgs.html' title='qt_core::regular_expression::overloading::RegularExpressionMatchArgs'>RegularExpressionMatchArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpression::match</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn match_(&amp;self, (&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>2) <code>fn match_(&amp;self, (&amp;::string::String, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>3) <code>fn match_(&amp;self, (&amp;::string::String, libc::c_int, ::regular_expression::MatchType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>4) <code>fn match_(&amp;self, (&amp;::string::String, libc::c_int, ::regular_expression::MatchType, ::flags::Flags&lt;::regular_expression::MatchOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>5) <code>fn match_(&amp;self, (&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>6) <code>fn match_(&amp;self, (&amp;::string::String, libc::c_int, cpp_utils::AsStruct)) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>7) <code>fn match_(&amp;self, (&amp;::string::String, libc::c_int, ::regular_expression::MatchType, cpp_utils::AsStruct)) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>8) <code>fn match_(&amp;self, (&amp;::string::String, libc::c_int, ::regular_expression::MatchType, ::flags::Flags&lt;::regular_expression::MatchOption&gt;, cpp_utils::AsStruct)) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>
+C++ method: <span style='color: green;'><code>QRegularExpressionMatch QRegularExpression::match(const QString&amp; subject, int offset = ?, QRegularExpression::MatchType matchType = ?, QFlags&lt;QRegularExpression::MatchOption&gt; matchOptions = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#match">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Attempts to match the regular expression against the given <i>subject</i> string, starting at the position <i>offset</i> inside the subject, using a match of type <i>matchType</i> and honoring the given <i>matchOptions</i>.</p>
+<p>The returned <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> object contains the results of the match.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> and <a href="http://doc.qt.io/qt-5/qregularexpression.html#normal-matching">normal matching</a>.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn match_(&amp;self, (&amp;::string_ref::StringRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>2) <code>fn match_(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>3) <code>fn match_(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, ::regular_expression::MatchType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>4) <code>fn match_(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, ::regular_expression::MatchType, ::flags::Flags&lt;::regular_expression::MatchOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression_match::RegularExpressionMatch&gt;</code><br>5) <code>fn match_(&amp;self, (&amp;::string_ref::StringRef, cpp_utils::AsStruct)) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>6) <code>fn match_(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, cpp_utils::AsStruct)) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>7) <code>fn match_(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, ::regular_expression::MatchType, cpp_utils::AsStruct)) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>8) <code>fn match_(&amp;self, (&amp;::string_ref::StringRef, libc::c_int, ::regular_expression::MatchType, ::flags::Flags&lt;::regular_expression::MatchOption&gt;, cpp_utils::AsStruct)) -&gt; ::regular_expression_match::RegularExpressionMatch</code><br>
+C++ method: <span style='color: green;'><code>QRegularExpressionMatch QRegularExpression::match(const QStringRef&amp; subjectRef, int offset = ?, QRegularExpression::MatchType matchType = ?, QFlags&lt;QRegularExpression::MatchOption&gt; matchOptions = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#match-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Attempts to match the regular expression against the given <i>subjectRef</i> string reference, starting at the position <i>offset</i> inside the subject, using a match of type <i>matchType</i> and honoring the given <i>matchOptions</i>.</p>
+<p>The returned <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> object contains the results of the match.</p>
+<p>This function was introduced in  Qt 5.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html">QRegularExpressionMatch</a> and <a href="http://doc.qt.io/qt-5/qregularexpression.html#normal-matching">normal matching</a>.</p></div></p>
+</div><h4 id='method.named_capture_groups' class='method'><code>fn <a href='#method.named_capture_groups' class='fnname'>named_capture_groups</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression/overloading/trait.RegularExpressionNamedCaptureGroupsArgs.html' title='qt_core::regular_expression::overloading::RegularExpressionNamedCaptureGroupsArgs'>RegularExpressionNamedCaptureGroupsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpression::namedCaptureGroups</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn named_capture_groups(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_list::StringList&gt;</code><br>2) <code>fn named_capture_groups(&amp;self, cpp_utils::AsStruct) -&gt; ::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>QStringList QRegularExpression::namedCaptureGroups() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#namedCaptureGroups">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of <a href="http://doc.qt.io/qt-5/qregularexpression.html#captureCount">captureCount</a>() + 1 elements, containing the names of the named capturing groups in the pattern string. The list is sorted such that the element of the list at position <code>i</code> is the name of the <code>i</code>-th capturing group, if it has a name, or an empty string if that capturing group is unnamed.</p>
+<p>For instance, given the regular expression</p>
+<pre class="cpp">(<span class="operator">?</span><span class="operator">&lt;</span>day<span class="operator">&gt;</span>\d\d)<span class="operator">-</span>(<span class="operator">?</span><span class="operator">&lt;</span>month<span class="operator">&gt;</span>\d\d)<span class="operator">-</span>(<span class="operator">?</span><span class="operator">&lt;</span>year<span class="operator">&gt;</span>\d\d\d\d) (\w<span class="operator">+</span>) (<span class="operator">?</span><span class="operator">&lt;</span>name<span class="operator">&gt;</span>\w<span class="operator">+</span>)</pre>
+<p>namedCaptureGroups() will return the following list:</p>
+<pre class="cpp">(<span class="string">&quot;&quot;</span><span class="operator">,</span> <span class="string">&quot;day&quot;</span><span class="operator">,</span> <span class="string">&quot;month&quot;</span><span class="operator">,</span> <span class="string">&quot;year&quot;</span><span class="operator">,</span> <span class="string">&quot;&quot;</span><span class="operator">,</span> <span class="string">&quot;name&quot;</span>)</pre>
+<p>which corresponds to the fact that the capturing group #0 (corresponding to the whole match) has no name, the capturing group #1 has name &quot;day&quot;, the capturing group #2 has name &quot;month&quot;, etc.</p>
+<p>If the regular expression is not valid, returns an empty list.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#isValid">isValid</a>(), <a href="http://doc.qt.io/qt-5/qregularexpressionmatch.html#captured">QRegularExpressionMatch::captured</a>(), and <a href="http://doc.qt.io/qt-5/qstring.html#isEmpty">QString::isEmpty</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression/overloading/trait.RegularExpressionNewArgs.html' title='qt_core::regular_expression::overloading::RegularExpressionNewArgs'>RegularExpressionNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpression::QRegularExpression</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::regular_expression::RegularExpression</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::regular_expression::RegularExpression&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRegularExpression::QRegularExpression()</code></span></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::regular_expression::RegularExpression, cpp_utils::AsStruct)) -&gt; ::regular_expression::RegularExpression</code><br>2) <code>fn new((&amp;::regular_expression::RegularExpression, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression::RegularExpression&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRegularExpression::QRegularExpression(const QRegularExpression&amp; re)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::regular_expression::RegularExpression</code><br>2) <code>fn new((&amp;::string::String, ::flags::Flags&lt;::regular_expression::PatternOption&gt;, cpp_utils::AsStruct)) -&gt; ::regular_expression::RegularExpression</code><br>3) <code>fn new((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression::RegularExpression&gt;</code><br>4) <code>fn new((&amp;::string::String, ::flags::Flags&lt;::regular_expression::PatternOption&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::regular_expression::RegularExpression&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRegularExpression::QRegularExpression(const QString&amp; pattern, QFlags&lt;QRegularExpression::PatternOption&gt; options = ?)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, re: &amp;'l1 <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpression&amp; QRegularExpression::operator=(const QRegularExpression&amp; re)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns the regular expression <i>re</i> to this object, and returns a reference to the copy. Both the pattern and the pattern options are copied.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, re: &amp;<a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRegularExpression::operator==(const QRegularExpression&amp; re) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the regular expression is equal to <i>re</i>, or false otherwise. Two <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> objects are equal if they have the same pattern string and the same pattern options.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#operator-not-eq">operator!=</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, re: &amp;<a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRegularExpression::operator!=(const QRegularExpression&amp; re) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the regular expression is different from <i>re</i>, or false otherwise.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.optimize' class='method'><code>fn <a href='#method.optimize' class='fnname'>optimize</a>(&amp;self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRegularExpression::optimize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#optimize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Forces an immediate optimization of the pattern, including JIT-compiling it (if the JIT compiler is enabled).</p>
+<p>Patterns are normally optimized only after a certain number of usages. If you can predict that this <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> object is going to be used for several matches, it may be convenient to optimize it in advance by calling this function.</p>
+<p>This function was introduced in  Qt 5.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#PatternOption-enum">QRegularExpression::OptimizeOnFirstUsageOption</a>.</p></div></p>
+</div><h4 id='method.pattern' class='method'><code>fn <a href='#method.pattern' class='fnname'>pattern</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/regular_expression/overloading/trait.RegularExpressionPatternArgs.html' title='qt_core::regular_expression::overloading::RegularExpressionPatternArgs'>RegularExpressionPatternArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRegularExpression::pattern</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn pattern(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn pattern(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QRegularExpression::pattern() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#pattern">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pattern string of the regular expression.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#setPattern">setPattern</a>() and <a href="http://doc.qt.io/qt-5/qregularexpression.html#patternOptions">patternOptions</a>().</p></div></p>
+</div><h4 id='method.pattern_error_offset' class='method'><code>fn <a href='#method.pattern_error_offset' class='fnname'>pattern_error_offset</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QRegularExpression::patternErrorOffset() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#patternErrorOffset">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the offset, inside the pattern string, at which an error was found when checking the validity of the regular expression. If no error was found, then -1 is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#pattern">pattern</a>(), <a href="http://doc.qt.io/qt-5/qregularexpression.html#isValid">isValid</a>(), and <a href="http://doc.qt.io/qt-5/qregularexpression.html#errorString">errorString</a>().</p></div></p>
+</div><h4 id='method.pattern_options' class='method'><code>fn <a href='#method.pattern_options' class='fnname'>pattern_options</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/regular_expression/enum.PatternOption.html' title='qt_core::regular_expression::PatternOption'>PatternOption</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;QRegularExpression::PatternOption&gt; QRegularExpression::patternOptions() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#patternOptions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pattern options for the regular expression.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#setPatternOptions">setPatternOptions</a>() and <a href="http://doc.qt.io/qt-5/qregularexpression.html#pattern">pattern</a>().</p></div></p>
+</div><h4 id='method.set_pattern' class='method'><code>fn <a href='#method.set_pattern' class='fnname'>set_pattern</a>(&amp;mut self, pattern: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRegularExpression::setPattern(const QString&amp; pattern)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#setPattern">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the pattern string of the regular expression to <i>pattern</i>. The pattern options are left unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#pattern">pattern</a>() and <a href="http://doc.qt.io/qt-5/qregularexpression.html#setPatternOptions">setPatternOptions</a>().</p></div></p>
+</div><h4 id='method.set_pattern_options' class='method'><code>fn <a href='#method.set_pattern_options' class='fnname'>set_pattern_options</a>(&amp;mut self, options: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/regular_expression/enum.PatternOption.html' title='qt_core::regular_expression::PatternOption'>PatternOption</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRegularExpression::setPatternOptions(QFlags&lt;QRegularExpression::PatternOption&gt; options)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#setPatternOptions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the given <i>options</i> as the pattern options of the regular expression. The pattern string is left unchanged.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qregularexpression.html#patternOptions">patternOptions</a>() and <a href="http://doc.qt.io/qt-5/qregularexpression.html#setPattern">setPattern</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRegularExpression::swap(QRegularExpression&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps the regular expression <i>other</i> with this regular expression. This operation is very fast and never fails.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127216' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#105-109' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127282' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#389-396' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QRegularExpression::~QRegularExpression()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qregularexpression.html#dtor.QRegularExpression">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qregularexpression.html">QRegularExpression</a> object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-127285' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/regular_expression.rs.html#398-402' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringContainsArgs.html' title='qt_core::string::overloading::StringContainsArgs'>StringContainsArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141487' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#6450-6455' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringContainsArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringCountArgs.html' title='qt_core::string::overloading::StringCountArgs'>StringCountArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141550' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#6531-6539' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringCountArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringIndexOfArgs.html' title='qt_core::string::overloading::StringIndexOfArgs'>StringIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-141977' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#7182-7187' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringLastIndexOfArgs.html' title='qt_core::string::overloading::StringLastIndexOfArgs'>StringLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142151' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#7418-7423' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string/overloading/trait.StringRemoveArgs.html' title='qt_core::string::overloading::StringRemoveArgs'>StringRemoveArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-143217' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string.rs.html#8932-8941' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-4' class='method'><code>fn <a href='../../qt_core/string/overloading/trait.StringRemoveArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_list/overloading/trait.StringListIndexOfArgs.html' title='qt_core::string_list::overloading::StringListIndexOfArgs'>StringListIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-145238' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_list.rs.html#1018-1023' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-5' class='method'><code>fn <a href='../../qt_core/string_list/overloading/trait.StringListIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_list/struct.StringList.html' title='qt_core::string_list::StringList'>StringList</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_core/string_list/overloading/trait.StringListLastIndexOfArgs.html' title='qt_core::string_list::overloading::StringListLastIndexOfArgs'>StringListLastIndexOfArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_core/regular_expression/struct.RegularExpression.html' title='qt_core::regular_expression::RegularExpression'>RegularExpression</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-145295' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/string_list.rs.html#1091-1096' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-6' class='method'><code>fn <a href='../../qt_core/string_list/overloading/trait.StringListLastIndexOfArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs <a class='struct' href='../../qt_core/string_list/struct.StringList.html' title='qt_core::string_list::StringList'>StringList</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["StyleOptionRubberBandNewArgs","This trait represents a set of arguments accepted by StyleOptionRubberBand::new method."]]});

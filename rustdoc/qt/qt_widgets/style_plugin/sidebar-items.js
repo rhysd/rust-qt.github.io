@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["StylePlugin","C++ type: <span style='color: green;'>```QStylePlugin```</span>"]]});

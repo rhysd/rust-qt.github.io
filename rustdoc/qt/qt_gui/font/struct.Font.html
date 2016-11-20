@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Font` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Font">
+
+    <title>qt_gui::font::Font - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>font</a></p><script>window.sidebarCurrent = {name: 'Font', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>font</a>::<wbr><a class='struct' href=''>Font</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-70405' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font.rs.html#74-76' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Font {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QFont</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> class specifies a font used for drawing text.</p>
+<p>When you create a <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> object you specify various attributes that you want the font to have. Qt will use the font with the specified attributes, or if no matching font exists, Qt will use the closest matching installed font. The attributes of the font that is actually used are retrievable from a <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> object. If the window system provides an exact match <a href="http://doc.qt.io/qt-5/qfont.html#exactMatch">exactMatch</a>() returns <code>true</code>. Use <a href="http://doc.qt.io/qt-5/qfontmetrics.html">QFontMetrics</a> to get measurements, e.g. the pixel length of a string using <a href="http://doc.qt.io/qt-5/qfontmetrics.html#width">QFontMetrics::width</a>().</p>
+<p>Note that a <a href="http://doc.qt.io/qt-5/qguiapplication.html">QGuiApplication</a> instance must exist before a <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> can be used. You can set the application&#39;s default font with <a href="http://doc.qt.io/qt-5/qguiapplication.html#setFont">QGuiApplication::setFont</a>().</p>
+<p>If a chosen font does not include all the characters that need to be displayed, <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> will try to find the characters in the nearest equivalent fonts. When a <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> draws a character from a font the <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> will report whether or not it has the character; if it does not, <a href="http://doc.qt.io/qt-5/qpainter.html">QPainter</a> will draw an unfilled square.</p>
+<p>Create QFonts like this:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfont.html#QFont">QFont</a></span> serifFont(<span class="string">&quot;Times&quot;</span><span class="operator">,</span> <span class="number">10</span><span class="operator">,</span> <span class="type"><a href="http://doc.qt.io/qt-5/qfont.html#QFont">QFont</a></span><span class="operator">::</span>Bold);
+<span class="type"><a href="http://doc.qt.io/qt-5/qfont.html#QFont">QFont</a></span> sansFont(<span class="string">&quot;Helvetica [Cronyx]&quot;</span><span class="operator">,</span> <span class="number">12</span>);</pre>
+<p>The attributes set in the constructor can also be set later, e.g. <a href="http://doc.qt.io/qt-5/qfont.html#setFamily">setFamily</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setPointSize">setPointSize</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setPointSizeF">setPointSizeF</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setWeight">setWeight</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#setItalic">setItalic</a>(). The remaining attributes must be set after contstruction, e.g. <a href="http://doc.qt.io/qt-5/qfont.html#setBold">setBold</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setUnderline">setUnderline</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setOverline">setOverline</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setStrikeOut">setStrikeOut</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#setFixedPitch">setFixedPitch</a>(). <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> objects should be created <i>after</i> the font&#39;s attributes have been set. A <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> object will not change, even if you change the font&#39;s attributes. The corresponding &quot;get&quot; functions, e.g. <a href="http://doc.qt.io/qt-5/qfont.html#family">family</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#pointSize">pointSize</a>(), etc., return the values that were set, even though the values used may differ. The actual values are available from a <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> object.</p>
+<p>If the requested font family is unavailable you can influence the <a href="http://doc.qt.io/qt-5/qfont.html#fontmatching">font matching algorithm</a> by choosing a particular <a href="http://doc.qt.io/qt-5/qfont.html#StyleHint-enum">QFont::StyleHint</a> and <a href="http://doc.qt.io/qt-5/qfont.html#StyleStrategy-enum">QFont::StyleStrategy</a> with <a href="http://doc.qt.io/qt-5/qfont.html#setStyleHint">setStyleHint</a>(). The default family (corresponding to the current style hint) is returned by <a href="http://doc.qt.io/qt-5/qfont.html#defaultFamily">defaultFamily</a>().</p>
+<p>The font-matching algorithm has a <a href="http://doc.qt.io/qt-5/qfont.html#lastResortFamily">lastResortFamily</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#lastResortFont">lastResortFont</a>() in cases where a suitable match cannot be found. You can provide substitutions for font family names using <a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitution">insertSubstitution</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitutions">insertSubstitutions</a>(). Substitutions can be removed with <a href="http://doc.qt.io/qt-5/qfont.html#removeSubstitutions">removeSubstitutions</a>(). Use <a href="http://doc.qt.io/qt-5/qfont.html#substitute">substitute</a>() to retrieve a family&#39;s first substitute, or the family name itself if it has no substitutes. Use <a href="http://doc.qt.io/qt-5/qfont.html#substitutes">substitutes</a>() to retrieve a list of a family&#39;s substitutes (which may be empty).</p>
+<p>Every <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> has a <a href="http://doc.qt.io/qt-5/qfont.html#key">key</a>() which you can use, for example, as the key in a cache or dictionary. If you want to store a user&#39;s font preferences you could use <a href="http://doc.qt.io/qt-5/qsettings.html">QSettings</a>, writing the font information with <a href="http://doc.qt.io/qt-5/qfont.html#toString">toString</a>() and reading it back with <a href="http://doc.qt.io/qt-5/qfont.html#fromString">fromString</a>(). The operator&lt;&lt;() and operator&gt;&gt;() functions are also available, but they work on a data stream.</p>
+<p>It is possible to set the height of characters shown on the screen to a specified number of pixels with <a href="http://doc.qt.io/qt-5/qfont.html#setPixelSize">setPixelSize</a>(); however using <a href="http://doc.qt.io/qt-5/qfont.html#setPointSize">setPointSize</a>() has a similar effect and provides device independence.</p>
+<p>Loading fonts can be expensive, especially on X11. <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> contains extensive optimizations to make the copying of <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> objects fast, and to cache the results of the slow window system functions it depends upon.</p>
+<a name="fontmatching"></a><p>The font matching algorithm works as follows:</p>
+<ol class="1">
+<li>The specified font family is searched for.</li>
+<li>If not found, the <a href="http://doc.qt.io/qt-5/qfont.html#styleHint">styleHint</a>() is used to select a replacement family.</li>
+<li>Each replacement font family is searched for.</li>
+<li>If none of these are found or there was no <a href="http://doc.qt.io/qt-5/qfont.html#styleHint">styleHint</a>(), &quot;helvetica&quot; will be searched for.</li>
+<li>If &quot;helvetica&quot; isn&#39;t found Qt will try the <a href="http://doc.qt.io/qt-5/qfont.html#lastResortFamily">lastResortFamily</a>().</li>
+<li>If the <a href="http://doc.qt.io/qt-5/qfont.html#lastResortFamily">lastResortFamily</a>() isn&#39;t found Qt will try the <a href="http://doc.qt.io/qt-5/qfont.html#lastResortFont">lastResortFont</a>() which will always return a name of some kind.</li>
+</ol>
+<p>Note that the actual font matching algorithm varies from platform to platform.</p>
+<p>In Windows a request for the &quot;Courier&quot; font is automatically changed to &quot;Courier New&quot;, an improved version of Courier that allows for smooth scaling. The older &quot;Courier&quot; bitmap font can be selected by setting the <a href="http://doc.qt.io/qt-5/qfont.html#StyleStrategy-enum">PreferBitmap</a> style strategy (see <a href="http://doc.qt.io/qt-5/qfont.html#setStyleStrategy">setStyleStrategy</a>()).</p>
+<p>Once a font is found, the remaining attributes are matched in order of priority:</p>
+<ol class="1">
+<li><a href="http://doc.qt.io/qt-5/qfont.html#fixedPitch">fixedPitch</a>()</li>
+<li><a href="http://doc.qt.io/qt-5/qfont.html#pointSize">pointSize</a>() (see below)</li>
+<li><a href="http://doc.qt.io/qt-5/qfont.html#weight">weight</a>()</li>
+<li><a href="http://doc.qt.io/qt-5/qfont.html#style">style</a>()</li>
+</ol>
+<p>If you have a font which matches on family, even if none of the other attributes match, this font will be chosen in preference to a font which doesn&#39;t match on family but which does match on the other attributes. This is because font family is the dominant search criteria.</p>
+<p>The point size is defined to match if it is within 20% of the requested point size. When several fonts match and are only distinguished by point size, the font with the closest point size to the one requested will be chosen.</p>
+<p>The actual family, font size, weight and other font attributes used for drawing text will depend on what&#39;s available for the chosen family under the window system. A <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> object can be used to determine the actual values used for drawing the text.</p>
+<p>Examples:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfont.html#QFont">QFont</a></span> f(<span class="string">&quot;Helvetica&quot;</span>);</pre>
+<p>If you had both an Adobe and a Cronyx Helvetica, you might get either.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfont.html#QFont">QFont</a></span> f(<span class="string">&quot;Helvetica [Cronyx]&quot;</span>);</pre>
+<p>You can specify the foundry you want in the family name. The font f in the above example will be set to &quot;Helvetica [Cronyx]&quot;.</p>
+<p>To determine the attributes of the font actually used in the window system, use a <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> object, e.g.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a></span> info(f1);
+<span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span> family <span class="operator">=</span> info<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qfont.html#family">family</a>();</pre>
+<p>To find out font metrics use a <a href="http://doc.qt.io/qt-5/qfontmetrics.html">QFontMetrics</a> object, e.g.</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qfontmetrics.html">QFontMetrics</a></span> fm(f1);
+<span class="type">int</span> textWidthInPixels <span class="operator">=</span> fm<span class="operator">.</span>width(<span class="string">&quot;How many pixels wide is this text?&quot;</span>);
+<span class="type">int</span> textHeightInPixels <span class="operator">=</span> fm<span class="operator">.</span>height();</pre>
+<p>For more general information on fonts, see the <a href="http://nwalsh.com/comp.fonts/FAQ/">comp.fonts FAQ</a>. Information on encodings can be found from <a href="http://czyborra.com/">Roman Czyborra&#39;s</a> page.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-70410' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font.rs.html#84-848' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.as_q_variant' class='method'><code>fn <a href='#method.as_q_variant' class='fnname'>as_q_variant</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontAsQVariantArgs.html' title='qt_gui::font::overloading::FontAsQVariantArgs'>FontAsQVariantArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::operator QVariant</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn as_q_variant(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::variant::Variant&gt;</code><br>2) <code>fn as_q_variant(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::variant::Variant</code><br>
+C++ method: <span style='color: green;'><code>QVariant QFont::operator QVariant() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#operator-QVariant">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the font as a <a href="http://doc.qt.io/qt-5/qvariant.html">QVariant</a></p></div></p>
+</div><h4 id='method.bold' class='method'><code>fn <a href='#method.bold' class='fnname'>bold</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::bold() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#bold">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <a href="http://doc.qt.io/qt-5/qfont.html#weight">weight</a>() is a value greater than <a href="http://doc.qt.io/qt-5/qfont.html#Weight-enum">QFont::Medium</a>; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#weight">weight</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setBold">setBold</a>(), and <a href="http://doc.qt.io/qt-5/qfontinfo.html#bold">QFontInfo::bold</a>().</p></div></p>
+</div><h4 id='method.cache_statistics' class='method'><code>fn <a href='#method.cache_statistics' class='fnname'>cache_statistics</a>()</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QFont::cacheStatistics()</code></span></p>
+</div><h4 id='method.capitalization' class='method'><code>fn <a href='#method.capitalization' class='fnname'>capitalization</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/font/enum.Capitalization.html' title='qt_gui::font::Capitalization'>Capitalization</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::Capitalization QFont::capitalization() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#capitalization">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current capitalization type of the font.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setCapitalization">setCapitalization</a>().</p></div></p>
+</div><h4 id='method.cleanup' class='method'><code>fn <a href='#method.cleanup' class='fnname'>cleanup</a>()</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QFont::cleanup()</code></span></p>
+</div><h4 id='method.default_family' class='method'><code>fn <a href='#method.default_family' class='fnname'>default_family</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontDefaultFamilyArgs.html' title='qt_gui::font::overloading::FontDefaultFamilyArgs'>FontDefaultFamilyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::defaultFamily</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn default_family(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn default_family(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFont::defaultFamily() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#defaultFamily">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the family name that corresponds to the current style hint.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#StyleHint-enum">StyleHint</a>, <a href="http://doc.qt.io/qt-5/qfont.html#styleHint">styleHint</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#setStyleHint">setStyleHint</a>().</p></div></p>
+</div><h4 id='method.exact_match' class='method'><code>fn <a href='#method.exact_match' class='fnname'>exact_match</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::exactMatch() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#exactMatch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if a window system font exactly matching the settings of this font is available.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.family' class='method'><code>fn <a href='#method.family' class='fnname'>family</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontFamilyArgs.html' title='qt_gui::font::overloading::FontFamilyArgs'>FontFamilyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::family</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn family(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn family(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFont::family() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#family">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the requested font family name, i.e. the name set in the constructor or the last setFont() call.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setFamily">setFamily</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#substitutes">substitutes</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#substitute">substitute</a>().</p></div></p>
+</div><h4 id='method.fixed_pitch' class='method'><code>fn <a href='#method.fixed_pitch' class='fnname'>fixed_pitch</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::fixedPitch() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#fixedPitch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if fixed pitch has been set; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setFixedPitch">setFixedPitch</a>() and <a href="http://doc.qt.io/qt-5/qfontinfo.html#fixedPitch">QFontInfo::fixedPitch</a>().</p></div></p>
+</div><h4 id='method.from_string' class='method'><code>fn <a href='#method.from_string' class='fnname'>from_string</a>(&amp;mut self, arg1: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::fromString(const QString&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#fromString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets this font to match the description <i>descrip</i>. The description is a comma-separated list of the font attributes, as returned by <a href="http://doc.qt.io/qt-5/qfont.html#toString">toString</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#toString">toString</a>().</p></div></p>
+</div><h4 id='method.hinting_preference' class='method'><code>fn <a href='#method.hinting_preference' class='fnname'>hinting_preference</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/font/enum.HintingPreference.html' title='qt_gui::font::HintingPreference'>HintingPreference</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::HintingPreference QFont::hintingPreference() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#hintingPreference">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the currently preferred hinting level for glyphs rendered with this font.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setHintingPreference">setHintingPreference</a>().</p></div></p>
+</div><h4 id='method.initialize' class='method'><code>fn <a href='#method.initialize' class='fnname'>initialize</a>()</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QFont::initialize()</code></span></p>
+</div><h4 id='method.insert_substitution' class='method'><code>fn <a href='#method.insert_substitution' class='fnname'>insert_substitution</a>(arg1: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>, arg2: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QFont::insertSubstitution(const QString&amp; arg1, const QString&amp; arg2)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitution">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts <i>substituteName</i> into the substitution table for the family <i>familyName</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitutions">insertSubstitutions</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#removeSubstitutions">removeSubstitutions</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#substitutions">substitutions</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#substitute">substitute</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#substitutes">substitutes</a>().</p></div></p>
+</div><h4 id='method.insert_substitutions' class='method'><code>fn <a href='#method.insert_substitutions' class='fnname'>insert_substitutions</a>(arg1: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>, arg2: &amp;<a class='struct' href='../../qt_core/string_list/struct.StringList.html' title='qt_core::string_list::StringList'>StringList</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QFont::insertSubstitutions(const QString&amp; arg1, const QStringList&amp; arg2)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitutions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts the list of families <i>substituteNames</i> into the substitution list for <i>familyName</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitution">insertSubstitution</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#removeSubstitutions">removeSubstitutions</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#substitutions">substitutions</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#substitute">substitute</a>().</p></div></p>
+</div><h4 id='method.is_copy_of' class='method'><code>fn <a href='#method.is_copy_of' class='fnname'>is_copy_of</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::isCopyOf(const QFont&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#isCopyOf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this font and <i>f</i> are copies of each other, i.e. one of them was created as a copy of the other and neither has been modified since. This is much stricter than equality.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#operator-eq">operator=</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.italic' class='method'><code>fn <a href='#method.italic' class='fnname'>italic</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::italic() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#italic">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the <a href="http://doc.qt.io/qt-5/qfont.html#style">style</a>() of the font is not <a href="http://doc.qt.io/qt-5/qfont.html#Style-enum">QFont::StyleNormal</a></p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setItalic">setItalic</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#style">style</a>().</p></div></p>
+</div><h4 id='method.kerning' class='method'><code>fn <a href='#method.kerning' class='fnname'>kerning</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::kerning() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#kerning">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if kerning should be used when drawing text with this font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setKerning">setKerning</a>().</p></div></p>
+</div><h4 id='method.key' class='method'><code>fn <a href='#method.key' class='fnname'>key</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontKeyArgs.html' title='qt_gui::font::overloading::FontKeyArgs'>FontKeyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::key</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn key(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn key(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFont::key() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#key">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the font&#39;s key, a textual representation of a font. It is typically used as the key for a cache or dictionary of fonts.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qmap.html">QMap</a>.</p></div></p>
+</div><h4 id='method.last_resort_family' class='method'><code>fn <a href='#method.last_resort_family' class='fnname'>last_resort_family</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontLastResortFamilyArgs.html' title='qt_gui::font::overloading::FontLastResortFamilyArgs'>FontLastResortFamilyArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::lastResortFamily</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn last_resort_family(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn last_resort_family(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFont::lastResortFamily() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#lastResortFamily">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the &quot;last resort&quot; font family name.</p>
+<p>The current implementation tries a wide variety of common fonts, returning the first one it finds. Is is possible that no family is found in which case an empty string is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#lastResortFont">lastResortFont</a>().</p></div></p>
+</div><h4 id='method.last_resort_font' class='method'><code>fn <a href='#method.last_resort_font' class='fnname'>last_resort_font</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontLastResortFontArgs.html' title='qt_gui::font::overloading::FontLastResortFontArgs'>FontLastResortFontArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::lastResortFont</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn last_resort_font(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn last_resort_font(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFont::lastResortFont() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#lastResortFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a &quot;last resort&quot; font name for the font matching algorithm. This is used if the last resort family is not available. It will always return a name, if necessary returning something like &quot;fixed&quot; or &quot;system&quot;.</p>
+<p>The current implementation tries a wide variety of common fonts, returning the first one it finds. The implementation may change at any time, but this function will always return a string containing something.</p>
+<p>It is theoretically possible that there really isn&#39;t a lastResortFont() in which case Qt will abort with an error message. We have not been able to identify a case where this happens. Please <a href="http://doc.qt.io/qt-5/bughowto.html">report it as a bug</a> if it does, preferably with a list of the fonts you have installed.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#lastResortFamily">lastResortFamily</a>().</p></div></p>
+</div><h4 id='method.letter_spacing' class='method'><code>fn <a href='#method.letter_spacing' class='fnname'>letter_spacing</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QFont::letterSpacing() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#letterSpacing">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the letter spacing for the font.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setLetterSpacing">setLetterSpacing</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#letterSpacingType">letterSpacingType</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#setWordSpacing">setWordSpacing</a>().</p></div></p>
+</div><h4 id='method.letter_spacing_type' class='method'><code>fn <a href='#method.letter_spacing_type' class='fnname'>letter_spacing_type</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/font/enum.SpacingType.html' title='qt_gui::font::SpacingType'>SpacingType</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::SpacingType QFont::letterSpacingType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#letterSpacingType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the spacing type used for letter spacing.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#letterSpacing">letterSpacing</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setLetterSpacing">setLetterSpacing</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#setWordSpacing">setWordSpacing</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontNewArgs.html' title='qt_gui::font::overloading::FontNewArgs'>FontNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::QFont</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::font::Font</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFont::QFont()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::font::Font, cpp_utils::AsStruct)) -&gt; ::font::Font</code><br>2) <code>fn new((&amp;::font::Font, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFont::QFont(const QFont&amp; arg1)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::font::Font, *mut ::paint_device::PaintDevice, cpp_utils::AsStruct)) -&gt; ::font::Font</code><br>2) <code>fn new((&amp;::font::Font, *mut ::paint_device::PaintDevice, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFont::QFont(const QFont&amp; arg1, QPaintDevice* pd)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; ::font::Font</code><br>2) <code>fn new((&amp;qt_core::string::String, libc::c_int, cpp_utils::AsStruct)) -&gt; ::font::Font</code><br>3) <code>fn new((&amp;qt_core::string::String, libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::font::Font</code><br>4) <code>fn new((&amp;qt_core::string::String, libc::c_int, libc::c_int, bool, cpp_utils::AsStruct)) -&gt; ::font::Font</code><br>5) <code>fn new((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>6) <code>fn new((&amp;qt_core::string::String, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>7) <code>fn new((&amp;qt_core::string::String, libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>8) <code>fn new((&amp;qt_core::string::String, libc::c_int, libc::c_int, bool, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QFont::QFont(const QString&amp; family, int pointSize = ?, int weight = ?, bool italic = ?)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, arg1: &amp;'l1 <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont&amp; QFont::operator=(const QFont&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns <i>font</i> to this font and returns a reference to it.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::operator==(const QFont&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this font is equal to <i>f</i>; otherwise returns false.</p>
+<p>Two QFonts are considered equal if their font attributes are equal.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#operator-not-eq">operator!=</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#isCopyOf">isCopyOf</a>().</p></div></p>
+</div><h4 id='method.op_lt' class='method'><code>fn <a href='#method.op_lt' class='fnname'>op_lt</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::operator&lt;(const QFont&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#operator-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Provides an arbitrary comparison of this font and font <i>f</i>. All that is guaranteed is that the operator returns <code>false</code> if both fonts are equal and that (f1 &lt; f2) == !(f2 &lt; f1) if the fonts are not equal.</p>
+<p>This function is useful in some circumstances, for example if you want to use <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> objects as keys in a <a href="http://doc.qt.io/qt-5/qmap.html">QMap</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#operator-eq-eq">operator==</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#operator-not-eq">operator!=</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#isCopyOf">isCopyOf</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, arg1: &amp;<a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::operator!=(const QFont&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this font is different from <i>f</i>; otherwise returns <code>false</code>.</p>
+<p>Two QFonts are considered to be different if their font attributes are different.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.overline' class='method'><code>fn <a href='#method.overline' class='fnname'>overline</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::overline() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#overline">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if overline has been set; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setOverline">setOverline</a>().</p></div></p>
+</div><h4 id='method.pixel_size' class='method'><code>fn <a href='#method.pixel_size' class='fnname'>pixel_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QFont::pixelSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#pixelSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pixel size of the font if it was set with <a href="http://doc.qt.io/qt-5/qfont.html#setPixelSize">setPixelSize</a>(). Returns -1 if the size was set with <a href="http://doc.qt.io/qt-5/qfont.html#setPointSize">setPointSize</a>() or <a href="http://doc.qt.io/qt-5/qfont.html#setPointSizeF">setPointSizeF</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setPixelSize">setPixelSize</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#pointSize">pointSize</a>(), <a href="http://doc.qt.io/qt-5/qfontinfo.html#pointSize">QFontInfo::pointSize</a>(), and <a href="http://doc.qt.io/qt-5/qfontinfo.html#pixelSize">QFontInfo::pixelSize</a>().</p></div></p>
+</div><h4 id='method.point_size' class='method'><code>fn <a href='#method.point_size' class='fnname'>point_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QFont::pointSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#pointSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the point size of the font. Returns -1 if the font size was specified in pixels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setPointSize">setPointSize</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#pointSizeF">pointSizeF</a>().</p></div></p>
+</div><h4 id='method.point_size_f' class='method'><code>fn <a href='#method.point_size_f' class='fnname'>point_size_f</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QFont::pointSizeF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#pointSizeF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the point size of the font. Returns -1 if the font size was specified in pixels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#pointSize">pointSize</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setPointSizeF">setPointSizeF</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#pixelSize">pixelSize</a>(), <a href="http://doc.qt.io/qt-5/qfontinfo.html#pointSize">QFontInfo::pointSize</a>(), and <a href="http://doc.qt.io/qt-5/qfontinfo.html#pixelSize">QFontInfo::pixelSize</a>().</p></div></p>
+</div><h4 id='method.raw_mode' class='method'><code>fn <a href='#method.raw_mode' class='fnname'>raw_mode</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::rawMode() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont-obsolete.html#rawMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if raw mode is used for font name matching; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont-obsolete.html#setRawMode">setRawMode</a>().</p></div></p>
+</div><h4 id='method.raw_name' class='method'><code>fn <a href='#method.raw_name' class='fnname'>raw_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontRawNameArgs.html' title='qt_gui::font::overloading::FontRawNameArgs'>FontRawNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::rawName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn raw_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn raw_name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFont::rawName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont-obsolete.html#rawName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the name of the font within the underlying window system.</p>
+<p>On X11, this function will return an empty string.</p>
+<p>Using the return value of this function is usually <i>not</i> <i>portable</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont-obsolete.html#setRawName">setRawName</a>().</p></div></p>
+</div><h4 id='method.remove_substitutions' class='method'><code>fn <a href='#method.remove_substitutions' class='fnname'>remove_substitutions</a>(arg1: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QFont::removeSubstitutions(const QString&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#removeSubstitutions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes all the substitutions for <i>familyName</i>.</p>
+<p>This function was introduced in  Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitutions">insertSubstitutions</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitution">insertSubstitution</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#substitutions">substitutions</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#substitute">substitute</a>().</p></div></p>
+</div><h4 id='method.resolve' class='method'><code>fn <a href='#method.resolve' class='fnname'>resolve</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontResolveArgs.html' title='qt_gui::font::overloading::FontResolveArgs'>FontResolveArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::resolve</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn resolve(&amp;self, (&amp;::font::Font, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::font::Font&gt;</code><br>2) <code>fn resolve(&amp;self, (&amp;::font::Font, cpp_utils::AsStruct)) -&gt; ::font::Font</code><br>
+C++ method: <span style='color: green;'><code>QFont QFont::resolve(const QFont&amp; arg1) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#resolve">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a new <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> that has attributes copied from <i>other</i> that have not been previously set on this font.</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn resolve(&amp;self, ()) -&gt; libc::c_uint</code><br>
+C++ method: <span style='color: green;'><code>unsigned int QFont::resolve() const</code></span></p>
+</div><h4 id='method.resolve_mut' class='method'><code>fn <a href='#method.resolve_mut' class='fnname'>resolve_mut</a>(&amp;mut self, mask: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::resolve(unsigned int mask)</code></span></p>
+
+<p>Warning: no exact match found in C++ documentation.Below is the <a href="http://doc.qt.io/qt-5/qfont.html#resolve">C++ documentation</a> for <code>QFont QFont::resolve(const QFont &amp; other) const</code>: <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a new <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> that has attributes copied from <i>other</i> that have not been previously set on this font.</p></div></p>
+</div><h4 id='method.set_bold' class='method'><code>fn <a href='#method.set_bold' class='fnname'>set_bold</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setBold(bool arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setBold">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>enable</i> is true sets the font&#39;s weight to <a href="http://doc.qt.io/qt-5/qfont.html#Weight-enum">QFont::Bold</a>; otherwise sets the weight to <a href="http://doc.qt.io/qt-5/qfont.html#Weight-enum">QFont::Normal</a>.</p>
+<p>For finer boldness control use <a href="http://doc.qt.io/qt-5/qfont.html#setWeight">setWeight</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#bold">bold</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#setWeight">setWeight</a>().</p></div></p>
+</div><h4 id='method.set_capitalization' class='method'><code>fn <a href='#method.set_capitalization' class='fnname'>set_capitalization</a>(&amp;mut self, arg1: <a class='enum' href='../../qt_gui/font/enum.Capitalization.html' title='qt_gui::font::Capitalization'>Capitalization</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setCapitalization(QFont::Capitalization arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setCapitalization">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the capitalization of the text in this font to <i>caps</i>.</p>
+<p>A font&#39;s capitalization makes the text appear in the selected capitalization mode.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#capitalization">capitalization</a>().</p></div></p>
+</div><h4 id='method.set_family' class='method'><code>fn <a href='#method.set_family' class='fnname'>set_family</a>(&amp;mut self, arg1: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setFamily(const QString&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setFamily">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the family name of the font. The name is case insensitive and may include a foundry name.</p>
+<p>The <i>family</i> name may optionally also include a foundry name, e.g. &quot;Helvetica [Cronyx]&quot;. If the <i>family</i> is available from more than one foundry and the foundry isn&#39;t specified, an arbitrary foundry is chosen. If the family isn&#39;t available a family will be set using the <a href="http://doc.qt.io/qt-5/qfont.html">font matching</a> algorithm.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#family">family</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setStyleHint">setStyleHint</a>(), and <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.set_fixed_pitch' class='method'><code>fn <a href='#method.set_fixed_pitch' class='fnname'>set_fixed_pitch</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setFixedPitch(bool arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setFixedPitch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>enable</i> is true, sets fixed pitch on; otherwise sets fixed pitch off.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#fixedPitch">fixedPitch</a>() and <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.set_hinting_preference' class='method'><code>fn <a href='#method.set_hinting_preference' class='fnname'>set_hinting_preference</a>(&amp;mut self, hinting_preference: <a class='enum' href='../../qt_gui/font/enum.HintingPreference.html' title='qt_gui::font::HintingPreference'>HintingPreference</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setHintingPreference(QFont::HintingPreference hintingPreference)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setHintingPreference">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Set the preference for the hinting level of the glyphs to <i>hintingPreference</i>. This is a hint to the underlying font rendering system to use a certain level of hinting, and has varying support across platforms. See the table in the documentation for <a href="http://doc.qt.io/qt-5/qfont.html#HintingPreference-enum">QFont::HintingPreference</a> for more details.</p>
+<p>The default hinting preference is <a href="http://doc.qt.io/qt-5/qfont.html#HintingPreference-enum">QFont::PreferDefaultHinting</a>.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#hintingPreference">hintingPreference</a>().</p></div></p>
+</div><h4 id='method.set_italic' class='method'><code>fn <a href='#method.set_italic' class='fnname'>set_italic</a>(&amp;mut self, b: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setItalic(bool b)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setItalic">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the <a href="http://doc.qt.io/qt-5/qfont.html#style">style</a>() of the font to <a href="http://doc.qt.io/qt-5/qfont.html#Style-enum">QFont::StyleItalic</a> if <i>enable</i> is true; otherwise the style is set to <a href="http://doc.qt.io/qt-5/qfont.html#Style-enum">QFont::StyleNormal</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#italic">italic</a>() and <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.set_kerning' class='method'><code>fn <a href='#method.set_kerning' class='fnname'>set_kerning</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setKerning(bool arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setKerning">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Enables kerning for this font if <i>enable</i> is true; otherwise disables it. By default, kerning is enabled.</p>
+<p>When kerning is enabled, glyph metrics do not add up anymore, even for Latin text. In other words, the assumption that width(&#39;a&#39;) + width(&#39;b&#39;) is equal to width(&quot;ab&quot;) is not necessarily true.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#kerning">kerning</a>() and <a href="http://doc.qt.io/qt-5/qfontmetrics.html">QFontMetrics</a>.</p></div></p>
+</div><h4 id='method.set_letter_spacing' class='method'><code>fn <a href='#method.set_letter_spacing' class='fnname'>set_letter_spacing</a>(&amp;mut self, type_: <a class='enum' href='../../qt_gui/font/enum.SpacingType.html' title='qt_gui::font::SpacingType'>SpacingType</a>, spacing: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setLetterSpacing(QFont::SpacingType type, double spacing)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setLetterSpacing">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the letter spacing for the font to <i>spacing</i> and the type of spacing to <i>type</i>.</p>
+<p>Letter spacing changes the default spacing between individual letters in the font. The spacing between the letters can be made smaller as well as larger either in percentage of the character width or in pixels, depending on the selected spacing type.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#letterSpacing">letterSpacing</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#letterSpacingType">letterSpacingType</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#setWordSpacing">setWordSpacing</a>().</p></div></p>
+</div><h4 id='method.set_overline' class='method'><code>fn <a href='#method.set_overline' class='fnname'>set_overline</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setOverline(bool arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setOverline">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>enable</i> is true, sets overline on; otherwise sets overline off.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#overline">overline</a>() and <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.set_pixel_size' class='method'><code>fn <a href='#method.set_pixel_size' class='fnname'>set_pixel_size</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setPixelSize(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setPixelSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the font size to <i>pixelSize</i> pixels.</p>
+<p>Using this function makes the font device dependent. Use <a href="http://doc.qt.io/qt-5/qfont.html#setPointSize">setPointSize</a>() or <a href="http://doc.qt.io/qt-5/qfont.html#setPointSizeF">setPointSizeF</a>() to set the size of the font in a device independent manner.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#pixelSize">pixelSize</a>().</p></div></p>
+</div><h4 id='method.set_point_size' class='method'><code>fn <a href='#method.set_point_size' class='fnname'>set_point_size</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setPointSize(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setPointSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the point size to <i>pointSize</i>. The point size must be greater than zero.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#pointSize">pointSize</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#setPointSizeF">setPointSizeF</a>().</p></div></p>
+</div><h4 id='method.set_point_size_f' class='method'><code>fn <a href='#method.set_point_size_f' class='fnname'>set_point_size_f</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setPointSizeF(double arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setPointSizeF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the point size to <i>pointSize</i>. The point size must be greater than zero. The requested precision may not be achieved on all platforms.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#pointSizeF">pointSizeF</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setPointSize">setPointSize</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#setPixelSize">setPixelSize</a>().</p></div></p>
+</div><h4 id='method.set_raw_mode' class='method'><code>fn <a href='#method.set_raw_mode' class='fnname'>set_raw_mode</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setRawMode(bool arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont-obsolete.html#setRawMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>enable</i> is true, turns raw mode on; otherwise turns raw mode off. This function only has an effect under X11.</p>
+<p>If raw mode is enabled, Qt will search for an X font with a complete font name matching the family name, ignoring all other values set for the <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a>. If the font name matches several fonts, Qt will use the first font returned by X. <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a> <i>cannot</i> be used to fetch information about a <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> using raw mode (it will return the values set in the <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> for all parameters, including the family name).</p>
+<p><b>Warning:</b> Enabling raw mode has no effect since Qt 5.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont-obsolete.html#rawMode">rawMode</a>().</p></div></p>
+</div><h4 id='method.set_raw_name' class='method'><code>fn <a href='#method.set_raw_name' class='fnname'>set_raw_name</a>(&amp;mut self, arg1: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setRawName(const QString&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont-obsolete.html#setRawName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a font by its system specific name.</p>
+<p>A font set with setRawName() is still a full-featured <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a>. It can be queried (for example with <a href="http://doc.qt.io/qt-5/qfont.html#italic">italic</a>()) or modified (for example with <a href="http://doc.qt.io/qt-5/qfont.html#setItalic">setItalic</a>()) and is therefore also suitable for rendering rich text.</p>
+<p>If Qt&#39;s internal font database cannot resolve the raw name, the font becomes a raw font with <i>name</i> as its family.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont-obsolete.html#rawName">rawName</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#setFamily">setFamily</a>().</p></div></p>
+</div><h4 id='method.set_stretch' class='method'><code>fn <a href='#method.set_stretch' class='fnname'>set_stretch</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setStretch(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setStretch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the stretch factor for the font.</p>
+<p>The stretch factor changes the width of all characters in the font by <i>factor</i> percent. For example, setting <i>factor</i> to 150 results in all characters in the font being 1.5 times (ie. 150%) wider. The default stretch factor is 100. The minimum stretch factor is 1, and the maximum stretch factor is 4000.</p>
+<p>The stretch factor is only applied to outline fonts. The stretch factor is ignored for bitmap fonts.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#stretch">stretch</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#Stretch-enum">QFont::Stretch</a>.</p></div></p>
+</div><h4 id='method.set_strike_out' class='method'><code>fn <a href='#method.set_strike_out' class='fnname'>set_strike_out</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setStrikeOut(bool arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setStrikeOut">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>enable</i> is true, sets strikeout on; otherwise sets strikeout off.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#strikeOut">strikeOut</a>() and <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.set_style' class='method'><code>fn <a href='#method.set_style' class='fnname'>set_style</a>(&amp;mut self, style: <a class='enum' href='../../qt_gui/font/enum.Style.html' title='qt_gui::font::Style'>Style</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setStyle(QFont::Style style)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setStyle">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the style of the font to <i>style</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#style">style</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#italic">italic</a>(), and <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.set_style_hint' class='method'><code>fn <a href='#method.set_style_hint' class='fnname'>set_style_hint</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontSetStyleHintArgs.html' title='qt_gui::font::overloading::FontSetStyleHintArgs'>FontSetStyleHintArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::setStyleHint</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn set_style_hint(&amp;mut self, ::font::StyleHint) -&gt; ()</code><br>2) <code>fn set_style_hint(&amp;mut self, (::font::StyleHint, ::font::StyleStrategy)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QFont::setStyleHint(QFont::StyleHint arg1, QFont::StyleStrategy arg2 = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setStyleHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the style hint and strategy to <i>hint</i> and <i>strategy</i>, respectively.</p>
+<p>If these aren&#39;t set explicitly the style hint will default to <code>AnyStyle</code> and the style strategy to <code>PreferDefault</code>.</p>
+<p>Qt does not support style hints on X11 since this information is not provided by the window system.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#StyleHint-enum">StyleHint</a>, <a href="http://doc.qt.io/qt-5/qfont.html#styleHint">styleHint</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#StyleStrategy-enum">StyleStrategy</a>, <a href="http://doc.qt.io/qt-5/qfont.html#styleStrategy">styleStrategy</a>(), and <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.set_style_name' class='method'><code>fn <a href='#method.set_style_name' class='fnname'>set_style_name</a>(&amp;mut self, arg1: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setStyleName(const QString&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setStyleName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the style name of the font to <i>styleName</i>. When set, other style properties like <a href="http://doc.qt.io/qt-5/qfont.html#style">style</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#weight">weight</a>() will be ignored for font matching.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#styleName">styleName</a>().</p></div></p>
+</div><h4 id='method.set_style_strategy' class='method'><code>fn <a href='#method.set_style_strategy' class='fnname'>set_style_strategy</a>(&amp;mut self, s: <a class='enum' href='../../qt_gui/font/enum.StyleStrategy.html' title='qt_gui::font::StyleStrategy'>StyleStrategy</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setStyleStrategy(QFont::StyleStrategy s)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setStyleStrategy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the style strategy for the font to <i>s</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#styleStrategy">styleStrategy</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#StyleStrategy-enum">QFont::StyleStrategy</a>.</p></div></p>
+</div><h4 id='method.set_underline' class='method'><code>fn <a href='#method.set_underline' class='fnname'>set_underline</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setUnderline(bool arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setUnderline">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If <i>enable</i> is true, sets underline on; otherwise sets underline off.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#underline">underline</a>() and <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.set_weight' class='method'><code>fn <a href='#method.set_weight' class='fnname'>set_weight</a>(&amp;mut self, arg1: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setWeight(int arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setWeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the weight of the font to <i>weight</i>, using the scale defined by <a href="http://doc.qt.io/qt-5/qfont.html#Weight-enum">QFont::Weight</a> enumeration.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#weight">weight</a>() and <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.set_word_spacing' class='method'><code>fn <a href='#method.set_word_spacing' class='fnname'>set_word_spacing</a>(&amp;mut self, spacing: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::setWordSpacing(double spacing)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#setWordSpacing">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the word spacing for the font to <i>spacing</i>.</p>
+<p>Word spacing changes the default spacing between individual words. A positive value increases the word spacing by a corresponding amount of pixels, while a negative value decreases the inter-word spacing accordingly.</p>
+<p>Word spacing will not apply to writing systems, where indiviaul words are not separated by white space.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#wordSpacing">wordSpacing</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#setLetterSpacing">setLetterSpacing</a>().</p></div></p>
+</div><h4 id='method.stretch' class='method'><code>fn <a href='#method.stretch' class='fnname'>stretch</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QFont::stretch() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#stretch">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the stretch factor for the font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setStretch">setStretch</a>().</p></div></p>
+</div><h4 id='method.strike_out' class='method'><code>fn <a href='#method.strike_out' class='fnname'>strike_out</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::strikeOut() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#strikeOut">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if strikeout has been set; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setStrikeOut">setStrikeOut</a>().</p></div></p>
+</div><h4 id='method.style' class='method'><code>fn <a href='#method.style' class='fnname'>style</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/font/enum.Style.html' title='qt_gui::font::Style'>Style</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::Style QFont::style() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#style">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the style of the font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setStyle">setStyle</a>().</p></div></p>
+</div><h4 id='method.style_hint' class='method'><code>fn <a href='#method.style_hint' class='fnname'>style_hint</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/font/enum.StyleHint.html' title='qt_gui::font::StyleHint'>StyleHint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::StyleHint QFont::styleHint() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#styleHint">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qfont.html#StyleHint-enum">StyleHint</a>.</p>
+<p>The style hint affects the <a href="http://doc.qt.io/qt-5/qfont.html">font matching</a> algorithm. See <a href="http://doc.qt.io/qt-5/qfont.html#StyleHint-enum">QFont::StyleHint</a> for the list of available hints.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setStyleHint">setStyleHint</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#StyleStrategy-enum">QFont::StyleStrategy</a>, and <a href="http://doc.qt.io/qt-5/qfontinfo.html#styleHint">QFontInfo::styleHint</a>().</p></div></p>
+</div><h4 id='method.style_name' class='method'><code>fn <a href='#method.style_name' class='fnname'>style_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontStyleNameArgs.html' title='qt_gui::font::overloading::FontStyleNameArgs'>FontStyleNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::styleName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn style_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn style_name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFont::styleName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#styleName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the requested font style name, it will be used to match the font with irregular styles (that can&#39;t be normalized in other style properties). It depends on system font support, thus only works for Mac OS X and X11 so far. On Windows irregular styles will be added as separate font families so there is no need for this.</p>
+<p>This function was introduced in  Qt 4.8.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setStyleName">setStyleName</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setFamily">setFamily</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#setStyle">setStyle</a>().</p></div></p>
+</div><h4 id='method.style_strategy' class='method'><code>fn <a href='#method.style_strategy' class='fnname'>style_strategy</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/font/enum.StyleStrategy.html' title='qt_gui::font::StyleStrategy'>StyleStrategy</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::StyleStrategy QFont::styleStrategy() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#styleStrategy">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qfont.html#StyleStrategy-enum">StyleStrategy</a>.</p>
+<p>The style strategy affects the <a href="http://doc.qt.io/qt-5/qfont.html">font matching</a> algorithm. See <a href="http://doc.qt.io/qt-5/qfont.html#StyleStrategy-enum">QFont::StyleStrategy</a> for the list of available strategies.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setStyleStrategy">setStyleStrategy</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#setStyleHint">setStyleHint</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#StyleHint-enum">QFont::StyleHint</a>.</p></div></p>
+</div><h4 id='method.substitute' class='method'><code>fn <a href='#method.substitute' class='fnname'>substitute</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontSubstituteArgs.html' title='qt_gui::font::overloading::FontSubstituteArgs'>FontSubstituteArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::substitute</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn substitute((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn substitute((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>static QString QFont::substitute(const QString&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#substitute">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the first family name to be used whenever <i>familyName</i> is specified. The lookup is case insensitive.</p>
+<p>If there is no substitution for <i>familyName</i>, <i>familyName</i> is returned.</p>
+<p>To obtain a list of substitutions use <a href="http://doc.qt.io/qt-5/qfont.html#substitutes">substitutes</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setFamily">setFamily</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitutions">insertSubstitutions</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitution">insertSubstitution</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#removeSubstitutions">removeSubstitutions</a>().</p></div></p>
+</div><h4 id='method.substitutes' class='method'><code>fn <a href='#method.substitutes' class='fnname'>substitutes</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontSubstitutesArgs.html' title='qt_gui::font::overloading::FontSubstitutesArgs'>FontSubstitutesArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::substitutes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn substitutes((&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn substitutes((&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>static QStringList QFont::substitutes(const QString&amp; arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#substitutes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of family names to be used whenever <i>familyName</i> is specified. The lookup is case insensitive.</p>
+<p>If there is no substitution for <i>familyName</i>, an empty list is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#substitute">substitute</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitutions">insertSubstitutions</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitution">insertSubstitution</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#removeSubstitutions">removeSubstitutions</a>().</p></div></p>
+</div><h4 id='method.substitutions' class='method'><code>fn <a href='#method.substitutions' class='fnname'>substitutions</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontSubstitutionsArgs.html' title='qt_gui::font::overloading::FontSubstitutionsArgs'>FontSubstitutionsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::substitutions</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn substitutions(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string_list::StringList&gt;</code><br>2) <code>fn substitutions(cpp_utils::AsStruct) -&gt; qt_core::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>static QStringList QFont::substitutions()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#substitutions">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a sorted list of substituted family names.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#insertSubstitution">insertSubstitution</a>(), <a href="http://doc.qt.io/qt-5/qfont-obsolete.html#removeSubstitution">removeSubstitution</a>(), and <a href="http://doc.qt.io/qt-5/qfont.html#substitute">substitute</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QFont::swap(QFont&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this font instance with <i>other</i>. This function is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.to_string' class='method'><code>fn <a href='#method.to_string' class='fnname'>to_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/font/overloading/trait.FontToStringArgs.html' title='qt_gui::font::overloading::FontToStringArgs'>FontToStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::toString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn to_string(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn to_string(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QFont::toString() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#toString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a description of the font. The description is a comma-separated list of the attributes, perfectly suited for use in <a href="http://doc.qt.io/qt-5/qsettings.html">QSettings</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#fromString">fromString</a>().</p></div></p>
+</div><h4 id='method.underline' class='method'><code>fn <a href='#method.underline' class='fnname'>underline</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QFont::underline() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#underline">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if underline has been set; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setUnderline">setUnderline</a>().</p></div></p>
+</div><h4 id='method.weight' class='method'><code>fn <a href='#method.weight' class='fnname'>weight</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QFont::weight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#weight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the weight of the font, using the same scale as the <a href="http://doc.qt.io/qt-5/qfont.html#Weight-enum">QFont::Weight</a> enumeration.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setWeight">setWeight</a>(), <a href="http://doc.qt.io/qt-5/qfont.html#Weight-enum">Weight</a>, and <a href="http://doc.qt.io/qt-5/qfontinfo.html">QFontInfo</a>.</p></div></p>
+</div><h4 id='method.word_spacing' class='method'><code>fn <a href='#method.word_spacing' class='fnname'>word_spacing</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QFont::wordSpacing() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#wordSpacing">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the word spacing for the font.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#setWordSpacing">setWordSpacing</a>() and <a href="http://doc.qt.io/qt-5/qfont.html#setLetterSpacing">setLetterSpacing</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='../../qt_gui/font/overloading/trait.HashArgs.html' title='qt_gui::font::overloading::HashArgs'>HashArgs</a> for &amp;'a <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-71371' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font.rs.html#1672-1677' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_gui/font/overloading/trait.HashArgs.html#tymethod.exec' class='fnname'>exec</a>(self) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-70408' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font.rs.html#78-82' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-70627' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font.rs.html#850-857' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QFont::~QFont()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qfont.html#dtor.QFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the font object and frees all allocated resources.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-70630' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/font.rs.html#859-863' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/text_char_format/overloading/trait.TextCharFormatSetFontArgs.html' title='qt_gui::text_char_format::overloading::TextCharFormatSetFontArgs'>TextCharFormatSetFontArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-154923' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_char_format.rs.html#1727-1735' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_gui/text_char_format/overloading/trait.TextCharFormatSetFontArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/text_char_format/struct.TextCharFormat.html' title='qt_gui::text_char_format::TextCharFormat'>TextCharFormat</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/text_image_format/overloading/trait.TextImageFormatSetFontArgs.html' title='qt_gui::text_image_format::overloading::TextImageFormatSetFontArgs'>TextImageFormatSetFontArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-161837' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_image_format.rs.html#1742-1750' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_gui/text_image_format/overloading/trait.TextImageFormatSetFontArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/text_image_format/struct.TextImageFormat.html' title='qt_gui::text_image_format::TextImageFormat'>TextImageFormat</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_gui/text_table_cell_format/overloading/trait.TextTableCellFormatSetFontArgs.html' title='qt_gui::text_table_cell_format::overloading::TextTableCellFormatSetFontArgs'>TextTableCellFormatSetFontArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_gui/font/struct.Font.html' title='qt_gui::font::Font'>Font</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-167396' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/text_table_cell_format.rs.html#1805-1810' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_gui/text_table_cell_format/overloading/trait.TextTableCellFormatSetFontArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_gui/text_table_cell_format/struct.TextTableCellFormat.html' title='qt_gui::text_table_cell_format::TextTableCellFormat'>TextTableCellFormat</a>)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

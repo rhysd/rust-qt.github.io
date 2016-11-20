@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Shadow","C++ type: <span style='color: green;'>```QFrame::Shadow```</span>"],["Shape","C++ type: <span style='color: green;'>```QFrame::Shape```</span>"],["StyleMask","C++ type: <span style='color: green;'>```QFrame::StyleMask```</span>"]],"mod":[["overloading",""]],"struct":[["Frame","C++ type: <span style='color: green;'>```QFrame```</span>"]]});

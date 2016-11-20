@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ConicalGradient","C++ type: <span style='color: green;'>```QConicalGradient```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["AccessMode","C++ type: <span style='color: green;'>```QSystemSemaphore::AccessMode```</span>"],["SystemSemaphoreError","C++ type: <span style='color: green;'>```QSystemSemaphore::SystemSemaphoreError```</span>"]],"mod":[["overloading",""]],"struct":[["SystemSemaphore","C++ type: <span style='color: green;'>```QSystemSemaphore```</span>"]]});

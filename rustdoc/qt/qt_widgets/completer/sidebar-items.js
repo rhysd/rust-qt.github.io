@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["CompletionMode","C++ type: <span style='color: green;'>```QCompleter::CompletionMode```</span>"],["ModelSorting","C++ type: <span style='color: green;'>```QCompleter::ModelSorting```</span>"]],"mod":[["overloading",""]],"struct":[["Completer","C++ type: <span style='color: green;'>```QCompleter```</span>"]]});

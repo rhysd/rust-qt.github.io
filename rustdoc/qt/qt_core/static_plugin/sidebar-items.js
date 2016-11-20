@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["register_static_plugin_function","C++ method: <span style='color: green;'>```void qRegisterStaticPluginFunction(QStaticPlugin staticPlugin)```</span>"]],"mod":[["overloading",""]],"struct":[["StaticPlugin","C++ type: <span style='color: green;'>```QStaticPlugin```</span>"]]});

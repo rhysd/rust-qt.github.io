@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["DropEventNewArgs","This trait represents a set of arguments accepted by DropEvent::new method."],["DropEventPosArgs","This trait represents a set of arguments accepted by DropEvent::pos method."],["DropEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by DropEvent::register_event_type method."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["StyleOptionFocusRectNewArgs","This trait represents a set of arguments accepted by StyleOptionFocusRect::new method."]]});

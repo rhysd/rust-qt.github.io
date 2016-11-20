@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Action","C++ type: <span style='color: green;'>```QInputMethod::Action```</span>"]],"mod":[["overloading",""]],"struct":[["InputMethod","C++ type: <span style='color: green;'>```QInputMethod```</span>"]]});

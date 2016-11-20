@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["XmlStreamNotationDeclaration","C++ type: <span style='color: green;'>```QXmlStreamNotationDeclaration```</span>"]]});

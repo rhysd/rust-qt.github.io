@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["AtomicIntegerCIntNewArgs","This trait represents a set of arguments accepted by AtomicIntegerCInt::new method."]]});

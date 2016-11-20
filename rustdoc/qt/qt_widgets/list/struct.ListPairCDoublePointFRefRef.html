@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ListPairCDoublePointFRefRef` struct in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ListPairCDoublePointFRefRef">
+
+    <title>qt_widgets::list::ListPairCDoublePointFRefRef - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>list</a></p><script>window.sidebarCurrent = {name: 'ListPairCDoublePointFRefRef', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>list</a>::<wbr><a class='struct' href=''>ListPairCDoublePointFRefRef</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-341695' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/list.rs.html#9615-9617' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct ListPairCDoublePointFRefRef {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> class is a template class that provides lists.</p>
+<p><a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&lt;T&gt; is one of Qt&#39;s generic <a href="http://doc.qt.io/qt-5/containers.html">container classes</a>. It stores a list of values and provides fast index-based access as well as fast insertions and removals.</p>
+<p><a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&lt;T&gt;, <a href="http://doc.qt.io/qt-5/qlinkedlist.html">QLinkedList</a>&lt;T&gt;, and <a href="http://doc.qt.io/qt-5/qvector.html">QVector</a>&lt;T&gt; provide similar functionality. Here&#39;s an overview:</p>
+<ul>
+<li>For most purposes, <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> is the right class to use. Its index-based API is more convenient than <a href="http://doc.qt.io/qt-5/qlinkedlist.html">QLinkedList</a>&#39;s iterator-based API, and it is usually faster than <a href="http://doc.qt.io/qt-5/qvector.html">QVector</a> because of the way it stores its items in memory. It also expands to less code in your executable.</li>
+<li>If you need a real linked list, with guarantees of <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a> insertions in the middle of the list and iterators to items rather than indexes, use <a href="http://doc.qt.io/qt-5/qlinkedlist.html">QLinkedList</a>.</li>
+<li>If you want the items to occupy adjacent memory positions, use <a href="http://doc.qt.io/qt-5/qvector.html">QVector</a>.</li>
+</ul>
+<p>Internally, <a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&lt;T&gt; is represented as an array of pointers to items of type T. If T is itself a pointer type or a basic type that is no larger than a pointer, or if T is one of Qt&#39;s <a href="http://doc.qt.io/qt-5/implicit-sharing.html#shared-classes">shared classes</a>, then <a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&lt;T&gt; stores the items directly in the pointer array. For lists under a thousand items, this array representation allows for very fast insertions in the middle, and it allows index-based access. Furthermore, operations like <a href="http://doc.qt.io/qt-5/qlist.html#prepend">prepend</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>() are very fast, because <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> preallocates memory at both ends of its internal array. (See <a href="http://doc.qt.io/qt-5/containers.html#algorithmic-complexity">Algorithmic Complexity</a> for details.) Note, however, that for unshared list items that are larger than a pointer, each append or insert of a new item requires allocating the new item on the heap, and this per item allocation might make <a href="http://doc.qt.io/qt-5/qvector.html">QVector</a> a better choice in cases that do lots of appending or inserting, since <a href="http://doc.qt.io/qt-5/qvector.html">QVector</a> allocates memory for its items in a single heap allocation.</p>
+<p>Note that the internal array only ever gets bigger over the life of the list. It never shrinks. The internal array is deallocated by the destructor and by the assignment operator, when one list is assigned to another.</p>
+<p>Here&#39;s an example of a <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> that stores integers and a <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> that stores <a href="http://doc.qt.io/qt-5/qdate.html">QDate</a> values:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type">int</span><span class="operator">&gt;</span> integerList;
+<span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qdate.html">QDate</a></span><span class="operator">&gt;</span> dateList;</pre>
+<p>Qt includes a <a href="http://doc.qt.io/qt-5/qstringlist.html">QStringList</a> class that inherits <a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&lt;<a href="http://doc.qt.io/qt-5/qstring.html">QString</a>&gt; and adds a few convenience functions, such as <a href="http://doc.qt.io/qt-5/qstringlist.html#join">QStringList::join</a>() and <a href="http://doc.qt.io/qt-5/qstringlist.html#filter">QStringList::filter</a>(). <a href="http://doc.qt.io/qt-5/qstring.html#split">QString::split</a>() creates QStringLists from strings.</p>
+<p><a href="http://doc.qt.io/qt-5/qlist.html">QList</a> stores a list of items. The default constructor creates an empty list. To insert items into the list, you can use operator&lt;&lt;():</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;one&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;two&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;three&quot;</span>;
+<span class="comment">// list: [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]</span></pre>
+<p><a href="http://doc.qt.io/qt-5/qlist.html">QList</a> provides these basic functions to add, move, and remove items: <a href="http://doc.qt.io/qt-5/qlist.html#insert">insert</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#replace">replace</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#move">move</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#swap">swap</a>(). In addition, it provides the following convenience functions: <a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#prepend">prepend</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">removeFirst</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#removeLast">removeLast</a>().</p>
+<p><a href="http://doc.qt.io/qt-5/qlist.html">QList</a> uses 0-based indexes, just like C++ arrays. To access the item at a particular index position, you can use operator<a href=""></a>. On non-const lists, operator<a href=""></a> returns a reference to the item and can be used on the left side of an assignment:</p>
+<pre class="cpp"><span class="keyword">if</span> (list<span class="operator">[</span><span class="number">0</span><span class="operator">]</span> <span class="operator">=</span><span class="operator">=</span> <span class="string">&quot;Bob&quot;</span>)
+&#32;   list<span class="operator">[</span><span class="number">0</span><span class="operator">]</span> <span class="operator">=</span> <span class="string">&quot;Robert&quot;</span>;</pre>
+<p>Because <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> is implemented as an array of pointers, this operation is very fast (<a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>). For read-only access, an alternative syntax is to use <a href="http://doc.qt.io/qt-5/qlist.html#at">at</a>():</p>
+<pre class="cpp"><span class="keyword">for</span> (<span class="type">int</span> i <span class="operator">=</span> <span class="number">0</span>; i <span class="operator">&lt;</span> list<span class="operator">.</span>size(); <span class="operator">+</span><span class="operator">+</span>i) {
+&#32;   <span class="keyword">if</span> (list<span class="operator">.</span>at(i) <span class="operator">=</span><span class="operator">=</span> <span class="string">&quot;Jane&quot;</span>)
+&#32;       cout <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;Found Jane at position &quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> i <span class="operator">&lt;</span><span class="operator">&lt;</span> endl;
+}</pre>
+<p><a href="http://doc.qt.io/qt-5/qlist.html#at">at</a>() can be faster than operator<a href=""></a>, because it never causes a <a href="http://doc.qt.io/qt-5/implicit-sharing.html#deep-copy">deep copy</a> to occur.</p>
+<p>A common requirement is to remove an item from a list and do something with it. For this, <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> provides <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeFirst">takeFirst</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#takeLast">takeLast</a>(). Here&#39;s a loop that removes the items from a list one at a time and calls <code>delete</code> on them:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a></span> <span class="operator">*</span><span class="operator">&gt;</span> list;
+<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>
+<span class="keyword">while</span> (<span class="operator">!</span>list<span class="operator">.</span>isEmpty())
+&#32;   <span class="keyword">delete</span> list<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlist.html#takeFirst">takeFirst</a>();</pre>
+<p>Inserting and removing items at either ends of the list is very fast (<a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a> in most cases), because <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> preallocates extra space on both sides of its internal buffer to allow for fast growth at both ends of the list.</p>
+<p>If you want to find all occurrences of a particular value in a list, use <a href="http://doc.qt.io/qt-5/qlist.html#indexOf">indexOf</a>() or <a href="http://doc.qt.io/qt-5/qlist.html#lastIndexOf">lastIndexOf</a>(). The former searches forward starting from a given index position, the latter searches backward. Both return the index of a matching item if they find it; otherwise, they return -1. For example:</p>
+<pre class="cpp"><span class="type">int</span> i <span class="operator">=</span> list<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlist.html#indexOf">indexOf</a>(<span class="string">&quot;Jane&quot;</span>);
+<span class="keyword">if</span> (i <span class="operator">!</span><span class="operator">=</span> <span class="operator">-</span><span class="number">1</span>)
+&#32;   cout <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;First occurrence of Jane is at position &quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> i <span class="operator">&lt;</span><span class="operator">&lt;</span> endl;</pre>
+<p>If you simply want to check whether a list contains a particular value, use <a href="http://doc.qt.io/qt-5/qlist.html#contains">contains</a>(). If you want to find out how many times a particular value occurs in the list, use <a href="http://doc.qt.io/qt-5/qlist.html#count">count</a>(). If you want to replace all occurrences of a particular value with another, use <a href="http://doc.qt.io/qt-5/qlist.html#replace">replace</a>().</p>
+<p><a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&#39;s value type must be an <a href="http://doc.qt.io/qt-5/containers.html#assignable-data-type">assignable data type</a>. This covers most data types that are commonly used, but the compiler won&#39;t let you, for example, store a <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> as a value; instead, store a <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> *. A few functions have additional requirements; for example, <a href="http://doc.qt.io/qt-5/qlist.html#indexOf">indexOf</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#lastIndexOf">lastIndexOf</a>() expect the value type to support <code>operator==()</code>. These requirements are documented on a per-function basis.</p>
+<p>Like the other container classes, <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> provides <a href="http://doc.qt.io/qt-5/containers.html#java-style-iterators">Java-style iterators</a> (<a href="http://doc.qt.io/qt-5/qlistiterator.html">QListIterator</a> and <a href="http://doc.qt.io/qt-5/qmutablelistiterator.html">QMutableListIterator</a>) and <a href="http://doc.qt.io/qt-5/containers.html#stl-style-iterators">STL-style iterators</a> (<a href="http://doc.qt.io/qt-5/qlist-const-iterator.html">QList::const_iterator</a> and <a href="http://doc.qt.io/qt-5/qlist-iterator.html">QList::iterator</a>). In practice, these are rarely used, because you can use indexes into the <a href="http://doc.qt.io/qt-5/qlist.html">QList</a>. <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> is implemented in such a way that direct index-based access is just as fast as using iterators.</p>
+<p><a href="http://doc.qt.io/qt-5/qlist.html">QList</a> does <i>not</i> support inserting, prepending, appending or replacing with references to its own values. Doing so will cause your application to abort with an error message.</p>
+<p>To make <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> as efficient as possible, its member functions don&#39;t validate their input before using it. Except for <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>(), member functions always assume the list is <i>not</i> empty. Member functions that take index values as parameters always assume their index value parameters are in the valid range. This means <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> member functions can fail. If you define QT_NO_DEBUG when you compile, failures will not be detected. If you <i>don&#39;t</i> define QT_NO_DEBUG, failures will be detected using <a href="http://doc.qt.io/qt-5/qtglobal.html#Q_ASSERT">Q_ASSERT</a>() or <a href="http://doc.qt.io/qt-5/qtglobal.html#Q_ASSERT_X">Q_ASSERT_X</a>() with an appropriate message.</p>
+<p>To avoid failures when your list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling other member functions. If you must pass an index value that might not be in the valid range, check that it is less than the value returned by <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>() but <i>not</i> less than 0.</p>
+<a name="more-members"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-341700' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/list.rs.html#9625-10399' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.append' class='method'><code>fn <a href='#method.append' class='fnname'>append</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefAppendArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefAppendArgs'>ListPairCDoublePointFRefRefAppendArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::append</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn append(&amp;mut self, &amp;::list::ListPairCDoublePointFRefRef) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::append(const QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#append-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Appends the items of the <i>value</i> list to this list.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-lt-lt">operator&lt;&lt;</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#operator-2b-eq">operator+=</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn append(&amp;mut self, &amp;::pair::PairCDoublePointFRef) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::append(const QPair&lt;double, QPointF&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#append">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts <i>value</i> at the end of the list.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list<span class="operator">.</span>append(<span class="string">&quot;one&quot;</span>);
+list<span class="operator">.</span>append(<span class="string">&quot;two&quot;</span>);
+list<span class="operator">.</span>append(<span class="string">&quot;three&quot;</span>);
+<span class="comment">// list: [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]</span></pre>
+<p>This is the same as list.insert(<a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>(), <i>value</i>).</p>
+<p>If this list is not shared, this operation is typically very fast (amortized <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>), because <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> preallocates extra space on both sides of its internal buffer to allow for fast growth at both ends of the list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-lt-lt">operator&lt;&lt;</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#prepend">prepend</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#insert">insert</a>().</p></div></p>
+</div><h4 id='method.at' class='method'><code>fn <a href='#method.at' class='fnname'>at</a>&lt;'l0&gt;(&amp;'l0 self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; &amp;'l0 <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::at(int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#at">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item at index position <i>i</i> in the list. <i>i</i> must be a valid index position in the list (i.e., 0 &lt;= <i>i</i> &lt; <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>()).</p>
+<p>This function is very fast (<a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#value">value</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#operator-5b-5d">operator[]</a>().</p></div></p>
+</div><h4 id='method.back' class='method'><code>fn <a href='#method.back' class='fnname'>back</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::back() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#back-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.back_mut' class='method'><code>fn <a href='#method.back_mut' class='fnname'>back_mut</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::back()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#back">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#last">last</a>(). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p></div></p>
+</div><h4 id='method.clear' class='method'><code>fn <a href='#method.clear' class='fnname'>clear</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::clear()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#clear">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes all items from the list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeAll">removeAll</a>().</p></div></p>
+</div><h4 id='method.contains' class='method'><code>fn <a href='#method.contains' class='fnname'>contains</a>(&amp;self, t: &amp;<a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QList&lt;QPair&lt;double, QPointF&gt;&gt;::contains(const QPair&lt;double, QPointF&gt;&amp; t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#contains">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the list contains an occurrence of <i>value</i>; otherwise returns <code>false</code>.</p>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#indexOf">indexOf</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#count">count</a>().</p></div></p>
+</div><h4 id='method.count' class='method'><code>fn <a href='#method.count' class='fnname'>count</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefCountArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefCountArgs'>ListPairCDoublePointFRefRefCountArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::count</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn count(&amp;self, ()) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QList&lt;QPair&lt;double, QPointF&gt;&gt;::count() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#count-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of items in the list. This is effectively the same as <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn count(&amp;self, &amp;::pair::PairCDoublePointFRef) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QList&lt;QPair&lt;double, QPointF&gt;&gt;::count(const QPair&lt;double, QPointF&gt;&amp; t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#count">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of occurrences of <i>value</i> in the list.</p>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#contains">contains</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#indexOf">indexOf</a>().</p></div></p>
+</div><h4 id='method.detach' class='method'><code>fn <a href='#method.detach' class='fnname'>detach</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::detach()</code></span></p>
+</div><h4 id='method.detach_shared' class='method'><code>fn <a href='#method.detach_shared' class='fnname'>detach_shared</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::detachShared()</code></span></p>
+</div><h4 id='method.empty' class='method'><code>fn <a href='#method.empty' class='fnname'>empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QList&lt;QPair&lt;double, QPointF&gt;&gt;::empty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#empty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() and returns <code>true</code> if the list is empty.</p></div></p>
+</div><h4 id='method.ends_with' class='method'><code>fn <a href='#method.ends_with' class='fnname'>ends_with</a>(&amp;self, t: &amp;<a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QList&lt;QPair&lt;double, QPointF&gt;&gt;::endsWith(const QPair&lt;double, QPointF&gt;&amp; t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#endsWith">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this list is not empty and its last item is equal to <i>value</i>; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#contains">contains</a>().</p></div></p>
+</div><h4 id='method.first' class='method'><code>fn <a href='#method.first' class='fnname'>first</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::first() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#first-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.first_mut' class='method'><code>fn <a href='#method.first_mut' class='fnname'>first_mut</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::first()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#first">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a reference to the first item in the list. The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#last">last</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>().</p></div></p>
+</div><h4 id='method.front' class='method'><code>fn <a href='#method.front' class='fnname'>front</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::front() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#front-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.front_mut' class='method'><code>fn <a href='#method.front_mut' class='fnname'>front_mut</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::front()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#front">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#first">first</a>(). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p></div></p>
+</div><h4 id='method.index_of' class='method'><code>fn <a href='#method.index_of' class='fnname'>index_of</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefIndexOfArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefIndexOfArgs'>ListPairCDoublePointFRefRefIndexOfArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::indexOf</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn index_of(&amp;self, &amp;::pair::PairCDoublePointFRef) -&gt; libc::c_int</code><br>2) <code>fn index_of(&amp;self, (&amp;::pair::PairCDoublePointFRef, libc::c_int)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QList&lt;QPair&lt;double, QPointF&gt;&gt;::indexOf(const QPair&lt;double, QPointF&gt;&amp; t, int from = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#indexOf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index position of the first occurrence of <i>value</i> in the list, searching forward from index position <i>from</i>. Returns -1 if no item matched.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;C&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span>;
+list<span class="operator">.</span>indexOf(<span class="string">&quot;B&quot;</span>);          <span class="comment">// returns 1</span>
+list<span class="operator">.</span>indexOf(<span class="string">&quot;B&quot;</span><span class="operator">,</span> <span class="number">1</span>);       <span class="comment">// returns 1</span>
+list<span class="operator">.</span>indexOf(<span class="string">&quot;B&quot;</span><span class="operator">,</span> <span class="number">2</span>);       <span class="comment">// returns 3</span>
+list<span class="operator">.</span>indexOf(<span class="string">&quot;X&quot;</span>);          <span class="comment">// returns -1</span></pre>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> uses 0-based indexes, just like C++ arrays. Negative indexes are not supported with the exception of the value mentioned above.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#lastIndexOf">lastIndexOf</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#contains">contains</a>().</p></div></p>
+</div><h4 id='method.insert' class='method'><code>fn <a href='#method.insert' class='fnname'>insert</a>(&amp;mut self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, t: &amp;<a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::insert(int i, const QPair&lt;double, QPointF&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#insert">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts <i>value</i> at index position <i>i</i> in the list. If <i>i</i> is 0, the value is prepended to the list. If <i>i</i> is <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>(), the value is appended to the list.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;alpha&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;beta&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;delta&quot;</span>;
+list<span class="operator">.</span>insert(<span class="number">2</span><span class="operator">,</span> <span class="string">&quot;gamma&quot;</span>);
+<span class="comment">// list: [&quot;alpha&quot;, &quot;beta&quot;, &quot;gamma&quot;, &quot;delta&quot;]</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#prepend">prepend</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#replace">replace</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>().</p></div></p>
+</div><h4 id='method.is_detached' class='method'><code>fn <a href='#method.is_detached' class='fnname'>is_detached</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QList&lt;QPair&lt;double, QPointF&gt;&gt;::isDetached() const</code></span></p>
+</div><h4 id='method.is_empty' class='method'><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QList&lt;QPair&lt;double, QPointF&gt;&gt;::isEmpty() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the list contains no items; otherwise returns false.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>().</p></div></p>
+</div><h4 id='method.is_shared_with' class='method'><code>fn <a href='#method.is_shared_with' class='fnname'>is_shared_with</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QList&lt;QPair&lt;double, QPointF&gt;&gt;::isSharedWith(const QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; other) const</code></span></p>
+</div><h4 id='method.last' class='method'><code>fn <a href='#method.last' class='fnname'>last</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::last() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#last-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p></div></p>
+</div><h4 id='method.last_index_of' class='method'><code>fn <a href='#method.last_index_of' class='fnname'>last_index_of</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefLastIndexOfArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefLastIndexOfArgs'>ListPairCDoublePointFRefRefLastIndexOfArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::lastIndexOf</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn last_index_of(&amp;self, &amp;::pair::PairCDoublePointFRef) -&gt; libc::c_int</code><br>2) <code>fn last_index_of(&amp;self, (&amp;::pair::PairCDoublePointFRef, libc::c_int)) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>int QList&lt;QPair&lt;double, QPointF&gt;&gt;::lastIndexOf(const QPair&lt;double, QPointF&gt;&amp; t, int from = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#lastIndexOf">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the index position of the last occurrence of <i>value</i> in the list, searching backward from index position <i>from</i>. If <i>from</i> is -1 (the default), the search starts at the last item. Returns -1 if no item matched.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;C&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span>;
+list<span class="operator">.</span>lastIndexOf(<span class="string">&quot;B&quot;</span>);      <span class="comment">// returns 3</span>
+list<span class="operator">.</span>lastIndexOf(<span class="string">&quot;B&quot;</span><span class="operator">,</span> <span class="number">3</span>);   <span class="comment">// returns 3</span>
+list<span class="operator">.</span>lastIndexOf(<span class="string">&quot;B&quot;</span><span class="operator">,</span> <span class="number">2</span>);   <span class="comment">// returns 1</span>
+list<span class="operator">.</span>lastIndexOf(<span class="string">&quot;X&quot;</span>);      <span class="comment">// returns -1</span></pre>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p>Note that <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> uses 0-based indexes, just like C++ arrays. Negative indexes are not supported with the exception of the value mentioned above.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#indexOf">indexOf</a>().</p></div></p>
+</div><h4 id='method.last_mut' class='method'><code>fn <a href='#method.last_mut' class='fnname'>last_mut</a>&lt;'l0&gt;(&amp;'l0 mut self) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::last()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#last">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a reference to the last item in the list. The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#first">first</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>().</p></div></p>
+</div><h4 id='method.length' class='method'><code>fn <a href='#method.length' class='fnname'>length</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QList&lt;QPair&lt;double, QPointF&gt;&gt;::length() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#length">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is identical to <a href="http://doc.qt.io/qt-5/qlist.html#count">count</a>().</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#count">count</a>().</p></div></p>
+</div><h4 id='method.mid' class='method'><code>fn <a href='#method.mid' class='fnname'>mid</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefMidArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefMidArgs'>ListPairCDoublePointFRefRefMidArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::mid</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn mid(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListPairCDoublePointFRefRef&gt;</code><br>2) <code>fn mid(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListPairCDoublePointFRefRef&gt;</code><br>3) <code>fn mid(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListPairCDoublePointFRefRef</code><br>4) <code>fn mid(&amp;self, (libc::c_int, libc::c_int, cpp_utils::AsStruct)) -&gt; ::list::ListPairCDoublePointFRefRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt; QList&lt;QPair&lt;double, QPointF&gt;&gt;::mid(int pos, int length = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#mid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a sub-list which includes elements from this list, starting at position <i>pos</i>. If <i>length</i> is -1 (the default), all elements from <i>pos</i> are included; otherwise <i>length</i> elements (or all remaining elements if there are less than <i>length</i> elements) are included.</p></div></p>
+</div><h4 id='method.move_' class='method'><code>fn <a href='#method.move_' class='fnname'>move_</a>(&amp;mut self, from: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, to: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::move(int from, int to)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#move">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Moves the item at index position <i>from</i> to index position <i>to</i>.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;C&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;D&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;E&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;F&quot;</span>;
+list<span class="operator">.</span>move(<span class="number">1</span><span class="operator">,</span> <span class="number">4</span>);
+<span class="comment">// list: [&quot;A&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;B&quot;, &quot;F&quot;]</span></pre>
+<p>This is the same as insert(<i>to</i>, <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(<i>from</i>)).This function assumes that both <i>from</i> and <i>to</i> are at least 0 but less than <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>(). To avoid failure, test that both <i>from</i> and <i>to</i> are at least 0 and less than <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#swap">swap</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#insert">insert</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefNewArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefNewArgs'>ListPairCDoublePointFRefRefNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::QList</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::list::ListPairCDoublePointFRefRef</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListPairCDoublePointFRefRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QList&lt;QPair&lt;double, QPointF&gt;&gt;::QList()</code></span></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::list::ListPairCDoublePointFRefRef, cpp_utils::AsStruct)) -&gt; ::list::ListPairCDoublePointFRefRef</code><br>2) <code>fn new((&amp;::list::ListPairCDoublePointFRefRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListPairCDoublePointFRefRef&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QList&lt;QPair&lt;double, QPointF&gt;&gt;::QList(const QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; l)</code></span></p>
+</div><h4 id='method.op_add' class='method'><code>fn <a href='#method.op_add' class='fnname'>op_add</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefOpAddArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefOpAddArgs'>ListPairCDoublePointFRefRefOpAddArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator+</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn op_add(&amp;self, (&amp;::list::ListPairCDoublePointFRefRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::list::ListPairCDoublePointFRefRef&gt;</code><br>2) <code>fn op_add(&amp;self, (&amp;::list::ListPairCDoublePointFRefRef, cpp_utils::AsStruct)) -&gt; ::list::ListPairCDoublePointFRefRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt; QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator+(const QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; l) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list that contains all the items in this list followed by all the items in the <i>other</i> list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b-eq">operator+=</a>().</p></div></p>
+</div><h4 id='method.op_add_assign' class='method'><code>fn <a href='#method.op_add_assign' class='fnname'>op_add_assign</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a> <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefOpAddAssignArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefOpAddAssignArgs'>ListPairCDoublePointFRefRefOpAddAssignArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator+=</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_add_assign(&amp;mut self, &amp;&#39;l1 ::list::ListPairCDoublePointFRefRef) -&gt; &amp;&#39;l0 mut ::list::ListPairCDoublePointFRefRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator+=(const QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; l)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Appends the items of the <i>other</i> list to this list and returns a reference to this list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b">operator+</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_add_assign(&amp;mut self, &amp;&#39;l1 ::pair::PairCDoublePointFRef) -&gt; &amp;&#39;l0 mut ::list::ListPairCDoublePointFRefRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator+=(const QPair&lt;double, QPointF&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b-eq-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Appends <i>value</i> to the list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#operator-lt-lt">operator&lt;&lt;</a>().</p></div></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, l: &amp;'l1 <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator=(const QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; l)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns <i>other</i> to this list and returns a reference to this list.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, l: &amp;<a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator==(const QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; l) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <i>other</i> is equal to this list; otherwise returns false.</p>
+<p>Two lists are considered equal if they contain the same values in the same order.</p>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-not-eq">operator!=</a>().</p></div></p>
+</div><h4 id='method.op_index' class='method'><code>fn <a href='#method.op_index' class='fnname'>op_index</a>&lt;'l0&gt;(&amp;'l0 self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; &amp;'l0 <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator[](int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-5b-5d-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Same as <a href="http://doc.qt.io/qt-5/qlist.html#at">at</a>(). This function runs in <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>.</p></div></p>
+</div><h4 id='method.op_index_mut' class='method'><code>fn <a href='#method.op_index_mut' class='fnname'>op_index_mut</a>&lt;'l0&gt;(&amp;'l0 mut self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QPair&lt;double, QPointF&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator[](int i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-5b-5d">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the item at index position <i>i</i> as a modifiable reference. <i>i</i> must be a valid index position in the list (i.e., 0 &lt;= <i>i</i> &lt; <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>()).</p>
+<p>If this function is called on a list that is currently being shared, it will trigger a copy of all elements. Otherwise, this function runs in <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>. If you do not want to modify the list you should use <a href="http://doc.qt.io/qt-5/qlist.html#at">QList::at</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#at">at</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#value">value</a>().</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, l: &amp;<a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator!=(const QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; l) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if <i>other</i> is not equal to this list; otherwise returns <code>false</code>.</p>
+<p>Two lists are considered equal if they contain the same values in the same order.</p>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-eq-eq">operator==</a>().</p></div></p>
+</div><h4 id='method.op_shl' class='method'><code>fn <a href='#method.op_shl' class='fnname'>op_shl</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; &amp;'largs mut <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a> <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefOpShlArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefOpShlArgs'>ListPairCDoublePointFRefRefOpShlArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator&lt;&lt;</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, &amp;&#39;l1 ::list::ListPairCDoublePointFRefRef) -&gt; &amp;&#39;l0 mut ::list::ListPairCDoublePointFRefRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator&lt;&lt;(const QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; l)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-lt-lt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Appends the items of the <i>other</i> list to this list and returns a reference to this list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-2b-eq">operator+=</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>().</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn op_shl(&amp;mut self, &amp;&#39;l1 ::pair::PairCDoublePointFRef) -&gt; &amp;&#39;l0 mut ::list::ListPairCDoublePointFRefRef</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; QList&lt;QPair&lt;double, QPointF&gt;&gt;::operator&lt;&lt;(const QPair&lt;double, QPointF&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#operator-lt-lt-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Appends <i>value</i> to the list.</p></div></p>
+</div><h4 id='method.pop_back' class='method'><code>fn <a href='#method.pop_back' class='fnname'>pop_back</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::pop_back()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#pop_back">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#removeLast">removeLast</a>(). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p></div></p>
+</div><h4 id='method.pop_front' class='method'><code>fn <a href='#method.pop_front' class='fnname'>pop_front</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::pop_front()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#pop_front">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">removeFirst</a>(). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p></div></p>
+</div><h4 id='method.prepend' class='method'><code>fn <a href='#method.prepend' class='fnname'>prepend</a>(&amp;mut self, t: &amp;<a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::prepend(const QPair&lt;double, QPointF&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#prepend">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Inserts <i>value</i> at the beginning of the list.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list<span class="operator">.</span>prepend(<span class="string">&quot;one&quot;</span>);
+list<span class="operator">.</span>prepend(<span class="string">&quot;two&quot;</span>);
+list<span class="operator">.</span>prepend(<span class="string">&quot;three&quot;</span>);
+<span class="comment">// list: [&quot;three&quot;, &quot;two&quot;, &quot;one&quot;]</span></pre>
+<p>This is the same as list.insert(0, <i>value</i>).</p>
+<p>If this list is not shared, this operation is typically very fast (amortized <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>), because <a href="http://doc.qt.io/qt-5/qlist.html">QList</a> preallocates extra space on both sides of its internal buffer to allow for fast growth at both ends of the list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#insert">insert</a>().</p></div></p>
+</div><h4 id='method.push_back' class='method'><code>fn <a href='#method.push_back' class='fnname'>push_back</a>(&amp;mut self, t: &amp;<a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::push_back(const QPair&lt;double, QPointF&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#push_back">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#append">append</a>(<i>value</i>).</p></div></p>
+</div><h4 id='method.push_front' class='method'><code>fn <a href='#method.push_front' class='fnname'>push_front</a>(&amp;mut self, t: &amp;<a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::push_front(const QPair&lt;double, QPointF&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#push_front">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function is provided for STL compatibility. It is equivalent to <a href="http://doc.qt.io/qt-5/qlist.html#prepend">prepend</a>(<i>value</i>).</p></div></p>
+</div><h4 id='method.remove_all' class='method'><code>fn <a href='#method.remove_all' class='fnname'>remove_all</a>(&amp;mut self, t: &amp;<a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a>) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QList&lt;QPair&lt;double, QPointF&gt;&gt;::removeAll(const QPair&lt;double, QPointF&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#removeAll">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes all occurrences of <i>value</i> in the list and returns the number of entries removed.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;sun&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;cloud&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;sun&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;rain&quot;</span>;
+list<span class="operator">.</span>removeAll(<span class="string">&quot;sun&quot;</span>);
+<span class="comment">// list: [&quot;cloud&quot;, &quot;rain&quot;]</span></pre>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeOne">removeOne</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#replace">replace</a>().</p></div></p>
+</div><h4 id='method.remove_at' class='method'><code>fn <a href='#method.remove_at' class='fnname'>remove_at</a>(&amp;mut self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::removeAt(int i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#removeAt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the item at index position <i>i</i>. <i>i</i> must be a valid index position in the list (i.e., 0 &lt;= <i>i</i> &lt; <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>()).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">removeFirst</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#removeLast">removeLast</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#removeOne">removeOne</a>().</p></div></p>
+</div><h4 id='method.remove_first' class='method'><code>fn <a href='#method.remove_first' class='fnname'>remove_first</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::removeFirst()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the first item in the list. Calling this function is equivalent to calling <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(0). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#takeFirst">takeFirst</a>().</p></div></p>
+</div><h4 id='method.remove_last' class='method'><code>fn <a href='#method.remove_last' class='fnname'>remove_last</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::removeLast()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#removeLast">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the last item in the list. Calling this function is equivalent to calling <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(<a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>() - 1). The list must not be empty. If the list can be empty, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#takeLast">takeLast</a>().</p></div></p>
+</div><h4 id='method.remove_one' class='method'><code>fn <a href='#method.remove_one' class='fnname'>remove_one</a>(&amp;mut self, t: &amp;<a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QList&lt;QPair&lt;double, QPointF&gt;&gt;::removeOne(const QPair&lt;double, QPointF&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#removeOne">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the first occurrence of <i>value</i> in the list and returns true on success; otherwise returns <code>false</code>.</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;sun&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;cloud&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;sun&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;rain&quot;</span>;
+list<span class="operator">.</span>removeOne(<span class="string">&quot;sun&quot;</span>);
+<span class="comment">// list: [&quot;cloud&quot;, ,&quot;sun&quot;, &quot;rain&quot;]</span></pre>
+<p>This function requires the value type to have an implementation of <code>operator==()</code>.</p>
+<p>This function was introduced in  Qt 4.4.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeAll">removeAll</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#replace">replace</a>().</p></div></p>
+</div><h4 id='method.replace' class='method'><code>fn <a href='#method.replace' class='fnname'>replace</a>(&amp;mut self, i: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, t: &amp;<a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::replace(int i, const QPair&lt;double, QPointF&gt;&amp; t)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#replace">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Replaces the item at index position <i>i</i> with <i>value</i>. <i>i</i> must be a valid index position in the list (i.e., 0 &lt;= <i>i</i> &lt; <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>()).</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#operator-5b-5d">operator[]</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>().</p></div></p>
+</div><h4 id='method.reserve' class='method'><code>fn <a href='#method.reserve' class='fnname'>reserve</a>(&amp;mut self, size: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::reserve(int size)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#reserve">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Reserve space for <i>alloc</i> elements.</p>
+<p>If <i>alloc</i> is smaller than the current size of the list, nothing will happen.</p>
+<p>Use this function to avoid repetetive reallocation of <a href="http://doc.qt.io/qt-5/qlist.html">QList</a>&#39;s internal data if you can predict how many elements will be appended. Note that the reservation applies only to the internal pointer array.</p>
+<p>This function was introduced in  Qt 4.7.</p></div></p>
+</div><h4 id='method.set_sharable' class='method'><code>fn <a href='#method.set_sharable' class='fnname'>set_sharable</a>(&amp;mut self, sharable: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::setSharable(bool sharable)</code></span></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QList&lt;QPair&lt;double, QPointF&gt;&gt;::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of items in the list.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#count">count</a>().</p></div></p>
+</div><h4 id='method.starts_with' class='method'><code>fn <a href='#method.starts_with' class='fnname'>starts_with</a>(&amp;self, t: &amp;<a class='struct' href='../../qt_widgets/pair/struct.PairCDoublePointFRef.html' title='qt_widgets::pair::PairCDoublePointFRef'>PairCDoublePointFRef</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QList&lt;QPair&lt;double, QPointF&gt;&gt;::startsWith(const QPair&lt;double, QPointF&gt;&amp; t) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#startsWith">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this list is not empty and its first item is equal to <i>value</i>; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#contains">contains</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefSwapArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefSwapArgs'>ListPairCDoublePointFRefRefSwapArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::swap</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn swap(&amp;mut self, &amp;mut ::list::ListPairCDoublePointFRefRef) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::swap(QList&lt;QPair&lt;double, QPointF&gt;&gt;&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps list <i>other</i> with this list. This operation is very fast and never fails.</p>
+<p>This function was introduced in  Qt 4.8.</p></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn swap(&amp;mut self, (libc::c_int, libc::c_int)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QList&lt;QPair&lt;double, QPointF&gt;&gt;::swap(int i, int j)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#swap-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Exchange the item at index position <i>i</i> with the item at index position <i>j</i>. This function assumes that both <i>i</i> and <i>j</i> are at least 0 but less than <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>(). To avoid failure, test that both <i>i</i> and <i>j</i> are at least 0 and less than <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>().</p>
+<p>Example:</p>
+<pre class="cpp"><span class="type"><a href="http://doc.qt.io/qt-5/qlist.html#QList">QList</a></span><span class="operator">&lt;</span><span class="type"><a href="http://doc.qt.io/qt-5/qstring.html">QString</a></span><span class="operator">&gt;</span> list;
+list <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;A&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;B&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;C&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;D&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;E&quot;</span> <span class="operator">&lt;</span><span class="operator">&lt;</span> <span class="string">&quot;F&quot;</span>;
+list<span class="operator">.</span><a href="http://doc.qt.io/qt-5/qlist.html#swap">swap</a>(<span class="number">1</span><span class="operator">,</span> <span class="number">4</span>);
+<span class="comment">// list: [&quot;A&quot;, &quot;E&quot;, &quot;C&quot;, &quot;D&quot;, &quot;B&quot;, &quot;F&quot;]</span></pre>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#move">move</a>().</p></div></p>
+</div><h4 id='method.take_at' class='method'><code>fn <a href='#method.take_at' class='fnname'>take_at</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefTakeAtArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefTakeAtArgs'>ListPairCDoublePointFRefRefTakeAtArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::takeAt</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn take_at(&amp;mut self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pair::PairCDoublePointFRef&gt;</code><br>2) <code>fn take_at(&amp;mut self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::pair::PairCDoublePointFRef</code><br>
+C++ method: <span style='color: green;'><code>QPair&lt;double, QPointF&gt; QList&lt;QPair&lt;double, QPointF&gt;&gt;::takeAt(int i)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#takeAt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the item at index position <i>i</i> and returns it. <i>i</i> must be a valid index position in the list (i.e., 0 &lt;= <i>i</i> &lt; <a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>()).</p>
+<p>If you don&#39;t use the return value, <a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>() is more efficient.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#removeAt">removeAt</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeFirst">takeFirst</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#takeLast">takeLast</a>().</p></div></p>
+</div><h4 id='method.take_first' class='method'><code>fn <a href='#method.take_first' class='fnname'>take_first</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefTakeFirstArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefTakeFirstArgs'>ListPairCDoublePointFRefRefTakeFirstArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::takeFirst</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn take_first(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pair::PairCDoublePointFRef&gt;</code><br>2) <code>fn take_first(&amp;mut self, cpp_utils::AsStruct) -&gt; ::pair::PairCDoublePointFRef</code><br>
+C++ method: <span style='color: green;'><code>QPair&lt;double, QPointF&gt; QList&lt;QPair&lt;double, QPointF&gt;&gt;::takeFirst()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#takeFirst">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the first item in the list and returns it. This is the same as <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(0). This function assumes the list is not empty. To avoid failure, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p>If this list is not shared, this operation takes <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>.</p>
+<p>If you don&#39;t use the return value, <a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">removeFirst</a>() is more efficient.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#takeLast">takeLast</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#removeFirst">removeFirst</a>().</p></div></p>
+</div><h4 id='method.take_last' class='method'><code>fn <a href='#method.take_last' class='fnname'>take_last</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefTakeLastArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefTakeLastArgs'>ListPairCDoublePointFRefRefTakeLastArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::takeLast</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn take_last(&amp;mut self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::pair::PairCDoublePointFRef&gt;</code><br>2) <code>fn take_last(&amp;mut self, cpp_utils::AsStruct) -&gt; ::pair::PairCDoublePointFRef</code><br>
+C++ method: <span style='color: green;'><code>QPair&lt;double, QPointF&gt; QList&lt;QPair&lt;double, QPointF&gt;&gt;::takeLast()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#takeLast">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the last item in the list and returns it. This is the same as <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(<a href="http://doc.qt.io/qt-5/qlist.html#size">size</a>() - 1). This function assumes the list is not empty. To avoid failure, call <a href="http://doc.qt.io/qt-5/qlist.html#isEmpty">isEmpty</a>() before calling this function.</p>
+<p>If this list is not shared, this operation takes <a href="http://doc.qt.io/qt-5/containers.html#constant-time">constant time</a>.</p>
+<p>If you don&#39;t use the return value, <a href="http://doc.qt.io/qt-5/qlist.html#removeLast">removeLast</a>() is more efficient.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#takeFirst">takeFirst</a>(), <a href="http://doc.qt.io/qt-5/qlist.html#takeAt">takeAt</a>(), and <a href="http://doc.qt.io/qt-5/qlist.html#removeLast">removeLast</a>().</p></div></p>
+</div><h4 id='method.value' class='method'><code>fn <a href='#method.value' class='fnname'>value</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefValueArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefValueArgs'>ListPairCDoublePointFRefRefValueArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QList&lt;QPair&lt;double, QPointF&gt;&gt;::value</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-6' class='section-header'><a href='#variant-1-6'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn value(&amp;self, (libc::c_int, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pair::PairCDoublePointFRef&gt;</code><br>2) <code>fn value(&amp;self, (libc::c_int, cpp_utils::AsStruct)) -&gt; ::pair::PairCDoublePointFRef</code><br>
+C++ method: <span style='color: green;'><code>QPair&lt;double, QPointF&gt; QList&lt;QPair&lt;double, QPointF&gt;&gt;::value(int i) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#value">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the value at index position <i>i</i> in the list.</p>
+<p>If the index <i>i</i> is out of bounds, the function returns a <a href="http://doc.qt.io/qt-5/containers.html#default-constructed-value">default-constructed value</a>. If you are certain that the index is going to be within bounds, you can use <a href="http://doc.qt.io/qt-5/qlist.html#at">at</a>() instead, which is slightly faster.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qlist.html#at">at</a>() and <a href="http://doc.qt.io/qt-5/qlist.html#operator-5b-5d">operator[]</a>().</p></div></p>
+
+<h2 id='variant-2-6' class='section-header'><a href='#variant-2-6'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn value(&amp;self, (libc::c_int, &amp;::pair::PairCDoublePointFRef, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pair::PairCDoublePointFRef&gt;</code><br>2) <code>fn value(&amp;self, (libc::c_int, &amp;::pair::PairCDoublePointFRef, cpp_utils::AsStruct)) -&gt; ::pair::PairCDoublePointFRef</code><br>
+C++ method: <span style='color: green;'><code>QPair&lt;double, QPointF&gt; QList&lt;QPair&lt;double, QPointF&gt;&gt;::value(int i, const QPair&lt;double, QPointF&gt;&amp; defaultValue) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#value-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>If the index <i>i</i> is out of bounds, the function returns <i>defaultValue</i>.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefAppendArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefAppendArgs'>ListPairCDoublePointFRefRefAppendArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-346385' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/list.rs.html#20347-20352' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec' class='method'><code>fn <a href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefAppendArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefOpAddAssignArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefOpAddAssignArgs'>ListPairCDoublePointFRefRefOpAddAssignArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-346544' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/list.rs.html#20546-20554' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-1' class='method'><code>fn <a href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefOpAddAssignArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefOpShlArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefOpShlArgs'>ListPairCDoublePointFRefRefOpShlArgs</a>&lt;'largs&gt; for &amp;'largs <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-346563' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/list.rs.html#20570-20578' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-2' class='method'><code>fn <a href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefOpShlArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a>) -&gt; &amp;'largs mut <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'largs&gt; <a class='trait' href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefSwapArgs.html' title='qt_widgets::list::overloading::ListPairCDoublePointFRefRefSwapArgs'>ListPairCDoublePointFRefRefSwapArgs</a>&lt;'largs&gt; for &amp;'largs mut <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-346589' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/list.rs.html#20599-20604' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.exec-3' class='method'><code>fn <a href='../../qt_widgets/list/overloading/trait.ListPairCDoublePointFRefRefSwapArgs.html#tymethod.exec' class='fnname'>exec</a>(self, original_self: &amp;'largs mut <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a>)</code></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-341698' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/list.rs.html#9619-9623' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-341900' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/list.rs.html#10401-10410' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QList&lt;QPair&lt;double, QPointF&gt;&gt;::~QList()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qlist.html#dtor.QList">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the list. References to the values in the list and all iterators of this list become invalid.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_widgets/list/struct.ListPairCDoublePointFRefRef.html' title='qt_widgets::list::ListPairCDoublePointFRefRef'>ListPairCDoublePointFRefRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-341903' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/list.rs.html#10412-10416' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

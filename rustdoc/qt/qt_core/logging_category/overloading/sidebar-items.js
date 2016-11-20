@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["LoggingCategoryNewArgs","This trait represents a set of arguments accepted by LoggingCategory::new method."]]});

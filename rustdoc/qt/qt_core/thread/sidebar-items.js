@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Priority","C++ type: <span style='color: green;'>```QThread::Priority```</span>"]],"mod":[["overloading",""]],"struct":[["Thread","C++ type: <span style='color: green;'>```QThread```</span>"]]});

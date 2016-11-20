@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RawFont` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RawFont">
+
+    <title>qt_gui::raw_font::RawFont - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>raw_font</a></p><script>window.sidebarCurrent = {name: 'RawFont', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>raw_font</a>::<wbr><a class='struct' href=''>RawFont</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-142436' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/raw_font.rs.html#59-61' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RawFont {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QRawFont</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> class provides access to a single physical instance of a font.</p>
+<p><b>Note: </b><a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> is a low level class. For most purposes <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> is a more appropriate class.</p><p>Most commonly, when presenting text in a user interface, the exact fonts used to render the characters is to some extent unknown. This can be the case for several reasons: For instance, the actual, physical fonts present on the target system could be unexpected to the developers, or the text could contain user selected styles, sizes or writing systems that are not supported by font chosen in the code.</p>
+<p>Therefore, Qt&#39;s <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> class really represents a query for fonts. When text is interpreted, Qt will do its best to match the text to the query, but depending on the support, different fonts can be used behind the scenes.</p>
+<p>For most use cases, this is both expected and necessary, as it minimizes the possibility of text in the user interface being undisplayable. In some cases, however, more direct control over the process might be useful. It is for these use cases the <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> class exists.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> object represents a single, physical instance of a given font in a given pixel size. I.e. in the typical case it represents a set of TrueType or OpenType font tables and uses a user specified pixel size to convert metrics into logical pixel units. It can be used in combination with the <a href="http://doc.qt.io/qt-5/qglyphrun.html">QGlyphRun</a> class to draw specific glyph indexes at specific positions, and also have accessors to some relevant data in the physical font.</p>
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> only provides support for the main font technologies: GDI and DirectWrite on Windows platforms, <a href="http://doc.qt.io/qt-5/qt-embedded-fonts.html#freetype">FreeType</a> on Linux platforms and CoreText on Mac OS X. For other font back-ends, the APIs will be disabled.</p>
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> can be constructed in a number of ways:</p>
+<ul>
+<li>It can be constructed by calling QTextLayout::glyphs() or QTextFragment::glyphs(). The returned QGlyphs objects will contain <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> objects which represent the actual fonts used to render each portion of the text.</li>
+<li>It can be constructed by passing a <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> object to <a href="http://doc.qt.io/qt-5/qrawfont.html#fromFont">QRawFont::fromFont</a>(). The function will return a <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> object representing the font that will be selected as response to the <a href="http://doc.qt.io/qt-5/qfont.html">QFont</a> query and the selected writing system.</li>
+<li>It can be constructed by passing a file name or <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a> directly to the <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> constructor, or by calling <a href="http://doc.qt.io/qt-5/qrawfont.html#loadFromFile">loadFromFile</a>() or <a href="http://doc.qt.io/qt-5/qrawfont.html#loadFromData">loadFromData</a>(). In this case, the font will not be registered in <a href="http://doc.qt.io/qt-5/qfontdatabase.html">QFontDatabase</a>, and it will not be available as part of regular font selection.</li>
+</ul>
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> is considered local to the thread in which it is constructed (either using a constructor, or by calling <a href="http://doc.qt.io/qt-5/qrawfont.html#loadFromData">loadFromData</a>() or <a href="http://doc.qt.io/qt-5/qrawfont.html#loadFromFile">loadFromFile</a>()). The <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> cannot be moved to a different thread, but will have to be recreated in the thread in question.</p>
+<p><b>Note: </b>For the requirement of caching glyph indexes and font selections for static text to avoid reshaping and relayouting in the inner loop of an application, a better choice is the <a href="http://doc.qt.io/qt-5/qstatictext.html">QStaticText</a> class, since it optimizes the memory cost of the cache and also provides the possibility of paint engine specific caches for an additional speed-up.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142441' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/raw_font.rs.html#69-519' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.advances_for_glyph_indexes' class='method'><code>fn <a href='#method.advances_for_glyph_indexes' class='fnname'>advances_for_glyph_indexes</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontAdvancesForGlyphIndexesArgs.html' title='qt_gui::raw_font::overloading::RawFontAdvancesForGlyphIndexesArgs'>RawFontAdvancesForGlyphIndexesArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::advancesForGlyphIndexes</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn advances_for_glyph_indexes(&amp;self, (&amp;qt_core::vector::VectorCUint, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::vector::VectorPointFRef&gt;</code><br>2) <code>fn advances_for_glyph_indexes(&amp;self, (&amp;qt_core::vector::VectorCUint, cpp_utils::AsStruct)) -&gt; qt_core::vector::VectorPointFRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QPointF&gt; QRawFont::advancesForGlyphIndexes(const QVector&lt;unsigned int&gt;&amp; glyphIndexes) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#advancesForGlyphIndexes-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns the <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>&#39;s advances for each of the <i>glyphIndexes</i> in pixel units. The advances give the distance from the position of a given glyph to where the next glyph should be drawn to make it appear as if the two glyphs are unspaced. The advance of each glyph is calculated separately.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextline.html#horizontalAdvance">QTextLine::horizontalAdvance</a>() and <a href="http://doc.qt.io/qt-5/qfontmetricsf.html#width">QFontMetricsF::width</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn advances_for_glyph_indexes(&amp;self, (&amp;qt_core::vector::VectorCUint, qt_core::flags::Flags&lt;::raw_font::LayoutFlag&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::vector::VectorPointFRef&gt;</code><br>2) <code>fn advances_for_glyph_indexes(&amp;self, (&amp;qt_core::vector::VectorCUint, qt_core::flags::Flags&lt;::raw_font::LayoutFlag&gt;, cpp_utils::AsStruct)) -&gt; qt_core::vector::VectorPointFRef</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;QPointF&gt; QRawFont::advancesForGlyphIndexes(const QVector&lt;unsigned int&gt;&amp; glyphIndexes, QFlags&lt;QRawFont::LayoutFlag&gt; layoutFlags) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#advancesForGlyphIndexes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>&#39;s advances for each of the <i>glyphIndexes</i> in pixel units. The advances give the distance from the position of a given glyph to where the next glyph should be drawn to make it appear as if the two glyphs are unspaced. How the advances are calculated is controlled by <i>layoutFlags</i>.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextline.html#horizontalAdvance">QTextLine::horizontalAdvance</a>() and <a href="http://doc.qt.io/qt-5/qfontmetricsf.html#width">QFontMetricsF::width</a>().</p></div></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn advances_for_glyph_indexes(&amp;self, (*const libc::c_uint, *mut qt_core::point_f::PointF, libc::c_int)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QRawFont::advancesForGlyphIndexes(const unsigned int* glyphIndexes, QPointF* advances, int numGlyphs) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#advancesForGlyphIndexes-4">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns the <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>&#39;s advances for each of the <i>glyphIndexes</i> in pixel units. The advances give the distance from the position of a given glyph to where the next glyph should be drawn to make it appear as if the two glyphs are unspaced. The glyph indexes are given with the array <i>glyphIndexes</i> while the results are returned through <i>advances</i>, both of them must have <i>numGlyphs</i> elements. The advance of each glyph is calculated separately</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextline.html#horizontalAdvance">QTextLine::horizontalAdvance</a>() and <a href="http://doc.qt.io/qt-5/qfontmetricsf.html#width">QFontMetricsF::width</a>().</p></div></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <code>fn advances_for_glyph_indexes(&amp;self, (*const libc::c_uint, *mut qt_core::point_f::PointF, libc::c_int, qt_core::flags::Flags&lt;::raw_font::LayoutFlag&gt;)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QRawFont::advancesForGlyphIndexes(const unsigned int* glyphIndexes, QPointF* advances, int numGlyphs, QFlags&lt;QRawFont::LayoutFlag&gt; layoutFlags) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#advancesForGlyphIndexes-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>&#39;s advances for each of the <i>glyphIndexes</i> in pixel units. The advances give the distance from the position of a given glyph to where the next glyph should be drawn to make it appear as if the two glyphs are unspaced. The glyph indexes are given with the array <i>glyphIndexes</i> while the results are returned through <i>advances</i>, both of them must have <i>numGlyphs</i> elements. How the advances are calculated is controlled by <i>layoutFlags</i>.</p>
+<p>This function was introduced in  Qt 5.1.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextline.html#horizontalAdvance">QTextLine::horizontalAdvance</a>() and <a href="http://doc.qt.io/qt-5/qfontmetricsf.html#width">QFontMetricsF::width</a>().</p></div></p>
+</div><h4 id='method.alpha_map_for_glyph' class='method'><code>fn <a href='#method.alpha_map_for_glyph' class='fnname'>alpha_map_for_glyph</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontAlphaMapForGlyphArgs.html' title='qt_gui::raw_font::overloading::RawFontAlphaMapForGlyphArgs'>RawFontAlphaMapForGlyphArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::alphaMapForGlyph</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn alpha_map_for_glyph(&amp;self, (u32, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>2) <code>fn alpha_map_for_glyph(&amp;self, (u32, ::raw_font::AntialiasingType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>3) <code>fn alpha_map_for_glyph(&amp;self, (u32, ::raw_font::AntialiasingType, &amp;::transform::Transform, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::image::Image&gt;</code><br>4) <code>fn alpha_map_for_glyph(&amp;self, (u32, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>5) <code>fn alpha_map_for_glyph(&amp;self, (u32, ::raw_font::AntialiasingType, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>6) <code>fn alpha_map_for_glyph(&amp;self, (u32, ::raw_font::AntialiasingType, &amp;::transform::Transform, cpp_utils::AsStruct)) -&gt; ::image::Image</code><br>
+C++ method: <span style='color: green;'><code>QImage QRawFont::alphaMapForGlyph(quint32 glyphIndex, QRawFont::AntialiasingType antialiasingType = ?, const QTransform&amp; transform = ?) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#alphaMapForGlyph">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function returns a rasterized image of the glyph at the given <i>glyphIndex</i> in the underlying font, using the <i>transform</i> specified. If the <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> is not valid, this function will return an invalid <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>.</p>
+<p>If <i>antialiasingType</i> is set to <a href="http://doc.qt.io/qt-5/qrawfont.html#AntialiasingType-enum">QRawFont::SubPixelAntialiasing</a>, then the resulting image will be in <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_RGB32</a> and the RGB values of each pixel will represent the subpixel opacities of the pixel in the rasterization of the glyph. Otherwise, the image will be in the format of <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">QImage::Format_Indexed8</a> and each pixel will contain the opacity of the pixel in the rasterization.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#pathForGlyph">pathForGlyph</a>() and <a href="http://doc.qt.io/qt-5/qpainter.html#drawGlyphRun">QPainter::drawGlyphRun</a>().</p></div></p>
+</div><h4 id='method.ascent' class='method'><code>fn <a href='#method.ascent' class='fnname'>ascent</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRawFont::ascent() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#ascent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the ascent of this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> in pixel units.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontmetricsf.html#ascent">QFontMetricsF::ascent</a>().</p></div></p>
+</div><h4 id='method.average_char_width' class='method'><code>fn <a href='#method.average_char_width' class='fnname'>average_char_width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRawFont::averageCharWidth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#averageCharWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the average character width of this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> in pixel units.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontmetricsf.html#averageCharWidth">QFontMetricsF::averageCharWidth</a>().</p></div></p>
+</div><h4 id='method.bounding_rect' class='method'><code>fn <a href='#method.bounding_rect' class='fnname'>bounding_rect</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontBoundingRectArgs.html' title='qt_gui::raw_font::overloading::RawFontBoundingRectArgs'>RawFontBoundingRectArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::boundingRect</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn bounding_rect(&amp;self, (u32, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::rect_f::RectF&gt;</code><br>2) <code>fn bounding_rect(&amp;self, (u32, cpp_utils::AsStruct)) -&gt; qt_core::rect_f::RectF</code><br>
+C++ method: <span style='color: green;'><code>QRectF QRawFont::boundingRect(quint32 glyphIndex) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#boundingRect">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the smallest rectangle containing the glyph with the given <i>glyphIndex</i>.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.descent' class='method'><code>fn <a href='#method.descent' class='fnname'>descent</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRawFont::descent() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#descent">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the descent of this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> in pixel units.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontmetricsf.html#descent">QFontMetricsF::descent</a>().</p></div></p>
+</div><h4 id='method.family_name' class='method'><code>fn <a href='#method.family_name' class='fnname'>family_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontFamilyNameArgs.html' title='qt_gui::raw_font::overloading::RawFontFamilyNameArgs'>RawFontFamilyNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::familyName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn family_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn family_name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QRawFont::familyName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#familyName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the family name of this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>.</p></div></p>
+</div><h4 id='method.font_table' class='method'><code>fn <a href='#method.font_table' class='fnname'>font_table</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontFontTableArgs.html' title='qt_gui::raw_font::overloading::RawFontFontTableArgs'>RawFontFontTableArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::fontTable</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn font_table(&amp;self, (*const libc::c_char, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::byte_array::ByteArray&gt;</code><br>2) <code>fn font_table(&amp;self, (*const libc::c_char, cpp_utils::AsStruct)) -&gt; qt_core::byte_array::ByteArray</code><br>
+C++ method: <span style='color: green;'><code>QByteArray QRawFont::fontTable(const char* tagName) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#fontTable">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Retrieves the sfnt table named <i>tagName</i> from the underlying physical font, or an empty byte array if no such table was found. The returned font table&#39;s byte order is Big Endian, like the sfnt format specifies. The <i>tagName</i> must be four characters long and should be formatted in the default endianness of the current platform.</p></div></p>
+</div><h4 id='method.from_font' class='method'><code>fn <a href='#method.from_font' class='fnname'>from_font</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontFromFontArgs.html' title='qt_gui::raw_font::overloading::RawFontFromFontArgs'>RawFontFromFontArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::fromFont</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn from_font((&amp;::font::Font, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::raw_font::RawFont&gt;</code><br>2) <code>fn from_font((&amp;::font::Font, ::font_database::WritingSystem, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::raw_font::RawFont&gt;</code><br>3) <code>fn from_font((&amp;::font::Font, cpp_utils::AsStruct)) -&gt; ::raw_font::RawFont</code><br>4) <code>fn from_font((&amp;::font::Font, ::font_database::WritingSystem, cpp_utils::AsStruct)) -&gt; ::raw_font::RawFont</code><br>
+C++ method: <span style='color: green;'><code>static QRawFont QRawFont::fromFont(const QFont&amp; font, QFontDatabase::WritingSystem writingSystem = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#fromFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Fetches the physical representation based on a <i>font</i> query. The physical font returned is the font that will be preferred by Qt in order to display text in the selected <i>writingSystem</i>.</p>
+<p><b>Warning:</b> This function is potentially expensive and should not be called in performance sensitive code.</p></div></p>
+</div><h4 id='method.glyph_indexes_for_chars' class='method'><code>fn <a href='#method.glyph_indexes_for_chars' class='fnname'>glyph_indexes_for_chars</a>(&amp;self, chars: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='struct' href='../../qt_core/char/struct.Char.html' title='qt_core::char::Char'>Char</a>, num_chars: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>, glyph_indexes: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>, num_glyphs: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRawFont::glyphIndexesForChars(const QChar* chars, int numChars, unsigned int* glyphIndexes, int* numGlyphs) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#glyphIndexesForChars">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts a string of unicode points to glyph indexes using the CMAP table in the underlying font. The function works like <a href="http://doc.qt.io/qt-5/qrawfont.html#glyphIndexesForString">glyphIndexesForString</a>() except it take an array (<i>chars</i>), the results will be returned though <i>glyphIndexes</i> array and number of glyphs will be set in <i>numGlyphs</i>. The size of <i>glyphIndexes</i> array must be at least <i>numChars</i>, if that&#39;s still not enough, this function will return false, then you can resize <i>glyphIndexes</i> from the size returned in <i>numGlyphs</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#glyphIndexesForString">glyphIndexesForString</a>(), <a href="http://doc.qt.io/qt-5/qrawfont.html#advancesForGlyphIndexes">advancesForGlyphIndexes</a>(), <a href="http://doc.qt.io/qt-5/qglyphrun.html">QGlyphRun</a>, <a href="http://doc.qt.io/qt-5/qtextlayout.html#glyphRuns">QTextLayout::glyphRuns</a>(), and <a href="http://doc.qt.io/qt-5/qtextfragment.html#glyphRuns">QTextFragment::glyphRuns</a>().</p></div></p>
+</div><h4 id='method.glyph_indexes_for_string' class='method'><code>fn <a href='#method.glyph_indexes_for_string' class='fnname'>glyph_indexes_for_string</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontGlyphIndexesForStringArgs.html' title='qt_gui::raw_font::overloading::RawFontGlyphIndexesForStringArgs'>RawFontGlyphIndexesForStringArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::glyphIndexesForString</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn glyph_indexes_for_string(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;qt_core::vector::VectorCUint&gt;</code><br>2) <code>fn glyph_indexes_for_string(&amp;self, (&amp;qt_core::string::String, cpp_utils::AsStruct)) -&gt; qt_core::vector::VectorCUint</code><br>
+C++ method: <span style='color: green;'><code>QVector&lt;unsigned int&gt; QRawFont::glyphIndexesForString(const QString&amp; text) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#glyphIndexesForString">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Converts the string of unicode points given by <i>text</i> to glyph indexes using the CMAP table in the underlying font, and returns a vector containing the result.</p>
+<p>Note that, in cases where there are other tables in the font that affect the shaping of the text, the returned glyph indexes will not correctly represent the rendering of the text. To get the correctly shaped text, you can use <a href="http://doc.qt.io/qt-5/qtextlayout.html">QTextLayout</a> to lay out and shape the text, then call QTextLayout::glyphs() to get the set of glyph index list and <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> pairs.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#advancesForGlyphIndexes">advancesForGlyphIndexes</a>(), <a href="http://doc.qt.io/qt-5/qrawfont.html#glyphIndexesForChars">glyphIndexesForChars</a>(), <a href="http://doc.qt.io/qt-5/qglyphrun.html">QGlyphRun</a>, <a href="http://doc.qt.io/qt-5/qtextlayout.html#glyphRuns">QTextLayout::glyphRuns</a>(), and <a href="http://doc.qt.io/qt-5/qtextfragment.html#glyphRuns">QTextFragment::glyphRuns</a>().</p></div></p>
+</div><h4 id='method.hinting_preference' class='method'><code>fn <a href='#method.hinting_preference' class='fnname'>hinting_preference</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/font/enum.HintingPreference.html' title='qt_gui::font::HintingPreference'>HintingPreference</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::HintingPreference QRawFont::hintingPreference() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#hintingPreference">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the hinting preference used to construct this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#hintingPreference">QFont::hintingPreference</a>().</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRawFont::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> is valid and false otherwise.</p></div></p>
+</div><h4 id='method.leading' class='method'><code>fn <a href='#method.leading' class='fnname'>leading</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRawFont::leading() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#leading">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the leading of this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> in pixel units.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontmetricsf.html#leading">QFontMetricsF::leading</a>().</p></div></p>
+</div><h4 id='method.line_thickness' class='method'><code>fn <a href='#method.line_thickness' class='fnname'>line_thickness</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRawFont::lineThickness() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#lineThickness">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the thickness for drawing lines (underline, overline, etc.) along with text drawn in this font.</p></div></p>
+</div><h4 id='method.load_from_data' class='method'><code>fn <a href='#method.load_from_data' class='fnname'>load_from_data</a>(&amp;mut self, font_data: &amp;<a class='struct' href='../../qt_core/byte_array/struct.ByteArray.html' title='qt_core::byte_array::ByteArray'>ByteArray</a>, pixel_size: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, hinting_preference: <a class='enum' href='../../qt_gui/font/enum.HintingPreference.html' title='qt_gui::font::HintingPreference'>HintingPreference</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRawFont::loadFromData(const QByteArray&amp; fontData, double pixelSize, QFont::HintingPreference hintingPreference)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#loadFromData">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Replaces the current <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> with the font contained in the supplied <i>fontData</i> for the size (in pixels) given by <i>pixelSize</i>, and using the hinting preference specified by <i>hintingPreference</i>.</p>
+<p>The <i>fontData</i> must contain a TrueType or OpenType font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#loadFromFile">loadFromFile</a>().</p></div></p>
+</div><h4 id='method.load_from_file' class='method'><code>fn <a href='#method.load_from_file' class='fnname'>load_from_file</a>(&amp;mut self, file_name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>, pixel_size: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>, hinting_preference: <a class='enum' href='../../qt_gui/font/enum.HintingPreference.html' title='qt_gui::font::HintingPreference'>HintingPreference</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRawFont::loadFromFile(const QString&amp; fileName, double pixelSize, QFont::HintingPreference hintingPreference)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#loadFromFile">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Replaces the current <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> with the contents of the file referenced by <i>fileName</i> for the size (in pixels) given by <i>pixelSize</i>, and using the hinting preference specified by <i>hintingPreference</i>.</p>
+<p>The file must reference a TrueType or OpenType font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#loadFromData">loadFromData</a>().</p></div></p>
+</div><h4 id='method.max_char_width' class='method'><code>fn <a href='#method.max_char_width' class='fnname'>max_char_width</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRawFont::maxCharWidth() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#maxCharWidth">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the width of the widest character in the font.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontmetricsf.html#maxWidth">QFontMetricsF::maxWidth</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontNewArgs.html' title='qt_gui::raw_font::overloading::RawFontNewArgs'>RawFontNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::QRawFont</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::raw_font::RawFont</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::raw_font::RawFont&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRawFont::QRawFont()</code></span></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::byte_array::ByteArray, libc::c_double, cpp_utils::AsStruct)) -&gt; ::raw_font::RawFont</code><br>2) <code>fn new((&amp;qt_core::byte_array::ByteArray, libc::c_double, ::font::HintingPreference, cpp_utils::AsStruct)) -&gt; ::raw_font::RawFont</code><br>3) <code>fn new((&amp;qt_core::byte_array::ByteArray, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::raw_font::RawFont&gt;</code><br>4) <code>fn new((&amp;qt_core::byte_array::ByteArray, libc::c_double, ::font::HintingPreference, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::raw_font::RawFont&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRawFont::QRawFont(const QByteArray&amp; fontData, double pixelSize, QFont::HintingPreference hintingPreference = ?)</code></span></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;::raw_font::RawFont, cpp_utils::AsStruct)) -&gt; ::raw_font::RawFont</code><br>2) <code>fn new((&amp;::raw_font::RawFont, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::raw_font::RawFont&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRawFont::QRawFont(const QRawFont&amp; other)</code></span></p>
+
+<h2 id='variant-4-1' class='section-header'><a href='#variant-4-1'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((&amp;qt_core::string::String, libc::c_double, cpp_utils::AsStruct)) -&gt; ::raw_font::RawFont</code><br>2) <code>fn new((&amp;qt_core::string::String, libc::c_double, ::font::HintingPreference, cpp_utils::AsStruct)) -&gt; ::raw_font::RawFont</code><br>3) <code>fn new((&amp;qt_core::string::String, libc::c_double, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::raw_font::RawFont&gt;</code><br>4) <code>fn new((&amp;qt_core::string::String, libc::c_double, ::font::HintingPreference, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::raw_font::RawFont&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QRawFont::QRawFont(const QString&amp; fileName, double pixelSize, QFont::HintingPreference hintingPreference = ?)</code></span></p>
+</div><h4 id='method.op_assign' class='method'><code>fn <a href='#method.op_assign' class='fnname'>op_assign</a>&lt;'l0,&nbsp;'l1&gt;(&amp;'l0 mut self, other: &amp;'l1 <a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a>) -&gt; &amp;'l0 mut <a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont&amp; QRawFont::operator=(const QRawFont&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#operator-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Assigns <i>other</i> to this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>.</p></div></p>
+</div><h4 id='method.op_eq' class='method'><code>fn <a href='#method.op_eq' class='fnname'>op_eq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRawFont::operator==(const QRawFont&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#operator-eq-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> is equal to <i>other</i>. Otherwise, returns <code>false</code>.</p></div></p>
+</div><h4 id='method.op_neq' class='method'><code>fn <a href='#method.op_neq' class='fnname'>op_neq</a>(&amp;self, other: &amp;<a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QRawFont::operator!=(const QRawFont&amp; other) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#operator-not-eq">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> is not equal to <i>other</i>. Otherwise, returns <code>false</code>.</p></div></p>
+</div><h4 id='method.path_for_glyph' class='method'><code>fn <a href='#method.path_for_glyph' class='fnname'>path_for_glyph</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontPathForGlyphArgs.html' title='qt_gui::raw_font::overloading::RawFontPathForGlyphArgs'>RawFontPathForGlyphArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::pathForGlyph</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn path_for_glyph(&amp;self, (u32, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::painter_path::PainterPath&gt;</code><br>2) <code>fn path_for_glyph(&amp;self, (u32, cpp_utils::AsStruct)) -&gt; ::painter_path::PainterPath</code><br>
+C++ method: <span style='color: green;'><code>QPainterPath QRawFont::pathForGlyph(quint32 glyphIndex) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#pathForGlyph">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function returns the shape of the glyph at a given <i>glyphIndex</i> in the underlying font if the <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> is valid. Otherwise, it returns an empty <a href="http://doc.qt.io/qt-5/qpainterpath.html">QPainterPath</a>.</p>
+<p>The returned glyph will always be unhinted.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#alphaMapForGlyph">alphaMapForGlyph</a>() and <a href="http://doc.qt.io/qt-5/qpainterpath.html#addText">QPainterPath::addText</a>().</p></div></p>
+</div><h4 id='method.pixel_size' class='method'><code>fn <a href='#method.pixel_size' class='fnname'>pixel_size</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRawFont::pixelSize() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#pixelSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pixel size set for this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>. The pixel size affects how glyphs are rasterized, the size of glyphs returned by <a href="http://doc.qt.io/qt-5/qrawfont.html#pathForGlyph">pathForGlyph</a>(), and is used to convert internal metrics from design units to logical pixel units.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#setPixelSize">setPixelSize</a>().</p></div></p>
+</div><h4 id='method.set_pixel_size' class='method'><code>fn <a href='#method.set_pixel_size' class='fnname'>set_pixel_size</a>(&amp;mut self, pixel_size: <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRawFont::setPixelSize(double pixelSize)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#setPixelSize">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the pixel size with which this font should be rendered to <i>pixelSize</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#pixelSize">pixelSize</a>().</p></div></p>
+</div><h4 id='method.style' class='method'><code>fn <a href='#method.style' class='fnname'>style</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/font/enum.Style.html' title='qt_gui::font::Style'>Style</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFont::Style QRawFont::style() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#style">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the style of this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#style">QFont::style</a>().</p></div></p>
+</div><h4 id='method.style_name' class='method'><code>fn <a href='#method.style_name' class='fnname'>style_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontStyleNameArgs.html' title='qt_gui::raw_font::overloading::RawFontStyleNameArgs'>RawFontStyleNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::styleName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn style_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::string::String&gt;</code><br>2) <code>fn style_name(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QRawFont::styleName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#styleName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the style name of this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#styleName">QFont::styleName</a>().</p></div></p>
+</div><h4 id='method.supported_writing_systems' class='method'><code>fn <a href='#method.supported_writing_systems' class='fnname'>supported_writing_systems</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontSupportedWritingSystemsArgs.html' title='qt_gui::raw_font::overloading::RawFontSupportedWritingSystemsArgs'>RawFontSupportedWritingSystemsArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::supportedWritingSystems</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn supported_writing_systems(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::list::ListWritingSystem&gt;</code><br>2) <code>fn supported_writing_systems(&amp;self, cpp_utils::AsStruct) -&gt; ::list::ListWritingSystem</code><br>
+C++ method: <span style='color: green;'><code>QList&lt;QFontDatabase::WritingSystem&gt; QRawFont::supportedWritingSystems() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#supportedWritingSystems">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a list of writing systems supported by the font according to designer supplied information in the font file. Please note that this does not guarantee support for a specific unicode point in the font. You can use the <a href="http://doc.qt.io/qt-5/qrawfont.html#supportsCharacter">supportsCharacter</a>() to check support for a single, specific character.</p>
+<p><b>Note: </b>The list is determined based on the unicode ranges and codepage ranges set in the font&#39;s OS/2 table and requires such a table to be present in the underlying font file.</p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#supportsCharacter">supportsCharacter</a>().</p></div></p>
+</div><h4 id='method.supports_character' class='method'><code>fn <a href='#method.supports_character' class='fnname'>supports_character</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/raw_font/overloading/trait.RawFontSupportsCharacterArgs.html' title='qt_gui::raw_font::overloading::RawFontSupportsCharacterArgs'>RawFontSupportsCharacterArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QRawFont::supportsCharacter</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn supports_character(&amp;self, &amp;qt_core::char::Char) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QRawFont::supportsCharacter(QChar character) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#supportsCharacter">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the font has a glyph that corresponds to the given <i>character</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#supportedWritingSystems">supportedWritingSystems</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn supports_character(&amp;self, libc::c_uint) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>bool QRawFont::supportsCharacter(unsigned int ucs4) const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#supportsCharacter-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Returns <code>true</code> if the font has a glyph that corresponds to the UCS-4 encoded character <i>ucs4</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#supportedWritingSystems">supportedWritingSystems</a>().</p></div></p>
+</div><h4 id='method.swap' class='method'><code>fn <a href='#method.swap' class='fnname'>swap</a>(&amp;mut self, other: &amp;mut <a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QRawFont::swap(QRawFont&amp; other)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#swap">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Swaps this raw font with <i>other</i>. This function is very fast and never fails.</p>
+<p>This function was introduced in  Qt 5.0.</p></div></p>
+</div><h4 id='method.underline_position' class='method'><code>fn <a href='#method.underline_position' class='fnname'>underline_position</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRawFont::underlinePosition() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#underlinePosition">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position from baseline for drawing underlines below the text rendered with this font.</p></div></p>
+</div><h4 id='method.units_per_em' class='method'><code>fn <a href='#method.units_per_em' class='fnname'>units_per_em</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRawFont::unitsPerEm() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#unitsPerEm">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the number of design units define the width and height of the em square for this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>. This value is used together with the pixel size when converting design metrics to pixel units, as the internal metrics are specified in design units and the pixel size gives the size of 1 em in pixels.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qrawfont.html#pixelSize">pixelSize</a>() and <a href="http://doc.qt.io/qt-5/qrawfont.html#setPixelSize">setPixelSize</a>().</p></div></p>
+</div><h4 id='method.weight' class='method'><code>fn <a href='#method.weight' class='fnname'>weight</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QRawFont::weight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#weight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the weight of this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfont.html#weight">QFont::weight</a>().</p></div></p>
+</div><h4 id='method.x_height' class='method'><code>fn <a href='#method.x_height' class='fnname'>x_height</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QRawFont::xHeight() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#xHeight">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the xHeight of this <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a> in pixel units.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qfontmetricsf.html#xHeight">QFontMetricsF::xHeight</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142439' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/raw_font.rs.html#63-67' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142560' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/raw_font.rs.html#521-528' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QRawFont::~QRawFont()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qrawfont.html#dtor.QRawFont">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destroys the <a href="http://doc.qt.io/qt-5/qrawfont.html">QRawFont</a></p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/raw_font/struct.RawFont.html' title='qt_gui::raw_font::RawFont'>RawFont</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-142563' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/raw_font.rs.html#530-534' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

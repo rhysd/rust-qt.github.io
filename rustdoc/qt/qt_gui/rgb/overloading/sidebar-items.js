@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["GrayArgs","This trait represents a set of arguments accepted by gray method."]]});

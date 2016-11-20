@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["DeferredDeleteEventNewArgs","This trait represents a set of arguments accepted by DeferredDeleteEvent::new method."],["DeferredDeleteEventRegisterEventTypeArgs","This trait represents a set of arguments accepted by DeferredDeleteEvent::register_event_type method."]]});

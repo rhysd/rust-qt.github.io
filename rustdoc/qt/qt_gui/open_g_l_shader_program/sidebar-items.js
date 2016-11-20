@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["op_bit_or","C++ method: <span style='color: green;'>```operator|```</span>"]],"mod":[["overloading",""]],"struct":[["OpenGLShaderProgram","C++ type: <span style='color: green;'>```QOpenGLShaderProgram```</span>"]]});

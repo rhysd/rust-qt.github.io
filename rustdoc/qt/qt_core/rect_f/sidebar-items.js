@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["RectF","C++ type: <span style='color: green;'>```QRectF```</span>"]]});

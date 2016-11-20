@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CompositionMode` enum in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CompositionMode">
+
+    <title>qt_gui::painter::CompositionMode - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>painter</a></p><script>window.sidebarCurrent = {name: 'CompositionMode', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>painter</a>::<wbr><a class='enum' href=''>CompositionMode</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-126147' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#15-92' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum CompositionMode {
+    CompositionModeSourceOver,
+    CompositionModeDestinationOver,
+    CompositionModeClear,
+    CompositionModeSource,
+    CompositionModeDestination,
+    CompositionModeSourceIn,
+    CompositionModeDestinationIn,
+    CompositionModeSourceOut,
+    CompositionModeDestinationOut,
+    CompositionModeSourceAtop,
+    CompositionModeDestinationAtop,
+    CompositionModeXor,
+    CompositionModePlus,
+    CompositionModeMultiply,
+    CompositionModeScreen,
+    CompositionModeOverlay,
+    CompositionModeDarken,
+    CompositionModeLighten,
+    CompositionModeColorDodge,
+    CompositionModeColorBurn,
+    CompositionModeHardLight,
+    CompositionModeSoftLight,
+    CompositionModeDifference,
+    CompositionModeExclusion,
+    RasterOpSourceOrDestination,
+    RasterOpSourceAndDestination,
+    RasterOpSourceXorDestination,
+    RasterOpNotSourceAndNotDestination,
+    RasterOpNotSourceOrNotDestination,
+    RasterOpNotSourceXorDestination,
+    RasterOpNotSource,
+    RasterOpNotSourceAndDestination,
+    RasterOpSourceAndNotDestination,
+    RasterOpNotSourceOrDestination,
+    RasterOpSourceOrNotDestination,
+    RasterOpClearDestination,
+    RasterOpSetDestination,
+    RasterOpNotDestination,
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QPainter::CompositionMode</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qpainter.html#CompositionMode-enum">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Defines the modes supported for digital image compositing. Composition modes are used to specify how the pixels in one image, the source, are merged with the pixel in another image, the destination.</p>
+<p>Please note that the bitwise raster operation modes, denoted with a RasterOp prefix, are only natively supported in the X11 and raster paint engines. This means that the only way to utilize these modes on the Mac is via a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>. The RasterOp denoted blend modes are <i>not</i> supported for pens and brushes with alpha components. Also, turning on the <a href="http://doc.qt.io/qt-5/qpainter.html#RenderHint-enum">QPainter::Antialiasing</a> render hint will effectively disable the RasterOp modes.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qpainter-compositionmode1.png" alt=""></img></p><p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qpainter-compositionmode2.png" alt=""></img></p><p>The most common type is SourceOver (often referred to as just alpha blending) where the source pixel is blended on top of the destination pixel in such a way that the alpha component of the source defines the translucency of the pixel.</p>
+<p>When the paint device is a <a href="http://doc.qt.io/qt-5/qimage.html">QImage</a>, the image format must be set to <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">Format_ARGB32_Premultiplied</a> or <a href="http://doc.qt.io/qt-5/qimage.html#Format-enum">Format_ARGB32</a> for the composition modes to have any effect. For performance the premultiplied version is the preferred format.</p>
+<p>When a composition mode is set it applies to all painting operator, pens, brushes, gradients and pixmap/image drawing.</p></p>
+
+<p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qpainter.html#compositionMode">compositionMode</a>(), <a href="http://doc.qt.io/qt-5/qpainter.html#setCompositionMode">setCompositionMode</a>(), <a href="http://doc.qt.io/qt-5/qpainter.html#composition-modes">Composition Modes</a>, and <a href="http://doc.qt.io/qt-5/qtwidgets-painting-imagecomposition-example.html">Image Composition Example</a>.</p></div></p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.CompositionModeSourceOver' class='variant'><code>CompositionModeSourceOver</code></span><div class='docblock'><p>This is the default mode. The alpha of the source is used to blend the pixel on top of the destination. (C++ enum variant: <span style='color: green;'><code>CompositionMode_SourceOver = 0</code></span>)</p>
+</div><span id='variant.CompositionModeDestinationOver' class='variant'><code>CompositionModeDestinationOver</code></span><div class='docblock'><p>The alpha of the destination is used to blend it on top of the source pixels. This mode is the inverse of CompositionMode_SourceOver. (C++ enum variant: <span style='color: green;'><code>CompositionMode_DestinationOver = 1</code></span>)</p>
+</div><span id='variant.CompositionModeClear' class='variant'><code>CompositionModeClear</code></span><div class='docblock'><p>The pixels in the destination are cleared (set to fully transparent) independent of the source. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Clear = 2</code></span>)</p>
+</div><span id='variant.CompositionModeSource' class='variant'><code>CompositionModeSource</code></span><div class='docblock'><p>The output is the source pixel. (This means a basic copy operation and is identical to SourceOver when the source pixel is opaque). (C++ enum variant: <span style='color: green;'><code>CompositionMode_Source = 3</code></span>)</p>
+</div><span id='variant.CompositionModeDestination' class='variant'><code>CompositionModeDestination</code></span><div class='docblock'><p>The output is the destination pixel. This means that the blending has no effect. This mode is the inverse of CompositionMode_Source. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Destination = 4</code></span>)</p>
+</div><span id='variant.CompositionModeSourceIn' class='variant'><code>CompositionModeSourceIn</code></span><div class='docblock'><p>The output is the source, where the alpha is reduced by that of the destination. (C++ enum variant: <span style='color: green;'><code>CompositionMode_SourceIn = 5</code></span>)</p>
+</div><span id='variant.CompositionModeDestinationIn' class='variant'><code>CompositionModeDestinationIn</code></span><div class='docblock'><p>The output is the destination, where the alpha is reduced by that of the source. This mode is the inverse of CompositionMode_SourceIn. (C++ enum variant: <span style='color: green;'><code>CompositionMode_DestinationIn = 6</code></span>)</p>
+</div><span id='variant.CompositionModeSourceOut' class='variant'><code>CompositionModeSourceOut</code></span><div class='docblock'><p>The output is the source, where the alpha is reduced by the inverse of destination. (C++ enum variant: <span style='color: green;'><code>CompositionMode_SourceOut = 7</code></span>)</p>
+</div><span id='variant.CompositionModeDestinationOut' class='variant'><code>CompositionModeDestinationOut</code></span><div class='docblock'><p>The output is the destination, where the alpha is reduced by the inverse of the source. This mode is the inverse of CompositionMode_SourceOut. (C++ enum variant: <span style='color: green;'><code>CompositionMode_DestinationOut = 8</code></span>)</p>
+</div><span id='variant.CompositionModeSourceAtop' class='variant'><code>CompositionModeSourceAtop</code></span><div class='docblock'><p>The source pixel is blended on top of the destination, with the alpha of the source pixel reduced by the alpha of the destination pixel. (C++ enum variant: <span style='color: green;'><code>CompositionMode_SourceAtop = 9</code></span>)</p>
+</div><span id='variant.CompositionModeDestinationAtop' class='variant'><code>CompositionModeDestinationAtop</code></span><div class='docblock'><p>The destination pixel is blended on top of the source, with the alpha of the destination pixel is reduced by the alpha of the destination pixel. This mode is the inverse of CompositionMode_SourceAtop. (C++ enum variant: <span style='color: green;'><code>CompositionMode_DestinationAtop = 10</code></span>)</p>
+</div><span id='variant.CompositionModeXor' class='variant'><code>CompositionModeXor</code></span><div class='docblock'><p>The source, whose alpha is reduced with the inverse of the destination alpha, is merged with the destination, whose alpha is reduced by the inverse of the source alpha. CompositionMode_Xor is not the same as the bitwise Xor. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Xor = 11</code></span>)</p>
+</div><span id='variant.CompositionModePlus' class='variant'><code>CompositionModePlus</code></span><div class='docblock'><p>Both the alpha and color of the source and destination pixels are added together. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Plus = 12</code></span>)</p>
+</div><span id='variant.CompositionModeMultiply' class='variant'><code>CompositionModeMultiply</code></span><div class='docblock'><p>The output is the source color multiplied by the destination. Multiplying a color with white leaves the color unchanged, while multiplying a color with black produces black. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Multiply = 13</code></span>)</p>
+</div><span id='variant.CompositionModeScreen' class='variant'><code>CompositionModeScreen</code></span><div class='docblock'><p>The source and destination colors are inverted and then multiplied. Screening a color with white produces white, whereas screening a color with black leaves the color unchanged. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Screen = 14</code></span>)</p>
+</div><span id='variant.CompositionModeOverlay' class='variant'><code>CompositionModeOverlay</code></span><div class='docblock'><p>Multiplies or screens the colors depending on the destination color. The destination color is mixed with the source color to reflect the lightness or darkness of the destination. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Overlay = 15</code></span>)</p>
+</div><span id='variant.CompositionModeDarken' class='variant'><code>CompositionModeDarken</code></span><div class='docblock'><p>The darker of the source and destination colors is selected. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Darken = 16</code></span>)</p>
+</div><span id='variant.CompositionModeLighten' class='variant'><code>CompositionModeLighten</code></span><div class='docblock'><p>The lighter of the source and destination colors is selected. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Lighten = 17</code></span>)</p>
+</div><span id='variant.CompositionModeColorDodge' class='variant'><code>CompositionModeColorDodge</code></span><div class='docblock'><p>The destination color is brightened to reflect the source color. A black source color leaves the destination color unchanged. (C++ enum variant: <span style='color: green;'><code>CompositionMode_ColorDodge = 18</code></span>)</p>
+</div><span id='variant.CompositionModeColorBurn' class='variant'><code>CompositionModeColorBurn</code></span><div class='docblock'><p>The destination color is darkened to reflect the source color. A white source color leaves the destination color unchanged. (C++ enum variant: <span style='color: green;'><code>CompositionMode_ColorBurn = 19</code></span>)</p>
+</div><span id='variant.CompositionModeHardLight' class='variant'><code>CompositionModeHardLight</code></span><div class='docblock'><p>Multiplies or screens the colors depending on the source color. A light source color will lighten the destination color, whereas a dark source color will darken the destination color. (C++ enum variant: <span style='color: green;'><code>CompositionMode_HardLight = 20</code></span>)</p>
+</div><span id='variant.CompositionModeSoftLight' class='variant'><code>CompositionModeSoftLight</code></span><div class='docblock'><p>Darkens or lightens the colors depending on the source color. Similar to CompositionMode_HardLight. (C++ enum variant: <span style='color: green;'><code>CompositionMode_SoftLight = 21</code></span>)</p>
+</div><span id='variant.CompositionModeDifference' class='variant'><code>CompositionModeDifference</code></span><div class='docblock'><p>Subtracts the darker of the colors from the lighter. Painting with white inverts the destination color, whereas painting with black leaves the destination color unchanged. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Difference = 22</code></span>)</p>
+</div><span id='variant.CompositionModeExclusion' class='variant'><code>CompositionModeExclusion</code></span><div class='docblock'><p>Similar to CompositionMode_Difference, but with a lower contrast. Painting with white inverts the destination color, whereas painting with black leaves the destination color unchanged. (C++ enum variant: <span style='color: green;'><code>CompositionMode_Exclusion = 23</code></span>)</p>
+</div><span id='variant.RasterOpSourceOrDestination' class='variant'><code>RasterOpSourceOrDestination</code></span><div class='docblock'><p>Does a bitwise OR operation on the source and destination pixels (src OR dst). (C++ enum variant: <span style='color: green;'><code>RasterOp_SourceOrDestination = 24</code></span>)</p>
+</div><span id='variant.RasterOpSourceAndDestination' class='variant'><code>RasterOpSourceAndDestination</code></span><div class='docblock'><p>Does a bitwise AND operation on the source and destination pixels (src AND dst). (C++ enum variant: <span style='color: green;'><code>RasterOp_SourceAndDestination = 25</code></span>)</p>
+</div><span id='variant.RasterOpSourceXorDestination' class='variant'><code>RasterOpSourceXorDestination</code></span><div class='docblock'><p>Does a bitwise XOR operation on the source and destination pixels (src XOR dst). (C++ enum variant: <span style='color: green;'><code>RasterOp_SourceXorDestination = 26</code></span>)</p>
+</div><span id='variant.RasterOpNotSourceAndNotDestination' class='variant'><code>RasterOpNotSourceAndNotDestination</code></span><div class='docblock'><p>Does a bitwise NOR operation on the source and destination pixels ((NOT src) AND (NOT dst)). (C++ enum variant: <span style='color: green;'><code>RasterOp_NotSourceAndNotDestination = 27</code></span>)</p>
+</div><span id='variant.RasterOpNotSourceOrNotDestination' class='variant'><code>RasterOpNotSourceOrNotDestination</code></span><div class='docblock'><p>Does a bitwise NAND operation on the source and destination pixels ((NOT src) OR (NOT dst)). (C++ enum variant: <span style='color: green;'><code>RasterOp_NotSourceOrNotDestination = 28</code></span>)</p>
+</div><span id='variant.RasterOpNotSourceXorDestination' class='variant'><code>RasterOpNotSourceXorDestination</code></span><div class='docblock'><p>Does a bitwise operation where the source pixels are inverted and then XOR&#39;ed with the destination ((NOT src) XOR dst). (C++ enum variant: <span style='color: green;'><code>RasterOp_NotSourceXorDestination = 29</code></span>)</p>
+</div><span id='variant.RasterOpNotSource' class='variant'><code>RasterOpNotSource</code></span><div class='docblock'><p>Does a bitwise operation where the source pixels are inverted (NOT src). (C++ enum variant: <span style='color: green;'><code>RasterOp_NotSource = 30</code></span>)</p>
+</div><span id='variant.RasterOpNotSourceAndDestination' class='variant'><code>RasterOpNotSourceAndDestination</code></span><div class='docblock'><p>Does a bitwise operation where the source is inverted and then AND&#39;ed with the destination ((NOT src) AND dst). (C++ enum variant: <span style='color: green;'><code>RasterOp_NotSourceAndDestination = 31</code></span>)</p>
+</div><span id='variant.RasterOpSourceAndNotDestination' class='variant'><code>RasterOpSourceAndNotDestination</code></span><div class='docblock'><p>Does a bitwise operation where the source is AND&#39;ed with the inverted destination pixels (src AND (NOT dst)). (C++ enum variant: <span style='color: green;'><code>RasterOp_SourceAndNotDestination = 32</code></span>)</p>
+</div><span id='variant.RasterOpNotSourceOrDestination' class='variant'><code>RasterOpNotSourceOrDestination</code></span><div class='docblock'><p>Does a bitwise operation where the source is inverted and then OR&#39;ed with the destination ((NOT src) OR dst). (C++ enum variant: <span style='color: green;'><code>RasterOp_NotSourceOrDestination = 33</code></span>)</p>
+</div><span id='variant.RasterOpSourceOrNotDestination' class='variant'><code>RasterOpSourceOrNotDestination</code></span><div class='docblock'><p>Does a bitwise operation where the source is OR&#39;ed with the inverted destination pixels (src OR (NOT dst)). (C++ enum variant: <span style='color: green;'><code>RasterOp_SourceOrNotDestination = 34</code></span>)</p>
+</div><span id='variant.RasterOpClearDestination' class='variant'><code>RasterOpClearDestination</code></span><div class='docblock'><p>The pixels in the destination are cleared (set to 0) independent of the source. (C++ enum variant: <span style='color: green;'><code>RasterOp_ClearDestination = 35</code></span>)</p>
+</div><span id='variant.RasterOpSetDestination' class='variant'><code>RasterOpSetDestination</code></span><div class='docblock'><p>The pixels in the destination are set (set to 1) independent of the source. (C++ enum variant: <span style='color: green;'><code>RasterOp_SetDestination = 36</code></span>)</p>
+</div><span id='variant.RasterOpNotDestination' class='variant'><code>RasterOpNotDestination</code></span><div class='docblock'><p>Does a bitwise operation where the destination pixels are inverted (NOT dst). (C++ enum variant: <span style='color: green;'><code>RasterOp_NotDestination = 37</code></span>)</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../../qt_gui/painter/enum.CompositionMode.html' title='qt_gui::painter::CompositionMode'>CompositionMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126093' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#13' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/painter/enum.CompositionMode.html' title='qt_gui::painter::CompositionMode'>CompositionMode</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='enum' href='../../qt_gui/painter/enum.CompositionMode.html' title='qt_gui::painter::CompositionMode'>CompositionMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126096' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#13' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='enum' href='../../qt_gui/painter/enum.CompositionMode.html' title='qt_gui::painter::CompositionMode'>CompositionMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126099' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#13' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='enum' href='../../qt_gui/painter/enum.CompositionMode.html' title='qt_gui::painter::CompositionMode'>CompositionMode</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../../qt_gui/painter/enum.CompositionMode.html' title='qt_gui::painter::CompositionMode'>CompositionMode</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-126105' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/painter.rs.html#13' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

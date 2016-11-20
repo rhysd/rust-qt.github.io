@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ConstIterator","C++ type: <span style='color: green;'>```QSequentialIterable::const_iterator```</span>"],["SequentialIterable","C++ type: <span style='color: green;'>```QSequentialIterable```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["OpBitOrArgs","This trait represents a set of arguments accepted by op_bit_or method."],["OpenGLBufferAllocateArgs","This trait represents a set of arguments accepted by OpenGLBuffer::allocate method."],["OpenGLBufferNewArgs","This trait represents a set of arguments accepted by OpenGLBuffer::new method."]]});

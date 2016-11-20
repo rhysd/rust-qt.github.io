@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["HashCIntCUint","C++ type: <span style='color: green;'>```QHash<int, unsigned int>```</span>"],["HashCIntItemEditorCreatorBaseMutPtr","C++ type: <span style='color: green;'>```QHash<int, QItemEditorCreatorBase*>```</span>"]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["DrawingHint","C++ type: <span style='color: green;'>```QDrawBorderPixmap::DrawingHint```</span>"]]});

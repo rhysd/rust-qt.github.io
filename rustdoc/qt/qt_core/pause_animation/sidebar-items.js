@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["PauseAnimation","C++ type: <span style='color: green;'>```QPauseAnimation```</span>"]]});

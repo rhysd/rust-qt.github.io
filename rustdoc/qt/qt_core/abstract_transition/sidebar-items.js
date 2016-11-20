@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["TransitionType","C++ type: <span style='color: green;'>```QAbstractTransition::TransitionType```</span>"]],"mod":[["overloading",""]],"struct":[["AbstractTransition","C++ type: <span style='color: green;'>```QAbstractTransition```</span>"]]});

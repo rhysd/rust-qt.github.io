@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["UrlTwoFlagsUrlFormattingOptionComponentFormattingOption","C++ type: <span style='color: green;'>```QUrlTwoFlags<QUrl::UrlFormattingOption, QUrl::ComponentFormattingOption>```</span>"]]});

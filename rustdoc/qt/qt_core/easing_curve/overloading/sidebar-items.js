@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["EasingCurveNewArgs","This trait represents a set of arguments accepted by EasingCurve::new method."],["EasingCurveToCubicSplineArgs","This trait represents a set of arguments accepted by EasingCurve::to_cubic_spline method."]]});

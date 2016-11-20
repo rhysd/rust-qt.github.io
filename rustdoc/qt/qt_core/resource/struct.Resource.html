@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Resource` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Resource">
+
+    <title>qt_core::resource::Resource - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>resource</a></p><script>window.sidebarCurrent = {name: 'Resource', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>resource</a>::<wbr><a class='struct' href=''>Resource</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-128351' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/resource.rs.html#12-14' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Resource {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QResource</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> class provides an interface for reading directly from resources.</p>
+<p><a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> is an object that represents a set of data (and possibly children) relating to a single resource entity. <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> gives direct access to the bytes in their raw format. In this way direct access allows reading data without buffer copying or indirection. Indirection is often useful when interacting with the resource entity as if it is a file, this can be achieved with <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a>. The data and children behind a <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> are normally compiled into an application/library, but it is also possible to load a resource at runtime. When loaded at run time the resource file will be loaded as one big set of data and then given out in pieces via references into the resource tree.</p>
+<p>A <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> can either be loaded with an absolute path, either treated as a file system rooted with a <code>/</code> character, or in resource notation rooted with a <code>:</code> character. A relative resource can also be opened which will be found in the list of paths returned by <a href="http://doc.qt.io/qt-5/qdir.html#searchPaths">QDir::searchPaths</a>().</p>
+<p>A <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> that is representing a file will have data backing it, this data can possibly be compressed, in which case <a href="http://doc.qt.io/qt-5/qbytearray.html#qUncompress">qUncompress</a>() must be used to access the real data; this happens implicitly when accessed through a <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a>. A <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> that is representing a directory will have only children and no data.</p>
+<a name="dynamic-resource-loading"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/resource/struct.Resource.html' title='qt_core::resource::Resource'>Resource</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128356' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/resource.rs.html#22-210' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.absolute_file_path' class='method'><code>fn <a href='#method.absolute_file_path' class='fnname'>absolute_file_path</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/resource/overloading/trait.ResourceAbsoluteFilePathArgs.html' title='qt_core::resource::overloading::ResourceAbsoluteFilePathArgs'>ResourceAbsoluteFilePathArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QResource::absoluteFilePath</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn absolute_file_path(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn absolute_file_path(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QResource::absoluteFilePath() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#absoluteFilePath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the real path that this <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> represents, if the resource was found via the <a href="http://doc.qt.io/qt-5/qdir.html#searchPaths">QDir::searchPaths</a>() it will be indicated in the path.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#fileName">fileName</a>().</p></div></p>
+</div><h4 id='method.add_search_path' class='method'><code>fn <a href='#method.add_search_path' class='fnname'>add_search_path</a>(path: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QResource::addSearchPath(const QString&amp; path)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource-obsolete.html#addSearchPath">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use <a href="http://doc.qt.io/qt-5/qdir.html#addSearchPath">QDir::addSearchPath</a>() with a prefix instead.</p>
+<p>Adds <i>path</i> to the search paths searched in to find resources that are not specified with an absolute path. The <i>path</i> must be an absolute path (start with <code>/</code>).</p>
+<p>The default search path is to search only in the root (<code>:/</code>). The last path added will be consulted first upon next <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> creation.</p></div></p>
+</div><h4 id='method.data' class='method'><code>fn <a href='#method.data' class='fnname'>data</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*const </a><a class='type' href='../../libc/type.c_uchar.html' title='libc::c_uchar'>c_uchar</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const unsigned char* QResource::data() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#data">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns direct access to a read only segment of data that this resource represents. If the resource is compressed the data returns is compressed and <a href="http://doc.qt.io/qt-5/qbytearray.html#qUncompress">qUncompress</a>() must be used to access the data. If the resource is a directory 0 is returned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#size">size</a>(), <a href="http://doc.qt.io/qt-5/qresource.html#isCompressed">isCompressed</a>(), and <a href="http://doc.qt.io/qt-5/qresource.html#isFile">isFile</a>().</p></div></p>
+</div><h4 id='method.file_name' class='method'><code>fn <a href='#method.file_name' class='fnname'>file_name</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/resource/overloading/trait.ResourceFileNameArgs.html' title='qt_core::resource::overloading::ResourceFileNameArgs'>ResourceFileNameArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QResource::fileName</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn file_name(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string::String&gt;</code><br>2) <code>fn file_name(&amp;self, cpp_utils::AsStruct) -&gt; ::string::String</code><br>
+C++ method: <span style='color: green;'><code>QString QResource::fileName() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#fileName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the full path to the file that this <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> represents as it was passed.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#setFileName">setFileName</a>() and <a href="http://doc.qt.io/qt-5/qresource.html#absoluteFilePath">absoluteFilePath</a>().</p></div></p>
+</div><h4 id='method.is_compressed' class='method'><code>fn <a href='#method.is_compressed' class='fnname'>is_compressed</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QResource::isCompressed() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#isCompressed">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the resource represents a file and the data backing it is in a compressed format, false otherwise.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#data">data</a>() and <a href="http://doc.qt.io/qt-5/qresource.html#isFile">isFile</a>().</p></div></p>
+</div><h4 id='method.is_valid' class='method'><code>fn <a href='#method.is_valid' class='fnname'>is_valid</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QResource::isValid() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#isValid">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the resource really exists in the resource hierarchy, false otherwise.</p></div></p>
+</div><h4 id='method.locale' class='method'><code>fn <a href='#method.locale' class='fnname'>locale</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/resource/overloading/trait.ResourceLocaleArgs.html' title='qt_core::resource::overloading::ResourceLocaleArgs'>ResourceLocaleArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QResource::locale</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn locale(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::locale::Locale&gt;</code><br>2) <code>fn locale(&amp;self, cpp_utils::AsStruct) -&gt; ::locale::Locale</code><br>
+C++ method: <span style='color: green;'><code>QLocale QResource::locale() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#locale">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the locale used to locate the data for the <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#setLocale">setLocale</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/resource/overloading/trait.ResourceNewArgs.html' title='qt_core::resource::overloading::ResourceNewArgs'>ResourceNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QResource::QResource</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn new((&amp;::string::String, cpp_utils::AsStruct)) -&gt; ::resource::Resource</code><br>2) <code>fn new((&amp;::string::String, &amp;::locale::Locale, cpp_utils::AsStruct)) -&gt; ::resource::Resource</code><br>3) <code>fn new(cpp_utils::AsStruct) -&gt; ::resource::Resource</code><br>4) <code>fn new((&amp;::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::resource::Resource&gt;</code><br>5) <code>fn new((&amp;::string::String, &amp;::locale::Locale, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::resource::Resource&gt;</code><br>6) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::resource::Resource&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QResource::QResource(const QString&amp; file = ?, const QLocale&amp; locale = ?)</code></span></p>
+</div><h4 id='method.register_resource' class='method'><code>fn <a href='#method.register_resource' class='fnname'>register_resource</a>&lt;Args&gt;(args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/resource/overloading/trait.ResourceRegisterResourceArgs.html' title='qt_core::resource::overloading::ResourceRegisterResourceArgs'>ResourceRegisterResourceArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QResource::registerResource</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn register_resource(&amp;::string::String) -&gt; bool</code><br>2) <code>fn register_resource((&amp;::string::String, &amp;::string::String)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QResource::registerResource(const QString&amp; rccFilename, const QString&amp; resourceRoot = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#registerResource">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Registers the resource with the given <i>rccFileName</i> at the location in the resource tree specified by <i>mapRoot</i>, and returns <code>true</code> if the file is successfully opened; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#unregisterResource">unregisterResource</a>().</p></div></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn register_resource(*const libc::c_uchar) -&gt; bool</code><br>2) <code>fn register_resource((*const libc::c_uchar, &amp;::string::String)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QResource::registerResource(const unsigned char* rccData, const QString&amp; resourceRoot = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#registerResource-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Registers the resource with the given <i>rccData</i> at the location in the resource tree specified by <i>mapRoot</i>, and returns <code>true</code> if the file is successfully opened; otherwise returns <code>false</code>.</p>
+<p><b>Warning:</b> The data must remain valid throughout the life of any <a href="http://doc.qt.io/qt-5/qfile.html">QFile</a> that may reference the resource data.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#unregisterResource">unregisterResource</a>().</p></div></p>
+</div><h4 id='method.search_paths' class='method'><code>fn <a href='#method.search_paths' class='fnname'>search_paths</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/resource/overloading/trait.ResourceSearchPathsArgs.html' title='qt_core::resource::overloading::ResourceSearchPathsArgs'>ResourceSearchPathsArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QResource::searchPaths</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn search_paths(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::string_list::StringList&gt;</code><br>2) <code>fn search_paths(cpp_utils::AsStruct) -&gt; ::string_list::StringList</code><br>
+C++ method: <span style='color: green;'><code>static QStringList QResource::searchPaths()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource-obsolete.html#searchPaths">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Use <a href="http://doc.qt.io/qt-5/qdir.html#searchPaths">QDir::searchPaths</a>() instead.</p>
+<p>Returns the current search path list. This list is consulted when creating a relative resource.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qdir.html#addSearchPath">QDir::addSearchPath</a>() and <a href="http://doc.qt.io/qt-5/qdir.html#setSearchPaths">QDir::setSearchPaths</a>().</p></div></p>
+</div><h4 id='method.set_file_name' class='method'><code>fn <a href='#method.set_file_name' class='fnname'>set_file_name</a>(&amp;mut self, file: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QResource::setFileName(const QString&amp; file)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#setFileName">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> to point to <i>file</i>. <i>file</i> can either be absolute, in which case it is opened directly, if relative then the file will be tried to be found in <a href="http://doc.qt.io/qt-5/qdir.html#searchPaths">QDir::searchPaths</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#fileName">fileName</a>() and <a href="http://doc.qt.io/qt-5/qresource.html#absoluteFilePath">absoluteFilePath</a>().</p></div></p>
+</div><h4 id='method.set_locale' class='method'><code>fn <a href='#method.set_locale' class='fnname'>set_locale</a>(&amp;mut self, locale: &amp;<a class='struct' href='../../qt_core/locale/struct.Locale.html' title='qt_core::locale::Locale'>Locale</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QResource::setLocale(const QLocale&amp; locale)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#setLocale">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets a <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> to only load the localization of resource to for <i>locale</i>. If a resource for the specific locale is not found then the C locale is used.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#locale">locale</a>() and <a href="http://doc.qt.io/qt-5/qresource.html#setFileName">setFileName</a>().</p></div></p>
+</div><h4 id='method.size' class='method'><code>fn <a href='#method.size' class='fnname'>size</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QResource::size() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#size">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the size of the data backing the resource.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#data">data</a>() and <a href="http://doc.qt.io/qt-5/qresource.html#isFile">isFile</a>().</p></div></p>
+</div><h4 id='method.unregister_resource' class='method'><code>fn <a href='#method.unregister_resource' class='fnname'>unregister_resource</a>&lt;Args&gt;(args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> <span class='where'>where Args: <a class='trait' href='../../qt_core/resource/overloading/trait.ResourceUnregisterResourceArgs.html' title='qt_core::resource::overloading::ResourceUnregisterResourceArgs'>ResourceUnregisterResourceArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QResource::unregisterResource</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn unregister_resource(&amp;::string::String) -&gt; bool</code><br>2) <code>fn unregister_resource((&amp;::string::String, &amp;::string::String)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QResource::unregisterResource(const QString&amp; rccFilename, const QString&amp; resourceRoot = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#unregisterResource">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unregisters the resource with the given <i>rccFileName</i> at the location in the resource tree specified by <i>mapRoot</i>, and returns <code>true</code> if the resource is successfully unloaded and no references exist for the resource; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#registerResource">registerResource</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn unregister_resource(*const libc::c_uchar) -&gt; bool</code><br>2) <code>fn unregister_resource((*const libc::c_uchar, &amp;::string::String)) -&gt; bool</code><br>
+C++ method: <span style='color: green;'><code>static bool QResource::unregisterResource(const unsigned char* rccData, const QString&amp; resourceRoot = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#unregisterResource-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Unregisters the resource with the given <i>rccData</i> at the location in the resource tree specified by <i>mapRoot</i>, and returns <code>true</code> if the resource is successfully unloaded and no references exist into the resource; otherwise returns <code>false</code>.</p>
+<p>This function was introduced in  Qt 4.3.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qresource.html#registerResource">registerResource</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/resource/struct.Resource.html' title='qt_core::resource::Resource'>Resource</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128354' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/resource.rs.html#16-20' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/resource/struct.Resource.html' title='qt_core::resource::Resource'>Resource</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/resource/struct.Resource.html' title='qt_core::resource::Resource'>Resource</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128400' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/resource.rs.html#212-219' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QResource::~QResource()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qresource.html#dtor.QResource">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Releases the resources of the <a href="http://doc.qt.io/qt-5/qresource.html">QResource</a> object.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/resource/struct.Resource.html' title='qt_core::resource::Resource'>Resource</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-128403' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/resource.rs.html#221-225' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

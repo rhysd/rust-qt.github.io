@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["SplashScreen","C++ type: <span style='color: green;'>```QSplashScreen```</span>"]]});

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Accessible` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Accessible">
+
+    <title>qt_gui::accessible::Accessible - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>accessible</a></p><script>window.sidebarCurrent = {name: 'Accessible', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>accessible</a>::<wbr><a class='struct' href=''>Accessible</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-58434' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible.rs.html#26-28' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Accessible {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QAccessible</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessible.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qaccessible.html">QAccessible</a> class provides enums and static functions related to accessibility.</p>
+<p>This class is part of <a href="http://doc.qt.io/qt-5/accessible-qwidget.html">Accessibility for QWidget Applications</a>.</p>
+<p>Accessible applications can be used by people who are not able to use applications by conventional means.</p>
+<p>The functions in this class are used for communication between accessible applications (also called AT Servers) and accessibility tools (AT Clients), such as screen readers and braille displays. Clients and servers communicate in the following way:</p>
+<ul>
+<li><i>AT Servers</i> notify the clients about events through calls to the <a href="http://doc.qt.io/qt-5/qaccessible.html#updateAccessibility">updateAccessibility</a>() function.</li>
+<li><i>AT Clients</i> request information about the objects in the server. The <a href="http://doc.qt.io/qt-5/qaccessibleinterface.html">QAccessibleInterface</a> class is the core interface, and encapsulates this information in a pure virtual API. Implementations of the interface are provided by Qt through the <a href="http://doc.qt.io/qt-5/qaccessible.html#queryAccessibleInterface">queryAccessibleInterface</a>() API.</li>
+</ul>
+<p>The communication between servers and clients is initialized by the <a href="http://doc.qt.io/qt-5/qaccessible.html#setRootObject">setRootObject</a>() function. Function pointers can be installed to replace or extend the default behavior of the static functions in <a href="http://doc.qt.io/qt-5/qaccessible.html">QAccessible</a>.</p>
+<p>Qt supports Microsoft Active Accessibility (MSAA), Mac OS X Accessibility, and the Unix/X11 AT-SPI standard. Other backends can be supported using QAccessibleBridge.</p>
+<p>In the Unix/X11 AT-SPI implementation, applications become accessible when two conditions are met:</p>
+<ul>
+<li>org.a11y.Status.IsEnabled DBus property is true</li>
+<li>org.a11y.Status.ScreenReaderEnabled DBus property is true</li>
+</ul>
+<p>An alternative to setting the DBus AT-SPI properties is to set the QT_LINUX_ACCESSIBILITY_ALWAYS_ON environment variable.</p>
+<p>In addition to <a href="http://doc.qt.io/qt-5/qaccessible.html">QAccessible</a>&#39;s static functions, Qt offers one generic interface, <a href="http://doc.qt.io/qt-5/qaccessibleinterface.html">QAccessibleInterface</a>, that can be used to wrap all widgets and objects (e.g., <a href="http://doc.qt.io/qt-5/qpushbutton.html">QPushButton</a>). This single interface provides all the metadata necessary for the assistive technologies. Qt provides implementations of this interface for its built-in widgets as plugins.</p>
+<p>When you develop custom widgets, you can create custom subclasses of <a href="http://doc.qt.io/qt-5/qaccessibleinterface.html">QAccessibleInterface</a> and distribute them as plugins (using <a href="http://doc.qt.io/qt-5/qaccessibleplugin.html">QAccessiblePlugin</a>) or compile them into the application. Likewise, Qt&#39;s predefined accessibility support can be built as plugin (the default) or directly into the Qt library. The main advantage of using plugins is that the accessibility classes are only loaded into memory if they are actually used; they don&#39;t slow down the common case where no assistive technology is being used.</p>
+<p>Qt also includes two convenience classes, <a href="http://doc.qt.io/qt-5/qaccessibleobject.html">QAccessibleObject</a> and <a href="http://doc.qt.io/qt-5/qaccessiblewidget.html">QAccessibleWidget</a>, that inherit from <a href="http://doc.qt.io/qt-5/qaccessibleinterface.html">QAccessibleInterface</a> and provide the lowest common denominator of metadata (e.g., widget geometry, window title, basic help text). You can use them as base classes when wrapping your custom <a href="http://doc.qt.io/qt-5/qobject.html">QObject</a> or <a href="http://doc.qt.io/qt-5/qwidget.html">QWidget</a> subclasses.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/accessible/struct.Accessible.html' title='qt_gui::accessible::Accessible'>Accessible</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-58439' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible.rs.html#36-165' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.accessible_interface' class='method'><code>fn <a href='#method.accessible_interface' class='fnname'>accessible_interface</a>(unique_id: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/accessible_interface/struct.AccessibleInterface.html' title='qt_gui::accessible_interface::AccessibleInterface'>AccessibleInterface</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static QAccessibleInterface* QAccessible::accessibleInterface(unsigned int uniqueId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessible.html#accessibleInterface">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the <a href="http://doc.qt.io/qt-5/qaccessibleinterface.html">QAccessibleInterface</a> belonging to the <i>id</i>.</p>
+<p>Returns 0 if the id is invalid.</p></div></p>
+</div><h4 id='method.cleanup' class='method'><code>fn <a href='#method.cleanup' class='fnname'>cleanup</a>()</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QAccessible::cleanup()</code></span></p>
+</div><h4 id='method.delete_accessible_interface' class='method'><code>fn <a href='#method.delete_accessible_interface' class='fnname'>delete_accessible_interface</a>(unique_id: <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QAccessible::deleteAccessibleInterface(unsigned int uniqueId)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessible.html#deleteAccessibleInterface">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Removes the interface belonging to this <i>id</i> from the cache and deletes it. The id becomes invalid an may be re-used by the cache.</p></div></p>
+</div><h4 id='method.install_activation_observer' class='method'><code>fn <a href='#method.install_activation_observer' class='fnname'>install_activation_observer</a>(arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/accessible/struct.ActivationObserver.html' title='qt_gui::accessible::ActivationObserver'>ActivationObserver</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QAccessible::installActivationObserver(QAccessible::ActivationObserver* arg1)</code></span></p>
+</div><h4 id='method.install_root_object_handler' class='method'><code>fn <a href='#method.install_root_object_handler' class='fnname'>install_root_object_handler</a>(arg1: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>)) -&gt; extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void (*FN_PTR)(QObject*) QAccessible::installRootObjectHandler(void (*FN_PTR)(QObject*) arg1)</code></span></p>
+</div><h4 id='method.install_update_handler' class='method'><code>fn <a href='#method.install_update_handler' class='fnname'>install_update_handler</a>(arg1: extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/accessible_event/struct.AccessibleEvent.html' title='qt_gui::accessible_event::AccessibleEvent'>AccessibleEvent</a>)) -&gt; extern fn(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/accessible_event/struct.AccessibleEvent.html' title='qt_gui::accessible_event::AccessibleEvent'>AccessibleEvent</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void (*FN_PTR)(QAccessibleEvent*) QAccessible::installUpdateHandler(void (*FN_PTR)(QAccessibleEvent*) arg1)</code></span></p>
+</div><h4 id='method.is_active' class='method'><code>fn <a href='#method.is_active' class='fnname'>is_active</a>() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QAccessible::isActive()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessible.html#isActive">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the platform requested accessibility information.</p>
+<p>This function will return false until a tool such as a screen reader accessed the accessibility framework. It is still possible to use <a href="http://doc.qt.io/qt-5/qaccessible.html#queryAccessibleInterface">QAccessible::queryAccessibleInterface</a>() even if accessibility is not active. But there will be no notifications sent to the platform.</p>
+<p>It is recommended to use this function to prevent expensive notifications via <a href="http://doc.qt.io/qt-5/qaccessible.html#updateAccessibility">updateAccessibility</a>() when they are not needed.</p></div></p>
+</div><h4 id='method.q_accessible_text_boundary_helper' class='method'><code>fn <a href='#method.q_accessible_text_boundary_helper' class='fnname'>q_accessible_text_boundary_helper</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/accessible/overloading/trait.AccessibleQAccessibleTextBoundaryHelperArgs.html' title='qt_gui::accessible::overloading::AccessibleQAccessibleTextBoundaryHelperArgs'>AccessibleQAccessibleTextBoundaryHelperArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QAccessible::qAccessibleTextBoundaryHelper</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn q_accessible_text_boundary_helper((&amp;::text_cursor::TextCursor, ::accessible::TextBoundaryType, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::pair::PairCIntCInt&gt;</code><br>2) <code>fn q_accessible_text_boundary_helper((&amp;::text_cursor::TextCursor, ::accessible::TextBoundaryType, cpp_utils::AsStruct)) -&gt; ::pair::PairCIntCInt</code><br>
+C++ method: <span style='color: green;'><code>static QPair&lt;int, int&gt; QAccessible::qAccessibleTextBoundaryHelper(const QTextCursor&amp; cursor, QAccessible::TextBoundaryType boundaryType)</code></span></p>
+</div><h4 id='method.query_accessible_interface' class='method'><code>fn <a href='#method.query_accessible_interface' class='fnname'>query_accessible_interface</a>(arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/accessible_interface/struct.AccessibleInterface.html' title='qt_gui::accessible_interface::AccessibleInterface'>AccessibleInterface</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static QAccessibleInterface* QAccessible::queryAccessibleInterface(QObject* arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessible.html#queryAccessibleInterface">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If a <a href="http://doc.qt.io/qt-5/qaccessibleinterface.html">QAccessibleInterface</a> implementation exists for the given <i>object</i>, this function returns a pointer to the implementation; otherwise it returns 0.</p>
+<p>The function calls all installed factory functions (from most recently installed to least recently installed) until one is found that provides an interface for the class of <i>object</i>. If no factory can provide an accessibility implementation for the class the function loads installed accessibility plugins, and tests if any of the plugins can provide the implementation.</p>
+<p>If no implementation for the object&#39;s class is available, the function tries to find an implementation for the object&#39;s parent class, using the above strategy.</p>
+<p>All interfaces are managed by an internal cache and should not be deleted.</p></div></p>
+</div><h4 id='method.register_accessible_interface' class='method'><code>fn <a href='#method.register_accessible_interface' class='fnname'>register_accessible_interface</a>(iface: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/accessible_interface/struct.AccessibleInterface.html' title='qt_gui::accessible_interface::AccessibleInterface'>AccessibleInterface</a>) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static unsigned int QAccessible::registerAccessibleInterface(QAccessibleInterface* iface)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessible.html#registerAccessibleInterface">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Call this function to ensure that manually created interfaces are properly memory managed.</p>
+<p>Must only be called exactly once per interface <i>iface</i>. This is implicitly called when calling <a href="http://doc.qt.io/qt-5/qaccessible.html#queryAccessibleInterface">queryAccessibleInterface</a>, calling this function is only required when QAccessibleInterfaces are instantiated with the &quot;new&quot; operator. This is not recommended, whenever possible use the default functions and let <a href="http://doc.qt.io/qt-5/qaccessible.html#queryAccessibleInterface">queryAccessibleInterface</a>() take care of this.</p>
+<p>When it is necessary to reimplement the <a href="http://doc.qt.io/qt-5/qaccessibleinterface.html#child">QAccessibleInterface::child</a>() function and returning the child after constructing it, this function needs to be called.</p></div></p>
+</div><h4 id='method.remove_activation_observer' class='method'><code>fn <a href='#method.remove_activation_observer' class='fnname'>remove_activation_observer</a>(arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/accessible/struct.ActivationObserver.html' title='qt_gui::accessible::ActivationObserver'>ActivationObserver</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QAccessible::removeActivationObserver(QAccessible::ActivationObserver* arg1)</code></span></p>
+</div><h4 id='method.set_active' class='method'><code>fn <a href='#method.set_active' class='fnname'>set_active</a>(active: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QAccessible::setActive(bool active)</code></span></p>
+</div><h4 id='method.set_root_object' class='method'><code>fn <a href='#method.set_root_object' class='fnname'>set_root_object</a>(object: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/object/struct.Object.html' title='qt_core::object::Object'>Object</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QAccessible::setRootObject(QObject* object)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessible.html#setRootObject">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the root object of the accessible objects of this application to <i>object</i>. All other accessible objects are reachable using object navigation from the root object.</p>
+<p>Normally, it isn&#39;t necessary to call this function, because Qt sets the <a href="http://doc.qt.io/qt-5/qapplication.html">QApplication</a> object as the root object immediately before the event loop is entered in <a href="http://doc.qt.io/qt-5/qapplication.html#exec">QApplication::exec</a>().</p>
+<p>Use QAccessible::installRootObjectHandler() to redirect the function call to a customized handler function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qaccessible.html#queryAccessibleInterface">queryAccessibleInterface</a>().</p></div></p>
+</div><h4 id='method.unique_id' class='method'><code>fn <a href='#method.unique_id' class='fnname'>unique_id</a>(iface: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/accessible_interface/struct.AccessibleInterface.html' title='qt_gui::accessible_interface::AccessibleInterface'>AccessibleInterface</a>) -&gt; <a class='type' href='../../libc/type.c_uint.html' title='libc::c_uint'>c_uint</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static unsigned int QAccessible::uniqueId(QAccessibleInterface* iface)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessible.html#uniqueId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the unique ID for the <a href="http://doc.qt.io/qt-5/qaccessibleinterface.html">QAccessibleInterface</a> <i>iface</i>.</p></div></p>
+</div><h4 id='method.update_accessibility' class='method'><code>fn <a href='#method.update_accessibility' class='fnname'>update_accessibility</a>(event: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_gui/accessible_event/struct.AccessibleEvent.html' title='qt_gui::accessible_event::AccessibleEvent'>AccessibleEvent</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QAccessible::updateAccessibility(QAccessibleEvent* event)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qaccessible.html#updateAccessibility">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Notifies about a change that might be relevant for accessibility clients.</p>
+<p><i>event</i> provides details about the change. These include the source of the change and the nature of the change. The <i>event</i> should contain enough information give meaningful notifications.</p>
+<p>For example, the type <code>ValueChange</code> indicates that the position of a slider has been changed.</p>
+<p>Call this function whenever the state of your accessible object or one of its sub-elements has been changed either programmatically (e.g. by calling <a href="http://doc.qt.io/qt-5/qlabel.html#text-prop">QLabel::setText</a>()) or by user interaction.</p>
+<p>If there are no accessibility tools listening to this event, the performance penalty for calling this function is small, but if determining the parameters of the call is expensive you can test <a href="http://doc.qt.io/qt-5/qaccessible.html#isActive">QAccessible::isActive</a>() to avoid unnecessary computation.</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/accessible/struct.Accessible.html' title='qt_gui::accessible::Accessible'>Accessible</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-58437' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible.rs.html#30-34' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/accessible/struct.Accessible.html' title='qt_gui::accessible::Accessible'>Accessible</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/accessible/struct.Accessible.html' title='qt_gui::accessible::Accessible'>Accessible</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-58473' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible.rs.html#167-174' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QAccessible::~QAccessible()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/accessible/struct.Accessible.html' title='qt_gui::accessible::Accessible'>Accessible</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-58476' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/accessible.rs.html#176-180' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `XmlStreamWriter` struct in crate `qt_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, XmlStreamWriter">
+
+    <title>qt_core::xml_stream_writer::XmlStreamWriter - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>xml_stream_writer</a></p><script>window.sidebarCurrent = {name: 'XmlStreamWriter', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_core</a>::<wbr><a href='index.html'>xml_stream_writer</a>::<wbr><a class='struct' href=''>XmlStreamWriter</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-171712' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_writer.rs.html#29-31' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct XmlStreamWriter {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QXmlStreamWriter</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> class provides an XML writer with a simple streaming API.</p>
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> is the counterpart to <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a> for writing XML. Like its related class, it operates on a <a href="http://doc.qt.io/qt-5/qiodevice.html">QIODevice</a> specified with <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#setDevice">setDevice</a>(). The API is simple and straightforward: for every XML token or event you want to write, the writer provides a specialized function.</p>
+<p>You start a document with <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartDocument">writeStartDocument</a>() and end it with <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndDocument">writeEndDocument</a>(). This will implicitly close all remaining open tags.</p>
+<p>Element tags are opened with <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>() followed by <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttribute">writeAttribute</a>() or <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttributes">writeAttributes</a>(), element content, and then <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndElement">writeEndElement</a>(). A shorter form <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement">writeEmptyElement</a>() can be used to write empty elements, followed by <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttributes">writeAttributes</a>().</p>
+<p>Element content consists of either characters, entity references or nested elements. It is written with <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeCharacters">writeCharacters</a>(), which also takes care of escaping all forbidden characters and character sequences, <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEntityReference">writeEntityReference</a>(), or subsequent calls to <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>(). A convenience method <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeTextElement">writeTextElement</a>() can be used for writing terminal elements that contain nothing but text.</p>
+<p>The following abridged code snippet shows the basic use of the class to write formatted XML with indentation:</p>
+<pre class="cpp">    <span class="type"><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#QXmlStreamWriter">QXmlStreamWriter</a></span> stream(<span class="operator">&amp;</span>output);
+&#32;   stream<span class="operator">.</span>setAutoFormatting(<span class="keyword">true</span>);
+&#32;   stream<span class="operator">.</span>writeStartDocument();
+&#32;   ...
+&#32;   stream<span class="operator">.</span>writeStartElement(<span class="string">&quot;bookmark&quot;</span>);
+&#32;   stream<span class="operator">.</span>writeAttribute(<span class="string">&quot;href&quot;</span><span class="operator">,</span> <span class="string">&quot;<a href="http://qt-project.org/">http://qt-project.org/</a>&quot;</span>);
+&#32;   stream<span class="operator">.</span>writeTextElement(<span class="string">&quot;title&quot;</span><span class="operator">,</span> <span class="string">&quot;Qt Project&quot;</span>);
+&#32;   stream<span class="operator">.</span>writeEndElement(); <span class="comment">// bookmark</span>
+&#32;   ...
+&#32;   stream<span class="operator">.</span>writeEndDocument();</pre>
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> takes care of prefixing namespaces, all you have to do is specify the <code>namespaceUri</code> when writing elements or attributes. If you must conform to certain prefixes, you can force the writer to use them by declaring the namespaces manually with either <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeNamespace">writeNamespace</a>() or <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeDefaultNamespace">writeDefaultNamespace</a>(). Alternatively, you can bypass the stream writer&#39;s namespace support and use overloaded methods that take a qualified name instead. The namespace <i><a href="http://www.w3.org/XML/1998/namespace">http://www.w3.org/XML/1998/namespace</a></i> is implicit and mapped to the prefix <i>xml</i>.</p>
+<p>The stream writer can automatically format the generated XML data by adding line-breaks and indentation to empty sections between elements, making the XML data more readable for humans and easier to work with for most source code management systems. The feature can be turned on with the <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#autoFormatting-prop">autoFormatting</a> property, and customized with the <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#autoFormattingIndent-prop">autoFormattingIndent</a> property.</p>
+<p>Other functions are <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeCDATA">writeCDATA</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeComment">writeComment</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeProcessingInstruction">writeProcessingInstruction</a>(), and <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeDTD">writeDTD</a>(). Chaining of XML streams is supported with <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeCurrentToken">writeCurrentToken</a>().</p>
+<p>By default, <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> encodes XML in UTF-8. Different encodings can be enforced using <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#setCodec">setCodec</a>().</p>
+<p>If an error occurs while writing to the underlying device, <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#hasError">hasError</a>() starts returning true and subsequent writes are ignored.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qtxml-streambookmarks-example.html">QXmlStream Bookmarks Example</a> illustrates how to use a stream writer to write an XML bookmark file (XBEL) that was previously read in by a <a href="http://doc.qt.io/qt-5/qxmlstreamreader.html">QXmlStreamReader</a>.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_core/xml_stream_writer/struct.XmlStreamWriter.html' title='qt_core::xml_stream_writer::XmlStreamWriter'>XmlStreamWriter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-171717' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_writer.rs.html#39-492' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.auto_formatting' class='method'><code>fn <a href='#method.auto_formatting' class='fnname'>auto_formatting</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamWriter::autoFormatting() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#autoFormatting-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The auto-formatting flag of the stream writer</p>
+<p>This property controls whether or not the stream writer automatically formats the generated XML data. If enabled, the writer automatically adds line-breaks and indentation to empty sections between elements (ignorable whitespace). The main purpose of auto-formatting is to split the data into several lines, and to increase readability for a human reader. The indentation depth can be controlled through the <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#autoFormattingIndent-prop">autoFormattingIndent</a> property.</p>
+<p>By default, auto-formatting is disabled.</p>
+<p>This property was introduced in  Qt 4.4.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>autoFormatting</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAutoFormatting</b></span>(bool<i> enable</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.auto_formatting_indent' class='method'><code>fn <a href='#method.auto_formatting_indent' class='fnname'>auto_formatting_indent</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QXmlStreamWriter::autoFormattingIndent() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#autoFormattingIndent-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This property holds the number of spaces or tabs used for indentation when auto-formatting is enabled. Positive numbers indicate spaces, negative numbers tabs.</p>
+<p>The default indentation is 4.</p>
+<p>This property was introduced in  Qt 4.4.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>autoFormattingIndent</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAutoFormattingIndent</b></span>(int<i> spacesOrTabs</i>)</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#autoFormatting-prop">autoFormatting</a>.</p></div></p>
+</div><h4 id='method.codec' class='method'><code>fn <a href='#method.codec' class='fnname'>codec</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/text_codec/struct.TextCodec.html' title='qt_core::text_codec::TextCodec'>TextCodec</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTextCodec* QXmlStreamWriter::codec() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#codec">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the codec that is currently assigned to the stream.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#setCodec">setCodec</a>().</p></div></p>
+</div><h4 id='method.device' class='method'><code>fn <a href='#method.device' class='fnname'>device</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QIODevice* QXmlStreamWriter::device() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#device">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the current device associated with the <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a>, or 0 if no device has been assigned.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#setDevice">setDevice</a>().</p></div></p>
+</div><h4 id='method.has_error' class='method'><code>fn <a href='#method.has_error' class='fnname'>has_error</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QXmlStreamWriter::hasError() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#hasError">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the stream failed to write to the underlying device.</p>
+<p>The error status is never reset. Writes happening after the error occurred are ignored, even if the error condition is cleared.</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_writer/overloading/trait.XmlStreamWriterNewArgs.html' title='qt_core::xml_stream_writer::overloading::XmlStreamWriterNewArgs'>XmlStreamWriterNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamWriter::QXmlStreamWriter</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new(cpp_utils::AsStruct) -&gt; ::xml_stream_writer::XmlStreamWriter</code><br>2) <code>fn new(cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;::xml_stream_writer::XmlStreamWriter&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QXmlStreamWriter::QXmlStreamWriter()</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::byte_array::ByteArray, cpp_utils::AsStruct)) -&gt; ::xml_stream_writer::XmlStreamWriter</code><br>2) <code>fn new((*mut ::byte_array::ByteArray, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::xml_stream_writer::XmlStreamWriter&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QXmlStreamWriter::QXmlStreamWriter(QByteArray* array)</code></span></p>
+
+<h2 id='variant-3' class='section-header'><a href='#variant-3'>Variant 3</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::qiod_evice::QiodEvice, cpp_utils::AsStruct)) -&gt; ::xml_stream_writer::XmlStreamWriter</code><br>2) <code>fn new((*mut ::qiod_evice::QiodEvice, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::xml_stream_writer::XmlStreamWriter&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QXmlStreamWriter::QXmlStreamWriter(QIODevice* device)</code></span></p>
+
+<h2 id='variant-4' class='section-header'><a href='#variant-4'>Variant 4</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((*mut ::string::String, cpp_utils::AsStruct)) -&gt; ::xml_stream_writer::XmlStreamWriter</code><br>2) <code>fn new((*mut ::string::String, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::xml_stream_writer::XmlStreamWriter&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QXmlStreamWriter::QXmlStreamWriter(QString* string)</code></span></p>
+</div><h4 id='method.set_auto_formatting' class='method'><code>fn <a href='#method.set_auto_formatting' class='fnname'>set_auto_formatting</a>(&amp;mut self, arg1: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::setAutoFormatting(bool arg1)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#autoFormatting-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The auto-formatting flag of the stream writer</p>
+<p>This property controls whether or not the stream writer automatically formats the generated XML data. If enabled, the writer automatically adds line-breaks and indentation to empty sections between elements (ignorable whitespace). The main purpose of auto-formatting is to split the data into several lines, and to increase readability for a human reader. The indentation depth can be controlled through the <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#autoFormattingIndent-prop">autoFormattingIndent</a> property.</p>
+<p>By default, auto-formatting is disabled.</p>
+<p>This property was introduced in  Qt 4.4.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>autoFormatting</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAutoFormatting</b></span>(bool<i> enable</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.set_auto_formatting_indent' class='method'><code>fn <a href='#method.set_auto_formatting_indent' class='fnname'>set_auto_formatting_indent</a>(&amp;mut self, spaces_or_tabs: <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::setAutoFormattingIndent(int spacesOrTabs)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#autoFormattingIndent-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This property holds the number of spaces or tabs used for indentation when auto-formatting is enabled. Positive numbers indicate spaces, negative numbers tabs.</p>
+<p>The default indentation is 4.</p>
+<p>This property was introduced in  Qt 4.4.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> int </td><td class="memItemRight bottomAlign"><span class="name"><b>autoFormattingIndent</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAutoFormattingIndent</b></span>(int<i> spacesOrTabs</i>)</td></tr>
+</tbody></table></div>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#autoFormatting-prop">autoFormatting</a>.</p></div></p>
+</div><h4 id='method.set_codec' class='method'><code>fn <a href='#method.set_codec' class='fnname'>set_codec</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_writer/overloading/trait.XmlStreamWriterSetCodecArgs.html' title='qt_core::xml_stream_writer::overloading::XmlStreamWriterSetCodecArgs'>XmlStreamWriterSetCodecArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamWriter::setCodec</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-1' class='section-header'><a href='#variant-1-1'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn set_codec(&amp;mut self, *mut ::text_codec::TextCodec) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::setCodec(QTextCodec* codec)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#setCodec">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the codec for this stream to <i>codec</i>. The codec is used for encoding any data that is written. By default, <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> uses UTF-8.</p>
+<p>The encoding information is stored in the initial xml tag which gets written when you call <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartDocument">writeStartDocument</a>(). Call this function before calling <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartDocument">writeStartDocument</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#codec">codec</a>().</p></div></p>
+
+<h2 id='variant-2-1' class='section-header'><a href='#variant-2-1'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn set_codec(&amp;mut self, *const libc::c_char) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::setCodec(const char* codecName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#setCodec-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the codec for this stream to the <a href="http://doc.qt.io/qt-5/qtextcodec.html">QTextCodec</a> for the encoding specified by <i>codecName</i>. Common values for <code>codecName</code> include &quot;ISO 8859-1&quot;, &quot;UTF-8&quot;, and &quot;UTF-16&quot;. If the encoding isn&#39;t recognized, nothing happens.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtextcodec.html#codecForName">QTextCodec::codecForName</a>().</p></div></p>
+</div><h4 id='method.set_device' class='method'><code>fn <a href='#method.set_device' class='fnname'>set_device</a>(&amp;mut self, device: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_core/qiod_evice/struct.QiodEvice.html' title='qt_core::qiod_evice::QiodEvice'>QiodEvice</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::setDevice(QIODevice* device)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#setDevice">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the current device to <i>device</i>. If you want the stream to write into a <a href="http://doc.qt.io/qt-5/qbytearray.html">QByteArray</a>, you can create a <a href="http://doc.qt.io/qt-5/qbuffer.html">QBuffer</a> device.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#device">device</a>().</p></div></p>
+</div><h4 id='method.write_attribute' class='method'><code>fn <a href='#method.write_attribute' class='fnname'>write_attribute</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_writer/overloading/trait.XmlStreamWriterWriteAttributeArgs.html' title='qt_core::xml_stream_writer::overloading::XmlStreamWriterWriteAttributeArgs'>XmlStreamWriterWriteAttributeArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamWriter::writeAttribute</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-2' class='section-header'><a href='#variant-1-2'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn write_attribute(&amp;mut self, (&amp;::string::String, &amp;::string::String, &amp;::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeAttribute(const QString&amp; namespaceUri, const QString&amp; name, const QString&amp; value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttribute">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes an attribute with <i>name</i> and <i>value</i>, prefixed for the specified <i>namespaceUri</i>. If the namespace has not been declared yet, <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> will generate a namespace declaration for it.</p>
+<p>This function can only be called after <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>() before any content is written, or after <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement">writeEmptyElement</a>().</p></div></p>
+
+<h2 id='variant-2-2' class='section-header'><a href='#variant-2-2'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn write_attribute(&amp;mut self, (&amp;::string::String, &amp;::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeAttribute(const QString&amp; qualifiedName, const QString&amp; value)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttribute-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes an attribute with <i>qualifiedName</i> and <i>value</i>.</p>
+<p>This function can only be called after <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>() before any content is written, or after <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement">writeEmptyElement</a>().</p></div></p>
+
+<h2 id='variant-3-1' class='section-header'><a href='#variant-3-1'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn write_attribute(&amp;mut self, &amp;::xml_stream_attribute::XmlStreamAttribute) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeAttribute(const QXmlStreamAttribute&amp; attribute)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttribute-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes the <i>attribute</i>.</p>
+<p>This function can only be called after <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>() before any content is written, or after <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement">writeEmptyElement</a>().</p></div></p>
+</div><h4 id='method.write_attributes' class='method'><code>fn <a href='#method.write_attributes' class='fnname'>write_attributes</a>(&amp;mut self, attributes: &amp;<a class='struct' href='../../qt_core/xml_stream_attributes/struct.XmlStreamAttributes.html' title='qt_core::xml_stream_attributes::XmlStreamAttributes'>XmlStreamAttributes</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeAttributes(const QXmlStreamAttributes&amp; attributes)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttributes">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the attribute vector <i>attributes</i>. If a namespace referenced in an attribute not been declared yet, <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> will generate a namespace declaration for it.</p>
+<p>This function can only be called after <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>() before any content is written, or after <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement">writeEmptyElement</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttribute">writeAttribute</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeNamespace">writeNamespace</a>().</p></div></p>
+</div><h4 id='method.write_cdata' class='method'><code>fn <a href='#method.write_cdata' class='fnname'>write_cdata</a>(&amp;mut self, text: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeCDATA(const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeCDATA">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes <i>text</i> as CDATA section. If <i>text</i> contains the forbidden character sequence &quot;]]&gt;&quot;, it is split into different CDATA sections.</p>
+<p>This function mainly exists for completeness. Normally you should not need use it, because <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeCharacters">writeCharacters</a>() automatically escapes all non-content characters.</p></div></p>
+</div><h4 id='method.write_characters' class='method'><code>fn <a href='#method.write_characters' class='fnname'>write_characters</a>(&amp;mut self, text: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeCharacters(const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeCharacters">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes <i>text</i>. The characters &quot;&lt;&quot;, &quot;&amp;&quot;, and &quot;&quot;&quot; are escaped as entity references &quot;&amp;lt;&quot;, &quot;&amp;amp;, and &quot;&amp;quot;&quot;. To avoid the forbidden sequence &quot;]]&gt;&quot;, &quot;&gt;&quot; is also escaped as &quot;&amp;gt;&quot;.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEntityReference">writeEntityReference</a>().</p></div></p>
+</div><h4 id='method.write_comment' class='method'><code>fn <a href='#method.write_comment' class='fnname'>write_comment</a>(&amp;mut self, text: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeComment(const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeComment">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes <i>text</i> as XML comment, where <i>text</i> must not contain the forbidden sequence &quot;--&quot; or end with &quot;-&quot;. Note that XML does not provide any way to escape &quot;-&quot; in a comment.</p></div></p>
+</div><h4 id='method.write_current_token' class='method'><code>fn <a href='#method.write_current_token' class='fnname'>write_current_token</a>(&amp;mut self, reader: &amp;<a class='struct' href='../../qt_core/xml_stream_reader/struct.XmlStreamReader.html' title='qt_core::xml_stream_reader::XmlStreamReader'>XmlStreamReader</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeCurrentToken(const QXmlStreamReader&amp; reader)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeCurrentToken">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the current state of the <i>reader</i>. All possible valid states are supported.</p>
+<p>The purpose of this function is to support chained processing of XML data.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamreader.html#tokenType">QXmlStreamReader::tokenType</a>().</p></div></p>
+</div><h4 id='method.write_default_namespace' class='method'><code>fn <a href='#method.write_default_namespace' class='fnname'>write_default_namespace</a>(&amp;mut self, namespace_uri: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeDefaultNamespace(const QString&amp; namespaceUri)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeDefaultNamespace">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes a default namespace declaration for <i>namespaceUri</i>.</p>
+<p>If <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>() or <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement">writeEmptyElement</a>() was called, the declaration applies to the current element; otherwise it applies to the next child element.</p>
+<p>Note that the namespaces <i><a href="http://www.w3.org/XML/1998/namespace">http://www.w3.org/XML/1998/namespace</a></i> (bound to <i>xmlns</i>) and <i><a href="http://www.w3.org/2000/xmlns/">http://www.w3.org/2000/xmlns/</a></i> (bound to <i>xml</i>) by definition cannot be declared as default.</p></div></p>
+</div><h4 id='method.write_dtd' class='method'><code>fn <a href='#method.write_dtd' class='fnname'>write_dtd</a>(&amp;mut self, dtd: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeDTD(const QString&amp; dtd)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeDTD">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes a DTD section. The <i>dtd</i> represents the entire doctypedecl production from the XML 1.0 specification.</p></div></p>
+</div><h4 id='method.write_empty_element' class='method'><code>fn <a href='#method.write_empty_element' class='fnname'>write_empty_element</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_writer/overloading/trait.XmlStreamWriterWriteEmptyElementArgs.html' title='qt_core::xml_stream_writer::overloading::XmlStreamWriterWriteEmptyElementArgs'>XmlStreamWriterWriteEmptyElementArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamWriter::writeEmptyElement</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-3' class='section-header'><a href='#variant-1-3'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn write_empty_element(&amp;mut self, (&amp;::string::String, &amp;::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeEmptyElement(const QString&amp; namespaceUri, const QString&amp; name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes an empty element with <i>name</i>, prefixed for the specified <i>namespaceUri</i>. If the namespace has not been declared, <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> will generate a namespace declaration for it. Subsequent calls to <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttribute">writeAttribute</a>() will add attributes to this element.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeNamespace">writeNamespace</a>().</p></div></p>
+
+<h2 id='variant-2-3' class='section-header'><a href='#variant-2-3'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn write_empty_element(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeEmptyElement(const QString&amp; qualifiedName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes an empty element with qualified name <i>qualifiedName</i>. Subsequent calls to <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttribute">writeAttribute</a>() will add attributes to this element.</p></div></p>
+</div><h4 id='method.write_end_document' class='method'><code>fn <a href='#method.write_end_document' class='fnname'>write_end_document</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeEndDocument()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndDocument">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Closes all remaining open start elements and writes a newline.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartDocument">writeStartDocument</a>().</p></div></p>
+</div><h4 id='method.write_end_element' class='method'><code>fn <a href='#method.write_end_element' class='fnname'>write_end_element</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeEndElement()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndElement">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Closes the previous start element.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>().</p></div></p>
+</div><h4 id='method.write_entity_reference' class='method'><code>fn <a href='#method.write_entity_reference' class='fnname'>write_entity_reference</a>(&amp;mut self, name: &amp;<a class='struct' href='../../qt_core/string/struct.String.html' title='qt_core::string::String'>String</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeEntityReference(const QString&amp; name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEntityReference">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes the entity reference <i>name</i> to the stream, as &quot;&amp;<i>name</i>;&quot;.</p></div></p>
+</div><h4 id='method.write_namespace' class='method'><code>fn <a href='#method.write_namespace' class='fnname'>write_namespace</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_writer/overloading/trait.XmlStreamWriterWriteNamespaceArgs.html' title='qt_core::xml_stream_writer::overloading::XmlStreamWriterWriteNamespaceArgs'>XmlStreamWriterWriteNamespaceArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamWriter::writeNamespace</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn write_namespace(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn write_namespace(&amp;mut self, (&amp;::string::String, &amp;::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeNamespace(const QString&amp; namespaceUri, const QString&amp; prefix = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeNamespace">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes a namespace declaration for <i>namespaceUri</i> with <i>prefix</i>. If <i>prefix</i> is empty, <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> assigns a unique prefix consisting of the letter &#39;n&#39; followed by a number.</p>
+<p>If <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>() or <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement">writeEmptyElement</a>() was called, the declaration applies to the current element; otherwise it applies to the next child element.</p>
+<p>Note that the prefix <i>xml</i> is both predefined and reserved for <i><a href="http://www.w3.org/XML/1998/namespace">http://www.w3.org/XML/1998/namespace</a></i>, which in turn cannot be bound to any other prefix. The prefix <i>xmlns</i> and its URI <i><a href="http://www.w3.org/2000/xmlns/">http://www.w3.org/2000/xmlns/</a></i> are used for the namespace mechanism itself and thus completely forbidden in declarations.</p></div></p>
+</div><h4 id='method.write_processing_instruction' class='method'><code>fn <a href='#method.write_processing_instruction' class='fnname'>write_processing_instruction</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_writer/overloading/trait.XmlStreamWriterWriteProcessingInstructionArgs.html' title='qt_core::xml_stream_writer::overloading::XmlStreamWriterWriteProcessingInstructionArgs'>XmlStreamWriterWriteProcessingInstructionArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamWriter::writeProcessingInstruction</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn write_processing_instruction(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>2) <code>fn write_processing_instruction(&amp;mut self, (&amp;::string::String, &amp;::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeProcessingInstruction(const QString&amp; target, const QString&amp; data = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeProcessingInstruction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes an XML processing instruction with <i>target</i> and <i>data</i>, where <i>data</i> must not contain the sequence &quot;?&gt;&quot;.</p></div></p>
+</div><h4 id='method.write_start_document' class='method'><code>fn <a href='#method.write_start_document' class='fnname'>write_start_document</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_writer/overloading/trait.XmlStreamWriterWriteStartDocumentArgs.html' title='qt_core::xml_stream_writer::overloading::XmlStreamWriterWriteStartDocumentArgs'>XmlStreamWriterWriteStartDocumentArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamWriter::writeStartDocument</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-4' class='section-header'><a href='#variant-1-4'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn write_start_document(&amp;mut self, ()) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeStartDocument()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartDocument-3">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes a document start with XML version number &quot;1.0&quot;. This also writes the encoding information.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndDocument">writeEndDocument</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#setCodec">setCodec</a>().</p></div></p>
+
+<h2 id='variant-2-4' class='section-header'><a href='#variant-2-4'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn write_start_document(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeStartDocument(const QString&amp; version)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartDocument">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes a document start with the XML version number <i>version</i>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndDocument">writeEndDocument</a>().</p></div></p>
+
+<h2 id='variant-3-2' class='section-header'><a href='#variant-3-2'>Variant 3</a></h2>
+<p>Rust arguments: <code>fn write_start_document(&amp;mut self, (&amp;::string::String, bool)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeStartDocument(const QString&amp; version, bool standalone)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartDocument-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes a document start with the XML version number <i>version</i> and a standalone attribute <i>standalone</i>.</p>
+<p>This function was introduced in  Qt 4.5.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndDocument">writeEndDocument</a>().</p></div></p>
+</div><h4 id='method.write_start_element' class='method'><code>fn <a href='#method.write_start_element' class='fnname'>write_start_element</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_writer/overloading/trait.XmlStreamWriterWriteStartElementArgs.html' title='qt_core::xml_stream_writer::overloading::XmlStreamWriterWriteStartElementArgs'>XmlStreamWriterWriteStartElementArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamWriter::writeStartElement</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-5' class='section-header'><a href='#variant-1-5'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn write_start_element(&amp;mut self, (&amp;::string::String, &amp;::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeStartElement(const QString&amp; namespaceUri, const QString&amp; name)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes a start element with <i>name</i>, prefixed for the specified <i>namespaceUri</i>. If the namespace has not been declared yet, <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> will generate a namespace declaration for it. Subsequent calls to <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttribute">writeAttribute</a>() will add attributes to this element.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeNamespace">writeNamespace</a>(), <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndElement">writeEndElement</a>(), and <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement">writeEmptyElement</a>().</p></div></p>
+
+<h2 id='variant-2-5' class='section-header'><a href='#variant-2-5'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn write_start_element(&amp;mut self, &amp;::string::String) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeStartElement(const QString&amp; qualifiedName)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes a start element with <i>qualifiedName</i>. Subsequent calls to <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeAttribute">writeAttribute</a>() will add attributes to this element.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndElement">writeEndElement</a>() and <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEmptyElement">writeEmptyElement</a>().</p></div></p>
+</div><h4 id='method.write_text_element' class='method'><code>fn <a href='#method.write_text_element' class='fnname'>write_text_element</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs mut self, args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_core/xml_stream_writer/overloading/trait.XmlStreamWriterWriteTextElementArgs.html' title='qt_core::xml_stream_writer::overloading::XmlStreamWriterWriteTextElementArgs'>XmlStreamWriterWriteTextElementArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QXmlStreamWriter::writeTextElement</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1-6' class='section-header'><a href='#variant-1-6'>Variant 1</a></h2>
+<p>Rust arguments: <code>fn write_text_element(&amp;mut self, (&amp;::string::String, &amp;::string::String, &amp;::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeTextElement(const QString&amp; namespaceUri, const QString&amp; name, const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeTextElement">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Writes a text element with <i>name</i>, prefixed for the specified <i>namespaceUri</i>, and <i>text</i>. If the namespace has not been declared, <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html">QXmlStreamWriter</a> will generate a namespace declaration for it.</p>
+<p>This is a convenience function equivalent to:</p>
+<pre class="cpp">        <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>(namespaceUri<span class="operator">,</span> name);
+&#32;       <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeCharacters">writeCharacters</a>(text);
+&#32;       <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndElement">writeEndElement</a>();</pre></div></p>
+
+<h2 id='variant-2-6' class='section-header'><a href='#variant-2-6'>Variant 2</a></h2>
+<p>Rust arguments: <code>fn write_text_element(&amp;mut self, (&amp;::string::String, &amp;::string::String)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>void QXmlStreamWriter::writeTextElement(const QString&amp; qualifiedName, const QString&amp; text)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeTextElement-2">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This is an overloaded function.</p>
+<p>Writes a text element with <i>qualifiedName</i> and <i>text</i>.</p>
+<p>This is a convenience function equivalent to:</p>
+<pre class="cpp">        <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeStartElement">writeStartElement</a>(qualifiedName);
+&#32;       <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeCharacters">writeCharacters</a>(text);
+&#32;       <a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#writeEndElement">writeEndElement</a>();</pre></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_core/xml_stream_writer/struct.XmlStreamWriter.html' title='qt_core::xml_stream_writer::XmlStreamWriter'>XmlStreamWriter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-171715' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_writer.rs.html#33-37' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_core/xml_stream_writer/struct.XmlStreamWriter.html' title='qt_core::xml_stream_writer::XmlStreamWriter'>XmlStreamWriter</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_core/xml_stream_writer/struct.XmlStreamWriter.html' title='qt_core::xml_stream_writer::XmlStreamWriter'>XmlStreamWriter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-171808' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_writer.rs.html#494-501' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QXmlStreamWriter::~QXmlStreamWriter()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qxmlstreamwriter.html#dtor.QXmlStreamWriter">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Destructor.</p></div></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_core/xml_stream_writer/struct.XmlStreamWriter.html' title='qt_core::xml_stream_writer::XmlStreamWriter'>XmlStreamWriter</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-171811' class='srclink' href='../../src/qt_core/home/ri/rust/rust_qt/cache/qt_core/src/xml_stream_writer.rs.html#503-507' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_core";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["RasterWindow","C++ type: <span style='color: green;'>```QRasterWindow```</span>"]]});

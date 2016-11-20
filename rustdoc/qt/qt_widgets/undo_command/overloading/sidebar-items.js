@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["UndoCommandActionTextArgs","This trait represents a set of arguments accepted by UndoCommand::action_text method."],["UndoCommandNewArgs","This trait represents a set of arguments accepted by UndoCommand::new method."],["UndoCommandTextArgs","This trait represents a set of arguments accepted by UndoCommand::text method."]]});

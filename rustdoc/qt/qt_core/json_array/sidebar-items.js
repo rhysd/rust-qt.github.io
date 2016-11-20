@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["ConstIterator","C++ type: <span style='color: green;'>```QJsonArray::const_iterator```</span>"],["Iterator","C++ type: <span style='color: green;'>```QJsonArray::iterator```</span>"],["JsonArray","C++ type: <span style='color: green;'>```QJsonArray```</span>"]]});

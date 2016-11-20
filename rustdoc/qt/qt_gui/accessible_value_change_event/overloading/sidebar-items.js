@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["AccessibleValueChangeEventNewArgs","This trait represents a set of arguments accepted by AccessibleValueChangeEvent::new method."],["AccessibleValueChangeEventValueArgs","This trait represents a set of arguments accepted by AccessibleValueChangeEvent::value method."]]});

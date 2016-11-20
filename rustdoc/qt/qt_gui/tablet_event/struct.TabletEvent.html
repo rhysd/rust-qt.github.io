@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TabletEvent` struct in crate `qt_gui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TabletEvent">
+
+    <title>qt_gui::tablet_event::TabletEvent - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>tablet_event</a></p><script>window.sidebarCurrent = {name: 'TabletEvent', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_gui</a>::<wbr><a href='index.html'>tablet_event</a>::<wbr><a class='struct' href=''>TabletEvent</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-152211' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/tablet_event.rs.html#58-60' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TabletEvent {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QTabletEvent</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qtabletevent.html">QTabletEvent</a> class contains parameters that describe a Tablet event.</p>
+<p><i>Tablet events</i> are generated from tablet peripherals such as Wacom tablets and various other brands, and electromagnetic stylus devices included with some types of tablet computers. (It is not the same as <a href="http://doc.qt.io/qt-5/qtouchevent.html">QTouchEvent</a> which a touchscreen generates, even when a passive stylus is used on a touchscreen.)</p>
+<p>Tablet events are similar to mouse events; for example, the <a href="http://doc.qt.io/qt-5/qtabletevent.html#x">x</a>(), <a href="http://doc.qt.io/qt-5/qtabletevent.html#y">y</a>(), <a href="http://doc.qt.io/qt-5/qtabletevent.html#pos">pos</a>(), <a href="http://doc.qt.io/qt-5/qtabletevent.html#globalX">globalX</a>(), <a href="http://doc.qt.io/qt-5/qtabletevent.html#globalY">globalY</a>(), and <a href="http://doc.qt.io/qt-5/qtabletevent.html#globalPos">globalPos</a>() accessors provide the cursor position, and you can see which <a href="http://doc.qt.io/qt-5/qtabletevent.html#buttons">buttons</a>() are pressed (pressing the stylus tip against the tablet surface is equivalent to a left mouse button). But tablet events also pass through some extra information that the tablet device driver provides; for example, you might want to do subpixel rendering with higher resolution coordinates (<a href="http://doc.qt.io/qt-5/qtabletevent.html#hiResGlobalX">hiResGlobalX</a>() and <a href="http://doc.qt.io/qt-5/qtabletevent.html#hiResGlobalY">hiResGlobalY</a>()), adjust color brightness based on the <a href="http://doc.qt.io/qt-5/qtabletevent.html#pressure">pressure</a>() of the tool against the tablet surface, use different brushes depending on the type of tool in use (<a href="http://doc.qt.io/qt-5/qtabletevent.html#device">device</a>()), modulate the brush shape in some way according to the X-axis and Y-axis tilt of the tool with respect to the tablet surface (<a href="http://doc.qt.io/qt-5/qtabletevent.html#xTilt">xTilt</a>() and <a href="http://doc.qt.io/qt-5/qtabletevent.html#yTilt">yTilt</a>()), and use a virtual eraser instead of a brush if the user switches to the other end of a double-ended stylus (<a href="http://doc.qt.io/qt-5/qtabletevent.html#pointerType">pointerType</a>()).</p>
+<p>Every event contains an accept flag that indicates whether the receiver wants the event. You should call <a href="http://doc.qt.io/qt-5/qevent.html#accept">QTabletEvent::accept</a>() if you handle the tablet event; otherwise it will be sent to the parent widget. The exception are <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletEnterProximity</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletLeaveProximity</a> events: these are only sent to <a href="http://doc.qt.io/qt-5/qapplication.html">QApplication</a> and do not check whether or not they are accepted.</p>
+<p>The <a href="http://doc.qt.io/qt-5/qwidget.html#enabled-prop">QWidget::setEnabled</a>() function can be used to enable or disable mouse, tablet and keyboard events for a widget.</p>
+<p>The event handler <a href="http://doc.qt.io/qt-5/qwidget.html#tabletEvent">QWidget::tabletEvent</a>() receives <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletPress</a>, <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletRelease</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletMove</a> events. Qt will first send a tablet event, then if it is not accepted by any widget, it will send a mouse event. This allows users of applications that are not designed for tablets to use a tablet like a mouse. However high-resolution drawing applications should handle the tablet events, because they can occur at a higher frequency, which is a benefit for smooth and accurate drawing. If the tablet events are rejected, the synthetic mouse events may be compressed for efficiency.</p>
+<p>New in Qt 5.4: <a href="http://doc.qt.io/qt-5/qtabletevent.html">QTabletEvent</a> includes all information available from the device, including <a href="http://doc.qt.io/qt-5/qtabletevent.html#buttons">QTabletEvent::buttons</a>(). Previously it was not possible to accept all tablet events and also know which stylus buttons were pressed.</p>
+<p>Note that pressing the stylus button while the stylus hovers over the tablet will generate a button press on some types of tablets, while on other types it will be necessary to press the stylus against the tablet surface in order to register the simultaneous stylus button press.</p>
+<a name="notes-for-x11-users"></a></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_gui/tablet_event/struct.TabletEvent.html' title='qt_gui::tablet_event::TabletEvent'>TabletEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-152216' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/tablet_event.rs.html#68-388' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.accept' class='method'><code>fn <a href='#method.accept' class='fnname'>accept</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTabletEvent::accept()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accept">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Sets the accept flag of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(true).</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p></div></p>
+</div><h4 id='method.button' class='method'><code>fn <a href='#method.button' class='fnname'>button</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/qt/enum.MouseButton.html' title='qt_core::qt::MouseButton'>MouseButton</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>Qt::MouseButton QTabletEvent::button() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#button">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the button that caused the event.</p>
+<p>Note that the returned value is always <a href="http://doc.qt.io/qt-5/qt.html#MouseButton-enum">Qt::NoButton</a> for <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletMove</a>, <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletEnterProximity</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletLeaveProximity</a> events.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#buttons">buttons</a>() and <a href="http://doc.qt.io/qt-5/qt.html#MouseButton-enum">Qt::MouseButton</a>.</p></div></p>
+</div><h4 id='method.buttons' class='method'><code>fn <a href='#method.buttons' class='fnname'>buttons</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.MouseButton.html' title='qt_core::qt::MouseButton'>MouseButton</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::MouseButton&gt; QTabletEvent::buttons() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#buttons">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the button state when the event was generated. The button state is a combination of buttons from the <a href="http://doc.qt.io/qt-5/qt.html#MouseButton-enum">Qt::MouseButton</a> enum using the OR operator. For <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletMove</a> events, this is all buttons that are pressed down. For <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletPress</a> events this includes the button that caused the event. For <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">TabletRelease</a> events this excludes the button that caused the event.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#button">button</a>() and <a href="http://doc.qt.io/qt-5/qt.html#MouseButton-enum">Qt::MouseButton</a>.</p></div></p>
+</div><h4 id='method.device' class='method'><code>fn <a href='#method.device' class='fnname'>device</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/tablet_event/enum.TabletDevice.html' title='qt_gui::tablet_event::TabletDevice'>TabletDevice</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTabletEvent::TabletDevice QTabletEvent::device() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#device">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type of device that generated the event.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#TabletDevice-enum">TabletDevice</a>.</p></div></p>
+</div><h4 id='method.global_pos' class='method'><code>fn <a href='#method.global_pos' class='fnname'>global_pos</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/tablet_event/overloading/trait.TabletEventGlobalPosArgs.html' title='qt_gui::tablet_event::overloading::TabletEventGlobalPosArgs'>TabletEventGlobalPosArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTabletEvent::globalPos</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn global_pos(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::point::Point&gt;</code><br>2) <code>fn global_pos(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint QTabletEvent::globalPos() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#globalPos">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the global position of the device <i>at the time of the event</i>. This is important on asynchronous windows systems like X11; whenever you move your widgets around in response to mouse events, globalPos() can differ significantly from the current position <a href="http://doc.qt.io/qt-5/qcursor.html#pos">QCursor::pos</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#globalX">globalX</a>(), <a href="http://doc.qt.io/qt-5/qtabletevent.html#globalY">globalY</a>(), and <a href="http://doc.qt.io/qt-5/qtabletevent-compat.html#hiResGlobalPos">hiResGlobalPos</a>().</p></div></p>
+</div><h4 id='method.global_pos_f' class='method'><code>fn <a href='#method.global_pos_f' class='fnname'>global_pos_f</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPointF&amp; QTabletEvent::globalPosF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#globalPosF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the global position of the device <i>at the time of the event</i>. This is important on asynchronous windows systems like X11; whenever you move your widgets around in response to mouse events, globalPosF() can differ significantly from the current position <a href="http://doc.qt.io/qt-5/qcursor.html#pos">QCursor::pos</a>().</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#posF">posF</a>().</p></div></p>
+</div><h4 id='method.global_x' class='method'><code>fn <a href='#method.global_x' class='fnname'>global_x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTabletEvent::globalX() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#globalX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the global x position of the mouse pointer at the time of the event.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#globalY">globalY</a>(), <a href="http://doc.qt.io/qt-5/qtabletevent.html#globalPos">globalPos</a>(), and <a href="http://doc.qt.io/qt-5/qtabletevent.html#hiResGlobalX">hiResGlobalX</a>().</p></div></p>
+</div><h4 id='method.global_y' class='method'><code>fn <a href='#method.global_y' class='fnname'>global_y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTabletEvent::globalY() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#globalY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the global y position of the tablet device at the time of the event.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#globalX">globalX</a>(), <a href="http://doc.qt.io/qt-5/qtabletevent.html#globalPos">globalPos</a>(), and <a href="http://doc.qt.io/qt-5/qtabletevent.html#hiResGlobalY">hiResGlobalY</a>().</p></div></p>
+</div><h4 id='method.hi_res_global_x' class='method'><code>fn <a href='#method.hi_res_global_x' class='fnname'>hi_res_global_x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTabletEvent::hiResGlobalX() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#hiResGlobalX">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The high precision x position of the tablet device.</p></div></p>
+</div><h4 id='method.hi_res_global_y' class='method'><code>fn <a href='#method.hi_res_global_y' class='fnname'>hi_res_global_y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTabletEvent::hiResGlobalY() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#hiResGlobalY">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The high precision y position of the tablet device.</p></div></p>
+</div><h4 id='method.ignore' class='method'><code>fn <a href='#method.ignore' class='fnname'>ignore</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTabletEvent::ignore()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#ignore">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Clears the accept flag parameter of the event object, the equivalent of calling <a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">setAccepted</a>(false).</p>
+<p>Clearing the accept parameter indicates that the event receiver does not want the event. Unwanted events might be propagated to the parent widget.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>().</p></div></p>
+</div><h4 id='method.is_accepted' class='method'><code>fn <a href='#method.is_accepted' class='fnname'>is_accepted</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTabletEvent::isAccepted() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.modifiers' class='method'><code>fn <a href='#method.modifiers' class='fnname'>modifiers</a>(&amp;self) -&gt; <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.KeyboardModifier.html' title='qt_core::qt::KeyboardModifier'>KeyboardModifier</a>&gt;</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QFlags&lt;Qt::KeyboardModifier&gt; QTabletEvent::modifiers() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputevent.html#modifiers">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the keyboard modifier flags that existed immediately before the event occurred.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qguiapplication.html#keyboardModifiers">QGuiApplication::keyboardModifiers</a>().</p></div></p>
+</div><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;Args&gt;(args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/tablet_event/overloading/trait.TabletEventNewArgs.html' title='qt_gui::tablet_event::overloading::TabletEventNewArgs'>TabletEventNewArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTabletEvent::QTabletEvent</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<h2 id='variant-1' class='section-header'><a href='#variant-1'>Variant 1</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::event::Type, &amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF, libc::c_int, libc::c_int, libc::c_double, libc::c_int, libc::c_int, libc::c_double, libc::c_double, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, i64, cpp_utils::AsStruct)) -&gt; ::tablet_event::TabletEvent</code><br>2) <code>fn new((qt_core::event::Type, &amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF, libc::c_int, libc::c_int, libc::c_double, libc::c_int, libc::c_int, libc::c_double, libc::c_double, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, i64, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::tablet_event::TabletEvent&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTabletEvent::QTabletEvent(QEvent::Type t, const QPointF&amp; pos, const QPointF&amp; globalPos, int device, int pointerType, double pressure, int xTilt, int yTilt, double tangentialPressure, double rotation, int z, QFlags&lt;Qt::KeyboardModifier&gt; keyState, qint64 uniqueID)</code></span></p>
+
+<h2 id='variant-2' class='section-header'><a href='#variant-2'>Variant 2</a></h2>
+<p>Rust arguments: <br>1) <code>fn new((qt_core::event::Type, &amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF, libc::c_int, libc::c_int, libc::c_double, libc::c_int, libc::c_int, libc::c_double, libc::c_double, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, i64, qt_core::qt::MouseButton, qt_core::flags::Flags&lt;qt_core::qt::MouseButton&gt;, cpp_utils::AsStruct)) -&gt; ::tablet_event::TabletEvent</code><br>2) <code>fn new((qt_core::event::Type, &amp;qt_core::point_f::PointF, &amp;qt_core::point_f::PointF, libc::c_int, libc::c_int, libc::c_double, libc::c_int, libc::c_int, libc::c_double, libc::c_double, libc::c_int, qt_core::flags::Flags&lt;qt_core::qt::KeyboardModifier&gt;, i64, qt_core::qt::MouseButton, qt_core::flags::Flags&lt;qt_core::qt::MouseButton&gt;, cpp_utils::AsBox)) -&gt; cpp_utils::CppBox&lt;::tablet_event::TabletEvent&gt;</code><br>
+C++ method: <span style='color: green;'><code>[constructor] void QTabletEvent::QTabletEvent(QEvent::Type t, const QPointF&amp; pos, const QPointF&amp; globalPos, int device, int pointerType, double pressure, int xTilt, int yTilt, double tangentialPressure, double rotation, int z, QFlags&lt;Qt::KeyboardModifier&gt; keyState, qint64 uniqueID, Qt::MouseButton button, QFlags&lt;Qt::MouseButton&gt; buttons)</code></span></p>
+</div><h4 id='method.pointer_type' class='method'><code>fn <a href='#method.pointer_type' class='fnname'>pointer_type</a>(&amp;self) -&gt; <a class='enum' href='../../qt_gui/tablet_event/enum.PointerType.html' title='qt_gui::tablet_event::PointerType'>PointerType</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTabletEvent::PointerType QTabletEvent::pointerType() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#pointerType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the type of point that generated the event.</p></div></p>
+</div><h4 id='method.pos' class='method'><code>fn <a href='#method.pos' class='fnname'>pos</a>&lt;'largs,&nbsp;Args&gt;(&amp;'largs self, args: Args) -&gt; Args::ReturnType <span class='where'>where Args: <a class='trait' href='../../qt_gui/tablet_event/overloading/trait.TabletEventPosArgs.html' title='qt_gui::tablet_event::overloading::TabletEventPosArgs'>TabletEventPosArgs</a>&lt;'largs&gt;</span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTabletEvent::pos</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn pos(&amp;self, cpp_utils::AsBox) -&gt; cpp_utils::CppBox&lt;qt_core::point::Point&gt;</code><br>2) <code>fn pos(&amp;self, cpp_utils::AsStruct) -&gt; qt_core::point::Point</code><br>
+C++ method: <span style='color: green;'><code>QPoint QTabletEvent::pos() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#pos">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position of the device, relative to the widget that received the event.</p>
+<p>If you move widgets around in response to mouse events, use <a href="http://doc.qt.io/qt-5/qtabletevent.html#globalPos">globalPos</a>() instead of this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#x">x</a>(), <a href="http://doc.qt.io/qt-5/qtabletevent.html#y">y</a>(), and <a href="http://doc.qt.io/qt-5/qtabletevent.html#globalPos">globalPos</a>().</p></div></p>
+</div><h4 id='method.pos_f' class='method'><code>fn <a href='#method.pos_f' class='fnname'>pos_f</a>&lt;'l0&gt;(&amp;'l0 self) -&gt; &amp;'l0 <a class='struct' href='../../qt_core/point_f/struct.PointF.html' title='qt_core::point_f::PointF'>PointF</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>const QPointF&amp; QTabletEvent::posF() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#posF">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the position of the device, relative to the widget that received the event.</p>
+<p>If you move widgets around in response to mouse events, use <a href="http://doc.qt.io/qt-5/qtabletevent.html#globalPosF">globalPosF</a>() instead of this function.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#globalPosF">globalPosF</a>().</p></div></p>
+</div><h4 id='method.pressure' class='method'><code>fn <a href='#method.pressure' class='fnname'>pressure</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTabletEvent::pressure() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#pressure">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the pressure for the device. 0.0 indicates that the stylus is not on the tablet, 1.0 indicates the maximum amount of pressure for the stylus.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#tangentialPressure">tangentialPressure</a>().</p></div></p>
+</div><h4 id='method.register_event_type' class='method'><code>fn <a href='#method.register_event_type' class='fnname'>register_event_type</a>&lt;Args&gt;(args: Args) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a> <span class='where'>where Args: <a class='trait' href='../../qt_gui/tablet_event/overloading/trait.TabletEventRegisterEventTypeArgs.html' title='qt_gui::tablet_event::overloading::TabletEventRegisterEventTypeArgs'>TabletEventRegisterEventTypeArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QTabletEvent::registerEventType</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn register_event_type(libc::c_int) -&gt; libc::c_int</code><br>2) <code>fn register_event_type(()) -&gt; libc::c_int</code><br>
+C++ method: <span style='color: green;'><code>static int QTabletEvent::registerEventType(int hint = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#registerEventType">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Registers and returns a custom event type. The <i>hint</i> provided will be used if it is available, otherwise it will return a value between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a> that has not yet been registered. The <i>hint</i> is ignored if its value is not between <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::User</a> and <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::MaxUser</a>.</p>
+<p>Returns -1 if all available values are already taken or the program is shutting down.</p>
+<p><b>Note:</b> This function is <a href="http://doc.qt.io/qt-5/threads-reentrancy.html#thread-safe">thread-safe</a>.</p>
+<p>This function was introduced in  Qt 4.4.</p></div></p>
+</div><h4 id='method.rotation' class='method'><code>fn <a href='#method.rotation' class='fnname'>rotation</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTabletEvent::rotation() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#rotation">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the rotation of the current device in degress. This is usually given by a 4D Mouse. If the device does not support rotation this value is always 0.0.</p></div></p>
+</div><h4 id='method.set_accepted' class='method'><code>fn <a href='#method.set_accepted' class='fnname'>set_accepted</a>(&amp;mut self, accepted: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTabletEvent::setAccepted(bool accepted)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#accepted-prop">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don&#39;t rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="http://doc.qt.io/qt-5/qevent.html#accept">accept</a>(), and cleared with <a href="http://doc.qt.io/qt-5/qevent.html#ignore">ignore</a>().</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tbody><tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isAccepted</b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAccepted</b></span>(bool<i> accepted</i>)</td></tr>
+</tbody></table></div></div></p>
+</div><h4 id='method.set_modifiers' class='method'><code>fn <a href='#method.set_modifiers' class='fnname'>set_modifiers</a>(&amp;mut self, amodifiers: <a class='struct' href='../../qt_core/flags/struct.Flags.html' title='qt_core::flags::Flags'>Flags</a>&lt;<a class='enum' href='../../qt_core/qt/enum.KeyboardModifier.html' title='qt_core::qt::KeyboardModifier'>KeyboardModifier</a>&gt;)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTabletEvent::setModifiers(QFlags&lt;Qt::KeyboardModifier&gt; amodifiers)</code></span></p>
+</div><h4 id='method.set_timestamp' class='method'><code>fn <a href='#method.set_timestamp' class='fnname'>set_timestamp</a>(&amp;mut self, atimestamp: <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_ulong.html' title='libc::unix::notbsd::linux::other::b64::c_ulong'>c_ulong</a>)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>void QTabletEvent::setTimestamp(unsigned long atimestamp)</code></span></p>
+</div><h4 id='method.spontaneous' class='method'><code>fn <a href='#method.spontaneous' class='fnname'>spontaneous</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>bool QTabletEvent::spontaneous() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#spontaneous">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the event originated outside the application (a system event); otherwise returns <code>false</code>.</p>
+<p>The return value of this function is not defined for paint events.</p></div></p>
+</div><h4 id='method.tangential_pressure' class='method'><code>fn <a href='#method.tangential_pressure' class='fnname'>tangential_pressure</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_double.html' title='libc::c_double'>c_double</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>double QTabletEvent::tangentialPressure() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#tangentialPressure">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the tangential pressure for the device. This is typically given by a finger wheel on an airbrush tool. The range is from -1.0 to 1.0. 0.0 indicates a neutral position. Current airbrushes can only move in the positive direction from the neutrual position. If the device does not support tangential pressure, this value is always 0.0.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#pressure">pressure</a>().</p></div></p>
+</div><h4 id='method.timestamp' class='method'><code>fn <a href='#method.timestamp' class='fnname'>timestamp</a>(&amp;self) -&gt; <a class='type' href='../../libc/unix/notbsd/linux/other/b64/type.c_ulong.html' title='libc::unix::notbsd::linux::other::b64::c_ulong'>c_ulong</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>unsigned long QTabletEvent::timestamp() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qinputevent.html#timestamp">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the window system&#39;s timestamp for this event.</p></div></p>
+</div><h4 id='method.type_' class='method'><code>fn <a href='#method.type_' class='fnname'>type_</a>(&amp;self) -&gt; <a class='enum' href='../../qt_core/event/enum.Type.html' title='qt_core::event::Type'>Type</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QEvent::Type QTabletEvent::type() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qevent.html#type">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the event type.</p></div></p>
+</div><h4 id='method.unique_id' class='method'><code>fn <a href='#method.unique_id' class='fnname'>unique_id</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.i64.html'>i64</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>qint64 QTabletEvent::uniqueId() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#uniqueId">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a unique ID for the current device, making it possible to differentiate between multiple devices being used at the same time on the tablet.</p>
+<p>Support of this feature is dependent on the tablet.</p>
+<p>Values for the same device may vary from OS to OS.</p>
+<p>Later versions of the Wacom driver for Linux will now report the ID information. If you have a tablet that supports unique ID and are not getting the information on Linux, consider upgrading your driver.</p>
+<p>As of Qt 4.2, the unique ID is the same regardless of the orientation of the pen. Earlier versions would report a different value when using the eraser-end versus the pen-end of the stylus on some OS&#39;s.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#pointerType">pointerType</a>().</p></div></p>
+</div><h4 id='method.x' class='method'><code>fn <a href='#method.x' class='fnname'>x</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTabletEvent::x() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#x">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the x position of the device, relative to the widget that received the event.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#y">y</a>() and <a href="http://doc.qt.io/qt-5/qtabletevent.html#pos">pos</a>().</p></div></p>
+</div><h4 id='method.x_tilt' class='method'><code>fn <a href='#method.x_tilt' class='fnname'>x_tilt</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTabletEvent::xTilt() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#xTilt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the angle between the device (a pen, for example) and the perpendicular in the direction of the x axis. Positive values are towards the tablet&#39;s physical right. The angle is in the range -60 to +60 degrees.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/qtabletevent-tilt.png" alt=""></img></p><p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#yTilt">yTilt</a>().</p></div></p>
+</div><h4 id='method.y' class='method'><code>fn <a href='#method.y' class='fnname'>y</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTabletEvent::y() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#y">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the y position of the device, relative to the widget that received the event.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#x">x</a>() and <a href="http://doc.qt.io/qt-5/qtabletevent.html#pos">pos</a>().</p></div></p>
+</div><h4 id='method.y_tilt' class='method'><code>fn <a href='#method.y_tilt' class='fnname'>y_tilt</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTabletEvent::yTilt() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#yTilt">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the angle between the device (a pen, for example) and the perpendicular in the direction of the y axis. Positive values are towards the bottom of the tablet. The angle is within the range -60 to +60 degrees.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#xTilt">xTilt</a>().</p></div></p>
+</div><h4 id='method.z' class='method'><code>fn <a href='#method.z' class='fnname'>z</a>(&amp;self) -&gt; <a class='type' href='../../libc/type.c_int.html' title='libc::c_int'>c_int</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>int QTabletEvent::z() const</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qtabletevent.html#z">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns the z position of the device. Typically this is represented by a wheel on a 4D Mouse. If the device does not support a Z-axis, this value is always zero. This is <b>not</b> the same as pressure.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qtabletevent.html#pressure">pressure</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_gui/tablet_event/struct.TabletEvent.html' title='qt_gui::tablet_event::TabletEvent'>TabletEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-152214' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/tablet_event.rs.html#62-66' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_gui/tablet_event/struct.TabletEvent.html' title='qt_gui::tablet_event::TabletEvent'>TabletEvent</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_gui/tablet_event/struct.TabletEvent.html' title='qt_gui::tablet_event::TabletEvent'>TabletEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-152300' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/tablet_event.rs.html#390-397' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>virtual [destructor] void QTabletEvent::~QTabletEvent()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_gui/tablet_event/struct.TabletEvent.html' title='qt_gui::tablet_event::TabletEvent'>TabletEvent</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-152303' class='srclink' href='../../src/qt_gui/home/ri/rust/rust_qt/cache/qt_gui/src/tablet_event.rs.html#399-403' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_gui";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

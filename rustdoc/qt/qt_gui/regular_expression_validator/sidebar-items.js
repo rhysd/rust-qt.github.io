@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["overloading",""]],"struct":[["RegularExpressionValidator","C++ type: <span style='color: green;'>```QRegularExpressionValidator```</span>"]]});

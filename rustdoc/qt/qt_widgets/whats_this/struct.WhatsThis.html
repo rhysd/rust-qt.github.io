@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `WhatsThis` struct in crate `qt_widgets`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, WhatsThis">
+
+    <title>qt_widgets::whats_this::WhatsThis - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>whats_this</a></p><script>window.sidebarCurrent = {name: 'WhatsThis', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>qt_widgets</a>::<wbr><a href='index.html'>whats_this</a>::<wbr><a class='struct' href=''>WhatsThis</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-499883' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/whats_this.rs.html#20-22' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct WhatsThis {
+    // some fields omitted
+}</pre><div class='docblock'><p>C++ type: <span style='color: green;'><code>QWhatsThis</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwhatsthis.html">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>The <a href="http://doc.qt.io/qt-5/qwhatsthis.html">QWhatsThis</a> class provides a simple description of any widget, i.e. answering the question &quot;What&#39;s This?&quot;.</p>
+<p>&quot;What&#39;s This?&quot; help is part of an application&#39;s online help system, and provides users with information about the functionality and usage of a particular widget. &quot;What&#39;s This?&quot; help texts are typically longer and more detailed than <a href="http://doc.qt.io/qt-5/qtooltip.html">tooltips</a>, but generally provide less information than that supplied by separate help windows.</p>
+<p><a href="http://doc.qt.io/qt-5/qwhatsthis.html">QWhatsThis</a> provides a single window with an explanatory text that pops up when the user asks &quot;What&#39;s This?&quot;. The default way for users to ask the question is to move the focus to the relevant widget and press Shift+F1. The help text appears immediately; it goes away as soon as the user does something else. (Note that if there is a shortcut for Shift+F1, this mechanism will not work.) Some dialogs provide a &quot;?&quot; button that users can click to enter &quot;What&#39;s This?&quot; mode; they then click the relevant widget to pop up the &quot;What&#39;s This?&quot; window. It is also possible to provide a a menu option or toolbar button to switch into &quot;What&#39;s This?&quot; mode.</p>
+<p>To add &quot;What&#39;s This?&quot; text to a widget or an action, you simply call <a href="http://doc.qt.io/qt-5/qwidget.html#whatsThis-prop">QWidget::setWhatsThis</a>() or <a href="http://doc.qt.io/qt-5/qaction.html#whatsThis-prop">QAction::setWhatsThis</a>().</p>
+<p>The text can be either rich text or plain text. If you specify a rich text formatted string, it will be rendered using the default stylesheet, making it possible to embed images in the displayed text. To be as fast as possible, the default stylesheet uses a simple method to determine whether the text can be rendered as plain text. See <a href="http://doc.qt.io/qt-5/qt.html#mightBeRichText">Qt::mightBeRichText</a>() for details.</p>
+<pre class="cpp">    newAct <span class="operator">=</span> <span class="keyword">new</span> <span class="type"><a href="http://doc.qt.io/qt-5/qaction.html">QAction</a></span>(tr(<span class="string">&quot;&amp;New&quot;</span>)<span class="operator">,</span> <span class="keyword">this</span>);
+&#32;   newAct<span class="operator">-</span><span class="operator">&gt;</span>setShortcut(tr(<span class="string">&quot;Ctrl+N&quot;</span>));
+&#32;   newAct<span class="operator">-</span><span class="operator">&gt;</span>setStatusTip(tr(<span class="string">&quot;Create a new file&quot;</span>));
+&#32;   newAct<span class="operator">-</span><span class="operator">&gt;</span>setWhatsThis(tr(<span class="string">&quot;Click this option to create a new file.&quot;</span>));</pre>
+<p>An alternative way to enter &quot;What&#39;s This?&quot; mode is to call <a href="http://doc.qt.io/qt-5/qwhatsthis.html#createAction">createAction</a>(), and add the returned <a href="http://doc.qt.io/qt-5/qaction.html">QAction</a> to either a menu or a tool bar. By invoking this context help action (in the picture below, the button with the arrow and question mark icon) the user switches into &quot;What&#39;s This?&quot; mode. If they now click on a widget the appropriate help text is shown. The mode is left when help is given or when the user presses Esc.</p>
+<p class="centerAlign"><img src="http://doc.qt.io/qt-5/images/whatsthis.png" alt=""></img></p><p>You can enter &quot;What&#39;s This?&quot; mode programmatically with <a href="http://doc.qt.io/qt-5/qwhatsthis.html#enterWhatsThisMode">enterWhatsThisMode</a>(), check the mode with <a href="http://doc.qt.io/qt-5/qwhatsthis.html#inWhatsThisMode">inWhatsThisMode</a>(), and return to normal mode with <a href="http://doc.qt.io/qt-5/qwhatsthis.html#leaveWhatsThisMode">leaveWhatsThisMode</a>().</p>
+<p>If you want to control the &quot;What&#39;s This?&quot; behavior of a widget manually see <a href="http://doc.qt.io/qt-5/qt.html#WidgetAttribute-enum">Qt::WA_CustomWhatsThis</a>.</p>
+<p>It is also possible to show different help texts for different regions of a widget, by using a <a href="http://doc.qt.io/qt-5/qhelpevent.html">QHelpEvent</a> of type <a href="http://doc.qt.io/qt-5/qevent.html#Type-enum">QEvent::WhatsThis</a>. Intercept the help event in your widget&#39;s <a href="http://doc.qt.io/qt-5/qwidget.html#event">QWidget::event</a>() function and call <a href="http://doc.qt.io/qt-5/qwhatsthis.html#showText">QWhatsThis::showText</a>() with the text you want to display for the position specified in <a href="http://doc.qt.io/qt-5/qhelpevent.html#pos">QHelpEvent::pos</a>(). If the text is rich text and the user clicks on a link, the widget also receives a <a href="http://doc.qt.io/qt-5/qwhatsthisclickedevent.html">QWhatsThisClickedEvent</a> with the link&#39;s reference as <a href="http://doc.qt.io/qt-5/qwhatsthisclickedevent.html#href">QWhatsThisClickedEvent::href</a>(). If a <a href="http://doc.qt.io/qt-5/qwhatsthisclickedevent.html">QWhatsThisClickedEvent</a> is handled (i.e. <a href="http://doc.qt.io/qt-5/qwidget.html#event">QWidget::event</a>() returns true), the help window remains visible. Call <a href="http://doc.qt.io/qt-5/qwhatsthis.html#hideText">QWhatsThis::hideText</a>() to hide it explicitly.</p></div></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../qt_widgets/whats_this/struct.WhatsThis.html' title='qt_widgets::whats_this::WhatsThis'>WhatsThis</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-499888' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/whats_this.rs.html#30-93' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.create_action' class='method'><code>fn <a href='#method.create_action' class='fnname'>create_action</a>&lt;Args&gt;(args: Args) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.pointer.html'>*mut </a><a class='struct' href='../../qt_widgets/action/struct.Action.html' title='qt_widgets::action::Action'>Action</a> <span class='where'>where Args: <a class='trait' href='../../qt_widgets/whats_this/overloading/trait.WhatsThisCreateActionArgs.html' title='qt_widgets::whats_this::overloading::WhatsThisCreateActionArgs'>WhatsThisCreateActionArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWhatsThis::createAction</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn create_action(()) -&gt; *mut ::action::Action</code><br>2) <code>fn create_action(*mut qt_core::object::Object) -&gt; *mut ::action::Action</code><br>
+C++ method: <span style='color: green;'><code>static QAction* QWhatsThis::createAction(QObject* parent = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwhatsthis.html#createAction">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns a ready-made <a href="http://doc.qt.io/qt-5/qaction.html">QAction</a>, used to invoke &quot;What&#39;s This?&quot; context help, with the given <i>parent</i>.</p>
+<p>The returned <a href="http://doc.qt.io/qt-5/qaction.html">QAction</a> provides a convenient way to let users enter &quot;What&#39;s This?&quot; mode.</p></div></p>
+</div><h4 id='method.enter_whats_this_mode' class='method'><code>fn <a href='#method.enter_whats_this_mode' class='fnname'>enter_whats_this_mode</a>()</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QWhatsThis::enterWhatsThisMode()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwhatsthis.html#enterWhatsThisMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>This function switches the user interface into &quot;What&#39;s This?&quot; mode. The user interface can be switched back into normal mode by the user (e.g. by them clicking or pressing Esc), or programmatically by calling <a href="http://doc.qt.io/qt-5/qwhatsthis.html#leaveWhatsThisMode">leaveWhatsThisMode</a>().</p>
+<p>When entering &quot;What&#39;s This?&quot; mode, a <a href="http://doc.qt.io/qt-5/qevent.html">QEvent</a> of type Qt::EnterWhatsThisMode is sent to all toplevel widgets.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwhatsthis.html#inWhatsThisMode">inWhatsThisMode</a>() and <a href="http://doc.qt.io/qt-5/qwhatsthis.html#leaveWhatsThisMode">leaveWhatsThisMode</a>().</p></div></p>
+</div><h4 id='method.hide_text' class='method'><code>fn <a href='#method.hide_text' class='fnname'>hide_text</a>()</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QWhatsThis::hideText()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwhatsthis.html#hideText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If a &quot;What&#39;s This?&quot; window is showing, this destroys it.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwhatsthis.html#showText">showText</a>().</p></div></p>
+</div><h4 id='method.in_whats_this_mode' class='method'><code>fn <a href='#method.in_whats_this_mode' class='fnname'>in_whats_this_mode</a>() -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static bool QWhatsThis::inWhatsThisMode()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwhatsthis.html#inWhatsThisMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Returns <code>true</code> if the user interface is in &quot;What&#39;s This?&quot; mode; otherwise returns <code>false</code>.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwhatsthis.html#enterWhatsThisMode">enterWhatsThisMode</a>().</p></div></p>
+</div><h4 id='method.leave_whats_this_mode' class='method'><code>fn <a href='#method.leave_whats_this_mode' class='fnname'>leave_whats_this_mode</a>()</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>static void QWhatsThis::leaveWhatsThisMode()</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwhatsthis.html#leaveWhatsThisMode">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>If the user interface is in &quot;What&#39;s This?&quot; mode, this function switches back to normal mode; otherwise it does nothing.</p>
+<p>When leaving &quot;What&#39;s This?&quot; mode, a <a href="http://doc.qt.io/qt-5/qevent.html">QEvent</a> of type Qt::LeaveWhatsThisMode is sent to all toplevel widgets.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwhatsthis.html#enterWhatsThisMode">enterWhatsThisMode</a>() and <a href="http://doc.qt.io/qt-5/qwhatsthis.html#inWhatsThisMode">inWhatsThisMode</a>().</p></div></p>
+</div><h4 id='method.show_text' class='method'><code>fn <a href='#method.show_text' class='fnname'>show_text</a>&lt;Args&gt;(args: Args) <span class='where'>where Args: <a class='trait' href='../../qt_widgets/whats_this/overloading/trait.WhatsThisShowTextArgs.html' title='qt_widgets::whats_this::overloading::WhatsThisShowTextArgs'>WhatsThisShowTextArgs</a></span></code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>QWhatsThis::showText</code></span></p>
+
+<p>This is an overloaded function. Available variants:</p>
+
+<p>Rust arguments: <br>1) <code>fn show_text((&amp;qt_core::point::Point, &amp;qt_core::string::String)) -&gt; ()</code><br>2) <code>fn show_text((&amp;qt_core::point::Point, &amp;qt_core::string::String, *mut ::widget::Widget)) -&gt; ()</code><br>
+C++ method: <span style='color: green;'><code>static void QWhatsThis::showText(const QPoint&amp; pos, const QString&amp; text, QWidget* w = ?)</code></span></p>
+
+<p><a href="http://doc.qt.io/qt-5/qwhatsthis.html#showText">C++ documentation:</a> <div style='border: 1px solid #5CFF95; background: #D6FFE4; padding: 16px;'><p>Shows <i>text</i> as a &quot;What&#39;s This?&quot; window, at global position <i>pos</i>. The optional widget argument, <i>w</i>, is used to determine the appropriate screen on multi-head systems.</p>
+<p><b>See also </b><a href="http://doc.qt.io/qt-5/qwhatsthis.html#hideText">hideText</a>().</p></div></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html' title='cpp_utils::new_uninitialized::NewUninitialized'>NewUninitialized</a> for <a class='struct' href='../../qt_widgets/whats_this/struct.WhatsThis.html' title='qt_widgets::whats_this::WhatsThis'>WhatsThis</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-499886' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/whats_this.rs.html#24-28' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new_uninitialized' class='method'><code>unsafe fn <a href='../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized' class='fnname'>new_uninitialized</a>() -&gt; <a class='struct' href='../../qt_widgets/whats_this/struct.WhatsThis.html' title='qt_widgets::whats_this::WhatsThis'>WhatsThis</a></code></h4>
+<div class='docblock'><p>Creates new object with uninitialized internal buffer. <a href="../../cpp_utils/new_uninitialized/trait.NewUninitialized.html#tymethod.new_uninitialized">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../../qt_widgets/whats_this/struct.WhatsThis.html' title='qt_widgets::whats_this::WhatsThis'>WhatsThis</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-499899' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/whats_this.rs.html#95-102' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#tymethod.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+<div class='docblock'><p>C++ method: <span style='color: green;'><code>[destructor] void QWhatsThis::~QWhatsThis()</code></span></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../cpp_utils/trait.CppDeletable.html' title='cpp_utils::CppDeletable'>CppDeletable</a> for <a class='struct' href='../../qt_widgets/whats_this/struct.WhatsThis.html' title='qt_widgets::whats_this::WhatsThis'>WhatsThis</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-499902' class='srclink' href='../../src/qt_widgets/home/ri/rust/rust_qt/cache/qt_widgets/src/whats_this.rs.html#104-108' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.deleter' class='method'><code>fn <a href='../../cpp_utils/trait.CppDeletable.html#tymethod.deleter' class='fnname'>deleter</a>() -&gt; <a class='type' href='../../cpp_utils/type.Deleter.html' title='cpp_utils::Deleter'>Deleter</a>&lt;Self&gt;</code></h4>
+<div class='docblock'><p>Returns deleter function for this type.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "qt_widgets";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
