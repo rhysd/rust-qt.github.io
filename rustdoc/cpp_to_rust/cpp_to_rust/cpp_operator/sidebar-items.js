@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["CppOperator","Available types of C++ operators"]],"struct":[["OperatorInfo","Constraints applied to a C++ operator method of a certain kind"]]});

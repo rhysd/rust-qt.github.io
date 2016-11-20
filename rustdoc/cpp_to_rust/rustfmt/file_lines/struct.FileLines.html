@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FileLines` struct in crate `rustfmt`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FileLines">
+
+    <title>rustfmt::file_lines::FileLines - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>rustfmt</a>::<wbr><a href='index.html'>file_lines</a></p><script>window.sidebarCurrent = {name: 'FileLines', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>rustfmt</a>::<wbr><a href='index.html'>file_lines</a>::<wbr><a class='struct' href=''>FileLines</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-5810' class='srclink' href='../../src/rustfmt/file_lines.rs.html#85' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct FileLines(_);</pre><div class='docblock'><p>A set of lines in files.</p>
+
+<p>It is represented as a multimap keyed on file names, with values a collection of
+non-overlapping ranges sorted by their start point. An inner <code>None</code> is interpreted to mean all
+lines in all files.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-346' class='srclink' href='../../src/rustfmt/file_lines.rs.html#97-143' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.all' class='method'><span id='all.v' class='invisible'><code>fn <a href='#method.all' class='fnname'>all</a>() -&gt; <a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a></code></span></h4>
+<div class='docblock'><p>Creates a <code>FileLines</code> that contains all lines in all files.</p>
+</div><h4 id='method.files' class='method'><span id='files.v' class='invisible'><code>fn <a href='#method.files' class='fnname'>files</a>(&amp;self) -&gt; <a class='struct' href='../../rustfmt/file_lines/struct.Files.html' title='rustfmt::file_lines::Files'>Files</a></code></span></h4>
+<div class='docblock'><p>Returns an iterator over the files contained in <code>self</code>.</p>
+</div><h4 id='method.contains' class='method'><span id='contains.v' class='invisible'><code>fn <a href='#method.contains' class='fnname'>contains</a>(&amp;self, range: &amp;<a class='struct' href='../../rustfmt/codemap/struct.LineRange.html' title='rustfmt::codemap::LineRange'>LineRange</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>Returns true if <code>range</code> is fully contained in <code>self</code>.</p>
+</div><h4 id='method.intersects' class='method'><span id='intersects.v' class='invisible'><code>fn <a href='#method.intersects' class='fnname'>intersects</a>(&amp;self, range: &amp;<a class='struct' href='../../rustfmt/codemap/struct.LineRange.html' title='rustfmt::codemap::LineRange'>LineRange</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>Returns true if any lines in <code>range</code> are in <code>self</code>.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../rustfmt/config/trait.ConfigType.html' title='rustfmt::config::ConfigType'>ConfigType</a> for <a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-175' class='srclink' href='../../src/rustfmt/config.rs.html#204-208' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.doc_hint' class='method'><span id='doc_hint.v' class='invisible'><code>fn <a href='../../rustfmt/config/trait.ConfigType.html#tymethod.doc_hint' class='fnname'>doc_hint</a>() -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></span></h4>
+<div class='docblock'><p>Returns hint text for use in <code>Config::print_docs()</code>. For enum types, this is a pipe-separated list of variants; for other types it returns &quot;<type>&quot;. <a href="../../rustfmt/config/trait.ConfigType.html#tymethod.doc_hint">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-5813' class='srclink' href='../../src/rustfmt/file_lines.rs.html#84' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-5817' class='srclink' href='../../src/rustfmt/file_lines.rs.html#84' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-5823' class='srclink' href='../../src/rustfmt/file_lines.rs.html#84' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class='method'><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; <a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a></code></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html' title='core::str::FromStr'>FromStr</a> for <a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-388' class='srclink' href='../../src/rustfmt/file_lines.rs.html#164-172' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Err' class='type'><span id='Err.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#associatedtype.Err' class='type'>Err</a> = <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></span></h4>
+<div class='docblock'><p>The associated error which can be returned from parsing.</p>
+</div><h4 id='method.from_str' class='method'><span id='from_str.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#tymethod.from_str' class='fnname'>from_str</a>(s: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a>,&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;</code></span></h4>
+<div class='docblock'><p>Parses a string <code>s</code> to return a value of this type. <a href="https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#tymethod.from_str">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='../../rustc_serialize/serialize/trait.Decodable.html' title='rustc_serialize::serialize::Decodable'>Decodable</a> for <a class='struct' href='../../rustfmt/file_lines/struct.FileLines.html' title='rustfmt::file_lines::FileLines'>FileLines</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-400' class='srclink' href='../../src/rustfmt/file_lines.rs.html#193-198' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.decode' class='method'><span id='decode.v' class='invisible'><code>fn <a href='../../rustc_serialize/serialize/trait.Decodable.html#tymethod.decode' class='fnname'>decode</a>&lt;D:&nbsp;<a class='trait' href='../../rustc_serialize/serialize/trait.Decoder.html' title='rustc_serialize::serialize::Decoder'>Decoder</a>&gt;(_: &amp;mut D) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;Self,&nbsp;D::Error&gt;</code></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "rustfmt";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

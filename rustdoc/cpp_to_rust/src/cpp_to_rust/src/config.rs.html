@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="Source to the Rust file `src/config.rs`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang">
+
+    <title>config.rs.html -- source</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content source"><pre class="line-numbers"><span id="1">  1</span>
+<span id="2">  2</span>
+<span id="3">  3</span>
+<span id="4">  4</span>
+<span id="5">  5</span>
+<span id="6">  6</span>
+<span id="7">  7</span>
+<span id="8">  8</span>
+<span id="9">  9</span>
+<span id="10"> 10</span>
+<span id="11"> 11</span>
+<span id="12"> 12</span>
+<span id="13"> 13</span>
+<span id="14"> 14</span>
+<span id="15"> 15</span>
+<span id="16"> 16</span>
+<span id="17"> 17</span>
+<span id="18"> 18</span>
+<span id="19"> 19</span>
+<span id="20"> 20</span>
+<span id="21"> 21</span>
+<span id="22"> 22</span>
+<span id="23"> 23</span>
+<span id="24"> 24</span>
+<span id="25"> 25</span>
+<span id="26"> 26</span>
+<span id="27"> 27</span>
+<span id="28"> 28</span>
+<span id="29"> 29</span>
+<span id="30"> 30</span>
+<span id="31"> 31</span>
+<span id="32"> 32</span>
+<span id="33"> 33</span>
+<span id="34"> 34</span>
+<span id="35"> 35</span>
+<span id="36"> 36</span>
+<span id="37"> 37</span>
+<span id="38"> 38</span>
+<span id="39"> 39</span>
+<span id="40"> 40</span>
+<span id="41"> 41</span>
+<span id="42"> 42</span>
+<span id="43"> 43</span>
+<span id="44"> 44</span>
+<span id="45"> 45</span>
+<span id="46"> 46</span>
+<span id="47"> 47</span>
+<span id="48"> 48</span>
+<span id="49"> 49</span>
+<span id="50"> 50</span>
+<span id="51"> 51</span>
+<span id="52"> 52</span>
+<span id="53"> 53</span>
+<span id="54"> 54</span>
+<span id="55"> 55</span>
+<span id="56"> 56</span>
+<span id="57"> 57</span>
+<span id="58"> 58</span>
+<span id="59"> 59</span>
+<span id="60"> 60</span>
+<span id="61"> 61</span>
+<span id="62"> 62</span>
+<span id="63"> 63</span>
+<span id="64"> 64</span>
+<span id="65"> 65</span>
+<span id="66"> 66</span>
+<span id="67"> 67</span>
+<span id="68"> 68</span>
+<span id="69"> 69</span>
+<span id="70"> 70</span>
+<span id="71"> 71</span>
+<span id="72"> 72</span>
+<span id="73"> 73</span>
+<span id="74"> 74</span>
+<span id="75"> 75</span>
+<span id="76"> 76</span>
+<span id="77"> 77</span>
+<span id="78"> 78</span>
+<span id="79"> 79</span>
+<span id="80"> 80</span>
+<span id="81"> 81</span>
+<span id="82"> 82</span>
+<span id="83"> 83</span>
+<span id="84"> 84</span>
+<span id="85"> 85</span>
+<span id="86"> 86</span>
+<span id="87"> 87</span>
+<span id="88"> 88</span>
+<span id="89"> 89</span>
+<span id="90"> 90</span>
+<span id="91"> 91</span>
+<span id="92"> 92</span>
+<span id="93"> 93</span>
+<span id="94"> 94</span>
+<span id="95"> 95</span>
+<span id="96"> 96</span>
+<span id="97"> 97</span>
+<span id="98"> 98</span>
+<span id="99"> 99</span>
+<span id="100">100</span>
+<span id="101">101</span>
+<span id="102">102</span>
+<span id="103">103</span>
+<span id="104">104</span>
+<span id="105">105</span>
+<span id="106">106</span>
+<span id="107">107</span>
+<span id="108">108</span>
+<span id="109">109</span>
+<span id="110">110</span>
+<span id="111">111</span>
+<span id="112">112</span>
+<span id="113">113</span>
+<span id="114">114</span>
+<span id="115">115</span>
+<span id="116">116</span>
+<span id="117">117</span>
+<span id="118">118</span>
+<span id="119">119</span>
+<span id="120">120</span>
+<span id="121">121</span>
+<span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
+<span id="125">125</span>
+<span id="126">126</span>
+<span id="127">127</span>
+<span id="128">128</span>
+<span id="129">129</span>
+<span id="130">130</span>
+<span id="131">131</span>
+<span id="132">132</span>
+<span id="133">133</span>
+<span id="134">134</span>
+<span id="135">135</span>
+<span id="136">136</span>
+<span id="137">137</span>
+<span id="138">138</span>
+<span id="139">139</span>
+<span id="140">140</span>
+<span id="141">141</span>
+<span id="142">142</span>
+<span id="143">143</span>
+<span id="144">144</span>
+<span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
+<span id="154">154</span>
+<span id="155">155</span>
+<span id="156">156</span>
+<span id="157">157</span>
+<span id="158">158</span>
+<span id="159">159</span>
+<span id="160">160</span>
+<span id="161">161</span>
+<span id="162">162</span>
+<span id="163">163</span>
+<span id="164">164</span>
+<span id="165">165</span>
+<span id="166">166</span>
+<span id="167">167</span>
+<span id="168">168</span>
+<span id="169">169</span>
+<span id="170">170</span>
+<span id="171">171</span>
+<span id="172">172</span>
+<span id="173">173</span>
+<span id="174">174</span>
+<span id="175">175</span>
+<span id="176">176</span>
+<span id="177">177</span>
+<span id="178">178</span>
+<span id="179">179</span>
+<span id="180">180</span>
+<span id="181">181</span>
+<span id="182">182</span>
+<span id="183">183</span>
+<span id="184">184</span>
+<span id="185">185</span>
+<span id="186">186</span>
+<span id="187">187</span>
+<span id="188">188</span>
+<span id="189">189</span>
+<span id="190">190</span>
+<span id="191">191</span>
+<span id="192">192</span>
+<span id="193">193</span>
+<span id="194">194</span>
+<span id="195">195</span>
+<span id="196">196</span>
+<span id="197">197</span>
+<span id="198">198</span>
+<span id="199">199</span>
+<span id="200">200</span>
+<span id="201">201</span>
+<span id="202">202</span>
+<span id="203">203</span>
+<span id="204">204</span>
+<span id="205">205</span>
+<span id="206">206</span>
+<span id="207">207</span>
+<span id="208">208</span>
+<span id="209">209</span>
+<span id="210">210</span>
+<span id="211">211</span>
+<span id="212">212</span>
+<span id="213">213</span>
+<span id="214">214</span>
+<span id="215">215</span>
+<span id="216">216</span>
+<span id="217">217</span>
+<span id="218">218</span>
+<span id="219">219</span>
+<span id="220">220</span>
+<span id="221">221</span>
+<span id="222">222</span>
+<span id="223">223</span>
+<span id="224">224</span>
+<span id="225">225</span>
+<span id="226">226</span>
+<span id="227">227</span>
+<span id="228">228</span>
+<span id="229">229</span>
+<span id="230">230</span>
+<span id="231">231</span>
+<span id="232">232</span>
+<span id="233">233</span>
+<span id="234">234</span>
+<span id="235">235</span>
+<span id="236">236</span>
+<span id="237">237</span>
+<span id="238">238</span>
+<span id="239">239</span>
+<span id="240">240</span>
+<span id="241">241</span>
+<span id="242">242</span>
+<span id="243">243</span>
+<span id="244">244</span>
+<span id="245">245</span>
+<span id="246">246</span>
+<span id="247">247</span>
+</pre><pre class='rust '>
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>path</span>::<span class='ident'>PathBuf</span>;
+<span class='kw'>use</span> <span class='ident'>errors</span>::<span class='prelude-ty'>Result</span>;
+<span class='kw'>use</span> <span class='ident'>cpp_method</span>::<span class='ident'>CppMethod</span>;
+<span class='kw'>use</span> <span class='ident'>cpp_data</span>::<span class='ident'>CppData</span>;
+
+<span class='doccomment'>/// Function type used in `Config::add_cpp_ffi_generator_filter`.</span>
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CppFfiGeneratorFilterFn</span> <span class='op'>=</span> <span class='ident'>Fn</span>(<span class='kw-2'>&amp;</span><span class='ident'>CppMethod</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>bool</span><span class='op'>&gt;</span>;
+
+<span class='kw'>struct</span> <span class='ident'>CppFfiGeneratorFilter</span>(<span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>CppFfiGeneratorFilterFn</span><span class='op'>&gt;</span>);
+
+<span class='kw'>impl</span> ::<span class='ident'>std</span>::<span class='ident'>fmt</span>::<span class='ident'>Debug</span> <span class='kw'>for</span> <span class='ident'>CppFfiGeneratorFilter</span> {
+  <span class='kw'>fn</span> <span class='ident'>fmt</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>f</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> ::<span class='ident'>std</span>::<span class='ident'>fmt</span>::<span class='ident'>Formatter</span>) <span class='op'>-&gt;</span> ::<span class='ident'>std</span>::<span class='ident'>result</span>::<span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), ::<span class='ident'>std</span>::<span class='ident'>fmt</span>::<span class='ident'>Error</span><span class='op'>&gt;</span> {
+    <span class='macro'>write</span><span class='macro'>!</span>(<span class='ident'>f</span>, <span class='string'>&quot;CppFfiGeneratorFilter&quot;</span>)
+  }
+}
+
+<span class='doccomment'>/// Function type used in `Config::add_cpp_data_filter`.</span>
+<span class='kw'>pub</span> <span class='kw'>type</span> <span class='ident'>CppDataFilterFn</span> <span class='op'>=</span> <span class='ident'>Fn</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>CppData</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span>;
+
+<span class='kw'>struct</span> <span class='ident'>CppDataFilter</span>(<span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>CppDataFilterFn</span><span class='op'>&gt;</span>);
+
+<span class='kw'>impl</span> ::<span class='ident'>std</span>::<span class='ident'>fmt</span>::<span class='ident'>Debug</span> <span class='kw'>for</span> <span class='ident'>CppDataFilter</span> {
+  <span class='kw'>fn</span> <span class='ident'>fmt</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>f</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> ::<span class='ident'>std</span>::<span class='ident'>fmt</span>::<span class='ident'>Formatter</span>) <span class='op'>-&gt;</span> ::<span class='ident'>std</span>::<span class='ident'>result</span>::<span class='prelude-ty'>Result</span><span class='op'>&lt;</span>(), ::<span class='ident'>std</span>::<span class='ident'>fmt</span>::<span class='ident'>Error</span><span class='op'>&gt;</span> {
+    <span class='macro'>write</span><span class='macro'>!</span>(<span class='ident'>f</span>, <span class='string'>&quot;CppDataFilter&quot;</span>)
+  }
+}
+
+
+<span class='doccomment'>/// The starting point of `cpp_to_rust` API.</span>
+<span class='doccomment'>/// Create a `Config` object, set its properties,</span>
+<span class='doccomment'>/// add custom functions if necessary, and start</span>
+<span class='doccomment'>/// the processing with `Config::exec`.</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Default</span>, <span class='ident'>Debug</span>)]</span>
+<span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>Config</span> {
+  <span class='comment'>// see documentation for setters</span>
+  <span class='ident'>linked_libs</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
+  <span class='ident'>lib_paths</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span>,
+  <span class='ident'>linked_frameworks</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
+  <span class='ident'>framework_paths</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span>,
+  <span class='ident'>include_paths</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span>,
+  <span class='ident'>target_include_paths</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span>,
+  <span class='ident'>include_directives</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;</span>,
+  <span class='ident'>cpp_parser_flags</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
+  <span class='ident'>cpp_compiler_flags</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
+  <span class='ident'>cpp_parser_blocked_names</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
+  <span class='ident'>cpp_ffi_generator_filters</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>CppFfiGeneratorFilter</span><span class='op'>&gt;</span>,
+  <span class='ident'>cpp_data_filters</span>: <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='ident'>CppDataFilter</span><span class='op'>&gt;</span>,
+}
+
+<span class='kw'>impl</span> <span class='ident'>Config</span> {
+  <span class='doccomment'>/// Creates an empty `Config`.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>new</span>() <span class='op'>-&gt;</span> <span class='ident'>Config</span> {
+    <span class='ident'>Config</span>::<span class='ident'>default</span>()
+  }
+
+  <span class='doccomment'>/// Adds a library for linking. Used as `-l` option to the linker.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_linked_lib</span><span class='op'>&lt;</span><span class='ident'>P</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>lib</span>: <span class='ident'>P</span>) {
+    <span class='self'>self</span>.<span class='ident'>linked_libs</span>.<span class='ident'>push</span>(<span class='ident'>lib</span>.<span class='ident'>into</span>());
+  }
+
+  <span class='doccomment'>/// Adds a framework for linking (OS X specific). Used as `-f` option to the linker.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_linked_framework</span><span class='op'>&lt;</span><span class='ident'>P</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>lib</span>: <span class='ident'>P</span>) {
+    <span class='self'>self</span>.<span class='ident'>linked_frameworks</span>.<span class='ident'>push</span>(<span class='ident'>lib</span>.<span class='ident'>into</span>());
+  }
+
+  <span class='doccomment'>/// Adds a C++ identifier that should be skipped</span>
+  <span class='doccomment'>/// by the C++ parser. Identifier can contain namespaces</span>
+  <span class='doccomment'>/// and nested classes, with `::` separator (like in</span>
+  <span class='doccomment'>/// C++ identifiers). Identifier may refer to a method,</span>
+  <span class='doccomment'>/// a class, a enum or a namespace. All entities inside blacklisted</span>
+  <span class='doccomment'>/// entity (e.g. the methods of a blocked class or</span>
+  <span class='doccomment'>/// the contents of a blocked namespace)</span>
+  <span class='doccomment'>/// will also be skipped.</span>
+  <span class='doccomment'>/// All class methods with names matching the blocked name</span>
+  <span class='doccomment'>/// will be skipped, regardless of class name.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_cpp_parser_blocked_name</span><span class='op'>&lt;</span><span class='ident'>P</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>lib</span>: <span class='ident'>P</span>) {
+    <span class='self'>self</span>.<span class='ident'>cpp_parser_blocked_names</span>.<span class='ident'>push</span>(<span class='ident'>lib</span>.<span class='ident'>into</span>());
+  }
+
+  <span class='doccomment'>/// Adds multiple blocked names. See `Config::add_cpp_parser_blocked_name`.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_cpp_parser_blocked_names</span><span class='op'>&lt;</span><span class='ident'>Item</span>, <span class='ident'>Iter</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>items</span>: <span class='ident'>Iter</span>)
+    <span class='kw'>where</span> <span class='ident'>Item</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
+          <span class='ident'>Iter</span>: <span class='ident'>IntoIterator</span><span class='op'>&lt;</span><span class='ident'>Item</span> <span class='op'>=</span> <span class='ident'>Item</span><span class='op'>&gt;</span>
+  {
+    <span class='kw'>for</span> <span class='ident'>item</span> <span class='kw'>in</span> <span class='ident'>items</span> {
+      <span class='self'>self</span>.<span class='ident'>cpp_parser_blocked_names</span>.<span class='ident'>push</span>(<span class='ident'>item</span>.<span class='ident'>into</span>());
+    }
+  }
+
+  <span class='doccomment'>/// Adds a command line argument for clang C++ parser.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_cpp_parser_flag</span><span class='op'>&lt;</span><span class='ident'>P</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>lib</span>: <span class='ident'>P</span>) {
+    <span class='self'>self</span>.<span class='ident'>cpp_parser_flags</span>.<span class='ident'>push</span>(<span class='ident'>lib</span>.<span class='ident'>into</span>());
+  }
+
+  <span class='doccomment'>/// Adds multiple flags. See `Config::add_cpp_parser_flag`.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_cpp_parser_flags</span><span class='op'>&lt;</span><span class='ident'>Item</span>, <span class='ident'>Iter</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>items</span>: <span class='ident'>Iter</span>)
+    <span class='kw'>where</span> <span class='ident'>Item</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
+          <span class='ident'>Iter</span>: <span class='ident'>IntoIterator</span><span class='op'>&lt;</span><span class='ident'>Item</span> <span class='op'>=</span> <span class='ident'>Item</span><span class='op'>&gt;</span>
+  {
+    <span class='kw'>for</span> <span class='ident'>item</span> <span class='kw'>in</span> <span class='ident'>items</span> {
+      <span class='self'>self</span>.<span class='ident'>cpp_parser_flags</span>.<span class='ident'>push</span>(<span class='ident'>item</span>.<span class='ident'>into</span>());
+    }
+  }
+
+  <span class='doccomment'>/// Adds a command line argument for the C++ compiler.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_cpp_compiler_flag</span><span class='op'>&lt;</span><span class='ident'>P</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>lib</span>: <span class='ident'>P</span>) {
+    <span class='self'>self</span>.<span class='ident'>cpp_compiler_flags</span>.<span class='ident'>push</span>(<span class='ident'>lib</span>.<span class='ident'>into</span>());
+  }
+
+  <span class='doccomment'>/// Adds multiple flags. See `Config::add_cpp_compiler_flag`.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_cpp_compiler_flags</span><span class='op'>&lt;</span><span class='ident'>Item</span>, <span class='ident'>Iter</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>items</span>: <span class='ident'>Iter</span>)
+    <span class='kw'>where</span> <span class='ident'>Item</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
+          <span class='ident'>Iter</span>: <span class='ident'>IntoIterator</span><span class='op'>&lt;</span><span class='ident'>Item</span> <span class='op'>=</span> <span class='ident'>Item</span><span class='op'>&gt;</span>
+  {
+    <span class='kw'>for</span> <span class='ident'>item</span> <span class='kw'>in</span> <span class='ident'>items</span> {
+      <span class='self'>self</span>.<span class='ident'>cpp_compiler_flags</span>.<span class='ident'>push</span>(<span class='ident'>item</span>.<span class='ident'>into</span>());
+    }
+  }
+
+  <span class='doccomment'>/// Adds path to an include directory.</span>
+  <span class='doccomment'>/// It&#39;s supplied to the C++ parser</span>
+  <span class='doccomment'>/// and the C++ compiler via `-I` option.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_include_path</span><span class='op'>&lt;</span><span class='ident'>P</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>path</span>: <span class='ident'>P</span>) {
+    <span class='self'>self</span>.<span class='ident'>include_paths</span>.<span class='ident'>push</span>(<span class='ident'>path</span>.<span class='ident'>into</span>());
+  }
+
+  <span class='doccomment'>/// Adds path to a lib directory.</span>
+  <span class='doccomment'>/// It&#39;s supplied to the linker via `-L` option or environment variables.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_lib_path</span><span class='op'>&lt;</span><span class='ident'>P</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>path</span>: <span class='ident'>P</span>) {
+    <span class='self'>self</span>.<span class='ident'>lib_paths</span>.<span class='ident'>push</span>(<span class='ident'>path</span>.<span class='ident'>into</span>());
+  }
+
+  <span class='doccomment'>/// Adds path to a framework directory (OS X specific).</span>
+  <span class='doccomment'>/// It&#39;s supplied to the linker via `-F` option or environment variables.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_framework_path</span><span class='op'>&lt;</span><span class='ident'>P</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>path</span>: <span class='ident'>P</span>) {
+    <span class='self'>self</span>.<span class='ident'>framework_paths</span>.<span class='ident'>push</span>(<span class='ident'>path</span>.<span class='ident'>into</span>());
+  }
+
+  <span class='doccomment'>/// Adds path to an include directory or an include file</span>
+  <span class='doccomment'>/// of the target library.</span>
+  <span class='doccomment'>/// Any C++ types and methods will be parsed and used only</span>
+  <span class='doccomment'>/// if they are declared within one of files or directories</span>
+  <span class='doccomment'>/// added with this method.</span>
+  <span class='doccomment'>///</span>
+  <span class='doccomment'>/// If no target include paths are added, all types and methods</span>
+  <span class='doccomment'>/// will be used. Most libraries include system headers and</span>
+  <span class='doccomment'>/// other libraries&#39; header files, so this mode is often unwanted.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_target_include_path</span><span class='op'>&lt;</span><span class='ident'>P</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>path</span>: <span class='ident'>P</span>) {
+    <span class='self'>self</span>.<span class='ident'>target_include_paths</span>.<span class='ident'>push</span>(<span class='ident'>path</span>.<span class='ident'>into</span>());
+  }
+
+  <span class='doccomment'>/// Adds an include directive. Each directive will be added</span>
+  <span class='doccomment'>/// as `#include &lt;path&gt;` to the input file for the C++ parser.</span>
+  <span class='doccomment'>/// Relative paths should be used in this method.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_include_directive</span><span class='op'>&lt;</span><span class='ident'>P</span>: <span class='ident'>Into</span><span class='op'>&lt;</span><span class='ident'>PathBuf</span><span class='op'>&gt;&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>path</span>: <span class='ident'>P</span>) {
+    <span class='self'>self</span>.<span class='ident'>include_directives</span>.<span class='ident'>push</span>(<span class='ident'>path</span>.<span class='ident'>into</span>());
+  }
+
+  <span class='doccomment'>/// Adds a custom function that decides whether a C++ method should be</span>
+  <span class='doccomment'>/// added to the C++ wrapper library. For each C++ method,</span>
+  <span class='doccomment'>/// each function will be run once. Filters are executed in the same order they</span>
+  <span class='doccomment'>/// were added.</span>
+  <span class='doccomment'>///</span>
+  <span class='doccomment'>/// Interpetation of the function&#39;s output:</span>
+  <span class='doccomment'>///</span>
+  <span class='doccomment'>/// - `Err` indicates an unexpected failure and terminates the processing.</span>
+  <span class='doccomment'>/// - `Ok(true)` allows to continue processing of the method.</span>
+  <span class='doccomment'>/// If all functions return `Ok(true)`, the method is accepted.</span>
+  <span class='doccomment'>/// - `Ok(false)` blocks the method. Remaining filter functions are not run</span>
+  <span class='doccomment'>/// on this method.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_cpp_ffi_generator_filter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>f</span>: <span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>CppFfiGeneratorFilterFn</span><span class='op'>&gt;</span>) {
+    <span class='self'>self</span>.<span class='ident'>cpp_ffi_generator_filters</span>.<span class='ident'>push</span>(<span class='ident'>CppFfiGeneratorFilter</span>(<span class='ident'>f</span>));
+  }
+
+  <span class='doccomment'>/// Adds a custom function that visits `&amp;mut CppData` and can perform any changes</span>
+  <span class='doccomment'>/// in the output of the C++ parser. Filters are executed in the same order they</span>
+  <span class='doccomment'>/// were added. If the function returns `Err`, the processing is terminated.</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>add_cpp_data_filter</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>f</span>: <span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>CppDataFilterFn</span><span class='op'>&gt;</span>) {
+    <span class='self'>self</span>.<span class='ident'>cpp_data_filters</span>.<span class='ident'>push</span>(<span class='ident'>CppDataFilter</span>(<span class='ident'>f</span>));
+  }
+
+  <span class='doccomment'>/// Starts execution of the generator.</span>
+  <span class='doccomment'>/// This function will print the necessary build script output to stdout.</span>
+  <span class='doccomment'>/// It also displays some debugging output that can be made visible by</span>
+  <span class='doccomment'>/// running cargo commands with `-vv` option.</span>
+  <span class='doccomment'>///</span>
+  <span class='doccomment'>/// The result of this function must be checked. The recommended way:</span>
+  <span class='doccomment'>///</span>
+  <span class='doccomment'>/// ```rust,should_panic</span>
+  <span class='doccomment'>/// # let config = cpp_to_rust::config::Config::new();</span>
+  <span class='doccomment'>/// if let Err(err) = config.exec() {</span>
+  <span class='doccomment'>///   err.display_report();</span>
+  <span class='doccomment'>///   std::process::exit(1);</span>
+  <span class='doccomment'>/// }</span>
+  <span class='doccomment'>/// ```</span>
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>exec</span>(<span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span>()<span class='op'>&gt;</span> {
+    ::<span class='ident'>launcher</span>::<span class='ident'>run_from_build_script</span>(<span class='self'>self</span>)
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>linked_libs</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span>[<span class='ident'>String</span>] {
+    <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>linked_libs</span>
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>linked_frameworks</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span>[<span class='ident'>String</span>] {
+    <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>linked_frameworks</span>
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>cpp_parser_blocked_names</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span>[<span class='ident'>String</span>] {
+    <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>cpp_parser_blocked_names</span>
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>cpp_parser_flags</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span>[<span class='ident'>String</span>] {
+    <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>cpp_parser_flags</span>
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>cpp_compiler_flags</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span>[<span class='ident'>String</span>] {
+    <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>cpp_compiler_flags</span>
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>include_paths</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span>[<span class='ident'>PathBuf</span>] {
+    <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>include_paths</span>
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>lib_paths</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span>[<span class='ident'>PathBuf</span>] {
+    <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>lib_paths</span>
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>framework_paths</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span>[<span class='ident'>PathBuf</span>] {
+    <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>framework_paths</span>
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>target_include_paths</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span>[<span class='ident'>PathBuf</span>] {
+    <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>target_include_paths</span>
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>include_directives</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span>[<span class='ident'>PathBuf</span>] {
+    <span class='kw-2'>&amp;</span><span class='self'>self</span>.<span class='ident'>include_directives</span>
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>cpp_ffi_generator_filters</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>CppFfiGeneratorFilterFn</span><span class='op'>&gt;&gt;</span> {
+    <span class='self'>self</span>.<span class='ident'>cpp_ffi_generator_filters</span>.<span class='ident'>iter</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>x</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='ident'>x</span>.<span class='number'>0</span>).<span class='ident'>collect</span>()
+  }
+
+  <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>cpp_data_filters</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Vec</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='ident'>Box</span><span class='op'>&lt;</span><span class='ident'>CppDataFilterFn</span><span class='op'>&gt;&gt;</span> {
+    <span class='self'>self</span>.<span class='ident'>cpp_data_filters</span>.<span class='ident'>iter</span>().<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>x</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='ident'>x</span>.<span class='number'>0</span>).<span class='ident'>collect</span>()
+  }
+}
+</pre>
+</section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "cpp_to_rust";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>
