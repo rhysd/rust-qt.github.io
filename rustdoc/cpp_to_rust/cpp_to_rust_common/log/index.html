@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `log` mod in crate `cpp_to_rust_common`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, log">
+
+    <title>cpp_to_rust_common::log - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>cpp_to_rust_common</a></p><script>window.sidebarCurrent = {name: 'log', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>cpp_to_rust_common</a>::<wbr><a class='mod' href=''>log</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/cpp_to_rust_common/log.rs.html#1-180' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Logger implementation</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use self::<a class='enum' href='../../cpp_to_rust_common/log/enum.LoggerCategory.html' title='cpp_to_rust_common::log::LoggerCategory'>LoggerCategory</a>::*;</code></td></tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DEFAULT_LOGGER.html'
+                                  title='cpp_to_rust_common::log::DEFAULT_LOGGER'>DEFAULT_LOGGER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Logger.html'
+                                  title='cpp_to_rust_common::log::Logger'>Logger</a></td>
+                           <td class='docblock-short'>
+                                <p>Logger object. One logger manages messages of all categories.
+It&#39;s possible to use multiple loggers independently.
+Use <code>default_logger()</code> to get global <code>Logger</code> instance.
+Note that the instance is mutex-guarded.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.LoggerSettings.html'
+                                  title='cpp_to_rust_common::log::LoggerSettings'>LoggerSettings</a></td>
+                           <td class='docblock-short'>
+                                <p>Specifies where the logging messages should be sent.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='enum' href='enum.LoggerCategory.html'
+                                  title='cpp_to_rust_common::log::LoggerCategory'>LoggerCategory</a></td>
+                           <td class='docblock-short'>
+                                <p>Logger category. Logger can be configured to save
+messages of each category to a separate file.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.default_logger.html'
+                                  title='cpp_to_rust_common::log::default_logger'>default_logger</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns global instance of <code>Logger</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.error.html'
+                                  title='cpp_to_rust_common::log::error'>error</a></td>
+                           <td class='docblock-short'>
+                                <p>Convenience method to log error messages to the default logger.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.llog.html'
+                                  title='cpp_to_rust_common::log::llog'>llog</a></td>
+                           <td class='docblock-short'>
+                                <p>Convenience method to lazy-log messages to the default logger and specified <code>category</code>.
+If messages of <code>category</code> are not ignored, calls the passed closure
+and uses its output value as a message in that category.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.log.html'
+                                  title='cpp_to_rust_common::log::log'>log</a></td>
+                           <td class='docblock-short'>
+                                <p>Convenience method to log messages to the default logger and specified <code>category</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.status.html'
+                                  title='cpp_to_rust_common::log::status'>status</a></td>
+                           <td class='docblock-short'>
+                                <p>Convenience method to log status messages to the default logger.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "cpp_to_rust_common";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

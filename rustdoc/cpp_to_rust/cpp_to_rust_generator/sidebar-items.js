@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["config","Interface for configuring and running the generator."],["cpp_data","Types for handling information about C++ library APIs."],["cpp_method","Types for handling information about C++ methods."],["cpp_type","Types for handling information about C++ types."]]});

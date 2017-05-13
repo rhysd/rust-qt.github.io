@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["WordIterator","Iterator over words in a camel-case or snake-case string."]],"trait":[["CaseOperations","Convert to string with different cases"],["JoinWithSeparator","Join items of a collection with separator."]]});

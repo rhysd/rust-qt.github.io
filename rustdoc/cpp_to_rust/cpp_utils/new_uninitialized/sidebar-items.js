@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["NewUninitialized","A trait for types that can be created with uninitialized internal buffer."]]});

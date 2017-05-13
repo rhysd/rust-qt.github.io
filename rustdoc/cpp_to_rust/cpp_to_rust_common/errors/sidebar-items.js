@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ErrorKind",""]],"fn":[["fancy_unwrap","Works like `unwrap()`, but in case of an error, outputs formatted stack trace and chained error messages to the `Error` logging channel."],["unexpected","Constructs an unexpected error"]],"struct":[["Error",""]],"trait":[["ChainErr",""]],"type":[["Result",""]]});

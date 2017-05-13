@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Config` struct in crate `cpp_to_rust_generator`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Config">
+
+    <title>cpp_to_rust_generator::config::Config - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>cpp_to_rust_generator</a>::<wbr><a href='index.html'>config</a></p><script>window.sidebarCurrent = {name: 'Config', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>cpp_to_rust_generator</a>::<wbr><a href='index.html'>config</a>::<wbr><a class='struct' href=''>Config</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/cpp_to_rust_generator/config.rs.html#240-263' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Config { /* fields omitted */ }</pre><div class='docblock'><p>The starting point of <code>cpp_to_rust</code> API.
+Create a <code>Config</code> object, set its properties,
+add custom functions if necessary, and start
+the processing with <code>Config::exec</code>.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='struct' href='../../cpp_to_rust_generator/config/struct.Config.html' title='cpp_to_rust_generator::config::Config'>Config</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/cpp_to_rust_generator/config.rs.html#265-654' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;P1:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a>&gt;, P2:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a>&gt;&gt;(output_dir_path: P1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cache_dir_path: P2,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; crate_properties: <a class='struct' href='../../cpp_to_rust_generator/config/struct.CrateProperties.html' title='cpp_to_rust_generator::config::CrateProperties'>CrateProperties</a>)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&gt; <a class='struct' href='../../cpp_to_rust_generator/config/struct.Config.html' title='cpp_to_rust_generator::config::Config'>Config</a></code></span></h4>
+<div class='docblock'><p>Creates a <code>Config</code>.
+<code>crate_properties</code> are used in Cargo.toml of the generated crate.
+<code>output_dir_path</code> will contain the generated crate.
+<code>cache_dir_path</code> will be used for cache, temporary files and
+inter-library information files.</p>
+</div><h4 id='method.is_completed' class='method'><span id='is_completed.v' class='invisible'><code>fn <a href='#method.is_completed' class='fnname'>is_completed</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>Returns true if a completion marker exists in the cache directory,
+indicating that processing of the library in this cache directory
+was completed before. Note that the marker is not created if
+<code>write_cache</code> was set to false. The marker will only be used if
+cache usage is set to <code>CacheUsage::Full</code>.</p>
+</div><h4 id='method.completed_marker_path' class='method'><span id='completed_marker_path.v' class='invisible'><code>fn <a href='#method.completed_marker_path' class='fnname'>completed_marker_path</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a></code></span></h4>
+<div class='docblock'><p>Returns path to the completion marker file
+indicating that processing of the library in this cache directory
+was completed before. Note that the marker is not created if
+<code>write_cache</code> was set to false. The marker will only be used if
+cache usage is set to <code>CacheUsage::Full</code>.</p>
+</div><h4 id='method.set_cache_usage' class='method'><span id='set_cache_usage.v' class='invisible'><code>fn <a href='#method.set_cache_usage' class='fnname'>set_cache_usage</a>(&amp;mut self, value: <a class='enum' href='../../cpp_to_rust_generator/config/enum.CacheUsage.html' title='cpp_to_rust_generator::config::CacheUsage'>CacheUsage</a>)</code></span></h4>
+<div class='docblock'><p>Defines how cached data is used in repeated runs of the generator.</p>
+</div><h4 id='method.set_crate_template_path' class='method'><span id='set_crate_template_path.v' class='invisible'><code>fn <a href='#method.set_crate_template_path' class='fnname'>set_crate_template_path</a>&lt;P:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a>&gt;&gt;(&amp;mut self, path: P)</code></span></h4>
+<div class='docblock'><p>Sets the directory containing additional files for the crate.
+Any files and directories found in the crate template will be copied
+to the generated crate&#39;s directory, although some of them (such as <code>Cargo.toml</code>)
+may be overwritten with the generates files. It&#39;s common to put <code>tests</code> and
+<code>examples</code> subdirectories in the crate template so that <code>cargo</code> recognizes them
+automatically in the generated crate.</p>
+
+<p>If you want to add some extra code
+to the generated modules, put <code>src/module_name.rs</code> file in the crate template and
+add <code>include_generated!();</code> line in the file. This line will be replaced with
+the generated content. You can also add extra modules as separate files,
+but you&#39;ll also need to create <code>src/lib.rs</code> in the crate template and
+declare new module in it using <code>[pub] mod module_name;</code>. Use <code>include_generated!();</code>
+in <code>src/lib.rs</code> to include declaration of automatically generated modules.</p>
+
+<p>If the crate template contains <code>rustfmt.toml</code> file, it&#39;s used to format the generated
+Rust code instead of the default <code>rustfmt.toml</code>.</p>
+
+<p>Creating crate template is optional. The generator can make a crate without a template.</p>
+</div><h4 id='method.set_dependency_cache_paths' class='method'><span id='set_dependency_cache_paths.v' class='invisible'><code>fn <a href='#method.set_dependency_cache_paths' class='fnname'>set_dependency_cache_paths</a>(&amp;mut self, paths: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a>&gt;)</code></span></h4>
+<div class='docblock'><p>Sets list of paths to cache directories of processed dependencies.
+The generator will integrate API of the current library with its
+dependencies and re-use their types.</p>
+</div><h4 id='method.add_cpp_parser_blocked_name' class='method'><span id='add_cpp_parser_blocked_name.v' class='invisible'><code>fn <a href='#method.add_cpp_parser_blocked_name' class='fnname'>add_cpp_parser_blocked_name</a>&lt;P:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;&gt;(&amp;mut self, lib: P)</code></span></h4>
+<div class='docblock'><p>Adds a C++ identifier that should be skipped
+by the C++ parser. Identifier can contain namespaces
+and nested classes, with <code>::</code> separator (like in
+C++ identifiers). Identifier may refer to a method,
+a class, a enum or a namespace. All entities inside blacklisted
+entity (e.g. the methods of a blocked class or
+the contents of a blocked namespace)
+will also be skipped.
+All class methods with names matching the blocked name
+will be skipped, regardless of class name.</p>
+</div><h4 id='method.add_cpp_parser_blocked_names' class='method'><span id='add_cpp_parser_blocked_names.v' class='invisible'><code>fn <a href='#method.add_cpp_parser_blocked_names' class='fnname'>add_cpp_parser_blocked_names</a>&lt;Item, Iter&gt;(&amp;mut self, items: Iter) <span class='where fmt-newline'>where Item: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;, Iter: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=Item&gt;</span></code></span></h4>
+<div class='docblock'><p>Adds multiple blocked names. See <code>Config::add_cpp_parser_blocked_name</code>.</p>
+</div><h4 id='method.add_cpp_parser_argument' class='method'><span id='add_cpp_parser_argument.v' class='invisible'><code>fn <a href='#method.add_cpp_parser_argument' class='fnname'>add_cpp_parser_argument</a>&lt;P:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;&gt;(&amp;mut self, lib: P)</code></span></h4>
+<div class='docblock'><p>Adds a command line argument for clang C++ parser.</p>
+
+<p>Note that this value is not used when building the wrapper library.
+Use <code>Config::cpp_build_config_mut</code> or a similar method to
+configure building the wrapper library.</p>
+</div><h4 id='method.add_cpp_parser_arguments' class='method'><span id='add_cpp_parser_arguments.v' class='invisible'><code>fn <a href='#method.add_cpp_parser_arguments' class='fnname'>add_cpp_parser_arguments</a>&lt;Item, Iter&gt;(&amp;mut self, items: Iter) <span class='where fmt-newline'>where Item: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;, Iter: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=Item&gt;</span></code></span></h4>
+<div class='docblock'><p>Adds multiple command line arguments for clang C++ parser.
+See <code>Config::add_cpp_parser_argument</code>.</p>
+</div><h4 id='method.add_include_path' class='method'><span id='add_include_path.v' class='invisible'><code>fn <a href='#method.add_include_path' class='fnname'>add_include_path</a>&lt;P:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a>&gt;&gt;(&amp;mut self, path: P)</code></span></h4>
+<div class='docblock'><p>Adds path to an include directory.
+It&#39;s supplied to the C++ parser via <code>-I</code> option.</p>
+
+<p>Note that this value is not used when building the wrapper library.
+Use <code>Config::cpp_build_config_mut</code> or a similar method to
+configure building the wrapper library.</p>
+</div><h4 id='method.add_framework_path' class='method'><span id='add_framework_path.v' class='invisible'><code>fn <a href='#method.add_framework_path' class='fnname'>add_framework_path</a>&lt;P:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a>&gt;&gt;(&amp;mut self, path: P)</code></span></h4>
+<div class='docblock'><p>Adds path to a framework directory (OS X specific).
+It&#39;s supplied to the C++ parser via <code>-F</code> option.</p>
+
+<p>Note that this value is not used when building the wrapper library.
+Use <code>Config::cpp_build_config_mut</code> or a similar method to
+configure building the wrapper library.</p>
+</div><h4 id='method.add_target_include_path' class='method'><span id='add_target_include_path.v' class='invisible'><code>fn <a href='#method.add_target_include_path' class='fnname'>add_target_include_path</a>&lt;P:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a>&gt;&gt;(&amp;mut self, path: P)</code></span></h4>
+<div class='docblock'><p>Adds path to an include directory or an include file
+of the target library.
+Any C++ types and methods will be parsed and used only
+if they are declared within one of files or directories
+added with this method.</p>
+
+<p>If no target include paths are added, all types and methods
+will be used. Most libraries include system headers and
+other libraries&#39; header files, so this mode is often unwanted.</p>
+</div><h4 id='method.add_include_directive' class='method'><span id='add_include_directive.v' class='invisible'><code>fn <a href='#method.add_include_directive' class='fnname'>add_include_directive</a>&lt;P:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a>&gt;&gt;(&amp;mut self, path: P)</code></span></h4>
+<div class='docblock'><p>Adds an include directive. Each directive will be added
+as <code>#include &lt;path&gt;</code> to the input file for the C++ parser.
+File name only paths or relative paths should be used in this method.</p>
+</div><h4 id='method.add_cpp_ffi_generator_filter' class='method'><span id='add_cpp_ffi_generator_filter.v' class='invisible'><code>fn <a href='#method.add_cpp_ffi_generator_filter' class='fnname'>add_cpp_ffi_generator_filter</a>&lt;F&gt;(&amp;mut self, f: F) <span class='where fmt-newline'>where F: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html' title='core::ops::Fn'>Fn</a>(&amp;<a class='struct' href='../../cpp_to_rust_generator/cpp_method/struct.CppMethod.html' title='cpp_to_rust_generator::cpp_method::CppMethod'>CppMethod</a>) -&gt; <a class='type' href='../../cpp_to_rust_common/errors/type.Result.html' title='cpp_to_rust_common::errors::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>&gt; + 'static</span></code></span></h4>
+<div class='docblock'><p>Adds a custom function that decides whether a C++ method should be
+added to the C++ wrapper library. For each C++ method,
+each function will be run once. Filters are executed in the same order they
+were added.</p>
+
+<p>Interpetation of the function&#39;s output:</p>
+
+<ul>
+<li><code>Err</code> indicates an unexpected failure and terminates the processing.</li>
+<li><code>Ok(true)</code> allows to continue processing of the method.
+If all functions return <code>Ok(true)</code>, the method is accepted.</li>
+<li><code>Ok(false)</code> blocks the method. Remaining filter functions are not run
+on this method.</li>
+</ul>
+</div><h4 id='method.add_cpp_data_filter' class='method'><span id='add_cpp_data_filter.v' class='invisible'><code>fn <a href='#method.add_cpp_data_filter' class='fnname'>add_cpp_data_filter</a>&lt;F&gt;(&amp;mut self, f: F) <span class='where fmt-newline'>where F: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html' title='core::ops::Fn'>Fn</a>(&amp;mut <a class='struct' href='../../cpp_to_rust_generator/cpp_data/struct.CppData.html' title='cpp_to_rust_generator::cpp_data::CppData'>CppData</a>) -&gt; <a class='type' href='../../cpp_to_rust_common/errors/type.Result.html' title='cpp_to_rust_common::errors::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt; + 'static</span></code></span></h4>
+<div class='docblock'><p>Adds a custom function that visits <code>&amp;mut CppData</code> and can perform any changes
+in the output of the C++ parser. Filters are executed in the same order they
+were added. If the function returns <code>Err</code>, the processing is terminated.</p>
+</div><h4 id='method.set_type_allocation_place' class='method'><span id='set_type_allocation_place.v' class='invisible'><code>fn <a href='#method.set_type_allocation_place' class='fnname'>set_type_allocation_place</a>&lt;S:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;&gt;(&amp;mut self,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; place: <a class='enum' href='../../cpp_to_rust_generator/cpp_data/enum.CppTypeAllocationPlace.html' title='cpp_to_rust_generator::cpp_data::CppTypeAllocationPlace'>CppTypeAllocationPlace</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type_name: S)</code></span></h4>
+<div class='docblock'><p>Overrides automatic selection of type allocation place for <code>type_name</code> and uses <code>place</code>
+instead. See <code>CppTypeAllocationPlace</code> for more information.</p>
+</div><h4 id='method.set_types_allocation_place' class='method'><span id='set_types_allocation_place.v' class='invisible'><code>fn <a href='#method.set_types_allocation_place' class='fnname'>set_types_allocation_place</a>&lt;SI, S&gt;(&amp;mut self,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; place: <a class='enum' href='../../cpp_to_rust_generator/cpp_data/enum.CppTypeAllocationPlace.html' title='cpp_to_rust_generator::cpp_data::CppTypeAllocationPlace'>CppTypeAllocationPlace</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; types: SI) <span class='where fmt-newline'>where SI: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=S&gt;, S: <a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;</span></code></span></h4>
+<div class='docblock'><p>Overrides automatic selection of type allocation place for <code>types</code> and uses <code>place</code>
+instead. See also <code>Config::set_type_allocation_place</code>.</p>
+</div><h4 id='method.set_debug_logging_config' class='method'><span id='set_debug_logging_config.v' class='invisible'><code>fn <a href='#method.set_debug_logging_config' class='fnname'>set_debug_logging_config</a>(&amp;mut self, config: <a class='enum' href='../../cpp_to_rust_generator/config/enum.DebugLoggingConfig.html' title='cpp_to_rust_generator::config::DebugLoggingConfig'>DebugLoggingConfig</a>)</code></span></h4>
+<div class='docblock'><p>Changes how debug logs are handled. See <code>DebugLoggingConfig</code> for more information.</p>
+</div><h4 id='method.set_quiet_mode' class='method'><span id='set_quiet_mode.v' class='invisible'><code>fn <a href='#method.set_quiet_mode' class='fnname'>set_quiet_mode</a>(&amp;mut self, quiet_mode: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></span></h4>
+<div class='docblock'><p>Sets quiet mode. In quiet mode status messages and debug logs are
+redirected to <code>log</code> subdirectory of the cache directory. Only error messages
+are always written to stderr. Quiet mode is disabled by default.</p>
+</div><h4 id='method.set_write_cache' class='method'><span id='set_write_cache.v' class='invisible'><code>fn <a href='#method.set_write_cache' class='fnname'>set_write_cache</a>(&amp;mut self, write_cache: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></span></h4>
+<div class='docblock'><p>Sets writing to cache mode. If enabled, result of processing is saved to
+extra files in cache directory. The main use of these files are loading
+dependency data. They are also used for speeding up repeated runs of the generator
+on the same library.</p>
+
+<p>Writing to cache is enabled by default. If the library is not intended to be used as
+a dependency when running the generator on another library, it&#39;s safe to disable
+writing to cache in order to speed up the generator.</p>
+</div><h4 id='method.set_cpp_build_config' class='method'><span id='set_cpp_build_config.v' class='invisible'><code>fn <a href='#method.set_cpp_build_config' class='fnname'>set_cpp_build_config</a>(&amp;mut self, cpp_build_config: <a class='struct' href='../../cpp_to_rust_common/cpp_build_config/struct.CppBuildConfig.html' title='cpp_to_rust_common::cpp_build_config::CppBuildConfig'>CppBuildConfig</a>)</code></span></h4>
+<div class='docblock'><p>Sets <code>CppBuildConfig</code> value that will be passed to the build script
+of the generated crate.</p>
+</div><h4 id='method.cpp_build_config_mut' class='method'><span id='cpp_build_config_mut.v' class='invisible'><code>fn <a href='#method.cpp_build_config_mut' class='fnname'>cpp_build_config_mut</a>(&amp;mut self) -&gt; &amp;mut <a class='struct' href='../../cpp_to_rust_common/cpp_build_config/struct.CppBuildConfig.html' title='cpp_to_rust_common::cpp_build_config::CppBuildConfig'>CppBuildConfig</a></code></span></h4>
+<div class='docblock'><p>Allows to change <code>CppBuildConfig</code> value that will be passed to the build script
+of the generated crate.</p>
+</div><h4 id='method.set_cpp_lib_version' class='method'><span id='set_cpp_lib_version.v' class='invisible'><code>fn <a href='#method.set_cpp_lib_version' class='fnname'>set_cpp_lib_version</a>&lt;S:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/convert/trait.Into.html' title='core::convert::Into'>Into</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;&gt;(&amp;mut self, version: S)</code></span></h4>
+<h4 id='method.cpp_lib_version' class='method'><span id='cpp_lib_version.v' class='invisible'><code>fn <a href='#method.cpp_lib_version' class='fnname'>cpp_lib_version</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></span></h4>
+<h4 id='method.exec' class='method'><span id='exec.v' class='invisible'><code>fn <a href='#method.exec' class='fnname'>exec</a>(self) -&gt; <a class='type' href='../../cpp_to_rust_common/errors/type.Result.html' title='cpp_to_rust_common::errors::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>&gt;</code></span></h4>
+<div class='docblock'><p>Starts execution of the generator.
+This function will print the necessary build script output to stdout.
+It also displays some debugging output that can be made visible by
+running cargo commands with <code>-vv</code> option.</p>
+
+<p>The result of this function must be checked. You can use
+<code>::errors::fancy_unwrap</code> to check the result and display
+additional error information.</p>
+</div><h4 id='method.cache_usage' class='method'><span id='cache_usage.v' class='invisible'><code>fn <a href='#method.cache_usage' class='fnname'>cache_usage</a>(&amp;self) -&gt; &amp;<a class='enum' href='../../cpp_to_rust_generator/config/enum.CacheUsage.html' title='cpp_to_rust_generator::config::CacheUsage'>CacheUsage</a></code></span></h4>
+<div class='docblock'><p>Returns value set by <code>Config::set_cache_usage</code>.</p>
+</div><h4 id='method.crate_properties' class='method'><span id='crate_properties.v' class='invisible'><code>fn <a href='#method.crate_properties' class='fnname'>crate_properties</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../cpp_to_rust_generator/config/struct.CrateProperties.html' title='cpp_to_rust_generator::config::CrateProperties'>CrateProperties</a></code></span></h4>
+<div class='docblock'><p>Returns crate properties passed to <code>Config::new</code>.</p>
+</div><h4 id='method.output_dir_path' class='method'><span id='output_dir_path.v' class='invisible'><code>fn <a href='#method.output_dir_path' class='fnname'>output_dir_path</a>(&amp;self) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a></code></span></h4>
+<div class='docblock'><p>Returns path to the output directory passed to <code>Config::new</code>.</p>
+</div><h4 id='method.cache_dir_path' class='method'><span id='cache_dir_path.v' class='invisible'><code>fn <a href='#method.cache_dir_path' class='fnname'>cache_dir_path</a>(&amp;self) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a></code></span></h4>
+<div class='docblock'><p>Returns path to the cache directory passed to <code>Config::new</code>.</p>
+</div><h4 id='method.crate_template_path' class='method'><span id='crate_template_path.v' class='invisible'><code>fn <a href='#method.crate_template_path' class='fnname'>crate_template_path</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a>&gt;</code></span></h4>
+<div class='docblock'><p>Returns value set by <code>Config::set_crate_template_path</code>.</p>
+</div><h4 id='method.dependency_cache_paths' class='method'><span id='dependency_cache_paths.v' class='invisible'><code>fn <a href='#method.dependency_cache_paths' class='fnname'>dependency_cache_paths</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></span></h4>
+<div class='docblock'><p>Returns value set by <code>Config::set_dependency_cache_paths</code>.</p>
+</div><h4 id='method.cpp_parser_blocked_names' class='method'><span id='cpp_parser_blocked_names.v' class='invisible'><code>fn <a href='#method.cpp_parser_blocked_names' class='fnname'>cpp_parser_blocked_names</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></span></h4>
+<div class='docblock'><p>Returns names added with <code>Config::add_cpp_parser_blocked_name</code>
+and similar methods.</p>
+</div><h4 id='method.cpp_parser_arguments' class='method'><span id='cpp_parser_arguments.v' class='invisible'><code>fn <a href='#method.cpp_parser_arguments' class='fnname'>cpp_parser_arguments</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></span></h4>
+<div class='docblock'><p>Returns names added with <code>Config::add_cpp_parser_argument</code>
+and similar methods.</p>
+</div><h4 id='method.include_paths' class='method'><span id='include_paths.v' class='invisible'><code>fn <a href='#method.include_paths' class='fnname'>include_paths</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></span></h4>
+<div class='docblock'><p>Returns values added by <code>Config::add_include_path</code>.</p>
+</div><h4 id='method.framework_paths' class='method'><span id='framework_paths.v' class='invisible'><code>fn <a href='#method.framework_paths' class='fnname'>framework_paths</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></span></h4>
+<div class='docblock'><p>Returns values added by <code>Config::add_framework_path</code>.</p>
+</div><h4 id='method.target_include_paths' class='method'><span id='target_include_paths.v' class='invisible'><code>fn <a href='#method.target_include_paths' class='fnname'>target_include_paths</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></span></h4>
+<div class='docblock'><p>Returns values added by <code>Config::add_target_include_path</code>.</p>
+</div><h4 id='method.include_directives' class='method'><span id='include_directives.v' class='invisible'><code>fn <a href='#method.include_directives' class='fnname'>include_directives</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='struct' href='https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html' title='std::path::PathBuf'>PathBuf</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a></code></span></h4>
+<div class='docblock'><p>Returns values added by <code>Config::add_include_directive</code>.</p>
+</div><h4 id='method.cpp_ffi_generator_filters' class='method'><span id='cpp_ffi_generator_filters.v' class='invisible'><code>fn <a href='#method.cpp_ffi_generator_filters' class='fnname'>cpp_ffi_generator_filters</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;&amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='type' href='../../cpp_to_rust_generator/config/type.CppFfiGeneratorFilterFn.html' title='cpp_to_rust_generator::config::CppFfiGeneratorFilterFn'>CppFfiGeneratorFilterFn</a>&gt;&gt;</code></span></h4>
+<div class='docblock'><p>Returns values added by <code>Config::add_cpp_ffi_generator_filter</code>.</p>
+</div><h4 id='method.cpp_data_filters' class='method'><span id='cpp_data_filters.v' class='invisible'><code>fn <a href='#method.cpp_data_filters' class='fnname'>cpp_data_filters</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;&amp;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;<a class='type' href='../../cpp_to_rust_generator/config/type.CppDataFilterFn.html' title='cpp_to_rust_generator::config::CppDataFilterFn'>CppDataFilterFn</a>&gt;&gt;</code></span></h4>
+<div class='docblock'><p>Returns values added by <code>Config::add_cpp_data_filter</code>.</p>
+</div><h4 id='method.cpp_build_config' class='method'><span id='cpp_build_config.v' class='invisible'><code>fn <a href='#method.cpp_build_config' class='fnname'>cpp_build_config</a>(&amp;self) -&gt; &amp;<a class='struct' href='../../cpp_to_rust_common/cpp_build_config/struct.CppBuildConfig.html' title='cpp_to_rust_common::cpp_build_config::CppBuildConfig'>CppBuildConfig</a></code></span></h4>
+<div class='docblock'><p>Returns current <code>CppBuildConfig</code> value.</p>
+</div><h4 id='method.type_allocation_places' class='method'><span id='type_allocation_places.v' class='invisible'><code>fn <a href='#method.type_allocation_places' class='fnname'>type_allocation_places</a>(&amp;self) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>, <a class='enum' href='../../cpp_to_rust_generator/cpp_data/enum.CppTypeAllocationPlace.html' title='cpp_to_rust_generator::cpp_data::CppTypeAllocationPlace'>CppTypeAllocationPlace</a>&gt;</code></span></h4>
+<div class='docblock'><p>Returns values added by <code>Config::set_type_allocation_place</code>.
+Keys of the hash map are names of C++ types.</p>
+</div><h4 id='method.set_write_dependencies_local_paths' class='method'><span id='set_write_dependencies_local_paths.v' class='invisible'><code>fn <a href='#method.set_write_dependencies_local_paths' class='fnname'>set_write_dependencies_local_paths</a>(&amp;mut self, value: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>)</code></span></h4>
+<div class='docblock'><p>If <code>value</code> is <code>true</code>, the generated <code>Cargo.toml</code> will specify
+both versions and local paths of all dependencies. If <code>value</code> is <code>false</code>,
+only version will be specified, so publishing all dependencies would be
+required to build the crate.</p>
+</div><h4 id='method.write_dependencies_local_paths' class='method'><span id='write_dependencies_local_paths.v' class='invisible'><code>fn <a href='#method.write_dependencies_local_paths' class='fnname'>write_dependencies_local_paths</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>Returns value set by <code>Config::set_write_dependencies_local_paths</code>.</p>
+</div><h4 id='method.debug_logging_config' class='method'><span id='debug_logging_config.v' class='invisible'><code>fn <a href='#method.debug_logging_config' class='fnname'>debug_logging_config</a>(&amp;self) -&gt; &amp;<a class='enum' href='../../cpp_to_rust_generator/config/enum.DebugLoggingConfig.html' title='cpp_to_rust_generator::config::DebugLoggingConfig'>DebugLoggingConfig</a></code></span></h4>
+<div class='docblock'><p>Returns value set by <code>Config::set_debug_logging_config</code>.</p>
+</div><h4 id='method.quiet_mode' class='method'><span id='quiet_mode.v' class='invisible'><code>fn <a href='#method.quiet_mode' class='fnname'>quiet_mode</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>Returns value set by <code>Config::set_quiet_mode</code>.</p>
+</div><h4 id='method.write_cache' class='method'><span id='write_cache.v' class='invisible'><code>fn <a href='#method.write_cache' class='fnname'>write_cache</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>Returns value set by <code>Config::set_write_cache</code>.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../cpp_to_rust_generator/config/struct.Config.html' title='cpp_to_rust_generator::config::Config'>Config</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/cpp_to_rust_generator/config.rs.html#239' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "cpp_to_rust_generator";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

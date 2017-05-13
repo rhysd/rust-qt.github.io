@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["run","Runs the build script and exits the process with an appropriate exit code."],["run_and_return","Runs the build script."]]});
