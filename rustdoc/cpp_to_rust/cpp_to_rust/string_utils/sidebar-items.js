@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["WordIterator",""]],"trait":[["CaseOperations",""],["JoinWithString",""],["VecCaseOperations",""]]});

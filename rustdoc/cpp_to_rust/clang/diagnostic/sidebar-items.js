@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["FixIt","A suggested fix for an issue with a source file."],["Severity","Indicates the severity of a diagnostic."]],"struct":[["Diagnostic","A message from the compiler about an issue with a source file."],["DiagnosticFormatter","Builds formatted strings from diagnostics."]]});

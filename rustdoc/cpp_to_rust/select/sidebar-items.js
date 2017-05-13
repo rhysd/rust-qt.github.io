@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["document",""],["node",""],["predicate",""],["selection",""]]});

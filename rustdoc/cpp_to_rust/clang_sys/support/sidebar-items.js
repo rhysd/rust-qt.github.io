@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Clang","A `clang` executable."]]});

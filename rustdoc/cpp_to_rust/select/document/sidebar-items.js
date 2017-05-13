@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Document","An HTML document."]]});
